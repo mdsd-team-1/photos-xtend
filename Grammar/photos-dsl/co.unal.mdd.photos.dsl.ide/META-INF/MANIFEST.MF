@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: co.unal.mdd.photos.dsl.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: co.unal.mdd.photos.dsl.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: co.unal.mdd.photos.dsl.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: co.unal.mdd.photos.dsl,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

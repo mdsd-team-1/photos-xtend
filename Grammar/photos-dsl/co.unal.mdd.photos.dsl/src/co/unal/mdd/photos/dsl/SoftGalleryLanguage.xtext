@@ -1,0 +1,9 @@
+grammar co.unal.mdd.photos.dsl.SoftGalleryLanguage with org.eclipse.xtext.common.Terminals
+
+generate softGalleryLanguage "http://www.unal.co/mdd/photos/dsl/SoftGalleryLanguage"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
