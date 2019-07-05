@@ -12,6 +12,14 @@ Require-Bundle: co.unal.mdd.photos.dsl,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0"
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: co.unal.mdd.photos.dsl.ui.contentassist,
+ co.unal.mdd.photos.dsl.ui.quickfix,
+ co.unal.mdd.photos.dsl.ui.internal
+Bundle-Activator: co.unal.mdd.photos.dsl.ui.internal.DslActivator
