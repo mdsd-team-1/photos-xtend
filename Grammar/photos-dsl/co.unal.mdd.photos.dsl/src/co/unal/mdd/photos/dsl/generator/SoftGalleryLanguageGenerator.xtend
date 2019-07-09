@@ -4,12 +4,14 @@
 package co.unal.mdd.photos.dsl.generator
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PresentationSegments
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.naming.IQualifiedNameProvider
+import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring
 
 /**
  * Generates code from your model files on save.
@@ -22,19 +24,41 @@ class SoftGalleryLanguageGenerator extends AbstractGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
-        for (e : resource.allContents.toIterable.filter(Photo)) {
-            fsa.generateFile(
-                e.fullyQualifiedName.toString("/") + ".java",
-                e.compile)
+
+		// Dominio -> Photo
+        for (photo : resource.allContents.toIterable.filter(Photo)) {
+        	
+        	    
+	        // Arquitectura -> PresentationSegments
+	        for (content : resource.allContents.toIterable.filter(PresentationSegments)) {
+	        	
+
+	                // Tecnologia -> OrderSpring
+			        for (order : resource.allContents.toIterable.filter(OrderSpring)) {
+
+			            fsa.generateFile(
+			                photo.fullyQualifiedName.toString("/") + ".java",
+			                compile(photo, content, order))			        	
+			        }
+
+	        }
         }
 	}
 	
-    def compile(Photo e) ''' 
-        «IF e.eContainer.fullyQualifiedName !== null»
-            package «e.eContainer.fullyQualifiedName»;
+    def compile(Photo photo, PresentationSegments content, OrderSpring order) ''' 
+    
+    	// -------------------------
+    	// «photo.fullyQualifiedName.toString()»
+    	// «content.fullyQualifiedName.toString()»
+    	// «order.fullyQualifiedName.toString()»
+    	// -------------------------
+    
+        «IF photo.eContainer.fullyQualifiedName !== null»
+            package «photo.eContainer.fullyQualifiedName»;
         «ENDIF»
         
-        public class «e.name» {
+        public interface «photo.name»«content.fullyQualifiedName» {
+        	
         }
     '''
 

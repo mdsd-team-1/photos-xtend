@@ -3,7 +3,9 @@
  */
 package co.unal.mdd.photos.dsl.generator;
 
+import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PresentationSegments;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
@@ -31,33 +33,70 @@ public class SoftGalleryLanguageGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     Iterable<Photo> _filter = Iterables.<Photo>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Photo.class);
-    for (final Photo e : _filter) {
-      String _string = this._iQualifiedNameProvider.getFullyQualifiedName(e).toString("/");
-      String _plus = (_string + ".java");
-      fsa.generateFile(_plus, 
-        this.compile(e));
+    for (final Photo photo : _filter) {
+      Iterable<PresentationSegments> _filter_1 = Iterables.<PresentationSegments>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), PresentationSegments.class);
+      for (final PresentationSegments content : _filter_1) {
+        Iterable<OrderSpring> _filter_2 = Iterables.<OrderSpring>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), OrderSpring.class);
+        for (final OrderSpring order : _filter_2) {
+          String _string = this._iQualifiedNameProvider.getFullyQualifiedName(photo).toString("/");
+          String _plus = (_string + ".java");
+          fsa.generateFile(_plus, 
+            this.compile(photo, content, order));
+        }
+      }
     }
   }
   
-  public CharSequence compile(final Photo e) {
+  public CharSequence compile(final Photo photo, final PresentationSegments content, final OrderSpring order) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// -------------------------");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// ");
+    String _string = this._iQualifiedNameProvider.getFullyQualifiedName(photo).toString();
+    _builder.append(_string, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("// ");
+    String _string_1 = this._iQualifiedNameProvider.getFullyQualifiedName(content).toString();
+    _builder.append(_string_1, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("// ");
+    String _string_2 = this._iQualifiedNameProvider.getFullyQualifiedName(order).toString();
+    _builder.append(_string_2, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("// -------------------------");
+    _builder.newLine();
+    _builder.newLine();
     {
-      QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(e.eContainer());
+      QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(photo.eContainer());
       boolean _tripleNotEquals = (_fullyQualifiedName != null);
       if (_tripleNotEquals) {
+        _builder.append("    ");
         _builder.append("package ");
-        QualifiedName _fullyQualifiedName_1 = this._iQualifiedNameProvider.getFullyQualifiedName(e.eContainer());
-        _builder.append(_fullyQualifiedName_1);
+        QualifiedName _fullyQualifiedName_1 = this._iQualifiedNameProvider.getFullyQualifiedName(photo.eContainer());
+        _builder.append(_fullyQualifiedName_1, "    ");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("    ");
     _builder.newLine();
-    _builder.append("public class ");
-    String _name = e.getName();
-    _builder.append(_name);
+    _builder.append("    ");
+    _builder.append("public interface ");
+    String _name = photo.getName();
+    _builder.append(_name, "    ");
+    QualifiedName _fullyQualifiedName_2 = this._iQualifiedNameProvider.getFullyQualifiedName(content);
+    _builder.append(_fullyQualifiedName_2, "    ");
     _builder.append(" {");
     _builder.newLineIfNotEmpty();
+    _builder.append("    \t");
+    _builder.newLine();
+    _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
     return _builder;
