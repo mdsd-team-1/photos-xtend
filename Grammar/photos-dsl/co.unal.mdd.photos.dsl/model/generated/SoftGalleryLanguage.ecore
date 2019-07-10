@@ -56,7 +56,8 @@
         eType="#//AppAccessFunctions" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppAccessFunctions">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loginName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlbumManagement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
@@ -70,7 +71,9 @@
         eType="#//PhotoActionsFunctions" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhotoActionsFunctions">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameGenerico" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namePhoto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameLoad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LandingActions">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"

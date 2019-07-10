@@ -21,7 +21,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AppAccessFunctionsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AppAccessFunctionsImpl#getLoginName <em>Login Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AppAccessFunctionsImpl#getRegisterName <em>Register Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +30,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container implements AppAccessFunctions
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getLoginName() <em>Login Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getLoginName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String LOGIN_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getLoginName() <em>Login Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getLoginName()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String loginName = LOGIN_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getRegisterName() <em>Register Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRegisterName()
+   * @generated
+   * @ordered
+   */
+  protected static final String REGISTER_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRegisterName() <em>Register Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRegisterName()
+   * @generated
+   * @ordered
+   */
+  protected String registerName = REGISTER_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +96,9 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public String getName()
+  public String getLoginName()
   {
-    return name;
+    return loginName;
   }
 
   /**
@@ -86,12 +107,37 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setLoginName(String newLoginName)
   {
-    String oldName = name;
-    name = newName;
+    String oldLoginName = loginName;
+    loginName = newLoginName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__LOGIN_NAME, oldLoginName, loginName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getRegisterName()
+  {
+    return registerName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRegisterName(String newRegisterName)
+  {
+    String oldRegisterName = registerName;
+    registerName = newRegisterName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__REGISTER_NAME, oldRegisterName, registerName));
   }
 
   /**
@@ -104,8 +150,10 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__NAME:
-        return getName();
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__LOGIN_NAME:
+        return getLoginName();
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__REGISTER_NAME:
+        return getRegisterName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +168,11 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__NAME:
-        setName((String)newValue);
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__LOGIN_NAME:
+        setLoginName((String)newValue);
+        return;
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__REGISTER_NAME:
+        setRegisterName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +188,11 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__NAME:
-        setName(NAME_EDEFAULT);
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__LOGIN_NAME:
+        setLoginName(LOGIN_NAME_EDEFAULT);
+        return;
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__REGISTER_NAME:
+        setRegisterName(REGISTER_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +208,10 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__LOGIN_NAME:
+        return LOGIN_NAME_EDEFAULT == null ? loginName != null : !LOGIN_NAME_EDEFAULT.equals(loginName);
+      case SoftGalleryLanguagePackage.APP_ACCESS_FUNCTIONS__REGISTER_NAME:
+        return REGISTER_NAME_EDEFAULT == null ? registerName != null : !REGISTER_NAME_EDEFAULT.equals(registerName);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +227,10 @@ public class AppAccessFunctionsImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (loginName: ");
+    result.append(loginName);
+    result.append(", registerName: ");
+    result.append(registerName);
     result.append(')');
     return result.toString();
   }

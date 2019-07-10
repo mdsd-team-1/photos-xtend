@@ -18127,31 +18127,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__AppAccessFunctions__Group__1__Impl"
-    // InternalSoftGalleryLanguage.g:5810:1: rule__AppAccessFunctions__Group__1__Impl : ( ( rule__AppAccessFunctions__NameAssignment_1 ) ) ;
+    // InternalSoftGalleryLanguage.g:5810:1: rule__AppAccessFunctions__Group__1__Impl : ( ( rule__AppAccessFunctions__LoginNameAssignment_1 ) ) ;
     public final void rule__AppAccessFunctions__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:5814:1: ( ( ( rule__AppAccessFunctions__NameAssignment_1 ) ) )
-            // InternalSoftGalleryLanguage.g:5815:1: ( ( rule__AppAccessFunctions__NameAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:5814:1: ( ( ( rule__AppAccessFunctions__LoginNameAssignment_1 ) ) )
+            // InternalSoftGalleryLanguage.g:5815:1: ( ( rule__AppAccessFunctions__LoginNameAssignment_1 ) )
             {
-            // InternalSoftGalleryLanguage.g:5815:1: ( ( rule__AppAccessFunctions__NameAssignment_1 ) )
-            // InternalSoftGalleryLanguage.g:5816:2: ( rule__AppAccessFunctions__NameAssignment_1 )
+            // InternalSoftGalleryLanguage.g:5815:1: ( ( rule__AppAccessFunctions__LoginNameAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:5816:2: ( rule__AppAccessFunctions__LoginNameAssignment_1 )
             {
-             before(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_1()); 
-            // InternalSoftGalleryLanguage.g:5817:2: ( rule__AppAccessFunctions__NameAssignment_1 )
-            // InternalSoftGalleryLanguage.g:5817:3: rule__AppAccessFunctions__NameAssignment_1
+             before(grammarAccess.getAppAccessFunctionsAccess().getLoginNameAssignment_1()); 
+            // InternalSoftGalleryLanguage.g:5817:2: ( rule__AppAccessFunctions__LoginNameAssignment_1 )
+            // InternalSoftGalleryLanguage.g:5817:3: rule__AppAccessFunctions__LoginNameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__AppAccessFunctions__NameAssignment_1();
+            rule__AppAccessFunctions__LoginNameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_1()); 
+             after(grammarAccess.getAppAccessFunctionsAccess().getLoginNameAssignment_1()); 
 
             }
 
@@ -18282,31 +18282,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__AppAccessFunctions__Group__3__Impl"
-    // InternalSoftGalleryLanguage.g:5863:1: rule__AppAccessFunctions__Group__3__Impl : ( ( rule__AppAccessFunctions__NameAssignment_3 ) ) ;
+    // InternalSoftGalleryLanguage.g:5863:1: rule__AppAccessFunctions__Group__3__Impl : ( ( rule__AppAccessFunctions__RegisterNameAssignment_3 ) ) ;
     public final void rule__AppAccessFunctions__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:5867:1: ( ( ( rule__AppAccessFunctions__NameAssignment_3 ) ) )
-            // InternalSoftGalleryLanguage.g:5868:1: ( ( rule__AppAccessFunctions__NameAssignment_3 ) )
+            // InternalSoftGalleryLanguage.g:5867:1: ( ( ( rule__AppAccessFunctions__RegisterNameAssignment_3 ) ) )
+            // InternalSoftGalleryLanguage.g:5868:1: ( ( rule__AppAccessFunctions__RegisterNameAssignment_3 ) )
             {
-            // InternalSoftGalleryLanguage.g:5868:1: ( ( rule__AppAccessFunctions__NameAssignment_3 ) )
-            // InternalSoftGalleryLanguage.g:5869:2: ( rule__AppAccessFunctions__NameAssignment_3 )
+            // InternalSoftGalleryLanguage.g:5868:1: ( ( rule__AppAccessFunctions__RegisterNameAssignment_3 ) )
+            // InternalSoftGalleryLanguage.g:5869:2: ( rule__AppAccessFunctions__RegisterNameAssignment_3 )
             {
-             before(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_3()); 
-            // InternalSoftGalleryLanguage.g:5870:2: ( rule__AppAccessFunctions__NameAssignment_3 )
-            // InternalSoftGalleryLanguage.g:5870:3: rule__AppAccessFunctions__NameAssignment_3
+             before(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameAssignment_3()); 
+            // InternalSoftGalleryLanguage.g:5870:2: ( rule__AppAccessFunctions__RegisterNameAssignment_3 )
+            // InternalSoftGalleryLanguage.g:5870:3: rule__AppAccessFunctions__RegisterNameAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__AppAccessFunctions__NameAssignment_3();
+            rule__AppAccessFunctions__RegisterNameAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_3()); 
+             after(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameAssignment_3()); 
 
             }
 
@@ -19217,31 +19217,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__PhotoActionsFunctions__Group__1__Impl"
-    // InternalSoftGalleryLanguage.g:6188:1: rule__PhotoActionsFunctions__Group__1__Impl : ( ( rule__PhotoActionsFunctions__NameAssignment_1 ) ) ;
+    // InternalSoftGalleryLanguage.g:6188:1: rule__PhotoActionsFunctions__Group__1__Impl : ( ( rule__PhotoActionsFunctions__NameGenericoAssignment_1 ) ) ;
     public final void rule__PhotoActionsFunctions__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:6192:1: ( ( ( rule__PhotoActionsFunctions__NameAssignment_1 ) ) )
-            // InternalSoftGalleryLanguage.g:6193:1: ( ( rule__PhotoActionsFunctions__NameAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:6192:1: ( ( ( rule__PhotoActionsFunctions__NameGenericoAssignment_1 ) ) )
+            // InternalSoftGalleryLanguage.g:6193:1: ( ( rule__PhotoActionsFunctions__NameGenericoAssignment_1 ) )
             {
-            // InternalSoftGalleryLanguage.g:6193:1: ( ( rule__PhotoActionsFunctions__NameAssignment_1 ) )
-            // InternalSoftGalleryLanguage.g:6194:2: ( rule__PhotoActionsFunctions__NameAssignment_1 )
+            // InternalSoftGalleryLanguage.g:6193:1: ( ( rule__PhotoActionsFunctions__NameGenericoAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:6194:2: ( rule__PhotoActionsFunctions__NameGenericoAssignment_1 )
             {
-             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_1()); 
-            // InternalSoftGalleryLanguage.g:6195:2: ( rule__PhotoActionsFunctions__NameAssignment_1 )
-            // InternalSoftGalleryLanguage.g:6195:3: rule__PhotoActionsFunctions__NameAssignment_1
+             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoAssignment_1()); 
+            // InternalSoftGalleryLanguage.g:6195:2: ( rule__PhotoActionsFunctions__NameGenericoAssignment_1 )
+            // InternalSoftGalleryLanguage.g:6195:3: rule__PhotoActionsFunctions__NameGenericoAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__PhotoActionsFunctions__NameAssignment_1();
+            rule__PhotoActionsFunctions__NameGenericoAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_1()); 
+             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoAssignment_1()); 
 
             }
 
@@ -19377,31 +19377,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__PhotoActionsFunctions__Group__3__Impl"
-    // InternalSoftGalleryLanguage.g:6242:1: rule__PhotoActionsFunctions__Group__3__Impl : ( ( rule__PhotoActionsFunctions__NameAssignment_3 ) ) ;
+    // InternalSoftGalleryLanguage.g:6242:1: rule__PhotoActionsFunctions__Group__3__Impl : ( ( rule__PhotoActionsFunctions__NamePhotoAssignment_3 ) ) ;
     public final void rule__PhotoActionsFunctions__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:6246:1: ( ( ( rule__PhotoActionsFunctions__NameAssignment_3 ) ) )
-            // InternalSoftGalleryLanguage.g:6247:1: ( ( rule__PhotoActionsFunctions__NameAssignment_3 ) )
+            // InternalSoftGalleryLanguage.g:6246:1: ( ( ( rule__PhotoActionsFunctions__NamePhotoAssignment_3 ) ) )
+            // InternalSoftGalleryLanguage.g:6247:1: ( ( rule__PhotoActionsFunctions__NamePhotoAssignment_3 ) )
             {
-            // InternalSoftGalleryLanguage.g:6247:1: ( ( rule__PhotoActionsFunctions__NameAssignment_3 ) )
-            // InternalSoftGalleryLanguage.g:6248:2: ( rule__PhotoActionsFunctions__NameAssignment_3 )
+            // InternalSoftGalleryLanguage.g:6247:1: ( ( rule__PhotoActionsFunctions__NamePhotoAssignment_3 ) )
+            // InternalSoftGalleryLanguage.g:6248:2: ( rule__PhotoActionsFunctions__NamePhotoAssignment_3 )
             {
-             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_3()); 
-            // InternalSoftGalleryLanguage.g:6249:2: ( rule__PhotoActionsFunctions__NameAssignment_3 )
-            // InternalSoftGalleryLanguage.g:6249:3: rule__PhotoActionsFunctions__NameAssignment_3
+             before(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoAssignment_3()); 
+            // InternalSoftGalleryLanguage.g:6249:2: ( rule__PhotoActionsFunctions__NamePhotoAssignment_3 )
+            // InternalSoftGalleryLanguage.g:6249:3: rule__PhotoActionsFunctions__NamePhotoAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__PhotoActionsFunctions__NameAssignment_3();
+            rule__PhotoActionsFunctions__NamePhotoAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_3()); 
+             after(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoAssignment_3()); 
 
             }
 
@@ -19532,31 +19532,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__PhotoActionsFunctions__Group__5__Impl"
-    // InternalSoftGalleryLanguage.g:6295:1: rule__PhotoActionsFunctions__Group__5__Impl : ( ( rule__PhotoActionsFunctions__NameAssignment_5 ) ) ;
+    // InternalSoftGalleryLanguage.g:6295:1: rule__PhotoActionsFunctions__Group__5__Impl : ( ( rule__PhotoActionsFunctions__NameLoadAssignment_5 ) ) ;
     public final void rule__PhotoActionsFunctions__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:6299:1: ( ( ( rule__PhotoActionsFunctions__NameAssignment_5 ) ) )
-            // InternalSoftGalleryLanguage.g:6300:1: ( ( rule__PhotoActionsFunctions__NameAssignment_5 ) )
+            // InternalSoftGalleryLanguage.g:6299:1: ( ( ( rule__PhotoActionsFunctions__NameLoadAssignment_5 ) ) )
+            // InternalSoftGalleryLanguage.g:6300:1: ( ( rule__PhotoActionsFunctions__NameLoadAssignment_5 ) )
             {
-            // InternalSoftGalleryLanguage.g:6300:1: ( ( rule__PhotoActionsFunctions__NameAssignment_5 ) )
-            // InternalSoftGalleryLanguage.g:6301:2: ( rule__PhotoActionsFunctions__NameAssignment_5 )
+            // InternalSoftGalleryLanguage.g:6300:1: ( ( rule__PhotoActionsFunctions__NameLoadAssignment_5 ) )
+            // InternalSoftGalleryLanguage.g:6301:2: ( rule__PhotoActionsFunctions__NameLoadAssignment_5 )
             {
-             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_5()); 
-            // InternalSoftGalleryLanguage.g:6302:2: ( rule__PhotoActionsFunctions__NameAssignment_5 )
-            // InternalSoftGalleryLanguage.g:6302:3: rule__PhotoActionsFunctions__NameAssignment_5
+             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadAssignment_5()); 
+            // InternalSoftGalleryLanguage.g:6302:2: ( rule__PhotoActionsFunctions__NameLoadAssignment_5 )
+            // InternalSoftGalleryLanguage.g:6302:3: rule__PhotoActionsFunctions__NameLoadAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__PhotoActionsFunctions__NameAssignment_5();
+            rule__PhotoActionsFunctions__NameLoadAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_5()); 
+             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadAssignment_5()); 
 
             }
 
@@ -58826,9 +58826,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
     // $ANTLR end "rule__AppAccess__ItemsAssignment_2"
 
 
-    // $ANTLR start "rule__AppAccessFunctions__NameAssignment_1"
-    // InternalSoftGalleryLanguage.g:19430:1: rule__AppAccessFunctions__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__AppAccessFunctions__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__AppAccessFunctions__LoginNameAssignment_1"
+    // InternalSoftGalleryLanguage.g:19430:1: rule__AppAccessFunctions__LoginNameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__AppAccessFunctions__LoginNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -58839,9 +58839,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:19435:2: ( RULE_ID )
             // InternalSoftGalleryLanguage.g:19436:3: RULE_ID
             {
-             before(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -58860,12 +58860,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__AppAccessFunctions__NameAssignment_1"
+    // $ANTLR end "rule__AppAccessFunctions__LoginNameAssignment_1"
 
 
-    // $ANTLR start "rule__AppAccessFunctions__NameAssignment_3"
-    // InternalSoftGalleryLanguage.g:19445:1: rule__AppAccessFunctions__NameAssignment_3 : ( RULE_ID ) ;
-    public final void rule__AppAccessFunctions__NameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__AppAccessFunctions__RegisterNameAssignment_3"
+    // InternalSoftGalleryLanguage.g:19445:1: rule__AppAccessFunctions__RegisterNameAssignment_3 : ( RULE_ID ) ;
+    public final void rule__AppAccessFunctions__RegisterNameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -58876,9 +58876,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:19450:2: ( RULE_ID )
             // InternalSoftGalleryLanguage.g:19451:3: RULE_ID
             {
-             before(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_3_0()); 
+             before(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_3_0()); 
+             after(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0()); 
 
             }
 
@@ -58897,7 +58897,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__AppAccessFunctions__NameAssignment_3"
+    // $ANTLR end "rule__AppAccessFunctions__RegisterNameAssignment_3"
 
 
     // $ANTLR start "rule__AlbumManagement__ItemsAssignment_2"
@@ -59056,9 +59056,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
     // $ANTLR end "rule__PhotoActions__ItemsAssignment_2"
 
 
-    // $ANTLR start "rule__PhotoActionsFunctions__NameAssignment_1"
-    // InternalSoftGalleryLanguage.g:19520:1: rule__PhotoActionsFunctions__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__PhotoActionsFunctions__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__PhotoActionsFunctions__NameGenericoAssignment_1"
+    // InternalSoftGalleryLanguage.g:19520:1: rule__PhotoActionsFunctions__NameGenericoAssignment_1 : ( RULE_ID ) ;
+    public final void rule__PhotoActionsFunctions__NameGenericoAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59069,9 +59069,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:19525:2: ( RULE_ID )
             // InternalSoftGalleryLanguage.g:19526:3: RULE_ID
             {
-             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -59090,12 +59090,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__PhotoActionsFunctions__NameAssignment_1"
+    // $ANTLR end "rule__PhotoActionsFunctions__NameGenericoAssignment_1"
 
 
-    // $ANTLR start "rule__PhotoActionsFunctions__NameAssignment_3"
-    // InternalSoftGalleryLanguage.g:19535:1: rule__PhotoActionsFunctions__NameAssignment_3 : ( RULE_ID ) ;
-    public final void rule__PhotoActionsFunctions__NameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__PhotoActionsFunctions__NamePhotoAssignment_3"
+    // InternalSoftGalleryLanguage.g:19535:1: rule__PhotoActionsFunctions__NamePhotoAssignment_3 : ( RULE_ID ) ;
+    public final void rule__PhotoActionsFunctions__NamePhotoAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59106,9 +59106,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:19540:2: ( RULE_ID )
             // InternalSoftGalleryLanguage.g:19541:3: RULE_ID
             {
-             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_3_0()); 
+             before(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_3_0()); 
+             after(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0()); 
 
             }
 
@@ -59127,12 +59127,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__PhotoActionsFunctions__NameAssignment_3"
+    // $ANTLR end "rule__PhotoActionsFunctions__NamePhotoAssignment_3"
 
 
-    // $ANTLR start "rule__PhotoActionsFunctions__NameAssignment_5"
-    // InternalSoftGalleryLanguage.g:19550:1: rule__PhotoActionsFunctions__NameAssignment_5 : ( RULE_ID ) ;
-    public final void rule__PhotoActionsFunctions__NameAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__PhotoActionsFunctions__NameLoadAssignment_5"
+    // InternalSoftGalleryLanguage.g:19550:1: rule__PhotoActionsFunctions__NameLoadAssignment_5 : ( RULE_ID ) ;
+    public final void rule__PhotoActionsFunctions__NameLoadAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59143,9 +59143,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:19555:2: ( RULE_ID )
             // InternalSoftGalleryLanguage.g:19556:3: RULE_ID
             {
-             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_5_0()); 
+             before(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_5_0()); 
+             after(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0()); 
 
             }
 
@@ -59164,7 +59164,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__PhotoActionsFunctions__NameAssignment_5"
+    // $ANTLR end "rule__PhotoActionsFunctions__NameLoadAssignment_5"
 
 
     // $ANTLR start "rule__LandingActions__ItemsAssignment_2"

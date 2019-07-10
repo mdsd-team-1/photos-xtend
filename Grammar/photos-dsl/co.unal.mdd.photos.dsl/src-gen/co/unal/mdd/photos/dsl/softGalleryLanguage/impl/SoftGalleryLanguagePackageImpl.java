@@ -1604,9 +1604,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getAppAccessFunctions_Name()
+  public EAttribute getAppAccessFunctions_LoginName()
   {
     return (EAttribute)appAccessFunctionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAppAccessFunctions_RegisterName()
+  {
+    return (EAttribute)appAccessFunctionsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1692,9 +1703,31 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getPhotoActionsFunctions_Name()
+  public EAttribute getPhotoActionsFunctions_NameGenerico()
   {
     return (EAttribute)photoActionsFunctionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPhotoActionsFunctions_NamePhoto()
+  {
+    return (EAttribute)photoActionsFunctionsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPhotoActionsFunctions_NameLoad()
+  {
+    return (EAttribute)photoActionsFunctionsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -5081,7 +5114,8 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEReference(appAccessEClass, APP_ACCESS__ITEMS);
 
     appAccessFunctionsEClass = createEClass(APP_ACCESS_FUNCTIONS);
-    createEAttribute(appAccessFunctionsEClass, APP_ACCESS_FUNCTIONS__NAME);
+    createEAttribute(appAccessFunctionsEClass, APP_ACCESS_FUNCTIONS__LOGIN_NAME);
+    createEAttribute(appAccessFunctionsEClass, APP_ACCESS_FUNCTIONS__REGISTER_NAME);
 
     albumManagementEClass = createEClass(ALBUM_MANAGEMENT);
     createEReference(albumManagementEClass, ALBUM_MANAGEMENT__ITEMS);
@@ -5093,7 +5127,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEReference(photoActionsEClass, PHOTO_ACTIONS__ITEMS);
 
     photoActionsFunctionsEClass = createEClass(PHOTO_ACTIONS_FUNCTIONS);
-    createEAttribute(photoActionsFunctionsEClass, PHOTO_ACTIONS_FUNCTIONS__NAME);
+    createEAttribute(photoActionsFunctionsEClass, PHOTO_ACTIONS_FUNCTIONS__NAME_GENERICO);
+    createEAttribute(photoActionsFunctionsEClass, PHOTO_ACTIONS_FUNCTIONS__NAME_PHOTO);
+    createEAttribute(photoActionsFunctionsEClass, PHOTO_ACTIONS_FUNCTIONS__NAME_LOAD);
 
     landingActionsEClass = createEClass(LANDING_ACTIONS);
     createEReference(landingActionsEClass, LANDING_ACTIONS__ITEMS);
@@ -5601,7 +5637,8 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEReference(getAppAccess_Items(), this.getAppAccessFunctions(), null, "items", null, 0, -1, AppAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(appAccessFunctionsEClass, AppAccessFunctions.class, "AppAccessFunctions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAppAccessFunctions_Name(), ecorePackage.getEString(), "name", null, 0, 1, AppAccessFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAppAccessFunctions_LoginName(), ecorePackage.getEString(), "loginName", null, 0, 1, AppAccessFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAppAccessFunctions_RegisterName(), ecorePackage.getEString(), "registerName", null, 0, 1, AppAccessFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(albumManagementEClass, AlbumManagement.class, "AlbumManagement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlbumManagement_Items(), this.getAlbumManagementFunctions(), null, "items", null, 0, -1, AlbumManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5613,7 +5650,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEReference(getPhotoActions_Items(), this.getPhotoActionsFunctions(), null, "items", null, 0, -1, PhotoActions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(photoActionsFunctionsEClass, PhotoActionsFunctions.class, "PhotoActionsFunctions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPhotoActionsFunctions_Name(), ecorePackage.getEString(), "name", null, 0, 1, PhotoActionsFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPhotoActionsFunctions_NameGenerico(), ecorePackage.getEString(), "nameGenerico", null, 0, 1, PhotoActionsFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPhotoActionsFunctions_NamePhoto(), ecorePackage.getEString(), "namePhoto", null, 0, 1, PhotoActionsFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPhotoActionsFunctions_NameLoad(), ecorePackage.getEString(), "nameLoad", null, 0, 1, PhotoActionsFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(landingActionsEClass, LandingActions.class, "LandingActions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLandingActions_Items(), this.getLandingFunctions(), null, "items", null, 0, -1, LandingActions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

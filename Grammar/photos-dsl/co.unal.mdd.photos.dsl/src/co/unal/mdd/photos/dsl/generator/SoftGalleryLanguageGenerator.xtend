@@ -21,45 +21,79 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring
 class SoftGalleryLanguageGenerator extends AbstractGenerator {
 	
     @Inject extension IQualifiedNameProvider
+    
+    var basePackageName = "co.unal."
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		println("*** Generator v5 ***")
+		println(">>> doGenerate() Started <<<")
+		println("") // New line
 
+		var className = ""
+		var packageName = ""
 
 		// Dominio -> Photo
-        for (photo : resource.allContents.toIterable.filter(Photo)) {
+        for (domainItem : resource.allContents.toIterable.filter(Photo)) {
+			println("Domain Iteration: " + domainItem.name)
         	
-        	    
+        	
 	        // Arquitectura -> PresentationSegments
-	        for (content : resource.allContents.toIterable.filter(PresentationSegments)) {
-	        	
+	        for (archItem : resource.allContents.toIterable.filter(PresentationSegments)) {
+        		println("Architecture Iteration: " + archItem.name)
+        		
 
-	                // Tecnologia -> OrderSpring
-			        for (order : resource.allContents.toIterable.filter(OrderSpring)) {
+                // Tecnologia -> OrderSpring
+		        for (techItem : resource.allContents.toIterable.filter(OrderSpring)) {
+		        	println("Technology Iteration: " + techItem.name)
+		        	
+		        	packageName = basePackageName + techItem.name + "." + domainItem.name		        	
+		        	className = domainItem.name + techItem.name
 
-			            fsa.generateFile(
-			                photo.fullyQualifiedName.toString("/") + ".java",
-			                compile(photo, content, order))			        	
-			        }
-
+		            fsa.generateFile(className + ".java", generateClass(className, packageName))
+		            
+		            println("GeneratedFile: " + className)
+		            println("") // New line
+		                
+					// photo.fullyQualifiedName.toString("/") + content.fullyQualifiedName.toString() + order.fullyQualifiedName.toString() + ".java",
+		        }
 	        }
         }
+        
+        println(">>> doGenerate() Finished <<<")
 	}
 	
-    def compile(Photo photo, PresentationSegments content, OrderSpring order) ''' 
-    
-    	// -------------------------
-    	// «photo.fullyQualifiedName.toString()»
-    	// «content.fullyQualifiedName.toString()»
-    	// «order.fullyQualifiedName.toString()»
-    	// -------------------------
-    
-        «IF photo.eContainer.fullyQualifiedName !== null»
-            package «photo.eContainer.fullyQualifiedName»;
-        «ENDIF»
-        
-        public interface «photo.name»«content.fullyQualifiedName» {
-        	
-        }
-    '''
+    def compile(Photo photo, PresentationSegments content, OrderSpring order)
+''' 
+	
+	// -------------------------
+	// Dominio: «photo.fullyQualifiedName.toString()»
+	// Arquitectura: «content.fullyQualifiedName.toString()»
+	// Tecnologia: «order.fullyQualifiedName.toString()»
+	// -------------------------
+
+    «IF photo.eContainer.fullyQualifiedName !== null»
+package «photo.eContainer.fullyQualifiedName»;
+    «ENDIF»
+	
+	public interface «photo.name»«content.fullyQualifiedName» {
+	
+	}
+'''
+
+	def generateClass(String className, String packageName)
+''' 
+	// ----------------------------------------
+	// PackageName: «packageName»
+	// ClassName: «className»
+	// ----------------------------------------	
+	
+	
+	package «packageName»;
+	
+	public class «className» {
+		
+		
+	}
+''' 
 
 }

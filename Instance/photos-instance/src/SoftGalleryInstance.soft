@@ -1,8 +1,8 @@
 System: {
 	Domain SoftGallery: { 
 		Entities: {
-			Photo PhotoEntity
-			Album PhotoEntity
+			Photo FotosMotos
+			Album AlbumCarros
 			UserDomain UserEntity
 		}
 		Functionalities : {

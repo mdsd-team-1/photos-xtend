@@ -459,36 +459,36 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.AppAccessFunctions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLoginKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cLoginNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLoginNameIDTerminalRuleCall_1_0 = (RuleCall)cLoginNameAssignment_1.eContents().get(0);
 		private final Keyword cRegisterKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Assignment cRegisterNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cRegisterNameIDTerminalRuleCall_3_0 = (RuleCall)cRegisterNameAssignment_3.eContents().get(0);
 		
 		//AppAccessFunctions:
-		//	'Login' name=ID 'Register' name=ID;
+		//	'Login' loginName=ID 'Register' registerName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Login' name=ID 'Register' name=ID
+		//'Login' loginName=ID 'Register' registerName=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'Login'
 		public Keyword getLoginKeyword_0() { return cLoginKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//loginName=ID
+		public Assignment getLoginNameAssignment_1() { return cLoginNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getLoginNameIDTerminalRuleCall_1_0() { return cLoginNameIDTerminalRuleCall_1_0; }
 		
 		//'Register'
 		public Keyword getRegisterKeyword_2() { return cRegisterKeyword_2; }
 		
-		//name=ID
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		//registerName=ID
+		public Assignment getRegisterNameAssignment_3() { return cRegisterNameAssignment_3; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		public RuleCall getRegisterNameIDTerminalRuleCall_3_0() { return cRegisterNameIDTerminalRuleCall_3_0; }
 	}
 	public class AlbumManagementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.AlbumManagement");
@@ -583,48 +583,48 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.PhotoActionsFunctions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cViewAllPhotosKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cNameGenericoAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameGenericoIDTerminalRuleCall_1_0 = (RuleCall)cNameGenericoAssignment_1.eContents().get(0);
 		private final Keyword cViewExtendedPhotoKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Assignment cNamePhotoAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNamePhotoIDTerminalRuleCall_3_0 = (RuleCall)cNamePhotoAssignment_3.eContents().get(0);
 		private final Keyword cLoadPhotoKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cNameIDTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
+		private final Assignment cNameLoadAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNameLoadIDTerminalRuleCall_5_0 = (RuleCall)cNameLoadAssignment_5.eContents().get(0);
 		
 		//PhotoActionsFunctions:
-		//	'ViewAllPhotos' name=ID 'ViewExtendedPhoto' name=ID 'LoadPhoto' name=ID;
+		//	'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ViewAllPhotos' name=ID 'ViewExtendedPhoto' name=ID 'LoadPhoto' name=ID
+		//'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'ViewAllPhotos'
 		public Keyword getViewAllPhotosKeyword_0() { return cViewAllPhotosKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//nameGenerico=ID
+		public Assignment getNameGenericoAssignment_1() { return cNameGenericoAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameGenericoIDTerminalRuleCall_1_0() { return cNameGenericoIDTerminalRuleCall_1_0; }
 		
 		//'ViewExtendedPhoto'
 		public Keyword getViewExtendedPhotoKeyword_2() { return cViewExtendedPhotoKeyword_2; }
 		
-		//name=ID
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		//namePhoto=ID
+		public Assignment getNamePhotoAssignment_3() { return cNamePhotoAssignment_3; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		public RuleCall getNamePhotoIDTerminalRuleCall_3_0() { return cNamePhotoIDTerminalRuleCall_3_0; }
 		
 		//'LoadPhoto'
 		public Keyword getLoadPhotoKeyword_4() { return cLoadPhotoKeyword_4; }
 		
-		//name=ID
-		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
+		//nameLoad=ID
+		public Assignment getNameLoadAssignment_5() { return cNameLoadAssignment_5; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_5_0() { return cNameIDTerminalRuleCall_5_0; }
+		public RuleCall getNameLoadIDTerminalRuleCall_5_0() { return cNameLoadIDTerminalRuleCall_5_0; }
 	}
 	public class LandingActionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.LandingActions");
@@ -5726,7 +5726,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AppAccessFunctions:
-	//	'Login' name=ID 'Register' name=ID;
+	//	'Login' loginName=ID 'Register' registerName=ID;
 	public AppAccessFunctionsElements getAppAccessFunctionsAccess() {
 		return pAppAccessFunctions;
 	}
@@ -5766,7 +5766,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PhotoActionsFunctions:
-	//	'ViewAllPhotos' name=ID 'ViewExtendedPhoto' name=ID 'LoadPhoto' name=ID;
+	//	'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID;
 	public PhotoActionsFunctionsElements getPhotoActionsFunctionsAccess() {
 		return pPhotoActionsFunctions;
 	}

@@ -2132,38 +2132,38 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleAppAccessFunctions"
-    // InternalSoftGalleryLanguage.g:849:1: ruleAppAccessFunctions returns [EObject current=null] : (otherlv_0= 'Login' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_name_3_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:849:1: ruleAppAccessFunctions returns [EObject current=null] : (otherlv_0= 'Login' ( (lv_loginName_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_registerName_3_0= RULE_ID ) ) ) ;
     public final EObject ruleAppAccessFunctions() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_loginName_1_0=null;
         Token otherlv_2=null;
-        Token lv_name_3_0=null;
+        Token lv_registerName_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:855:2: ( (otherlv_0= 'Login' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_name_3_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:856:2: (otherlv_0= 'Login' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_name_3_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:855:2: ( (otherlv_0= 'Login' ( (lv_loginName_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_registerName_3_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:856:2: (otherlv_0= 'Login' ( (lv_loginName_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_registerName_3_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:856:2: (otherlv_0= 'Login' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_name_3_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:857:3: otherlv_0= 'Login' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_name_3_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:856:2: (otherlv_0= 'Login' ( (lv_loginName_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_registerName_3_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:857:3: otherlv_0= 'Login' ( (lv_loginName_1_0= RULE_ID ) ) otherlv_2= 'Register' ( (lv_registerName_3_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAppAccessFunctionsAccess().getLoginKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:861:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:862:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:861:3: ( (lv_loginName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:862:4: (lv_loginName_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:862:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:863:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:862:4: (lv_loginName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:863:5: lv_loginName_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_25); 
+            lv_loginName_1_0=(Token)match(input,RULE_ID,FOLLOW_25); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_loginName_1_0, grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -2171,8 +2171,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_1_0,
+            						"loginName",
+            						lv_loginName_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -2185,15 +2185,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getAppAccessFunctionsAccess().getRegisterKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:883:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:884:4: (lv_name_3_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:883:3: ( (lv_registerName_3_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:884:4: (lv_registerName_3_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:884:4: (lv_name_3_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:885:5: lv_name_3_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:884:4: (lv_registerName_3_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:885:5: lv_registerName_3_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_registerName_3_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_name_3_0, grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_3_0());
+            					newLeafNode(lv_registerName_3_0, grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -2201,8 +2201,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_3_0,
+            						"registerName",
+            						lv_registerName_3_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -2642,40 +2642,40 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePhotoActionsFunctions"
-    // InternalSoftGalleryLanguage.g:1067:1: rulePhotoActionsFunctions returns [EObject current=null] : (otherlv_0= 'ViewAllPhotos' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_name_5_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:1067:1: rulePhotoActionsFunctions returns [EObject current=null] : (otherlv_0= 'ViewAllPhotos' ( (lv_nameGenerico_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_namePhoto_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_nameLoad_5_0= RULE_ID ) ) ) ;
     public final EObject rulePhotoActionsFunctions() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_nameGenerico_1_0=null;
         Token otherlv_2=null;
-        Token lv_name_3_0=null;
+        Token lv_namePhoto_3_0=null;
         Token otherlv_4=null;
-        Token lv_name_5_0=null;
+        Token lv_nameLoad_5_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:1073:2: ( (otherlv_0= 'ViewAllPhotos' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_name_5_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:1074:2: (otherlv_0= 'ViewAllPhotos' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_name_5_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:1073:2: ( (otherlv_0= 'ViewAllPhotos' ( (lv_nameGenerico_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_namePhoto_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_nameLoad_5_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:1074:2: (otherlv_0= 'ViewAllPhotos' ( (lv_nameGenerico_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_namePhoto_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_nameLoad_5_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:1074:2: (otherlv_0= 'ViewAllPhotos' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_name_5_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:1075:3: otherlv_0= 'ViewAllPhotos' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_name_5_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:1074:2: (otherlv_0= 'ViewAllPhotos' ( (lv_nameGenerico_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_namePhoto_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_nameLoad_5_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:1075:3: otherlv_0= 'ViewAllPhotos' ( (lv_nameGenerico_1_0= RULE_ID ) ) otherlv_2= 'ViewExtendedPhoto' ( (lv_namePhoto_3_0= RULE_ID ) ) otherlv_4= 'LoadPhoto' ( (lv_nameLoad_5_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,31,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPhotoActionsFunctionsAccess().getViewAllPhotosKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:1079:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:1080:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:1079:3: ( (lv_nameGenerico_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:1080:4: (lv_nameGenerico_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:1080:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:1081:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:1080:4: (lv_nameGenerico_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:1081:5: lv_nameGenerico_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_29); 
+            lv_nameGenerico_1_0=(Token)match(input,RULE_ID,FOLLOW_29); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_nameGenerico_1_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -2683,8 +2683,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_1_0,
+            						"nameGenerico",
+            						lv_nameGenerico_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -2697,15 +2697,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getPhotoActionsFunctionsAccess().getViewExtendedPhotoKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:1101:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:1102:4: (lv_name_3_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:1101:3: ( (lv_namePhoto_3_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:1102:4: (lv_namePhoto_3_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:1102:4: (lv_name_3_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:1103:5: lv_name_3_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:1102:4: (lv_namePhoto_3_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:1103:5: lv_namePhoto_3_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_30); 
+            lv_namePhoto_3_0=(Token)match(input,RULE_ID,FOLLOW_30); 
 
-            					newLeafNode(lv_name_3_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_3_0());
+            					newLeafNode(lv_namePhoto_3_0, grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -2713,8 +2713,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_3_0,
+            						"namePhoto",
+            						lv_namePhoto_3_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -2727,15 +2727,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_4, grammarAccess.getPhotoActionsFunctionsAccess().getLoadPhotoKeyword_4());
             		
-            // InternalSoftGalleryLanguage.g:1123:3: ( (lv_name_5_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:1124:4: (lv_name_5_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:1123:3: ( (lv_nameLoad_5_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:1124:4: (lv_nameLoad_5_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:1124:4: (lv_name_5_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:1125:5: lv_name_5_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:1124:4: (lv_nameLoad_5_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:1125:5: lv_nameLoad_5_0= RULE_ID
             {
-            lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_nameLoad_5_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_name_5_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_5_0());
+            					newLeafNode(lv_nameLoad_5_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0());
             				
 
             					if (current==null) {
@@ -2743,8 +2743,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_5_0,
+            						"nameLoad",
+            						lv_nameLoad_5_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 

@@ -747,10 +747,19 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     AppAccessFunctions returns AppAccessFunctions
 	 *
 	 * Constraint:
-	 *     (name=ID name=ID)
+	 *     (loginName=ID registerName=ID)
 	 */
 	protected void sequence_AppAccessFunctions(ISerializationContext context, AppAccessFunctions semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.APP_ACCESS_FUNCTIONS__LOGIN_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.APP_ACCESS_FUNCTIONS__LOGIN_NAME));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.APP_ACCESS_FUNCTIONS__REGISTER_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.APP_ACCESS_FUNCTIONS__REGISTER_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0(), semanticObject.getLoginName());
+		feeder.accept(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0(), semanticObject.getRegisterName());
+		feeder.finish();
 	}
 	
 	
@@ -1828,10 +1837,22 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     PhotoActionsFunctions returns PhotoActionsFunctions
 	 *
 	 * Constraint:
-	 *     (name=ID name=ID name=ID)
+	 *     (nameGenerico=ID namePhoto=ID nameLoad=ID)
 	 */
 	protected void sequence_PhotoActionsFunctions(ISerializationContext context, PhotoActionsFunctions semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO_ACTIONS_FUNCTIONS__NAME_GENERICO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO_ACTIONS_FUNCTIONS__NAME_GENERICO));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO_ACTIONS_FUNCTIONS__NAME_PHOTO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO_ACTIONS_FUNCTIONS__NAME_PHOTO));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO_ACTIONS_FUNCTIONS__NAME_LOAD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO_ACTIONS_FUNCTIONS__NAME_LOAD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0(), semanticObject.getNameGenerico());
+		feeder.accept(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0(), semanticObject.getNamePhoto());
+		feeder.accept(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0(), semanticObject.getNameLoad());
+		feeder.finish();
 	}
 	
 	

@@ -48,7 +48,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//AppAccess/items"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AppAccessFunctions">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AppAccessFunctions/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AppAccessFunctions/loginName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AppAccessFunctions/registerName"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AlbumManagement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//AlbumManagement/items"/>
@@ -60,7 +61,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//PhotoActions/items"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//PhotoActionsFunctions">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PhotoActionsFunctions/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PhotoActionsFunctions/nameGenerico"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PhotoActionsFunctions/namePhoto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PhotoActionsFunctions/nameLoad"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//LandingActions">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//LandingActions/items"/>

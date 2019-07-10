@@ -449,13 +449,22 @@ public interface SoftGalleryLanguagePackage extends EPackage
   int APP_ACCESS_FUNCTIONS = 12;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Login Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APP_ACCESS_FUNCTIONS__NAME = 0;
+  int APP_ACCESS_FUNCTIONS__LOGIN_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Register Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APP_ACCESS_FUNCTIONS__REGISTER_NAME = 1;
 
   /**
    * The number of structural features of the '<em>App Access Functions</em>' class.
@@ -464,7 +473,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP_ACCESS_FUNCTIONS_FEATURE_COUNT = 1;
+  int APP_ACCESS_FUNCTIONS_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AlbumManagementImpl <em>Album Management</em>}' class.
@@ -561,13 +570,31 @@ public interface SoftGalleryLanguagePackage extends EPackage
   int PHOTO_ACTIONS_FUNCTIONS = 16;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name Generico</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PHOTO_ACTIONS_FUNCTIONS__NAME = 0;
+  int PHOTO_ACTIONS_FUNCTIONS__NAME_GENERICO = 0;
+
+  /**
+   * The feature id for the '<em><b>Name Photo</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PHOTO_ACTIONS_FUNCTIONS__NAME_PHOTO = 1;
+
+  /**
+   * The feature id for the '<em><b>Name Load</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PHOTO_ACTIONS_FUNCTIONS__NAME_LOAD = 2;
 
   /**
    * The number of structural features of the '<em>Photo Actions Functions</em>' class.
@@ -576,7 +603,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PHOTO_ACTIONS_FUNCTIONS_FEATURE_COUNT = 1;
+  int PHOTO_ACTIONS_FUNCTIONS_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.LandingActionsImpl <em>Landing Actions</em>}' class.
@@ -4916,15 +4943,26 @@ public interface SoftGalleryLanguagePackage extends EPackage
   EClass getAppAccessFunctions();
 
   /**
-   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getLoginName <em>Login Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getName()
+   * @return the meta object for the attribute '<em>Login Name</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getLoginName()
    * @see #getAppAccessFunctions()
    * @generated
    */
-  EAttribute getAppAccessFunctions_Name();
+  EAttribute getAppAccessFunctions_LoginName();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getRegisterName <em>Register Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Register Name</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getRegisterName()
+   * @see #getAppAccessFunctions()
+   * @generated
+   */
+  EAttribute getAppAccessFunctions_RegisterName();
 
   /**
    * Returns the meta object for class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumManagement <em>Album Management</em>}'.
@@ -5000,15 +5038,37 @@ public interface SoftGalleryLanguagePackage extends EPackage
   EClass getPhotoActionsFunctions();
 
   /**
-   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getNameGenerico <em>Name Generico</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getName()
+   * @return the meta object for the attribute '<em>Name Generico</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getNameGenerico()
    * @see #getPhotoActionsFunctions()
    * @generated
    */
-  EAttribute getPhotoActionsFunctions_Name();
+  EAttribute getPhotoActionsFunctions_NameGenerico();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getNamePhoto <em>Name Photo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name Photo</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getNamePhoto()
+   * @see #getPhotoActionsFunctions()
+   * @generated
+   */
+  EAttribute getPhotoActionsFunctions_NamePhoto();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getNameLoad <em>Name Load</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name Load</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions#getNameLoad()
+   * @see #getPhotoActionsFunctions()
+   * @generated
+   */
+  EAttribute getPhotoActionsFunctions_NameLoad();
 
   /**
    * Returns the meta object for class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.LandingActions <em>Landing Actions</em>}'.
@@ -8480,12 +8540,20 @@ public interface SoftGalleryLanguagePackage extends EPackage
     EClass APP_ACCESS_FUNCTIONS = eINSTANCE.getAppAccessFunctions();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Login Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute APP_ACCESS_FUNCTIONS__NAME = eINSTANCE.getAppAccessFunctions_Name();
+    EAttribute APP_ACCESS_FUNCTIONS__LOGIN_NAME = eINSTANCE.getAppAccessFunctions_LoginName();
+
+    /**
+     * The meta object literal for the '<em><b>Register Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute APP_ACCESS_FUNCTIONS__REGISTER_NAME = eINSTANCE.getAppAccessFunctions_RegisterName();
 
     /**
      * The meta object literal for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AlbumManagementImpl <em>Album Management</em>}' class.
@@ -8552,12 +8620,28 @@ public interface SoftGalleryLanguagePackage extends EPackage
     EClass PHOTO_ACTIONS_FUNCTIONS = eINSTANCE.getPhotoActionsFunctions();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name Generico</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PHOTO_ACTIONS_FUNCTIONS__NAME = eINSTANCE.getPhotoActionsFunctions_Name();
+    EAttribute PHOTO_ACTIONS_FUNCTIONS__NAME_GENERICO = eINSTANCE.getPhotoActionsFunctions_NameGenerico();
+
+    /**
+     * The meta object literal for the '<em><b>Name Photo</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PHOTO_ACTIONS_FUNCTIONS__NAME_PHOTO = eINSTANCE.getPhotoActionsFunctions_NamePhoto();
+
+    /**
+     * The meta object literal for the '<em><b>Name Load</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PHOTO_ACTIONS_FUNCTIONS__NAME_LOAD = eINSTANCE.getPhotoActionsFunctions_NameLoad();
 
     /**
      * The meta object literal for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.LandingActionsImpl <em>Landing Actions</em>}' class.

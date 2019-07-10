@@ -50,7 +50,7 @@ AppAccess:
 'AppAccess' ':' items+=AppAccessFunctions;
 
 AppAccessFunctions:
-'Login' name=ID 'Register' name=ID;
+'Login' loginName=ID 'Register' registerName=ID;
 
 AlbumManagement:
 'AlbumManagement' ':'items+=AlbumManagementFunctions;
@@ -62,7 +62,7 @@ PhotoActions:
 'PhotoActions' ':'items+=PhotoActionsFunctions;
 
 PhotoActionsFunctions:
-'ViewAllPhotos' name=ID 'ViewExtendedPhoto' name=ID 'LoadPhoto' name=ID;
+'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID;
 
 LandingActions:
 'LandingActions' ':'items+=LandingFunctions;

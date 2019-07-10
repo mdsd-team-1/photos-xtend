@@ -860,9 +860,9 @@ ruleAppAccessFunctions returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_loginName_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_loginName_1_0, grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -870,8 +870,8 @@ ruleAppAccessFunctions returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_1_0,
+						"loginName",
+						lv_loginName_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -882,9 +882,9 @@ ruleAppAccessFunctions returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_3_0=RULE_ID
+				lv_registerName_3_0=RULE_ID
 				{
-					newLeafNode(lv_name_3_0, grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_3_0());
+					newLeafNode(lv_registerName_3_0, grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -892,8 +892,8 @@ ruleAppAccessFunctions returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_3_0,
+						"registerName",
+						lv_registerName_3_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -1078,9 +1078,9 @@ rulePhotoActionsFunctions returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_nameGenerico_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_nameGenerico_1_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1088,8 +1088,8 @@ rulePhotoActionsFunctions returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_1_0,
+						"nameGenerico",
+						lv_nameGenerico_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -1100,9 +1100,9 @@ rulePhotoActionsFunctions returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_3_0=RULE_ID
+				lv_namePhoto_3_0=RULE_ID
 				{
-					newLeafNode(lv_name_3_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_3_0());
+					newLeafNode(lv_namePhoto_3_0, grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -1110,8 +1110,8 @@ rulePhotoActionsFunctions returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_3_0,
+						"namePhoto",
+						lv_namePhoto_3_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -1122,9 +1122,9 @@ rulePhotoActionsFunctions returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_5_0=RULE_ID
+				lv_nameLoad_5_0=RULE_ID
 				{
-					newLeafNode(lv_name_5_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_5_0());
+					newLeafNode(lv_nameLoad_5_0, grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -1132,8 +1132,8 @@ rulePhotoActionsFunctions returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_5_0,
+						"nameLoad",
+						lv_nameLoad_5_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)

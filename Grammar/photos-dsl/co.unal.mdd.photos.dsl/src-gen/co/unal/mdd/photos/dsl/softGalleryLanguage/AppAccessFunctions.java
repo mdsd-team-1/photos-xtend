@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getLoginName <em>Login Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getRegisterName <em>Register Name</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getAppAccessFunctions()
@@ -24,25 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface AppAccessFunctions extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Login Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getAppAccessFunctions_Name()
+   * @return the value of the '<em>Login Name</em>' attribute.
+   * @see #setLoginName(String)
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getAppAccessFunctions_LoginName()
    * @model
    * @generated
    */
-  String getName();
+  String getLoginName();
 
   /**
-   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getLoginName <em>Login Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Login Name</em>' attribute.
+   * @see #getLoginName()
    * @generated
    */
-  void setName(String value);
+  void setLoginName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Register Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Register Name</em>' attribute.
+   * @see #setRegisterName(String)
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getAppAccessFunctions_RegisterName()
+   * @model
+   * @generated
+   */
+  String getRegisterName();
+
+  /**
+   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions#getRegisterName <em>Register Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Register Name</em>' attribute.
+   * @see #getRegisterName()
+   * @generated
+   */
+  void setRegisterName(String value);
 
 } // AppAccessFunctions

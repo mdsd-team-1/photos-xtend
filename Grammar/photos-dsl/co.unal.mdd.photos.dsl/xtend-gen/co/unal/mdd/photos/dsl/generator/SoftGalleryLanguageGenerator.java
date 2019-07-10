@@ -17,6 +17,7 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
@@ -30,45 +31,72 @@ public class SoftGalleryLanguageGenerator extends AbstractGenerator {
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
+  private String basePackageName = "co.unal.";
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    InputOutput.<String>println("*** Generator v5 ***");
+    InputOutput.<String>println(">>> doGenerate() Started <<<");
+    InputOutput.<String>println("");
+    String className = "";
+    String packageName = "";
     Iterable<Photo> _filter = Iterables.<Photo>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Photo.class);
-    for (final Photo photo : _filter) {
-      Iterable<PresentationSegments> _filter_1 = Iterables.<PresentationSegments>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), PresentationSegments.class);
-      for (final PresentationSegments content : _filter_1) {
-        Iterable<OrderSpring> _filter_2 = Iterables.<OrderSpring>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), OrderSpring.class);
-        for (final OrderSpring order : _filter_2) {
-          String _string = this._iQualifiedNameProvider.getFullyQualifiedName(photo).toString("/");
-          String _plus = (_string + ".java");
-          fsa.generateFile(_plus, 
-            this.compile(photo, content, order));
+    for (final Photo domainItem : _filter) {
+      {
+        String _name = domainItem.getName();
+        String _plus = ("Domain Iteration: " + _name);
+        InputOutput.<String>println(_plus);
+        Iterable<PresentationSegments> _filter_1 = Iterables.<PresentationSegments>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), PresentationSegments.class);
+        for (final PresentationSegments archItem : _filter_1) {
+          {
+            String _name_1 = archItem.getName();
+            String _plus_1 = ("Architecture Iteration: " + _name_1);
+            InputOutput.<String>println(_plus_1);
+            Iterable<OrderSpring> _filter_2 = Iterables.<OrderSpring>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), OrderSpring.class);
+            for (final OrderSpring techItem : _filter_2) {
+              {
+                String _name_2 = techItem.getName();
+                String _plus_2 = ("Technology Iteration: " + _name_2);
+                InputOutput.<String>println(_plus_2);
+                String _name_3 = techItem.getName();
+                String _plus_3 = (this.basePackageName + _name_3);
+                String _plus_4 = (_plus_3 + ".");
+                String _name_4 = domainItem.getName();
+                String _plus_5 = (_plus_4 + _name_4);
+                packageName = _plus_5;
+                String _name_5 = domainItem.getName();
+                String _name_6 = techItem.getName();
+                String _plus_6 = (_name_5 + _name_6);
+                className = _plus_6;
+                fsa.generateFile((className + ".java"), this.generateClass(className, packageName));
+                InputOutput.<String>println(("GeneratedFile: " + className));
+                InputOutput.<String>println("");
+              }
+            }
+          }
         }
       }
     }
+    InputOutput.<String>println(">>> doGenerate() Finished <<<");
   }
   
   public CharSequence compile(final Photo photo, final PresentationSegments content, final OrderSpring order) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("// -------------------------");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("// ");
+    _builder.append("// Dominio: ");
     String _string = this._iQualifiedNameProvider.getFullyQualifiedName(photo).toString();
-    _builder.append(_string, "\t");
+    _builder.append(_string);
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("// ");
+    _builder.append("// Arquitectura: ");
     String _string_1 = this._iQualifiedNameProvider.getFullyQualifiedName(content).toString();
-    _builder.append(_string_1, "\t");
+    _builder.append(_string_1);
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("// ");
+    _builder.append("// Tecnologia: ");
     String _string_2 = this._iQualifiedNameProvider.getFullyQualifiedName(order).toString();
-    _builder.append(_string_2, "\t");
+    _builder.append(_string_2);
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
     _builder.append("// -------------------------");
     _builder.newLine();
     _builder.newLine();
@@ -76,27 +104,54 @@ public class SoftGalleryLanguageGenerator extends AbstractGenerator {
       QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(photo.eContainer());
       boolean _tripleNotEquals = (_fullyQualifiedName != null);
       if (_tripleNotEquals) {
-        _builder.append("    ");
         _builder.append("package ");
         QualifiedName _fullyQualifiedName_1 = this._iQualifiedNameProvider.getFullyQualifiedName(photo.eContainer());
-        _builder.append(_fullyQualifiedName_1, "    ");
+        _builder.append(_fullyQualifiedName_1);
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("    ");
     _builder.newLine();
-    _builder.append("    ");
     _builder.append("public interface ");
     String _name = photo.getName();
-    _builder.append(_name, "    ");
+    _builder.append(_name);
     QualifiedName _fullyQualifiedName_2 = this._iQualifiedNameProvider.getFullyQualifiedName(content);
-    _builder.append(_fullyQualifiedName_2, "    ");
+    _builder.append(_fullyQualifiedName_2);
     _builder.append(" {");
     _builder.newLineIfNotEmpty();
-    _builder.append("    \t");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence generateClass(final String className, final String packageName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// ----------------------------------------");
+    _builder.newLine();
+    _builder.append("// PackageName: ");
+    _builder.append(packageName);
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ClassName: ");
+    _builder.append(className);
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ----------------------------------------\t");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(packageName);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("public class ");
+    _builder.append(className);
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;

@@ -5813,9 +5813,9 @@ rule__AppAccessFunctions__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_1()); }
-	(rule__AppAccessFunctions__NameAssignment_1)
-	{ after(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getAppAccessFunctionsAccess().getLoginNameAssignment_1()); }
+	(rule__AppAccessFunctions__LoginNameAssignment_1)
+	{ after(grammarAccess.getAppAccessFunctionsAccess().getLoginNameAssignment_1()); }
 )
 ;
 finally {
@@ -5866,9 +5866,9 @@ rule__AppAccessFunctions__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_3()); }
-	(rule__AppAccessFunctions__NameAssignment_3)
-	{ after(grammarAccess.getAppAccessFunctionsAccess().getNameAssignment_3()); }
+	{ before(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameAssignment_3()); }
+	(rule__AppAccessFunctions__RegisterNameAssignment_3)
+	{ after(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameAssignment_3()); }
 )
 ;
 finally {
@@ -6191,9 +6191,9 @@ rule__PhotoActionsFunctions__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_1()); }
-	(rule__PhotoActionsFunctions__NameAssignment_1)
-	{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoAssignment_1()); }
+	(rule__PhotoActionsFunctions__NameGenericoAssignment_1)
+	{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoAssignment_1()); }
 )
 ;
 finally {
@@ -6245,9 +6245,9 @@ rule__PhotoActionsFunctions__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_3()); }
-	(rule__PhotoActionsFunctions__NameAssignment_3)
-	{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_3()); }
+	{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoAssignment_3()); }
+	(rule__PhotoActionsFunctions__NamePhotoAssignment_3)
+	{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoAssignment_3()); }
 )
 ;
 finally {
@@ -6298,9 +6298,9 @@ rule__PhotoActionsFunctions__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_5()); }
-	(rule__PhotoActionsFunctions__NameAssignment_5)
-	{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameAssignment_5()); }
+	{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadAssignment_5()); }
+	(rule__PhotoActionsFunctions__NameLoadAssignment_5)
+	{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadAssignment_5()); }
 )
 ;
 finally {
@@ -19427,30 +19427,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AppAccessFunctions__NameAssignment_1
+rule__AppAccessFunctions__LoginNameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getAppAccessFunctionsAccess().getLoginNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AppAccessFunctions__NameAssignment_3
+rule__AppAccessFunctions__RegisterNameAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_3_0()); }
+		{ before(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAppAccessFunctionsAccess().getNameIDTerminalRuleCall_3_0()); }
+		{ after(grammarAccess.getAppAccessFunctionsAccess().getRegisterNameIDTerminalRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -19517,45 +19517,45 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PhotoActionsFunctions__NameAssignment_1
+rule__PhotoActionsFunctions__NameGenericoAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameGenericoIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PhotoActionsFunctions__NameAssignment_3
+rule__PhotoActionsFunctions__NamePhotoAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_3_0()); }
+		{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0()); }
 		RULE_ID
-		{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_3_0()); }
+		{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNamePhotoIDTerminalRuleCall_3_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PhotoActionsFunctions__NameAssignment_5
+rule__PhotoActionsFunctions__NameLoadAssignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0()); }
 		RULE_ID
-		{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameIDTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getPhotoActionsFunctionsAccess().getNameLoadIDTerminalRuleCall_5_0()); }
 	)
 ;
 finally {
