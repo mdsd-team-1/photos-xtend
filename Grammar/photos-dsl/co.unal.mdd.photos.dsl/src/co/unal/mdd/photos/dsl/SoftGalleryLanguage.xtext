@@ -6,18 +6,16 @@ generate softGalleryLanguage "http://www.unal.co/mdd/photos/dsl/SoftGalleryLangu
 Model:
 'System' ':' '{' elements+=Domain elements+=Architecture elements+=Technology '}';
 
-
 // Domain
 Domain:
 'Domain' name=ID ':' '{' elements+=Entity elements+=Functionality elements+=DomainConnection '}';
-
 
 // Domain - Entities
 Entity:
 'Entities' ':' '{' (elements+=Entities) '}';
 
 Entities:
-(elements+=Photo)+ (elements+=Album)+ (elements+=UserDomain)+;
+(photoelements+=Photo)+ (albumelements+=Album)+ (userdomainelements+=UserDomain)+;
 
 Photo:
 'Photo' name=ID;
@@ -27,7 +25,6 @@ Album:
 
 UserDomain:
 'UserDomain' name=ID;
-
 
 // Domain - Functionalities
 Functionality:
@@ -44,7 +41,7 @@ ProfileManagement:
 'ProfileManagement' ':' items+=ProfileManagementFunctions;
 
 ProfileManagementFunctions:
-'ViewProfilePhoto' name=ID 'EditProfileInfo' name=ID;
+'ViewProfilePhoto' viewprofileName=ID 'EditProfileInfo' editProfileName=ID;
 
 AppAccess:
 'AppAccess' ':' items+=AppAccessFunctions;
@@ -56,7 +53,7 @@ AlbumManagement:
 'AlbumManagement' ':'items+=AlbumManagementFunctions;
 
 AlbumManagementFunctions:
-'CreateAlbum' name=ID 'SelectAlbum' name=ID;
+'CreateAlbum' createdAlbName=ID 'SelectAlbum' selectAlbName=ID;
 
 PhotoActions:
 'PhotoActions' ':'items+=PhotoActionsFunctions;
@@ -68,18 +65,17 @@ LandingActions:
 'LandingActions' ':'items+=LandingFunctions;
 
 LandingFunctions:
-'ViewCarousel' name=ID 'PassPhoto' name=ID;
-
+'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID;
 
 //Domain - Relations
 DomainConnection:
 'DomainRelations' ':' '{' elements+=DomainRelations '}';
 
 DomainRelations:
-elements+=UserDomain name=ID ':' '{' elements+=Functionalities '}'
-elements+=Album name=ID ':' '{' elements+=AlbumManagementFunctions '}'
-elements+=Photo name=ID ':' '{' elements+=PhotoActionsFunctions '}'
-elements+=PhotoActions name=ID  ':' '{'elements+=AlbumManagement '}';
+userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
+albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
+photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
+photoactdelements+=PhotoActions photoactDname=ID  ':' '{'elements+=AlbumManagement '}';
 		
 		
 //Architecture
@@ -99,7 +95,7 @@ PresentationContent:
 'PresentationSegments' elements+=PresentationSegments;
 
 PresentationSegments:
-'PresentationView' name=ID 'PresentationComponent' name=ID 'PresentationAction' name=ID;
+'PresentationView' presentationSName=ID 'PresentationComponent' presentationCName=ID 'PresentationAction' presentationAName=ID;
 
 BusinessLogicLayer:
 'BusinessLogicLayer' elements+=BusinessLogicContent elements+=SegmentStructure;
@@ -108,7 +104,7 @@ BusinessLogicContent:
 'BusinessLogicSegments' elements+=BusinessLogicSegments;
 
 BusinessLogicSegments:
-'ControllerSegment' name=ID 'ModelSegment' name=ID 'RepositorySegment' name=ID 'SecuritySegment' name=ID;
+'ControllerSegment' bussinessName=ID 'ModelSegment' modelSegmentName=ID 'RepositorySegment' repositoryName=ID 'SecuritySegment' securitySName=ID;
 
 DataPersistenceLayer:
 'DataPersistenceLayer' elements+=DataPersistenceContent;
@@ -117,7 +113,7 @@ DataPersistenceContent:
 'DataPersistenceSegments' elements+=DataPersistenceSegments;
 
 DataPersistenceSegments:
-'PostgreSLQSegment' name=ID 'AmazonS3Storage' name=ID;
+'PostgreSLQSegment' postSName=ID 'AmazonS3Storage' amazonSName=ID;
 
 SegmentStructure:
 'SegmentStructure' elements+=SegmentStructureContent;
@@ -165,7 +161,10 @@ PersistenceDataComponent:
 'PersistenceDataComponent' name=ID;
 
 NTiersConnections:
-'Connectors' (ntierconnection+=ConnectionType name=ID ntierorigin+=NTierSource ntiertarget+=NTierTarget)+;
+'Connectors' (ntierconnections+=NTierConnectionContent)+;
+
+NTierConnectionContent:
+ntierconnection+=ConnectionType nTierName=ID ntierorigin+=NTierSource ntiertarget+=NTierTarget;
 
 ConnectionType:
 'REST' | 'PostgreSQLConnection' | 'AmazonS3API';
@@ -185,7 +184,7 @@ Technology:
 'Technology' name=ID ':' '{' elements+=Technologies '}';
 
 Technologies:
-factors+=Spring factors+=React factors+=PostgreSQL factors+=AmazonWebServices;
+techspring+=Spring techreact+=React techpostgresql+=PostgreSQL techamazon+=AmazonWebServices;
 
 Spring:
 'Spring' name=ID ':' '{' elements+=SpringBootApplication '}';
@@ -263,7 +262,7 @@ SpringTable:
 'SpringTable' name=ID elements+=SpringTableId (elements+=Columns)+;
 
 SpringTableId:
-'SpringTableId' (elements+=GeneratedValue)*;
+{SpringTableId} 'SpringTableId' (elements+=GeneratedValue)*;
 
 GeneratedValue:
 'GeneratedValue' name=ID;
@@ -282,12 +281,8 @@ ReactModules:
 'ReactModules' ':' '{' reactmodules+=ReactSubModules '}';
 
 ReactSubModules:
-reactmodules+=ReactConfiguration
-reactmodules+=ReactComponents
-reactmodules+=ReactActions
-reactmodules+=ReactLibraries
-reactmodules+=ReactInfo
-;
+reactmodulesconf+=ReactConfiguration reactmodulescomp+=ReactComponents reactmodulesact+=ReactActions 
+reactmoduleslib+=ReactLibraries reactmodulesinf+=ReactInfo;
 
 ReactConfiguration:
 'ReactConfiguration' ':' '{' dependencies+=ReactDependencies configurations+=ReactConfigurations '}';
@@ -329,26 +324,40 @@ LogicContent:
 'RoutingComponents' name=ID logiccomponents+=LogicStructure;
 
 LogicStructure:
-'AppComponent' name=ID logiccomponents+=ComponentClass 'IndexComponent' name=ID;
+'AppComponent' appComName=ID logiccomponents+=ComponentClass 'IndexComponent' indexCompName=ID;
 
 ComponentsUI:
 'UIComponents' name=ID uicomponents+=UIContent;
 
 UIContent: 
-('ViewComponent' name=ID uicontent+=ComponentClass)+
-('Subcomponents' name=ID uicontent+=ComponentClass)+;
+(componentcontent+=ViewComponentCont)+ (subcomponentcontent+=SubcomponentCont)+;
+
+ViewComponentCont:
+'ViewComponent' nameView=ID uicontent+=ComponentClass;
+
+SubcomponentCont:
+'Subcomponents' nameSubComp=ID uicontent+=ComponentClass;
 
 ComponentClass:
-componentclass+=ReactFunctions componentclass+=Props;
+componentclassimp+=ReactImports componentclassfunc+=ReactFunctions componentclassprop+=Props;
+
+ReactImports:
+{ReactImports} (reactsimports+=ReactImportContent)*;
+
+ReactImportContent:
+'import' impName=ID;
 
 ReactFunctions:
-componentclass+=ReactConstructor (lifecycleclass+=ReactLifeCycle)* (componentclass+=ReactCoreFunctions)* renderclass+=ReactRender;
+reactconstructors+=ReactConstructor (lifecycleclass+=ReactLifeCycle)* (reactcorefuncs+=ReactCoreFunctions)* renderclass+=ReactRender;
 
 ReactConstructor:
-'Constructor' componentclass+=State (componentclass+=CoreFunctionsDeclaration)*;
+'Constructor' componentstateclass+=State (componentfuncclass+=CoreFunctionsDeclaration)*;
 
 State:
-'State' (name=ID componentclass+=DataType)*;
+{State} 'State' (statecontents+=StateContent)+;
+
+StateContent:
+stateName=ID componentdatatyp+=DataType;
 
 DataType:
 'String' | 'Array' | 'Object' | 'Number' | 'null' | 'Boolean';
@@ -365,7 +374,10 @@ ReactRender:
 'Render' 'RenderContent';
 
 Props:
-'Props' (name=ID componentclass+=DataType)*;
+{Props} 'Props' (propsconts+=PropsType)*;
+
+PropsType:
+nameProps=ID propsdatas+=DataType;
 
 ReactCoreFunctions:
 name=ID 'FunctionStructure';
@@ -380,7 +392,10 @@ ReactServicesType:
 'ServiceType' name=ID 'ServiceContent';
 
 ReactServicesRelation:
-'ServicesRelations' (reactrelationcontent+=ReactServicesType name=ID ReactRequest)+;
+'ServicesRelations' (servicesrels+=ReactsRelationServ)+;
+
+ReactsRelationServ:
+reactrelationcontent+=ReactServicesType name=ID ReactRequest;
 
 ReactRequest: 
 'Wrapper' | 'AuxWrapper';
@@ -434,7 +449,7 @@ ForeignKey_n:
 	'ForeingKeyName' name=ID;
 	
 ForeignKeyRef:
-	'ForeignKeyRef' (elements+=RefTable_p)*;
+	{ForeignKeyRef} 'ForeignKeyRef' (elements+=RefTable_p)*;
 	
 RefTable_p:
 	'RefTable_p' name=ID;
