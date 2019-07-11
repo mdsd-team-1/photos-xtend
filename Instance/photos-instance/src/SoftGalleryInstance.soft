@@ -1,8 +1,8 @@
 System: {
 	Domain SoftGallery: { 
 		Entities: {
-			Photo FotosMotos
-			Album AlbumCarros
+			Photo PhotoEntity
+			Album AlbumEntity
 			UserDomain UserEntity
 		}
 		Functionalities : {
@@ -121,7 +121,7 @@ System: {
 					target PersistenceDataComponent AmazonWebService
 	}
 	
-	Technology name: {
+	Technology tecnologies: {
 		Spring SpringProject : {
 			SpringBootApplication
 				Configuration : { 
@@ -282,9 +282,11 @@ System: {
 					LogicComponents componentesLogicos
 						RoutingComponents componentRouting
 							AppComponent AppJS
+								import ReactComponent
 								Constructor
-									State stateVars
-									FunctionBindingDeclaration
+									State 
+										loading String
+										others String
 								ComponentDidMount
 									FunctionStructure
 								anotherFunctions
@@ -296,9 +298,11 @@ System: {
 							IndexComponent indexJS
 					UIComponents componentesVisuales
 						ViewComponent home
+							import ReactComponent
 							Constructor
-									State stateVars
-									FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							next
 								FunctionStructure
 							previous
@@ -308,9 +312,11 @@ System: {
 							Props 
 								super String
 						ViewComponent upload
+							import ReactComponent
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							ComponentDidMount
 								FunctionStructure
 							changeAlbum
@@ -320,17 +326,21 @@ System: {
 							Props 
 								super String
 						ViewComponent gallery
+							import ReactComponent
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							Render
 								RenderContent 								
 							Props 
 								super String
 						ViewComponent usersManagement
+							import ReactComponent
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							ComponentDidMount
 								FunctionStructure
 							openEditModal
@@ -341,8 +351,9 @@ System: {
 								super String
 						ViewComponent categoryManagement
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							ComponentDidMount
 								FunctionStructure
 							toggleCardImageModal
@@ -353,30 +364,38 @@ System: {
 								super String
 						Subcomponents FieldTitle
 							Constructor
-									State stateVars
-									FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 								Render
 									RenderContent 								
 								Props 
 									super String
 						Subcomponents MainLoading
 							Constructor
-									State stateVars
-									FunctionBindingDeclaration
+									State 
+										loading String
+										others String	
 								Render
 									RenderContent 								
 								Props 
 									super String
+						
 				}		 						
 				ReactActions: { 
 					ServicesRelations
-						ServiceType loginServices ServiceContent relacionadoCon AuxWrapper
-						ServiceType loginServices ServiceContent relacionadoCon Wrapper
-						ServiceType registerServices ServiceContent relacionadoCon Wrapper
-						ServiceType albumServices ServiceContent relacionadoCon Wrapper
-						ServiceType photoServices ServiceContent relacionadoCon Wrapper
-						ServiceType uploadServices ServiceContent relacionadoCon Wrapper
-						ServiceType userServices ServiceContent relacionadoCon Wrapper		
+						ServiceType loginServices ServiceContent 
+							relacionadoCon AuxWrapper
+						ServiceType registerServices ServiceContent 
+							relacionadoCon Wrapper
+						ServiceType categorysServices ServiceContent 
+							relacionadoCon Wrapper
+						ServiceType visualServices ServiceContent 
+							relacionadoCon Wrapper
+						ServiceType uploadServices ServiceContent 
+							relacionadoCon Wrapper
+						ServiceType generalServices ServiceContent 
+							relacionadoCon Wrapper
 				}	
 				ReactLibraries: {
 					 ReactDesign antd

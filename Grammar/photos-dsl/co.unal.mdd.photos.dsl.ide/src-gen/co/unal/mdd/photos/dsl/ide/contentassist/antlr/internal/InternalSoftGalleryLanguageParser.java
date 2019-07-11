@@ -46075,31 +46075,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ReactConstructor__Group__1__Impl"
-    // InternalSoftGalleryLanguage.g:15135:1: rule__ReactConstructor__Group__1__Impl : ( ( rule__ReactConstructor__ComponentclassAssignment_1 ) ) ;
+    // InternalSoftGalleryLanguage.g:15135:1: rule__ReactConstructor__Group__1__Impl : ( ( rule__ReactConstructor__ComponentstateclassAssignment_1 ) ) ;
     public final void rule__ReactConstructor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:15139:1: ( ( ( rule__ReactConstructor__ComponentclassAssignment_1 ) ) )
-            // InternalSoftGalleryLanguage.g:15140:1: ( ( rule__ReactConstructor__ComponentclassAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:15139:1: ( ( ( rule__ReactConstructor__ComponentstateclassAssignment_1 ) ) )
+            // InternalSoftGalleryLanguage.g:15140:1: ( ( rule__ReactConstructor__ComponentstateclassAssignment_1 ) )
             {
-            // InternalSoftGalleryLanguage.g:15140:1: ( ( rule__ReactConstructor__ComponentclassAssignment_1 ) )
-            // InternalSoftGalleryLanguage.g:15141:2: ( rule__ReactConstructor__ComponentclassAssignment_1 )
+            // InternalSoftGalleryLanguage.g:15140:1: ( ( rule__ReactConstructor__ComponentstateclassAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:15141:2: ( rule__ReactConstructor__ComponentstateclassAssignment_1 )
             {
-             before(grammarAccess.getReactConstructorAccess().getComponentclassAssignment_1()); 
-            // InternalSoftGalleryLanguage.g:15142:2: ( rule__ReactConstructor__ComponentclassAssignment_1 )
-            // InternalSoftGalleryLanguage.g:15142:3: rule__ReactConstructor__ComponentclassAssignment_1
+             before(grammarAccess.getReactConstructorAccess().getComponentstateclassAssignment_1()); 
+            // InternalSoftGalleryLanguage.g:15142:2: ( rule__ReactConstructor__ComponentstateclassAssignment_1 )
+            // InternalSoftGalleryLanguage.g:15142:3: rule__ReactConstructor__ComponentstateclassAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__ReactConstructor__ComponentclassAssignment_1();
+            rule__ReactConstructor__ComponentstateclassAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getReactConstructorAccess().getComponentclassAssignment_1()); 
+             after(grammarAccess.getReactConstructorAccess().getComponentstateclassAssignment_1()); 
 
             }
 
@@ -46155,20 +46155,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ReactConstructor__Group__2__Impl"
-    // InternalSoftGalleryLanguage.g:15161:1: rule__ReactConstructor__Group__2__Impl : ( ( rule__ReactConstructor__ComponentclassAssignment_2 )* ) ;
+    // InternalSoftGalleryLanguage.g:15161:1: rule__ReactConstructor__Group__2__Impl : ( ( rule__ReactConstructor__ComponentfuncclassAssignment_2 )* ) ;
     public final void rule__ReactConstructor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:15165:1: ( ( ( rule__ReactConstructor__ComponentclassAssignment_2 )* ) )
-            // InternalSoftGalleryLanguage.g:15166:1: ( ( rule__ReactConstructor__ComponentclassAssignment_2 )* )
+            // InternalSoftGalleryLanguage.g:15165:1: ( ( ( rule__ReactConstructor__ComponentfuncclassAssignment_2 )* ) )
+            // InternalSoftGalleryLanguage.g:15166:1: ( ( rule__ReactConstructor__ComponentfuncclassAssignment_2 )* )
             {
-            // InternalSoftGalleryLanguage.g:15166:1: ( ( rule__ReactConstructor__ComponentclassAssignment_2 )* )
-            // InternalSoftGalleryLanguage.g:15167:2: ( rule__ReactConstructor__ComponentclassAssignment_2 )*
+            // InternalSoftGalleryLanguage.g:15166:1: ( ( rule__ReactConstructor__ComponentfuncclassAssignment_2 )* )
+            // InternalSoftGalleryLanguage.g:15167:2: ( rule__ReactConstructor__ComponentfuncclassAssignment_2 )*
             {
-             before(grammarAccess.getReactConstructorAccess().getComponentclassAssignment_2()); 
-            // InternalSoftGalleryLanguage.g:15168:2: ( rule__ReactConstructor__ComponentclassAssignment_2 )*
+             before(grammarAccess.getReactConstructorAccess().getComponentfuncclassAssignment_2()); 
+            // InternalSoftGalleryLanguage.g:15168:2: ( rule__ReactConstructor__ComponentfuncclassAssignment_2 )*
             loop47:
             do {
                 int alt47=2;
@@ -46187,10 +46187,10 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
                 switch (alt47) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:15168:3: rule__ReactConstructor__ComponentclassAssignment_2
+            	    // InternalSoftGalleryLanguage.g:15168:3: rule__ReactConstructor__ComponentfuncclassAssignment_2
             	    {
             	    pushFollow(FOLLOW_151);
-            	    rule__ReactConstructor__ComponentclassAssignment_2();
+            	    rule__ReactConstructor__ComponentfuncclassAssignment_2();
 
             	    state._fsp--;
 
@@ -46203,7 +46203,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
                 }
             } while (true);
 
-             after(grammarAccess.getReactConstructorAccess().getComponentclassAssignment_2()); 
+             after(grammarAccess.getReactConstructorAccess().getComponentfuncclassAssignment_2()); 
 
             }
 
@@ -67404,9 +67404,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
     // $ANTLR end "rule__ReactFunctions__RenderclassAssignment_3"
 
 
-    // $ANTLR start "rule__ReactConstructor__ComponentclassAssignment_1"
-    // InternalSoftGalleryLanguage.g:22625:1: rule__ReactConstructor__ComponentclassAssignment_1 : ( ruleState ) ;
-    public final void rule__ReactConstructor__ComponentclassAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReactConstructor__ComponentstateclassAssignment_1"
+    // InternalSoftGalleryLanguage.g:22625:1: rule__ReactConstructor__ComponentstateclassAssignment_1 : ( ruleState ) ;
+    public final void rule__ReactConstructor__ComponentstateclassAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -67417,13 +67417,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:22630:2: ( ruleState )
             // InternalSoftGalleryLanguage.g:22631:3: ruleState
             {
-             before(grammarAccess.getReactConstructorAccess().getComponentclassStateParserRuleCall_1_0()); 
+             before(grammarAccess.getReactConstructorAccess().getComponentstateclassStateParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleState();
 
             state._fsp--;
 
-             after(grammarAccess.getReactConstructorAccess().getComponentclassStateParserRuleCall_1_0()); 
+             after(grammarAccess.getReactConstructorAccess().getComponentstateclassStateParserRuleCall_1_0()); 
 
             }
 
@@ -67442,12 +67442,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ReactConstructor__ComponentclassAssignment_1"
+    // $ANTLR end "rule__ReactConstructor__ComponentstateclassAssignment_1"
 
 
-    // $ANTLR start "rule__ReactConstructor__ComponentclassAssignment_2"
-    // InternalSoftGalleryLanguage.g:22640:1: rule__ReactConstructor__ComponentclassAssignment_2 : ( ruleCoreFunctionsDeclaration ) ;
-    public final void rule__ReactConstructor__ComponentclassAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ReactConstructor__ComponentfuncclassAssignment_2"
+    // InternalSoftGalleryLanguage.g:22640:1: rule__ReactConstructor__ComponentfuncclassAssignment_2 : ( ruleCoreFunctionsDeclaration ) ;
+    public final void rule__ReactConstructor__ComponentfuncclassAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -67458,13 +67458,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:22645:2: ( ruleCoreFunctionsDeclaration )
             // InternalSoftGalleryLanguage.g:22646:3: ruleCoreFunctionsDeclaration
             {
-             before(grammarAccess.getReactConstructorAccess().getComponentclassCoreFunctionsDeclarationParserRuleCall_2_0()); 
+             before(grammarAccess.getReactConstructorAccess().getComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleCoreFunctionsDeclaration();
 
             state._fsp--;
 
-             after(grammarAccess.getReactConstructorAccess().getComponentclassCoreFunctionsDeclarationParserRuleCall_2_0()); 
+             after(grammarAccess.getReactConstructorAccess().getComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0()); 
 
             }
 
@@ -67483,7 +67483,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ReactConstructor__ComponentclassAssignment_2"
+    // $ANTLR end "rule__ReactConstructor__ComponentfuncclassAssignment_2"
 
 
     // $ANTLR start "rule__State__StatecontentsAssignment_2"
