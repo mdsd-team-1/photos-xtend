@@ -3,24 +3,12 @@
  */
 package co.unal.mdd.photos.dsl.generator
 
-<<<<<<< HEAD
-=======
-import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
->>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.naming.IQualifiedNameProvider
-<<<<<<< HEAD
-=======
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntity
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Album
-import co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain
->>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 
 /**
  * Generates code from your model files on save.
@@ -28,7 +16,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class SoftGalleryLanguageGenerator extends AbstractGenerator {
-<<<<<<< HEAD
 	
 		
     @Inject extension IQualifiedNameProvider
@@ -47,142 +34,3 @@ class SoftGalleryLanguageGenerator extends AbstractGenerator {
         println(">>> doGenerate() Finished <<<")
 	}
 }
-=======
-    
-    @Inject extension IQualifiedNameProvider
-    
-    
-    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        println("******** SoftGallery Generator v7 ****************")
-        println(">>> doGenerate() Started\n")
-        
-        var basePackageName = "co.edu.unal.mdd.photos."
-
-        var className = ""
-        var packageName = ""
-
-        // Dominio -> Photo
-        for (domainItem : resource.allContents.toIterable.filter(Photo)) {
-            println("Domain Iteration: " + domainItem.name)
-            
-            
-            // Arquitectura -> RestController
-            for (archItem : resource.allContents.toIterable.filter(RestController)) {
-                println("Architecture Iteration: " + archItem.name)
-                
-
-                // Tecnologia -> OrderSpring
-                for (techItem : resource.allContents.toIterable.filter(OrderSpring)) {
-                    println("Technology Iteration: " + techItem.name)
-                    
-                    packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                    className = domainItem.name + techItem.name
-
-                    //createClass(className, packageName, fsa)
-                }
-            }
-        }
-        
-        className = ""
-        packageName = ""
-        
-        // Photo
-        for (domainItem : resource.allContents.toIterable.filter(Photo)) {          
-            for (techItem : resource.allContents.toIterable.filter(RestController)) {
-                
-                packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                className = domainItem.name + techItem.name
-
-                createClass(className, packageName, fsa)
-            }
-        }
-        
-        for (domainItem : resource.allContents.toIterable.filter(Photo)) {          
-            for (techItem : resource.allContents.toIterable.filter(SpringEntity)) {
-                
-                packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                className = domainItem.name + techItem.name
-
-                createClass(className, packageName, fsa)
-            }
-        }
-        
-        // Album
-        for (domainItem : resource.allContents.toIterable.filter(Album)) {          
-            for (techItem : resource.allContents.toIterable.filter(RestController)) {
-                
-                packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                className = domainItem.name + techItem.name
-
-                createClass(className, packageName, fsa)
-            }
-        }
-        
-        for (domainItem : resource.allContents.toIterable.filter(Album)) {          
-            for (techItem : resource.allContents.toIterable.filter(SpringEntity)) {
-                
-                packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                className = domainItem.name + techItem.name
-
-                createClass(className, packageName, fsa)
-            }
-        }
-        
-        // UserDomain
-        for (domainItem : resource.allContents.toIterable.filter(UserDomain)) {          
-            for (techItem : resource.allContents.toIterable.filter(RestController)) {
-                
-                packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                className = domainItem.name + techItem.name
-
-                createClass(className, packageName, fsa)
-            }
-        }
-        
-        for (domainItem : resource.allContents.toIterable.filter(UserDomain)) {          
-            for (techItem : resource.allContents.toIterable.filter(SpringEntity)) {
-                
-                packageName = basePackageName + techItem.name + "." + domainItem.name                   
-                className = domainItem.name + techItem.name
-
-                createClass(className, packageName, fsa)
-            }
-        }
-        
-        println("\n>>> doGenerate() Finished")
-    }
-
-
-
-    def void createClass(String className, String packageName, IFileSystemAccess2 fsa) {
-        
-        if (className.length < 0 || packageName.length < 0 || fsa === null) {
-            return
-        }
-        
-        var packagePath = packageName.replace(".", "/")
-        var fileName = className + ".java"
-        var filePath = packagePath + "/" + fileName
-        
-        fsa.generateFile(filePath, printClass(className, packageName))
-        
-        println("\n" + "createClass() " + fileName)
-    }
-    
-    def printClass(String className, String packageName)
-''' 
-    // ----------------------------------------
-    // Package: «packageName»
-    // Class: «className»
-    // ---------------------------------------- 
-    
-    
-    package «packageName»;
-    
-    public class «className» {
-        
-        
-    }
-''' 
-}
->>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
