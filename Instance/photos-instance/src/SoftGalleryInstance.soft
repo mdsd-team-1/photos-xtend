@@ -1,16 +1,16 @@
 System: {
 	Domain SoftGallery: { 
 		Entities: { 
-			PhotoEntity Photo
+			PhotoEntity: Photo
 				idPhoto id
 				namePhoto name
 				urlPhoto url
 				albumIdPhoto albumId
-			AlbumEntity Album
+			AlbumEntity: Album
 				idAlbum id
 				nameAlbum name
 				userIdAlbum userId
-			UserEntity User
+			UserEntity: User
 				idUser id
 				userNameUser userName
 				firstNameUser firstName
@@ -36,6 +36,34 @@ System: {
 			LandingActions:
 				ViewCarousel verCarrusel
 				PassPhoto pasarFoto
+		}
+		DomainExceptions : {
+			PhotoException:
+				PhotoNotFound PhotoNotFoundException
+				PhotoUploadError PhotoUploadErrorException
+				PhotoNotCreated PhotoNotCreatedException
+				PhotoNotDeleted PhotoNotDeletedException
+			AlbumException:
+				AlbumNotFound AlbumNotFoundException
+				PhotosFromAlbumNotFound PhotosFromAlbumNotFoundException
+				AlbumHasNoPhotos AlbumHasNoPhotosException
+				MissingParametersForNewAlbum MissingParametersForNewAlbumException
+				UserIdIsNotNumber UserIdIsNotNumberException
+				AlbumNotCreated AlbumNotCreatedException
+			UserException: 
+				UserNotFound UserNotFoundException
+				AlbumsFromUserNotFound AlbumsFromUserNotFoundException
+				UserHasNoAlbums UserHasNoAlbumsException
+				UserHasNoPhotos UserHasNoPhotosException
+				MissingParametersForNewUser MissingParametersForNewUserException
+				UserNotCreated UserNotCreatedException
+				AlbumNotCreatedForNewUser AlbumNotCreatedForNewUserException
+				MissingParametersForEditUser MissingParametersForEditUserException
+				WrongLoginInfo WrongLoginInfoException
+				MissingParametersForLogin MissingParametersForLoginException
+				UserIdIsNotNumber UserIdIsNotNumberException
+				UserToEditDoesNotExist UserToEditDoesNotExistException
+				UserNotEdited UserNotEditedException 
 		}
 	}
 	Architecture: {
