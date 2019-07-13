@@ -73,28 +73,15 @@ class StructureBackendGenerator{
 				}
 					
 				case "config":{
-					packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-					className = domainItem.name
-					fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+					generateConfig(resource, fsa, context, domainItem, ssc, dir, bls)
 				}
 					
 				case "specification":{
-					
-					for (sse : resource.allContents.toIterable.filter(SpecificationSegmentElement)) {
-						packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name	
-						className = "Search"+sse.name.toFirstUpper
-						fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-					}
-					
-					packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
-					className = domainItem.name  + bls.name.toFirstUpper
-					fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+					generateSpecification(resource, fsa, context, domainItem, ssc, dir, bls)
 				}
 					
 				case "repository":{
-					packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-					className = domainItem.name + bls.name.toFirstUpper
-					fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateInterface(className, packageName))
+					generateRepository(resource, fsa, context, domainItem, ssc, dir, bls)
 				}
 			}
 		}
@@ -105,7 +92,9 @@ class StructureBackendGenerator{
 	}
 	
 	def generateConfig(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
-		
+		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
+		className = domainItem.name
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
 	
 	def generateController(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
@@ -156,11 +145,22 @@ class StructureBackendGenerator{
 	}
 	
 	def generateRepository(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
-		
+		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
+		className = domainItem.name + bls.name.toFirstUpper
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateInterface(className, packageName))
 	}
 	
 	def generateSpecification(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+							
+		for (sse : resource.allContents.toIterable.filter(SpecificationSegmentElement)) {
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name	
+			className = "Search"+sse.name.toFirstUpper
+			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		}
 		
+		packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
+		className = domainItem.name  + bls.name.toFirstUpper
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
 	
 	def generateSpecificationCriteria(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
