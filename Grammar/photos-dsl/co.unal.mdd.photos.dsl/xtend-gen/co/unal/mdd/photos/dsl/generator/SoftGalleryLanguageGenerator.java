@@ -3,8 +3,18 @@
  */
 package co.unal.mdd.photos.dsl.generator;
 
+<<<<<<< HEAD
 import co.unal.mdd.photos.dsl.generator.StructureBackendGenerator;
 import co.unal.mdd.photos.dsl.generator.StructureFrontendGenerator;
+=======
+import co.unal.mdd.photos.dsl.softGalleryLanguage.Album;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain;
+import com.google.common.collect.Iterables;
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 import com.google.inject.Inject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
@@ -25,6 +35,7 @@ public class SoftGalleryLanguageGenerator extends AbstractGenerator {
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
+<<<<<<< HEAD
   private StructureBackendGenerator structurebackendGenerator = new StructureBackendGenerator();
   
   private StructureFrontendGenerator structurefrontendGenerator = new StructureFrontendGenerator();
@@ -38,4 +49,208 @@ public class SoftGalleryLanguageGenerator extends AbstractGenerator {
     this.structurefrontendGenerator.directoryGeneration(resource, fsa, context);
     InputOutput.<String>println(">>> doGenerate() Finished <<<");
   }
+=======
+  @Override
+  public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    InputOutput.<String>println("******** SoftGallery Generator v7 ****************");
+    InputOutput.<String>println(">>> doGenerate() Started\n");
+    String basePackageName = "co.edu.unal.mdd.photos.";
+    String className = "";
+    String packageName = "";
+    Iterable<Photo> _filter = Iterables.<Photo>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Photo.class);
+    for (final Photo domainItem : _filter) {
+      {
+        String _name = domainItem.getName();
+        String _plus = ("Domain Iteration: " + _name);
+        InputOutput.<String>println(_plus);
+        Iterable<RestController> _filter_1 = Iterables.<RestController>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), RestController.class);
+        for (final RestController archItem : _filter_1) {
+          {
+            String _name_1 = archItem.getName();
+            String _plus_1 = ("Architecture Iteration: " + _name_1);
+            InputOutput.<String>println(_plus_1);
+            Iterable<OrderSpring> _filter_2 = Iterables.<OrderSpring>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), OrderSpring.class);
+            for (final OrderSpring techItem : _filter_2) {
+              {
+                String _name_2 = techItem.getName();
+                String _plus_2 = ("Technology Iteration: " + _name_2);
+                InputOutput.<String>println(_plus_2);
+                String _name_3 = techItem.getName();
+                String _plus_3 = (basePackageName + _name_3);
+                String _plus_4 = (_plus_3 + ".");
+                String _name_4 = domainItem.getName();
+                String _plus_5 = (_plus_4 + _name_4);
+                packageName = _plus_5;
+                String _name_5 = domainItem.getName();
+                String _name_6 = techItem.getName();
+                String _plus_6 = (_name_5 + _name_6);
+                className = _plus_6;
+              }
+            }
+          }
+        }
+      }
+    }
+    className = "";
+    packageName = "";
+    Iterable<Photo> _filter_1 = Iterables.<Photo>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Photo.class);
+    for (final Photo domainItem_1 : _filter_1) {
+      Iterable<RestController> _filter_2 = Iterables.<RestController>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), RestController.class);
+      for (final RestController techItem : _filter_2) {
+        {
+          String _name = techItem.getName();
+          String _plus = (basePackageName + _name);
+          String _plus_1 = (_plus + ".");
+          String _name_1 = domainItem_1.getName();
+          String _plus_2 = (_plus_1 + _name_1);
+          packageName = _plus_2;
+          String _name_2 = domainItem_1.getName();
+          String _name_3 = techItem.getName();
+          String _plus_3 = (_name_2 + _name_3);
+          className = _plus_3;
+          this.createClass(className, packageName, fsa);
+        }
+      }
+    }
+    Iterable<Photo> _filter_3 = Iterables.<Photo>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Photo.class);
+    for (final Photo domainItem_2 : _filter_3) {
+      Iterable<SpringEntity> _filter_4 = Iterables.<SpringEntity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), SpringEntity.class);
+      for (final SpringEntity techItem_1 : _filter_4) {
+        {
+          String _name = techItem_1.getName();
+          String _plus = (basePackageName + _name);
+          String _plus_1 = (_plus + ".");
+          String _name_1 = domainItem_2.getName();
+          String _plus_2 = (_plus_1 + _name_1);
+          packageName = _plus_2;
+          String _name_2 = domainItem_2.getName();
+          String _name_3 = techItem_1.getName();
+          String _plus_3 = (_name_2 + _name_3);
+          className = _plus_3;
+          this.createClass(className, packageName, fsa);
+        }
+      }
+    }
+    Iterable<Album> _filter_5 = Iterables.<Album>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Album.class);
+    for (final Album domainItem_3 : _filter_5) {
+      Iterable<RestController> _filter_6 = Iterables.<RestController>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), RestController.class);
+      for (final RestController techItem_2 : _filter_6) {
+        {
+          String _name = techItem_2.getName();
+          String _plus = (basePackageName + _name);
+          String _plus_1 = (_plus + ".");
+          String _name_1 = domainItem_3.getName();
+          String _plus_2 = (_plus_1 + _name_1);
+          packageName = _plus_2;
+          String _name_2 = domainItem_3.getName();
+          String _name_3 = techItem_2.getName();
+          String _plus_3 = (_name_2 + _name_3);
+          className = _plus_3;
+          this.createClass(className, packageName, fsa);
+        }
+      }
+    }
+    Iterable<Album> _filter_7 = Iterables.<Album>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Album.class);
+    for (final Album domainItem_4 : _filter_7) {
+      Iterable<SpringEntity> _filter_8 = Iterables.<SpringEntity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), SpringEntity.class);
+      for (final SpringEntity techItem_3 : _filter_8) {
+        {
+          String _name = techItem_3.getName();
+          String _plus = (basePackageName + _name);
+          String _plus_1 = (_plus + ".");
+          String _name_1 = domainItem_4.getName();
+          String _plus_2 = (_plus_1 + _name_1);
+          packageName = _plus_2;
+          String _name_2 = domainItem_4.getName();
+          String _name_3 = techItem_3.getName();
+          String _plus_3 = (_name_2 + _name_3);
+          className = _plus_3;
+          this.createClass(className, packageName, fsa);
+        }
+      }
+    }
+    Iterable<UserDomain> _filter_9 = Iterables.<UserDomain>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), UserDomain.class);
+    for (final UserDomain domainItem_5 : _filter_9) {
+      Iterable<RestController> _filter_10 = Iterables.<RestController>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), RestController.class);
+      for (final RestController techItem_4 : _filter_10) {
+        {
+          String _name = techItem_4.getName();
+          String _plus = (basePackageName + _name);
+          String _plus_1 = (_plus + ".");
+          String _name_1 = domainItem_5.getName();
+          String _plus_2 = (_plus_1 + _name_1);
+          packageName = _plus_2;
+          String _name_2 = domainItem_5.getName();
+          String _name_3 = techItem_4.getName();
+          String _plus_3 = (_name_2 + _name_3);
+          className = _plus_3;
+          this.createClass(className, packageName, fsa);
+        }
+      }
+    }
+    Iterable<UserDomain> _filter_11 = Iterables.<UserDomain>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), UserDomain.class);
+    for (final UserDomain domainItem_6 : _filter_11) {
+      Iterable<SpringEntity> _filter_12 = Iterables.<SpringEntity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), SpringEntity.class);
+      for (final SpringEntity techItem_5 : _filter_12) {
+        {
+          String _name = techItem_5.getName();
+          String _plus = (basePackageName + _name);
+          String _plus_1 = (_plus + ".");
+          String _name_1 = domainItem_6.getName();
+          String _plus_2 = (_plus_1 + _name_1);
+          packageName = _plus_2;
+          String _name_2 = domainItem_6.getName();
+          String _name_3 = techItem_5.getName();
+          String _plus_3 = (_name_2 + _name_3);
+          className = _plus_3;
+          this.createClass(className, packageName, fsa);
+        }
+      }
+    }
+    InputOutput.<String>println("\n>>> doGenerate() Finished");
+  }
+  
+  public void createClass(final String className, final String packageName, final IFileSystemAccess2 fsa) {
+    if ((((className.length() < 0) || (packageName.length() < 0)) || (fsa == null))) {
+      return;
+    }
+    String packagePath = packageName.replace(".", "/");
+    String fileName = (className + ".java");
+    String filePath = ((packagePath + "/") + fileName);
+    fsa.generateFile(filePath, this.printClass(className, packageName));
+    InputOutput.<String>println((("\n" + "createClass() ") + fileName));
+  }
+  
+  public CharSequence printClass(final String className, final String packageName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// ----------------------------------------");
+    _builder.newLine();
+    _builder.append("// Package: ");
+    _builder.append(packageName);
+    _builder.newLineIfNotEmpty();
+    _builder.append("// Class: ");
+    _builder.append(className);
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ---------------------------------------- ");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(packageName);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("public class ");
+    _builder.append(className);
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 }

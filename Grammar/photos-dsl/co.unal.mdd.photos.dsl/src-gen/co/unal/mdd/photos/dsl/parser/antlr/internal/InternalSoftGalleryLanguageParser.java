@@ -18539,6 +18539,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     // $ANTLR end "entryRuleProps"
 
 
+<<<<<<< HEAD
     // $ANTLR start "ruleProps"
     // InternalSoftGalleryLanguage.g:7382:1: ruleProps returns [EObject current=null] : ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* ) ;
     public final EObject ruleProps() throws RecognitionException {
@@ -18546,12 +18547,24 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
         Token otherlv_1=null;
         EObject lv_propsconts_2_0 = null;
+=======
+    // $ANTLR start "ruleReactConstructor"
+    // InternalSoftGalleryLanguage.g:6842:1: ruleReactConstructor returns [EObject current=null] : (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* ) ;
+    public final EObject ruleReactConstructor() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        EObject lv_componentstateclass_1_0 = null;
+
+        EObject lv_componentfuncclass_2_0 = null;
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 
 
 
         	enterRule();
 
         try {
+<<<<<<< HEAD
             // InternalSoftGalleryLanguage.g:7388:2: ( ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* ) )
             // InternalSoftGalleryLanguage.g:7389:2: ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* )
             {
@@ -18566,15 +18579,59 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					grammarAccess.getPropsAccess().getPropsAction_0(),
             					current);
             			
+=======
+            // InternalSoftGalleryLanguage.g:6848:2: ( (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* ) )
+            // InternalSoftGalleryLanguage.g:6849:2: (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* )
+            {
+            // InternalSoftGalleryLanguage.g:6849:2: (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* )
+            // InternalSoftGalleryLanguage.g:6850:3: otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )*
+            {
+            otherlv_0=(Token)match(input,131,FOLLOW_135); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getReactConstructorAccess().getConstructorKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6854:3: ( (lv_componentstateclass_1_0= ruleState ) )
+            // InternalSoftGalleryLanguage.g:6855:4: (lv_componentstateclass_1_0= ruleState )
+            {
+            // InternalSoftGalleryLanguage.g:6855:4: (lv_componentstateclass_1_0= ruleState )
+            // InternalSoftGalleryLanguage.g:6856:5: lv_componentstateclass_1_0= ruleState
+            {
+
+            					newCompositeNode(grammarAccess.getReactConstructorAccess().getComponentstateclassStateParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_136);
+            lv_componentstateclass_1_0=ruleState();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getReactConstructorRule());
+            					}
+            					add(
+            						current,
+            						"componentstateclass",
+            						lv_componentstateclass_1_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.State");
+            					afterParserOrEnumRuleCall();
+            				
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 
             }
 
             otherlv_1=(Token)match(input,163,FOLLOW_140); 
 
+<<<<<<< HEAD
             			newLeafNode(otherlv_1, grammarAccess.getPropsAccess().getPropsKeyword_1());
             		
             // InternalSoftGalleryLanguage.g:7401:3: ( (lv_propsconts_2_0= rulePropsType ) )*
             loop54:
+=======
+            }
+
+            // InternalSoftGalleryLanguage.g:6873:3: ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )*
+            loop40:
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
             do {
                 int alt54=2;
                 int LA54_0 = input.LA(1);
@@ -18586,6 +18643,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt54) {
             	case 1 :
+<<<<<<< HEAD
             	    // InternalSoftGalleryLanguage.g:7402:4: (lv_propsconts_2_0= rulePropsType )
             	    {
             	    // InternalSoftGalleryLanguage.g:7402:4: (lv_propsconts_2_0= rulePropsType )
@@ -18596,6 +18654,18 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             	    				
             	    pushFollow(FOLLOW_140);
             	    lv_propsconts_2_0=rulePropsType();
+=======
+            	    // InternalSoftGalleryLanguage.g:6874:4: (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration )
+            	    {
+            	    // InternalSoftGalleryLanguage.g:6874:4: (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration )
+            	    // InternalSoftGalleryLanguage.g:6875:5: lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getReactConstructorAccess().getComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_136);
+            	    lv_componentfuncclass_2_0=ruleCoreFunctionsDeclaration();
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
 
             	    state._fsp--;
 
@@ -18605,9 +18675,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             	    					}
             	    					add(
             	    						current,
+<<<<<<< HEAD
             	    						"propsconts",
             	    						lv_propsconts_2_0,
             	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.PropsType");
+=======
+            	    						"componentfuncclass",
+            	    						lv_componentfuncclass_2_0,
+            	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.CoreFunctionsDeclaration");
+>>>>>>> c8c0d07da05794dad48d14d29509be4fd8a9982a
             	    					afterParserOrEnumRuleCall();
             	    				
 
