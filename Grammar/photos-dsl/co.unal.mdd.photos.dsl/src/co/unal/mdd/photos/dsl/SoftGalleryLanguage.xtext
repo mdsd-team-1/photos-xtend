@@ -9,7 +9,7 @@ Model:
 
 // Domain
 Domain:
-'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality /*domain+=DomainConnection*/ '}';
+'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality exceptionsdomain+=ExceptionsDomain '}';
 
 // Domain - Entities
 Entity:
@@ -17,9 +17,9 @@ Entity:
 
 Entities
 //(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
-	:	'PhotoEntity' name=ID (atributePhoto+=AtributePhoto)+
-	|	'AlbumEntity' name=ID (atributeAlbum+=AtributeAlbum)+
-	|	'UserEntity' name=ID (atributeUserDomain+=AtributeUserDomain)+
+	:	'PhotoEntity' ':' name=ID (atributePhoto+=AtributePhoto)+
+	|	'AlbumEntity' ':' name=ID (atributeAlbum+=AtributeAlbum)+
+	|	'UserEntity' ':' name=ID (atributeUserDomain+=AtributeUserDomain)+
 	;
 
 AtributePhoto
@@ -86,16 +86,48 @@ LandingActions:
 LandingFunctions:
 'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID;
 
-//Domain - Relations
-/*DomainConnection:
-'DomainRelations' ':' '{' elements+=DomainRelations '}';
+//Domain - Exceptions
+ExceptionsDomain:
+'DomainExceptions' ':' '{' (exceptionsType+=ExceptionsType)+ '}';
 
-DomainRelations:
-userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
-albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
-photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
-photoactdelements+=PhotoActions photoactDname=ID  ':' '{'elements+=AlbumManagement '}';*/
+ExceptionsType
+	:	'PhotoException' ':' (photoException+=PhotoException)+
+	|	'AlbumException' ':' (albumException+=AlbumException)+
+	|	'UserException' ':' (userException+=UserException)+
+	;
 
+PhotoException
+	:	'PhotoNotFound' name=ID
+	|	'PhotoUploadError' name=ID
+	|	'PhotoNotCreated' name=ID
+	|	'PhotoNotDeleted' name=ID
+	;
+
+AlbumException
+	:	'AlbumNotFound' name=ID
+	|	'PhotosFromAlbumNotFound' name=ID
+	|	'AlbumHasNoPhotos' name=ID
+	|	'MissingParametersForNewAlbum' name=ID
+	|	'UserIdIsNotNumber' name=ID
+	|	'AlbumNotCreated' name=ID
+	;
+	
+UserException
+	:	'UserNotFound' name=ID
+	|	'AlbumsFromUserNotFound' name=ID
+	|	'UserHasNoAlbums' name=ID
+	|	'UserHasNoPhotos' name=ID
+	|	'MissingParametersForNewUser' name=ID
+	|	'UserNotCreated' name=ID
+	|	'AlbumNotCreatedForNewUser' name=ID
+	|	'MissingParametersForEditUser' name=ID
+	|	'WrongLoginInfo' name=ID
+	|	'MissingParametersForLogin' name=ID
+	|	'UserIdIsNotNumber' name=ID
+	|	'UserToEditDoesNotExist' name=ID
+	|	'UserNotEdited' name=ID
+	;		
+	
 //Architecture
 Architecture:
 'Architecture:' '{' (elements+=NTiers)+  (elements+=NTiersConnections)+ '}';

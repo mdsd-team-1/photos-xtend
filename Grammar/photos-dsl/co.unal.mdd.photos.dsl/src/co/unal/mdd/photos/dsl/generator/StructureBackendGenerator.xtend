@@ -12,6 +12,9 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
+import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
 
 /**
  * Generates code from your model files on save.
@@ -107,10 +110,30 @@ class StructureBackendGenerator{
 				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 			
 			} else if(cse.name.equals("exception")){
-				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
-				className = domainItem.name + cse.name.toFirstUpper	
-				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-			}
+		        				switch domainItem.name {
+		        				 case "Photo":{
+		        				 	for (pe : resource.allContents.toIterable.filter(PhotoException)) {
+				        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
+						        		className = pe.name
+						        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			        					}
+		        					}
+		        				case "Album":{
+		        				 	for (ae : resource.allContents.toIterable.filter(AlbumException)) {
+				        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
+						        		className = ae.name
+						        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			        					}
+			        				}
+		        				case "User":{
+		        				 	for (ue : resource.allContents.toIterable.filter(UserException)) {
+				        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
+						        		className = ue.name
+						        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			        					}
+			        				}
+		        				}
+		        			}
 		}
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
