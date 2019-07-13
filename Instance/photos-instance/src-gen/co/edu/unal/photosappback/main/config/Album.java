@@ -1,12 +1,12 @@
 // ----------------------------------------
 // PackageName: co.edu.unal.photosappback.main.config
-// ClassName: AlbumConfig
+// ClassName: Album
 // ----------------------------------------	
 
 
 package co.edu.unal.photosappback.main.config;
 
-public class AlbumConfig {
+public class Album {
 	
 	
 }

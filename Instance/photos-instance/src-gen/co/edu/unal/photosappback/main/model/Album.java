@@ -1,12 +1,12 @@
 // ----------------------------------------
 // PackageName: co.edu.unal.photosappback.main.model
-// ClassName: UserModel
+// ClassName: Album
 // ----------------------------------------	
 
 
 package co.edu.unal.photosappback.main.model;
 
-public class UserModel {
+public class Album {
 	
 	
 }

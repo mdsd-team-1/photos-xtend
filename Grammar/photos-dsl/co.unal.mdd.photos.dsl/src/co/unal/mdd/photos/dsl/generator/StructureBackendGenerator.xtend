@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.naming.IQualifiedNameProvider
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
 
 /**
  * Generates code from your model files on save.
@@ -48,26 +50,50 @@ class StructureBackendGenerator{
 				// Arquitectura -> Componentes Arquitectura               
 		        for (bls : resource.allContents.toIterable.filter(BusinessLogicSegments)) {
 
-				  /*switch bls.name {
+				  switch bls.name {
 				  	case "controller":{
-				  		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name		        	
+				  		for (cse : resource.allContents.toIterable.filter(ControllerSegmentElement)) {
+				  			if(cse.name.equals("amazon")){
+						  		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name	        	
+				        		className = cse.name.toFirstUpper + "Client"
+				        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		        			}
+		        			else if(cse.name.equals("exception")){
+		        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
+				        		className = domainItem.name + cse.name.toFirstUpper	
+				        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		        			}
+		        		}
+		        		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name        	
 		        		className = domainItem.name + bls.name.toFirstUpper	
+		        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 				  	}
 				  	case "model":{
 				  		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name		        	
-		        		className = domainItem.name + bls.name.toFirstUpper
+		        		className = domainItem.name
+		        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 				  	}
-				  	default:{
+				  	case "config":{
+				  		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name		        	
+		        		className = domainItem.name
+		        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+				  	}
+				  	case "specification":{
+				  		for (sse : resource.allContents.toIterable.filter(SpecificationSegmentElement)) {
+				  		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name		        	
+		        		className = "Search"+sse.name.toFirstUpper
+		        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		        		}
+		        		packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name		        	
+		        		className = domainItem.name  + bls.name.toFirstUpper
+		        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+				  	}
+				  	case "repository":{
 				  		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name		        	
 		        		className = domainItem.name + bls.name.toFirstUpper
+		        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateInterface(className, packageName))
 				  	}
-				  }*/
-		        	println("Architecture Iteration 2" + bls.name)
-		        	
-		        	packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name		        	
-		            className = domainItem.name + bls.name.toFirstUpper
-		        		
-		            fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))	                
+				  }	                
 				 }
 		       	 }
 		       	 else if(dir.name.equals("resources")){

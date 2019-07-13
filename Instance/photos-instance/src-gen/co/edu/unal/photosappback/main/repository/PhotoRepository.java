@@ -6,7 +6,7 @@
 
 package co.edu.unal.photosappback.main.repository;
 
-public class PhotoRepository {
+public interface PhotoRepository extends JpaRepository<Album, Integer>, JpaSpecificationExecutor<Album>{
 	
 	
 }
