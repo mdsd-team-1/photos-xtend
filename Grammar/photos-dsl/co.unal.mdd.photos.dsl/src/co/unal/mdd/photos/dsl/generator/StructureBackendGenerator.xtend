@@ -104,7 +104,7 @@ class StructureBackendGenerator{
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = domainItem.name
-		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		createClassFile(className, packageName, fsa)
 	}
 
 
@@ -125,7 +125,7 @@ class StructureBackendGenerator{
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 		className = domainItem.name + bls.name.toFirstUpper	
-		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		createClassFile(className, packageName, fsa)
 	}
 	
 	
@@ -134,7 +134,7 @@ class StructureBackendGenerator{
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
 		className = cse.name.toFirstUpper + "Client"
-		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		createClassFile(className, packageName, fsa)
 	}
 	
 	
@@ -165,7 +165,7 @@ class StructureBackendGenerator{
 			
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
 			className = ae.name
-			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			createClassFile(className, packageName, fsa)
 		}
 	}
 
@@ -179,7 +179,7 @@ class StructureBackendGenerator{
 			
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
 			className = pe.name
-			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			createClassFile(className, packageName, fsa)
 		}
 	}
 	
@@ -193,7 +193,7 @@ class StructureBackendGenerator{
 			
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
 			className = ue.name
-			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			createClassFile(className, packageName, fsa)
 		}
 	}
 	
@@ -203,7 +203,7 @@ class StructureBackendGenerator{
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = domainItem.name
-		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		createClassFile(className, packageName, fsa)
 	}
 
 
@@ -212,31 +212,32 @@ class StructureBackendGenerator{
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = domainItem.name + bls.name.toFirstUpper
-		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateInterface(className, packageName))
+		createInterfaceFile(className, packageName, fsa)
 	}
 	
 	
 	// Path: /.specification
 	def generateSpecification(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 
-		// SpecificationSegmentElement
-		for (sse : resource.allContents.toIterable.filter(SpecificationSegmentElement)) {
-			println("SpecificationSegmentElement: " + sse.name)
-			
-			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name	
-			className = "Search"+sse.name.toFirstUpper
-			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-		}
+		generateSpecificationCriteria(resource, fsa, context, domainItem, ssc, dir, bls)
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
 		className = domainItem.name  + bls.name.toFirstUpper
-		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		createClassFile(className, packageName, fsa)
 	}
 	
 	
 	// Path: /.specification.criteria
 	def generateSpecificationCriteria(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
+		// SpecificationSegmentElement
+		for (sse : resource.allContents.toIterable.filter(SpecificationSegmentElement)) {
+			println("SpecificationSegmentElement: " + sse.name)
+			
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name	
+			className = "Search"+sse.name.toFirstUpper
+			createClassFile(className, packageName, fsa)
+		}
 	}	
 	
 	
@@ -251,19 +252,33 @@ class StructureBackendGenerator{
 				packageName = basePackageName +"."+ ssc.name +"."+ dir.name 	        	
 				className = mf.name
 				
-				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".properties", generateProperties(className, packageName))
-				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".yml", generateYml(className, packageName))
+				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".properties", templateProperties(className, packageName))
+				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".yml", templateYml(className, packageName))
 			}
 		}
 	}
 
 
-// ----------------	
-// Templates
-// ----------------	
-		
+
+	// ----------------
+	// File Writers
+	// ----------------
 	
-	def generateClass(String className, String packageName)
+	def createClassFile(String className, String packageName, IFileSystemAccess2 fsa) {
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateClass(className, packageName))
+	}
+	
+	def createInterfaceFile(String className, String packageName, IFileSystemAccess2 fsa) {
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateInterface(className, packageName))
+	}
+
+
+
+	// ----------------
+	// Templates
+	// ----------------			
+	
+	def templateClass(String className, String packageName)
 ''' 
 	// ----------------------------------------
 	// PackageName: «packageName»
@@ -279,7 +294,7 @@ class StructureBackendGenerator{
 	}
 ''' 
 
-	def generateInterface(String className, String packageName)
+	def templateInterface(String className, String packageName)
 ''' 
 	// ----------------------------------------
 	// PackageName: «packageName»
@@ -295,7 +310,7 @@ class StructureBackendGenerator{
 	}
 ''' 
 
-	def generateProperties(String className, String packageName)
+	def templateProperties(String className, String packageName)
 ''' 
 	// ----------------------------------------
 	// PackageName: «packageName»
@@ -311,7 +326,7 @@ class StructureBackendGenerator{
 	}
 ''' 
 
-	def generateYml(String className, String packageName)
+	def templateYml(String className, String packageName)
 ''' 
 	// ----------------------------------------
 	// PackageName: «packageName»
