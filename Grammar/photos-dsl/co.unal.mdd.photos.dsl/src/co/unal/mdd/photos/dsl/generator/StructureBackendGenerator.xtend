@@ -65,30 +65,11 @@ class StructureBackendGenerator{
 			switch bls.name {
 				
 				case "controller":{
-					
-					for (cse : resource.allContents.toIterable.filter(ControllerSegmentElement)) {
-						
-						if(cse.name.equals("amazon")){
-							packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
-							className = cse.name.toFirstUpper + "Client"
-							fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-							
-						} else if(cse.name.equals("exception")){
-							packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
-							className = domainItem.name + cse.name.toFirstUpper	
-							fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-						}
-					}
-					
-					packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
-					className = domainItem.name + bls.name.toFirstUpper	
-					fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+					generateController(resource, fsa, context, domainItem, ssc, dir, bls)
 				}
 					
 				case "model":{
-					packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-					className = domainItem.name
-					fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+					generateModel(resource, fsa, context, domainItem, ssc, dir, bls)
 				}
 					
 				case "config":{
@@ -118,6 +99,73 @@ class StructureBackendGenerator{
 			}
 		}
 	}
+	
+	def generateMain(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateConfig(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateController(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+		for (cse : resource.allContents.toIterable.filter(ControllerSegmentElement)) {
+		
+			if(cse.name.equals("amazon")){
+				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
+				className = cse.name.toFirstUpper + "Client"
+				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			
+			} else if(cse.name.equals("exception")){
+				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+				className = domainItem.name + cse.name.toFirstUpper	
+				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+			}
+		}
+		
+		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
+		className = domainItem.name + bls.name.toFirstUpper	
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+	}
+	
+	def generateControllerAmazon(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateControllerException(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateControllerExceptionAlbum(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateControllerExceptionPhoto(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateControllerExceptionUser(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateModel(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
+		className = domainItem.name
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+	}
+	
+	def generateRepository(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateSpecification(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}
+	
+	def generateSpecificationCriteria(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
+	}	
 	
 	
 	def generateResources(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, SegmentStructureContent ssc, DirectoryContent dir) {
