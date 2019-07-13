@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DirectoryContentImpl#getName <em>Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DirectoryContentImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DirectoryContentImpl#getDirectories <em>Directories</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +60,14 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getDirectories() <em>Directories</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getDirectories()
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<EObject> directories;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,13 +121,13 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public EList<EObject> getElements()
+  public EList<EObject> getDirectories()
   {
-    if (elements == null)
+    if (directories == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.DIRECTORY_CONTENT__ELEMENTS);
+      directories = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.DIRECTORY_CONTENT__DIRECTORIES);
     }
-    return elements;
+    return directories;
   }
 
   /**
@@ -140,8 +140,8 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__DIRECTORIES:
+        return ((InternalEList<?>)getDirectories()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -158,8 +158,8 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
     {
       case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__NAME:
         return getName();
-      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__DIRECTORIES:
+        return getDirectories();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,9 +178,9 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
       case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__NAME:
         setName((String)newValue);
         return;
-      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__DIRECTORIES:
+        getDirectories().clear();
+        getDirectories().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -199,8 +199,8 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
       case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__DIRECTORIES:
+        getDirectories().clear();
         return;
     }
     super.eUnset(featureID);
@@ -218,8 +218,8 @@ public class DirectoryContentImpl extends MinimalEObjectImpl.Container implement
     {
       case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.DIRECTORY_CONTENT__DIRECTORIES:
+        return directories != null && !directories.isEmpty();
     }
     return super.eIsSet(featureID);
   }

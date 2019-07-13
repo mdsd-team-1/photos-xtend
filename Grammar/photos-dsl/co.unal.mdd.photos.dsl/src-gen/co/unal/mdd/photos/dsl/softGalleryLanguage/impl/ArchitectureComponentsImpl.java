@@ -4,6 +4,9 @@
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.BackEnd;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.FrontEnd;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PersistenceDataComponent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 
 import java.util.Collection;
@@ -13,7 +16,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -29,7 +31,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ArchitectureComponentsImpl#getArchcomponent <em>Archcomponent</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ArchitectureComponentsImpl#getArchFeComponent <em>Arch Fe Component</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ArchitectureComponentsImpl#getArchBeComponent <em>Arch Be Component</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ArchitectureComponentsImpl#getArchPdComponent <em>Arch Pd Component</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +41,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container implements ArchitectureComponents
 {
   /**
-   * The cached value of the '{@link #getArchcomponent() <em>Archcomponent</em>}' containment reference list.
+   * The cached value of the '{@link #getArchFeComponent() <em>Arch Fe Component</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArchcomponent()
+   * @see #getArchFeComponent()
    * @generated
    * @ordered
    */
-  protected EList<EObject> archcomponent;
+  protected EList<FrontEnd> archFeComponent;
+
+  /**
+   * The cached value of the '{@link #getArchBeComponent() <em>Arch Be Component</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArchBeComponent()
+   * @generated
+   * @ordered
+   */
+  protected EList<BackEnd> archBeComponent;
+
+  /**
+   * The cached value of the '{@link #getArchPdComponent() <em>Arch Pd Component</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArchPdComponent()
+   * @generated
+   * @ordered
+   */
+  protected EList<PersistenceDataComponent> archPdComponent;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +97,43 @@ public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container imp
    * @generated
    */
   @Override
-  public EList<EObject> getArchcomponent()
+  public EList<FrontEnd> getArchFeComponent()
   {
-    if (archcomponent == null)
+    if (archFeComponent == null)
     {
-      archcomponent = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCHCOMPONENT);
+      archFeComponent = new EObjectContainmentEList<FrontEnd>(FrontEnd.class, this, SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT);
     }
-    return archcomponent;
+    return archFeComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<BackEnd> getArchBeComponent()
+  {
+    if (archBeComponent == null)
+    {
+      archBeComponent = new EObjectContainmentEList<BackEnd>(BackEnd.class, this, SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT);
+    }
+    return archBeComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<PersistenceDataComponent> getArchPdComponent()
+  {
+    if (archPdComponent == null)
+    {
+      archPdComponent = new EObjectContainmentEList<PersistenceDataComponent>(PersistenceDataComponent.class, this, SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT);
+    }
+    return archPdComponent;
   }
 
   /**
@@ -92,8 +146,12 @@ public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCHCOMPONENT:
-        return ((InternalEList<?>)getArchcomponent()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT:
+        return ((InternalEList<?>)getArchFeComponent()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT:
+        return ((InternalEList<?>)getArchBeComponent()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT:
+        return ((InternalEList<?>)getArchPdComponent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +166,12 @@ public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCHCOMPONENT:
-        return getArchcomponent();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT:
+        return getArchFeComponent();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT:
+        return getArchBeComponent();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT:
+        return getArchPdComponent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +187,17 @@ public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCHCOMPONENT:
-        getArchcomponent().clear();
-        getArchcomponent().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT:
+        getArchFeComponent().clear();
+        getArchFeComponent().addAll((Collection<? extends FrontEnd>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT:
+        getArchBeComponent().clear();
+        getArchBeComponent().addAll((Collection<? extends BackEnd>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT:
+        getArchPdComponent().clear();
+        getArchPdComponent().addAll((Collection<? extends PersistenceDataComponent>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +213,14 @@ public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCHCOMPONENT:
-        getArchcomponent().clear();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT:
+        getArchFeComponent().clear();
+        return;
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT:
+        getArchBeComponent().clear();
+        return;
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT:
+        getArchPdComponent().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +236,12 @@ public class ArchitectureComponentsImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCHCOMPONENT:
-        return archcomponent != null && !archcomponent.isEmpty();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT:
+        return archFeComponent != null && !archFeComponent.isEmpty();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT:
+        return archBeComponent != null && !archBeComponent.isEmpty();
+      case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT:
+        return archPdComponent != null && !archPdComponent.isEmpty();
     }
     return super.eIsSet(featureID);
   }

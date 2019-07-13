@@ -3,7 +3,6 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Album;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumManagement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumManagementFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AmazonElasticComputeCloud;
@@ -15,6 +14,9 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccess;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Architecture;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BackEnd;
@@ -31,9 +33,12 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Column;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Columns;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentClass;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsLogic;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStylesContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsUI;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Configuration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Constraint;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.CoreFunctionsDeclaration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DOMConfigurations;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceContent;
@@ -44,8 +49,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.DatatypeDB;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Directories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Domain;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.DomainConnection;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.DomainRelations;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.EnableAuthorizationServer;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.EnableGlobalMethodSecurity;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.EnableResourceServer;
@@ -87,7 +90,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PackageName;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PackageVersion;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PersistenceDataComponent;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Policy;
@@ -123,6 +125,9 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactInformation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactLibraries;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactLibrary;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactModules;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContRequest;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContent;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceRequestProps;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesRelation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactSubModules;
@@ -142,6 +147,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SingleFile;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguageFactory;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Specification;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Spring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringBootApplication;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringComponent;
@@ -152,13 +158,14 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SubcomponentCont;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Table_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Technologies;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Technology;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Trigger;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UIContent;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ViewComponentCont;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ViewSchema;
 
@@ -210,21 +217,21 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass photoEClass = null;
+  private EClass atributePhotoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass albumEClass = null;
+  private EClass atributeAlbumEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass userDomainEClass = null;
+  private EClass atributeUserDomainEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -315,20 +322,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass domainConnectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass domainRelationsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass architectureEClass = null;
 
   /**
@@ -386,6 +379,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   private EClass businessLogicSegmentsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass controllerSegmentElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass specificationSegmentElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -966,6 +973,34 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass componentsStylesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass componentsStylesContentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stylePropertiesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stylePropertiesContentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass reactActionsEClass = null;
 
   /**
@@ -981,6 +1016,27 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   private EClass reactServicesTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass reactServiceContentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass reactServiceContRequestEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass reactServiceRequestPropsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1382,9 +1438,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getDomain_Elements()
+  public EReference getDomain_Entitydomain()
   {
     return (EReference)domainEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDomain_Entityfuncs()
+  {
+    return (EReference)domainEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1426,9 +1493,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getEntities_Photoelements()
+  public EAttribute getEntities_Name()
   {
-    return (EReference)entitiesEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)entitiesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1437,7 +1504,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getEntities_Albumelements()
+  public EReference getEntities_AtributePhoto()
   {
     return (EReference)entitiesEClass.getEStructuralFeatures().get(1);
   }
@@ -1448,7 +1515,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getEntities_Userdomainelements()
+  public EReference getEntities_AtributeAlbum()
   {
     return (EReference)entitiesEClass.getEStructuralFeatures().get(2);
   }
@@ -1459,9 +1526,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getPhoto()
+  public EReference getEntities_AtributeUserDomain()
   {
-    return photoEClass;
+    return (EReference)entitiesEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1470,9 +1537,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getPhoto_Name()
+  public EClass getAtributePhoto()
   {
-    return (EAttribute)photoEClass.getEStructuralFeatures().get(0);
+    return atributePhotoEClass;
   }
 
   /**
@@ -1481,9 +1548,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getAlbum()
+  public EAttribute getAtributePhoto_Name()
   {
-    return albumEClass;
+    return (EAttribute)atributePhotoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1492,9 +1559,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getAlbum_Name()
+  public EClass getAtributeAlbum()
   {
-    return (EAttribute)albumEClass.getEStructuralFeatures().get(0);
+    return atributeAlbumEClass;
   }
 
   /**
@@ -1503,9 +1570,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getUserDomain()
+  public EAttribute getAtributeAlbum_Name()
   {
-    return userDomainEClass;
+    return (EAttribute)atributeAlbumEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1514,9 +1581,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getUserDomain_Name()
+  public EClass getAtributeUserDomain()
   {
-    return (EAttribute)userDomainEClass.getEStructuralFeatures().get(0);
+    return atributeUserDomainEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtributeUserDomain_Name()
+  {
+    return (EAttribute)atributeUserDomainEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1899,138 +1977,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getDomainConnection()
-  {
-    return domainConnectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDomainConnection_Elements()
-  {
-    return (EReference)domainConnectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDomainRelations()
-  {
-    return domainRelationsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDomainRelations_Userdelements()
-  {
-    return (EReference)domainRelationsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDomainRelations_UserDname()
-  {
-    return (EAttribute)domainRelationsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDomainRelations_Elements()
-  {
-    return (EReference)domainRelationsEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDomainRelations_Albumdelements()
-  {
-    return (EReference)domainRelationsEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDomainRelations_AlbumDname()
-  {
-    return (EAttribute)domainRelationsEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDomainRelations_Photodelements()
-  {
-    return (EReference)domainRelationsEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDomainRelations_PhotoDname()
-  {
-    return (EAttribute)domainRelationsEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDomainRelations_Photoactdelements()
-  {
-    return (EReference)domainRelationsEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDomainRelations_PhotoactDname()
-  {
-    return (EAttribute)domainRelationsEClass.getEStructuralFeatures().get(8);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getArchitecture()
   {
     return architectureEClass;
@@ -2086,7 +2032,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getLayer_Elements()
+  public EReference getLayer_Layer()
   {
     return (EReference)layerEClass.getEStructuralFeatures().get(0);
   }
@@ -2108,7 +2054,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getPresentationLayer_Elements()
+  public EReference getPresentationLayer_PresentationLayer()
   {
     return (EReference)presentationLayerEClass.getEStructuralFeatures().get(0);
   }
@@ -2196,7 +2142,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getBusinessLogicLayer_Elements()
+  public EReference getBusinessLogicLayer_BusinessLogicLayer()
   {
     return (EReference)businessLogicLayerEClass.getEStructuralFeatures().get(0);
   }
@@ -2218,7 +2164,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getBusinessLogicContent_Elements()
+  public EReference getBusinessLogicContent_BusinessLogicSegments()
   {
     return (EReference)businessLogicContentEClass.getEStructuralFeatures().get(0);
   }
@@ -2240,7 +2186,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getBusinessLogicSegments_BussinessName()
+  public EAttribute getBusinessLogicSegments_Name()
   {
     return (EAttribute)businessLogicSegmentsEClass.getEStructuralFeatures().get(0);
   }
@@ -2251,9 +2197,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getBusinessLogicSegments_ModelSegmentName()
+  public EReference getBusinessLogicSegments_ControllerSegmentElement()
   {
-    return (EAttribute)businessLogicSegmentsEClass.getEStructuralFeatures().get(1);
+    return (EReference)businessLogicSegmentsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2262,9 +2208,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getBusinessLogicSegments_RepositoryName()
+  public EReference getBusinessLogicSegments_SpecificationSegmentElement()
   {
-    return (EAttribute)businessLogicSegmentsEClass.getEStructuralFeatures().get(2);
+    return (EReference)businessLogicSegmentsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2273,9 +2219,42 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getBusinessLogicSegments_SecuritySName()
+  public EClass getControllerSegmentElement()
   {
-    return (EAttribute)businessLogicSegmentsEClass.getEStructuralFeatures().get(3);
+    return controllerSegmentElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getControllerSegmentElement_Name()
+  {
+    return (EAttribute)controllerSegmentElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSpecificationSegmentElement()
+  {
+    return specificationSegmentElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpecificationSegmentElement_Name()
+  {
+    return (EAttribute)specificationSegmentElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2438,7 +2417,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getDirectoryContent_Elements()
+  public EReference getDirectoryContent_Directories()
   {
     return (EReference)directoryContentEClass.getEStructuralFeatures().get(1);
   }
@@ -2625,9 +2604,31 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getArchitectureComponents_Archcomponent()
+  public EReference getArchitectureComponents_ArchFeComponent()
   {
     return (EReference)architectureComponentsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArchitectureComponents_ArchBeComponent()
+  {
+    return (EReference)architectureComponentsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArchitectureComponents_ArchPdComponent()
+  {
+    return (EReference)architectureComponentsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -4000,6 +4001,17 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EReference getReactComponents_Componentstyle()
+  {
+    return (EReference)reactComponentsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getComponentsLogic()
   {
     return componentsLogicEClass;
@@ -4396,9 +4408,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getReactConstructor_Componentclass()
+  public EReference getReactConstructor_Componentstateclass()
   {
     return (EReference)reactConstructorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getReactConstructor_Componentfuncclass()
+  {
+    return (EReference)reactConstructorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -4561,6 +4584,105 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EClass getComponentsStyles()
+  {
+    return componentsStylesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getComponentsStyles_Stylescontents()
+  {
+    return (EReference)componentsStylesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComponentsStylesContent()
+  {
+    return componentsStylesContentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComponentsStylesContent_NameStyle()
+  {
+    return (EAttribute)componentsStylesContentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getComponentsStylesContent_Stylecontent()
+  {
+    return (EReference)componentsStylesContentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStyleProperties()
+  {
+    return stylePropertiesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStyleProperties_Stylespropscontents()
+  {
+    return (EReference)stylePropertiesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStylePropertiesContent()
+  {
+    return stylePropertiesContentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStylePropertiesContent_PropName()
+  {
+    return (EAttribute)stylePropertiesContentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getReactActions()
   {
     return reactActionsEClass;
@@ -4619,6 +4741,105 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
   public EAttribute getReactServicesType_Name()
   {
     return (EAttribute)reactServicesTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getReactServicesType_Reactservcontent()
+  {
+    return (EReference)reactServicesTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getReactServiceContent()
+  {
+    return reactServiceContentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getReactServiceContent_FunctName()
+  {
+    return (EAttribute)reactServiceContentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getReactServiceContent_Reactservrequest()
+  {
+    return (EReference)reactServiceContentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getReactServiceContRequest()
+  {
+    return reactServiceContRequestEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getReactServiceContRequest_Reactservrequestprops()
+  {
+    return (EReference)reactServiceContRequestEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getReactServiceRequestProps()
+  {
+    return reactServiceRequestPropsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getReactServiceRequestProps_ReqPropName()
+  {
+    return (EAttribute)reactServiceRequestPropsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getReactServiceRequestProps_ReqPropDescription()
+  {
+    return (EAttribute)reactServiceRequestPropsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -5658,24 +5879,26 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     domainEClass = createEClass(DOMAIN);
     createEAttribute(domainEClass, DOMAIN__NAME);
-    createEReference(domainEClass, DOMAIN__ELEMENTS);
+    createEReference(domainEClass, DOMAIN__ENTITYDOMAIN);
+    createEReference(domainEClass, DOMAIN__ENTITYFUNCS);
 
     entityEClass = createEClass(ENTITY);
     createEReference(entityEClass, ENTITY__ELEMENTS);
 
     entitiesEClass = createEClass(ENTITIES);
-    createEReference(entitiesEClass, ENTITIES__PHOTOELEMENTS);
-    createEReference(entitiesEClass, ENTITIES__ALBUMELEMENTS);
-    createEReference(entitiesEClass, ENTITIES__USERDOMAINELEMENTS);
+    createEAttribute(entitiesEClass, ENTITIES__NAME);
+    createEReference(entitiesEClass, ENTITIES__ATRIBUTE_PHOTO);
+    createEReference(entitiesEClass, ENTITIES__ATRIBUTE_ALBUM);
+    createEReference(entitiesEClass, ENTITIES__ATRIBUTE_USER_DOMAIN);
 
-    photoEClass = createEClass(PHOTO);
-    createEAttribute(photoEClass, PHOTO__NAME);
+    atributePhotoEClass = createEClass(ATRIBUTE_PHOTO);
+    createEAttribute(atributePhotoEClass, ATRIBUTE_PHOTO__NAME);
 
-    albumEClass = createEClass(ALBUM);
-    createEAttribute(albumEClass, ALBUM__NAME);
+    atributeAlbumEClass = createEClass(ATRIBUTE_ALBUM);
+    createEAttribute(atributeAlbumEClass, ATRIBUTE_ALBUM__NAME);
 
-    userDomainEClass = createEClass(USER_DOMAIN);
-    createEAttribute(userDomainEClass, USER_DOMAIN__NAME);
+    atributeUserDomainEClass = createEClass(ATRIBUTE_USER_DOMAIN);
+    createEAttribute(atributeUserDomainEClass, ATRIBUTE_USER_DOMAIN__NAME);
 
     functionalityEClass = createEClass(FUNCTIONALITY);
     createEReference(functionalityEClass, FUNCTIONALITY__ELEMENTS);
@@ -5723,20 +5946,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(landingFunctionsEClass, LANDING_FUNCTIONS__NAME_CAROUSEL_NAME);
     createEAttribute(landingFunctionsEClass, LANDING_FUNCTIONS__PASS_PHOTO_NAME);
 
-    domainConnectionEClass = createEClass(DOMAIN_CONNECTION);
-    createEReference(domainConnectionEClass, DOMAIN_CONNECTION__ELEMENTS);
-
-    domainRelationsEClass = createEClass(DOMAIN_RELATIONS);
-    createEReference(domainRelationsEClass, DOMAIN_RELATIONS__USERDELEMENTS);
-    createEAttribute(domainRelationsEClass, DOMAIN_RELATIONS__USER_DNAME);
-    createEReference(domainRelationsEClass, DOMAIN_RELATIONS__ELEMENTS);
-    createEReference(domainRelationsEClass, DOMAIN_RELATIONS__ALBUMDELEMENTS);
-    createEAttribute(domainRelationsEClass, DOMAIN_RELATIONS__ALBUM_DNAME);
-    createEReference(domainRelationsEClass, DOMAIN_RELATIONS__PHOTODELEMENTS);
-    createEAttribute(domainRelationsEClass, DOMAIN_RELATIONS__PHOTO_DNAME);
-    createEReference(domainRelationsEClass, DOMAIN_RELATIONS__PHOTOACTDELEMENTS);
-    createEAttribute(domainRelationsEClass, DOMAIN_RELATIONS__PHOTOACT_DNAME);
-
     architectureEClass = createEClass(ARCHITECTURE);
     createEReference(architectureEClass, ARCHITECTURE__ELEMENTS);
 
@@ -5744,10 +5953,10 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEReference(nTiersEClass, NTIERS__ELEMENTS);
 
     layerEClass = createEClass(LAYER);
-    createEReference(layerEClass, LAYER__ELEMENTS);
+    createEReference(layerEClass, LAYER__LAYER);
 
     presentationLayerEClass = createEClass(PRESENTATION_LAYER);
-    createEReference(presentationLayerEClass, PRESENTATION_LAYER__ELEMENTS);
+    createEReference(presentationLayerEClass, PRESENTATION_LAYER__PRESENTATION_LAYER);
 
     presentationContentEClass = createEClass(PRESENTATION_CONTENT);
     createEReference(presentationContentEClass, PRESENTATION_CONTENT__ELEMENTS);
@@ -5758,16 +5967,21 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(presentationSegmentsEClass, PRESENTATION_SEGMENTS__PRESENTATION_ANAME);
 
     businessLogicLayerEClass = createEClass(BUSINESS_LOGIC_LAYER);
-    createEReference(businessLogicLayerEClass, BUSINESS_LOGIC_LAYER__ELEMENTS);
+    createEReference(businessLogicLayerEClass, BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER);
 
     businessLogicContentEClass = createEClass(BUSINESS_LOGIC_CONTENT);
-    createEReference(businessLogicContentEClass, BUSINESS_LOGIC_CONTENT__ELEMENTS);
+    createEReference(businessLogicContentEClass, BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS);
 
     businessLogicSegmentsEClass = createEClass(BUSINESS_LOGIC_SEGMENTS);
-    createEAttribute(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME);
-    createEAttribute(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME);
-    createEAttribute(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME);
-    createEAttribute(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME);
+    createEAttribute(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__NAME);
+    createEReference(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT);
+    createEReference(businessLogicSegmentsEClass, BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT);
+
+    controllerSegmentElementEClass = createEClass(CONTROLLER_SEGMENT_ELEMENT);
+    createEAttribute(controllerSegmentElementEClass, CONTROLLER_SEGMENT_ELEMENT__NAME);
+
+    specificationSegmentElementEClass = createEClass(SPECIFICATION_SEGMENT_ELEMENT);
+    createEAttribute(specificationSegmentElementEClass, SPECIFICATION_SEGMENT_ELEMENT__NAME);
 
     dataPersistenceLayerEClass = createEClass(DATA_PERSISTENCE_LAYER);
     createEReference(dataPersistenceLayerEClass, DATA_PERSISTENCE_LAYER__ELEMENTS);
@@ -5788,7 +6002,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     directoryContentEClass = createEClass(DIRECTORY_CONTENT);
     createEAttribute(directoryContentEClass, DIRECTORY_CONTENT__NAME);
-    createEReference(directoryContentEClass, DIRECTORY_CONTENT__ELEMENTS);
+    createEReference(directoryContentEClass, DIRECTORY_CONTENT__DIRECTORIES);
 
     directoriesEClass = createEClass(DIRECTORIES);
     createEReference(directoriesEClass, DIRECTORIES__ELEMENTS);
@@ -5812,7 +6026,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(layerTargetEClass, LAYER_TARGET__LAYERELATIONS);
 
     architectureComponentsEClass = createEClass(ARCHITECTURE_COMPONENTS);
-    createEReference(architectureComponentsEClass, ARCHITECTURE_COMPONENTS__ARCHCOMPONENT);
+    createEReference(architectureComponentsEClass, ARCHITECTURE_COMPONENTS__ARCH_FE_COMPONENT);
+    createEReference(architectureComponentsEClass, ARCHITECTURE_COMPONENTS__ARCH_BE_COMPONENT);
+    createEReference(architectureComponentsEClass, ARCHITECTURE_COMPONENTS__ARCH_PD_COMPONENT);
 
     frontEndEClass = createEClass(FRONT_END);
     createEAttribute(frontEndEClass, FRONT_END__NAME);
@@ -5988,6 +6204,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     reactComponentsEClass = createEClass(REACT_COMPONENTS);
     createEReference(reactComponentsEClass, REACT_COMPONENTS__COMPONENTSLOGIC);
     createEReference(reactComponentsEClass, REACT_COMPONENTS__COMPONENTSUI);
+    createEReference(reactComponentsEClass, REACT_COMPONENTS__COMPONENTSTYLE);
 
     componentsLogicEClass = createEClass(COMPONENTS_LOGIC);
     createEAttribute(componentsLogicEClass, COMPONENTS_LOGIC__NAME);
@@ -6036,7 +6253,8 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(reactFunctionsEClass, REACT_FUNCTIONS__RENDERCLASS);
 
     reactConstructorEClass = createEClass(REACT_CONSTRUCTOR);
-    createEReference(reactConstructorEClass, REACT_CONSTRUCTOR__COMPONENTCLASS);
+    createEReference(reactConstructorEClass, REACT_CONSTRUCTOR__COMPONENTSTATECLASS);
+    createEReference(reactConstructorEClass, REACT_CONSTRUCTOR__COMPONENTFUNCCLASS);
 
     stateEClass = createEClass(STATE);
     createEReference(stateEClass, STATE__STATECONTENTS);
@@ -6058,6 +6276,19 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     reactCoreFunctionsEClass = createEClass(REACT_CORE_FUNCTIONS);
     createEAttribute(reactCoreFunctionsEClass, REACT_CORE_FUNCTIONS__NAME);
 
+    componentsStylesEClass = createEClass(COMPONENTS_STYLES);
+    createEReference(componentsStylesEClass, COMPONENTS_STYLES__STYLESCONTENTS);
+
+    componentsStylesContentEClass = createEClass(COMPONENTS_STYLES_CONTENT);
+    createEAttribute(componentsStylesContentEClass, COMPONENTS_STYLES_CONTENT__NAME_STYLE);
+    createEReference(componentsStylesContentEClass, COMPONENTS_STYLES_CONTENT__STYLECONTENT);
+
+    stylePropertiesEClass = createEClass(STYLE_PROPERTIES);
+    createEReference(stylePropertiesEClass, STYLE_PROPERTIES__STYLESPROPSCONTENTS);
+
+    stylePropertiesContentEClass = createEClass(STYLE_PROPERTIES_CONTENT);
+    createEAttribute(stylePropertiesContentEClass, STYLE_PROPERTIES_CONTENT__PROP_NAME);
+
     reactActionsEClass = createEClass(REACT_ACTIONS);
     createEReference(reactActionsEClass, REACT_ACTIONS__REACTACTCONTENT);
 
@@ -6066,6 +6297,18 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     reactServicesTypeEClass = createEClass(REACT_SERVICES_TYPE);
     createEAttribute(reactServicesTypeEClass, REACT_SERVICES_TYPE__NAME);
+    createEReference(reactServicesTypeEClass, REACT_SERVICES_TYPE__REACTSERVCONTENT);
+
+    reactServiceContentEClass = createEClass(REACT_SERVICE_CONTENT);
+    createEAttribute(reactServiceContentEClass, REACT_SERVICE_CONTENT__FUNCT_NAME);
+    createEReference(reactServiceContentEClass, REACT_SERVICE_CONTENT__REACTSERVREQUEST);
+
+    reactServiceContRequestEClass = createEClass(REACT_SERVICE_CONT_REQUEST);
+    createEReference(reactServiceContRequestEClass, REACT_SERVICE_CONT_REQUEST__REACTSERVREQUESTPROPS);
+
+    reactServiceRequestPropsEClass = createEClass(REACT_SERVICE_REQUEST_PROPS);
+    createEAttribute(reactServiceRequestPropsEClass, REACT_SERVICE_REQUEST_PROPS__REQ_PROP_NAME);
+    createEAttribute(reactServiceRequestPropsEClass, REACT_SERVICE_REQUEST_PROPS__REQ_PROP_DESCRIPTION);
 
     reactServicesRelationEClass = createEClass(REACT_SERVICES_RELATION);
     createEReference(reactServicesRelationEClass, REACT_SERVICES_RELATION__SERVICESRELS);
@@ -6236,24 +6479,26 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDomain_Name(), ecorePackage.getEString(), "name", null, 0, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDomain_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomain_Entitydomain(), this.getEntity(), null, "entitydomain", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomain_Entityfuncs(), this.getFunctionality(), null, "entityfuncs", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEntity_Elements(), this.getEntities(), null, "elements", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entitiesEClass, Entities.class, "Entities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntities_Photoelements(), this.getPhoto(), null, "photoelements", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntities_Albumelements(), this.getAlbum(), null, "albumelements", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntities_Userdomainelements(), this.getUserDomain(), null, "userdomainelements", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntities_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntities_AtributePhoto(), this.getAtributePhoto(), null, "atributePhoto", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntities_AtributeAlbum(), this.getAtributeAlbum(), null, "atributeAlbum", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntities_AtributeUserDomain(), this.getAtributeUserDomain(), null, "atributeUserDomain", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(photoEClass, Photo.class, "Photo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPhoto_Name(), ecorePackage.getEString(), "name", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(atributePhotoEClass, AtributePhoto.class, "AtributePhoto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtributePhoto_Name(), ecorePackage.getEString(), "name", null, 0, 1, AtributePhoto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(albumEClass, Album.class, "Album", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlbum_Name(), ecorePackage.getEString(), "name", null, 0, 1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(atributeAlbumEClass, AtributeAlbum.class, "AtributeAlbum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtributeAlbum_Name(), ecorePackage.getEString(), "name", null, 0, 1, AtributeAlbum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(userDomainEClass, UserDomain.class, "UserDomain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUserDomain_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(atributeUserDomainEClass, AtributeUserDomain.class, "AtributeUserDomain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtributeUserDomain_Name(), ecorePackage.getEString(), "name", null, 0, 1, AtributeUserDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionalityEClass, Functionality.class, "Functionality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFunctionality_Elements(), this.getFunctionalities(), null, "elements", null, 0, -1, Functionality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6301,20 +6546,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getLandingFunctions_NameCarouselName(), ecorePackage.getEString(), "nameCarouselName", null, 0, 1, LandingFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLandingFunctions_PassPhotoName(), ecorePackage.getEString(), "passPhotoName", null, 0, 1, LandingFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(domainConnectionEClass, DomainConnection.class, "DomainConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDomainConnection_Elements(), this.getDomainRelations(), null, "elements", null, 0, -1, DomainConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(domainRelationsEClass, DomainRelations.class, "DomainRelations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDomainRelations_Userdelements(), this.getUserDomain(), null, "userdelements", null, 0, -1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDomainRelations_UserDname(), ecorePackage.getEString(), "userDname", null, 0, 1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDomainRelations_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDomainRelations_Albumdelements(), this.getAlbum(), null, "albumdelements", null, 0, -1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDomainRelations_AlbumDname(), ecorePackage.getEString(), "albumDname", null, 0, 1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDomainRelations_Photodelements(), this.getPhoto(), null, "photodelements", null, 0, -1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDomainRelations_PhotoDname(), ecorePackage.getEString(), "photoDname", null, 0, 1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDomainRelations_Photoactdelements(), this.getPhotoActions(), null, "photoactdelements", null, 0, -1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDomainRelations_PhotoactDname(), ecorePackage.getEString(), "photoactDname", null, 0, 1, DomainRelations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(architectureEClass, Architecture.class, "Architecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArchitecture_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -6322,10 +6553,10 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEReference(getNTiers_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, NTiers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(layerEClass, Layer.class, "Layer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLayer_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayer_Layer(), ecorePackage.getEObject(), null, "layer", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(presentationLayerEClass, PresentationLayer.class, "PresentationLayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPresentationLayer_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, PresentationLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPresentationLayer_PresentationLayer(), ecorePackage.getEObject(), null, "presentationLayer", null, 0, -1, PresentationLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(presentationContentEClass, PresentationContent.class, "PresentationContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPresentationContent_Elements(), this.getPresentationSegments(), null, "elements", null, 0, -1, PresentationContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6336,16 +6567,21 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getPresentationSegments_PresentationAName(), ecorePackage.getEString(), "presentationAName", null, 0, 1, PresentationSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(businessLogicLayerEClass, BusinessLogicLayer.class, "BusinessLogicLayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBusinessLogicLayer_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, BusinessLogicLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBusinessLogicLayer_BusinessLogicLayer(), ecorePackage.getEObject(), null, "businessLogicLayer", null, 0, -1, BusinessLogicLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(businessLogicContentEClass, BusinessLogicContent.class, "BusinessLogicContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBusinessLogicContent_Elements(), this.getBusinessLogicSegments(), null, "elements", null, 0, -1, BusinessLogicContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBusinessLogicContent_BusinessLogicSegments(), this.getBusinessLogicSegments(), null, "businessLogicSegments", null, 0, -1, BusinessLogicContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(businessLogicSegmentsEClass, BusinessLogicSegments.class, "BusinessLogicSegments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBusinessLogicSegments_BussinessName(), ecorePackage.getEString(), "bussinessName", null, 0, 1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBusinessLogicSegments_ModelSegmentName(), ecorePackage.getEString(), "modelSegmentName", null, 0, 1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBusinessLogicSegments_RepositoryName(), ecorePackage.getEString(), "repositoryName", null, 0, 1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBusinessLogicSegments_SecuritySName(), ecorePackage.getEString(), "securitySName", null, 0, 1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBusinessLogicSegments_Name(), ecorePackage.getEString(), "name", null, 0, 1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBusinessLogicSegments_ControllerSegmentElement(), this.getControllerSegmentElement(), null, "controllerSegmentElement", null, 0, -1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBusinessLogicSegments_SpecificationSegmentElement(), this.getSpecificationSegmentElement(), null, "specificationSegmentElement", null, 0, -1, BusinessLogicSegments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(controllerSegmentElementEClass, ControllerSegmentElement.class, "ControllerSegmentElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getControllerSegmentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ControllerSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(specificationSegmentElementEClass, SpecificationSegmentElement.class, "SpecificationSegmentElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpecificationSegmentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpecificationSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataPersistenceLayerEClass, DataPersistenceLayer.class, "DataPersistenceLayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDataPersistenceLayer_Elements(), this.getDataPersistenceContent(), null, "elements", null, 0, -1, DataPersistenceLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6366,7 +6602,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     initEClass(directoryContentEClass, DirectoryContent.class, "DirectoryContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDirectoryContent_Name(), ecorePackage.getEString(), "name", null, 0, 1, DirectoryContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDirectoryContent_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, DirectoryContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirectoryContent_Directories(), ecorePackage.getEObject(), null, "directories", null, 0, -1, DirectoryContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(directoriesEClass, Directories.class, "Directories", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDirectories_Elements(), this.getMultipleFile(), null, "elements", null, 0, -1, Directories.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6390,7 +6626,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getLayerTarget_Layerelations(), ecorePackage.getEString(), "layerelations", null, 0, -1, LayerTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(architectureComponentsEClass, ArchitectureComponents.class, "ArchitectureComponents", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArchitectureComponents_Archcomponent(), ecorePackage.getEObject(), null, "archcomponent", null, 0, -1, ArchitectureComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitectureComponents_ArchFeComponent(), this.getFrontEnd(), null, "archFeComponent", null, 0, -1, ArchitectureComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitectureComponents_ArchBeComponent(), this.getBackEnd(), null, "archBeComponent", null, 0, -1, ArchitectureComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitectureComponents_ArchPdComponent(), this.getPersistenceDataComponent(), null, "archPdComponent", null, 0, -1, ArchitectureComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(frontEndEClass, FrontEnd.class, "FrontEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFrontEnd_Name(), ecorePackage.getEString(), "name", null, 0, 1, FrontEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6566,6 +6804,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEClass(reactComponentsEClass, ReactComponents.class, "ReactComponents", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReactComponents_Componentslogic(), this.getComponentsLogic(), null, "componentslogic", null, 0, -1, ReactComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReactComponents_Componentsui(), this.getComponentsUI(), null, "componentsui", null, 0, -1, ReactComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReactComponents_Componentstyle(), this.getComponentsStyles(), null, "componentstyle", null, 0, -1, ReactComponents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentsLogicEClass, ComponentsLogic.class, "ComponentsLogic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponentsLogic_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComponentsLogic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6614,7 +6853,8 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getReactFunctions_Renderclass(), ecorePackage.getEString(), "renderclass", null, 0, -1, ReactFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reactConstructorEClass, ReactConstructor.class, "ReactConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReactConstructor_Componentclass(), ecorePackage.getEObject(), null, "componentclass", null, 0, -1, ReactConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReactConstructor_Componentstateclass(), this.getState(), null, "componentstateclass", null, 0, -1, ReactConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReactConstructor_Componentfuncclass(), this.getCoreFunctionsDeclaration(), null, "componentfuncclass", null, 0, -1, ReactConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getState_Statecontents(), this.getStateContent(), null, "statecontents", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6636,6 +6876,19 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEClass(reactCoreFunctionsEClass, ReactCoreFunctions.class, "ReactCoreFunctions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReactCoreFunctions_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReactCoreFunctions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(componentsStylesEClass, ComponentsStyles.class, "ComponentsStyles", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponentsStyles_Stylescontents(), this.getComponentsStylesContent(), null, "stylescontents", null, 0, -1, ComponentsStyles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(componentsStylesContentEClass, ComponentsStylesContent.class, "ComponentsStylesContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComponentsStylesContent_NameStyle(), ecorePackage.getEString(), "nameStyle", null, 0, 1, ComponentsStylesContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentsStylesContent_Stylecontent(), this.getStyleProperties(), null, "stylecontent", null, 0, -1, ComponentsStylesContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stylePropertiesEClass, StyleProperties.class, "StyleProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStyleProperties_Stylespropscontents(), this.getStylePropertiesContent(), null, "stylespropscontents", null, 0, -1, StyleProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stylePropertiesContentEClass, StylePropertiesContent.class, "StylePropertiesContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStylePropertiesContent_PropName(), ecorePackage.getEString(), "propName", null, 0, 1, StylePropertiesContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(reactActionsEClass, ReactActions.class, "ReactActions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReactActions_Reactactcontent(), this.getReactActionsContent(), null, "reactactcontent", null, 0, -1, ReactActions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -6644,6 +6897,18 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     initEClass(reactServicesTypeEClass, ReactServicesType.class, "ReactServicesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReactServicesType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReactServicesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReactServicesType_Reactservcontent(), this.getReactServiceContent(), null, "reactservcontent", null, 0, -1, ReactServicesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(reactServiceContentEClass, ReactServiceContent.class, "ReactServiceContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReactServiceContent_FunctName(), ecorePackage.getEString(), "functName", null, 0, 1, ReactServiceContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReactServiceContent_Reactservrequest(), this.getReactServiceContRequest(), null, "reactservrequest", null, 0, -1, ReactServiceContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(reactServiceContRequestEClass, ReactServiceContRequest.class, "ReactServiceContRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReactServiceContRequest_Reactservrequestprops(), this.getReactServiceRequestProps(), null, "reactservrequestprops", null, 0, -1, ReactServiceContRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(reactServiceRequestPropsEClass, ReactServiceRequestProps.class, "ReactServiceRequestProps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReactServiceRequestProps_ReqPropName(), ecorePackage.getEString(), "reqPropName", null, 0, 1, ReactServiceRequestProps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getReactServiceRequestProps_ReqPropDescription(), ecorePackage.getEString(), "reqPropDescription", null, 0, 1, ReactServiceRequestProps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reactServicesRelationEClass, ReactServicesRelation.class, "ReactServicesRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReactServicesRelation_Servicesrels(), this.getReactsRelationServ(), null, "servicesrels", null, 0, -1, ReactServicesRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

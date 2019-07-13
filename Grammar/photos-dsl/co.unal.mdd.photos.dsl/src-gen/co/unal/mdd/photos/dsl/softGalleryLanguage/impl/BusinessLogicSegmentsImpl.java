@@ -4,14 +4,25 @@
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +32,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getBussinessName <em>Bussiness Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getModelSegmentName <em>Model Segment Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getRepositoryName <em>Repository Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getSecuritySName <em>Security SName</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getControllerSegmentElement <em>Controller Segment Element</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicSegmentsImpl#getSpecificationSegmentElement <em>Specification Segment Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,84 +42,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container implements BusinessLogicSegments
 {
   /**
-   * The default value of the '{@link #getBussinessName() <em>Bussiness Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBussinessName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String BUSSINESS_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getBussinessName() <em>Bussiness Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBussinessName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String bussinessName = BUSSINESS_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getModelSegmentName() <em>Model Segment Name</em>}' attribute.
+   * The cached value of the '{@link #getControllerSegmentElement() <em>Controller Segment Element</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModelSegmentName()
+   * @see #getControllerSegmentElement()
    * @generated
    * @ordered
    */
-  protected static final String MODEL_SEGMENT_NAME_EDEFAULT = null;
+  protected EList<ControllerSegmentElement> controllerSegmentElement;
 
   /**
-   * The cached value of the '{@link #getModelSegmentName() <em>Model Segment Name</em>}' attribute.
+   * The cached value of the '{@link #getSpecificationSegmentElement() <em>Specification Segment Element</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModelSegmentName()
+   * @see #getSpecificationSegmentElement()
    * @generated
    * @ordered
    */
-  protected String modelSegmentName = MODEL_SEGMENT_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getRepositoryName() <em>Repository Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRepositoryName()
-   * @generated
-   * @ordered
-   */
-  protected static final String REPOSITORY_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRepositoryName() <em>Repository Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRepositoryName()
-   * @generated
-   * @ordered
-   */
-  protected String repositoryName = REPOSITORY_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getSecuritySName() <em>Security SName</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSecuritySName()
-   * @generated
-   * @ordered
-   */
-  protected static final String SECURITY_SNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSecuritySName() <em>Security SName</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSecuritySName()
-   * @generated
-   * @ordered
-   */
-  protected String securitySName = SECURITY_SNAME_EDEFAULT;
+  protected EList<SpecificationSegmentElement> specificationSegmentElement;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,9 +108,9 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getBussinessName()
+  public String getName()
   {
-    return bussinessName;
+    return name;
   }
 
   /**
@@ -149,12 +119,12 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public void setBussinessName(String newBussinessName)
+  public void setName(String newName)
   {
-    String oldBussinessName = bussinessName;
-    bussinessName = newBussinessName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME, oldBussinessName, bussinessName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__NAME, oldName, name));
   }
 
   /**
@@ -163,9 +133,13 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getModelSegmentName()
+  public EList<ControllerSegmentElement> getControllerSegmentElement()
   {
-    return modelSegmentName;
+    if (controllerSegmentElement == null)
+    {
+      controllerSegmentElement = new EObjectContainmentEList<ControllerSegmentElement>(ControllerSegmentElement.class, this, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT);
+    }
+    return controllerSegmentElement;
   }
 
   /**
@@ -174,12 +148,13 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public void setModelSegmentName(String newModelSegmentName)
+  public EList<SpecificationSegmentElement> getSpecificationSegmentElement()
   {
-    String oldModelSegmentName = modelSegmentName;
-    modelSegmentName = newModelSegmentName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME, oldModelSegmentName, modelSegmentName));
+    if (specificationSegmentElement == null)
+    {
+      specificationSegmentElement = new EObjectContainmentEList<SpecificationSegmentElement>(SpecificationSegmentElement.class, this, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT);
+    }
+    return specificationSegmentElement;
   }
 
   /**
@@ -188,48 +163,16 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getRepositoryName()
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    return repositoryName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setRepositoryName(String newRepositoryName)
-  {
-    String oldRepositoryName = repositoryName;
-    repositoryName = newRepositoryName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME, oldRepositoryName, repositoryName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getSecuritySName()
-  {
-    return securitySName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setSecuritySName(String newSecuritySName)
-  {
-    String oldSecuritySName = securitySName;
-    securitySName = newSecuritySName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME, oldSecuritySName, securitySName));
+    switch (featureID)
+    {
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT:
+        return ((InternalEList<?>)getControllerSegmentElement()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT:
+        return ((InternalEList<?>)getSpecificationSegmentElement()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -242,14 +185,12 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME:
-        return getBussinessName();
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME:
-        return getModelSegmentName();
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME:
-        return getRepositoryName();
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME:
-        return getSecuritySName();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__NAME:
+        return getName();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT:
+        return getControllerSegmentElement();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT:
+        return getSpecificationSegmentElement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -259,22 +200,22 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME:
-        setBussinessName((String)newValue);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__NAME:
+        setName((String)newValue);
         return;
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME:
-        setModelSegmentName((String)newValue);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT:
+        getControllerSegmentElement().clear();
+        getControllerSegmentElement().addAll((Collection<? extends ControllerSegmentElement>)newValue);
         return;
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME:
-        setRepositoryName((String)newValue);
-        return;
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME:
-        setSecuritySName((String)newValue);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT:
+        getSpecificationSegmentElement().clear();
+        getSpecificationSegmentElement().addAll((Collection<? extends SpecificationSegmentElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -290,17 +231,14 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME:
-        setBussinessName(BUSSINESS_NAME_EDEFAULT);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME:
-        setModelSegmentName(MODEL_SEGMENT_NAME_EDEFAULT);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT:
+        getControllerSegmentElement().clear();
         return;
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME:
-        setRepositoryName(REPOSITORY_NAME_EDEFAULT);
-        return;
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME:
-        setSecuritySName(SECURITY_SNAME_EDEFAULT);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT:
+        getSpecificationSegmentElement().clear();
         return;
     }
     super.eUnset(featureID);
@@ -316,14 +254,12 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME:
-        return BUSSINESS_NAME_EDEFAULT == null ? bussinessName != null : !BUSSINESS_NAME_EDEFAULT.equals(bussinessName);
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME:
-        return MODEL_SEGMENT_NAME_EDEFAULT == null ? modelSegmentName != null : !MODEL_SEGMENT_NAME_EDEFAULT.equals(modelSegmentName);
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME:
-        return REPOSITORY_NAME_EDEFAULT == null ? repositoryName != null : !REPOSITORY_NAME_EDEFAULT.equals(repositoryName);
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME:
-        return SECURITY_SNAME_EDEFAULT == null ? securitySName != null : !SECURITY_SNAME_EDEFAULT.equals(securitySName);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__CONTROLLER_SEGMENT_ELEMENT:
+        return controllerSegmentElement != null && !controllerSegmentElement.isEmpty();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS__SPECIFICATION_SEGMENT_ELEMENT:
+        return specificationSegmentElement != null && !specificationSegmentElement.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -339,14 +275,8 @@ public class BusinessLogicSegmentsImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (bussinessName: ");
-    result.append(bussinessName);
-    result.append(", modelSegmentName: ");
-    result.append(modelSegmentName);
-    result.append(", repositoryName: ");
-    result.append(repositoryName);
-    result.append(", securitySName: ");
-    result.append(securitySName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

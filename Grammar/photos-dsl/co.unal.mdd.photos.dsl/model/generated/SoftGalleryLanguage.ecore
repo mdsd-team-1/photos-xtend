@@ -8,28 +8,31 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entitydomain" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityfuncs" upperBound="-1"
+        eType="#//Functionality" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//Entities" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entities">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="photoelements" upperBound="-1"
-        eType="#//Photo" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="albumelements" upperBound="-1"
-        eType="#//Album" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userdomainelements" upperBound="-1"
-        eType="#//UserDomain" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributePhoto" upperBound="-1"
+        eType="#//AtributePhoto" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributeAlbum" upperBound="-1"
+        eType="#//AtributeAlbum" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributeUserDomain" upperBound="-1"
+        eType="#//AtributeUserDomain" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Photo">
+  <eClassifiers xsi:type="ecore:EClass" name="AtributePhoto">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Album">
+  <eClassifiers xsi:type="ecore:EClass" name="AtributeAlbum">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserDomain">
+  <eClassifiers xsi:type="ecore:EClass" name="AtributeUserDomain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Functionality">
@@ -89,26 +92,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameCarouselName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="passPhotoName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DomainConnection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//DomainRelations" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DomainRelations">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userdelements" upperBound="-1"
-        eType="#//UserDomain" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userDname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="albumdelements" upperBound="-1"
-        eType="#//Album" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="albumDname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="photodelements" upperBound="-1"
-        eType="#//Photo" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="photoDname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="photoactdelements" upperBound="-1"
-        eType="#//PhotoActions" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="photoactDname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Architecture">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
@@ -118,11 +101,11 @@
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Layer">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layer" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PresentationLayer">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presentationLayer" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PresentationContent">
@@ -135,18 +118,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentationAName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessLogicLayer">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessLogicLayer" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessLogicContent">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BusinessLogicSegments" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessLogicSegments"
+        upperBound="-1" eType="#//BusinessLogicSegments" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessLogicSegments">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bussinessName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelSegmentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repositoryName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securitySName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerSegmentElement"
+        upperBound="-1" eType="#//ControllerSegmentElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationSegmentElement"
+        upperBound="-1" eType="#//SpecificationSegmentElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControllerSegmentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificationSegmentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataPersistenceLayer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -171,7 +161,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectoryContent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directories" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Directories">
@@ -202,8 +192,12 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArchitectureComponents">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="archcomponent" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="archFeComponent" upperBound="-1"
+        eType="#//FrontEnd" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="archBeComponent" upperBound="-1"
+        eType="#//BackEnd" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="archPdComponent" upperBound="-1"
+        eType="#//PersistenceDataComponent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FrontEnd">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -420,6 +414,8 @@
         eType="#//ComponentsLogic" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentsui" upperBound="-1"
         eType="#//ComponentsUI" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentstyle" upperBound="-1"
+        eType="#//ComponentsStyles" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentsLogic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -484,8 +480,10 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReactConstructor">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentclass" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentstateclass" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentfuncclass" upperBound="-1"
+        eType="#//CoreFunctionsDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statecontents" upperBound="-1"
@@ -511,6 +509,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReactCoreFunctions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentsStyles">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stylescontents" upperBound="-1"
+        eType="#//ComponentsStylesContent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentsStylesContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stylecontent" upperBound="-1"
+        eType="#//StyleProperties" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleProperties">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stylespropscontents" upperBound="-1"
+        eType="#//StylePropertiesContent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StylePropertiesContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReactActions">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reactactcontent" upperBound="-1"
         eType="#//ReactActionsContent" containment="true"/>
@@ -521,6 +535,21 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReactServicesType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reactservcontent" upperBound="-1"
+        eType="#//ReactServiceContent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReactServiceContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reactservrequest" upperBound="-1"
+        eType="#//ReactServiceContRequest" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReactServiceContRequest">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reactservrequestprops"
+        upperBound="-1" eType="#//ReactServiceRequestProps" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReactServiceRequestProps">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reqPropName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reqPropDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReactServicesRelation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="servicesrels" upperBound="-1"

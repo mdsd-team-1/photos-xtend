@@ -3,6 +3,8 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,10 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getBussinessName <em>Bussiness Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getModelSegmentName <em>Model Segment Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getRepositoryName <em>Repository Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getSecuritySName <em>Security SName</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getControllerSegmentElement <em>Controller Segment Element</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getSpecificationSegmentElement <em>Specification Segment Element</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments()
@@ -27,91 +28,49 @@ import org.eclipse.emf.ecore.EObject;
 public interface BusinessLogicSegments extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Bussiness Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Bussiness Name</em>' attribute.
-   * @see #setBussinessName(String)
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_BussinessName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_Name()
    * @model
    * @generated
    */
-  String getBussinessName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getBussinessName <em>Bussiness Name</em>}' attribute.
+   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bussiness Name</em>' attribute.
-   * @see #getBussinessName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setBussinessName(String value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Model Segment Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Controller Segment Element</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Model Segment Name</em>' attribute.
-   * @see #setModelSegmentName(String)
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_ModelSegmentName()
-   * @model
+   * @return the value of the '<em>Controller Segment Element</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_ControllerSegmentElement()
+   * @model containment="true"
    * @generated
    */
-  String getModelSegmentName();
+  EList<ControllerSegmentElement> getControllerSegmentElement();
 
   /**
-   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getModelSegmentName <em>Model Segment Name</em>}' attribute.
+   * Returns the value of the '<em><b>Specification Segment Element</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Model Segment Name</em>' attribute.
-   * @see #getModelSegmentName()
+   * @return the value of the '<em>Specification Segment Element</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_SpecificationSegmentElement()
+   * @model containment="true"
    * @generated
    */
-  void setModelSegmentName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Repository Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Repository Name</em>' attribute.
-   * @see #setRepositoryName(String)
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_RepositoryName()
-   * @model
-   * @generated
-   */
-  String getRepositoryName();
-
-  /**
-   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getRepositoryName <em>Repository Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Repository Name</em>' attribute.
-   * @see #getRepositoryName()
-   * @generated
-   */
-  void setRepositoryName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Security SName</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Security SName</em>' attribute.
-   * @see #setSecuritySName(String)
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicSegments_SecuritySName()
-   * @model
-   * @generated
-   */
-  String getSecuritySName();
-
-  /**
-   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments#getSecuritySName <em>Security SName</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Security SName</em>' attribute.
-   * @see #getSecuritySName()
-   * @generated
-   */
-  void setSecuritySName(String value);
+  EList<SpecificationSegmentElement> getSpecificationSegmentElement();
 
 } // BusinessLogicSegments

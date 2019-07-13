@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.LayerImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.LayerImpl#getLayer <em>Layer</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getLayer() <em>Layer</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getLayer()
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<EObject> layer;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
    * @generated
    */
   @Override
-  public EList<EObject> getElements()
+  public EList<EObject> getLayer()
   {
-    if (elements == null)
+    if (layer == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.LAYER__ELEMENTS);
+      layer = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.LAYER__LAYER);
     }
-    return elements;
+    return layer;
   }
 
   /**
@@ -92,8 +92,8 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.LAYER__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.LAYER__LAYER:
+        return ((InternalEList<?>)getLayer()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.LAYER__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.LAYER__LAYER:
+        return getLayer();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.LAYER__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.LAYER__LAYER:
+        getLayer().clear();
+        getLayer().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.LAYER__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.LAYER__LAYER:
+        getLayer().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class LayerImpl extends MinimalEObjectImpl.Container implements Layer
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.LAYER__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.LAYER__LAYER:
+        return layer != null && !layer.isEmpty();
     }
     return super.eIsSet(featureID);
   }

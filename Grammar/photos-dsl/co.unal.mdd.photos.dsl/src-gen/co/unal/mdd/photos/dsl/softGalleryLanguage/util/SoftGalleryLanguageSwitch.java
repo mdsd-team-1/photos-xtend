@@ -101,24 +101,24 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.PHOTO:
+      case SoftGalleryLanguagePackage.ATRIBUTE_PHOTO:
       {
-        Photo photo = (Photo)theEObject;
-        T result = casePhoto(photo);
+        AtributePhoto atributePhoto = (AtributePhoto)theEObject;
+        T result = caseAtributePhoto(atributePhoto);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.ALBUM:
+      case SoftGalleryLanguagePackage.ATRIBUTE_ALBUM:
       {
-        Album album = (Album)theEObject;
-        T result = caseAlbum(album);
+        AtributeAlbum atributeAlbum = (AtributeAlbum)theEObject;
+        T result = caseAtributeAlbum(atributeAlbum);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.USER_DOMAIN:
+      case SoftGalleryLanguagePackage.ATRIBUTE_USER_DOMAIN:
       {
-        UserDomain userDomain = (UserDomain)theEObject;
-        T result = caseUserDomain(userDomain);
+        AtributeUserDomain atributeUserDomain = (AtributeUserDomain)theEObject;
+        T result = caseAtributeUserDomain(atributeUserDomain);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -206,20 +206,6 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.DOMAIN_CONNECTION:
-      {
-        DomainConnection domainConnection = (DomainConnection)theEObject;
-        T result = caseDomainConnection(domainConnection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SoftGalleryLanguagePackage.DOMAIN_RELATIONS:
-      {
-        DomainRelations domainRelations = (DomainRelations)theEObject;
-        T result = caseDomainRelations(domainRelations);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SoftGalleryLanguagePackage.ARCHITECTURE:
       {
         Architecture architecture = (Architecture)theEObject;
@@ -280,6 +266,20 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
       {
         BusinessLogicSegments businessLogicSegments = (BusinessLogicSegments)theEObject;
         T result = caseBusinessLogicSegments(businessLogicSegments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.CONTROLLER_SEGMENT_ELEMENT:
+      {
+        ControllerSegmentElement controllerSegmentElement = (ControllerSegmentElement)theEObject;
+        T result = caseControllerSegmentElement(controllerSegmentElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT:
+      {
+        SpecificationSegmentElement specificationSegmentElement = (SpecificationSegmentElement)theEObject;
+        T result = caseSpecificationSegmentElement(specificationSegmentElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -857,6 +857,34 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SoftGalleryLanguagePackage.COMPONENTS_STYLES:
+      {
+        ComponentsStyles componentsStyles = (ComponentsStyles)theEObject;
+        T result = caseComponentsStyles(componentsStyles);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.COMPONENTS_STYLES_CONTENT:
+      {
+        ComponentsStylesContent componentsStylesContent = (ComponentsStylesContent)theEObject;
+        T result = caseComponentsStylesContent(componentsStylesContent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STYLE_PROPERTIES:
+      {
+        StyleProperties styleProperties = (StyleProperties)theEObject;
+        T result = caseStyleProperties(styleProperties);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STYLE_PROPERTIES_CONTENT:
+      {
+        StylePropertiesContent stylePropertiesContent = (StylePropertiesContent)theEObject;
+        T result = caseStylePropertiesContent(stylePropertiesContent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SoftGalleryLanguagePackage.REACT_ACTIONS:
       {
         ReactActions reactActions = (ReactActions)theEObject;
@@ -875,6 +903,27 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
       {
         ReactServicesType reactServicesType = (ReactServicesType)theEObject;
         T result = caseReactServicesType(reactServicesType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.REACT_SERVICE_CONTENT:
+      {
+        ReactServiceContent reactServiceContent = (ReactServiceContent)theEObject;
+        T result = caseReactServiceContent(reactServiceContent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.REACT_SERVICE_CONT_REQUEST:
+      {
+        ReactServiceContRequest reactServiceContRequest = (ReactServiceContRequest)theEObject;
+        T result = caseReactServiceContRequest(reactServiceContRequest);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.REACT_SERVICE_REQUEST_PROPS:
+      {
+        ReactServiceRequestProps reactServiceRequestProps = (ReactServiceRequestProps)theEObject;
+        T result = caseReactServiceRequestProps(reactServiceRequestProps);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1234,49 +1283,49 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Photo</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atribute Photo</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Photo</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atribute Photo</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePhoto(Photo object)
+  public T caseAtributePhoto(AtributePhoto object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Album</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atribute Album</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Album</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atribute Album</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAlbum(Album object)
+  public T caseAtributeAlbum(AtributeAlbum object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>User Domain</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atribute User Domain</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>User Domain</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atribute User Domain</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUserDomain(UserDomain object)
+  public T caseAtributeUserDomain(AtributeUserDomain object)
   {
     return null;
   }
@@ -1474,38 +1523,6 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Domain Connection</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Domain Connection</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDomainConnection(DomainConnection object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Domain Relations</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Domain Relations</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDomainRelations(DomainRelations object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Architecture</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1645,6 +1662,38 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBusinessLogicSegments(BusinessLogicSegments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Controller Segment Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Controller Segment Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseControllerSegmentElement(ControllerSegmentElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Specification Segment Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Specification Segment Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpecificationSegmentElement(SpecificationSegmentElement object)
   {
     return null;
   }
@@ -2962,6 +3011,70 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Components Styles</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Components Styles</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentsStyles(ComponentsStyles object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Components Styles Content</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Components Styles Content</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentsStylesContent(ComponentsStylesContent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Style Properties</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Style Properties</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStyleProperties(StyleProperties object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Style Properties Content</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Style Properties Content</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStylePropertiesContent(StylePropertiesContent object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>React Actions</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -3005,6 +3118,54 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReactServicesType(ReactServicesType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>React Service Content</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>React Service Content</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReactServiceContent(ReactServiceContent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>React Service Cont Request</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>React Service Cont Request</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReactServiceContRequest(ReactServiceContRequest object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>React Service Request Props</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>React Service Request Props</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReactServiceRequestProps(ReactServiceRequestProps object)
   {
     return null;
   }

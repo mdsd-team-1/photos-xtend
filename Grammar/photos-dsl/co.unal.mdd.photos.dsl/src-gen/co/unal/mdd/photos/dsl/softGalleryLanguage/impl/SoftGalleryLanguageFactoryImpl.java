@@ -69,9 +69,9 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.DOMAIN: return createDomain();
       case SoftGalleryLanguagePackage.ENTITY: return createEntity();
       case SoftGalleryLanguagePackage.ENTITIES: return createEntities();
-      case SoftGalleryLanguagePackage.PHOTO: return createPhoto();
-      case SoftGalleryLanguagePackage.ALBUM: return createAlbum();
-      case SoftGalleryLanguagePackage.USER_DOMAIN: return createUserDomain();
+      case SoftGalleryLanguagePackage.ATRIBUTE_PHOTO: return createAtributePhoto();
+      case SoftGalleryLanguagePackage.ATRIBUTE_ALBUM: return createAtributeAlbum();
+      case SoftGalleryLanguagePackage.ATRIBUTE_USER_DOMAIN: return createAtributeUserDomain();
       case SoftGalleryLanguagePackage.FUNCTIONALITY: return createFunctionality();
       case SoftGalleryLanguagePackage.FUNCTIONALITIES: return createFunctionalities();
       case SoftGalleryLanguagePackage.PROFILE_MANAGEMENT: return createProfileManagement();
@@ -84,8 +84,6 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.PHOTO_ACTIONS_FUNCTIONS: return createPhotoActionsFunctions();
       case SoftGalleryLanguagePackage.LANDING_ACTIONS: return createLandingActions();
       case SoftGalleryLanguagePackage.LANDING_FUNCTIONS: return createLandingFunctions();
-      case SoftGalleryLanguagePackage.DOMAIN_CONNECTION: return createDomainConnection();
-      case SoftGalleryLanguagePackage.DOMAIN_RELATIONS: return createDomainRelations();
       case SoftGalleryLanguagePackage.ARCHITECTURE: return createArchitecture();
       case SoftGalleryLanguagePackage.NTIERS: return createNTiers();
       case SoftGalleryLanguagePackage.LAYER: return createLayer();
@@ -95,6 +93,8 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER: return createBusinessLogicLayer();
       case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT: return createBusinessLogicContent();
       case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS: return createBusinessLogicSegments();
+      case SoftGalleryLanguagePackage.CONTROLLER_SEGMENT_ELEMENT: return createControllerSegmentElement();
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT: return createSpecificationSegmentElement();
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_LAYER: return createDataPersistenceLayer();
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_CONTENT: return createDataPersistenceContent();
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_SEGMENTS: return createDataPersistenceSegments();
@@ -177,9 +177,16 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.PROPS: return createProps();
       case SoftGalleryLanguagePackage.PROPS_TYPE: return createPropsType();
       case SoftGalleryLanguagePackage.REACT_CORE_FUNCTIONS: return createReactCoreFunctions();
+      case SoftGalleryLanguagePackage.COMPONENTS_STYLES: return createComponentsStyles();
+      case SoftGalleryLanguagePackage.COMPONENTS_STYLES_CONTENT: return createComponentsStylesContent();
+      case SoftGalleryLanguagePackage.STYLE_PROPERTIES: return createStyleProperties();
+      case SoftGalleryLanguagePackage.STYLE_PROPERTIES_CONTENT: return createStylePropertiesContent();
       case SoftGalleryLanguagePackage.REACT_ACTIONS: return createReactActions();
       case SoftGalleryLanguagePackage.REACT_ACTIONS_CONTENT: return createReactActionsContent();
       case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE: return createReactServicesType();
+      case SoftGalleryLanguagePackage.REACT_SERVICE_CONTENT: return createReactServiceContent();
+      case SoftGalleryLanguagePackage.REACT_SERVICE_CONT_REQUEST: return createReactServiceContRequest();
+      case SoftGalleryLanguagePackage.REACT_SERVICE_REQUEST_PROPS: return createReactServiceRequestProps();
       case SoftGalleryLanguagePackage.REACT_SERVICES_RELATION: return createReactServicesRelation();
       case SoftGalleryLanguagePackage.REACTS_RELATION_SERV: return createReactsRelationServ();
       case SoftGalleryLanguagePackage.REACT_LIBRARIES: return createReactLibraries();
@@ -280,10 +287,10 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public Photo createPhoto()
+  public AtributePhoto createAtributePhoto()
   {
-    PhotoImpl photo = new PhotoImpl();
-    return photo;
+    AtributePhotoImpl atributePhoto = new AtributePhotoImpl();
+    return atributePhoto;
   }
 
   /**
@@ -292,10 +299,10 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public Album createAlbum()
+  public AtributeAlbum createAtributeAlbum()
   {
-    AlbumImpl album = new AlbumImpl();
-    return album;
+    AtributeAlbumImpl atributeAlbum = new AtributeAlbumImpl();
+    return atributeAlbum;
   }
 
   /**
@@ -304,10 +311,10 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public UserDomain createUserDomain()
+  public AtributeUserDomain createAtributeUserDomain()
   {
-    UserDomainImpl userDomain = new UserDomainImpl();
-    return userDomain;
+    AtributeUserDomainImpl atributeUserDomain = new AtributeUserDomainImpl();
+    return atributeUserDomain;
   }
 
   /**
@@ -460,30 +467,6 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public DomainConnection createDomainConnection()
-  {
-    DomainConnectionImpl domainConnection = new DomainConnectionImpl();
-    return domainConnection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DomainRelations createDomainRelations()
-  {
-    DomainRelationsImpl domainRelations = new DomainRelationsImpl();
-    return domainRelations;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Architecture createArchitecture()
   {
     ArchitectureImpl architecture = new ArchitectureImpl();
@@ -584,6 +567,30 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
   {
     BusinessLogicSegmentsImpl businessLogicSegments = new BusinessLogicSegmentsImpl();
     return businessLogicSegments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ControllerSegmentElement createControllerSegmentElement()
+  {
+    ControllerSegmentElementImpl controllerSegmentElement = new ControllerSegmentElementImpl();
+    return controllerSegmentElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SpecificationSegmentElement createSpecificationSegmentElement()
+  {
+    SpecificationSegmentElementImpl specificationSegmentElement = new SpecificationSegmentElementImpl();
+    return specificationSegmentElement;
   }
 
   /**
@@ -1576,6 +1583,54 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
+  public ComponentsStyles createComponentsStyles()
+  {
+    ComponentsStylesImpl componentsStyles = new ComponentsStylesImpl();
+    return componentsStyles;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComponentsStylesContent createComponentsStylesContent()
+  {
+    ComponentsStylesContentImpl componentsStylesContent = new ComponentsStylesContentImpl();
+    return componentsStylesContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StyleProperties createStyleProperties()
+  {
+    StylePropertiesImpl styleProperties = new StylePropertiesImpl();
+    return styleProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StylePropertiesContent createStylePropertiesContent()
+  {
+    StylePropertiesContentImpl stylePropertiesContent = new StylePropertiesContentImpl();
+    return stylePropertiesContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ReactActions createReactActions()
   {
     ReactActionsImpl reactActions = new ReactActionsImpl();
@@ -1604,6 +1659,42 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
   {
     ReactServicesTypeImpl reactServicesType = new ReactServicesTypeImpl();
     return reactServicesType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ReactServiceContent createReactServiceContent()
+  {
+    ReactServiceContentImpl reactServiceContent = new ReactServiceContentImpl();
+    return reactServiceContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ReactServiceContRequest createReactServiceContRequest()
+  {
+    ReactServiceContRequestImpl reactServiceContRequest = new ReactServiceContRequestImpl();
+    return reactServiceContRequest;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ReactServiceRequestProps createReactServiceRequestProps()
+  {
+    ReactServiceRequestPropsImpl reactServiceRequestProps = new ReactServiceRequestPropsImpl();
+    return reactServiceRequestProps;
   }
 
   /**

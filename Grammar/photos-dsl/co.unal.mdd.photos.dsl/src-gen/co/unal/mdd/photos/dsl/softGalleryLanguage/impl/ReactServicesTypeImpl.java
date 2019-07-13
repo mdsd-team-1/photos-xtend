@@ -3,15 +3,25 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactServicesTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactServicesTypeImpl#getReactservcontent <em>Reactservcontent</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +58,16 @@ public class ReactServicesTypeImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getReactservcontent() <em>Reactservcontent</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReactservcontent()
+   * @generated
+   * @ordered
+   */
+  protected EList<ReactServiceContent> reactservcontent;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,45 @@ public class ReactServicesTypeImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
+  public EList<ReactServiceContent> getReactservcontent()
+  {
+    if (reactservcontent == null)
+    {
+      reactservcontent = new EObjectContainmentEList<ReactServiceContent>(ReactServiceContent.class, this, SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__REACTSERVCONTENT);
+    }
+    return reactservcontent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__REACTSERVCONTENT:
+        return ((InternalEList<?>)getReactservcontent()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__NAME:
         return getName();
+      case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__REACTSERVCONTENT:
+        return getReactservcontent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +169,7 @@ public class ReactServicesTypeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +177,10 @@ public class ReactServicesTypeImpl extends MinimalEObjectImpl.Container implemen
     {
       case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__NAME:
         setName((String)newValue);
+        return;
+      case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__REACTSERVCONTENT:
+        getReactservcontent().clear();
+        getReactservcontent().addAll((Collection<? extends ReactServiceContent>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +199,9 @@ public class ReactServicesTypeImpl extends MinimalEObjectImpl.Container implemen
       case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__REACTSERVCONTENT:
+        getReactservcontent().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +218,8 @@ public class ReactServicesTypeImpl extends MinimalEObjectImpl.Container implemen
     {
       case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SoftGalleryLanguagePackage.REACT_SERVICES_TYPE__REACTSERVCONTENT:
+        return reactservcontent != null && !reactservcontent.isEmpty();
     }
     return super.eIsSet(featureID);
   }

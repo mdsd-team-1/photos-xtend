@@ -11,24 +11,26 @@
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Domain">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Domain/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Domain/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Domain/entitydomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Domain/entityfuncs"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Entity">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entity/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Entities">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entities/photoelements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entities/albumelements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entities/userdomainelements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Entities/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entities/atributePhoto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entities/atributeAlbum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Entities/atributeUserDomain"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Photo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Photo/name"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AtributePhoto">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AtributePhoto/name"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Album">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Album/name"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AtributeAlbum">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AtributeAlbum/name"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//UserDomain">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//UserDomain/name"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AtributeUserDomain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AtributeUserDomain/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Functionality">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Functionality/elements"/>
@@ -76,20 +78,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//LandingFunctions/nameCarouselName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//LandingFunctions/passPhotoName"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DomainConnection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DomainConnection/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DomainRelations">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DomainRelations/userdelements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DomainRelations/userDname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DomainRelations/elements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DomainRelations/albumdelements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DomainRelations/albumDname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DomainRelations/photodelements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DomainRelations/photoDname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DomainRelations/photoactdelements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DomainRelations/photoactDname"/>
-    </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Architecture">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Architecture/elements"/>
     </genClasses>
@@ -97,10 +85,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//NTiers/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Layer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Layer/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Layer/layer"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//PresentationLayer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//PresentationLayer/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//PresentationLayer/presentationLayer"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//PresentationContent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//PresentationContent/elements"/>
@@ -111,16 +99,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PresentationSegments/presentationAName"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//BusinessLogicLayer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//BusinessLogicLayer/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//BusinessLogicLayer/businessLogicLayer"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//BusinessLogicContent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//BusinessLogicContent/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//BusinessLogicContent/businessLogicSegments"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//BusinessLogicSegments">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//BusinessLogicSegments/bussinessName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//BusinessLogicSegments/modelSegmentName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//BusinessLogicSegments/repositoryName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//BusinessLogicSegments/securitySName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//BusinessLogicSegments/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//BusinessLogicSegments/controllerSegmentElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//BusinessLogicSegments/specificationSegmentElement"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ControllerSegmentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ControllerSegmentElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpecificationSegmentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpecificationSegmentElement/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DataPersistenceLayer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DataPersistenceLayer/elements"/>
@@ -141,7 +134,7 @@
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DirectoryContent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DirectoryContent/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DirectoryContent/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DirectoryContent/directories"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Directories">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Directories/elements"/>
@@ -165,7 +158,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//LayerTarget/layerelations"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ArchitectureComponents">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ArchitectureComponents/archcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ArchitectureComponents/archFeComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ArchitectureComponents/archBeComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ArchitectureComponents/archPdComponent"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//FrontEnd">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//FrontEnd/name"/>
@@ -341,6 +336,7 @@
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactComponents">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactComponents/componentslogic"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactComponents/componentsui"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactComponents/componentstyle"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ComponentsLogic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ComponentsLogic/name"/>
@@ -389,7 +385,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ReactFunctions/renderclass"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactConstructor">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactConstructor/componentclass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactConstructor/componentstateclass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactConstructor/componentfuncclass"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//State">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//State/statecontents"/>
@@ -411,6 +408,19 @@
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactCoreFunctions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ReactCoreFunctions/name"/>
     </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ComponentsStyles">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ComponentsStyles/stylescontents"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ComponentsStylesContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ComponentsStylesContent/nameStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ComponentsStylesContent/stylecontent"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StyleProperties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//StyleProperties/stylespropscontents"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StylePropertiesContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StylePropertiesContent/propName"/>
+    </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactActions">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactActions/reactactcontent"/>
     </genClasses>
@@ -419,6 +429,18 @@
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactServicesType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ReactServicesType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactServicesType/reactservcontent"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactServiceContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ReactServiceContent/functName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactServiceContent/reactservrequest"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactServiceContRequest">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactServiceContRequest/reactservrequestprops"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactServiceRequestProps">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ReactServiceRequestProps/reqPropName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ReactServiceRequestProps/reqPropDescription"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ReactServicesRelation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ReactServicesRelation/servicesrels"/>

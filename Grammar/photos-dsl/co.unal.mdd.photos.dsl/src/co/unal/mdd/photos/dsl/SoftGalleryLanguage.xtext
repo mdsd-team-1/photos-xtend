@@ -6,25 +6,44 @@ generate softGalleryLanguage "http://www.unal.co/mdd/photos/dsl/SoftGalleryLangu
 Model:
 'System' ':' '{' elements+=Domain elements+=Architecture elements+=Technology '}';
 
+
 // Domain
 Domain:
-'Domain' name=ID ':' '{' elements+=Entity elements+=Functionality elements+=DomainConnection '}';
+'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality /*domain+=DomainConnection*/ '}';
 
 // Domain - Entities
 Entity:
-'Entities' ':' '{' (elements+=Entities) '}';
+'Entities' ':' '{' (elements+=Entities)+ '}';
 
-Entities:
-(photoelements+=Photo)+ (albumelements+=Album)+ (userdomainelements+=UserDomain)+;
+Entities
+//(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
+	:	'PhotoEntity' name=ID (atributePhoto+=AtributePhoto)+
+	|	'AlbumEntity' name=ID (atributeAlbum+=AtributeAlbum)+
+	|	'UserEntity' name=ID (atributeUserDomain+=AtributeUserDomain)+
+	;
 
-Photo:
-'Photo' name=ID;
+AtributePhoto
+	:	'idPhoto' name=ID
+	|	'namePhoto' name=ID
+	|	'urlPhoto' name=ID
+	|	'albumIdPhoto' name=ID
+	;
+	
+AtributeAlbum
+	:	'idAlbum' name=ID
+	|	'nameAlbum' name=ID
+	|	'userIdAlbum' name=ID
+	;
 
-Album:
-'Album' name=ID;
-
-UserDomain:
-'UserDomain' name=ID;
+AtributeUserDomain
+	:	'idUser' name=ID
+	|	'userNameUser' name=ID
+	|	'firstNameUser' name=ID
+	|	'lastNameUser' name=ID
+	|	'profileDescriptionUser' name=ID
+	|	'passwordUser' name=ID
+	|	'emailUser' name=ID
+	;
 
 // Domain - Functionalities
 Functionality:
@@ -68,16 +87,15 @@ LandingFunctions:
 'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID;
 
 //Domain - Relations
-DomainConnection:
+/*DomainConnection:
 'DomainRelations' ':' '{' elements+=DomainRelations '}';
 
 DomainRelations:
 userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
 albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
 photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
-photoactdelements+=PhotoActions photoactDname=ID  ':' '{'elements+=AlbumManagement '}';
-		
-		
+photoactdelements+=PhotoActions photoactDname=ID  ':' '{'elements+=AlbumManagement '}';*/
+
 //Architecture
 Architecture:
 'Architecture:' '{' (elements+=NTiers)+  (elements+=NTiersConnections)+ '}';
@@ -86,10 +104,10 @@ NTiers:
 'Layers' (elements+=Layer)+ 'LayersRelations' (elements+=LayerRelations)+ 'ArchitectureComponents' (elements+=ArchitectureComponents)+;
 
 Layer:
-elements+=PresentationLayer elements+=BusinessLogicLayer elements+=DataPersistenceLayer;
+layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer;
 
 PresentationLayer:
-'PresentationLayer' elements+=PresentationContent elements+=SegmentStructure;
+'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure;
 
 PresentationContent:
 'PresentationSegments' elements+=PresentationSegments;
@@ -98,14 +116,25 @@ PresentationSegments:
 'PresentationView' presentationSName=ID 'PresentationComponent' presentationCName=ID 'PresentationAction' presentationAName=ID;
 
 BusinessLogicLayer:
-'BusinessLogicLayer' elements+=BusinessLogicContent elements+=SegmentStructure;
+'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure;
 
 BusinessLogicContent:
-'BusinessLogicSegments' elements+=BusinessLogicSegments;
+'BusinessLogicSegments' (businessLogicSegments+=BusinessLogicSegments)+;
+	
+BusinessLogicSegments
+	:	'ControllerSegment' name=ID (controllerSegmentElement+=ControllerSegmentElement)+
+	|	'ModelSegment' name=ID 
+	|	'RepositorySegment' name=ID 
+	|	'SecuritySegment' name=ID
+	|	'SpecificationSegment' name=ID (specificationSegmentElement+=SpecificationSegmentElement)+;
+	
+ControllerSegmentElement
+	:	'AmazonSegment' name=ID 
+	|	'ExceptionSegment' name=ID;
 
-BusinessLogicSegments:
-'ControllerSegment' bussinessName=ID 'ModelSegment' modelSegmentName=ID 'RepositorySegment' repositoryName=ID 'SecuritySegment' securitySName=ID;
-
+SpecificationSegmentElement
+	:	'DefinedSearchCriteria' name=ID;
+	
 DataPersistenceLayer:
 'DataPersistenceLayer' elements+=DataPersistenceContent;
 
@@ -122,7 +151,7 @@ SegmentStructureContent:
 'Directories'	name=ID (elements+=DirectoryContent)+;
 
 DirectoryContent:
-'Directory' name=ID elements+=Directories | elements+=SingleFile;
+'Directory' name=ID directories+=Directories | directories+=SingleFile;
 
 Directories:
 elements+=MultipleFile;
@@ -149,7 +178,7 @@ LayerRelationName:
 'PresentationLayer' | 'BusinessLogicLayer' | 'PersistenceDataLayer';
 
 ArchitectureComponents:
-'SystemComponents' archcomponent+=FrontEnd archcomponent+=BackEnd archcomponent+=PersistenceDataComponent;
+'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent;
 
 FrontEnd:
 'FrontEndComponent' name=ID;
@@ -315,7 +344,7 @@ DOMTypeConf:
 'RoutingConf' | 'ServiceWorker' | 'HTMLStructure' | 'Manifest' | 'RepositoriesConf';
 
 ReactComponents:
-'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI '}';
+'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles'}';
 
 ComponentsLogic:
 'LogicComponents' name=ID logiccomponents+=LogicContent;
@@ -382,6 +411,18 @@ nameProps=ID propsdatas+=DataType;
 ReactCoreFunctions:
 name=ID 'FunctionStructure';
 
+ComponentsStyles:
+{ComponentsStyles} (stylescontents+=ComponentsStylesContent)*;
+
+ComponentsStylesContent:
+'Style' nameStyle=ID stylecontent+=StyleProperties;
+
+StyleProperties:
+{StyleProperties} (stylespropscontents+=StylePropertiesContent)*;
+
+StylePropertiesContent:
+'prop_name' propName=ID ("propsContent")+;
+
 ReactActions:
 'ReactActions' ':' '{' reactactcontent+=ReactActionsContent '}';
 
@@ -389,7 +430,16 @@ ReactActionsContent:
 (reactrelcontent+=ReactServicesRelation)+ ;
 	
 ReactServicesType:
-'ServiceType' name=ID 'ServiceContent';
+'ServiceType' name=ID reactservcontent+=ReactServiceContent;
+
+ReactServiceContent:
+('functions' functName=ID reactservrequest+=ReactServiceContRequest)*;
+
+ReactServiceContRequest:
+'return' (reactservrequestprops+=ReactServiceRequestProps)+;
+
+ReactServiceRequestProps:
+'propName' reqPropName=ID reqPropDescription=ID;
 
 ReactServicesRelation:
 'ServicesRelations' (servicesrels+=ReactsRelationServ)+;
@@ -418,8 +468,6 @@ ReactInformationType name=ID 'InformationContent';
 
 ReactInformationType:
 'ReactReadme' | 'ReactAditionalInfo';
-
-
 
 PostgreSQL:
 'PostgreSQL' name=ID ':' '{' elements+=Cluster '}';
@@ -527,3 +575,4 @@ Metadata:
 	
 AmazonElasticComputeCloud:
 	'AmazonElasticComputeCloud' name=ID;
+

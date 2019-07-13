@@ -96,19 +96,19 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createEntitiesAdapter();
       }
       @Override
-      public Adapter casePhoto(Photo object)
+      public Adapter caseAtributePhoto(AtributePhoto object)
       {
-        return createPhotoAdapter();
+        return createAtributePhotoAdapter();
       }
       @Override
-      public Adapter caseAlbum(Album object)
+      public Adapter caseAtributeAlbum(AtributeAlbum object)
       {
-        return createAlbumAdapter();
+        return createAtributeAlbumAdapter();
       }
       @Override
-      public Adapter caseUserDomain(UserDomain object)
+      public Adapter caseAtributeUserDomain(AtributeUserDomain object)
       {
-        return createUserDomainAdapter();
+        return createAtributeUserDomainAdapter();
       }
       @Override
       public Adapter caseFunctionality(Functionality object)
@@ -171,16 +171,6 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createLandingFunctionsAdapter();
       }
       @Override
-      public Adapter caseDomainConnection(DomainConnection object)
-      {
-        return createDomainConnectionAdapter();
-      }
-      @Override
-      public Adapter caseDomainRelations(DomainRelations object)
-      {
-        return createDomainRelationsAdapter();
-      }
-      @Override
       public Adapter caseArchitecture(Architecture object)
       {
         return createArchitectureAdapter();
@@ -224,6 +214,16 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBusinessLogicSegments(BusinessLogicSegments object)
       {
         return createBusinessLogicSegmentsAdapter();
+      }
+      @Override
+      public Adapter caseControllerSegmentElement(ControllerSegmentElement object)
+      {
+        return createControllerSegmentElementAdapter();
+      }
+      @Override
+      public Adapter caseSpecificationSegmentElement(SpecificationSegmentElement object)
+      {
+        return createSpecificationSegmentElementAdapter();
       }
       @Override
       public Adapter caseDataPersistenceLayer(DataPersistenceLayer object)
@@ -636,6 +636,26 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createReactCoreFunctionsAdapter();
       }
       @Override
+      public Adapter caseComponentsStyles(ComponentsStyles object)
+      {
+        return createComponentsStylesAdapter();
+      }
+      @Override
+      public Adapter caseComponentsStylesContent(ComponentsStylesContent object)
+      {
+        return createComponentsStylesContentAdapter();
+      }
+      @Override
+      public Adapter caseStyleProperties(StyleProperties object)
+      {
+        return createStylePropertiesAdapter();
+      }
+      @Override
+      public Adapter caseStylePropertiesContent(StylePropertiesContent object)
+      {
+        return createStylePropertiesContentAdapter();
+      }
+      @Override
       public Adapter caseReactActions(ReactActions object)
       {
         return createReactActionsAdapter();
@@ -649,6 +669,21 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseReactServicesType(ReactServicesType object)
       {
         return createReactServicesTypeAdapter();
+      }
+      @Override
+      public Adapter caseReactServiceContent(ReactServiceContent object)
+      {
+        return createReactServiceContentAdapter();
+      }
+      @Override
+      public Adapter caseReactServiceContRequest(ReactServiceContRequest object)
+      {
+        return createReactServiceContRequestAdapter();
+      }
+      @Override
+      public Adapter caseReactServiceRequestProps(ReactServiceRequestProps object)
+      {
+        return createReactServiceRequestPropsAdapter();
       }
       @Override
       public Adapter caseReactServicesRelation(ReactServicesRelation object)
@@ -938,46 +973,46 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Photo <em>Photo</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto <em>Atribute Photo</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.Photo
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto
    * @generated
    */
-  public Adapter createPhotoAdapter()
+  public Adapter createAtributePhotoAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Album <em>Album</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum <em>Atribute Album</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.Album
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum
    * @generated
    */
-  public Adapter createAlbumAdapter()
+  public Adapter createAtributeAlbumAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain <em>User Domain</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain <em>Atribute User Domain</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain
    * @generated
    */
-  public Adapter createUserDomainAdapter()
+  public Adapter createAtributeUserDomainAdapter()
   {
     return null;
   }
@@ -1163,36 +1198,6 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DomainConnection <em>Domain Connection</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.DomainConnection
-   * @generated
-   */
-  public Adapter createDomainConnectionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DomainRelations <em>Domain Relations</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.DomainRelations
-   * @generated
-   */
-  public Adapter createDomainRelationsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Architecture <em>Architecture</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1323,6 +1328,36 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBusinessLogicSegmentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement <em>Controller Segment Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement
+   * @generated
+   */
+  public Adapter createControllerSegmentElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement <em>Specification Segment Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
+   * @generated
+   */
+  public Adapter createSpecificationSegmentElementAdapter()
   {
     return null;
   }
@@ -2558,6 +2593,66 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles <em>Components Styles</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles
+   * @generated
+   */
+  public Adapter createComponentsStylesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStylesContent <em>Components Styles Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStylesContent
+   * @generated
+   */
+  public Adapter createComponentsStylesContentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties <em>Style Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties
+   * @generated
+   */
+  public Adapter createStylePropertiesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent <em>Style Properties Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent
+   * @generated
+   */
+  public Adapter createStylePropertiesContentAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactActions <em>React Actions</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2598,6 +2693,51 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReactServicesTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContent <em>React Service Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContent
+   * @generated
+   */
+  public Adapter createReactServiceContentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContRequest <em>React Service Cont Request</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContRequest
+   * @generated
+   */
+  public Adapter createReactServiceContRequestAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceRequestProps <em>React Service Request Props</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceRequestProps
+   * @generated
+   */
+  public Adapter createReactServiceRequestPropsAdapter()
   {
     return null;
   }

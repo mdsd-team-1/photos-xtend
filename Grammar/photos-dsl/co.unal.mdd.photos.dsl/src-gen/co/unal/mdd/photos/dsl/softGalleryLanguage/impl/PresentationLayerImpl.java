@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.PresentationLayerImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.PresentationLayerImpl#getPresentationLayer <em>Presentation Layer</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class PresentationLayerImpl extends MinimalEObjectImpl.Container implements PresentationLayer
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getPresentationLayer() <em>Presentation Layer</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getPresentationLayer()
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<EObject> presentationLayer;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class PresentationLayerImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public EList<EObject> getElements()
+  public EList<EObject> getPresentationLayer()
   {
-    if (elements == null)
+    if (presentationLayer == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.PRESENTATION_LAYER__ELEMENTS);
+      presentationLayer = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.PRESENTATION_LAYER__PRESENTATION_LAYER);
     }
-    return elements;
+    return presentationLayer;
   }
 
   /**
@@ -92,8 +92,8 @@ public class PresentationLayerImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__PRESENTATION_LAYER:
+        return ((InternalEList<?>)getPresentationLayer()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class PresentationLayerImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__PRESENTATION_LAYER:
+        return getPresentationLayer();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class PresentationLayerImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__PRESENTATION_LAYER:
+        getPresentationLayer().clear();
+        getPresentationLayer().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class PresentationLayerImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__PRESENTATION_LAYER:
+        getPresentationLayer().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class PresentationLayerImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.PRESENTATION_LAYER__PRESENTATION_LAYER:
+        return presentationLayer != null && !presentationLayer.isEmpty();
     }
     return super.eIsSet(featureID);
   }

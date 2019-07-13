@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicLayerImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicLayerImpl#getBusinessLogicLayer <em>Business Logic Layer</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container implements BusinessLogicLayer
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getBusinessLogicLayer() <em>Business Logic Layer</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getBusinessLogicLayer()
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<EObject> businessLogicLayer;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<EObject> getElements()
+  public EList<EObject> getBusinessLogicLayer()
   {
-    if (elements == null)
+    if (businessLogicLayer == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__ELEMENTS);
+      businessLogicLayer = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER);
     }
-    return elements;
+    return businessLogicLayer;
   }
 
   /**
@@ -92,8 +92,8 @@ public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER:
+        return ((InternalEList<?>)getBusinessLogicLayer()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER:
+        return getBusinessLogicLayer();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER:
+        getBusinessLogicLayer().clear();
+        getBusinessLogicLayer().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER:
+        getBusinessLogicLayer().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class BusinessLogicLayerImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_LAYER__BUSINESS_LOGIC_LAYER:
+        return businessLogicLayer != null && !businessLogicLayer.isEmpty();
     }
     return super.eIsSet(featureID);
   }

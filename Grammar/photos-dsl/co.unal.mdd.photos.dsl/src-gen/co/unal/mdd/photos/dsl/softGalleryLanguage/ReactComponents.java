@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactComponents#getComponentslogic <em>Componentslogic</em>}</li>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactComponents#getComponentsui <em>Componentsui</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactComponents#getComponentstyle <em>Componentstyle</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getReactComponents()
@@ -49,5 +50,17 @@ public interface ReactComponents extends EObject
    * @generated
    */
   EList<ComponentsUI> getComponentsui();
+
+  /**
+   * Returns the value of the '<em><b>Componentstyle</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Componentstyle</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getReactComponents_Componentstyle()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ComponentsStyles> getComponentstyle();
 
 } // ReactComponents

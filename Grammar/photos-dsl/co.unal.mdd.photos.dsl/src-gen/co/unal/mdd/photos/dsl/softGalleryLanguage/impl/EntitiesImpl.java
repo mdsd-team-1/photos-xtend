@@ -3,14 +3,15 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Album;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,9 +33,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getPhotoelements <em>Photoelements</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getAlbumelements <em>Albumelements</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getUserdomainelements <em>Userdomainelements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getAtributePhoto <em>Atribute Photo</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getAtributeAlbum <em>Atribute Album</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.EntitiesImpl#getAtributeUserDomain <em>Atribute User Domain</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,34 +44,54 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entities
 {
   /**
-   * The cached value of the '{@link #getPhotoelements() <em>Photoelements</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPhotoelements()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<Photo> photoelements;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAlbumelements() <em>Albumelements</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlbumelements()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<Album> albumelements;
+  protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUserdomainelements() <em>Userdomainelements</em>}' containment reference list.
+   * The cached value of the '{@link #getAtributePhoto() <em>Atribute Photo</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUserdomainelements()
+   * @see #getAtributePhoto()
    * @generated
    * @ordered
    */
-  protected EList<UserDomain> userdomainelements;
+  protected EList<AtributePhoto> atributePhoto;
+
+  /**
+   * The cached value of the '{@link #getAtributeAlbum() <em>Atribute Album</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAtributeAlbum()
+   * @generated
+   * @ordered
+   */
+  protected EList<AtributeAlbum> atributeAlbum;
+
+  /**
+   * The cached value of the '{@link #getAtributeUserDomain() <em>Atribute User Domain</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAtributeUserDomain()
+   * @generated
+   * @ordered
+   */
+  protected EList<AtributeUserDomain> atributeUserDomain;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,13 +120,9 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
    * @generated
    */
   @Override
-  public EList<Photo> getPhotoelements()
+  public String getName()
   {
-    if (photoelements == null)
-    {
-      photoelements = new EObjectContainmentEList<Photo>(Photo.class, this, SoftGalleryLanguagePackage.ENTITIES__PHOTOELEMENTS);
-    }
-    return photoelements;
+    return name;
   }
 
   /**
@@ -112,13 +131,12 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
    * @generated
    */
   @Override
-  public EList<Album> getAlbumelements()
+  public void setName(String newName)
   {
-    if (albumelements == null)
-    {
-      albumelements = new EObjectContainmentEList<Album>(Album.class, this, SoftGalleryLanguagePackage.ENTITIES__ALBUMELEMENTS);
-    }
-    return albumelements;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.ENTITIES__NAME, oldName, name));
   }
 
   /**
@@ -127,13 +145,43 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
    * @generated
    */
   @Override
-  public EList<UserDomain> getUserdomainelements()
+  public EList<AtributePhoto> getAtributePhoto()
   {
-    if (userdomainelements == null)
+    if (atributePhoto == null)
     {
-      userdomainelements = new EObjectContainmentEList<UserDomain>(UserDomain.class, this, SoftGalleryLanguagePackage.ENTITIES__USERDOMAINELEMENTS);
+      atributePhoto = new EObjectContainmentEList<AtributePhoto>(AtributePhoto.class, this, SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_PHOTO);
     }
-    return userdomainelements;
+    return atributePhoto;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AtributeAlbum> getAtributeAlbum()
+  {
+    if (atributeAlbum == null)
+    {
+      atributeAlbum = new EObjectContainmentEList<AtributeAlbum>(AtributeAlbum.class, this, SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_ALBUM);
+    }
+    return atributeAlbum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AtributeUserDomain> getAtributeUserDomain()
+  {
+    if (atributeUserDomain == null)
+    {
+      atributeUserDomain = new EObjectContainmentEList<AtributeUserDomain>(AtributeUserDomain.class, this, SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_USER_DOMAIN);
+    }
+    return atributeUserDomain;
   }
 
   /**
@@ -146,12 +194,12 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ENTITIES__PHOTOELEMENTS:
-        return ((InternalEList<?>)getPhotoelements()).basicRemove(otherEnd, msgs);
-      case SoftGalleryLanguagePackage.ENTITIES__ALBUMELEMENTS:
-        return ((InternalEList<?>)getAlbumelements()).basicRemove(otherEnd, msgs);
-      case SoftGalleryLanguagePackage.ENTITIES__USERDOMAINELEMENTS:
-        return ((InternalEList<?>)getUserdomainelements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_PHOTO:
+        return ((InternalEList<?>)getAtributePhoto()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_ALBUM:
+        return ((InternalEList<?>)getAtributeAlbum()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_USER_DOMAIN:
+        return ((InternalEList<?>)getAtributeUserDomain()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -166,12 +214,14 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ENTITIES__PHOTOELEMENTS:
-        return getPhotoelements();
-      case SoftGalleryLanguagePackage.ENTITIES__ALBUMELEMENTS:
-        return getAlbumelements();
-      case SoftGalleryLanguagePackage.ENTITIES__USERDOMAINELEMENTS:
-        return getUserdomainelements();
+      case SoftGalleryLanguagePackage.ENTITIES__NAME:
+        return getName();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_PHOTO:
+        return getAtributePhoto();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_ALBUM:
+        return getAtributeAlbum();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_USER_DOMAIN:
+        return getAtributeUserDomain();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -187,17 +237,20 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ENTITIES__PHOTOELEMENTS:
-        getPhotoelements().clear();
-        getPhotoelements().addAll((Collection<? extends Photo>)newValue);
+      case SoftGalleryLanguagePackage.ENTITIES__NAME:
+        setName((String)newValue);
         return;
-      case SoftGalleryLanguagePackage.ENTITIES__ALBUMELEMENTS:
-        getAlbumelements().clear();
-        getAlbumelements().addAll((Collection<? extends Album>)newValue);
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_PHOTO:
+        getAtributePhoto().clear();
+        getAtributePhoto().addAll((Collection<? extends AtributePhoto>)newValue);
         return;
-      case SoftGalleryLanguagePackage.ENTITIES__USERDOMAINELEMENTS:
-        getUserdomainelements().clear();
-        getUserdomainelements().addAll((Collection<? extends UserDomain>)newValue);
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_ALBUM:
+        getAtributeAlbum().clear();
+        getAtributeAlbum().addAll((Collection<? extends AtributeAlbum>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_USER_DOMAIN:
+        getAtributeUserDomain().clear();
+        getAtributeUserDomain().addAll((Collection<? extends AtributeUserDomain>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,14 +266,17 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ENTITIES__PHOTOELEMENTS:
-        getPhotoelements().clear();
+      case SoftGalleryLanguagePackage.ENTITIES__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case SoftGalleryLanguagePackage.ENTITIES__ALBUMELEMENTS:
-        getAlbumelements().clear();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_PHOTO:
+        getAtributePhoto().clear();
         return;
-      case SoftGalleryLanguagePackage.ENTITIES__USERDOMAINELEMENTS:
-        getUserdomainelements().clear();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_ALBUM:
+        getAtributeAlbum().clear();
+        return;
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_USER_DOMAIN:
+        getAtributeUserDomain().clear();
         return;
     }
     super.eUnset(featureID);
@@ -236,14 +292,33 @@ public class EntitiesImpl extends MinimalEObjectImpl.Container implements Entiti
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.ENTITIES__PHOTOELEMENTS:
-        return photoelements != null && !photoelements.isEmpty();
-      case SoftGalleryLanguagePackage.ENTITIES__ALBUMELEMENTS:
-        return albumelements != null && !albumelements.isEmpty();
-      case SoftGalleryLanguagePackage.ENTITIES__USERDOMAINELEMENTS:
-        return userdomainelements != null && !userdomainelements.isEmpty();
+      case SoftGalleryLanguagePackage.ENTITIES__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_PHOTO:
+        return atributePhoto != null && !atributePhoto.isEmpty();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_ALBUM:
+        return atributeAlbum != null && !atributeAlbum.isEmpty();
+      case SoftGalleryLanguagePackage.ENTITIES__ATRIBUTE_USER_DOMAIN:
+        return atributeUserDomain != null && !atributeUserDomain.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //EntitiesImpl

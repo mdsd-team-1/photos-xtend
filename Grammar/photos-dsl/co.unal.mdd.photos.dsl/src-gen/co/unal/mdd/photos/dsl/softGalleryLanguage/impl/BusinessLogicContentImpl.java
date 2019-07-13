@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicContentImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.BusinessLogicContentImpl#getBusinessLogicSegments <em>Business Logic Segments</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container implements BusinessLogicContent
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getBusinessLogicSegments() <em>Business Logic Segments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getBusinessLogicSegments()
    * @generated
    * @ordered
    */
-  protected EList<BusinessLogicSegments> elements;
+  protected EList<BusinessLogicSegments> businessLogicSegments;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public EList<BusinessLogicSegments> getElements()
+  public EList<BusinessLogicSegments> getBusinessLogicSegments()
   {
-    if (elements == null)
+    if (businessLogicSegments == null)
     {
-      elements = new EObjectContainmentEList<BusinessLogicSegments>(BusinessLogicSegments.class, this, SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__ELEMENTS);
+      businessLogicSegments = new EObjectContainmentEList<BusinessLogicSegments>(BusinessLogicSegments.class, this, SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS);
     }
-    return elements;
+    return businessLogicSegments;
   }
 
   /**
@@ -92,8 +92,8 @@ public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS:
+        return ((InternalEList<?>)getBusinessLogicSegments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS:
+        return getBusinessLogicSegments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends BusinessLogicSegments>)newValue);
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS:
+        getBusinessLogicSegments().clear();
+        getBusinessLogicSegments().addAll((Collection<? extends BusinessLogicSegments>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS:
+        getBusinessLogicSegments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class BusinessLogicContentImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.BUSINESS_LOGIC_CONTENT__BUSINESS_LOGIC_SEGMENTS:
+        return businessLogicSegments != null && !businessLogicSegments.isEmpty();
     }
     return super.eIsSet(featureID);
   }

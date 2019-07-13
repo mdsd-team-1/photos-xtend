@@ -83,20 +83,18 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementsEntityParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
-		private final Assignment cElementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cElementsFunctionalityParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
-		private final Assignment cElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cElementsDomainConnectionParserRuleCall_6_0 = (RuleCall)cElementsAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cEntitydomainAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cEntitydomainEntityParserRuleCall_4_0 = (RuleCall)cEntitydomainAssignment_4.eContents().get(0);
+		private final Assignment cEntityfuncsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEntityfuncsFunctionalityParserRuleCall_5_0 = (RuleCall)cEntityfuncsAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//// Domain
 		//Domain:
-		//	'Domain' name=ID ':' '{' elements+=Entity elements+=Functionality elements+=DomainConnection '}';
+		//	'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality /*domain+=DomainConnection*/ '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Domain' name=ID ':' '{' elements+=Entity elements+=Functionality elements+=DomainConnection '}'
+		//'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality /*domain+=DomainConnection*/ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Domain'
@@ -114,26 +112,20 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//elements+=Entity
-		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
+		//entitydomain+=Entity
+		public Assignment getEntitydomainAssignment_4() { return cEntitydomainAssignment_4; }
 		
 		//Entity
-		public RuleCall getElementsEntityParserRuleCall_4_0() { return cElementsEntityParserRuleCall_4_0; }
+		public RuleCall getEntitydomainEntityParserRuleCall_4_0() { return cEntitydomainEntityParserRuleCall_4_0; }
 		
-		//elements+=Functionality
-		public Assignment getElementsAssignment_5() { return cElementsAssignment_5; }
+		//entityfuncs+=Functionality
+		public Assignment getEntityfuncsAssignment_5() { return cEntityfuncsAssignment_5; }
 		
 		//Functionality
-		public RuleCall getElementsFunctionalityParserRuleCall_5_0() { return cElementsFunctionalityParserRuleCall_5_0; }
+		public RuleCall getEntityfuncsFunctionalityParserRuleCall_5_0() { return cEntityfuncsFunctionalityParserRuleCall_5_0; }
 		
-		//elements+=DomainConnection
-		public Assignment getElementsAssignment_6() { return cElementsAssignment_6; }
-		
-		//DomainConnection
-		public RuleCall getElementsDomainConnectionParserRuleCall_6_0() { return cElementsDomainConnectionParserRuleCall_6_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		///*domain+=DomainConnection*/ '}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Entity");
@@ -147,10 +139,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		
 		//// Domain - Entities
 		//Entity:
-		//	'Entities' ':' '{' elements+=Entities '}';
+		//	'Entities' ':' '{' elements+=Entities+ '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Entities' ':' '{' elements+=Entities '}'
+		//'Entities' ':' '{' elements+=Entities+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Entities'
@@ -162,7 +154,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//elements+=Entities
+		//elements+=Entities+
 		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
 		//Entities
@@ -173,107 +165,359 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	public class EntitiesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Entities");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPhotoelementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPhotoelementsPhotoParserRuleCall_0_0 = (RuleCall)cPhotoelementsAssignment_0.eContents().get(0);
-		private final Assignment cAlbumelementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAlbumelementsAlbumParserRuleCall_1_0 = (RuleCall)cAlbumelementsAssignment_1.eContents().get(0);
-		private final Assignment cUserdomainelementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUserdomainelementsUserDomainParserRuleCall_2_0 = (RuleCall)cUserdomainelementsAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cPhotoEntityKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Assignment cAtributePhotoAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cAtributePhotoAtributePhotoParserRuleCall_0_2_0 = (RuleCall)cAtributePhotoAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cAlbumEntityKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Assignment cAtributeAlbumAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cAtributeAlbumAtributeAlbumParserRuleCall_1_2_0 = (RuleCall)cAtributeAlbumAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cUserEntityKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final Assignment cAtributeUserDomainAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cAtributeUserDomainAtributeUserDomainParserRuleCall_2_2_0 = (RuleCall)cAtributeUserDomainAssignment_2_2.eContents().get(0);
 		
-		//Entities:
-		//	photoelements+=Photo+ albumelements+=Album+ userdomainelements+=UserDomain+;
+		//Entities //(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
+		//:
+		//	'PhotoEntity' name=ID atributePhoto+=AtributePhoto+
+		//	| 'AlbumEntity' name=ID atributeAlbum+=AtributeAlbum+
+		//	| 'UserEntity' name=ID atributeUserDomain+=AtributeUserDomain+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//photoelements+=Photo+ albumelements+=Album+ userdomainelements+=UserDomain+
-		public Group getGroup() { return cGroup; }
+		//'PhotoEntity' name=ID atributePhoto+=AtributePhoto+ | 'AlbumEntity' name=ID atributeAlbum+=AtributeAlbum+ | 'UserEntity'
+		//name=ID atributeUserDomain+=AtributeUserDomain+
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//photoelements+=Photo+
-		public Assignment getPhotoelementsAssignment_0() { return cPhotoelementsAssignment_0; }
+		//'PhotoEntity' name=ID atributePhoto+=AtributePhoto+
+		public Group getGroup_0() { return cGroup_0; }
 		
-		//Photo
-		public RuleCall getPhotoelementsPhotoParserRuleCall_0_0() { return cPhotoelementsPhotoParserRuleCall_0_0; }
-		
-		//albumelements+=Album+
-		public Assignment getAlbumelementsAssignment_1() { return cAlbumelementsAssignment_1; }
-		
-		//Album
-		public RuleCall getAlbumelementsAlbumParserRuleCall_1_0() { return cAlbumelementsAlbumParserRuleCall_1_0; }
-		
-		//userdomainelements+=UserDomain+
-		public Assignment getUserdomainelementsAssignment_2() { return cUserdomainelementsAssignment_2; }
-		
-		//UserDomain
-		public RuleCall getUserdomainelementsUserDomainParserRuleCall_2_0() { return cUserdomainelementsUserDomainParserRuleCall_2_0; }
-	}
-	public class PhotoElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Photo");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPhotoKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//Photo:
-		//	'Photo' name=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Photo' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'Photo'
-		public Keyword getPhotoKeyword_0() { return cPhotoKeyword_0; }
+		//'PhotoEntity'
+		public Keyword getPhotoEntityKeyword_0_0() { return cPhotoEntityKeyword_0_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class AlbumElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Album");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAlbumKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
 		
-		//Album:
-		//	'Album' name=ID;
-		@Override public ParserRule getRule() { return rule; }
+		//atributePhoto+=AtributePhoto+
+		public Assignment getAtributePhotoAssignment_0_2() { return cAtributePhotoAssignment_0_2; }
 		
-		//'Album' name=ID
-		public Group getGroup() { return cGroup; }
+		//AtributePhoto
+		public RuleCall getAtributePhotoAtributePhotoParserRuleCall_0_2_0() { return cAtributePhotoAtributePhotoParserRuleCall_0_2_0; }
 		
-		//'Album'
-		public Keyword getAlbumKeyword_0() { return cAlbumKeyword_0; }
+		//'AlbumEntity' name=ID atributeAlbum+=AtributeAlbum+
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'AlbumEntity'
+		public Keyword getAlbumEntityKeyword_1_0() { return cAlbumEntityKeyword_1_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class UserDomainElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.UserDomain");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cUserDomainKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
 		
-		//UserDomain:
-		//	'UserDomain' name=ID;
-		@Override public ParserRule getRule() { return rule; }
+		//atributeAlbum+=AtributeAlbum+
+		public Assignment getAtributeAlbumAssignment_1_2() { return cAtributeAlbumAssignment_1_2; }
 		
-		//'UserDomain' name=ID
-		public Group getGroup() { return cGroup; }
+		//AtributeAlbum
+		public RuleCall getAtributeAlbumAtributeAlbumParserRuleCall_1_2_0() { return cAtributeAlbumAtributeAlbumParserRuleCall_1_2_0; }
 		
-		//'UserDomain'
-		public Keyword getUserDomainKeyword_0() { return cUserDomainKeyword_0; }
+		//'UserEntity' name=ID atributeUserDomain+=AtributeUserDomain+
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'UserEntity'
+		public Keyword getUserEntityKeyword_2_0() { return cUserEntityKeyword_2_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+		
+		//atributeUserDomain+=AtributeUserDomain+
+		public Assignment getAtributeUserDomainAssignment_2_2() { return cAtributeUserDomainAssignment_2_2; }
+		
+		//AtributeUserDomain
+		public RuleCall getAtributeUserDomainAtributeUserDomainParserRuleCall_2_2_0() { return cAtributeUserDomainAtributeUserDomainParserRuleCall_2_2_0; }
+	}
+	public class AtributePhotoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.AtributePhoto");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cIdPhotoKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cNamePhotoKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cUrlPhotoKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cAlbumIdPhotoKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
+		
+		//AtributePhoto:
+		//	'idPhoto' name=ID
+		//	| 'namePhoto' name=ID
+		//	| 'urlPhoto' name=ID
+		//	| 'albumIdPhoto' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'idPhoto' name=ID | 'namePhoto' name=ID | 'urlPhoto' name=ID | 'albumIdPhoto' name=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'idPhoto' name=ID
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'idPhoto'
+		public Keyword getIdPhotoKeyword_0_0() { return cIdPhotoKeyword_0_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		
+		//'namePhoto' name=ID
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'namePhoto'
+		public Keyword getNamePhotoKeyword_1_0() { return cNamePhotoKeyword_1_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		
+		//'urlPhoto' name=ID
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'urlPhoto'
+		public Keyword getUrlPhotoKeyword_2_0() { return cUrlPhotoKeyword_2_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+		
+		//'albumIdPhoto' name=ID
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'albumIdPhoto'
+		public Keyword getAlbumIdPhotoKeyword_3_0() { return cAlbumIdPhotoKeyword_3_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_1_0() { return cNameIDTerminalRuleCall_3_1_0; }
+	}
+	public class AtributeAlbumElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.AtributeAlbum");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cIdAlbumKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cNameAlbumKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cUserIdAlbumKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		
+		//AtributeAlbum:
+		//	'idAlbum' name=ID
+		//	| 'nameAlbum' name=ID
+		//	| 'userIdAlbum' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'idAlbum' name=ID | 'nameAlbum' name=ID | 'userIdAlbum' name=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'idAlbum' name=ID
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'idAlbum'
+		public Keyword getIdAlbumKeyword_0_0() { return cIdAlbumKeyword_0_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		
+		//'nameAlbum' name=ID
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'nameAlbum'
+		public Keyword getNameAlbumKeyword_1_0() { return cNameAlbumKeyword_1_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		
+		//'userIdAlbum' name=ID
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'userIdAlbum'
+		public Keyword getUserIdAlbumKeyword_2_0() { return cUserIdAlbumKeyword_2_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+	}
+	public class AtributeUserDomainElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.AtributeUserDomain");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cIdUserKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cUserNameUserKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cFirstNameUserKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cLastNameUserKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cProfileDescriptionUserKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Keyword cPasswordUserKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cNameAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Keyword cEmailUserKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cNameAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_6_1_0 = (RuleCall)cNameAssignment_6_1.eContents().get(0);
+		
+		//AtributeUserDomain:
+		//	'idUser' name=ID
+		//	| 'userNameUser' name=ID
+		//	| 'firstNameUser' name=ID
+		//	| 'lastNameUser' name=ID
+		//	| 'profileDescriptionUser' name=ID
+		//	| 'passwordUser' name=ID
+		//	| 'emailUser' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'idUser' name=ID | 'userNameUser' name=ID | 'firstNameUser' name=ID | 'lastNameUser' name=ID | 'profileDescriptionUser'
+		//name=ID | 'passwordUser' name=ID | 'emailUser' name=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'idUser' name=ID
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'idUser'
+		public Keyword getIdUserKeyword_0_0() { return cIdUserKeyword_0_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		
+		//'userNameUser' name=ID
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'userNameUser'
+		public Keyword getUserNameUserKeyword_1_0() { return cUserNameUserKeyword_1_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		
+		//'firstNameUser' name=ID
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'firstNameUser'
+		public Keyword getFirstNameUserKeyword_2_0() { return cFirstNameUserKeyword_2_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+		
+		//'lastNameUser' name=ID
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'lastNameUser'
+		public Keyword getLastNameUserKeyword_3_0() { return cLastNameUserKeyword_3_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_1_0() { return cNameIDTerminalRuleCall_3_1_0; }
+		
+		//'profileDescriptionUser' name=ID
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'profileDescriptionUser'
+		public Keyword getProfileDescriptionUserKeyword_4_0() { return cProfileDescriptionUserKeyword_4_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_4_1() { return cNameAssignment_4_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
+		
+		//'passwordUser' name=ID
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'passwordUser'
+		public Keyword getPasswordUserKeyword_5_0() { return cPasswordUserKeyword_5_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_5_1() { return cNameAssignment_5_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_5_1_0() { return cNameIDTerminalRuleCall_5_1_0; }
+		
+		//'emailUser' name=ID
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'emailUser'
+		public Keyword getEmailUserKeyword_6_0() { return cEmailUserKeyword_6_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_6_1() { return cNameAssignment_6_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_6_1_0() { return cNameIDTerminalRuleCall_6_1_0; }
 	}
 	public class FunctionalityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Functionality");
@@ -689,202 +933,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getPassPhotoNameIDTerminalRuleCall_3_0() { return cPassPhotoNameIDTerminalRuleCall_3_0; }
 	}
-	public class DomainConnectionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.DomainConnection");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDomainRelationsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cElementsDomainRelationsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		////Domain - Relations
-		//DomainConnection:
-		//	'DomainRelations' ':' '{' elements+=DomainRelations '}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'DomainRelations' ':' '{' elements+=DomainRelations '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'DomainRelations'
-		public Keyword getDomainRelationsKeyword_0() { return cDomainRelationsKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//elements+=DomainRelations
-		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
-		
-		//DomainRelations
-		public RuleCall getElementsDomainRelationsParserRuleCall_3_0() { return cElementsDomainRelationsParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-	public class DomainRelationsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.DomainRelations");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cUserdelementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cUserdelementsUserDomainParserRuleCall_0_0 = (RuleCall)cUserdelementsAssignment_0.eContents().get(0);
-		private final Assignment cUserDnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cUserDnameIDTerminalRuleCall_1_0 = (RuleCall)cUserDnameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementsFunctionalitiesParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAlbumdelementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cAlbumdelementsAlbumParserRuleCall_6_0 = (RuleCall)cAlbumdelementsAssignment_6.eContents().get(0);
-		private final Assignment cAlbumDnameAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cAlbumDnameIDTerminalRuleCall_7_0 = (RuleCall)cAlbumDnameAssignment_7.eContents().get(0);
-		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cElementsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cElementsAlbumManagementFunctionsParserRuleCall_10_0 = (RuleCall)cElementsAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cPhotodelementsAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cPhotodelementsPhotoParserRuleCall_12_0 = (RuleCall)cPhotodelementsAssignment_12.eContents().get(0);
-		private final Assignment cPhotoDnameAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cPhotoDnameIDTerminalRuleCall_13_0 = (RuleCall)cPhotoDnameAssignment_13.eContents().get(0);
-		private final Keyword cColonKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cLeftCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Assignment cElementsAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cElementsPhotoActionsFunctionsParserRuleCall_16_0 = (RuleCall)cElementsAssignment_16.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Assignment cPhotoactdelementsAssignment_18 = (Assignment)cGroup.eContents().get(18);
-		private final RuleCall cPhotoactdelementsPhotoActionsParserRuleCall_18_0 = (RuleCall)cPhotoactdelementsAssignment_18.eContents().get(0);
-		private final Assignment cPhotoactDnameAssignment_19 = (Assignment)cGroup.eContents().get(19);
-		private final RuleCall cPhotoactDnameIDTerminalRuleCall_19_0 = (RuleCall)cPhotoactDnameAssignment_19.eContents().get(0);
-		private final Keyword cColonKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Keyword cLeftCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Assignment cElementsAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cElementsAlbumManagementParserRuleCall_22_0 = (RuleCall)cElementsAssignment_22.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_23 = (Keyword)cGroup.eContents().get(23);
-		
-		//DomainRelations:
-		//	userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
-		//	albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
-		//	photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
-		//	photoactdelements+=PhotoActions photoactDname=ID ':' '{' elements+=AlbumManagement '}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}' albumdelements+=Album albumDname=ID ':' '{'
-		//elements+=AlbumManagementFunctions '}' photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
-		//photoactdelements+=PhotoActions photoactDname=ID ':' '{' elements+=AlbumManagement '}'
-		public Group getGroup() { return cGroup; }
-		
-		//userdelements+=UserDomain
-		public Assignment getUserdelementsAssignment_0() { return cUserdelementsAssignment_0; }
-		
-		//UserDomain
-		public RuleCall getUserdelementsUserDomainParserRuleCall_0_0() { return cUserdelementsUserDomainParserRuleCall_0_0; }
-		
-		//userDname=ID
-		public Assignment getUserDnameAssignment_1() { return cUserDnameAssignment_1; }
-		
-		//ID
-		public RuleCall getUserDnameIDTerminalRuleCall_1_0() { return cUserDnameIDTerminalRuleCall_1_0; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//elements+=Functionalities
-		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
-		
-		//Functionalities
-		public RuleCall getElementsFunctionalitiesParserRuleCall_4_0() { return cElementsFunctionalitiesParserRuleCall_4_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-		
-		//albumdelements+=Album
-		public Assignment getAlbumdelementsAssignment_6() { return cAlbumdelementsAssignment_6; }
-		
-		//Album
-		public RuleCall getAlbumdelementsAlbumParserRuleCall_6_0() { return cAlbumdelementsAlbumParserRuleCall_6_0; }
-		
-		//albumDname=ID
-		public Assignment getAlbumDnameAssignment_7() { return cAlbumDnameAssignment_7; }
-		
-		//ID
-		public RuleCall getAlbumDnameIDTerminalRuleCall_7_0() { return cAlbumDnameIDTerminalRuleCall_7_0; }
-		
-		//':'
-		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
-		
-		//elements+=AlbumManagementFunctions
-		public Assignment getElementsAssignment_10() { return cElementsAssignment_10; }
-		
-		//AlbumManagementFunctions
-		public RuleCall getElementsAlbumManagementFunctionsParserRuleCall_10_0() { return cElementsAlbumManagementFunctionsParserRuleCall_10_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
-		
-		//photodelements+=Photo
-		public Assignment getPhotodelementsAssignment_12() { return cPhotodelementsAssignment_12; }
-		
-		//Photo
-		public RuleCall getPhotodelementsPhotoParserRuleCall_12_0() { return cPhotodelementsPhotoParserRuleCall_12_0; }
-		
-		//photoDname=ID
-		public Assignment getPhotoDnameAssignment_13() { return cPhotoDnameAssignment_13; }
-		
-		//ID
-		public RuleCall getPhotoDnameIDTerminalRuleCall_13_0() { return cPhotoDnameIDTerminalRuleCall_13_0; }
-		
-		//':'
-		public Keyword getColonKeyword_14() { return cColonKeyword_14; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_15() { return cLeftCurlyBracketKeyword_15; }
-		
-		//elements+=PhotoActionsFunctions
-		public Assignment getElementsAssignment_16() { return cElementsAssignment_16; }
-		
-		//PhotoActionsFunctions
-		public RuleCall getElementsPhotoActionsFunctionsParserRuleCall_16_0() { return cElementsPhotoActionsFunctionsParserRuleCall_16_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
-		
-		//photoactdelements+=PhotoActions
-		public Assignment getPhotoactdelementsAssignment_18() { return cPhotoactdelementsAssignment_18; }
-		
-		//PhotoActions
-		public RuleCall getPhotoactdelementsPhotoActionsParserRuleCall_18_0() { return cPhotoactdelementsPhotoActionsParserRuleCall_18_0; }
-		
-		//photoactDname=ID
-		public Assignment getPhotoactDnameAssignment_19() { return cPhotoactDnameAssignment_19; }
-		
-		//ID
-		public RuleCall getPhotoactDnameIDTerminalRuleCall_19_0() { return cPhotoactDnameIDTerminalRuleCall_19_0; }
-		
-		//':'
-		public Keyword getColonKeyword_20() { return cColonKeyword_20; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_21() { return cLeftCurlyBracketKeyword_21; }
-		
-		//elements+=AlbumManagement
-		public Assignment getElementsAssignment_22() { return cElementsAssignment_22; }
-		
-		//AlbumManagement
-		public RuleCall getElementsAlbumManagementParserRuleCall_22_0() { return cElementsAlbumManagementParserRuleCall_22_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_23() { return cRightCurlyBracketKeyword_23; }
-	}
 	public class ArchitectureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Architecture");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -896,7 +944,15 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsNTiersConnectionsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		////Architecture
+		////Domain - Relations
+		///*DomainConnection:
+		//'DomainRelations' ':' '{' elements+=DomainRelations '}';
+		//
+		//DomainRelations:
+		//userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
+		//albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
+		//photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
+		//photoactdelements+=PhotoActions photoactDname=ID  ':' '{'elements+=AlbumManagement '}';*/ //Architecture
 		//Architecture:
 		//	'Architecture:' '{' elements+=NTiers+ elements+=NTiersConnections+ '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -977,68 +1033,68 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	public class LayerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Layer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cElementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cElementsPresentationLayerParserRuleCall_0_0 = (RuleCall)cElementsAssignment_0.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsBusinessLogicLayerParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsDataPersistenceLayerParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Assignment cLayerAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLayerPresentationLayerParserRuleCall_0_0 = (RuleCall)cLayerAssignment_0.eContents().get(0);
+		private final Assignment cLayerAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLayerBusinessLogicLayerParserRuleCall_1_0 = (RuleCall)cLayerAssignment_1.eContents().get(0);
+		private final Assignment cLayerAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLayerDataPersistenceLayerParserRuleCall_2_0 = (RuleCall)cLayerAssignment_2.eContents().get(0);
 		
 		//Layer:
-		//	elements+=PresentationLayer elements+=BusinessLogicLayer elements+=DataPersistenceLayer;
+		//	layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//elements+=PresentationLayer elements+=BusinessLogicLayer elements+=DataPersistenceLayer
+		//layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer
 		public Group getGroup() { return cGroup; }
 		
-		//elements+=PresentationLayer
-		public Assignment getElementsAssignment_0() { return cElementsAssignment_0; }
+		//layer+=PresentationLayer
+		public Assignment getLayerAssignment_0() { return cLayerAssignment_0; }
 		
 		//PresentationLayer
-		public RuleCall getElementsPresentationLayerParserRuleCall_0_0() { return cElementsPresentationLayerParserRuleCall_0_0; }
+		public RuleCall getLayerPresentationLayerParserRuleCall_0_0() { return cLayerPresentationLayerParserRuleCall_0_0; }
 		
-		//elements+=BusinessLogicLayer
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		//layer+=BusinessLogicLayer
+		public Assignment getLayerAssignment_1() { return cLayerAssignment_1; }
 		
 		//BusinessLogicLayer
-		public RuleCall getElementsBusinessLogicLayerParserRuleCall_1_0() { return cElementsBusinessLogicLayerParserRuleCall_1_0; }
+		public RuleCall getLayerBusinessLogicLayerParserRuleCall_1_0() { return cLayerBusinessLogicLayerParserRuleCall_1_0; }
 		
-		//elements+=DataPersistenceLayer
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
+		//layer+=DataPersistenceLayer
+		public Assignment getLayerAssignment_2() { return cLayerAssignment_2; }
 		
 		//DataPersistenceLayer
-		public RuleCall getElementsDataPersistenceLayerParserRuleCall_2_0() { return cElementsDataPersistenceLayerParserRuleCall_2_0; }
+		public RuleCall getLayerDataPersistenceLayerParserRuleCall_2_0() { return cLayerDataPersistenceLayerParserRuleCall_2_0; }
 	}
 	public class PresentationLayerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.PresentationLayer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPresentationLayerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsPresentationContentParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsSegmentStructureParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Assignment cPresentationLayerAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPresentationLayerPresentationContentParserRuleCall_1_0 = (RuleCall)cPresentationLayerAssignment_1.eContents().get(0);
+		private final Assignment cPresentationLayerAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPresentationLayerSegmentStructureParserRuleCall_2_0 = (RuleCall)cPresentationLayerAssignment_2.eContents().get(0);
 		
 		//PresentationLayer:
-		//	'PresentationLayer' elements+=PresentationContent elements+=SegmentStructure;
+		//	'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PresentationLayer' elements+=PresentationContent elements+=SegmentStructure
+		//'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure
 		public Group getGroup() { return cGroup; }
 		
 		//'PresentationLayer'
 		public Keyword getPresentationLayerKeyword_0() { return cPresentationLayerKeyword_0; }
 		
-		//elements+=PresentationContent
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		//presentationLayer+=PresentationContent
+		public Assignment getPresentationLayerAssignment_1() { return cPresentationLayerAssignment_1; }
 		
 		//PresentationContent
-		public RuleCall getElementsPresentationContentParserRuleCall_1_0() { return cElementsPresentationContentParserRuleCall_1_0; }
+		public RuleCall getPresentationLayerPresentationContentParserRuleCall_1_0() { return cPresentationLayerPresentationContentParserRuleCall_1_0; }
 		
-		//elements+=SegmentStructure
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
+		//presentationLayer+=SegmentStructure
+		public Assignment getPresentationLayerAssignment_2() { return cPresentationLayerAssignment_2; }
 		
 		//SegmentStructure
-		public RuleCall getElementsSegmentStructureParserRuleCall_2_0() { return cElementsSegmentStructureParserRuleCall_2_0; }
+		public RuleCall getPresentationLayerSegmentStructureParserRuleCall_2_0() { return cPresentationLayerSegmentStructureParserRuleCall_2_0; }
 	}
 	public class PresentationContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.PresentationContent");
@@ -1116,116 +1172,235 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.BusinessLogicLayer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBusinessLogicLayerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsBusinessLogicContentParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsSegmentStructureParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Assignment cBusinessLogicLayerAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBusinessLogicLayerBusinessLogicContentParserRuleCall_1_0 = (RuleCall)cBusinessLogicLayerAssignment_1.eContents().get(0);
+		private final Assignment cBusinessLogicLayerAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBusinessLogicLayerSegmentStructureParserRuleCall_2_0 = (RuleCall)cBusinessLogicLayerAssignment_2.eContents().get(0);
 		
 		//BusinessLogicLayer:
-		//	'BusinessLogicLayer' elements+=BusinessLogicContent elements+=SegmentStructure;
+		//	'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'BusinessLogicLayer' elements+=BusinessLogicContent elements+=SegmentStructure
+		//'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure
 		public Group getGroup() { return cGroup; }
 		
 		//'BusinessLogicLayer'
 		public Keyword getBusinessLogicLayerKeyword_0() { return cBusinessLogicLayerKeyword_0; }
 		
-		//elements+=BusinessLogicContent
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		//businessLogicLayer+=BusinessLogicContent
+		public Assignment getBusinessLogicLayerAssignment_1() { return cBusinessLogicLayerAssignment_1; }
 		
 		//BusinessLogicContent
-		public RuleCall getElementsBusinessLogicContentParserRuleCall_1_0() { return cElementsBusinessLogicContentParserRuleCall_1_0; }
+		public RuleCall getBusinessLogicLayerBusinessLogicContentParserRuleCall_1_0() { return cBusinessLogicLayerBusinessLogicContentParserRuleCall_1_0; }
 		
-		//elements+=SegmentStructure
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
+		//businessLogicLayer+=SegmentStructure
+		public Assignment getBusinessLogicLayerAssignment_2() { return cBusinessLogicLayerAssignment_2; }
 		
 		//SegmentStructure
-		public RuleCall getElementsSegmentStructureParserRuleCall_2_0() { return cElementsSegmentStructureParserRuleCall_2_0; }
+		public RuleCall getBusinessLogicLayerSegmentStructureParserRuleCall_2_0() { return cBusinessLogicLayerSegmentStructureParserRuleCall_2_0; }
 	}
 	public class BusinessLogicContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.BusinessLogicContent");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBusinessLogicSegmentsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsBusinessLogicSegmentsParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Assignment cBusinessLogicSegmentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBusinessLogicSegmentsBusinessLogicSegmentsParserRuleCall_1_0 = (RuleCall)cBusinessLogicSegmentsAssignment_1.eContents().get(0);
 		
 		//BusinessLogicContent:
-		//	'BusinessLogicSegments' elements+=BusinessLogicSegments;
+		//	'BusinessLogicSegments' businessLogicSegments+=BusinessLogicSegments+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'BusinessLogicSegments' elements+=BusinessLogicSegments
+		//'BusinessLogicSegments' businessLogicSegments+=BusinessLogicSegments+
 		public Group getGroup() { return cGroup; }
 		
 		//'BusinessLogicSegments'
 		public Keyword getBusinessLogicSegmentsKeyword_0() { return cBusinessLogicSegmentsKeyword_0; }
 		
-		//elements+=BusinessLogicSegments
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		//businessLogicSegments+=BusinessLogicSegments+
+		public Assignment getBusinessLogicSegmentsAssignment_1() { return cBusinessLogicSegmentsAssignment_1; }
 		
 		//BusinessLogicSegments
-		public RuleCall getElementsBusinessLogicSegmentsParserRuleCall_1_0() { return cElementsBusinessLogicSegmentsParserRuleCall_1_0; }
+		public RuleCall getBusinessLogicSegmentsBusinessLogicSegmentsParserRuleCall_1_0() { return cBusinessLogicSegmentsBusinessLogicSegmentsParserRuleCall_1_0; }
 	}
 	public class BusinessLogicSegmentsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.BusinessLogicSegments");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cControllerSegmentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBussinessNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBussinessNameIDTerminalRuleCall_1_0 = (RuleCall)cBussinessNameAssignment_1.eContents().get(0);
-		private final Keyword cModelSegmentKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cModelSegmentNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cModelSegmentNameIDTerminalRuleCall_3_0 = (RuleCall)cModelSegmentNameAssignment_3.eContents().get(0);
-		private final Keyword cRepositorySegmentKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cRepositoryNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRepositoryNameIDTerminalRuleCall_5_0 = (RuleCall)cRepositoryNameAssignment_5.eContents().get(0);
-		private final Keyword cSecuritySegmentKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cSecuritySNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cSecuritySNameIDTerminalRuleCall_7_0 = (RuleCall)cSecuritySNameAssignment_7.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cControllerSegmentKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Assignment cControllerSegmentElementAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cControllerSegmentElementControllerSegmentElementParserRuleCall_0_2_0 = (RuleCall)cControllerSegmentElementAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cModelSegmentKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cRepositorySegmentKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cSecuritySegmentKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cSpecificationSegmentKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
+		private final Assignment cSpecificationSegmentElementAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSpecificationSegmentElementSpecificationSegmentElementParserRuleCall_4_2_0 = (RuleCall)cSpecificationSegmentElementAssignment_4_2.eContents().get(0);
 		
 		//BusinessLogicSegments:
-		//	'ControllerSegment' bussinessName=ID 'ModelSegment' modelSegmentName=ID 'RepositorySegment' repositoryName=ID
-		//	'SecuritySegment' securitySName=ID;
+		//	'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+
+		//	| 'ModelSegment' name=ID
+		//	| 'RepositorySegment' name=ID
+		//	| 'SecuritySegment' name=ID
+		//	| 'SpecificationSegment' name=ID specificationSegmentElement+=SpecificationSegmentElement+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ControllerSegment' bussinessName=ID 'ModelSegment' modelSegmentName=ID 'RepositorySegment' repositoryName=ID
-		//'SecuritySegment' securitySName=ID
-		public Group getGroup() { return cGroup; }
+		//'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+ | 'ModelSegment' name=ID |
+		//'RepositorySegment' name=ID | 'SecuritySegment' name=ID | 'SpecificationSegment' name=ID
+		//specificationSegmentElement+=SpecificationSegmentElement+
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//'ControllerSegment'
-		public Keyword getControllerSegmentKeyword_0() { return cControllerSegmentKeyword_0; }
+		public Keyword getControllerSegmentKeyword_0_0() { return cControllerSegmentKeyword_0_0; }
 		
-		//bussinessName=ID
-		public Assignment getBussinessNameAssignment_1() { return cBussinessNameAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 		
 		//ID
-		public RuleCall getBussinessNameIDTerminalRuleCall_1_0() { return cBussinessNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		
+		//controllerSegmentElement+=ControllerSegmentElement+
+		public Assignment getControllerSegmentElementAssignment_0_2() { return cControllerSegmentElementAssignment_0_2; }
+		
+		//ControllerSegmentElement
+		public RuleCall getControllerSegmentElementControllerSegmentElementParserRuleCall_0_2_0() { return cControllerSegmentElementControllerSegmentElementParserRuleCall_0_2_0; }
+		
+		//'ModelSegment' name=ID
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//'ModelSegment'
-		public Keyword getModelSegmentKeyword_2() { return cModelSegmentKeyword_2; }
+		public Keyword getModelSegmentKeyword_1_0() { return cModelSegmentKeyword_1_0; }
 		
-		//modelSegmentName=ID
-		public Assignment getModelSegmentNameAssignment_3() { return cModelSegmentNameAssignment_3; }
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
 		
 		//ID
-		public RuleCall getModelSegmentNameIDTerminalRuleCall_3_0() { return cModelSegmentNameIDTerminalRuleCall_3_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		
+		//'RepositorySegment' name=ID
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//'RepositorySegment'
-		public Keyword getRepositorySegmentKeyword_4() { return cRepositorySegmentKeyword_4; }
+		public Keyword getRepositorySegmentKeyword_2_0() { return cRepositorySegmentKeyword_2_0; }
 		
-		//repositoryName=ID
-		public Assignment getRepositoryNameAssignment_5() { return cRepositoryNameAssignment_5; }
+		//name=ID
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
 		
 		//ID
-		public RuleCall getRepositoryNameIDTerminalRuleCall_5_0() { return cRepositoryNameIDTerminalRuleCall_5_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+		
+		//'SecuritySegment' name=ID
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'SecuritySegment'
-		public Keyword getSecuritySegmentKeyword_6() { return cSecuritySegmentKeyword_6; }
+		public Keyword getSecuritySegmentKeyword_3_0() { return cSecuritySegmentKeyword_3_0; }
 		
-		//securitySName=ID
-		public Assignment getSecuritySNameAssignment_7() { return cSecuritySNameAssignment_7; }
+		//name=ID
+		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
 		
 		//ID
-		public RuleCall getSecuritySNameIDTerminalRuleCall_7_0() { return cSecuritySNameIDTerminalRuleCall_7_0; }
+		public RuleCall getNameIDTerminalRuleCall_3_1_0() { return cNameIDTerminalRuleCall_3_1_0; }
+		
+		//'SpecificationSegment' name=ID specificationSegmentElement+=SpecificationSegmentElement+
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'SpecificationSegment'
+		public Keyword getSpecificationSegmentKeyword_4_0() { return cSpecificationSegmentKeyword_4_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_4_1() { return cNameAssignment_4_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
+		
+		//specificationSegmentElement+=SpecificationSegmentElement+
+		public Assignment getSpecificationSegmentElementAssignment_4_2() { return cSpecificationSegmentElementAssignment_4_2; }
+		
+		//SpecificationSegmentElement
+		public RuleCall getSpecificationSegmentElementSpecificationSegmentElementParserRuleCall_4_2_0() { return cSpecificationSegmentElementSpecificationSegmentElementParserRuleCall_4_2_0; }
+	}
+	public class ControllerSegmentElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ControllerSegmentElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cAmazonSegmentKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cExceptionSegmentKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		
+		//ControllerSegmentElement:
+		//	'AmazonSegment' name=ID
+		//	| 'ExceptionSegment' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'AmazonSegment' name=ID | 'ExceptionSegment' name=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'AmazonSegment' name=ID
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'AmazonSegment'
+		public Keyword getAmazonSegmentKeyword_0_0() { return cAmazonSegmentKeyword_0_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		
+		//'ExceptionSegment' name=ID
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'ExceptionSegment'
+		public Keyword getExceptionSegmentKeyword_1_0() { return cExceptionSegmentKeyword_1_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+	}
+	public class SpecificationSegmentElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpecificationSegmentElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDefinedSearchCriteriaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//SpecificationSegmentElement:
+		//	'DefinedSearchCriteria' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'DefinedSearchCriteria' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'DefinedSearchCriteria'
+		public Keyword getDefinedSearchCriteriaKeyword_0() { return cDefinedSearchCriteriaKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class DataPersistenceLayerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.DataPersistenceLayer");
@@ -1369,19 +1544,19 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cDirectoryKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Assignment cElementsAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cElementsDirectoriesParserRuleCall_0_2_0 = (RuleCall)cElementsAssignment_0_2.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cElementsSingleFileParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Assignment cDirectoriesAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cDirectoriesDirectoriesParserRuleCall_0_2_0 = (RuleCall)cDirectoriesAssignment_0_2.eContents().get(0);
+		private final Assignment cDirectoriesAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cDirectoriesSingleFileParserRuleCall_1_0 = (RuleCall)cDirectoriesAssignment_1.eContents().get(0);
 		
 		//DirectoryContent:
-		//	'Directory' name=ID elements+=Directories | elements+=SingleFile;
+		//	'Directory' name=ID directories+=Directories | directories+=SingleFile;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Directory' name=ID elements+=Directories | elements+=SingleFile
+		//'Directory' name=ID directories+=Directories | directories+=SingleFile
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'Directory' name=ID elements+=Directories
+		//'Directory' name=ID directories+=Directories
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'Directory'
@@ -1393,17 +1568,17 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
 		
-		//elements+=Directories
-		public Assignment getElementsAssignment_0_2() { return cElementsAssignment_0_2; }
+		//directories+=Directories
+		public Assignment getDirectoriesAssignment_0_2() { return cDirectoriesAssignment_0_2; }
 		
 		//Directories
-		public RuleCall getElementsDirectoriesParserRuleCall_0_2_0() { return cElementsDirectoriesParserRuleCall_0_2_0; }
+		public RuleCall getDirectoriesDirectoriesParserRuleCall_0_2_0() { return cDirectoriesDirectoriesParserRuleCall_0_2_0; }
 		
-		//elements+=SingleFile
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		//directories+=SingleFile
+		public Assignment getDirectoriesAssignment_1() { return cDirectoriesAssignment_1; }
 		
 		//SingleFile
-		public RuleCall getElementsSingleFileParserRuleCall_1_0() { return cElementsSingleFileParserRuleCall_1_0; }
+		public RuleCall getDirectoriesSingleFileParserRuleCall_1_0() { return cDirectoriesSingleFileParserRuleCall_1_0; }
 	}
 	public class DirectoriesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Directories");
@@ -1601,40 +1776,40 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ArchitectureComponents");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSystemComponentsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cArchcomponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cArchcomponentFrontEndParserRuleCall_1_0 = (RuleCall)cArchcomponentAssignment_1.eContents().get(0);
-		private final Assignment cArchcomponentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cArchcomponentBackEndParserRuleCall_2_0 = (RuleCall)cArchcomponentAssignment_2.eContents().get(0);
-		private final Assignment cArchcomponentAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cArchcomponentPersistenceDataComponentParserRuleCall_3_0 = (RuleCall)cArchcomponentAssignment_3.eContents().get(0);
+		private final Assignment cArchFeComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cArchFeComponentFrontEndParserRuleCall_1_0 = (RuleCall)cArchFeComponentAssignment_1.eContents().get(0);
+		private final Assignment cArchBeComponentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cArchBeComponentBackEndParserRuleCall_2_0 = (RuleCall)cArchBeComponentAssignment_2.eContents().get(0);
+		private final Assignment cArchPdComponentAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cArchPdComponentPersistenceDataComponentParserRuleCall_3_0 = (RuleCall)cArchPdComponentAssignment_3.eContents().get(0);
 		
 		//ArchitectureComponents:
-		//	'SystemComponents' archcomponent+=FrontEnd archcomponent+=BackEnd archcomponent+=PersistenceDataComponent;
+		//	'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SystemComponents' archcomponent+=FrontEnd archcomponent+=BackEnd archcomponent+=PersistenceDataComponent
+		//'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent
 		public Group getGroup() { return cGroup; }
 		
 		//'SystemComponents'
 		public Keyword getSystemComponentsKeyword_0() { return cSystemComponentsKeyword_0; }
 		
-		//archcomponent+=FrontEnd
-		public Assignment getArchcomponentAssignment_1() { return cArchcomponentAssignment_1; }
+		//archFeComponent+=FrontEnd
+		public Assignment getArchFeComponentAssignment_1() { return cArchFeComponentAssignment_1; }
 		
 		//FrontEnd
-		public RuleCall getArchcomponentFrontEndParserRuleCall_1_0() { return cArchcomponentFrontEndParserRuleCall_1_0; }
+		public RuleCall getArchFeComponentFrontEndParserRuleCall_1_0() { return cArchFeComponentFrontEndParserRuleCall_1_0; }
 		
-		//archcomponent+=BackEnd
-		public Assignment getArchcomponentAssignment_2() { return cArchcomponentAssignment_2; }
+		//archBeComponent+=BackEnd
+		public Assignment getArchBeComponentAssignment_2() { return cArchBeComponentAssignment_2; }
 		
 		//BackEnd
-		public RuleCall getArchcomponentBackEndParserRuleCall_2_0() { return cArchcomponentBackEndParserRuleCall_2_0; }
+		public RuleCall getArchBeComponentBackEndParserRuleCall_2_0() { return cArchBeComponentBackEndParserRuleCall_2_0; }
 		
-		//archcomponent+=PersistenceDataComponent
-		public Assignment getArchcomponentAssignment_3() { return cArchcomponentAssignment_3; }
+		//archPdComponent+=PersistenceDataComponent
+		public Assignment getArchPdComponentAssignment_3() { return cArchPdComponentAssignment_3; }
 		
 		//PersistenceDataComponent
-		public RuleCall getArchcomponentPersistenceDataComponentParserRuleCall_3_0() { return cArchcomponentPersistenceDataComponentParserRuleCall_3_0; }
+		public RuleCall getArchPdComponentPersistenceDataComponentParserRuleCall_3_0() { return cArchPdComponentPersistenceDataComponentParserRuleCall_3_0; }
 	}
 	public class FrontEndElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.FrontEnd");
@@ -3327,13 +3502,17 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cComponentslogicComponentsLogicParserRuleCall_3_0 = (RuleCall)cComponentslogicAssignment_3.eContents().get(0);
 		private final Assignment cComponentsuiAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cComponentsuiComponentsUIParserRuleCall_4_0 = (RuleCall)cComponentsuiAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cComponentstyleAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cComponentstyleComponentsStylesParserRuleCall_5_0 = (RuleCall)cComponentstyleAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ReactComponents:
-		//	'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI '}';
+		//	'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI '}'
+		//'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ReactComponents'
@@ -3357,8 +3536,14 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ComponentsUI
 		public RuleCall getComponentsuiComponentsUIParserRuleCall_4_0() { return cComponentsuiComponentsUIParserRuleCall_4_0; }
 		
+		//componentstyle+=ComponentsStyles
+		public Assignment getComponentstyleAssignment_5() { return cComponentstyleAssignment_5; }
+		
+		//ComponentsStyles
+		public RuleCall getComponentstyleComponentsStylesParserRuleCall_5_0() { return cComponentstyleComponentsStylesParserRuleCall_5_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class ComponentsLogicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ComponentsLogic");
@@ -3715,32 +3900,32 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ReactConstructor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cConstructorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cComponentclassAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cComponentclassStateParserRuleCall_1_0 = (RuleCall)cComponentclassAssignment_1.eContents().get(0);
-		private final Assignment cComponentclassAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cComponentclassCoreFunctionsDeclarationParserRuleCall_2_0 = (RuleCall)cComponentclassAssignment_2.eContents().get(0);
+		private final Assignment cComponentstateclassAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cComponentstateclassStateParserRuleCall_1_0 = (RuleCall)cComponentstateclassAssignment_1.eContents().get(0);
+		private final Assignment cComponentfuncclassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0 = (RuleCall)cComponentfuncclassAssignment_2.eContents().get(0);
 		
 		//ReactConstructor:
-		//	'Constructor' componentclass+=State componentclass+=CoreFunctionsDeclaration*;
+		//	'Constructor' componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Constructor' componentclass+=State componentclass+=CoreFunctionsDeclaration*
+		//'Constructor' componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*
 		public Group getGroup() { return cGroup; }
 		
 		//'Constructor'
 		public Keyword getConstructorKeyword_0() { return cConstructorKeyword_0; }
 		
-		//componentclass+=State
-		public Assignment getComponentclassAssignment_1() { return cComponentclassAssignment_1; }
+		//componentstateclass+=State
+		public Assignment getComponentstateclassAssignment_1() { return cComponentstateclassAssignment_1; }
 		
 		//State
-		public RuleCall getComponentclassStateParserRuleCall_1_0() { return cComponentclassStateParserRuleCall_1_0; }
+		public RuleCall getComponentstateclassStateParserRuleCall_1_0() { return cComponentstateclassStateParserRuleCall_1_0; }
 		
-		//componentclass+=CoreFunctionsDeclaration*
-		public Assignment getComponentclassAssignment_2() { return cComponentclassAssignment_2; }
+		//componentfuncclass+=CoreFunctionsDeclaration*
+		public Assignment getComponentfuncclassAssignment_2() { return cComponentfuncclassAssignment_2; }
 		
 		//CoreFunctionsDeclaration
-		public RuleCall getComponentclassCoreFunctionsDeclarationParserRuleCall_2_0() { return cComponentclassCoreFunctionsDeclarationParserRuleCall_2_0; }
+		public RuleCall getComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0() { return cComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0; }
 	}
 	public class StateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.State");
@@ -4000,6 +4185,110 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//'FunctionStructure'
 		public Keyword getFunctionStructureKeyword_1() { return cFunctionStructureKeyword_1; }
 	}
+	public class ComponentsStylesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ComponentsStyles");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cComponentsStylesAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cStylescontentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStylescontentsComponentsStylesContentParserRuleCall_1_0 = (RuleCall)cStylescontentsAssignment_1.eContents().get(0);
+		
+		//ComponentsStyles:
+		//	{ComponentsStyles} stylescontents+=ComponentsStylesContent*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ComponentsStyles} stylescontents+=ComponentsStylesContent*
+		public Group getGroup() { return cGroup; }
+		
+		//{ComponentsStyles}
+		public Action getComponentsStylesAction_0() { return cComponentsStylesAction_0; }
+		
+		//stylescontents+=ComponentsStylesContent*
+		public Assignment getStylescontentsAssignment_1() { return cStylescontentsAssignment_1; }
+		
+		//ComponentsStylesContent
+		public RuleCall getStylescontentsComponentsStylesContentParserRuleCall_1_0() { return cStylescontentsComponentsStylesContentParserRuleCall_1_0; }
+	}
+	public class ComponentsStylesContentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ComponentsStylesContent");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStyleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameStyleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameStyleIDTerminalRuleCall_1_0 = (RuleCall)cNameStyleAssignment_1.eContents().get(0);
+		private final Assignment cStylecontentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStylecontentStylePropertiesParserRuleCall_2_0 = (RuleCall)cStylecontentAssignment_2.eContents().get(0);
+		
+		//ComponentsStylesContent:
+		//	'Style' nameStyle=ID stylecontent+=StyleProperties;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Style' nameStyle=ID stylecontent+=StyleProperties
+		public Group getGroup() { return cGroup; }
+		
+		//'Style'
+		public Keyword getStyleKeyword_0() { return cStyleKeyword_0; }
+		
+		//nameStyle=ID
+		public Assignment getNameStyleAssignment_1() { return cNameStyleAssignment_1; }
+		
+		//ID
+		public RuleCall getNameStyleIDTerminalRuleCall_1_0() { return cNameStyleIDTerminalRuleCall_1_0; }
+		
+		//stylecontent+=StyleProperties
+		public Assignment getStylecontentAssignment_2() { return cStylecontentAssignment_2; }
+		
+		//StyleProperties
+		public RuleCall getStylecontentStylePropertiesParserRuleCall_2_0() { return cStylecontentStylePropertiesParserRuleCall_2_0; }
+	}
+	public class StylePropertiesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.StyleProperties");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStylePropertiesAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cStylespropscontentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStylespropscontentsStylePropertiesContentParserRuleCall_1_0 = (RuleCall)cStylespropscontentsAssignment_1.eContents().get(0);
+		
+		//StyleProperties:
+		//	{StyleProperties} stylespropscontents+=StylePropertiesContent*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{StyleProperties} stylespropscontents+=StylePropertiesContent*
+		public Group getGroup() { return cGroup; }
+		
+		//{StyleProperties}
+		public Action getStylePropertiesAction_0() { return cStylePropertiesAction_0; }
+		
+		//stylespropscontents+=StylePropertiesContent*
+		public Assignment getStylespropscontentsAssignment_1() { return cStylespropscontentsAssignment_1; }
+		
+		//StylePropertiesContent
+		public RuleCall getStylespropscontentsStylePropertiesContentParserRuleCall_1_0() { return cStylespropscontentsStylePropertiesContentParserRuleCall_1_0; }
+	}
+	public class StylePropertiesContentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.StylePropertiesContent");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProp_nameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPropNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPropNameIDTerminalRuleCall_1_0 = (RuleCall)cPropNameAssignment_1.eContents().get(0);
+		private final Keyword cPropsContentKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//StylePropertiesContent:
+		//	'prop_name' propName=ID "propsContent"+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'prop_name' propName=ID "propsContent"+
+		public Group getGroup() { return cGroup; }
+		
+		//'prop_name'
+		public Keyword getProp_nameKeyword_0() { return cProp_nameKeyword_0; }
+		
+		//propName=ID
+		public Assignment getPropNameAssignment_1() { return cPropNameAssignment_1; }
+		
+		//ID
+		public RuleCall getPropNameIDTerminalRuleCall_1_0() { return cPropNameIDTerminalRuleCall_1_0; }
+		
+		//"propsContent"+
+		public Keyword getPropsContentKeyword_2() { return cPropsContentKeyword_2; }
+	}
 	public class ReactActionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ReactActions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -4056,13 +4345,14 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cServiceTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cServiceContentKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cReactservcontentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cReactservcontentReactServiceContentParserRuleCall_2_0 = (RuleCall)cReactservcontentAssignment_2.eContents().get(0);
 		
 		//ReactServicesType:
-		//	'ServiceType' name=ID 'ServiceContent';
+		//	'ServiceType' name=ID reactservcontent+=ReactServiceContent;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ServiceType' name=ID 'ServiceContent'
+		//'ServiceType' name=ID reactservcontent+=ReactServiceContent
 		public Group getGroup() { return cGroup; }
 		
 		//'ServiceType'
@@ -4074,8 +4364,96 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'ServiceContent'
-		public Keyword getServiceContentKeyword_2() { return cServiceContentKeyword_2; }
+		//reactservcontent+=ReactServiceContent
+		public Assignment getReactservcontentAssignment_2() { return cReactservcontentAssignment_2; }
+		
+		//ReactServiceContent
+		public RuleCall getReactservcontentReactServiceContentParserRuleCall_2_0() { return cReactservcontentReactServiceContentParserRuleCall_2_0; }
+	}
+	public class ReactServiceContentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ReactServiceContent");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFunctionsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFunctNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFunctNameIDTerminalRuleCall_1_0 = (RuleCall)cFunctNameAssignment_1.eContents().get(0);
+		private final Assignment cReactservrequestAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cReactservrequestReactServiceContRequestParserRuleCall_2_0 = (RuleCall)cReactservrequestAssignment_2.eContents().get(0);
+		
+		//ReactServiceContent:
+		//	('functions' functName=ID reactservrequest+=ReactServiceContRequest)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('functions' functName=ID reactservrequest+=ReactServiceContRequest)*
+		public Group getGroup() { return cGroup; }
+		
+		//'functions'
+		public Keyword getFunctionsKeyword_0() { return cFunctionsKeyword_0; }
+		
+		//functName=ID
+		public Assignment getFunctNameAssignment_1() { return cFunctNameAssignment_1; }
+		
+		//ID
+		public RuleCall getFunctNameIDTerminalRuleCall_1_0() { return cFunctNameIDTerminalRuleCall_1_0; }
+		
+		//reactservrequest+=ReactServiceContRequest
+		public Assignment getReactservrequestAssignment_2() { return cReactservrequestAssignment_2; }
+		
+		//ReactServiceContRequest
+		public RuleCall getReactservrequestReactServiceContRequestParserRuleCall_2_0() { return cReactservrequestReactServiceContRequestParserRuleCall_2_0; }
+	}
+	public class ReactServiceContRequestElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ReactServiceContRequest");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReturnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReactservrequestpropsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cReactservrequestpropsReactServiceRequestPropsParserRuleCall_1_0 = (RuleCall)cReactservrequestpropsAssignment_1.eContents().get(0);
+		
+		//ReactServiceContRequest:
+		//	'return' reactservrequestprops+=ReactServiceRequestProps+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'return' reactservrequestprops+=ReactServiceRequestProps+
+		public Group getGroup() { return cGroup; }
+		
+		//'return'
+		public Keyword getReturnKeyword_0() { return cReturnKeyword_0; }
+		
+		//reactservrequestprops+=ReactServiceRequestProps+
+		public Assignment getReactservrequestpropsAssignment_1() { return cReactservrequestpropsAssignment_1; }
+		
+		//ReactServiceRequestProps
+		public RuleCall getReactservrequestpropsReactServiceRequestPropsParserRuleCall_1_0() { return cReactservrequestpropsReactServiceRequestPropsParserRuleCall_1_0; }
+	}
+	public class ReactServiceRequestPropsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ReactServiceRequestProps");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPropNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReqPropNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cReqPropNameIDTerminalRuleCall_1_0 = (RuleCall)cReqPropNameAssignment_1.eContents().get(0);
+		private final Assignment cReqPropDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cReqPropDescriptionIDTerminalRuleCall_2_0 = (RuleCall)cReqPropDescriptionAssignment_2.eContents().get(0);
+		
+		//ReactServiceRequestProps:
+		//	'propName' reqPropName=ID reqPropDescription=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'propName' reqPropName=ID reqPropDescription=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'propName'
+		public Keyword getPropNameKeyword_0() { return cPropNameKeyword_0; }
+		
+		//reqPropName=ID
+		public Assignment getReqPropNameAssignment_1() { return cReqPropNameAssignment_1; }
+		
+		//ID
+		public RuleCall getReqPropNameIDTerminalRuleCall_1_0() { return cReqPropNameIDTerminalRuleCall_1_0; }
+		
+		//reqPropDescription=ID
+		public Assignment getReqPropDescriptionAssignment_2() { return cReqPropDescriptionAssignment_2; }
+		
+		//ID
+		public RuleCall getReqPropDescriptionIDTerminalRuleCall_2_0() { return cReqPropDescriptionIDTerminalRuleCall_2_0; }
 	}
 	public class ReactServicesRelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ReactServicesRelation");
@@ -5406,9 +5784,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final DomainElements pDomain;
 	private final EntityElements pEntity;
 	private final EntitiesElements pEntities;
-	private final PhotoElements pPhoto;
-	private final AlbumElements pAlbum;
-	private final UserDomainElements pUserDomain;
+	private final AtributePhotoElements pAtributePhoto;
+	private final AtributeAlbumElements pAtributeAlbum;
+	private final AtributeUserDomainElements pAtributeUserDomain;
 	private final FunctionalityElements pFunctionality;
 	private final FunctionalitiesElements pFunctionalities;
 	private final ProfileManagementElements pProfileManagement;
@@ -5421,8 +5799,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final PhotoActionsFunctionsElements pPhotoActionsFunctions;
 	private final LandingActionsElements pLandingActions;
 	private final LandingFunctionsElements pLandingFunctions;
-	private final DomainConnectionElements pDomainConnection;
-	private final DomainRelationsElements pDomainRelations;
 	private final ArchitectureElements pArchitecture;
 	private final NTiersElements pNTiers;
 	private final LayerElements pLayer;
@@ -5432,6 +5808,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final BusinessLogicLayerElements pBusinessLogicLayer;
 	private final BusinessLogicContentElements pBusinessLogicContent;
 	private final BusinessLogicSegmentsElements pBusinessLogicSegments;
+	private final ControllerSegmentElementElements pControllerSegmentElement;
+	private final SpecificationSegmentElementElements pSpecificationSegmentElement;
 	private final DataPersistenceLayerElements pDataPersistenceLayer;
 	private final DataPersistenceContentElements pDataPersistenceContent;
 	private final DataPersistenceSegmentsElements pDataPersistenceSegments;
@@ -5522,9 +5900,16 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final PropsElements pProps;
 	private final PropsTypeElements pPropsType;
 	private final ReactCoreFunctionsElements pReactCoreFunctions;
+	private final ComponentsStylesElements pComponentsStyles;
+	private final ComponentsStylesContentElements pComponentsStylesContent;
+	private final StylePropertiesElements pStyleProperties;
+	private final StylePropertiesContentElements pStylePropertiesContent;
 	private final ReactActionsElements pReactActions;
 	private final ReactActionsContentElements pReactActionsContent;
 	private final ReactServicesTypeElements pReactServicesType;
+	private final ReactServiceContentElements pReactServiceContent;
+	private final ReactServiceContRequestElements pReactServiceContRequest;
+	private final ReactServiceRequestPropsElements pReactServiceRequestProps;
 	private final ReactServicesRelationElements pReactServicesRelation;
 	private final ReactsRelationServElements pReactsRelationServ;
 	private final ReactRequestElements pReactRequest;
@@ -5583,9 +5968,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pDomain = new DomainElements();
 		this.pEntity = new EntityElements();
 		this.pEntities = new EntitiesElements();
-		this.pPhoto = new PhotoElements();
-		this.pAlbum = new AlbumElements();
-		this.pUserDomain = new UserDomainElements();
+		this.pAtributePhoto = new AtributePhotoElements();
+		this.pAtributeAlbum = new AtributeAlbumElements();
+		this.pAtributeUserDomain = new AtributeUserDomainElements();
 		this.pFunctionality = new FunctionalityElements();
 		this.pFunctionalities = new FunctionalitiesElements();
 		this.pProfileManagement = new ProfileManagementElements();
@@ -5598,8 +5983,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pPhotoActionsFunctions = new PhotoActionsFunctionsElements();
 		this.pLandingActions = new LandingActionsElements();
 		this.pLandingFunctions = new LandingFunctionsElements();
-		this.pDomainConnection = new DomainConnectionElements();
-		this.pDomainRelations = new DomainRelationsElements();
 		this.pArchitecture = new ArchitectureElements();
 		this.pNTiers = new NTiersElements();
 		this.pLayer = new LayerElements();
@@ -5609,6 +5992,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pBusinessLogicLayer = new BusinessLogicLayerElements();
 		this.pBusinessLogicContent = new BusinessLogicContentElements();
 		this.pBusinessLogicSegments = new BusinessLogicSegmentsElements();
+		this.pControllerSegmentElement = new ControllerSegmentElementElements();
+		this.pSpecificationSegmentElement = new SpecificationSegmentElementElements();
 		this.pDataPersistenceLayer = new DataPersistenceLayerElements();
 		this.pDataPersistenceContent = new DataPersistenceContentElements();
 		this.pDataPersistenceSegments = new DataPersistenceSegmentsElements();
@@ -5699,9 +6084,16 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pProps = new PropsElements();
 		this.pPropsType = new PropsTypeElements();
 		this.pReactCoreFunctions = new ReactCoreFunctionsElements();
+		this.pComponentsStyles = new ComponentsStylesElements();
+		this.pComponentsStylesContent = new ComponentsStylesContentElements();
+		this.pStyleProperties = new StylePropertiesElements();
+		this.pStylePropertiesContent = new StylePropertiesContentElements();
 		this.pReactActions = new ReactActionsElements();
 		this.pReactActionsContent = new ReactActionsContentElements();
 		this.pReactServicesType = new ReactServicesTypeElements();
+		this.pReactServiceContent = new ReactServiceContentElements();
+		this.pReactServiceContRequest = new ReactServiceContRequestElements();
+		this.pReactServiceRequestProps = new ReactServiceRequestPropsElements();
 		this.pReactServicesRelation = new ReactServicesRelationElements();
 		this.pReactsRelationServ = new ReactsRelationServElements();
 		this.pReactRequest = new ReactRequestElements();
@@ -5788,7 +6180,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	
 	//// Domain
 	//Domain:
-	//	'Domain' name=ID ':' '{' elements+=Entity elements+=Functionality elements+=DomainConnection '}';
+	//	'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality /*domain+=DomainConnection*/ '}';
 	public DomainElements getDomainAccess() {
 		return pDomain;
 	}
@@ -5799,7 +6191,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	
 	//// Domain - Entities
 	//Entity:
-	//	'Entities' ':' '{' elements+=Entities '}';
+	//	'Entities' ':' '{' elements+=Entities+ '}';
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}
@@ -5808,8 +6200,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getEntityAccess().getRule();
 	}
 	
-	//Entities:
-	//	photoelements+=Photo+ albumelements+=Album+ userdomainelements+=UserDomain+;
+	//Entities //(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
+	//:
+	//	'PhotoEntity' name=ID atributePhoto+=AtributePhoto+
+	//	| 'AlbumEntity' name=ID atributeAlbum+=AtributeAlbum+
+	//	| 'UserEntity' name=ID atributeUserDomain+=AtributeUserDomain+;
 	public EntitiesElements getEntitiesAccess() {
 		return pEntities;
 	}
@@ -5818,34 +6213,45 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getEntitiesAccess().getRule();
 	}
 	
-	//Photo:
-	//	'Photo' name=ID;
-	public PhotoElements getPhotoAccess() {
-		return pPhoto;
+	//AtributePhoto:
+	//	'idPhoto' name=ID
+	//	| 'namePhoto' name=ID
+	//	| 'urlPhoto' name=ID
+	//	| 'albumIdPhoto' name=ID;
+	public AtributePhotoElements getAtributePhotoAccess() {
+		return pAtributePhoto;
 	}
 	
-	public ParserRule getPhotoRule() {
-		return getPhotoAccess().getRule();
+	public ParserRule getAtributePhotoRule() {
+		return getAtributePhotoAccess().getRule();
 	}
 	
-	//Album:
-	//	'Album' name=ID;
-	public AlbumElements getAlbumAccess() {
-		return pAlbum;
+	//AtributeAlbum:
+	//	'idAlbum' name=ID
+	//	| 'nameAlbum' name=ID
+	//	| 'userIdAlbum' name=ID;
+	public AtributeAlbumElements getAtributeAlbumAccess() {
+		return pAtributeAlbum;
 	}
 	
-	public ParserRule getAlbumRule() {
-		return getAlbumAccess().getRule();
+	public ParserRule getAtributeAlbumRule() {
+		return getAtributeAlbumAccess().getRule();
 	}
 	
-	//UserDomain:
-	//	'UserDomain' name=ID;
-	public UserDomainElements getUserDomainAccess() {
-		return pUserDomain;
+	//AtributeUserDomain:
+	//	'idUser' name=ID
+	//	| 'userNameUser' name=ID
+	//	| 'firstNameUser' name=ID
+	//	| 'lastNameUser' name=ID
+	//	| 'profileDescriptionUser' name=ID
+	//	| 'passwordUser' name=ID
+	//	| 'emailUser' name=ID;
+	public AtributeUserDomainElements getAtributeUserDomainAccess() {
+		return pAtributeUserDomain;
 	}
 	
-	public ParserRule getUserDomainRule() {
-		return getUserDomainAccess().getRule();
+	public ParserRule getAtributeUserDomainRule() {
+		return getAtributeUserDomainAccess().getRule();
 	}
 	
 	//// Domain - Functionalities
@@ -5974,30 +6380,14 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	////Domain - Relations
-	//DomainConnection:
-	//	'DomainRelations' ':' '{' elements+=DomainRelations '}';
-	public DomainConnectionElements getDomainConnectionAccess() {
-		return pDomainConnection;
-	}
-	
-	public ParserRule getDomainConnectionRule() {
-		return getDomainConnectionAccess().getRule();
-	}
-	
+	///*DomainConnection:
+	//'DomainRelations' ':' '{' elements+=DomainRelations '}';
+	//
 	//DomainRelations:
-	//	userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
-	//	albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
-	//	photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
-	//	photoactdelements+=PhotoActions photoactDname=ID ':' '{' elements+=AlbumManagement '}';
-	public DomainRelationsElements getDomainRelationsAccess() {
-		return pDomainRelations;
-	}
-	
-	public ParserRule getDomainRelationsRule() {
-		return getDomainRelationsAccess().getRule();
-	}
-	
-	////Architecture
+	//userdelements+=UserDomain userDname=ID ':' '{' elements+=Functionalities '}'
+	//albumdelements+=Album albumDname=ID ':' '{' elements+=AlbumManagementFunctions '}'
+	//photodelements+=Photo photoDname=ID ':' '{' elements+=PhotoActionsFunctions '}'
+	//photoactdelements+=PhotoActions photoactDname=ID  ':' '{'elements+=AlbumManagement '}';*/ //Architecture
 	//Architecture:
 	//	'Architecture:' '{' elements+=NTiers+ elements+=NTiersConnections+ '}';
 	public ArchitectureElements getArchitectureAccess() {
@@ -6020,7 +6410,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Layer:
-	//	elements+=PresentationLayer elements+=BusinessLogicLayer elements+=DataPersistenceLayer;
+	//	layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer;
 	public LayerElements getLayerAccess() {
 		return pLayer;
 	}
@@ -6030,7 +6420,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PresentationLayer:
-	//	'PresentationLayer' elements+=PresentationContent elements+=SegmentStructure;
+	//	'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure;
 	public PresentationLayerElements getPresentationLayerAccess() {
 		return pPresentationLayer;
 	}
@@ -6061,7 +6451,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BusinessLogicLayer:
-	//	'BusinessLogicLayer' elements+=BusinessLogicContent elements+=SegmentStructure;
+	//	'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure;
 	public BusinessLogicLayerElements getBusinessLogicLayerAccess() {
 		return pBusinessLogicLayer;
 	}
@@ -6071,7 +6461,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BusinessLogicContent:
-	//	'BusinessLogicSegments' elements+=BusinessLogicSegments;
+	//	'BusinessLogicSegments' businessLogicSegments+=BusinessLogicSegments+;
 	public BusinessLogicContentElements getBusinessLogicContentAccess() {
 		return pBusinessLogicContent;
 	}
@@ -6081,14 +6471,38 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BusinessLogicSegments:
-	//	'ControllerSegment' bussinessName=ID 'ModelSegment' modelSegmentName=ID 'RepositorySegment' repositoryName=ID
-	//	'SecuritySegment' securitySName=ID;
+	//	'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+
+	//	| 'ModelSegment' name=ID
+	//	| 'RepositorySegment' name=ID
+	//	| 'SecuritySegment' name=ID
+	//	| 'SpecificationSegment' name=ID specificationSegmentElement+=SpecificationSegmentElement+;
 	public BusinessLogicSegmentsElements getBusinessLogicSegmentsAccess() {
 		return pBusinessLogicSegments;
 	}
 	
 	public ParserRule getBusinessLogicSegmentsRule() {
 		return getBusinessLogicSegmentsAccess().getRule();
+	}
+	
+	//ControllerSegmentElement:
+	//	'AmazonSegment' name=ID
+	//	| 'ExceptionSegment' name=ID;
+	public ControllerSegmentElementElements getControllerSegmentElementAccess() {
+		return pControllerSegmentElement;
+	}
+	
+	public ParserRule getControllerSegmentElementRule() {
+		return getControllerSegmentElementAccess().getRule();
+	}
+	
+	//SpecificationSegmentElement:
+	//	'DefinedSearchCriteria' name=ID;
+	public SpecificationSegmentElementElements getSpecificationSegmentElementAccess() {
+		return pSpecificationSegmentElement;
+	}
+	
+	public ParserRule getSpecificationSegmentElementRule() {
+		return getSpecificationSegmentElementAccess().getRule();
 	}
 	
 	//DataPersistenceLayer:
@@ -6142,7 +6556,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DirectoryContent:
-	//	'Directory' name=ID elements+=Directories | elements+=SingleFile;
+	//	'Directory' name=ID directories+=Directories | directories+=SingleFile;
 	public DirectoryContentElements getDirectoryContentAccess() {
 		return pDirectoryContent;
 	}
@@ -6232,7 +6646,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ArchitectureComponents:
-	//	'SystemComponents' archcomponent+=FrontEnd archcomponent+=BackEnd archcomponent+=PersistenceDataComponent;
+	//	'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent;
 	public ArchitectureComponentsElements getArchitectureComponentsAccess() {
 		return pArchitectureComponents;
 	}
@@ -6778,7 +7192,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactComponents:
-	//	'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI '}';
+	//	'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles
+	//	'}';
 	public ReactComponentsElements getReactComponentsAccess() {
 		return pReactComponents;
 	}
@@ -6899,7 +7314,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactConstructor:
-	//	'Constructor' componentclass+=State componentclass+=CoreFunctionsDeclaration*;
+	//	'Constructor' componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*;
 	public ReactConstructorElements getReactConstructorAccess() {
 		return pReactConstructor;
 	}
@@ -7000,6 +7415,46 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getReactCoreFunctionsAccess().getRule();
 	}
 	
+	//ComponentsStyles:
+	//	{ComponentsStyles} stylescontents+=ComponentsStylesContent*;
+	public ComponentsStylesElements getComponentsStylesAccess() {
+		return pComponentsStyles;
+	}
+	
+	public ParserRule getComponentsStylesRule() {
+		return getComponentsStylesAccess().getRule();
+	}
+	
+	//ComponentsStylesContent:
+	//	'Style' nameStyle=ID stylecontent+=StyleProperties;
+	public ComponentsStylesContentElements getComponentsStylesContentAccess() {
+		return pComponentsStylesContent;
+	}
+	
+	public ParserRule getComponentsStylesContentRule() {
+		return getComponentsStylesContentAccess().getRule();
+	}
+	
+	//StyleProperties:
+	//	{StyleProperties} stylespropscontents+=StylePropertiesContent*;
+	public StylePropertiesElements getStylePropertiesAccess() {
+		return pStyleProperties;
+	}
+	
+	public ParserRule getStylePropertiesRule() {
+		return getStylePropertiesAccess().getRule();
+	}
+	
+	//StylePropertiesContent:
+	//	'prop_name' propName=ID "propsContent"+;
+	public StylePropertiesContentElements getStylePropertiesContentAccess() {
+		return pStylePropertiesContent;
+	}
+	
+	public ParserRule getStylePropertiesContentRule() {
+		return getStylePropertiesContentAccess().getRule();
+	}
+	
 	//ReactActions:
 	//	'ReactActions' ':' '{' reactactcontent+=ReactActionsContent '}';
 	public ReactActionsElements getReactActionsAccess() {
@@ -7021,13 +7476,43 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactServicesType:
-	//	'ServiceType' name=ID 'ServiceContent';
+	//	'ServiceType' name=ID reactservcontent+=ReactServiceContent;
 	public ReactServicesTypeElements getReactServicesTypeAccess() {
 		return pReactServicesType;
 	}
 	
 	public ParserRule getReactServicesTypeRule() {
 		return getReactServicesTypeAccess().getRule();
+	}
+	
+	//ReactServiceContent:
+	//	('functions' functName=ID reactservrequest+=ReactServiceContRequest)*;
+	public ReactServiceContentElements getReactServiceContentAccess() {
+		return pReactServiceContent;
+	}
+	
+	public ParserRule getReactServiceContentRule() {
+		return getReactServiceContentAccess().getRule();
+	}
+	
+	//ReactServiceContRequest:
+	//	'return' reactservrequestprops+=ReactServiceRequestProps+;
+	public ReactServiceContRequestElements getReactServiceContRequestAccess() {
+		return pReactServiceContRequest;
+	}
+	
+	public ParserRule getReactServiceContRequestRule() {
+		return getReactServiceContRequestAccess().getRule();
+	}
+	
+	//ReactServiceRequestProps:
+	//	'propName' reqPropName=ID reqPropDescription=ID;
+	public ReactServiceRequestPropsElements getReactServiceRequestPropsAccess() {
+		return pReactServiceRequestProps;
+	}
+	
+	public ParserRule getReactServiceRequestPropsRule() {
+		return getReactServiceRequestPropsAccess().getRule();
 	}
 	
 	//ReactServicesRelation:

@@ -3,8 +3,10 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
+import co.unal.mdd.photos.dsl.softGalleryLanguage.CoreFunctionsDeclaration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactConstructor;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 
 import java.util.Collection;
 
@@ -13,7 +15,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -29,7 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactConstructorImpl#getComponentclass <em>Componentclass</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactConstructorImpl#getComponentstateclass <em>Componentstateclass</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactConstructorImpl#getComponentfuncclass <em>Componentfuncclass</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ReactConstructorImpl extends MinimalEObjectImpl.Container implements ReactConstructor
 {
   /**
-   * The cached value of the '{@link #getComponentclass() <em>Componentclass</em>}' containment reference list.
+   * The cached value of the '{@link #getComponentstateclass() <em>Componentstateclass</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComponentclass()
+   * @see #getComponentstateclass()
    * @generated
    * @ordered
    */
-  protected EList<EObject> componentclass;
+  protected EList<State> componentstateclass;
+
+  /**
+   * The cached value of the '{@link #getComponentfuncclass() <em>Componentfuncclass</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComponentfuncclass()
+   * @generated
+   * @ordered
+   */
+  protected EList<CoreFunctionsDeclaration> componentfuncclass;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +85,28 @@ public class ReactConstructorImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public EList<EObject> getComponentclass()
+  public EList<State> getComponentstateclass()
   {
-    if (componentclass == null)
+    if (componentstateclass == null)
     {
-      componentclass = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTCLASS);
+      componentstateclass = new EObjectContainmentEList<State>(State.class, this, SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTSTATECLASS);
     }
-    return componentclass;
+    return componentstateclass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<CoreFunctionsDeclaration> getComponentfuncclass()
+  {
+    if (componentfuncclass == null)
+    {
+      componentfuncclass = new EObjectContainmentEList<CoreFunctionsDeclaration>(CoreFunctionsDeclaration.class, this, SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTFUNCCLASS);
+    }
+    return componentfuncclass;
   }
 
   /**
@@ -92,8 +119,10 @@ public class ReactConstructorImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTCLASS:
-        return ((InternalEList<?>)getComponentclass()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTSTATECLASS:
+        return ((InternalEList<?>)getComponentstateclass()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTFUNCCLASS:
+        return ((InternalEList<?>)getComponentfuncclass()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +137,10 @@ public class ReactConstructorImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTCLASS:
-        return getComponentclass();
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTSTATECLASS:
+        return getComponentstateclass();
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTFUNCCLASS:
+        return getComponentfuncclass();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +156,13 @@ public class ReactConstructorImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTCLASS:
-        getComponentclass().clear();
-        getComponentclass().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTSTATECLASS:
+        getComponentstateclass().clear();
+        getComponentstateclass().addAll((Collection<? extends State>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTFUNCCLASS:
+        getComponentfuncclass().clear();
+        getComponentfuncclass().addAll((Collection<? extends CoreFunctionsDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +178,11 @@ public class ReactConstructorImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTCLASS:
-        getComponentclass().clear();
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTSTATECLASS:
+        getComponentstateclass().clear();
+        return;
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTFUNCCLASS:
+        getComponentfuncclass().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +198,10 @@ public class ReactConstructorImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTCLASS:
-        return componentclass != null && !componentclass.isEmpty();
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTSTATECLASS:
+        return componentstateclass != null && !componentstateclass.isEmpty();
+      case SoftGalleryLanguagePackage.REACT_CONSTRUCTOR__COMPONENTFUNCCLASS:
+        return componentfuncclass != null && !componentfuncclass.isEmpty();
     }
     return super.eIsSet(featureID);
   }

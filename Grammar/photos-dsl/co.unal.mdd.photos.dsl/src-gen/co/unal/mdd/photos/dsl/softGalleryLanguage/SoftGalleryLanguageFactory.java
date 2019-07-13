@@ -60,31 +60,31 @@ public interface SoftGalleryLanguageFactory extends EFactory
   Entities createEntities();
 
   /**
-   * Returns a new object of class '<em>Photo</em>'.
+   * Returns a new object of class '<em>Atribute Photo</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Photo</em>'.
+   * @return a new object of class '<em>Atribute Photo</em>'.
    * @generated
    */
-  Photo createPhoto();
+  AtributePhoto createAtributePhoto();
 
   /**
-   * Returns a new object of class '<em>Album</em>'.
+   * Returns a new object of class '<em>Atribute Album</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Album</em>'.
+   * @return a new object of class '<em>Atribute Album</em>'.
    * @generated
    */
-  Album createAlbum();
+  AtributeAlbum createAtributeAlbum();
 
   /**
-   * Returns a new object of class '<em>User Domain</em>'.
+   * Returns a new object of class '<em>Atribute User Domain</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>User Domain</em>'.
+   * @return a new object of class '<em>Atribute User Domain</em>'.
    * @generated
    */
-  UserDomain createUserDomain();
+  AtributeUserDomain createAtributeUserDomain();
 
   /**
    * Returns a new object of class '<em>Functionality</em>'.
@@ -195,24 +195,6 @@ public interface SoftGalleryLanguageFactory extends EFactory
   LandingFunctions createLandingFunctions();
 
   /**
-   * Returns a new object of class '<em>Domain Connection</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Domain Connection</em>'.
-   * @generated
-   */
-  DomainConnection createDomainConnection();
-
-  /**
-   * Returns a new object of class '<em>Domain Relations</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Domain Relations</em>'.
-   * @generated
-   */
-  DomainRelations createDomainRelations();
-
-  /**
    * Returns a new object of class '<em>Architecture</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -292,6 +274,24 @@ public interface SoftGalleryLanguageFactory extends EFactory
    * @generated
    */
   BusinessLogicSegments createBusinessLogicSegments();
+
+  /**
+   * Returns a new object of class '<em>Controller Segment Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Controller Segment Element</em>'.
+   * @generated
+   */
+  ControllerSegmentElement createControllerSegmentElement();
+
+  /**
+   * Returns a new object of class '<em>Specification Segment Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Specification Segment Element</em>'.
+   * @generated
+   */
+  SpecificationSegmentElement createSpecificationSegmentElement();
 
   /**
    * Returns a new object of class '<em>Data Persistence Layer</em>'.
@@ -1032,6 +1032,42 @@ public interface SoftGalleryLanguageFactory extends EFactory
   ReactCoreFunctions createReactCoreFunctions();
 
   /**
+   * Returns a new object of class '<em>Components Styles</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Components Styles</em>'.
+   * @generated
+   */
+  ComponentsStyles createComponentsStyles();
+
+  /**
+   * Returns a new object of class '<em>Components Styles Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Components Styles Content</em>'.
+   * @generated
+   */
+  ComponentsStylesContent createComponentsStylesContent();
+
+  /**
+   * Returns a new object of class '<em>Style Properties</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Style Properties</em>'.
+   * @generated
+   */
+  StyleProperties createStyleProperties();
+
+  /**
+   * Returns a new object of class '<em>Style Properties Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Style Properties Content</em>'.
+   * @generated
+   */
+  StylePropertiesContent createStylePropertiesContent();
+
+  /**
    * Returns a new object of class '<em>React Actions</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1057,6 +1093,33 @@ public interface SoftGalleryLanguageFactory extends EFactory
    * @generated
    */
   ReactServicesType createReactServicesType();
+
+  /**
+   * Returns a new object of class '<em>React Service Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>React Service Content</em>'.
+   * @generated
+   */
+  ReactServiceContent createReactServiceContent();
+
+  /**
+   * Returns a new object of class '<em>React Service Cont Request</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>React Service Cont Request</em>'.
+   * @generated
+   */
+  ReactServiceContRequest createReactServiceContRequest();
+
+  /**
+   * Returns a new object of class '<em>React Service Request Props</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>React Service Request Props</em>'.
+   * @generated
+   */
+  ReactServiceRequestProps createReactServiceRequestProps();
 
   /**
    * Returns a new object of class '<em>React Services Relation</em>'.

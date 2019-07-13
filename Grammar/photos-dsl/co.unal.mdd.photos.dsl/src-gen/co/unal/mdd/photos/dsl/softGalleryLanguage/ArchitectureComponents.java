@@ -16,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents#getArchcomponent <em>Archcomponent</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents#getArchFeComponent <em>Arch Fe Component</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents#getArchBeComponent <em>Arch Be Component</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents#getArchPdComponent <em>Arch Pd Component</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getArchitectureComponents()
@@ -26,15 +28,39 @@ import org.eclipse.emf.ecore.EObject;
 public interface ArchitectureComponents extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Archcomponent</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * Returns the value of the '<em><b>Arch Fe Component</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.FrontEnd}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Archcomponent</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getArchitectureComponents_Archcomponent()
+   * @return the value of the '<em>Arch Fe Component</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getArchitectureComponents_ArchFeComponent()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getArchcomponent();
+  EList<FrontEnd> getArchFeComponent();
+
+  /**
+   * Returns the value of the '<em><b>Arch Be Component</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.BackEnd}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Arch Be Component</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getArchitectureComponents_ArchBeComponent()
+   * @model containment="true"
+   * @generated
+   */
+  EList<BackEnd> getArchBeComponent();
+
+  /**
+   * Returns the value of the '<em><b>Arch Pd Component</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.PersistenceDataComponent}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Arch Pd Component</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getArchitectureComponents_ArchPdComponent()
+   * @model containment="true"
+   * @generated
+   */
+  EList<PersistenceDataComponent> getArchPdComponent();
 
 } // ArchitectureComponents

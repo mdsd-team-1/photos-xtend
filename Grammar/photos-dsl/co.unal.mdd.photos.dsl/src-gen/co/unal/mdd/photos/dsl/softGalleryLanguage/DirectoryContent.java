@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent#getName <em>Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent#getDirectories <em>Directories</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDirectoryContent()
@@ -49,15 +49,15 @@ public interface DirectoryContent extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Directories</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDirectoryContent_Elements()
+   * @return the value of the '<em>Directories</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDirectoryContent_Directories()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getElements();
+  EList<EObject> getDirectories();
 
 } // DirectoryContent

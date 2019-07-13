@@ -4,6 +4,8 @@
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Domain;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.Entity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionality;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 
 import java.util.Collection;
@@ -14,7 +16,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -32,7 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DomainImpl#getName <em>Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DomainImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DomainImpl#getEntitydomain <em>Entitydomain</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.DomainImpl#getEntityfuncs <em>Entityfuncs</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +62,24 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getEntitydomain() <em>Entitydomain</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getEntitydomain()
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<Entity> entitydomain;
+
+  /**
+   * The cached value of the '{@link #getEntityfuncs() <em>Entityfuncs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEntityfuncs()
+   * @generated
+   * @ordered
+   */
+  protected EList<Functionality> entityfuncs;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,13 +133,28 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
    * @generated
    */
   @Override
-  public EList<EObject> getElements()
+  public EList<Entity> getEntitydomain()
   {
-    if (elements == null)
+    if (entitydomain == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.DOMAIN__ELEMENTS);
+      entitydomain = new EObjectContainmentEList<Entity>(Entity.class, this, SoftGalleryLanguagePackage.DOMAIN__ENTITYDOMAIN);
     }
-    return elements;
+    return entitydomain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Functionality> getEntityfuncs()
+  {
+    if (entityfuncs == null)
+    {
+      entityfuncs = new EObjectContainmentEList<Functionality>(Functionality.class, this, SoftGalleryLanguagePackage.DOMAIN__ENTITYFUNCS);
+    }
+    return entityfuncs;
   }
 
   /**
@@ -140,8 +167,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.DOMAIN__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYDOMAIN:
+        return ((InternalEList<?>)getEntitydomain()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYFUNCS:
+        return ((InternalEList<?>)getEntityfuncs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -158,8 +187,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
     {
       case SoftGalleryLanguagePackage.DOMAIN__NAME:
         return getName();
-      case SoftGalleryLanguagePackage.DOMAIN__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYDOMAIN:
+        return getEntitydomain();
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYFUNCS:
+        return getEntityfuncs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,9 +209,13 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
       case SoftGalleryLanguagePackage.DOMAIN__NAME:
         setName((String)newValue);
         return;
-      case SoftGalleryLanguagePackage.DOMAIN__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYDOMAIN:
+        getEntitydomain().clear();
+        getEntitydomain().addAll((Collection<? extends Entity>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYFUNCS:
+        getEntityfuncs().clear();
+        getEntityfuncs().addAll((Collection<? extends Functionality>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -199,8 +234,11 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
       case SoftGalleryLanguagePackage.DOMAIN__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SoftGalleryLanguagePackage.DOMAIN__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYDOMAIN:
+        getEntitydomain().clear();
+        return;
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYFUNCS:
+        getEntityfuncs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -218,8 +256,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain
     {
       case SoftGalleryLanguagePackage.DOMAIN__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SoftGalleryLanguagePackage.DOMAIN__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYDOMAIN:
+        return entitydomain != null && !entitydomain.isEmpty();
+      case SoftGalleryLanguagePackage.DOMAIN__ENTITYFUNCS:
+        return entityfuncs != null && !entityfuncs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

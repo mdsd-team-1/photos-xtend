@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Domain#getName <em>Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Domain#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Domain#getEntitydomain <em>Entitydomain</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Domain#getEntityfuncs <em>Entityfuncs</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDomain()
@@ -49,15 +50,27 @@ public interface Domain extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * Returns the value of the '<em><b>Entitydomain</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entity}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDomain_Elements()
+   * @return the value of the '<em>Entitydomain</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDomain_Entitydomain()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getElements();
+  EList<Entity> getEntitydomain();
+
+  /**
+   * Returns the value of the '<em><b>Entityfuncs</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.Functionality}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Entityfuncs</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getDomain_Entityfuncs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Functionality> getEntityfuncs();
 
 } // Domain

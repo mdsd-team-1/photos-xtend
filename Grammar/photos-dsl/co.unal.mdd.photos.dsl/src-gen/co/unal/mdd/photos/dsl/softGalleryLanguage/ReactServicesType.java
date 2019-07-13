@@ -3,6 +3,8 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesType#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesType#getReactservcontent <em>Reactservcontent</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getReactServicesType()
@@ -44,5 +47,17 @@ public interface ReactServicesType extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Reactservcontent</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContent}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Reactservcontent</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getReactServicesType_Reactservcontent()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ReactServiceContent> getReactservcontent();
 
 } // ReactServicesType

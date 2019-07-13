@@ -16,9 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getPhotoelements <em>Photoelements</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getAlbumelements <em>Albumelements</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getUserdomainelements <em>Userdomainelements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getAtributePhoto <em>Atribute Photo</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getAtributeAlbum <em>Atribute Album</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getAtributeUserDomain <em>Atribute User Domain</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities()
@@ -28,39 +29,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface Entities extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Photoelements</b></em>' containment reference list.
-   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.Photo}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Photoelements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_Photoelements()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_Name()
+   * @model
    * @generated
    */
-  EList<Photo> getPhotoelements();
+  String getName();
 
   /**
-   * Returns the value of the '<em><b>Albumelements</b></em>' containment reference list.
-   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.Album}.
+   * Sets the value of the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Entities#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Albumelements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_Albumelements()
-   * @model containment="true"
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  EList<Album> getAlbumelements();
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Userdomainelements</b></em>' containment reference list.
-   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain}.
+   * Returns the value of the '<em><b>Atribute Photo</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Userdomainelements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_Userdomainelements()
+   * @return the value of the '<em>Atribute Photo</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_AtributePhoto()
    * @model containment="true"
    * @generated
    */
-  EList<UserDomain> getUserdomainelements();
+  EList<AtributePhoto> getAtributePhoto();
+
+  /**
+   * Returns the value of the '<em><b>Atribute Album</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Atribute Album</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_AtributeAlbum()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AtributeAlbum> getAtributeAlbum();
+
+  /**
+   * Returns the value of the '<em><b>Atribute User Domain</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Atribute User Domain</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getEntities_AtributeUserDomain()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AtributeUserDomain> getAtributeUserDomain();
 
 } // Entities

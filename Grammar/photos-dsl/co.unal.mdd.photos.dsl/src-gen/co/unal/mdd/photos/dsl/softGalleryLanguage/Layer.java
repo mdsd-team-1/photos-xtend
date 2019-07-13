@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Layer#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Layer#getLayer <em>Layer</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getLayer()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface Layer extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Layer</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getLayer_Elements()
+   * @return the value of the '<em>Layer</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getLayer_Layer()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getElements();
+  EList<EObject> getLayer();
 
 } // Layer

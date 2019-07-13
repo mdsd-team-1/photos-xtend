@@ -4,7 +4,6 @@
 package co.unal.mdd.photos.dsl.serializer;
 
 import co.unal.mdd.photos.dsl.services.SoftGalleryLanguageGrammarAccess;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Album;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumManagement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumManagementFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AmazonElasticComputeCloud;
@@ -16,6 +15,9 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccess;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AppAccessFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Architecture;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ArchitectureComponents;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BackEnd;
@@ -32,9 +34,12 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Column;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Columns;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentClass;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsLogic;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStylesContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsUI;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Configuration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Constraint;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.CoreFunctionsDeclaration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DOMConfigurations;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceContent;
@@ -45,8 +50,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.DatatypeDB;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Directories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Domain;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.DomainConnection;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.DomainRelations;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.EnableAuthorizationServer;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.EnableGlobalMethodSecurity;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.EnableResourceServer;
@@ -88,7 +91,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PackageName;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PackageVersion;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PersistenceDataComponent;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Photo;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Policy;
@@ -124,6 +126,9 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactInformation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactLibraries;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactLibrary;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactModules;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContRequest;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceContent;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServiceRequestProps;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesRelation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactServicesType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactSubModules;
@@ -142,6 +147,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SingleDependencies;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SingleFile;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Specification;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Spring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringBootApplication;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringComponent;
@@ -152,13 +158,14 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SubcomponentCont;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Table_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Technologies;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Technology;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Trigger;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UIContent;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.UserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ViewComponentCont;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ViewSchema;
 import com.google.inject.Inject;
@@ -187,9 +194,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SoftGalleryLanguagePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SoftGalleryLanguagePackage.ALBUM:
-				sequence_Album(context, (Album) semanticObject); 
-				return; 
 			case SoftGalleryLanguagePackage.ALBUM_MANAGEMENT:
 				sequence_AlbumManagement(context, (AlbumManagement) semanticObject); 
 				return; 
@@ -222,6 +226,15 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.ARCHITECTURE_COMPONENTS:
 				sequence_ArchitectureComponents(context, (ArchitectureComponents) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.ATRIBUTE_ALBUM:
+				sequence_AtributeAlbum(context, (AtributeAlbum) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.ATRIBUTE_PHOTO:
+				sequence_AtributePhoto(context, (AtributePhoto) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.ATRIBUTE_USER_DOMAIN:
+				sequence_AtributeUserDomain(context, (AtributeUserDomain) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.AUTOWIRED:
 				sequence_Autowired(context, (Autowired) semanticObject); 
@@ -271,6 +284,12 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.COMPONENTS_LOGIC:
 				sequence_ComponentsLogic(context, (ComponentsLogic) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.COMPONENTS_STYLES:
+				sequence_ComponentsStyles(context, (ComponentsStyles) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.COMPONENTS_STYLES_CONTENT:
+				sequence_ComponentsStylesContent(context, (ComponentsStylesContent) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.COMPONENTS_UI:
 				sequence_ComponentsUI(context, (ComponentsUI) semanticObject); 
 				return; 
@@ -279,6 +298,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.CONSTRAINT:
 				sequence_Constraint(context, (Constraint) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.CONTROLLER_SEGMENT_ELEMENT:
+				sequence_ControllerSegmentElement(context, (ControllerSegmentElement) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.CORE_FUNCTIONS_DECLARATION:
 				sequence_CoreFunctionsDeclaration(context, (CoreFunctionsDeclaration) semanticObject); 
@@ -309,12 +331,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.DOMAIN:
 				sequence_Domain(context, (Domain) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.DOMAIN_CONNECTION:
-				sequence_DomainConnection(context, (DomainConnection) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.DOMAIN_RELATIONS:
-				sequence_DomainRelations(context, (DomainRelations) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.ENABLE_AUTHORIZATION_SERVER:
 				sequence_EnableAuthorizationServer(context, (EnableAuthorizationServer) semanticObject); 
@@ -439,9 +455,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.PERSISTENCE_DATA_COMPONENT:
 				sequence_PersistenceDataComponent(context, (PersistenceDataComponent) semanticObject); 
 				return; 
-			case SoftGalleryLanguagePackage.PHOTO:
-				sequence_Photo(context, (Photo) semanticObject); 
-				return; 
 			case SoftGalleryLanguagePackage.PHOTO_ACTIONS:
 				sequence_PhotoActions(context, (PhotoActions) semanticObject); 
 				return; 
@@ -547,6 +560,15 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.REACT_MODULES:
 				sequence_ReactModules(context, (ReactModules) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.REACT_SERVICE_CONT_REQUEST:
+				sequence_ReactServiceContRequest(context, (ReactServiceContRequest) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.REACT_SERVICE_CONTENT:
+				sequence_ReactServiceContent(context, (ReactServiceContent) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.REACT_SERVICE_REQUEST_PROPS:
+				sequence_ReactServiceRequestProps(context, (ReactServiceRequestProps) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.REACT_SERVICES_RELATION:
 				sequence_ReactServicesRelation(context, (ReactServicesRelation) semanticObject); 
 				return; 
@@ -598,6 +620,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.SPECIFICATION:
 				sequence_Specification(context, (Specification) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT:
+				sequence_SpecificationSegmentElement(context, (SpecificationSegmentElement) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.SPRING:
 				sequence_Spring(context, (Spring) semanticObject); 
 				return; 
@@ -628,6 +653,12 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.STATE_CONTENT:
 				sequence_StateContent(context, (StateContent) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.STYLE_PROPERTIES:
+				sequence_StyleProperties(context, (StyleProperties) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.STYLE_PROPERTIES_CONTENT:
+				sequence_StylePropertiesContent(context, (StylePropertiesContent) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.SUBCOMPONENT_CONT:
 				sequence_SubcomponentCont(context, (SubcomponentCont) semanticObject); 
 				return; 
@@ -645,9 +676,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.UI_CONTENT:
 				sequence_UIContent(context, (UIContent) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.USER_DOMAIN:
-				sequence_UserDomain(context, (UserDomain) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.VIEW_COMPONENT_CONT:
 				sequence_ViewComponentCont(context, (ViewComponentCont) semanticObject); 
@@ -690,24 +718,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 */
 	protected void sequence_AlbumManagement(ISerializationContext context, AlbumManagement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Album returns Album
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_Album(ISerializationContext context, Album semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.ALBUM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.ALBUM__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAlbumAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	
@@ -821,7 +831,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ArchitectureComponents returns ArchitectureComponents
 	 *
 	 * Constraint:
-	 *     (archcomponent+=FrontEnd archcomponent+=BackEnd archcomponent+=PersistenceDataComponent)
+	 *     (archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent)
 	 */
 	protected void sequence_ArchitectureComponents(ISerializationContext context, ArchitectureComponents semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -836,6 +846,50 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     (elements+=NTiers+ elements+=NTiersConnections+)
 	 */
 	protected void sequence_Architecture(ISerializationContext context, Architecture semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AtributeAlbum returns AtributeAlbum
+	 *
+	 * Constraint:
+	 *     (name=ID | name=ID | name=ID)
+	 */
+	protected void sequence_AtributeAlbum(ISerializationContext context, AtributeAlbum semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AtributePhoto returns AtributePhoto
+	 *
+	 * Constraint:
+	 *     (name=ID | name=ID | name=ID | name=ID)
+	 */
+	protected void sequence_AtributePhoto(ISerializationContext context, AtributePhoto semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AtributeUserDomain returns AtributeUserDomain
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID
+	 *     )
+	 */
+	protected void sequence_AtributeUserDomain(ISerializationContext context, AtributeUserDomain semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -953,7 +1007,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     BusinessLogicContent returns BusinessLogicContent
 	 *
 	 * Constraint:
-	 *     elements+=BusinessLogicSegments
+	 *     businessLogicSegments+=BusinessLogicSegments+
 	 */
 	protected void sequence_BusinessLogicContent(ISerializationContext context, BusinessLogicContent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -965,7 +1019,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     BusinessLogicLayer returns BusinessLogicLayer
 	 *
 	 * Constraint:
-	 *     (elements+=BusinessLogicContent elements+=SegmentStructure)
+	 *     (businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure)
 	 */
 	protected void sequence_BusinessLogicLayer(ISerializationContext context, BusinessLogicLayer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -977,25 +1031,16 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     BusinessLogicSegments returns BusinessLogicSegments
 	 *
 	 * Constraint:
-	 *     (bussinessName=ID modelSegmentName=ID repositoryName=ID securitySName=ID)
+	 *     (
+	 *         (name=ID controllerSegmentElement+=ControllerSegmentElement+) | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         (name=ID specificationSegmentElement+=SpecificationSegmentElement+)
+	 *     )
 	 */
 	protected void sequence_BusinessLogicSegments(ISerializationContext context, BusinessLogicSegments semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__BUSSINESS_NAME));
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__MODEL_SEGMENT_NAME));
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__REPOSITORY_NAME));
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.BUSINESS_LOGIC_SEGMENTS__SECURITY_SNAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBusinessLogicSegmentsAccess().getBussinessNameIDTerminalRuleCall_1_0(), semanticObject.getBussinessName());
-		feeder.accept(grammarAccess.getBusinessLogicSegmentsAccess().getModelSegmentNameIDTerminalRuleCall_3_0(), semanticObject.getModelSegmentName());
-		feeder.accept(grammarAccess.getBusinessLogicSegmentsAccess().getRepositoryNameIDTerminalRuleCall_5_0(), semanticObject.getRepositoryName());
-		feeder.accept(grammarAccess.getBusinessLogicSegmentsAccess().getSecuritySNameIDTerminalRuleCall_7_0(), semanticObject.getSecuritySName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1085,6 +1130,30 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     ComponentsStylesContent returns ComponentsStylesContent
+	 *
+	 * Constraint:
+	 *     (nameStyle=ID stylecontent+=StyleProperties)
+	 */
+	protected void sequence_ComponentsStylesContent(ISerializationContext context, ComponentsStylesContent semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ComponentsStyles returns ComponentsStyles
+	 *
+	 * Constraint:
+	 *     stylescontents+=ComponentsStylesContent*
+	 */
+	protected void sequence_ComponentsStyles(ISerializationContext context, ComponentsStyles semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ComponentsUI returns ComponentsUI
 	 *
 	 * Constraint:
@@ -1122,6 +1191,18 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getConstraintAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ControllerSegmentElement returns ControllerSegmentElement
+	 *
+	 * Constraint:
+	 *     (name=ID | name=ID)
+	 */
+	protected void sequence_ControllerSegmentElement(ISerializationContext context, ControllerSegmentElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1247,46 +1328,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     DirectoryContent returns DirectoryContent
 	 *
 	 * Constraint:
-	 *     ((name=ID elements+=Directories) | elements+=SingleFile)
+	 *     ((name=ID directories+=Directories) | directories+=SingleFile)
 	 */
 	protected void sequence_DirectoryContent(ISerializationContext context, DirectoryContent semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     DomainConnection returns DomainConnection
-	 *
-	 * Constraint:
-	 *     elements+=DomainRelations
-	 */
-	protected void sequence_DomainConnection(ISerializationContext context, DomainConnection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     DomainRelations returns DomainRelations
-	 *
-	 * Constraint:
-	 *     (
-	 *         userdelements+=UserDomain 
-	 *         userDname=ID 
-	 *         elements+=Functionalities 
-	 *         albumdelements+=Album 
-	 *         albumDname=ID 
-	 *         elements+=AlbumManagementFunctions 
-	 *         photodelements+=Photo 
-	 *         photoDname=ID 
-	 *         elements+=PhotoActionsFunctions 
-	 *         photoactdelements+=PhotoActions 
-	 *         photoactDname=ID 
-	 *         elements+=AlbumManagement
-	 *     )
-	 */
-	protected void sequence_DomainRelations(ISerializationContext context, DomainRelations semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1296,7 +1340,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     Domain returns Domain
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=Entity elements+=Functionality elements+=DomainConnection)
+	 *     (name=ID entitydomain+=Entity entityfuncs+=Functionality)
 	 */
 	protected void sequence_Domain(ISerializationContext context, Domain semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1380,7 +1424,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     Entities returns Entities
 	 *
 	 * Constraint:
-	 *     (photoelements+=Photo+ albumelements+=Album+ userdomainelements+=UserDomain+)
+	 *     ((name=ID atributePhoto+=AtributePhoto+) | (name=ID atributeAlbum+=AtributeAlbum+) | (name=ID atributeUserDomain+=AtributeUserDomain+))
 	 */
 	protected void sequence_Entities(ISerializationContext context, Entities semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1392,7 +1436,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     elements+=Entities
+	 *     elements+=Entities+
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1641,7 +1685,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     Layer returns Layer
 	 *
 	 * Constraint:
-	 *     (elements+=PresentationLayer elements+=BusinessLogicLayer elements+=DataPersistenceLayer)
+	 *     (layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer)
 	 */
 	protected void sequence_Layer(ISerializationContext context, Layer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1956,24 +2000,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
-	 *     Photo returns Photo
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_Photo(ISerializationContext context, Photo semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.PHOTO__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPhotoAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Policy returns Policy
 	 *
 	 * Constraint:
@@ -2049,7 +2075,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     PresentationLayer returns PresentationLayer
 	 *
 	 * Constraint:
-	 *     (elements+=PresentationContent elements+=SegmentStructure)
+	 *     (presentationLayer+=PresentationContent presentationLayer+=SegmentStructure)
 	 */
 	protected void sequence_PresentationLayer(ISerializationContext context, PresentationLayer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2214,7 +2240,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ReactComponents returns ReactComponents
 	 *
 	 * Constraint:
-	 *     (componentslogic+=ComponentsLogic componentsui+=ComponentsUI)
+	 *     (componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles)
 	 */
 	protected void sequence_ReactComponents(ISerializationContext context, ReactComponents semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2250,7 +2276,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ReactConstructor returns ReactConstructor
 	 *
 	 * Constraint:
-	 *     (componentclass+=State componentclass+=CoreFunctionsDeclaration*)
+	 *     (componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*)
 	 */
 	protected void sequence_ReactConstructor(ISerializationContext context, ReactConstructor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2427,6 +2453,51 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     ReactServiceContRequest returns ReactServiceContRequest
+	 *
+	 * Constraint:
+	 *     reactservrequestprops+=ReactServiceRequestProps+
+	 */
+	protected void sequence_ReactServiceContRequest(ISerializationContext context, ReactServiceContRequest semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ReactServiceContent returns ReactServiceContent
+	 *
+	 * Constraint:
+	 *     (functName=ID reactservrequest+=ReactServiceContRequest)+
+	 */
+	protected void sequence_ReactServiceContent(ISerializationContext context, ReactServiceContent semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ReactServiceRequestProps returns ReactServiceRequestProps
+	 *
+	 * Constraint:
+	 *     (reqPropName=ID reqPropDescription=ID)
+	 */
+	protected void sequence_ReactServiceRequestProps(ISerializationContext context, ReactServiceRequestProps semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REACT_SERVICE_REQUEST_PROPS__REQ_PROP_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REACT_SERVICE_REQUEST_PROPS__REQ_PROP_NAME));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REACT_SERVICE_REQUEST_PROPS__REQ_PROP_DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REACT_SERVICE_REQUEST_PROPS__REQ_PROP_DESCRIPTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getReactServiceRequestPropsAccess().getReqPropNameIDTerminalRuleCall_1_0(), semanticObject.getReqPropName());
+		feeder.accept(grammarAccess.getReactServiceRequestPropsAccess().getReqPropDescriptionIDTerminalRuleCall_2_0(), semanticObject.getReqPropDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ReactServicesRelation returns ReactServicesRelation
 	 *
 	 * Constraint:
@@ -2442,16 +2513,10 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ReactServicesType returns ReactServicesType
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID reactservcontent+=ReactServiceContent)
 	 */
 	protected void sequence_ReactServicesType(ISerializationContext context, ReactServicesType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REACT_SERVICES_TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REACT_SERVICES_TYPE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReactServicesTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2673,6 +2738,24 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     SpecificationSegmentElement returns SpecificationSegmentElement
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_SpecificationSegmentElement(ISerializationContext context, SpecificationSegmentElement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.SPECIFICATION_SEGMENT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.SPECIFICATION_SEGMENT_ELEMENT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSpecificationSegmentElementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Specification returns Specification
 	 *
 	 * Constraint:
@@ -2811,6 +2894,36 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     StylePropertiesContent returns StylePropertiesContent
+	 *
+	 * Constraint:
+	 *     propName=ID
+	 */
+	protected void sequence_StylePropertiesContent(ISerializationContext context, StylePropertiesContent semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.STYLE_PROPERTIES_CONTENT__PROP_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.STYLE_PROPERTIES_CONTENT__PROP_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStylePropertiesContentAccess().getPropNameIDTerminalRuleCall_1_0(), semanticObject.getPropName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StyleProperties returns StyleProperties
+	 *
+	 * Constraint:
+	 *     stylespropscontents+=StylePropertiesContent*
+	 */
+	protected void sequence_StyleProperties(ISerializationContext context, StyleProperties semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     SubcomponentCont returns SubcomponentCont
 	 *
 	 * Constraint:
@@ -2884,24 +2997,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 */
 	protected void sequence_UIContent(ISerializationContext context, UIContent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     UserDomain returns UserDomain
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_UserDomain(ISerializationContext context, UserDomain semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.USER_DOMAIN__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.USER_DOMAIN__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUserDomainAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

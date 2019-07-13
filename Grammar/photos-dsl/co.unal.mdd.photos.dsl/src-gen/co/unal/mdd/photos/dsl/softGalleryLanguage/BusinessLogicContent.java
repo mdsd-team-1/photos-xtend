@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicContent#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicContent#getBusinessLogicSegments <em>Business Logic Segments</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicContent()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface BusinessLogicContent extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Business Logic Segments</b></em>' containment reference list.
    * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicContent_Elements()
+   * @return the value of the '<em>Business Logic Segments</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getBusinessLogicContent_BusinessLogicSegments()
    * @model containment="true"
    * @generated
    */
-  EList<BusinessLogicSegments> getElements();
+  EList<BusinessLogicSegments> getBusinessLogicSegments();
 
 } // BusinessLogicContent

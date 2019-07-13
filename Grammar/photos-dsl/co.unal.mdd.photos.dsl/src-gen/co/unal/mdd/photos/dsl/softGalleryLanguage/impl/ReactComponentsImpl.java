@@ -4,6 +4,7 @@
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsLogic;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsUI;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactComponents;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactComponentsImpl#getComponentslogic <em>Componentslogic</em>}</li>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactComponentsImpl#getComponentsui <em>Componentsui</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ReactComponentsImpl#getComponentstyle <em>Componentstyle</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +59,16 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected EList<ComponentsUI> componentsui;
+
+  /**
+   * The cached value of the '{@link #getComponentstyle() <em>Componentstyle</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComponentstyle()
+   * @generated
+   * @ordered
+   */
+  protected EList<ComponentsStyles> componentstyle;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,6 +127,21 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public EList<ComponentsStyles> getComponentstyle()
+  {
+    if (componentstyle == null)
+    {
+      componentstyle = new EObjectContainmentEList<ComponentsStyles>(ComponentsStyles.class, this, SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSTYLE);
+    }
+    return componentstyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -123,6 +150,8 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
         return ((InternalEList<?>)getComponentslogic()).basicRemove(otherEnd, msgs);
       case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSUI:
         return ((InternalEList<?>)getComponentsui()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSTYLE:
+        return ((InternalEList<?>)getComponentstyle()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -141,6 +170,8 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
         return getComponentslogic();
       case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSUI:
         return getComponentsui();
+      case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSTYLE:
+        return getComponentstyle();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,6 +195,10 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
         getComponentsui().clear();
         getComponentsui().addAll((Collection<? extends ComponentsUI>)newValue);
         return;
+      case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSTYLE:
+        getComponentstyle().clear();
+        getComponentstyle().addAll((Collection<? extends ComponentsStyles>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -184,6 +219,9 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
       case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSUI:
         getComponentsui().clear();
         return;
+      case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSTYLE:
+        getComponentstyle().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -202,6 +240,8 @@ public class ReactComponentsImpl extends MinimalEObjectImpl.Container implements
         return componentslogic != null && !componentslogic.isEmpty();
       case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSUI:
         return componentsui != null && !componentsui.isEmpty();
+      case SoftGalleryLanguagePackage.REACT_COMPONENTS__COMPONENTSTYLE:
+        return componentstyle != null && !componentstyle.isEmpty();
     }
     return super.eIsSet(featureID);
   }

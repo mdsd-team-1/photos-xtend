@@ -1,9 +1,23 @@
 System: {
 	Domain SoftGallery: { 
-		Entities: {
-			Photo FotosMotos
-			Album AlbumCarros
-			UserDomain UserEntity
+		Entities: { 
+			PhotoEntity Photo
+				idPhoto id
+				namePhoto name
+				urlPhoto url
+				albumIdPhoto albumId
+			AlbumEntity Album
+				idAlbum id
+				nameAlbum name
+				userIdAlbum userId
+			UserEntity User
+				idUser id
+				userNameUser userName
+				firstNameUser firstName
+				lastNameUser lastName
+				profileDescriptionUser profileDescription
+				passwordUser password
+				emailUser email
 		}
 		Functionalities : {
 			ProfileManagement:
@@ -23,47 +37,7 @@ System: {
 				ViewCarousel verCarrusel
 				PassPhoto pasarFoto
 		}
-		DomainRelations: {
-			UserDomain UserEntity puede: {
-				ProfileManagement:
-					ViewProfilePhoto verFoto
-					EditProfileInfo editarPerfil
-				AppAccess:
-					Login ingresar
-					Register registrarse
-				AlbumManagement:
-					CreateAlbum crearAlbum
-					SelectAlbum seleccionarAlbum
-				PhotoActions:
-					ViewAllPhotos verTodasLasFotos
-					ViewExtendedPhoto verUnicaFoto
-					LoadPhoto cargarFoto
-				LandingActions:
-					ViewCarousel verCarrusel
-					PassPhoto pasarFoto
-				}
-			Album AlbumEntity 
-				seVincula: {
-					CreateAlbum crearAlbum
-					SelectAlbum seleccionarAlbum
-				}
-			Photo PhotoEntity seRelaciona:{
-				ViewAllPhotos verTodasLasFotos
-				ViewExtendedPhoto verUnicaFoto
-				LoadPhoto cargarFoto
-			}
-			PhotoActions:
-				ViewAllPhotos verTodasLasFotos
-				ViewExtendedPhoto verUnicaFoto
-				LoadPhoto cargarFoto
-					esNecesario: {
-						AlbumManagement:
-							CreateAlbum crearAlbum
-							SelectAlbum seleccionarAlbum
-				} 
-		} 	
 	}
-	
 	Architecture: {
 		Layers
 			PresentationLayer
@@ -83,14 +57,20 @@ System: {
 							CommonFile otherFiles
 			BusinessLogicLayer
 				BusinessLogicSegments
-					ControllerSegment SegmentoControladores
-					ModelSegment SegmentoModelo
-					RepositorySegment SegmentoRepository
-					SecuritySegment SegmentoSeguridad
+					ControllerSegment controller
+						AmazonSegment amazon
+						ExceptionSegment exception
+					ModelSegment model
+					RepositorySegment repository
+					SecuritySegment config
+					SpecificationSegment specification
+						DefinedSearchCriteria criteria
 				SegmentStructure
-					Directories softgalleryBackend
+					Directories photosappback
 						Directory main
 							CommonFile mainFiles
+						Directory resources
+							CommonFile application
 			DataPersistenceLayer
 				DataPersistenceSegments
 					PostgreSLQSegment SegmentoDatos
@@ -106,9 +86,9 @@ System: {
 			
 		ArchitectureComponents
 			SystemComponents
-				FrontEndComponent FrontEnd
-				BackEndComponent BackEnd
-				PersistenceDataComponent PersistenceData
+				FrontEndComponent frontend
+				BackEndComponent backend
+				PersistenceDataComponent persistencedata
 			Connectors
 				REST protocol 
 					source FrontEndComponent FrontEnd
@@ -220,14 +200,14 @@ System: {
 						ExceptionProcess UserHasNoAlbumsException
 						ExceptionProcess UserHasNoPhotosException
 				}
-				SpringEntity AlbumEntity : {
+				SpringEntity Album : {
 					SpringTable album
 						SpringTableId
 							GeneratedValue Id_Album
 						Column name
 						Column user_id
 				}
-				SpringEntity PhotoEntity : {
+				SpringEntity Photo : {
 					SpringTable photo
 						SpringTableId 
 							GeneratedValue Id_Photo
@@ -235,7 +215,7 @@ System: {
 						Column url 
 						Column album_id
 				}
-				SpringEntity UserEntity : {
+				SpringEntity User : {
 					SpringTable user
 						SpringTableId
 							GeneratedValue Id_User
@@ -248,7 +228,6 @@ System: {
 					NameNativeQuery	findLoginUser
 				}
 		}
-		
 		React ReactJS : {
 			ReactModules: {
 				ReactConfiguration : {
@@ -282,9 +261,11 @@ System: {
 					LogicComponents componentesLogicos
 						RoutingComponents componentRouting
 							AppComponent AppJS
+								import ReactComponent
 								Constructor
-									State stateVars
-									FunctionBindingDeclaration
+									State 
+										loading String
+										others String
 								ComponentDidMount
 									FunctionStructure
 								anotherFunctions
@@ -296,9 +277,11 @@ System: {
 							IndexComponent indexJS
 					UIComponents componentesVisuales
 						ViewComponent home
+							import ReactComponent
 							Constructor
-									State stateVars
-									FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							next
 								FunctionStructure
 							previous
@@ -308,9 +291,11 @@ System: {
 							Props 
 								super String
 						ViewComponent upload
+							import ReactComponent
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							ComponentDidMount
 								FunctionStructure
 							changeAlbum
@@ -320,17 +305,21 @@ System: {
 							Props 
 								super String
 						ViewComponent gallery
+							import ReactComponent
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							Render
 								RenderContent 								
 							Props 
 								super String
 						ViewComponent usersManagement
+							import ReactComponent
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							ComponentDidMount
 								FunctionStructure
 							openEditModal
@@ -341,8 +330,9 @@ System: {
 								super String
 						ViewComponent categoryManagement
 							Constructor
-								State stateVars
-								FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 							ComponentDidMount
 								FunctionStructure
 							toggleCardImageModal
@@ -353,30 +343,74 @@ System: {
 								super String
 						Subcomponents FieldTitle
 							Constructor
-									State stateVars
-									FunctionBindingDeclaration
+								State 
+									loading String
+									others String
 								Render
 									RenderContent 								
 								Props 
 									super String
 						Subcomponents MainLoading
 							Constructor
-									State stateVars
-									FunctionBindingDeclaration
+									State 
+										loading String
+										others String	
 								Render
 									RenderContent 								
 								Props 
 									super String
+					Style categoryManagement
+						prop_name initial_div propsContent
+					Style authentication
+						prop_name auth_div propsContent
+					Style gallery
+						prop_name initial_div propsContent
+					Style home
+						prop_name initial_home_div propsContent
+					Style upload
+						prop_name upload_content propsContent	
+					Style general
+						prop_name general_div propsContent
+					Style users
+						prop_name users_row1 propsContent
+					Style App
+						prop_name app propsContent
+					Style index
+						prop_name body propsContent
+						
 				}		 						
 				ReactActions: { 
 					ServicesRelations
-						ServiceType loginServices ServiceContent relacionadoCon AuxWrapper
-						ServiceType loginServices ServiceContent relacionadoCon Wrapper
-						ServiceType registerServices ServiceContent relacionadoCon Wrapper
-						ServiceType albumServices ServiceContent relacionadoCon Wrapper
-						ServiceType photoServices ServiceContent relacionadoCon Wrapper
-						ServiceType uploadServices ServiceContent relacionadoCon Wrapper
-						ServiceType userServices ServiceContent relacionadoCon Wrapper		
+						ServiceType loginServices 
+							functions loginfunctions
+								return
+									propName propNames propDescription 
+							relacionadoCon AuxWrapper
+						ServiceType registerServices 
+							functions registerfunctions
+								return
+									propName propNames propDescription 
+							relacionadoCon Wrapper
+						ServiceType categorysServices
+							functions categorysfunctions
+								return
+									propName propNames propDescription 
+							relacionadoCon Wrapper
+						ServiceType visualServices 
+							functions registerfunctions
+								return
+									propName propNames propDescription 
+							relacionadoCon Wrapper
+						ServiceType uploadServices
+							functions uploadfunctions
+								return
+									propName propNames propDescription 
+							relacionadoCon Wrapper
+						ServiceType generalServices 
+							functions generalfunctions
+								return
+									propName propNames propDescription 
+							relacionadoCon Wrapper
 				}	
 				ReactLibraries: {
 					 ReactDesign antd
