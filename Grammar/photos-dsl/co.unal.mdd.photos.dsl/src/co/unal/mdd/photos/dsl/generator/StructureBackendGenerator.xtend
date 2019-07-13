@@ -1,6 +1,5 @@
 package co.unal.mdd.photos.dsl.generator
 
-import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
 import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile
@@ -15,6 +14,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
+import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
 
 /**
  * Generates code from your model files on save.
@@ -23,29 +23,27 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
  */
 class StructureBackendGenerator{
 	
-    @Inject extension IQualifiedNameProvider
-    
     var basePackageName = "co.edu.unal"
     var className = ""
 	var packageName = ""
 	
 	def directoryGeneration(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context){
 		
-		println(">>> Back-End")
+		println(">>> Back-End Started")
 		
 		// Entities
 		for (domainItem : resource.allContents.toIterable.filter(Entities)) {
-			println("Entities Item: " + domainItem.name)
+			println("Entities: " + domainItem.name)
 			
 			// SegmentStructureContent
 			for (ssc : resource.allContents.toIterable.filter(SegmentStructureContent)) {
-				println("SegmentStructureContent Item: " + ssc.name)	
+				println("SegmentStructureContent: " + ssc.name)	
 					
 				if(ssc.name.equals("photosappback")){
 				
 					// DirectoryContent
 					for (dir : resource.allContents.toIterable.filter(DirectoryContent)) {
-						println("DirectoryContent Item: " + dir.name)	
+						println("DirectoryContent: " + dir.name)	
 						
 						if(dir.name.equals("main")){
 							generateExecutables(resource, fsa, context, domainItem, ssc, dir)
@@ -56,14 +54,18 @@ class StructureBackendGenerator{
 					}
 				}
 			}
+			
+			println("")
 		}
+		
+		println(">>> Back-End Finished")
 	}
 
 	def generateExecutables(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir) {
 		
 		// BusinessLogicSegments
 		for (bls : resource.allContents.toIterable.filter(BusinessLogicSegments)) {
-			println("BusinessLogicSegments Item: " + bls.name)
+			println("BusinessLogicSegments: " + bls.name)
 		
 			switch bls.name {
 				
@@ -90,50 +92,35 @@ class StructureBackendGenerator{
 		}
 	}
 	
+	
+	// Path: /
 	def generateMain(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 	}
 	
+	
+	// Path: /.config
 	def generateConfig(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = domainItem.name
 		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
-	
+
+
+	// Path: /.controller	
 	def generateController(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
+		// ControllerSegmentElement
 		for (cse : resource.allContents.toIterable.filter(ControllerSegmentElement)) {
+			println("ControllerSegmentElement: " + bls.name)
 		
 			if(cse.name.equals("amazon")){
-				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
-				className = cse.name.toFirstUpper + "Client"
-				fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+				generateControllerAmazon(resource, fsa, context, domainItem, ssc, dir, bls, cse)
 			
 			} else if(cse.name.equals("exception")){
-		        				switch domainItem.name {
-		        				 case "Photo":{
-		        				 	for (pe : resource.allContents.toIterable.filter(PhotoException)) {
-				        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
-						        		className = pe.name
-						        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-			        					}
-		        					}
-		        				case "Album":{
-		        				 	for (ae : resource.allContents.toIterable.filter(AlbumException)) {
-				        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
-						        		className = ae.name
-						        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-			        					}
-			        				}
-		        				case "User":{
-		        				 	for (ue : resource.allContents.toIterable.filter(UserException)) {
-				        				packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name	        	
-						        		className = ue.name
-						        		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
-			        					}
-			        				}
-		        				}
-		        			}
+				generateControllerException(resource, fsa, context, domainItem, ssc, dir, bls, cse)
+			}
 		}
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
@@ -141,41 +128,101 @@ class StructureBackendGenerator{
 		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
 	
-	def generateControllerAmazon(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	
+	// Path: /.controller.amazon
+	def generateControllerAmazon(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
+		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
+		className = cse.name.toFirstUpper + "Client"
+		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
 	
-	def generateControllerException(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	
+	// Path: /.controller.exception	
+	def generateControllerException(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
+		switch domainItem.name {
+			
+			case "Photo":{
+				generateControllerExceptionPhoto(resource, fsa, context, domainItem, ssc, dir, bls, cse)
+			}
+			case "Album":{
+				generateControllerExceptionAlbum(resource, fsa, context, domainItem, ssc, dir, bls, cse)
+			}
+			case "User":{
+				generateControllerExceptionUser(resource, fsa, context, domainItem, ssc, dir, bls, cse)
+			}
+		}
 	}
 	
-	def generateControllerExceptionAlbum(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	
+	// Path: /.controller.exception.album
+	def generateControllerExceptionAlbum(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
+		// AlbumException
+		for (ae : resource.allContents.toIterable.filter(AlbumException)) {
+			println("AlbumException: " + ae.name)
+			
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+			className = ae.name
+			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		}
+	}
+
+
+	// Path: /.controller.exception.photo
+	def generateControllerExceptionPhoto(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
+		
+		// PhotoException
+		for (pe : resource.allContents.toIterable.filter(PhotoException)) {
+			println("PhotoException: " + pe.name)
+			
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+			className = pe.name
+			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		}
 	}
 	
-	def generateControllerExceptionPhoto(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	
+	// Path: /.controller.exception.user
+	def generateControllerExceptionUser(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
+		// UserException
+		for (ue : resource.allContents.toIterable.filter(UserException)) {
+			println("UserException: " + ue.name)
+			
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+			className = ue.name
+			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
+		}
 	}
 	
-	def generateControllerExceptionUser(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
-		
-	}
 	
+	// Path: /.model
 	def generateModel(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = domainItem.name
 		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
-	
+
+
+	// Path: /.repository
 	def generateRepository(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = domainItem.name + bls.name.toFirstUpper
 		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateInterface(className, packageName))
 	}
 	
+	
+	// Path: /.specification
 	def generateSpecification(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
-							
+
+		// SpecificationSegmentElement
 		for (sse : resource.allContents.toIterable.filter(SpecificationSegmentElement)) {
+			println("SpecificationSegmentElement: " + sse.name)
+			
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name	
 			className = "Search"+sse.name.toFirstUpper
 			fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
@@ -186,6 +233,8 @@ class StructureBackendGenerator{
 		fsa.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", generateClass(className, packageName))
 	}
 	
+	
+	// Path: /.specification.criteria
 	def generateSpecificationCriteria(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context, Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 	}	
@@ -195,11 +244,10 @@ class StructureBackendGenerator{
 		
 		// MultipleFile               
 		for (mf : resource.allContents.toIterable.filter(MultipleFile)) {
+			println("MultipleFile: " + mf.name)
 			
 			if(mf.name.equals("application")) {
 			
-				println("Architecture Iteration 2" + mf.name)
-				
 				packageName = basePackageName +"."+ ssc.name +"."+ dir.name 	        	
 				className = mf.name
 				

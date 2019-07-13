@@ -24,13 +24,15 @@ class SoftGalleryLanguageGenerator extends AbstractGenerator {
 	StructureFrontendGenerator structurefrontendGenerator = new StructureFrontendGenerator();
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		println("*** Generator v5 ***")
+		
+		println("*** Generator v6 ***")
 		println(">>> doGenerate() Started <<<")
-		println("") // New line
+		println("")
 
 		structurebackendGenerator.directoryGeneration(resource, fsa, context)
         structurefrontendGenerator.directoryGeneration(resource, fsa, context)
         
+        println("")
         println(">>> doGenerate() Finished <<<")
 	}
 }
