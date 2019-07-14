@@ -15,6 +15,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
 
 /**
  * Generates code from your model files on save.
@@ -129,10 +130,16 @@ class StructureBackendGenerator{
 		// TODO: Falta HomeController
 		
 		
+		
+		
+		
+		
+		var classVars = proyectTree.allContents.toIterable.filter(SpringRepositories)
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 		className = ent.name + bls.name.toFirstUpper
+				
+		createControllerClassFile(className, packageName, classVars)
 		
-		createClassFile(className, packageName)
 
 
 		// ControllerSegmentElement
@@ -273,6 +280,7 @@ class StructureBackendGenerator{
 	}	
 	
 	
+	// Path: /.scr/main/resources
 	def generateResources(SegmentStructureContent ssc, DirectoryContent dir) {
 		
 		// MultipleFile               
@@ -300,6 +308,10 @@ class StructureBackendGenerator{
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateClass(className, packageName))
 	}
 	
+	def createControllerClassFile(String className, String packageName, Iterable<SpringRepositories> classVars) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateControllerClass(className, packageName, classVars))
+	}
+	
 	def createInterfaceFile(String className, String packageName) {
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateInterface(className, packageName))
 	}
@@ -321,7 +333,7 @@ class StructureBackendGenerator{
 	def templateClass(String className, String packageName)
 	''' 
 	// ----------------------------------------
-	// Template for Class
+	// Template for ControllerClass
 	// PackageName: «packageName»
 	// ClassName: «className»
 	// ----------------------------------------	
@@ -334,6 +346,35 @@ class StructureBackendGenerator{
 		
 	}
 	''' 
+	
+	def templateControllerClass(String className, String packageName, Iterable<SpringRepositories> classVars)
+	''' 
+	// ----------------------------------------
+	// Template for Class
+	// PackageName: «packageName»
+	// ClassName: «className»
+	// ----------------------------------------	
+	
+	package «packageName»;
+	
+	
+	public class «className» {
+		
+		«FOR item: classVars»
+		«item.templateSpringRepositories»	
+		«ENDFOR»
+		
+	}
+	''' 
+	
+	def templateSpringRepositories(SpringRepositories item)
+	'''
+	@Autowired
+	«item.name» «item.name.toFirstLower»
+
+	'''
+	
+	
 
 	def templateInterface(String interfaceName, String packageName)
 	''' 
