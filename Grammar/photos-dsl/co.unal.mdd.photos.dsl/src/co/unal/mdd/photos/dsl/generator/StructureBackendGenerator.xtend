@@ -16,6 +16,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
+import java.util.List
 
 /**
  * Generates code from your model files on save.
@@ -23,6 +24,8 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class StructureBackendGenerator{
+	
+	@Inject extension IQualifiedNameProvider
 	
     var basePackageName = "co.edu.unal"
     var className = ""
@@ -131,16 +134,12 @@ class StructureBackendGenerator{
 		
 		
 		
-		
-		
-		
-		var classVars = proyectTree.allContents.toIterable.filter(SpringRepositories)
+		var classVars = proyectTree.allContents.filter(SpringRepositories).toList
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 		className = ent.name + bls.name.toFirstUpper
 				
 		createControllerClassFile(className, packageName, classVars)
 		
-
 
 		// ControllerSegmentElement
 		for (cse : proyectTree.allContents.toIterable.filter(ControllerSegmentElement)) {
@@ -308,7 +307,7 @@ class StructureBackendGenerator{
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateClass(className, packageName))
 	}
 	
-	def createControllerClassFile(String className, String packageName, Iterable<SpringRepositories> classVars) {
+	def createControllerClassFile(String className, String packageName, List<SpringRepositories> classVars) {
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateControllerClass(className, packageName, classVars))
 	}
 	
@@ -347,7 +346,7 @@ class StructureBackendGenerator{
 	}
 	''' 
 	
-	def templateControllerClass(String className, String packageName, Iterable<SpringRepositories> classVars)
+	def templateControllerClass(String className, String packageName, List<SpringRepositories> classVars)
 	''' 
 	// ----------------------------------------
 	// Template for Class
@@ -356,6 +355,10 @@ class StructureBackendGenerator{
 	// ----------------------------------------	
 	
 	package «packageName»;
+	
+	«FOR item: classVars»
+	import «packageName».«item.name»;
+	«ENDFOR»
 	
 	
 	public class «className» {

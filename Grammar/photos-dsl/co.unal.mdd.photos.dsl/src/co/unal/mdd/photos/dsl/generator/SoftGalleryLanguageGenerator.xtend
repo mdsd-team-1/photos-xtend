@@ -17,7 +17,6 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
  */
 class SoftGalleryLanguageGenerator extends AbstractGenerator {
 	
-		
     @Inject extension IQualifiedNameProvider
     
 	StructureBackendGenerator structurebackendGenerator = new StructureBackendGenerator();

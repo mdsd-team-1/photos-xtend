@@ -9,13 +9,19 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SegmentStructureContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import com.google.inject.Inject;
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -27,6 +33,10 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
  */
 @SuppressWarnings("all")
 public class StructureBackendGenerator {
+  @Inject
+  @Extension
+  private IQualifiedNameProvider _iQualifiedNameProvider;
+  
   private String basePackageName = "co.edu.unal";
   
   private String className = "";
@@ -121,6 +131,7 @@ public class StructureBackendGenerator {
   }
   
   public void generateController(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
+    List<SpringRepositories> classVars = IteratorExtensions.<SpringRepositories>toList(Iterators.<SpringRepositories>filter(this.proyectTree.getAllContents(), SpringRepositories.class));
     String _name = ssc.getName();
     String _plus = ((this.basePackageName + ".") + _name);
     String _plus_1 = (_plus + ".");
@@ -134,7 +145,7 @@ public class StructureBackendGenerator {
     String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
     String _plus_5 = (_name_3 + _firstUpper);
     this.className = _plus_5;
-    this.createClassFile(this.className, this.packageName);
+    this.createControllerClassFile(this.className, this.packageName, classVars);
     Iterable<ControllerSegmentElement> _filter = Iterables.<ControllerSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), ControllerSegmentElement.class);
     for (final ControllerSegmentElement cse : _filter) {
       {
@@ -381,6 +392,14 @@ public class StructureBackendGenerator {
     this.fileWriter.generateFile(_plus_2, this.templateClass(className, packageName));
   }
   
+  public void createControllerClassFile(final String className, final String packageName, final List<SpringRepositories> classVars) {
+    String _replace = packageName.replace(".", "/");
+    String _plus = (_replace + "/");
+    String _plus_1 = (_plus + className);
+    String _plus_2 = (_plus_1 + ".java");
+    this.fileWriter.generateFile(_plus_2, this.templateControllerClass(className, packageName, classVars));
+  }
+  
   public void createInterfaceFile(final String className, final String packageName) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
@@ -409,7 +428,7 @@ public class StructureBackendGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// ----------------------------------------");
     _builder.newLine();
-    _builder.append("// Template for Class");
+    _builder.append("// Template for ControllerClass");
     _builder.newLine();
     _builder.append("// PackageName: ");
     _builder.append(packageName);
@@ -435,6 +454,75 @@ public class StructureBackendGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence templateControllerClass(final String className, final String packageName, final List<SpringRepositories> classVars) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// ----------------------------------------");
+    _builder.newLine();
+    _builder.append("// Template for Class");
+    _builder.newLine();
+    _builder.append("// PackageName: ");
+    _builder.append(packageName);
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ClassName: ");
+    _builder.append(className);
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ----------------------------------------\t");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(packageName);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    {
+      for(final SpringRepositories item : classVars) {
+        _builder.append("import ");
+        _builder.append(packageName);
+        _builder.append(".");
+        String _name = item.getName();
+        _builder.append(_name);
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class ");
+    _builder.append(className);
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      for(final SpringRepositories item_1 : classVars) {
+        _builder.append("\t");
+        CharSequence _templateSpringRepositories = this.templateSpringRepositories(item_1);
+        _builder.append(_templateSpringRepositories, "\t");
+        _builder.append("\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence templateSpringRepositories(final SpringRepositories item) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("@Autowired");
+    _builder.newLine();
+    String _name = item.getName();
+    _builder.append(_name);
+    _builder.append(" ");
+    String _firstLower = StringExtensions.toFirstLower(item.getName());
+    _builder.append(_firstLower);
+    _builder.newLineIfNotEmpty();
     _builder.newLine();
     return _builder;
   }

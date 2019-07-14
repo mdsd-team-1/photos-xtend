@@ -1,5 +1,5 @@
 // ----------------------------------------
-// Template for Class
+// Template for ControllerClass
 // PackageName: co.edu.unal.photosappback.main.model
 // ClassName: Album
 // ----------------------------------------	
