@@ -31,11 +31,12 @@ public class SoftGalleryLanguageGenerator extends AbstractGenerator {
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    InputOutput.<String>println("*** Generator v5 ***");
+    InputOutput.<String>println("*** Generator v7 ***");
     InputOutput.<String>println(">>> doGenerate() Started <<<");
     InputOutput.<String>println("");
     this.structurebackendGenerator.directoryGeneration(resource, fsa, context);
     this.structurefrontendGenerator.directoryGeneration(resource, fsa, context);
+    InputOutput.<String>println("");
     InputOutput.<String>println(">>> doGenerate() Finished <<<");
   }
 }

@@ -12,6 +12,8 @@
         eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityfuncs" upperBound="-1"
         eType="#//Functionality" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionsdomain" upperBound="-1"
+        eType="#//ExceptionsDomain" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -91,6 +93,27 @@
   <eClassifiers xsi:type="ecore:EClass" name="LandingFunctions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameCarouselName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="passPhotoName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExceptionsDomain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionsType" upperBound="-1"
+        eType="#//ExceptionsType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExceptionsType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="photoException" upperBound="-1"
+        eType="#//PhotoException" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="albumException" upperBound="-1"
+        eType="#//AlbumException" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userException" upperBound="-1"
+        eType="#//UserException" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhotoException">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlbumException">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UserException">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Architecture">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"

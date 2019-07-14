@@ -1,12 +1,13 @@
 // ----------------------------------------
+// Template for Class
 // PackageName: co.edu.unal.photosappback.main.controller.exception.Photo
-// ClassName: PhotoException
+// ClassName: PhotoUploadErrorException
 // ----------------------------------------	
-
 
 package co.edu.unal.photosappback.main.controller.exception.Photo;
 
-public class PhotoException {
+
+public class PhotoUploadErrorException {
 	
 	
 }
