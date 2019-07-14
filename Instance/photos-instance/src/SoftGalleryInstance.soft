@@ -132,24 +132,30 @@ System: {
 	Technology name: {
 		Spring SpringProject : {
 			SpringBootApplication
+			
 				Configuration : { 
 					EnableGlobalMethodSecurity AnnotationGlobalSecurity
 					EnableAuthorizationServer AnnotationAuthorizationServer
 					EnableResourceServer AnnotationResourseServer
 					EnableWebSecurity AnnotationWebSecurity
 				}
+				
 				SpringComponent : {
 					OrderSpring HighestPrecedence
 				}
+				
 				SpringRepositories : {
 					SpringRepository AlbumRepository
 					SpringRepository PhotoRepository
 					SpringRepository UserRepository
 				}
+				
 				RestController AlbumController : {
+					
 					Specification
 						Predicate AlbumPredicate
 						SearchCriteria AlbumSpecification
+						
 					Autowired
 						AutowiredType AlbumRepository
 					Autowired
@@ -181,19 +187,7 @@ System: {
 							Annotation RequestBody
 							Type Map_String_String
 							Name body
-
 							
-				/*
-					RequestMapping
-						RequestMappingType getAlbum
-							GetMapping
-					RequestMapping
-						RequestMappingType getPhotosFromAlbum
-							GetMapping
-					RequestMapping
-						RequestMappingType createAlbum
-							PostMapping
-				*/
 					ExceptionHandler handleException
 						ExceptionProcess AlbumNotFoundException
 						ExceptionProcess PhotosFromAlbumNotFoundException
@@ -202,63 +196,128 @@ System: {
 						ExceptionProcess UserIdIsNotNumberException
 						ExceptionProcess AlbumNotCreatedException
 				}
+				
 				RestController PhotoController : {
+					
 					Specification
 						Predicate PhotoPredicate
 						SearchCriteria PhotoSpecification
+						
 					Autowired
 						AutowiredType PhotoRepository
 					Autowired
 						AutowiredType AmazonClient
-				/*
-					RequestMapping
-						RequestPart file
-						RequestMappingType uploadPhoto
-							PostMapping 
-					RequestMapping
-						RequestPart url
-						RequestMappingType deleteFile
-							DeleteMapping 
-					RequestMapping
-						RequestMappingType getPhoto
-							GetMapping 
-					RequestMapping
-						RequestMappingType findAll
-							GetMapping
-				*/
+						
+					ResponseEntity getPhoto
+						RequestMapping
+							Value id_id
+							Method GET
+							Produces application_json
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+							
+					ResponseEntity uploadPhoto
+						PostMapping upload
+						Parameter 
+							Annotation RequestPart
+							Type MultipartFile
+							Name file
+						Parameter 
+							Annotation RequestPart
+							Type StringClass
+							Name photoName
+						Parameter 
+							Annotation RequestPart
+							Type StringClass
+							Name albumId
+							
+					ResponseEntity deleteFile
+						DeleteMapping delete
+						Parameter
+							Annotation RequestPart
+							Type StringClass
+							Name fileUrl
+							
+					ResponseEntity findAll
+						GetMapping all
+
 					ExceptionHandler handleException
 						ExceptionProcess PhotoNotFoundException
 						ExceptionProcess PhotoUploadErrorException
 						ExceptionProcess PhotoNotCreatedException
 						ExceptionProcess PhotoNotDeletedException
 				}
+				
 				RestController UserController : {
+					
 					Specification
 						Predicate UserPredicate
 						SearchCriteria UserSpecification
+						
 					Autowired
 						AutowiredType UserRepository
 					Autowired
 						AutowiredType AlbumRepository
 					Autowired
 						AutowiredType PhotoRepository
-				/*
-					RequestMapping
-						RequestMappingType getUserbyId
-							GetMapping 
-					RequestMapping
-						RequestMappingType getPhotoFromUser
-							GetMapping 
-					RequestMapping
-						RequestMappingType loginUser
-							PostMapping 
-					RequestMapping
-						RequestMappingType createUser
-							PostMapping
-					RequestMapping
-						RequestMappingType editUser
-							PostMapping
-				*/
+						
+					ResponseEntity getUser
+						RequestMapping
+							Value id_id
+							Method GET
+							Produces application_json
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+							
+					ResponseEntity getAlbumsFromUser
+						RequestMapping
+							Value id_albums
+							Method GET
+							Produces application_json
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+							
+					ResponseEntity getPhotosFromUser
+						RequestMapping
+							Value id_photos
+							Method GET
+							Produces application_json
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+							
+					ResponseEntity loginUser
+						PostMapping login
+						Parameter
+							Annotation RequestBody
+							Type Map_String_String
+							Name body
+							
+					ResponseEntity createUser
+						PostMapping create
+						Parameter
+							Annotation RequestBody
+							Type Map_String_String
+							Name body
+							
+					ResponseEntity editUser
+						PutMapping id_edit
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+						Parameter
+							Annotation RequestBody
+							Type Map_String_String
+							Name body
+					
 					ExceptionHandler handleException
 						ExceptionProcess UserNotFoundException
 						ExceptionProcess AlbumsFromUserNotFoundException
@@ -274,6 +333,7 @@ System: {
 						ExceptionProcess UserToEditDoesNotExistException
 						ExceptionProcess UserNotEditedException
 				}
+				
 				SpringEntity Album : {
 					SpringTable album
 						SpringTableId id
