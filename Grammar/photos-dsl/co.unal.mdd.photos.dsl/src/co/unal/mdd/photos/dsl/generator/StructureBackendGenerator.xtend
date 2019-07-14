@@ -139,7 +139,7 @@ class StructureBackendGenerator{
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 		className = ent.name + bls.name.toFirstUpper
 				
-		createControllerClassFile(className, packageName, classVars)
+		createControllerClassFile(className, packageName, classVars, ent)
 		
 
 		// ControllerSegmentElement
@@ -168,7 +168,7 @@ class StructureBackendGenerator{
 	}
 	
 	
-	// Path: /.controller.exception	
+	// Path: /.controller.exception	 
 	def generateControllerException(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
 		switch ent.name {
@@ -308,8 +308,8 @@ class StructureBackendGenerator{
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericClass.generate(className, packageName))
 	}
 	
-	def createControllerClassFile(String className, String packageName, List<SpringRepositories> classVars) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, classVars))
+	def createControllerClassFile(String className, String packageName, List<SpringRepositories> classVars, Entities ent) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, classVars, ent))
 	}
 	
 	def createInterfaceFile(String className, String packageName) {

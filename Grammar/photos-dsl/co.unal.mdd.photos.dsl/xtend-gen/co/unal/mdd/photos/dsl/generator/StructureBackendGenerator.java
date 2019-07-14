@@ -142,7 +142,7 @@ public class StructureBackendGenerator {
     String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
     String _plus_5 = (_name_3 + _firstUpper);
     this.className = _plus_5;
-    this.createControllerClassFile(this.className, this.packageName, classVars);
+    this.createControllerClassFile(this.className, this.packageName, classVars, ent);
     Iterable<ControllerSegmentElement> _filter = Iterables.<ControllerSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), ControllerSegmentElement.class);
     for (final ControllerSegmentElement cse : _filter) {
       {
@@ -389,12 +389,12 @@ public class StructureBackendGenerator {
     this.fileWriter.generateFile(_plus_2, TemplateGenericClass.generate(className, packageName));
   }
   
-  public void createControllerClassFile(final String className, final String packageName, final List<SpringRepositories> classVars) {
+  public void createControllerClassFile(final String className, final String packageName, final List<SpringRepositories> classVars, final Entities ent) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, TemplateClassController.generate(className, packageName, classVars));
+    this.fileWriter.generateFile(_plus_2, TemplateClassController.generate(className, packageName, classVars, ent));
   }
   
   public void createInterfaceFile(final String className, final String packageName) {
