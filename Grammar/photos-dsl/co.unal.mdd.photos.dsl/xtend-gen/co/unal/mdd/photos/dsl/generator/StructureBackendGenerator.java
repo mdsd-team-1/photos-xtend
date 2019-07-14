@@ -12,6 +12,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SegmentStructureContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
@@ -128,27 +129,45 @@ public class StructureBackendGenerator {
   }
   
   public void generateController(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    List<SpringRepositories> classVars = IteratorExtensions.<SpringRepositories>toList(Iterators.<SpringRepositories>filter(this.proyectTree.getAllContents(), SpringRepositories.class));
-    String _name = ssc.getName();
-    String _plus = ((this.basePackageName + ".") + _name);
-    String _plus_1 = (_plus + ".");
-    String _name_1 = dir.getName();
-    String _plus_2 = (_plus_1 + _name_1);
-    String _plus_3 = (_plus_2 + ".");
-    String _name_2 = bls.getName();
-    String _plus_4 = (_plus_3 + _name_2);
-    this.packageName = _plus_4;
-    String _name_3 = ent.getName();
-    String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
-    String _plus_5 = (_name_3 + _firstUpper);
-    this.className = _plus_5;
-    this.createControllerClassFile(this.className, this.packageName, classVars, ent);
-    Iterable<ControllerSegmentElement> _filter = Iterables.<ControllerSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), ControllerSegmentElement.class);
-    for (final ControllerSegmentElement cse : _filter) {
+    Iterable<RestController> _filter = Iterables.<RestController>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), RestController.class);
+    for (final RestController rsc : _filter) {
       {
-        String _name_4 = bls.getName();
-        String _plus_6 = ("ControllerSegmentElement: " + _name_4);
-        InputOutput.<String>println(_plus_6);
+        String _name = rsc.getName();
+        String _plus = ("RestController: " + _name);
+        InputOutput.<String>println(_plus);
+        List<SpringRepositories> classVars = IteratorExtensions.<SpringRepositories>toList(Iterators.<SpringRepositories>filter(this.proyectTree.getAllContents(), SpringRepositories.class));
+        String _name_1 = ssc.getName();
+        String _plus_1 = ((this.basePackageName + ".") + _name_1);
+        String _plus_2 = (_plus_1 + ".");
+        String _name_2 = dir.getName();
+        String _plus_3 = (_plus_2 + _name_2);
+        String _plus_4 = (_plus_3 + ".");
+        String _name_3 = bls.getName();
+        String _plus_5 = (_plus_4 + _name_3);
+        this.packageName = _plus_5;
+        String _name_4 = ent.getName();
+        String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
+        String _plus_6 = (_name_4 + _firstUpper);
+        this.className = _plus_6;
+        if ((ent.getName().equals("Photo") && rsc.getName().equals("PhotoController"))) {
+          this.createControllerClassFile(this.className, this.packageName, rsc, ent, classVars);
+        } else {
+          if ((ent.getName().equals("Album") && rsc.getName().equals("AlbumController"))) {
+            this.createControllerClassFile(this.className, this.packageName, rsc, ent, classVars);
+          } else {
+            if ((ent.getName().equals("User") && rsc.getName().equals("UserController"))) {
+              this.createControllerClassFile(this.className, this.packageName, rsc, ent, classVars);
+            }
+          }
+        }
+      }
+    }
+    Iterable<ControllerSegmentElement> _filter_1 = Iterables.<ControllerSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), ControllerSegmentElement.class);
+    for (final ControllerSegmentElement cse : _filter_1) {
+      {
+        String _name = bls.getName();
+        String _plus = ("ControllerSegmentElement: " + _name);
+        InputOutput.<String>println(_plus);
         boolean _equals = cse.getName().equals("amazon");
         if (_equals) {
           this.generateControllerAmazon(ent, ssc, dir, bls, cse);
@@ -389,12 +408,12 @@ public class StructureBackendGenerator {
     this.fileWriter.generateFile(_plus_2, TemplateGenericClass.generate(className, packageName));
   }
   
-  public void createControllerClassFile(final String className, final String packageName, final List<SpringRepositories> classVars, final Entities ent) {
+  public void createControllerClassFile(final String className, final String packageName, final RestController rsc, final Entities ent, final List<SpringRepositories> classVars) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, TemplateClassController.generate(className, packageName, classVars, ent));
+    this.fileWriter.generateFile(_plus_2, TemplateClassController.generate(className, packageName, rsc, ent, classVars));
   }
   
   public void createInterfaceFile(final String className, final String packageName) {

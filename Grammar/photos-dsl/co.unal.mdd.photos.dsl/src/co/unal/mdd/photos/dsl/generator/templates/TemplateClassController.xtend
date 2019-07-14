@@ -3,10 +3,13 @@ package co.unal.mdd.photos.dsl.generator.templates
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
 import java.util.List
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
+import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
 
 class TemplateClassController {
 	
-	static def generate(String className, String packageName, List<SpringRepositories> classVars, Entities entity)
+	static def generate(String className, String packageName, RestController rsc, Entities entity, List<SpringRepositories> classVars)
 	''' 
 	// ----------------------------------------
 	// Controller
@@ -23,36 +26,14 @@ class TemplateClassController {
 	
 	@RestController
 	@RequestMapping("/«entity.name.toFirstLower»")
-	
 	public class «className» {
-		
-		«FOR item: classVars»
+				
+		«FOR autowiredItem: rsc.getElements().filter(Autowired)»
 		@Autowired
-		«item.name» «item.name.toFirstLower»;
+		«autowiredItem.getElements().filter(AutowiredType).get(0).name» «autowiredItem.getElements().filter(AutowiredType).get(0).name.toFirstLower»;
 		
 		«ENDFOR»
-				
-		@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-		public ResponseEntity<?> get«entity.name»(@PathVariable Long id) throws Exception {
-	
-			«entity.name» «entity.name.toFirstLower» = null;
-	
-			try {
-				«entity.name.toFirstLower» = «entity.name.toFirstLower»Repository.getOne(id.intValue());
-	
-			} catch(Exception e) {
-				throw new «entity.name»NotFoundException();
-			}
-	
-			if(«entity.name.toFirstLower» == null){
-				throw new «entity.name»NotFoundException();
-			}
-	
-			return new ResponseEntity<>(«entity.name.toFirstLower», HttpStatus.OK);
-		}
-
-
-
+		
 
 
 

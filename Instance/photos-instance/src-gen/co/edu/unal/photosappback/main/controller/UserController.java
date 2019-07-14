@@ -13,41 +13,18 @@ import co.edu.unal.photosappback.main.controller.UserRepository;
 
 @RestController
 @RequestMapping("/user")
-
 public class UserController {
-	
-	@Autowired
-	AlbumRepository albumRepository;
-	
-	@Autowired
-	PhotoRepository photoRepository;
-	
-	@Autowired
+			
+	@Autowired abc
 	UserRepository userRepository;
 	
+	@Autowired abc
+	AlbumRepository albumRepository;
+	
+	@Autowired abc
+	PhotoRepository photoRepository;
 	
 	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getUser(@PathVariable Long id) throws Exception {
-
-		User user = null;
-
-		try {
-			user = userRepository.getOne(id.intValue());
-
-		} catch(Exception e) {
-			throw new UserNotFoundException();
-		}
-
-		if(user == null){
-			throw new UserNotFoundException();
-		}
-
-		return new ResponseEntity<>(user, HttpStatus.OK);
-	}
-
-
-
 
 
 

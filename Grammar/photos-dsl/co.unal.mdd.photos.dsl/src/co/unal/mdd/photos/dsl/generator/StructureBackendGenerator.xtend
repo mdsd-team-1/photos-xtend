@@ -20,6 +20,7 @@ import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass
 import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericInterface
 import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties
 import co.unal.mdd.photos.dsl.generator.templates.TemplateYml
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
 
 /**
  * Generates code from your model files on save.
@@ -135,11 +136,39 @@ class StructureBackendGenerator{
 		
 		
 		
-		var classVars = proyectTree.allContents.filter(SpringRepositories).toList
-		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
-		className = ent.name + bls.name.toFirstUpper
+		
+		
+		// RestController
+		for (rsc : proyectTree.allContents.toIterable.filter(RestController)) {
+			println("RestController: " + rsc.name)
+			
+			var classVars = proyectTree.allContents.filter(SpringRepositories).toList
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
+			className = ent.name + bls.name.toFirstUpper
+			
+			if(ent.name.equals("Photo") && rsc.name.equals("PhotoController")){
+				createControllerClassFile(className, packageName, rsc, ent, classVars)
 				
-		createControllerClassFile(className, packageName, classVars, ent)
+			} else if (ent.name.equals("Album") && rsc.name.equals("AlbumController")) {
+				createControllerClassFile(className, packageName, rsc, ent, classVars)
+				
+			} else if (ent.name.equals("User") && rsc.name.equals("UserController")) {
+				createControllerClassFile(className, packageName, rsc, ent, classVars)
+			}
+		}
+		
+		
+		// Deprecated
+		//var classVars = proyectTree.allContents.filter(SpringRepositories).toList
+		//packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
+		//className = ent.name + bls.name.toFirstUpper
+				
+		//createControllerClassFile(className, packageName, classVars, ent)
+		
+		
+		
+		
+		
 		
 
 		// ControllerSegmentElement
@@ -308,8 +337,8 @@ class StructureBackendGenerator{
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericClass.generate(className, packageName))
 	}
 	
-	def createControllerClassFile(String className, String packageName, List<SpringRepositories> classVars, Entities ent) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, classVars, ent))
+	def createControllerClassFile(String className, String packageName, RestController rsc, Entities ent, List<SpringRepositories> classVars) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, rsc, ent, classVars))
 	}
 	
 	def createInterfaceFile(String className, String packageName) {

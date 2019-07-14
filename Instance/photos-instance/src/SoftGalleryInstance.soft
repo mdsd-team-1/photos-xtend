@@ -146,7 +146,7 @@ System: {
 					SpringRepository PhotoRepository
 					SpringRepository UserRepository
 				}
-				RestController AlbumComtroller : {
+				RestController AlbumController : {
 					Specification
 						Predicate AlbumPredicate
 						SearchCriteria AlbumSpecification
