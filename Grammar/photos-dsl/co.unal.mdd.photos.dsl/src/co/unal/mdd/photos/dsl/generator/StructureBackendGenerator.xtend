@@ -1,22 +1,25 @@
 package co.unal.mdd.photos.dsl.generator
 
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
+import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
 import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SegmentStructureContent
-import com.google.inject.Inject
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
+import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
+import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
-import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException
-import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
-import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException
-import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
-import java.util.List
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController
+import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass
+import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericInterface
+import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties
+import co.unal.mdd.photos.dsl.generator.templates.TemplateYml
 
 /**
  * Generates code from your model files on save.
@@ -24,9 +27,7 @@ import java.util.List
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class StructureBackendGenerator{
-	
-	@Inject extension IQualifiedNameProvider
-	
+		
     var basePackageName = "co.edu.unal"
     var className = ""
 	var packageName = ""
@@ -304,116 +305,23 @@ class StructureBackendGenerator{
 	// ----------------
 	
 	def createClassFile(String className, String packageName) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateClass(className, packageName))
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericClass.generate(className, packageName))
 	}
 	
 	def createControllerClassFile(String className, String packageName, List<SpringRepositories> classVars) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateControllerClass(className, packageName, classVars))
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, classVars))
 	}
 	
 	def createInterfaceFile(String className, String packageName) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", templateInterface(className, packageName))
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericInterface.generate(className, packageName))
 	}
 	
 	def createPropertiesFile(String className, String packageName) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".properties", templateProperties(className, packageName))
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".properties", TemplateProperties.generate(className, packageName))
 	}	
 
 	def createYmlFile(String className, String packageName) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".yml", templateYml(className, packageName))
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".yml", TemplateYml.generate(className, packageName))
 	}
-	
-	
-
-	// ----------------
-	// File Templates
-	// ----------------			
-	
-	def templateClass(String className, String packageName)
-	''' 
-	// ----------------------------------------
-	// Template for ControllerClass
-	// PackageName: «packageName»
-	// ClassName: «className»
-	// ----------------------------------------	
-	
-	package «packageName»;
-	
-	
-	public class «className» {
-		
-		
-	}
-	''' 
-	
-	def templateControllerClass(String className, String packageName, List<SpringRepositories> classVars)
-	''' 
-	// ----------------------------------------
-	// Template for Class
-	// PackageName: «packageName»
-	// ClassName: «className»
-	// ----------------------------------------	
-	
-	package «packageName»;
-	
-	«FOR item: classVars»
-	import «packageName».«item.name»;
-	«ENDFOR»
-	
-	
-	public class «className» {
-		
-		«FOR item: classVars»
-		«item.templateSpringRepositories»	
-		«ENDFOR»
-		
-	}
-	''' 
-	
-	def templateSpringRepositories(SpringRepositories item)
-	'''
-	@Autowired
-	«item.name» «item.name.toFirstLower»
-
-	'''
-	
-	
-
-	def templateInterface(String interfaceName, String packageName)
-	''' 
-	// ----------------------------------------
-	// Template for Interface
-	// PackageName: «packageName»
-	// ClassName: «interfaceName»
-	// ----------------------------------------	
-	
-	package «packageName»;
-	
-	
-	public interface «interfaceName» extends JpaRepository<Album, Integer>, JpaSpecificationExecutor<Album>{
-		
-		
-	}
-	''' 
-
-	def templateProperties(String fileName, String packageName)
-	''' 
-	// ----------------------------------------
-	// Template for Properties
-	// PackageName: «packageName»
-	// ClassName: «fileName»
-	// ----------------------------------------	
-	
-	''' 
-
-	def templateYml(String fileName, String packageName)
-	''' 
-	// ----------------------------------------
-	// Template for Yml
-	// PackageName: «packageName»
-	// ClassName: «fileName»
-	// ----------------------------------------	
-
-	''' 
 
 }

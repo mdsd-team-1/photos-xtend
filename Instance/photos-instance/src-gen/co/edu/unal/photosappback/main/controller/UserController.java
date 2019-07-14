@@ -1,5 +1,5 @@
 // ----------------------------------------
-// Template for Class
+// Controller
 // PackageName: co.edu.unal.photosappback.main.controller
 // ClassName: UserController
 // ----------------------------------------	
@@ -14,13 +14,13 @@ import co.edu.unal.photosappback.main.controller.UserRepository;
 public class UserController {
 	
 	@Autowired
-	AlbumRepository albumRepository
+	AlbumRepository albumRepository;
 	
 	@Autowired
-	PhotoRepository photoRepository
+	PhotoRepository photoRepository;
 	
 	@Autowired
-	UserRepository userRepository
+	UserRepository userRepository;
 	
 	
 }

@@ -1,5 +1,10 @@
 package co.unal.mdd.photos.dsl.generator;
 
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericInterface;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateYml;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
@@ -13,15 +18,11 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
-import com.google.inject.Inject;
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -33,10 +34,6 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
  */
 @SuppressWarnings("all")
 public class StructureBackendGenerator {
-  @Inject
-  @Extension
-  private IQualifiedNameProvider _iQualifiedNameProvider;
-  
   private String basePackageName = "co.edu.unal";
   
   private String className = "";
@@ -389,7 +386,7 @@ public class StructureBackendGenerator {
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, this.templateClass(className, packageName));
+    this.fileWriter.generateFile(_plus_2, TemplateGenericClass.generate(className, packageName));
   }
   
   public void createControllerClassFile(final String className, final String packageName, final List<SpringRepositories> classVars) {
@@ -397,7 +394,7 @@ public class StructureBackendGenerator {
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, this.templateControllerClass(className, packageName, classVars));
+    this.fileWriter.generateFile(_plus_2, TemplateClassController.generate(className, packageName, classVars));
   }
   
   public void createInterfaceFile(final String className, final String packageName) {
@@ -405,7 +402,7 @@ public class StructureBackendGenerator {
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, this.templateInterface(className, packageName));
+    this.fileWriter.generateFile(_plus_2, TemplateGenericInterface.generate(className, packageName));
   }
   
   public void createPropertiesFile(final String className, final String packageName) {
@@ -413,7 +410,7 @@ public class StructureBackendGenerator {
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".properties");
-    this.fileWriter.generateFile(_plus_2, this.templateProperties(className, packageName));
+    this.fileWriter.generateFile(_plus_2, TemplateProperties.generate(className, packageName));
   }
   
   public void createYmlFile(final String className, final String packageName) {
@@ -421,179 +418,6 @@ public class StructureBackendGenerator {
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".yml");
-    this.fileWriter.generateFile(_plus_2, this.templateYml(className, packageName));
-  }
-  
-  public CharSequence templateClass(final String className, final String packageName) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// ----------------------------------------");
-    _builder.newLine();
-    _builder.append("// Template for ControllerClass");
-    _builder.newLine();
-    _builder.append("// PackageName: ");
-    _builder.append(packageName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ClassName: ");
-    _builder.append(className);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ----------------------------------------\t");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("package ");
-    _builder.append(packageName);
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("public class ");
-    _builder.append(className);
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence templateControllerClass(final String className, final String packageName, final List<SpringRepositories> classVars) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// ----------------------------------------");
-    _builder.newLine();
-    _builder.append("// Template for Class");
-    _builder.newLine();
-    _builder.append("// PackageName: ");
-    _builder.append(packageName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ClassName: ");
-    _builder.append(className);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ----------------------------------------\t");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("package ");
-    _builder.append(packageName);
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    {
-      for(final SpringRepositories item : classVars) {
-        _builder.append("import ");
-        _builder.append(packageName);
-        _builder.append(".");
-        String _name = item.getName();
-        _builder.append(_name);
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("public class ");
-    _builder.append(className);
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    {
-      for(final SpringRepositories item_1 : classVars) {
-        _builder.append("\t");
-        CharSequence _templateSpringRepositories = this.templateSpringRepositories(item_1);
-        _builder.append(_templateSpringRepositories, "\t");
-        _builder.append("\t");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence templateSpringRepositories(final SpringRepositories item) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@Autowired");
-    _builder.newLine();
-    String _name = item.getName();
-    _builder.append(_name);
-    _builder.append(" ");
-    String _firstLower = StringExtensions.toFirstLower(item.getName());
-    _builder.append(_firstLower);
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence templateInterface(final String interfaceName, final String packageName) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// ----------------------------------------");
-    _builder.newLine();
-    _builder.append("// Template for Interface");
-    _builder.newLine();
-    _builder.append("// PackageName: ");
-    _builder.append(packageName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ClassName: ");
-    _builder.append(interfaceName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ----------------------------------------\t");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("package ");
-    _builder.append(packageName);
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("public interface ");
-    _builder.append(interfaceName);
-    _builder.append(" extends JpaRepository<Album, Integer>, JpaSpecificationExecutor<Album>{");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence templateProperties(final String fileName, final String packageName) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// ----------------------------------------");
-    _builder.newLine();
-    _builder.append("// Template for Properties");
-    _builder.newLine();
-    _builder.append("// PackageName: ");
-    _builder.append(packageName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ClassName: ");
-    _builder.append(fileName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ----------------------------------------\t");
-    _builder.newLine();
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence templateYml(final String fileName, final String packageName) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// ----------------------------------------");
-    _builder.newLine();
-    _builder.append("// Template for Yml");
-    _builder.newLine();
-    _builder.append("// PackageName: ");
-    _builder.append(packageName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ClassName: ");
-    _builder.append(fileName);
-    _builder.newLineIfNotEmpty();
-    _builder.append("// ----------------------------------------\t");
-    _builder.newLine();
-    _builder.newLine();
-    return _builder;
+    this.fileWriter.generateFile(_plus_2, TemplateYml.generate(className, packageName));
   }
 }
