@@ -134,10 +134,7 @@ class StructureBackendGenerator{
 
 		// TODO: Falta HomeController
 		
-		
-		
-		
-		
+				
 		// RestController
 		for (rsc : proyectTree.allContents.toIterable.filter(RestController)) {
 			println("RestController: " + rsc.name)
@@ -155,21 +152,7 @@ class StructureBackendGenerator{
 			} else if (ent.name.equals("User") && rsc.name.equals("UserController")) {
 				createControllerClassFile(className, packageName, rsc, ent, classVars)
 			}
-		}
-		
-		
-		// Deprecated
-		//var classVars = proyectTree.allContents.filter(SpringRepositories).toList
-		//packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
-		//className = ent.name + bls.name.toFirstUpper
-				
-		//createControllerClassFile(className, packageName, classVars, ent)
-		
-		
-		
-		
-		
-		
+		}			
 
 		// ControllerSegmentElement
 		for (cse : proyectTree.allContents.toIterable.filter(ControllerSegmentElement)) {

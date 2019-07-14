@@ -163,11 +163,13 @@ System: {
 					RequestMapping
 						RequestMappingType createAlbum
 							PostMapping 
-					ExceptionHandler ExeptionHandlerAlbum
+					ExceptionHandler handleException
 						ExceptionProcess AlbumNotFoundException
 						ExceptionProcess PhotosFromAlbumNotFoundException
 						ExceptionProcess AlbumHasNoPhotosException
 						ExceptionProcess MissingParametersForNewAlbumException
+						ExceptionProcess UserIdIsNotNumberException
+						ExceptionProcess AlbumNotCreatedException
 				}
 				RestController PhotoController : {
 					Specification
@@ -191,7 +193,7 @@ System: {
 					RequestMapping
 						RequestMappingType findAll
 							GetMapping 
-					ExceptionHandler ExeptionHandlerPhoto
+					ExceptionHandler handleException
 						ExceptionProcess PhotoNotFoundException
 						ExceptionProcess PhotoUploadErrorException
 						ExceptionProcess PhotoNotCreatedException
@@ -222,11 +224,20 @@ System: {
 					RequestMapping
 						RequestMappingType editUser
 							PostMapping
-					ExceptionHandler ExeptionHandlerUser
+					ExceptionHandler handleException
 						ExceptionProcess UserNotFoundException
 						ExceptionProcess AlbumsFromUserNotFoundException
 						ExceptionProcess UserHasNoAlbumsException
 						ExceptionProcess UserHasNoPhotosException
+						ExceptionProcess MissingParametersForNewUserException
+						ExceptionProcess UserNotCreatedException
+						ExceptionProcess AlbumNotCreatedForNewUserException
+						ExceptionProcess MissingParametersForEditUserException
+						ExceptionProcess WrongLoginInfoException
+						ExceptionProcess MissingParametersForLoginException
+						ExceptionProcess UserIdIsNotNumberException
+						ExceptionProcess UserToEditDoesNotExistException
+						ExceptionProcess UserNotEditedException
 				}
 				SpringEntity Album : {
 					SpringTable album
