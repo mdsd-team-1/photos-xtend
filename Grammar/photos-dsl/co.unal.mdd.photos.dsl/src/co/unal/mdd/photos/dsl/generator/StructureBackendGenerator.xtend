@@ -38,8 +38,8 @@ class StructureBackendGenerator{
 		fileWriter = fsa
 		
 		// Entities
-		for (domainItem : proyectTree.allContents.toIterable.filter(Entities)) {
-			println("Entities: " + domainItem.name)
+		for (ent : proyectTree.allContents.toIterable.filter(Entities)) {
+			println("Entities: " + ent.name)
 			
 			// SegmentStructureContent
 			for (ssc : proyectTree.allContents.toIterable.filter(SegmentStructureContent)) {
@@ -52,7 +52,7 @@ class StructureBackendGenerator{
 						println("DirectoryContent: " + dir.name)	
 						
 						if(dir.name.equals("main")){
-							generateMain(domainItem, ssc, dir)
+							generateMain(ent, ssc, dir)
 							
 						} else if(dir.name.equals("resources")){
 							generateResources(ssc, dir)
@@ -69,7 +69,7 @@ class StructureBackendGenerator{
 	
 	
 	// Path: /
-	def generateMain(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir) {
+	def generateMain(Entities ent, SegmentStructureContent ssc, DirectoryContent dir) {
 		
 		// BusinessLogicSegments
 		for (bls : proyectTree.allContents.toIterable.filter(BusinessLogicSegments)) {
@@ -78,23 +78,23 @@ class StructureBackendGenerator{
 			switch bls.name {
 				
 				case "controller":{
-					generateController(domainItem, ssc, dir, bls)
+					generateController(ent, ssc, dir, bls)
 				}
 					
 				case "model":{
-					generateModel(domainItem, ssc, dir, bls)
+					generateModel(ent, ssc, dir, bls)
 				}
 					
 				case "config":{
-					generateConfig(domainItem, ssc, dir, bls)
+					generateConfig(ent, ssc, dir, bls)
 				}
 					
 				case "specification":{
-					generateSpecification(domainItem, ssc, dir, bls)
+					generateSpecification(ent, ssc, dir, bls)
 				}
 					
 				case "repository":{
-					generateRepository(domainItem, ssc, dir, bls)
+					generateRepository(ent, ssc, dir, bls)
 				}
 			}
 		}
@@ -102,39 +102,39 @@ class StructureBackendGenerator{
 	
 	
 	// Path: /.config
-	def generateConfig(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	def generateConfig(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-		className = domainItem.name
+		className = ent.name
 		
 		createClassFile(className, packageName)
 	}
 
 
 	// Path: /.controller	
-	def generateController(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	def generateController(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 		// ControllerSegmentElement
 		for (cse : proyectTree.allContents.toIterable.filter(ControllerSegmentElement)) {
 			println("ControllerSegmentElement: " + bls.name)
 		
 			if(cse.name.equals("amazon")){
-				generateControllerAmazon(domainItem, ssc, dir, bls, cse)
+				generateControllerAmazon(ent, ssc, dir, bls, cse)
 			
 			} else if(cse.name.equals("exception")){
-				generateControllerException(domainItem, ssc, dir, bls, cse)
+				generateControllerException(ent, ssc, dir, bls, cse)
 			}
 		}
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
-		className = domainItem.name + bls.name.toFirstUpper
+		className = ent.name + bls.name.toFirstUpper
 		
 		createClassFile(className, packageName)
 	}
 	
 	
 	// Path: /.controller.amazon
-	def generateControllerAmazon(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
+	def generateControllerAmazon(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
 		className = cse.name.toFirstUpper + "Client"
@@ -144,31 +144,31 @@ class StructureBackendGenerator{
 	
 	
 	// Path: /.controller.exception	
-	def generateControllerException(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
+	def generateControllerException(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
-		switch domainItem.name {
+		switch ent.name {
 			
 			case "Photo":{
-				generateControllerExceptionPhoto(domainItem, ssc, dir, bls, cse)
+				generateControllerExceptionPhoto(ent, ssc, dir, bls, cse)
 			}
 			case "Album":{
-				generateControllerExceptionAlbum(domainItem, ssc, dir, bls, cse)
+				generateControllerExceptionAlbum(ent, ssc, dir, bls, cse)
 			}
 			case "User":{
-				generateControllerExceptionUser(domainItem, ssc, dir, bls, cse)
+				generateControllerExceptionUser(ent, ssc, dir, bls, cse)
 			}
 		}
 	}
 	
 	
 	// Path: /.controller.exception.album
-	def generateControllerExceptionAlbum(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
+	def generateControllerExceptionAlbum(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
 		// AlbumException
 		for (ae : proyectTree.allContents.toIterable.filter(AlbumException)) {
 			println("AlbumException: " + ae.name)
 			
-			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+ent.name
 			className = ae.name
 			
 			createClassFile(className, packageName)
@@ -177,13 +177,13 @@ class StructureBackendGenerator{
 
 
 	// Path: /.controller.exception.photo
-	def generateControllerExceptionPhoto(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
+	def generateControllerExceptionPhoto(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
 		// PhotoException
 		for (pe : proyectTree.allContents.toIterable.filter(PhotoException)) {
 			println("PhotoException: " + pe.name)
 			
-			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+ent.name
 			className = pe.name
 			
 			createClassFile(className, packageName)
@@ -192,13 +192,13 @@ class StructureBackendGenerator{
 	
 	
 	// Path: /.controller.exception.user
-	def generateControllerExceptionUser(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
+	def generateControllerExceptionUser(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
 		// UserException
 		for (ue : proyectTree.allContents.toIterable.filter(UserException)) {
 			println("UserException: " + ue.name)
 			
-			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+domainItem.name
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+ent.name
 			className = ue.name
 			
 			createClassFile(className, packageName)
@@ -207,39 +207,39 @@ class StructureBackendGenerator{
 	
 	
 	// Path: /.model
-	def generateModel(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	def generateModel(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-		className = domainItem.name
+		className = ent.name
 		
 		createClassFile(className, packageName)
 	}
 
 
 	// Path: /.repository
-	def generateRepository(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	def generateRepository(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-		className = domainItem.name + bls.name.toFirstUpper
+		className = ent.name + bls.name.toFirstUpper
 		
 		createInterfaceFile(className, packageName)
 	}
 	
 	
 	// Path: /.specification
-	def generateSpecification(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	def generateSpecification(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 
-		generateSpecificationCriteria(domainItem, ssc, dir, bls)
+		generateSpecificationCriteria(ent, ssc, dir, bls)
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
-		className = domainItem.name  + bls.name.toFirstUpper
+		className = ent.name  + bls.name.toFirstUpper
 		
 		createClassFile(className, packageName)
 	}
 	
 	
 	// Path: /.specification.criteria
-	def generateSpecificationCriteria(Entities domainItem, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+	def generateSpecificationCriteria(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 		// SpecificationSegmentElement
 		for (sse : proyectTree.allContents.toIterable.filter(SpecificationSegmentElement)) {
