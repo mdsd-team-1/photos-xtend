@@ -28,34 +28,7 @@ public class PhotoController {
 	AmazonClient amazonClient;
 	
 	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> uploadPhoto(@PathVariable Long id) throws Exception {
-	
 
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> deleteFile(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getPhoto(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> findAll(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {

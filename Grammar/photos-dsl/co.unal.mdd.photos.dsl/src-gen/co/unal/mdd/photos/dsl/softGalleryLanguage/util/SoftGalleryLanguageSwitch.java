@@ -598,24 +598,106 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SoftGalleryLanguagePackage.RESPONSE_ENTITY:
+      {
+        ResponseEntity responseEntity = (ResponseEntity)theEObject;
+        T result = caseResponseEntity(responseEntity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.MAPPING_TYPE:
+      {
+        MappingType mappingType = (MappingType)theEObject;
+        T result = caseMappingType(mappingType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SoftGalleryLanguagePackage.REQUEST_MAPPING:
       {
         RequestMapping requestMapping = (RequestMapping)theEObject;
         T result = caseRequestMapping(requestMapping);
+        if (result == null) result = caseMappingType(requestMapping);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.REQUEST_PART:
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING_VALUE:
       {
-        RequestPart requestPart = (RequestPart)theEObject;
-        T result = caseRequestPart(requestPart);
+        RequestMappingValue requestMappingValue = (RequestMappingValue)theEObject;
+        T result = caseRequestMappingValue(requestMappingValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING_TYPE:
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING_METHOD:
       {
-        RequestMappingType requestMappingType = (RequestMappingType)theEObject;
-        T result = caseRequestMappingType(requestMappingType);
+        RequestMappingMethod requestMappingMethod = (RequestMappingMethod)theEObject;
+        T result = caseRequestMappingMethod(requestMappingMethod);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING_PRODUCES:
+      {
+        RequestMappingProduces requestMappingProduces = (RequestMappingProduces)theEObject;
+        T result = caseRequestMappingProduces(requestMappingProduces);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.POST_MAPPING:
+      {
+        PostMapping postMapping = (PostMapping)theEObject;
+        T result = casePostMapping(postMapping);
+        if (result == null) result = caseMappingType(postMapping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.GET_MAPPING:
+      {
+        GetMapping getMapping = (GetMapping)theEObject;
+        T result = caseGetMapping(getMapping);
+        if (result == null) result = caseMappingType(getMapping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.PUT_MAPPING:
+      {
+        PutMapping putMapping = (PutMapping)theEObject;
+        T result = casePutMapping(putMapping);
+        if (result == null) result = caseMappingType(putMapping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.DELETE_MAPPING:
+      {
+        DeleteMapping deleteMapping = (DeleteMapping)theEObject;
+        T result = caseDeleteMapping(deleteMapping);
+        if (result == null) result = caseMappingType(deleteMapping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER:
+      {
+        ResponseParameter responseParameter = (ResponseParameter)theEObject;
+        T result = caseResponseParameter(responseParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_ANNOTATION:
+      {
+        ResponseParameterAnnotation responseParameterAnnotation = (ResponseParameterAnnotation)theEObject;
+        T result = caseResponseParameterAnnotation(responseParameterAnnotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_TYPE:
+      {
+        ResponseParameterType responseParameterType = (ResponseParameterType)theEObject;
+        T result = caseResponseParameterType(responseParameterType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_NAME:
+      {
+        ResponseParameterName responseParameterName = (ResponseParameterName)theEObject;
+        T result = caseResponseParameterName(responseParameterName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2454,6 +2536,38 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Response Entity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Response Entity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResponseEntity(ResponseEntity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mapping Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mapping Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMappingType(MappingType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Request Mapping</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2470,33 +2584,177 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Request Part</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Request Mapping Value</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Request Part</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Request Mapping Value</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequestPart(RequestPart object)
+  public T caseRequestMappingValue(RequestMappingValue object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Request Mapping Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Request Mapping Method</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Request Mapping Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Request Mapping Method</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequestMappingType(RequestMappingType object)
+  public T caseRequestMappingMethod(RequestMappingMethod object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Request Mapping Produces</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Request Mapping Produces</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRequestMappingProduces(RequestMappingProduces object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Post Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Post Mapping</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePostMapping(PostMapping object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Get Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Get Mapping</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGetMapping(GetMapping object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Put Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Put Mapping</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePutMapping(PutMapping object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Delete Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Delete Mapping</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeleteMapping(DeleteMapping object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Response Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Response Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResponseParameter(ResponseParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Response Parameter Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Response Parameter Annotation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResponseParameterAnnotation(ResponseParameterAnnotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Response Parameter Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Response Parameter Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResponseParameterType(ResponseParameterType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Response Parameter Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Response Parameter Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResponseParameterName(ResponseParameterName object)
   {
     return null;
   }

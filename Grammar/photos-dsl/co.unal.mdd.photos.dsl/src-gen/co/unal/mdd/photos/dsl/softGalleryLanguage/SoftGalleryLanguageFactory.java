@@ -699,6 +699,24 @@ public interface SoftGalleryLanguageFactory extends EFactory
   AutowiredType createAutowiredType();
 
   /**
+   * Returns a new object of class '<em>Response Entity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Response Entity</em>'.
+   * @generated
+   */
+  ResponseEntity createResponseEntity();
+
+  /**
+   * Returns a new object of class '<em>Mapping Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mapping Type</em>'.
+   * @generated
+   */
+  MappingType createMappingType();
+
+  /**
    * Returns a new object of class '<em>Request Mapping</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -708,22 +726,103 @@ public interface SoftGalleryLanguageFactory extends EFactory
   RequestMapping createRequestMapping();
 
   /**
-   * Returns a new object of class '<em>Request Part</em>'.
+   * Returns a new object of class '<em>Request Mapping Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Request Part</em>'.
+   * @return a new object of class '<em>Request Mapping Value</em>'.
    * @generated
    */
-  RequestPart createRequestPart();
+  RequestMappingValue createRequestMappingValue();
 
   /**
-   * Returns a new object of class '<em>Request Mapping Type</em>'.
+   * Returns a new object of class '<em>Request Mapping Method</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Request Mapping Type</em>'.
+   * @return a new object of class '<em>Request Mapping Method</em>'.
    * @generated
    */
-  RequestMappingType createRequestMappingType();
+  RequestMappingMethod createRequestMappingMethod();
+
+  /**
+   * Returns a new object of class '<em>Request Mapping Produces</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Request Mapping Produces</em>'.
+   * @generated
+   */
+  RequestMappingProduces createRequestMappingProduces();
+
+  /**
+   * Returns a new object of class '<em>Post Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Post Mapping</em>'.
+   * @generated
+   */
+  PostMapping createPostMapping();
+
+  /**
+   * Returns a new object of class '<em>Get Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Get Mapping</em>'.
+   * @generated
+   */
+  GetMapping createGetMapping();
+
+  /**
+   * Returns a new object of class '<em>Put Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Put Mapping</em>'.
+   * @generated
+   */
+  PutMapping createPutMapping();
+
+  /**
+   * Returns a new object of class '<em>Delete Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Delete Mapping</em>'.
+   * @generated
+   */
+  DeleteMapping createDeleteMapping();
+
+  /**
+   * Returns a new object of class '<em>Response Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Response Parameter</em>'.
+   * @generated
+   */
+  ResponseParameter createResponseParameter();
+
+  /**
+   * Returns a new object of class '<em>Response Parameter Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Response Parameter Annotation</em>'.
+   * @generated
+   */
+  ResponseParameterAnnotation createResponseParameterAnnotation();
+
+  /**
+   * Returns a new object of class '<em>Response Parameter Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Response Parameter Type</em>'.
+   * @generated
+   */
+  ResponseParameterType createResponseParameterType();
+
+  /**
+   * Returns a new object of class '<em>Response Parameter Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Response Parameter Name</em>'.
+   * @generated
+   */
+  ResponseParameterName createResponseParameterName();
 
   /**
    * Returns a new object of class '<em>Exception Handler</em>'.

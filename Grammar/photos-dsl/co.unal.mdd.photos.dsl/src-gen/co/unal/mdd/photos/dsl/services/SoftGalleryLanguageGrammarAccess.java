@@ -37,9 +37,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsTechnologyParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		////System
 		//Model:
-		//	'System' ':' '{' elements+=Domain elements+=Architecture elements+=Technology '}';
+		//	'System' ':' '{'
+		//	elements+=Domain
+		//	elements+=Architecture
+		//	elements+=Technology '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'System' ':' '{' elements+=Domain elements+=Architecture elements+=Technology '}'
@@ -91,9 +93,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cExceptionsdomainExceptionsDomainParserRuleCall_6_0 = (RuleCall)cExceptionsdomainAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//// Domain
 		//Domain:
-		//	'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality exceptionsdomain+=ExceptionsDomain '}';
+		//	'Domain' name=ID ':' '{'
+		//	entitydomain+=Entity
+		//	entityfuncs+=Functionality
+		//	exceptionsdomain+=ExceptionsDomain
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality exceptionsdomain+=ExceptionsDomain '}'
@@ -145,9 +150,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsEntitiesParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//// Domain - Entities
 		//Entity:
-		//	'Entities' ':' '{' elements+=Entities+ '}';
+		//	'Entities' ':' '{'
+		//	elements+=Entities+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Entities' ':' '{' elements+=Entities+ '}'
@@ -196,11 +202,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Assignment cAtributeUserDomainAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
 		private final RuleCall cAtributeUserDomainAtributeUserDomainParserRuleCall_2_3_0 = (RuleCall)cAtributeUserDomainAssignment_2_3.eContents().get(0);
 		
-		//Entities //(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
-		//:
-		//	'PhotoEntity' ':' name=ID atributePhoto+=AtributePhoto+
-		//	| 'AlbumEntity' ':' name=ID atributeAlbum+=AtributeAlbum+
-		//	| 'UserEntity' ':' name=ID atributeUserDomain+=AtributeUserDomain+;
+		//Entities:
+		//	'PhotoEntity' ':' name=ID
+		//	atributePhoto+=AtributePhoto+ |
+		//	'AlbumEntity' ':' name=ID
+		//	atributeAlbum+=AtributeAlbum+ |
+		//	'UserEntity' ':' name=ID
+		//	atributeUserDomain+=AtributeUserDomain+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PhotoEntity' ':' name=ID atributePhoto+=AtributePhoto+ | 'AlbumEntity' ':' name=ID atributeAlbum+=AtributeAlbum+ |
@@ -291,10 +299,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
 		
 		//AtributePhoto:
-		//	'idPhoto' name=ID
-		//	| 'namePhoto' name=ID
-		//	| 'urlPhoto' name=ID
-		//	| 'albumIdPhoto' name=ID;
+		//	'idPhoto' name=ID |
+		//	'namePhoto' name=ID |
+		//	'urlPhoto' name=ID |
+		//	'albumIdPhoto' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'idPhoto' name=ID | 'namePhoto' name=ID | 'urlPhoto' name=ID | 'albumIdPhoto' name=ID
@@ -365,9 +373,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		
 		//AtributeAlbum:
-		//	'idAlbum' name=ID
-		//	| 'nameAlbum' name=ID
-		//	| 'userIdAlbum' name=ID;
+		//	'idAlbum' name=ID |
+		//	'nameAlbum' name=ID |
+		//	'userIdAlbum' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'idAlbum' name=ID | 'nameAlbum' name=ID | 'userIdAlbum' name=ID
@@ -442,13 +450,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_6_1_0 = (RuleCall)cNameAssignment_6_1.eContents().get(0);
 		
 		//AtributeUserDomain:
-		//	'idUser' name=ID
-		//	| 'userNameUser' name=ID
-		//	| 'firstNameUser' name=ID
-		//	| 'lastNameUser' name=ID
-		//	| 'profileDescriptionUser' name=ID
-		//	| 'passwordUser' name=ID
-		//	| 'emailUser' name=ID;
+		//	'idUser' name=ID |
+		//	'userNameUser' name=ID |
+		//	'firstNameUser' name=ID |
+		//	'lastNameUser' name=ID |
+		//	'profileDescriptionUser' name=ID |
+		//	'passwordUser' name=ID |
+		//	'emailUser' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'idUser' name=ID | 'userNameUser' name=ID | 'firstNameUser' name=ID | 'lastNameUser' name=ID | 'profileDescriptionUser'
@@ -549,9 +557,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsFunctionalitiesParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//// Domain - Functionalities
 		//Functionality:
-		//	'Functionalities' ':' '{' elements+=Functionalities '}';
+		//	'Functionalities' ':' '{'
+		//	elements+=Functionalities '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Functionalities' ':' '{' elements+=Functionalities '}'
@@ -640,7 +648,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cItemsProfileManagementFunctionsParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
 		
 		//ProfileManagement:
-		//	'ProfileManagement' ':' items+=ProfileManagementFunctions;
+		//	'ProfileManagement' ':'
+		//	items+=ProfileManagementFunctions;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ProfileManagement' ':' items+=ProfileManagementFunctions
@@ -669,7 +678,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cEditProfileNameIDTerminalRuleCall_3_0 = (RuleCall)cEditProfileNameAssignment_3.eContents().get(0);
 		
 		//ProfileManagementFunctions:
-		//	'ViewProfilePhoto' viewprofileName=ID 'EditProfileInfo' editProfileName=ID;
+		//	'ViewProfilePhoto' viewprofileName=ID
+		//	'EditProfileInfo' editProfileName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ViewProfilePhoto' viewprofileName=ID 'EditProfileInfo' editProfileName=ID
@@ -702,7 +712,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cItemsAppAccessFunctionsParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
 		
 		//AppAccess:
-		//	'AppAccess' ':' items+=AppAccessFunctions;
+		//	'AppAccess' ':'
+		//	items+=AppAccessFunctions;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AppAccess' ':' items+=AppAccessFunctions
@@ -731,7 +742,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cRegisterNameIDTerminalRuleCall_3_0 = (RuleCall)cRegisterNameAssignment_3.eContents().get(0);
 		
 		//AppAccessFunctions:
-		//	'Login' loginName=ID 'Register' registerName=ID;
+		//	'Login' loginName=ID
+		//	'Register' registerName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Login' loginName=ID 'Register' registerName=ID
@@ -764,7 +776,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cItemsAlbumManagementFunctionsParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
 		
 		//AlbumManagement:
-		//	'AlbumManagement' ':' items+=AlbumManagementFunctions;
+		//	'AlbumManagement' ':'
+		//	items+=AlbumManagementFunctions;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AlbumManagement' ':' items+=AlbumManagementFunctions
@@ -793,7 +806,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cSelectAlbNameIDTerminalRuleCall_3_0 = (RuleCall)cSelectAlbNameAssignment_3.eContents().get(0);
 		
 		//AlbumManagementFunctions:
-		//	'CreateAlbum' createdAlbName=ID 'SelectAlbum' selectAlbName=ID;
+		//	'CreateAlbum' createdAlbName=ID
+		//	'SelectAlbum' selectAlbName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CreateAlbum' createdAlbName=ID 'SelectAlbum' selectAlbName=ID
@@ -826,7 +840,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cItemsPhotoActionsFunctionsParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
 		
 		//PhotoActions:
-		//	'PhotoActions' ':' items+=PhotoActionsFunctions;
+		//	'PhotoActions' ':'
+		//	items+=PhotoActionsFunctions;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PhotoActions' ':' items+=PhotoActionsFunctions
@@ -858,7 +873,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameLoadIDTerminalRuleCall_5_0 = (RuleCall)cNameLoadAssignment_5.eContents().get(0);
 		
 		//PhotoActionsFunctions:
-		//	'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID;
+		//	'ViewAllPhotos' nameGenerico=ID
+		//	'ViewExtendedPhoto' namePhoto=ID
+		//	'LoadPhoto' nameLoad=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID
@@ -900,7 +917,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cItemsLandingFunctionsParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
 		
 		//LandingActions:
-		//	'LandingActions' ':' items+=LandingFunctions;
+		//	'LandingActions' ':'
+		//	items+=LandingFunctions;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LandingActions' ':' items+=LandingFunctions
@@ -929,7 +947,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cPassPhotoNameIDTerminalRuleCall_3_0 = (RuleCall)cPassPhotoNameAssignment_3.eContents().get(0);
 		
 		//LandingFunctions:
-		//	'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID;
+		//	'ViewCarousel' nameCarouselName=ID
+		//	'PassPhoto' passPhotoName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID
@@ -963,9 +982,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cExceptionsTypeExceptionsTypeParserRuleCall_3_0 = (RuleCall)cExceptionsTypeAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		////Domain - Exceptions
 		//ExceptionsDomain:
-		//	'DomainExceptions' ':' '{' exceptionsType+=ExceptionsType+ '}';
+		//	'DomainExceptions' ':' '{'
+		//	exceptionsType+=ExceptionsType+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DomainExceptions' ':' '{' exceptionsType+=ExceptionsType+ '}'
@@ -1009,9 +1029,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cUserExceptionUserExceptionParserRuleCall_2_2_0 = (RuleCall)cUserExceptionAssignment_2_2.eContents().get(0);
 		
 		//ExceptionsType:
-		//	'PhotoException' ':' photoException+=PhotoException+
-		//	| 'AlbumException' ':' albumException+=AlbumException+
-		//	| 'UserException' ':' userException+=UserException+;
+		//	'PhotoException' ':' photoException+=PhotoException+ |
+		//	'AlbumException' ':' albumException+=AlbumException+ |
+		//	'UserException' ':' userException+=UserException+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PhotoException' ':' photoException+=PhotoException+ | 'AlbumException' ':' albumException+=AlbumException+ |
@@ -1084,10 +1104,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
 		
 		//PhotoException:
-		//	'PhotoNotFound' name=ID
-		//	| 'PhotoUploadError' name=ID
-		//	| 'PhotoNotCreated' name=ID
-		//	| 'PhotoNotDeleted' name=ID;
+		//	'PhotoNotFound' name=ID |
+		//	'PhotoUploadError' name=ID |
+		//	'PhotoNotCreated' name=ID |
+		//	'PhotoNotDeleted' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PhotoNotFound' name=ID | 'PhotoUploadError' name=ID | 'PhotoNotCreated' name=ID | 'PhotoNotDeleted' name=ID
@@ -1170,12 +1190,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
 		
 		//AlbumException:
-		//	'AlbumNotFound' name=ID
-		//	| 'PhotosFromAlbumNotFound' name=ID
-		//	| 'AlbumHasNoPhotos' name=ID
-		//	| 'MissingParametersForNewAlbum' name=ID
-		//	| 'UserIdIsNotNumber' name=ID
-		//	| 'AlbumNotCreated' name=ID;
+		//	'AlbumNotFound' name=ID |
+		//	'PhotosFromAlbumNotFound' name=ID |
+		//	'AlbumHasNoPhotos' name=ID |
+		//	'MissingParametersForNewAlbum' name=ID |
+		//	'UserIdIsNotNumber' name=ID |
+		//	'AlbumNotCreated' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AlbumNotFound' name=ID | 'PhotosFromAlbumNotFound' name=ID | 'AlbumHasNoPhotos' name=ID |
@@ -1311,19 +1331,19 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_12_1_0 = (RuleCall)cNameAssignment_12_1.eContents().get(0);
 		
 		//UserException:
-		//	'UserNotFound' name=ID
-		//	| 'AlbumsFromUserNotFound' name=ID
-		//	| 'UserHasNoAlbums' name=ID
-		//	| 'UserHasNoPhotos' name=ID
-		//	| 'MissingParametersForNewUser' name=ID
-		//	| 'UserNotCreated' name=ID
-		//	| 'AlbumNotCreatedForNewUser' name=ID
-		//	| 'MissingParametersForEditUser' name=ID
-		//	| 'WrongLoginInfo' name=ID
-		//	| 'MissingParametersForLogin' name=ID
-		//	| 'UserIdIsNotNumber' name=ID
-		//	| 'UserToEditDoesNotExist' name=ID
-		//	| 'UserNotEdited' name=ID;
+		//	'UserNotFound' name=ID |
+		//	'AlbumsFromUserNotFound' name=ID |
+		//	'UserHasNoAlbums' name=ID |
+		//	'UserHasNoPhotos' name=ID |
+		//	'MissingParametersForNewUser' name=ID |
+		//	'UserNotCreated' name=ID |
+		//	'AlbumNotCreatedForNewUser' name=ID |
+		//	'MissingParametersForEditUser' name=ID |
+		//	'WrongLoginInfo' name=ID |
+		//	'MissingParametersForLogin' name=ID |
+		//	'UserIdIsNotNumber' name=ID |
+		//	'UserToEditDoesNotExist' name=ID |
+		//	'UserNotEdited' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserNotFound' name=ID | 'AlbumsFromUserNotFound' name=ID | 'UserHasNoAlbums' name=ID | 'UserHasNoPhotos' name=ID |
@@ -1499,9 +1519,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsNTiersConnectionsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		////Architecture
 		//Architecture:
-		//	'Architecture:' '{' elements+=NTiers+ elements+=NTiersConnections+ '}';
+		//	'Architecture:' '{'
+		//	elements+=NTiers+
+		//	elements+=NTiersConnections+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Architecture:' '{' elements+=NTiers+ elements+=NTiersConnections+ '}'
@@ -1542,7 +1564,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsArchitectureComponentsParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
 		
 		//NTiers:
-		//	'Layers' elements+=Layer+ 'LayersRelations' elements+=LayerRelations+ 'ArchitectureComponents'
+		//	'Layers'
+		//	elements+=Layer+
+		//	'LayersRelations'
+		//	elements+=LayerRelations+
+		//	'ArchitectureComponents'
 		//	elements+=ArchitectureComponents+;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1588,7 +1614,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cLayerDataPersistenceLayerParserRuleCall_2_0 = (RuleCall)cLayerAssignment_2.eContents().get(0);
 		
 		//Layer:
-		//	layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer;
+		//	layer+=PresentationLayer
+		//	layer+=BusinessLogicLayer
+		//	layer+=DataPersistenceLayer;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer
@@ -1622,7 +1650,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cPresentationLayerSegmentStructureParserRuleCall_2_0 = (RuleCall)cPresentationLayerAssignment_2.eContents().get(0);
 		
 		//PresentationLayer:
-		//	'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure;
+		//	'PresentationLayer'
+		//	presentationLayer+=PresentationContent
+		//	presentationLayer+=SegmentStructure;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure
@@ -1651,7 +1681,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsPresentationSegmentsParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//PresentationContent:
-		//	'PresentationSegments' elements+=PresentationSegments;
+		//	'PresentationSegments'
+		//	elements+=PresentationSegments;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PresentationSegments' elements+=PresentationSegments
@@ -1680,8 +1711,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cPresentationANameIDTerminalRuleCall_5_0 = (RuleCall)cPresentationANameAssignment_5.eContents().get(0);
 		
 		//PresentationSegments:
-		//	'PresentationView' presentationSName=ID 'PresentationComponent' presentationCName=ID 'PresentationAction'
-		//	presentationAName=ID;
+		//	'PresentationView' presentationSName=ID
+		//	'PresentationComponent' presentationCName=ID
+		//	'PresentationAction' presentationAName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PresentationView' presentationSName=ID 'PresentationComponent' presentationCName=ID 'PresentationAction'
@@ -1725,7 +1757,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cBusinessLogicLayerSegmentStructureParserRuleCall_2_0 = (RuleCall)cBusinessLogicLayerAssignment_2.eContents().get(0);
 		
 		//BusinessLogicLayer:
-		//	'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure;
+		//	'BusinessLogicLayer'
+		//	businessLogicLayer+=BusinessLogicContent
+		//	businessLogicLayer+=SegmentStructure;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure
@@ -1754,7 +1788,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cBusinessLogicSegmentsBusinessLogicSegmentsParserRuleCall_1_0 = (RuleCall)cBusinessLogicSegmentsAssignment_1.eContents().get(0);
 		
 		//BusinessLogicContent:
-		//	'BusinessLogicSegments' businessLogicSegments+=BusinessLogicSegments+;
+		//	'BusinessLogicSegments'
+		//	businessLogicSegments+=BusinessLogicSegments+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'BusinessLogicSegments' businessLogicSegments+=BusinessLogicSegments+
@@ -1798,11 +1833,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cSpecificationSegmentElementSpecificationSegmentElementParserRuleCall_4_2_0 = (RuleCall)cSpecificationSegmentElementAssignment_4_2.eContents().get(0);
 		
 		//BusinessLogicSegments:
-		//	'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+
-		//	| 'ModelSegment' name=ID
-		//	| 'RepositorySegment' name=ID
-		//	| 'SecuritySegment' name=ID
-		//	| 'SpecificationSegment' name=ID specificationSegmentElement+=SpecificationSegmentElement+;
+		//	'ControllerSegment' name=ID
+		//	controllerSegmentElement+=ControllerSegmentElement+ |
+		//	'ModelSegment' name=ID |
+		//	'RepositorySegment' name=ID |
+		//	'SecuritySegment' name=ID |
+		//	'SpecificationSegment' name=ID
+		//	specificationSegmentElement+=SpecificationSegmentElement+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+ | 'ModelSegment' name=ID |
@@ -1895,8 +1932,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
 		
 		//ControllerSegmentElement:
-		//	'AmazonSegment' name=ID
-		//	| 'ExceptionSegment' name=ID;
+		//	'AmazonSegment' name=ID |
+		//	'ExceptionSegment' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AmazonSegment' name=ID | 'ExceptionSegment' name=ID
@@ -1957,7 +1994,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsDataPersistenceContentParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//DataPersistenceLayer:
-		//	'DataPersistenceLayer' elements+=DataPersistenceContent;
+		//	'DataPersistenceLayer'
+		//	elements+=DataPersistenceContent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DataPersistenceLayer' elements+=DataPersistenceContent
@@ -1980,7 +2018,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsDataPersistenceSegmentsParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//DataPersistenceContent:
-		//	'DataPersistenceSegments' elements+=DataPersistenceSegments;
+		//	'DataPersistenceSegments'
+		//	elements+=DataPersistenceSegments;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DataPersistenceSegments' elements+=DataPersistenceSegments
@@ -2006,7 +2045,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cAmazonSNameIDTerminalRuleCall_3_0 = (RuleCall)cAmazonSNameAssignment_3.eContents().get(0);
 		
 		//DataPersistenceSegments:
-		//	'PostgreSLQSegment' postSName=ID 'AmazonS3Storage' amazonSName=ID;
+		//	'PostgreSLQSegment' postSName=ID
+		//	'AmazonS3Storage' amazonSName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PostgreSLQSegment' postSName=ID 'AmazonS3Storage' amazonSName=ID
@@ -2038,7 +2078,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsSegmentStructureContentParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//SegmentStructure:
-		//	'SegmentStructure' elements+=SegmentStructureContent;
+		//	'SegmentStructure'
+		//	elements+=SegmentStructureContent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SegmentStructure' elements+=SegmentStructureContent
@@ -2063,7 +2104,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsDirectoryContentParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//SegmentStructureContent:
-		//	'Directories' name=ID elements+=DirectoryContent+;
+		//	'Directories' name=ID
+		//	elements+=DirectoryContent+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Directories' name=ID elements+=DirectoryContent+
@@ -2097,7 +2139,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cDirectoriesSingleFileParserRuleCall_1_0 = (RuleCall)cDirectoriesAssignment_1.eContents().get(0);
 		
 		//DirectoryContent:
-		//	'Directory' name=ID directories+=Directories | directories+=SingleFile;
+		//	'Directory' name=ID
+		//	directories+=Directories | directories+=SingleFile;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Directory' name=ID directories+=Directories | directories+=SingleFile
@@ -2201,7 +2244,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cLayertargetLayerTargetParserRuleCall_3_0 = (RuleCall)cLayertargetAssignment_3.eContents().get(0);
 		
 		//LayerRelations:
-		//	layerelations+=RelationType name=ID layerorigin+=LayerSource layertarget+=LayerTarget;
+		//	layerelations+=RelationType name=ID
+		//	layerorigin+=LayerSource
+		//	layertarget+=LayerTarget;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//layerelations+=RelationType name=ID layerorigin+=LayerSource layertarget+=LayerTarget
@@ -2238,7 +2283,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cAllowToUseBelowKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//RelationType:
-		//	'AllowedToUse' | 'AllowToUseBelow';
+		//	'AllowedToUse' |
+		//	'AllowToUseBelow';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AllowedToUse' | 'AllowToUseBelow'
@@ -2258,7 +2304,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cLayerelationsLayerRelationNameParserRuleCall_1_0 = (RuleCall)cLayerelationsAssignment_1.eContents().get(0);
 		
 		//LayerSource:
-		//	'source' layerelations+=LayerRelationName;
+		//	'source'
+		//	layerelations+=LayerRelationName;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'source' layerelations+=LayerRelationName
@@ -2281,7 +2328,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cLayerelationsLayerRelationNameParserRuleCall_1_0 = (RuleCall)cLayerelationsAssignment_1.eContents().get(0);
 		
 		//LayerTarget:
-		//	'target' layerelations+=LayerRelationName;
+		//	'target'
+		//	layerelations+=LayerRelationName;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'target' layerelations+=LayerRelationName
@@ -2304,7 +2352,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cPersistenceDataLayerKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//LayerRelationName:
-		//	'PresentationLayer' | 'BusinessLogicLayer' | 'PersistenceDataLayer';
+		//	'PresentationLayer' |
+		//	'BusinessLogicLayer' |
+		//	'PersistenceDataLayer';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PresentationLayer' | 'BusinessLogicLayer' | 'PersistenceDataLayer'
@@ -2331,7 +2381,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cArchPdComponentPersistenceDataComponentParserRuleCall_3_0 = (RuleCall)cArchPdComponentAssignment_3.eContents().get(0);
 		
 		//ArchitectureComponents:
-		//	'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent;
+		//	'SystemComponents'
+		//	archFeComponent+=FrontEnd
+		//	archBeComponent+=BackEnd
+		//	archPdComponent+=PersistenceDataComponent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent
@@ -2435,7 +2488,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNtierconnectionsNTierConnectionContentParserRuleCall_1_0 = (RuleCall)cNtierconnectionsAssignment_1.eContents().get(0);
 		
 		//NTiersConnections:
-		//	'Connectors' ntierconnections+=NTierConnectionContent+;
+		//	'Connectors'
+		//	ntierconnections+=NTierConnectionContent+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Connectors' ntierconnections+=NTierConnectionContent+
@@ -2463,7 +2517,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNtiertargetNTierTargetParserRuleCall_3_0 = (RuleCall)cNtiertargetAssignment_3.eContents().get(0);
 		
 		//NTierConnectionContent:
-		//	ntierconnection+=ConnectionType nTierName=ID ntierorigin+=NTierSource ntiertarget+=NTierTarget;
+		//	ntierconnection+=ConnectionType nTierName=ID
+		//	ntierorigin+=NTierSource
+		//	ntiertarget+=NTierTarget;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ntierconnection+=ConnectionType nTierName=ID ntierorigin+=NTierSource ntiertarget+=NTierTarget
@@ -2501,7 +2557,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cAmazonS3APIKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//ConnectionType:
-		//	'REST' | 'PostgreSQLConnection' | 'AmazonS3API';
+		//	'REST' |
+		//	'PostgreSQLConnection' |
+		//	'AmazonS3API';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'REST' | 'PostgreSQLConnection' | 'AmazonS3API'
@@ -2524,7 +2582,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNtierconnectionNTiersRelationsParserRuleCall_1_0 = (RuleCall)cNtierconnectionAssignment_1.eContents().get(0);
 		
 		//NTierSource:
-		//	'source' ntierconnection+=NTiersRelations;
+		//	'source'
+		//	ntierconnection+=NTiersRelations;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'source' ntierconnection+=NTiersRelations
@@ -2547,7 +2606,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNtierconnectionNTiersRelationsParserRuleCall_1_0 = (RuleCall)cNtierconnectionAssignment_1.eContents().get(0);
 		
 		//NTierTarget:
-		//	'target' ntierconnection+=NTiersRelations;
+		//	'target'
+		//	ntierconnection+=NTiersRelations;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'target' ntierconnection+=NTiersRelations
@@ -2583,8 +2643,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
 		
 		//NTiersRelations:
-		//	'FrontEndComponent' name=ID | 'BackEndComponent' name=ID | 'PersistenceDataComponent' name=ID | 'AmazonService'
-		//	name=ID;
+		//	'FrontEndComponent' name=ID |
+		//	'BackEndComponent' name=ID |
+		//	'PersistenceDataComponent' name=ID |
+		//	'AmazonService' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FrontEndComponent' name=ID | 'BackEndComponent' name=ID | 'PersistenceDataComponent' name=ID | 'AmazonService' name=ID
@@ -2650,9 +2712,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsTechnologiesParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//// Technology
 		//Technology:
-		//	'Technology' name=ID ':' '{' elements+=Technologies '}';
+		//	'Technology' name=ID ':' '{'
+		//	elements+=Technologies
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Technology' name=ID ':' '{' elements+=Technologies '}'
@@ -2695,7 +2758,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cTechamazonAmazonWebServicesParserRuleCall_3_0 = (RuleCall)cTechamazonAssignment_3.eContents().get(0);
 		
 		//Technologies:
-		//	techspring+=Spring techreact+=React techpostgresql+=PostgreSQL techamazon+=AmazonWebServices;
+		//	techspring+=Spring
+		//	techreact+=React
+		//	techpostgresql+=PostgreSQL
+		//	techamazon+=AmazonWebServices;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//techspring+=Spring techreact+=React techpostgresql+=PostgreSQL techamazon+=AmazonWebServices
@@ -2738,7 +2804,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Spring:
-		//	'Spring' name=ID ':' '{' elements+=SpringBootApplication '}';
+		//	'Spring' name=ID ':' '{'
+		//	elements+=SpringBootApplication
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Spring' name=ID ':' '{' elements+=SpringBootApplication '}'
@@ -2784,8 +2852,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsSpringEntityParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
 		
 		//SpringBootApplication:
-		//	'SpringBootApplication' elements+=Configuration elements+=SpringComponent+ elements+=SpringRepository+
-		//	elements+=RestController+ elements+=SpringEntity+;
+		//	'SpringBootApplication'
+		//	elements+=Configuration
+		//	elements+=SpringComponent+
+		//	elements+=SpringRepository+
+		//	elements+=RestController+
+		//	elements+=SpringEntity+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SpringBootApplication' elements+=Configuration elements+=SpringComponent+ elements+=SpringRepository+
@@ -2842,8 +2914,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Configuration:
-		//	'Configuration' ':' '{' elements+=EnableGlobalMethodSecurity elements+=EnableAuthorizationServer
-		//	elements+=EnableResourceServer elements+=EnableWebSecurity '}';
+		//	'Configuration' ':' '{'
+		//	elements+=EnableGlobalMethodSecurity
+		//	elements+=EnableAuthorizationServer
+		//	elements+=EnableResourceServer
+		//	elements+=EnableWebSecurity
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Configuration' ':' '{' elements+=EnableGlobalMethodSecurity elements+=EnableAuthorizationServer
@@ -2989,7 +3065,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SpringComponent:
-		//	'SpringComponent' ':' '{' elements+=OrderSpring '}';
+		//	'SpringComponent' ':' '{'
+		//	elements+=OrderSpring
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SpringComponent' ':' '{' elements+=OrderSpring '}'
@@ -3047,7 +3125,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SpringRepository:
-		//	'SpringRepositories' ':' '{' elements+=SpringRepositories+ '}';
+		//	'SpringRepositories' ':' '{'
+		//	elements+=SpringRepositories+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SpringRepositories' ':' '{' elements+=SpringRepositories+ '}'
@@ -3107,17 +3187,21 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Assignment cElementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cElementsAutowiredParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
 		private final Assignment cElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cElementsRequestMappingParserRuleCall_6_0 = (RuleCall)cElementsAssignment_6.eContents().get(0);
+		private final RuleCall cElementsResponseEntityParserRuleCall_6_0 = (RuleCall)cElementsAssignment_6.eContents().get(0);
 		private final Assignment cElementsAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cElementsExceptionHandlerParserRuleCall_7_0 = (RuleCall)cElementsAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//RestController:
-		//	'RestController' name=ID ':' '{' elements+=Specification elements+=Autowired+ elements+=RequestMapping+
-		//	elements+=ExceptionHandler '}';
+		//	'RestController' name=ID ':' '{'
+		//	elements+=Specification
+		//	elements+=Autowired*
+		//	elements+=ResponseEntity*
+		//	elements+=ExceptionHandler
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RestController' name=ID ':' '{' elements+=Specification elements+=Autowired+ elements+=RequestMapping+
+		//'RestController' name=ID ':' '{' elements+=Specification elements+=Autowired* elements+=ResponseEntity*
 		//elements+=ExceptionHandler '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -3142,17 +3226,17 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//Specification
 		public RuleCall getElementsSpecificationParserRuleCall_4_0() { return cElementsSpecificationParserRuleCall_4_0; }
 		
-		//elements+=Autowired+
+		//elements+=Autowired*
 		public Assignment getElementsAssignment_5() { return cElementsAssignment_5; }
 		
 		//Autowired
 		public RuleCall getElementsAutowiredParserRuleCall_5_0() { return cElementsAutowiredParserRuleCall_5_0; }
 		
-		//elements+=RequestMapping+
+		//elements+=ResponseEntity*
 		public Assignment getElementsAssignment_6() { return cElementsAssignment_6; }
 		
-		//RequestMapping
-		public RuleCall getElementsRequestMappingParserRuleCall_6_0() { return cElementsRequestMappingParserRuleCall_6_0; }
+		//ResponseEntity
+		public RuleCall getElementsResponseEntityParserRuleCall_6_0() { return cElementsResponseEntityParserRuleCall_6_0; }
 		
 		//elements+=ExceptionHandler
 		public Assignment getElementsAssignment_7() { return cElementsAssignment_7; }
@@ -3173,7 +3257,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsSearchCriteriaParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//Specification:
-		//	'Specification' elements+=Predicate+ elements+=SearchCriteria;
+		//	'Specification'
+		//	elements+=Predicate+
+		//	elements+=SearchCriteria;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Specification' elements+=Predicate+ elements+=SearchCriteria
@@ -3248,7 +3334,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsAutowiredTypeParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//Autowired:
-		//	'Autowired' elements+=AutowiredType;
+		//	'Autowired'
+		//	elements+=AutowiredType;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Autowired' elements+=AutowiredType
@@ -3286,53 +3373,136 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
+	public class ResponseEntityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseEntity");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cResponseEntityKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeMappingTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParametersResponseParameterParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
+		
+		//ResponseEntity:
+		//	'ResponseEntity' name=ID
+		//	type+=MappingType
+		//	parameters+=ResponseParameter*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ResponseEntity' name=ID type+=MappingType parameters+=ResponseParameter*
+		public Group getGroup() { return cGroup; }
+		
+		//'ResponseEntity'
+		public Keyword getResponseEntityKeyword_0() { return cResponseEntityKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//type+=MappingType
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		
+		//MappingType
+		public RuleCall getTypeMappingTypeParserRuleCall_2_0() { return cTypeMappingTypeParserRuleCall_2_0; }
+		
+		//parameters+=ResponseParameter*
+		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
+		
+		//ResponseParameter
+		public RuleCall getParametersResponseParameterParserRuleCall_3_0() { return cParametersResponseParameterParserRuleCall_3_0; }
+	}
+	public class MappingTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.MappingType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRequestMappingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPostMappingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cGetMappingParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cPutMappingParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDeleteMappingParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		
+		//MappingType:
+		//	RequestMapping | PostMapping | GetMapping | PutMapping | DeleteMapping;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//RequestMapping | PostMapping | GetMapping | PutMapping | DeleteMapping
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//RequestMapping
+		public RuleCall getRequestMappingParserRuleCall_0() { return cRequestMappingParserRuleCall_0; }
+		
+		//PostMapping
+		public RuleCall getPostMappingParserRuleCall_1() { return cPostMappingParserRuleCall_1; }
+		
+		//GetMapping
+		public RuleCall getGetMappingParserRuleCall_2() { return cGetMappingParserRuleCall_2; }
+		
+		//PutMapping
+		public RuleCall getPutMappingParserRuleCall_3() { return cPutMappingParserRuleCall_3; }
+		
+		//DeleteMapping
+		public RuleCall getDeleteMappingParserRuleCall_4() { return cDeleteMappingParserRuleCall_4; }
+	}
 	public class RequestMappingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRequestMappingKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsRequestPartParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsRequestMappingTypeParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueRequestMappingValueParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final Assignment cMethodAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMethodRequestMappingMethodParserRuleCall_2_0 = (RuleCall)cMethodAssignment_2.eContents().get(0);
+		private final Assignment cProducesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cProducesRequestMappingProducesParserRuleCall_3_0 = (RuleCall)cProducesAssignment_3.eContents().get(0);
 		
 		//RequestMapping:
-		//	'RequestMapping' elements+=RequestPart* elements+=RequestMappingType;
+		//	'RequestMapping'
+		//	value+=RequestMappingValue
+		//	method+=RequestMappingMethod
+		//	produces+=RequestMappingProduces;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RequestMapping' elements+=RequestPart* elements+=RequestMappingType
+		//'RequestMapping' value+=RequestMappingValue method+=RequestMappingMethod produces+=RequestMappingProduces
 		public Group getGroup() { return cGroup; }
 		
 		//'RequestMapping'
 		public Keyword getRequestMappingKeyword_0() { return cRequestMappingKeyword_0; }
 		
-		//elements+=RequestPart*
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		//value+=RequestMappingValue
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
-		//RequestPart
-		public RuleCall getElementsRequestPartParserRuleCall_1_0() { return cElementsRequestPartParserRuleCall_1_0; }
+		//RequestMappingValue
+		public RuleCall getValueRequestMappingValueParserRuleCall_1_0() { return cValueRequestMappingValueParserRuleCall_1_0; }
 		
-		//elements+=RequestMappingType
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
+		//method+=RequestMappingMethod
+		public Assignment getMethodAssignment_2() { return cMethodAssignment_2; }
 		
-		//RequestMappingType
-		public RuleCall getElementsRequestMappingTypeParserRuleCall_2_0() { return cElementsRequestMappingTypeParserRuleCall_2_0; }
+		//RequestMappingMethod
+		public RuleCall getMethodRequestMappingMethodParserRuleCall_2_0() { return cMethodRequestMappingMethodParserRuleCall_2_0; }
+		
+		//produces+=RequestMappingProduces
+		public Assignment getProducesAssignment_3() { return cProducesAssignment_3; }
+		
+		//RequestMappingProduces
+		public RuleCall getProducesRequestMappingProducesParserRuleCall_3_0() { return cProducesRequestMappingProducesParserRuleCall_3_0; }
 	}
-	public class RequestPartElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestPart");
+	public class RequestMappingValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRequestPartKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//RequestPart:
-		//	'RequestPart' name=ID;
+		//RequestMappingValue:
+		//	'Value' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RequestPart' name=ID
+		//'Value' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//'RequestPart'
-		public Keyword getRequestPartKeyword_0() { return cRequestPartKeyword_0; }
+		//'Value'
+		public Keyword getValueKeyword_0() { return cValueKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -3340,59 +3510,255 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
-	public class RequestMappingTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingType");
+	public class RequestMappingMethodElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingMethod");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRequestMappingTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cMethodKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cRequestMappingTypeConfParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
-		//RequestMappingType:
-		//	'RequestMappingType' name=ID RequestMappingTypeConf;
+		//RequestMappingMethod:
+		//	'Method' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RequestMappingType' name=ID RequestMappingTypeConf
+		//'Method' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//'RequestMappingType'
-		public Keyword getRequestMappingTypeKeyword_0() { return cRequestMappingTypeKeyword_0; }
+		//'Method'
+		public Keyword getMethodKeyword_0() { return cMethodKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//RequestMappingTypeConf
-		public RuleCall getRequestMappingTypeConfParserRuleCall_2() { return cRequestMappingTypeConfParserRuleCall_2; }
 	}
-	public class RequestMappingTypeConfElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingTypeConf");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cPostMappingKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cGetMappingKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cPutMappingKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cDeleteMappingKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+	public class RequestMappingProducesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingProduces");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProducesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//RequestMappingTypeConf:
-		//	'PostMapping' | 'GetMapping' | 'PutMapping' | 'DeleteMapping';
+		//RequestMappingProduces:
+		//	'Produces' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PostMapping' | 'GetMapping' | 'PutMapping' | 'DeleteMapping'
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//'Produces' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'Produces'
+		public Keyword getProducesKeyword_0() { return cProducesKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class PostMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.PostMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPostMappingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//PostMapping:
+		//	'PostMapping' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'PostMapping' name=ID
+		public Group getGroup() { return cGroup; }
 		
 		//'PostMapping'
 		public Keyword getPostMappingKeyword_0() { return cPostMappingKeyword_0; }
 		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class GetMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.GetMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGetMappingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//GetMapping:
+		//	'GetMapping' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'GetMapping' name=ID
+		public Group getGroup() { return cGroup; }
+		
 		//'GetMapping'
-		public Keyword getGetMappingKeyword_1() { return cGetMappingKeyword_1; }
+		public Keyword getGetMappingKeyword_0() { return cGetMappingKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class PutMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.PutMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPutMappingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//PutMapping:
+		//	'PutMapping' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'PutMapping' name=ID
+		public Group getGroup() { return cGroup; }
 		
 		//'PutMapping'
-		public Keyword getPutMappingKeyword_2() { return cPutMappingKeyword_2; }
+		public Keyword getPutMappingKeyword_0() { return cPutMappingKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class DeleteMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.DeleteMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDeleteMappingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//DeleteMapping:
+		//	'DeleteMapping' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'DeleteMapping' name=ID
+		public Group getGroup() { return cGroup; }
 		
 		//'DeleteMapping'
-		public Keyword getDeleteMappingKeyword_3() { return cDeleteMappingKeyword_3; }
+		public Keyword getDeleteMappingKeyword_0() { return cDeleteMappingKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class ResponseParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cParameterAnnotationAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0 = (RuleCall)cParameterAnnotationAssignment_1.eContents().get(0);
+		private final Assignment cParameterTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParameterTypeResponseParameterTypeParserRuleCall_2_0 = (RuleCall)cParameterTypeAssignment_2.eContents().get(0);
+		private final Assignment cParameterNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParameterNameResponseParameterNameParserRuleCall_3_0 = (RuleCall)cParameterNameAssignment_3.eContents().get(0);
+		
+		//ResponseParameter:
+		//	'Parameter'
+		//	parameterAnnotation+=ResponseParameterAnnotation
+		//	parameterType+=ResponseParameterType
+		//	parameterName+=ResponseParameterName;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Parameter' parameterAnnotation+=ResponseParameterAnnotation parameterType+=ResponseParameterType
+		//parameterName+=ResponseParameterName
+		public Group getGroup() { return cGroup; }
+		
+		//'Parameter'
+		public Keyword getParameterKeyword_0() { return cParameterKeyword_0; }
+		
+		//parameterAnnotation+=ResponseParameterAnnotation
+		public Assignment getParameterAnnotationAssignment_1() { return cParameterAnnotationAssignment_1; }
+		
+		//ResponseParameterAnnotation
+		public RuleCall getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0() { return cParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0; }
+		
+		//parameterType+=ResponseParameterType
+		public Assignment getParameterTypeAssignment_2() { return cParameterTypeAssignment_2; }
+		
+		//ResponseParameterType
+		public RuleCall getParameterTypeResponseParameterTypeParserRuleCall_2_0() { return cParameterTypeResponseParameterTypeParserRuleCall_2_0; }
+		
+		//parameterName+=ResponseParameterName
+		public Assignment getParameterNameAssignment_3() { return cParameterNameAssignment_3; }
+		
+		//ResponseParameterName
+		public RuleCall getParameterNameResponseParameterNameParserRuleCall_3_0() { return cParameterNameResponseParameterNameParserRuleCall_3_0; }
+	}
+	public class ResponseParameterAnnotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterAnnotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAnnotationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//ResponseParameterAnnotation:
+		//	'Annotation' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Annotation' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'Annotation'
+		public Keyword getAnnotationKeyword_0() { return cAnnotationKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class ResponseParameterTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//ResponseParameterType:
+		//	'Type' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Type' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'Type'
+		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class ResponseParameterNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//ResponseParameterName:
+		//	'Name' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Name' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'Name'
+		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class ExceptionHandlerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ExceptionHandler");
@@ -3404,7 +3770,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsExceptionProcessParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//ExceptionHandler:
-		//	'ExceptionHandler' name=ID elements+=ExceptionProcess+;
+		//	'ExceptionHandler' name=ID
+		//	elements+=ExceptionProcess+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ExceptionHandler' name=ID elements+=ExceptionProcess+
@@ -3463,7 +3830,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SpringEntity:
-		//	'SpringEntity' name=ID ':' '{' elements+=SpringTable+ elements+=NameNativeQuery* '}';
+		//	'SpringEntity' name=ID ':' '{'
+		//	elements+=SpringTable+ elements+=NameNativeQuery*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SpringEntity' name=ID ':' '{' elements+=SpringTable+ elements+=NameNativeQuery* '}'
@@ -3511,7 +3880,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsColumnsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
 		//SpringTable:
-		//	'SpringTable' name=ID elements+=SpringTableId elements+=Columns+;
+		//	'SpringTable' name=ID
+		//	elements+=SpringTableId
+		//	elements+=Columns+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SpringTable' name=ID elements+=SpringTableId elements+=Columns+
@@ -3541,23 +3912,28 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	public class SpringTableIdElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringTableId");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSpringTableIdAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSpringTableIdKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cSpringTableIdKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementsGeneratedValueParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//SpringTableId:
-		//	{SpringTableId} 'SpringTableId' elements+=GeneratedValue*;
+		//	'SpringTableId' name=ID
+		//	elements+=GeneratedValue*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SpringTableId} 'SpringTableId' elements+=GeneratedValue*
+		//'SpringTableId' name=ID elements+=GeneratedValue*
 		public Group getGroup() { return cGroup; }
 		
-		//{SpringTableId}
-		public Action getSpringTableIdAction_0() { return cSpringTableIdAction_0; }
-		
 		//'SpringTableId'
-		public Keyword getSpringTableIdKeyword_1() { return cSpringTableIdKeyword_1; }
+		public Keyword getSpringTableIdKeyword_0() { return cSpringTableIdKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//elements+=GeneratedValue*
 		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
@@ -3647,7 +4023,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//React:
-		//	'React' name=ID ':' '{' reacts+=ReactModules '}';
+		//	'React' name=ID ':' '{'
+		//	reacts+=ReactModules
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'React' name=ID ':' '{' reacts+=ReactModules '}'
@@ -3688,7 +4066,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ReactModules:
-		//	'ReactModules' ':' '{' reactmodules+=ReactSubModules '}';
+		//	'ReactModules' ':' '{'
+		//	reactmodules+=ReactSubModules
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactModules' ':' '{' reactmodules+=ReactSubModules '}'
@@ -3727,8 +4107,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cReactmodulesinfReactInfoParserRuleCall_4_0 = (RuleCall)cReactmodulesinfAssignment_4.eContents().get(0);
 		
 		//ReactSubModules:
-		//	reactmodulesconf+=ReactConfiguration reactmodulescomp+=ReactComponents reactmodulesact+=ReactActions
-		//	reactmoduleslib+=ReactLibraries reactmodulesinf+=ReactInfo;
+		//	reactmodulesconf+=ReactConfiguration
+		//	reactmodulescomp+=ReactComponents
+		//	reactmodulesact+=ReactActions
+		//	reactmoduleslib+=ReactLibraries
+		//	reactmodulesinf+=ReactInfo;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//reactmodulesconf+=ReactConfiguration reactmodulescomp+=ReactComponents reactmodulesact+=ReactActions
@@ -3778,7 +4161,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ReactConfiguration:
-		//	'ReactConfiguration' ':' '{' dependencies+=ReactDependencies configurations+=ReactConfigurations '}';
+		//	'ReactConfiguration' ':' '{'
+		//	dependencies+=ReactDependencies
+		//	configurations+=ReactConfigurations
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactConfiguration' ':' '{' dependencies+=ReactDependencies configurations+=ReactConfigurations '}'
@@ -3816,7 +4202,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cDependenciesReactDependenciesRulesParserRuleCall_1_0 = (RuleCall)cDependenciesAssignment_1.eContents().get(0);
 		
 		//ReactDependencies:
-		//	'DependenciesStruct' dependencies+=ReactDependenciesRules+;
+		//	'DependenciesStruct'
+		//	dependencies+=ReactDependenciesRules+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DependenciesStruct' dependencies+=ReactDependenciesRules+
@@ -3841,7 +4228,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cDependenciesReactDependenciesSubRulesParserRuleCall_2_0 = (RuleCall)cDependenciesAssignment_2.eContents().get(0);
 		
 		//ReactDependenciesRules:
-		//	'DependencyType' name=ID dependencies+=ReactDependenciesSubRules+;
+		//	'DependencyType' name=ID
+		//	dependencies+=ReactDependenciesSubRules+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DependencyType' name=ID dependencies+=ReactDependenciesSubRules+
@@ -3960,7 +4348,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cConfigurationsDOMConfigurationsParserRuleCall_2_0 = (RuleCall)cConfigurationsAssignment_2.eContents().get(0);
 		
 		//ReactConfigurations:
-		//	'ReactDOMConfigurations' name=ID configurations+=DOMConfigurations+;
+		//	'ReactDOMConfigurations' name=ID
+		//	configurations+=DOMConfigurations+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactDOMConfigurations' name=ID configurations+=DOMConfigurations+
@@ -4018,7 +4407,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRepositoriesConfKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
 		//DOMTypeConf:
-		//	'RoutingConf' | 'ServiceWorker' | 'HTMLStructure' | 'Manifest' | 'RepositoriesConf';
+		//	'RoutingConf' |
+		//	'ServiceWorker' |
+		//	'HTMLStructure' |
+		//	'Manifest' |
+		//	'RepositoriesConf';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'RoutingConf' | 'ServiceWorker' | 'HTMLStructure' | 'Manifest' | 'RepositoriesConf'
@@ -4054,7 +4447,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ReactComponents:
-		//	'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles
+		//	'ReactComponents' ':' '{'
+		//	componentslogic+=ComponentsLogic
+		//	componentsui+=ComponentsUI
+		//	componentstyle+=ComponentsStyles
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4102,7 +4498,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cLogiccomponentsLogicContentParserRuleCall_2_0 = (RuleCall)cLogiccomponentsAssignment_2.eContents().get(0);
 		
 		//ComponentsLogic:
-		//	'LogicComponents' name=ID logiccomponents+=LogicContent;
+		//	'LogicComponents' name=ID
+		//	logiccomponents+=LogicContent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LogicComponents' name=ID logiccomponents+=LogicContent
@@ -4133,7 +4530,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cLogiccomponentsLogicStructureParserRuleCall_2_0 = (RuleCall)cLogiccomponentsAssignment_2.eContents().get(0);
 		
 		//LogicContent:
-		//	'RoutingComponents' name=ID logiccomponents+=LogicStructure;
+		//	'RoutingComponents' name=ID
+		//	logiccomponents+=LogicStructure;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'RoutingComponents' name=ID logiccomponents+=LogicStructure
@@ -4167,7 +4565,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cIndexCompNameIDTerminalRuleCall_4_0 = (RuleCall)cIndexCompNameAssignment_4.eContents().get(0);
 		
 		//LogicStructure:
-		//	'AppComponent' appComName=ID logiccomponents+=ComponentClass 'IndexComponent' indexCompName=ID;
+		//	'AppComponent' appComName=ID
+		//	logiccomponents+=ComponentClass
+		//	'IndexComponent' indexCompName=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AppComponent' appComName=ID logiccomponents+=ComponentClass 'IndexComponent' indexCompName=ID
@@ -4207,7 +4607,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cUicomponentsUIContentParserRuleCall_2_0 = (RuleCall)cUicomponentsAssignment_2.eContents().get(0);
 		
 		//ComponentsUI:
-		//	'UIComponents' name=ID uicomponents+=UIContent;
+		//	'UIComponents' name=ID
+		//	uicomponents+=UIContent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UIComponents' name=ID uicomponents+=UIContent
@@ -4237,7 +4638,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cSubcomponentcontentSubcomponentContParserRuleCall_1_0 = (RuleCall)cSubcomponentcontentAssignment_1.eContents().get(0);
 		
 		//UIContent:
-		//	componentcontent+=ViewComponentCont+ subcomponentcontent+=SubcomponentCont+;
+		//	componentcontent+=ViewComponentCont+
+		//	subcomponentcontent+=SubcomponentCont+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//componentcontent+=ViewComponentCont+ subcomponentcontent+=SubcomponentCont+
@@ -4265,7 +4667,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cUicontentComponentClassParserRuleCall_2_0 = (RuleCall)cUicontentAssignment_2.eContents().get(0);
 		
 		//ViewComponentCont:
-		//	'ViewComponent' nameView=ID uicontent+=ComponentClass;
+		//	'ViewComponent' nameView=ID
+		//	uicontent+=ComponentClass;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ViewComponent' nameView=ID uicontent+=ComponentClass
@@ -4296,7 +4699,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cUicontentComponentClassParserRuleCall_2_0 = (RuleCall)cUicontentAssignment_2.eContents().get(0);
 		
 		//SubcomponentCont:
-		//	'Subcomponents' nameSubComp=ID uicontent+=ComponentClass;
+		//	'Subcomponents' nameSubComp=ID
+		//	uicontent+=ComponentClass;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Subcomponents' nameSubComp=ID uicontent+=ComponentClass
@@ -4328,7 +4732,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cComponentclasspropPropsParserRuleCall_2_0 = (RuleCall)cComponentclasspropAssignment_2.eContents().get(0);
 		
 		//ComponentClass:
-		//	componentclassimp+=ReactImports componentclassfunc+=ReactFunctions componentclassprop+=Props;
+		//	componentclassimp+=ReactImports
+		//	componentclassfunc+=ReactFunctions
+		//	componentclassprop+=Props;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//componentclassimp+=ReactImports componentclassfunc+=ReactFunctions componentclassprop+=Props
@@ -4411,7 +4817,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cRenderclassReactRenderParserRuleCall_3_0 = (RuleCall)cRenderclassAssignment_3.eContents().get(0);
 		
 		//ReactFunctions:
-		//	reactconstructors+=ReactConstructor lifecycleclass+=ReactLifeCycle* reactcorefuncs+=ReactCoreFunctions*
+		//	reactconstructors+=ReactConstructor
+		//	lifecycleclass+=ReactLifeCycle*
+		//	reactcorefuncs+=ReactCoreFunctions*
 		//	renderclass+=ReactRender;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4453,7 +4861,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0 = (RuleCall)cComponentfuncclassAssignment_2.eContents().get(0);
 		
 		//ReactConstructor:
-		//	'Constructor' componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*;
+		//	'Constructor'
+		//	componentstateclass+=State
+		//	componentfuncclass+=CoreFunctionsDeclaration*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Constructor' componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*
@@ -4483,7 +4893,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cStatecontentsStateContentParserRuleCall_2_0 = (RuleCall)cStatecontentsAssignment_2.eContents().get(0);
 		
 		//State:
-		//	{State} 'State' statecontents+=StateContent+;
+		//	{State} 'State'
+		//	statecontents+=StateContent+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{State} 'State' statecontents+=StateContent+
@@ -4510,7 +4921,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cComponentdatatypDataTypeParserRuleCall_1_0 = (RuleCall)cComponentdatatypAssignment_1.eContents().get(0);
 		
 		//StateContent:
-		//	stateName=ID componentdatatyp+=DataType;
+		//	stateName=ID
+		//	componentdatatyp+=DataType;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//stateName=ID componentdatatyp+=DataType
@@ -4539,7 +4951,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cBooleanKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
 		//DataType:
-		//	'String' | 'Array' | 'Object' | 'Number' | 'null' | 'Boolean';
+		//	'String' |
+		//	'Array' |
+		//	'Object' |
+		//	'Number' |
+		//	'null' |
+		//	'Boolean';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'String' | 'Array' | 'Object' | 'Number' | 'null' | 'Boolean'
@@ -4664,7 +5081,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cPropscontsPropsTypeParserRuleCall_2_0 = (RuleCall)cPropscontsAssignment_2.eContents().get(0);
 		
 		//Props:
-		//	{Props} 'Props' propsconts+=PropsType*;
+		//	{Props} 'Props'
+		//	propsconts+=PropsType*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Props} 'Props' propsconts+=PropsType*
@@ -4691,7 +5109,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cPropsdatasDataTypeParserRuleCall_1_0 = (RuleCall)cPropsdatasAssignment_1.eContents().get(0);
 		
 		//PropsType:
-		//	nameProps=ID propsdatas+=DataType;
+		//	nameProps=ID
+		//	propsdatas+=DataType;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//nameProps=ID propsdatas+=DataType
@@ -4765,7 +5184,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cStylecontentStylePropertiesParserRuleCall_2_0 = (RuleCall)cStylecontentAssignment_2.eContents().get(0);
 		
 		//ComponentsStylesContent:
-		//	'Style' nameStyle=ID stylecontent+=StyleProperties;
+		//	'Style' nameStyle=ID
+		//	stylecontent+=StyleProperties;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Style' nameStyle=ID stylecontent+=StyleProperties
@@ -4818,7 +5238,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cPropsContentKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//StylePropertiesContent:
-		//	'prop_name' propName=ID "propsContent"+;
+		//	'prop_name' propName=ID
+		//	"propsContent"+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'prop_name' propName=ID "propsContent"+
@@ -4847,7 +5268,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ReactActions:
-		//	'ReactActions' ':' '{' reactactcontent+=ReactActionsContent '}';
+		//	'ReactActions' ':' '{'
+		//	reactactcontent+=ReactActionsContent
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactActions' ':' '{' reactactcontent+=ReactActionsContent '}'
@@ -4896,7 +5319,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cReactservcontentReactServiceContentParserRuleCall_2_0 = (RuleCall)cReactservcontentAssignment_2.eContents().get(0);
 		
 		//ReactServicesType:
-		//	'ServiceType' name=ID reactservcontent+=ReactServiceContent;
+		//	'ServiceType' name=ID
+		//	reactservcontent+=ReactServiceContent;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ServiceType' name=ID reactservcontent+=ReactServiceContent
@@ -4927,10 +5351,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cReactservrequestReactServiceContRequestParserRuleCall_2_0 = (RuleCall)cReactservrequestAssignment_2.eContents().get(0);
 		
 		//ReactServiceContent:
-		//	('functions' functName=ID reactservrequest+=ReactServiceContRequest)*;
+		//	'functions' functName=ID
+		//	reactservrequest+=ReactServiceContRequest*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('functions' functName=ID reactservrequest+=ReactServiceContRequest)*
+		//'functions' functName=ID reactservrequest+=ReactServiceContRequest*
 		public Group getGroup() { return cGroup; }
 		
 		//'functions'
@@ -4942,7 +5367,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getFunctNameIDTerminalRuleCall_1_0() { return cFunctNameIDTerminalRuleCall_1_0; }
 		
-		//reactservrequest+=ReactServiceContRequest
+		//reactservrequest+=ReactServiceContRequest*
 		public Assignment getReactservrequestAssignment_2() { return cReactservrequestAssignment_2; }
 		
 		//ReactServiceContRequest
@@ -4956,7 +5381,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cReactservrequestpropsReactServiceRequestPropsParserRuleCall_1_0 = (RuleCall)cReactservrequestpropsAssignment_1.eContents().get(0);
 		
 		//ReactServiceContRequest:
-		//	'return' reactservrequestprops+=ReactServiceRequestProps+;
+		//	'return'
+		//	reactservrequestprops+=ReactServiceRequestProps+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'return' reactservrequestprops+=ReactServiceRequestProps+
@@ -5010,7 +5436,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cServicesrelsReactsRelationServParserRuleCall_1_0 = (RuleCall)cServicesrelsAssignment_1.eContents().get(0);
 		
 		//ReactServicesRelation:
-		//	'ServicesRelations' servicesrels+=ReactsRelationServ+;
+		//	'ServicesRelations'
+		//	servicesrels+=ReactsRelationServ+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ServicesRelations' servicesrels+=ReactsRelationServ+
@@ -5063,7 +5490,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cAuxWrapperKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//ReactRequest:
-		//	'Wrapper' | 'AuxWrapper';
+		//	'Wrapper' |
+		//	'AuxWrapper';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Wrapper' | 'AuxWrapper'
@@ -5086,7 +5514,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ReactLibraries:
-		//	'ReactLibraries' ':' '{' reactlibraries+=ReactLibrary+ '}';
+		//	'ReactLibraries' ':' '{'
+		//	reactlibraries+=ReactLibrary+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactLibraries' ':' '{' reactlibraries+=ReactLibrary+ '}'
@@ -5148,8 +5578,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cConfigurationLibraryKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
 		//ReactLibraryType:
-		//	'ReactDesign' | 'ReactRouting' | 'ComponentManagement' |
-		//	'StoreManagement' | 'ReactDeployment' | 'ConfigurationLibrary';
+		//	'ReactDesign' |
+		//	'ReactRouting' |
+		//	'ComponentManagement' |
+		//	'StoreManagement' |
+		//	'ReactDeployment' |
+		//	'ConfigurationLibrary';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactDesign' | 'ReactRouting' | 'ComponentManagement' | 'StoreManagement' | 'ReactDeployment' | 'ConfigurationLibrary'
@@ -5184,7 +5618,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ReactInfo:
-		//	'ReactInformation' ':' '{' reactinformation+=ReactInformation+ '}';
+		//	'ReactInformation' ':' '{'
+		//	reactinformation+=ReactInformation+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactInformation' ':' '{' reactinformation+=ReactInformation+ '}'
@@ -5242,7 +5678,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cReactAditionalInfoKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//ReactInformationType:
-		//	'ReactReadme' | 'ReactAditionalInfo';
+		//	'ReactReadme' |
+		//	'ReactAditionalInfo';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ReactReadme' | 'ReactAditionalInfo'
@@ -5267,7 +5704,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//PostgreSQL:
-		//	'PostgreSQL' name=ID ':' '{' elements+=Cluster '}';
+		//	'PostgreSQL' name=ID ':' '{'
+		//	elements+=Cluster
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PostgreSQL' name=ID ':' '{' elements+=Cluster '}'
@@ -5307,7 +5746,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsPostgresUserParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//Cluster:
-		//	'Database' elements+=Database elements+=PostgresUser+;
+		//	'Database'
+		//	elements+=Database
+		//	elements+=PostgresUser+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Database' elements+=Database elements+=PostgresUser+
@@ -5338,7 +5779,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsSchemaParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//Database:
-		//	'Schema' name=ID elements+=Schema;
+		//	'Schema' name=ID
+		//	elements+=Schema;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Schema' name=ID elements+=Schema
@@ -5374,7 +5816,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsFunctionParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		
 		//Schema:
-		//	elements+=Index_p* elements+=ViewSchema* elements+=Table_p+ elements+=Trigger* elements+=Function;
+		//	elements+=Index_p*
+		//	elements+=ViewSchema*
+		//	elements+=Table_p+
+		//	elements+=Trigger*
+		//	elements+=Function;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//elements+=Index_p* elements+=ViewSchema* elements+=Table_p+ elements+=Trigger* elements+=Function
@@ -5473,7 +5919,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Table_p:
-		//	'Table_p' name=ID ':' '{' elements+=ForeignKey+ elements+=Column+ elements+=Row+ '}';
+		//	'Table_p' name=ID ':' '{'
+		//	elements+=ForeignKey+
+		//	elements+=Column+
+		//	elements+=Row+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Table_p' name=ID ':' '{' elements+=ForeignKey+ elements+=Column+ elements+=Row+ '}'
@@ -5525,7 +5975,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsForeignKeyRefParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//ForeignKey:
-		//	'ForeignKey' elements+=ForeignKey_n elements+=ForeignKeyRef;
+		//	'ForeignKey'
+		//	elements+=ForeignKey_n
+		//	elements+=ForeignKeyRef;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ForeignKey' elements+=ForeignKey_n elements+=ForeignKeyRef
@@ -5578,7 +6030,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsRefTable_pParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//ForeignKeyRef:
-		//	{ForeignKeyRef} 'ForeignKeyRef' elements+=RefTable_p*;
+		//	{ForeignKeyRef} 'ForeignKeyRef'
+		//	elements+=RefTable_p*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ForeignKeyRef} 'ForeignKeyRef' elements+=RefTable_p*
@@ -5631,7 +6084,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsConstraintParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
 		//Column:
-		//	'Column' name=ID elements+=DatatypeDB elements+=Constraint*;
+		//	'Column' name=ID
+		//	elements+=DatatypeDB
+		//	elements+=Constraint*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Column' name=ID elements+=DatatypeDB elements+=Constraint*
@@ -5714,7 +6169,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsPolicyParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//Row:
-		//	'Row' name=ID elements+=Policy*;
+		//	'Row' name=ID
+		//	elements+=Policy*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Row' name=ID elements+=Policy*
@@ -5819,7 +6275,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//PostgresUser:
-		//	'PostgresUser' name=ID ':' '{' elements+=Privilege elements+=Query* '}';
+		//	'PostgresUser' name=ID ':' '{'
+		//	elements+=Privilege
+		//	elements+=Query*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PostgresUser' name=ID ':' '{' elements+=Privilege elements+=Query* '}'
@@ -5886,7 +6345,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsClauseParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//Query:
-		//	'Query' elements+=Clause;
+		//	'Query'
+		//	elements+=Clause;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Query' elements+=Clause
@@ -5939,7 +6399,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//AmazonWebServices:
-		//	'AmazonWebServices' name=ID ':' '{' elements+=AmazonSimpleStorageService elements+=AmazonElasticComputeCloud '}';
+		//	'AmazonWebServices' name=ID ':' '{'
+		//	elements+=AmazonSimpleStorageService
+		//	elements+=AmazonElasticComputeCloud
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AmazonWebServices' name=ID ':' '{' elements+=AmazonSimpleStorageService elements+=AmazonElasticComputeCloud '}'
@@ -5988,7 +6451,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//AmazonSimpleStorageService:
-		//	'AmazonSimpleStorageService' ':' '{' elements+=BatchOperation* elements+=Bucket '}';
+		//	'AmazonSimpleStorageService' ':' '{'
+		//	elements+=BatchOperation*
+		//	elements+=Bucket
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AmazonSimpleStorageService' ':' '{' elements+=BatchOperation* elements+=Bucket '}'
@@ -6055,7 +6521,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsAmazonFileParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		
 		//Bucket:
-		//	'Bucket' name=ID elements+=BucketAccess elements+=AmazonFolder* elements+=AmazonFile+;
+		//	'Bucket' name=ID
+		//	elements+=BucketAccess
+		//	elements+=AmazonFolder*
+		//	elements+=AmazonFile+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Bucket' name=ID elements+=BucketAccess elements+=AmazonFolder* elements+=AmazonFile+
@@ -6103,8 +6572,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsOnlyAuthorizedParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
 		//BucketAccess:
-		//	'BucketAccess' elements+=PublicAccess | elements+=ObjectsPublic | elements+=BucketObjectsNotPublic |
-		//	elements+=OnlyAuthorized;
+		//	'BucketAccess'
+		//	elements+=PublicAccess | elements+=ObjectsPublic | elements+=BucketObjectsNotPublic | elements+=OnlyAuthorized;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'BucketAccess' elements+=PublicAccess | elements+=ObjectsPublic | elements+=BucketObjectsNotPublic |
@@ -6264,7 +6733,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsMetadataParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//AmazonFile:
-		//	'AmazonFile' elements+=Metadata+;
+		//	'AmazonFile'
+		//	elements+=Metadata+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AmazonFile' elements+=Metadata+
@@ -6405,10 +6875,20 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final SearchCriteriaElements pSearchCriteria;
 	private final AutowiredElements pAutowired;
 	private final AutowiredTypeElements pAutowiredType;
+	private final ResponseEntityElements pResponseEntity;
+	private final MappingTypeElements pMappingType;
 	private final RequestMappingElements pRequestMapping;
-	private final RequestPartElements pRequestPart;
-	private final RequestMappingTypeElements pRequestMappingType;
-	private final RequestMappingTypeConfElements pRequestMappingTypeConf;
+	private final RequestMappingValueElements pRequestMappingValue;
+	private final RequestMappingMethodElements pRequestMappingMethod;
+	private final RequestMappingProducesElements pRequestMappingProduces;
+	private final PostMappingElements pPostMapping;
+	private final GetMappingElements pGetMapping;
+	private final PutMappingElements pPutMapping;
+	private final DeleteMappingElements pDeleteMapping;
+	private final ResponseParameterElements pResponseParameter;
+	private final ResponseParameterAnnotationElements pResponseParameterAnnotation;
+	private final ResponseParameterTypeElements pResponseParameterType;
+	private final ResponseParameterNameElements pResponseParameterName;
 	private final ExceptionHandlerElements pExceptionHandler;
 	private final ExceptionProcessElements pExceptionProcess;
 	private final SpringEntityElements pSpringEntity;
@@ -6594,10 +7074,20 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pSearchCriteria = new SearchCriteriaElements();
 		this.pAutowired = new AutowiredElements();
 		this.pAutowiredType = new AutowiredTypeElements();
+		this.pResponseEntity = new ResponseEntityElements();
+		this.pMappingType = new MappingTypeElements();
 		this.pRequestMapping = new RequestMappingElements();
-		this.pRequestPart = new RequestPartElements();
-		this.pRequestMappingType = new RequestMappingTypeElements();
-		this.pRequestMappingTypeConf = new RequestMappingTypeConfElements();
+		this.pRequestMappingValue = new RequestMappingValueElements();
+		this.pRequestMappingMethod = new RequestMappingMethodElements();
+		this.pRequestMappingProduces = new RequestMappingProducesElements();
+		this.pPostMapping = new PostMappingElements();
+		this.pGetMapping = new GetMappingElements();
+		this.pPutMapping = new PutMappingElements();
+		this.pDeleteMapping = new DeleteMappingElements();
+		this.pResponseParameter = new ResponseParameterElements();
+		this.pResponseParameterAnnotation = new ResponseParameterAnnotationElements();
+		this.pResponseParameterType = new ResponseParameterTypeElements();
+		this.pResponseParameterName = new ResponseParameterNameElements();
 		this.pExceptionHandler = new ExceptionHandlerElements();
 		this.pExceptionProcess = new ExceptionProcessElements();
 		this.pSpringEntity = new SpringEntityElements();
@@ -6724,9 +7214,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	
-	////System
 	//Model:
-	//	'System' ':' '{' elements+=Domain elements+=Architecture elements+=Technology '}';
+	//	'System' ':' '{'
+	//	elements+=Domain
+	//	elements+=Architecture
+	//	elements+=Technology '}';
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -6735,9 +7227,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getModelAccess().getRule();
 	}
 	
-	//// Domain
 	//Domain:
-	//	'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality exceptionsdomain+=ExceptionsDomain '}';
+	//	'Domain' name=ID ':' '{'
+	//	entitydomain+=Entity
+	//	entityfuncs+=Functionality
+	//	exceptionsdomain+=ExceptionsDomain
+	//	'}';
 	public DomainElements getDomainAccess() {
 		return pDomain;
 	}
@@ -6746,9 +7241,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getDomainAccess().getRule();
 	}
 	
-	//// Domain - Entities
 	//Entity:
-	//	'Entities' ':' '{' elements+=Entities+ '}';
+	//	'Entities' ':' '{'
+	//	elements+=Entities+
+	//	'}';
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}
@@ -6757,11 +7253,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getEntityAccess().getRule();
 	}
 	
-	//Entities //(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
-	//:
-	//	'PhotoEntity' ':' name=ID atributePhoto+=AtributePhoto+
-	//	| 'AlbumEntity' ':' name=ID atributeAlbum+=AtributeAlbum+
-	//	| 'UserEntity' ':' name=ID atributeUserDomain+=AtributeUserDomain+;
+	//Entities:
+	//	'PhotoEntity' ':' name=ID
+	//	atributePhoto+=AtributePhoto+ |
+	//	'AlbumEntity' ':' name=ID
+	//	atributeAlbum+=AtributeAlbum+ |
+	//	'UserEntity' ':' name=ID
+	//	atributeUserDomain+=AtributeUserDomain+;
 	public EntitiesElements getEntitiesAccess() {
 		return pEntities;
 	}
@@ -6771,10 +7269,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AtributePhoto:
-	//	'idPhoto' name=ID
-	//	| 'namePhoto' name=ID
-	//	| 'urlPhoto' name=ID
-	//	| 'albumIdPhoto' name=ID;
+	//	'idPhoto' name=ID |
+	//	'namePhoto' name=ID |
+	//	'urlPhoto' name=ID |
+	//	'albumIdPhoto' name=ID;
 	public AtributePhotoElements getAtributePhotoAccess() {
 		return pAtributePhoto;
 	}
@@ -6784,9 +7282,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AtributeAlbum:
-	//	'idAlbum' name=ID
-	//	| 'nameAlbum' name=ID
-	//	| 'userIdAlbum' name=ID;
+	//	'idAlbum' name=ID |
+	//	'nameAlbum' name=ID |
+	//	'userIdAlbum' name=ID;
 	public AtributeAlbumElements getAtributeAlbumAccess() {
 		return pAtributeAlbum;
 	}
@@ -6796,13 +7294,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AtributeUserDomain:
-	//	'idUser' name=ID
-	//	| 'userNameUser' name=ID
-	//	| 'firstNameUser' name=ID
-	//	| 'lastNameUser' name=ID
-	//	| 'profileDescriptionUser' name=ID
-	//	| 'passwordUser' name=ID
-	//	| 'emailUser' name=ID;
+	//	'idUser' name=ID |
+	//	'userNameUser' name=ID |
+	//	'firstNameUser' name=ID |
+	//	'lastNameUser' name=ID |
+	//	'profileDescriptionUser' name=ID |
+	//	'passwordUser' name=ID |
+	//	'emailUser' name=ID;
 	public AtributeUserDomainElements getAtributeUserDomainAccess() {
 		return pAtributeUserDomain;
 	}
@@ -6811,9 +7309,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getAtributeUserDomainAccess().getRule();
 	}
 	
-	//// Domain - Functionalities
 	//Functionality:
-	//	'Functionalities' ':' '{' elements+=Functionalities '}';
+	//	'Functionalities' ':' '{'
+	//	elements+=Functionalities '}';
 	public FunctionalityElements getFunctionalityAccess() {
 		return pFunctionality;
 	}
@@ -6837,7 +7335,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ProfileManagement:
-	//	'ProfileManagement' ':' items+=ProfileManagementFunctions;
+	//	'ProfileManagement' ':'
+	//	items+=ProfileManagementFunctions;
 	public ProfileManagementElements getProfileManagementAccess() {
 		return pProfileManagement;
 	}
@@ -6847,7 +7346,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ProfileManagementFunctions:
-	//	'ViewProfilePhoto' viewprofileName=ID 'EditProfileInfo' editProfileName=ID;
+	//	'ViewProfilePhoto' viewprofileName=ID
+	//	'EditProfileInfo' editProfileName=ID;
 	public ProfileManagementFunctionsElements getProfileManagementFunctionsAccess() {
 		return pProfileManagementFunctions;
 	}
@@ -6857,7 +7357,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AppAccess:
-	//	'AppAccess' ':' items+=AppAccessFunctions;
+	//	'AppAccess' ':'
+	//	items+=AppAccessFunctions;
 	public AppAccessElements getAppAccessAccess() {
 		return pAppAccess;
 	}
@@ -6867,7 +7368,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AppAccessFunctions:
-	//	'Login' loginName=ID 'Register' registerName=ID;
+	//	'Login' loginName=ID
+	//	'Register' registerName=ID;
 	public AppAccessFunctionsElements getAppAccessFunctionsAccess() {
 		return pAppAccessFunctions;
 	}
@@ -6877,7 +7379,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AlbumManagement:
-	//	'AlbumManagement' ':' items+=AlbumManagementFunctions;
+	//	'AlbumManagement' ':'
+	//	items+=AlbumManagementFunctions;
 	public AlbumManagementElements getAlbumManagementAccess() {
 		return pAlbumManagement;
 	}
@@ -6887,7 +7390,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AlbumManagementFunctions:
-	//	'CreateAlbum' createdAlbName=ID 'SelectAlbum' selectAlbName=ID;
+	//	'CreateAlbum' createdAlbName=ID
+	//	'SelectAlbum' selectAlbName=ID;
 	public AlbumManagementFunctionsElements getAlbumManagementFunctionsAccess() {
 		return pAlbumManagementFunctions;
 	}
@@ -6897,7 +7401,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PhotoActions:
-	//	'PhotoActions' ':' items+=PhotoActionsFunctions;
+	//	'PhotoActions' ':'
+	//	items+=PhotoActionsFunctions;
 	public PhotoActionsElements getPhotoActionsAccess() {
 		return pPhotoActions;
 	}
@@ -6907,7 +7412,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PhotoActionsFunctions:
-	//	'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID;
+	//	'ViewAllPhotos' nameGenerico=ID
+	//	'ViewExtendedPhoto' namePhoto=ID
+	//	'LoadPhoto' nameLoad=ID;
 	public PhotoActionsFunctionsElements getPhotoActionsFunctionsAccess() {
 		return pPhotoActionsFunctions;
 	}
@@ -6917,7 +7424,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LandingActions:
-	//	'LandingActions' ':' items+=LandingFunctions;
+	//	'LandingActions' ':'
+	//	items+=LandingFunctions;
 	public LandingActionsElements getLandingActionsAccess() {
 		return pLandingActions;
 	}
@@ -6927,7 +7435,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LandingFunctions:
-	//	'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID;
+	//	'ViewCarousel' nameCarouselName=ID
+	//	'PassPhoto' passPhotoName=ID;
 	public LandingFunctionsElements getLandingFunctionsAccess() {
 		return pLandingFunctions;
 	}
@@ -6936,9 +7445,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getLandingFunctionsAccess().getRule();
 	}
 	
-	////Domain - Exceptions
 	//ExceptionsDomain:
-	//	'DomainExceptions' ':' '{' exceptionsType+=ExceptionsType+ '}';
+	//	'DomainExceptions' ':' '{'
+	//	exceptionsType+=ExceptionsType+
+	//	'}';
 	public ExceptionsDomainElements getExceptionsDomainAccess() {
 		return pExceptionsDomain;
 	}
@@ -6948,9 +7458,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ExceptionsType:
-	//	'PhotoException' ':' photoException+=PhotoException+
-	//	| 'AlbumException' ':' albumException+=AlbumException+
-	//	| 'UserException' ':' userException+=UserException+;
+	//	'PhotoException' ':' photoException+=PhotoException+ |
+	//	'AlbumException' ':' albumException+=AlbumException+ |
+	//	'UserException' ':' userException+=UserException+;
 	public ExceptionsTypeElements getExceptionsTypeAccess() {
 		return pExceptionsType;
 	}
@@ -6960,10 +7470,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PhotoException:
-	//	'PhotoNotFound' name=ID
-	//	| 'PhotoUploadError' name=ID
-	//	| 'PhotoNotCreated' name=ID
-	//	| 'PhotoNotDeleted' name=ID;
+	//	'PhotoNotFound' name=ID |
+	//	'PhotoUploadError' name=ID |
+	//	'PhotoNotCreated' name=ID |
+	//	'PhotoNotDeleted' name=ID;
 	public PhotoExceptionElements getPhotoExceptionAccess() {
 		return pPhotoException;
 	}
@@ -6973,12 +7483,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AlbumException:
-	//	'AlbumNotFound' name=ID
-	//	| 'PhotosFromAlbumNotFound' name=ID
-	//	| 'AlbumHasNoPhotos' name=ID
-	//	| 'MissingParametersForNewAlbum' name=ID
-	//	| 'UserIdIsNotNumber' name=ID
-	//	| 'AlbumNotCreated' name=ID;
+	//	'AlbumNotFound' name=ID |
+	//	'PhotosFromAlbumNotFound' name=ID |
+	//	'AlbumHasNoPhotos' name=ID |
+	//	'MissingParametersForNewAlbum' name=ID |
+	//	'UserIdIsNotNumber' name=ID |
+	//	'AlbumNotCreated' name=ID;
 	public AlbumExceptionElements getAlbumExceptionAccess() {
 		return pAlbumException;
 	}
@@ -6988,19 +7498,19 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//UserException:
-	//	'UserNotFound' name=ID
-	//	| 'AlbumsFromUserNotFound' name=ID
-	//	| 'UserHasNoAlbums' name=ID
-	//	| 'UserHasNoPhotos' name=ID
-	//	| 'MissingParametersForNewUser' name=ID
-	//	| 'UserNotCreated' name=ID
-	//	| 'AlbumNotCreatedForNewUser' name=ID
-	//	| 'MissingParametersForEditUser' name=ID
-	//	| 'WrongLoginInfo' name=ID
-	//	| 'MissingParametersForLogin' name=ID
-	//	| 'UserIdIsNotNumber' name=ID
-	//	| 'UserToEditDoesNotExist' name=ID
-	//	| 'UserNotEdited' name=ID;
+	//	'UserNotFound' name=ID |
+	//	'AlbumsFromUserNotFound' name=ID |
+	//	'UserHasNoAlbums' name=ID |
+	//	'UserHasNoPhotos' name=ID |
+	//	'MissingParametersForNewUser' name=ID |
+	//	'UserNotCreated' name=ID |
+	//	'AlbumNotCreatedForNewUser' name=ID |
+	//	'MissingParametersForEditUser' name=ID |
+	//	'WrongLoginInfo' name=ID |
+	//	'MissingParametersForLogin' name=ID |
+	//	'UserIdIsNotNumber' name=ID |
+	//	'UserToEditDoesNotExist' name=ID |
+	//	'UserNotEdited' name=ID;
 	public UserExceptionElements getUserExceptionAccess() {
 		return pUserException;
 	}
@@ -7009,9 +7519,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getUserExceptionAccess().getRule();
 	}
 	
-	////Architecture
 	//Architecture:
-	//	'Architecture:' '{' elements+=NTiers+ elements+=NTiersConnections+ '}';
+	//	'Architecture:' '{'
+	//	elements+=NTiers+
+	//	elements+=NTiersConnections+
+	//	'}';
 	public ArchitectureElements getArchitectureAccess() {
 		return pArchitecture;
 	}
@@ -7021,7 +7533,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NTiers:
-	//	'Layers' elements+=Layer+ 'LayersRelations' elements+=LayerRelations+ 'ArchitectureComponents'
+	//	'Layers'
+	//	elements+=Layer+
+	//	'LayersRelations'
+	//	elements+=LayerRelations+
+	//	'ArchitectureComponents'
 	//	elements+=ArchitectureComponents+;
 	public NTiersElements getNTiersAccess() {
 		return pNTiers;
@@ -7032,7 +7548,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Layer:
-	//	layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer;
+	//	layer+=PresentationLayer
+	//	layer+=BusinessLogicLayer
+	//	layer+=DataPersistenceLayer;
 	public LayerElements getLayerAccess() {
 		return pLayer;
 	}
@@ -7042,7 +7560,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PresentationLayer:
-	//	'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure;
+	//	'PresentationLayer'
+	//	presentationLayer+=PresentationContent
+	//	presentationLayer+=SegmentStructure;
 	public PresentationLayerElements getPresentationLayerAccess() {
 		return pPresentationLayer;
 	}
@@ -7052,7 +7572,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PresentationContent:
-	//	'PresentationSegments' elements+=PresentationSegments;
+	//	'PresentationSegments'
+	//	elements+=PresentationSegments;
 	public PresentationContentElements getPresentationContentAccess() {
 		return pPresentationContent;
 	}
@@ -7062,8 +7583,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PresentationSegments:
-	//	'PresentationView' presentationSName=ID 'PresentationComponent' presentationCName=ID 'PresentationAction'
-	//	presentationAName=ID;
+	//	'PresentationView' presentationSName=ID
+	//	'PresentationComponent' presentationCName=ID
+	//	'PresentationAction' presentationAName=ID;
 	public PresentationSegmentsElements getPresentationSegmentsAccess() {
 		return pPresentationSegments;
 	}
@@ -7073,7 +7595,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BusinessLogicLayer:
-	//	'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure;
+	//	'BusinessLogicLayer'
+	//	businessLogicLayer+=BusinessLogicContent
+	//	businessLogicLayer+=SegmentStructure;
 	public BusinessLogicLayerElements getBusinessLogicLayerAccess() {
 		return pBusinessLogicLayer;
 	}
@@ -7083,7 +7607,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BusinessLogicContent:
-	//	'BusinessLogicSegments' businessLogicSegments+=BusinessLogicSegments+;
+	//	'BusinessLogicSegments'
+	//	businessLogicSegments+=BusinessLogicSegments+;
 	public BusinessLogicContentElements getBusinessLogicContentAccess() {
 		return pBusinessLogicContent;
 	}
@@ -7093,11 +7618,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BusinessLogicSegments:
-	//	'ControllerSegment' name=ID controllerSegmentElement+=ControllerSegmentElement+
-	//	| 'ModelSegment' name=ID
-	//	| 'RepositorySegment' name=ID
-	//	| 'SecuritySegment' name=ID
-	//	| 'SpecificationSegment' name=ID specificationSegmentElement+=SpecificationSegmentElement+;
+	//	'ControllerSegment' name=ID
+	//	controllerSegmentElement+=ControllerSegmentElement+ |
+	//	'ModelSegment' name=ID |
+	//	'RepositorySegment' name=ID |
+	//	'SecuritySegment' name=ID |
+	//	'SpecificationSegment' name=ID
+	//	specificationSegmentElement+=SpecificationSegmentElement+;
 	public BusinessLogicSegmentsElements getBusinessLogicSegmentsAccess() {
 		return pBusinessLogicSegments;
 	}
@@ -7107,8 +7634,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ControllerSegmentElement:
-	//	'AmazonSegment' name=ID
-	//	| 'ExceptionSegment' name=ID;
+	//	'AmazonSegment' name=ID |
+	//	'ExceptionSegment' name=ID;
 	public ControllerSegmentElementElements getControllerSegmentElementAccess() {
 		return pControllerSegmentElement;
 	}
@@ -7128,7 +7655,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DataPersistenceLayer:
-	//	'DataPersistenceLayer' elements+=DataPersistenceContent;
+	//	'DataPersistenceLayer'
+	//	elements+=DataPersistenceContent;
 	public DataPersistenceLayerElements getDataPersistenceLayerAccess() {
 		return pDataPersistenceLayer;
 	}
@@ -7138,7 +7666,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DataPersistenceContent:
-	//	'DataPersistenceSegments' elements+=DataPersistenceSegments;
+	//	'DataPersistenceSegments'
+	//	elements+=DataPersistenceSegments;
 	public DataPersistenceContentElements getDataPersistenceContentAccess() {
 		return pDataPersistenceContent;
 	}
@@ -7148,7 +7677,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DataPersistenceSegments:
-	//	'PostgreSLQSegment' postSName=ID 'AmazonS3Storage' amazonSName=ID;
+	//	'PostgreSLQSegment' postSName=ID
+	//	'AmazonS3Storage' amazonSName=ID;
 	public DataPersistenceSegmentsElements getDataPersistenceSegmentsAccess() {
 		return pDataPersistenceSegments;
 	}
@@ -7158,7 +7688,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SegmentStructure:
-	//	'SegmentStructure' elements+=SegmentStructureContent;
+	//	'SegmentStructure'
+	//	elements+=SegmentStructureContent;
 	public SegmentStructureElements getSegmentStructureAccess() {
 		return pSegmentStructure;
 	}
@@ -7168,7 +7699,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SegmentStructureContent:
-	//	'Directories' name=ID elements+=DirectoryContent+;
+	//	'Directories' name=ID
+	//	elements+=DirectoryContent+;
 	public SegmentStructureContentElements getSegmentStructureContentAccess() {
 		return pSegmentStructureContent;
 	}
@@ -7178,7 +7710,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DirectoryContent:
-	//	'Directory' name=ID directories+=Directories | directories+=SingleFile;
+	//	'Directory' name=ID
+	//	directories+=Directories | directories+=SingleFile;
 	public DirectoryContentElements getDirectoryContentAccess() {
 		return pDirectoryContent;
 	}
@@ -7218,7 +7751,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LayerRelations:
-	//	layerelations+=RelationType name=ID layerorigin+=LayerSource layertarget+=LayerTarget;
+	//	layerelations+=RelationType name=ID
+	//	layerorigin+=LayerSource
+	//	layertarget+=LayerTarget;
 	public LayerRelationsElements getLayerRelationsAccess() {
 		return pLayerRelations;
 	}
@@ -7228,7 +7763,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//RelationType:
-	//	'AllowedToUse' | 'AllowToUseBelow';
+	//	'AllowedToUse' |
+	//	'AllowToUseBelow';
 	public RelationTypeElements getRelationTypeAccess() {
 		return pRelationType;
 	}
@@ -7238,7 +7774,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LayerSource:
-	//	'source' layerelations+=LayerRelationName;
+	//	'source'
+	//	layerelations+=LayerRelationName;
 	public LayerSourceElements getLayerSourceAccess() {
 		return pLayerSource;
 	}
@@ -7248,7 +7785,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LayerTarget:
-	//	'target' layerelations+=LayerRelationName;
+	//	'target'
+	//	layerelations+=LayerRelationName;
 	public LayerTargetElements getLayerTargetAccess() {
 		return pLayerTarget;
 	}
@@ -7258,7 +7796,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LayerRelationName:
-	//	'PresentationLayer' | 'BusinessLogicLayer' | 'PersistenceDataLayer';
+	//	'PresentationLayer' |
+	//	'BusinessLogicLayer' |
+	//	'PersistenceDataLayer';
 	public LayerRelationNameElements getLayerRelationNameAccess() {
 		return pLayerRelationName;
 	}
@@ -7268,7 +7808,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ArchitectureComponents:
-	//	'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent;
+	//	'SystemComponents'
+	//	archFeComponent+=FrontEnd
+	//	archBeComponent+=BackEnd
+	//	archPdComponent+=PersistenceDataComponent;
 	public ArchitectureComponentsElements getArchitectureComponentsAccess() {
 		return pArchitectureComponents;
 	}
@@ -7308,7 +7851,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NTiersConnections:
-	//	'Connectors' ntierconnections+=NTierConnectionContent+;
+	//	'Connectors'
+	//	ntierconnections+=NTierConnectionContent+;
 	public NTiersConnectionsElements getNTiersConnectionsAccess() {
 		return pNTiersConnections;
 	}
@@ -7318,7 +7862,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NTierConnectionContent:
-	//	ntierconnection+=ConnectionType nTierName=ID ntierorigin+=NTierSource ntiertarget+=NTierTarget;
+	//	ntierconnection+=ConnectionType nTierName=ID
+	//	ntierorigin+=NTierSource
+	//	ntiertarget+=NTierTarget;
 	public NTierConnectionContentElements getNTierConnectionContentAccess() {
 		return pNTierConnectionContent;
 	}
@@ -7328,7 +7874,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ConnectionType:
-	//	'REST' | 'PostgreSQLConnection' | 'AmazonS3API';
+	//	'REST' |
+	//	'PostgreSQLConnection' |
+	//	'AmazonS3API';
 	public ConnectionTypeElements getConnectionTypeAccess() {
 		return pConnectionType;
 	}
@@ -7338,7 +7886,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NTierSource:
-	//	'source' ntierconnection+=NTiersRelations;
+	//	'source'
+	//	ntierconnection+=NTiersRelations;
 	public NTierSourceElements getNTierSourceAccess() {
 		return pNTierSource;
 	}
@@ -7348,7 +7897,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NTierTarget:
-	//	'target' ntierconnection+=NTiersRelations;
+	//	'target'
+	//	ntierconnection+=NTiersRelations;
 	public NTierTargetElements getNTierTargetAccess() {
 		return pNTierTarget;
 	}
@@ -7358,8 +7908,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NTiersRelations:
-	//	'FrontEndComponent' name=ID | 'BackEndComponent' name=ID | 'PersistenceDataComponent' name=ID | 'AmazonService'
-	//	name=ID;
+	//	'FrontEndComponent' name=ID |
+	//	'BackEndComponent' name=ID |
+	//	'PersistenceDataComponent' name=ID |
+	//	'AmazonService' name=ID;
 	public NTiersRelationsElements getNTiersRelationsAccess() {
 		return pNTiersRelations;
 	}
@@ -7368,9 +7920,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getNTiersRelationsAccess().getRule();
 	}
 	
-	//// Technology
 	//Technology:
-	//	'Technology' name=ID ':' '{' elements+=Technologies '}';
+	//	'Technology' name=ID ':' '{'
+	//	elements+=Technologies
+	//	'}';
 	public TechnologyElements getTechnologyAccess() {
 		return pTechnology;
 	}
@@ -7380,7 +7933,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Technologies:
-	//	techspring+=Spring techreact+=React techpostgresql+=PostgreSQL techamazon+=AmazonWebServices;
+	//	techspring+=Spring
+	//	techreact+=React
+	//	techpostgresql+=PostgreSQL
+	//	techamazon+=AmazonWebServices;
 	public TechnologiesElements getTechnologiesAccess() {
 		return pTechnologies;
 	}
@@ -7390,7 +7946,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Spring:
-	//	'Spring' name=ID ':' '{' elements+=SpringBootApplication '}';
+	//	'Spring' name=ID ':' '{'
+	//	elements+=SpringBootApplication
+	//	'}';
 	public SpringElements getSpringAccess() {
 		return pSpring;
 	}
@@ -7400,8 +7958,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringBootApplication:
-	//	'SpringBootApplication' elements+=Configuration elements+=SpringComponent+ elements+=SpringRepository+
-	//	elements+=RestController+ elements+=SpringEntity+;
+	//	'SpringBootApplication'
+	//	elements+=Configuration
+	//	elements+=SpringComponent+
+	//	elements+=SpringRepository+
+	//	elements+=RestController+
+	//	elements+=SpringEntity+;
 	public SpringBootApplicationElements getSpringBootApplicationAccess() {
 		return pSpringBootApplication;
 	}
@@ -7411,8 +7973,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Configuration:
-	//	'Configuration' ':' '{' elements+=EnableGlobalMethodSecurity elements+=EnableAuthorizationServer
-	//	elements+=EnableResourceServer elements+=EnableWebSecurity '}';
+	//	'Configuration' ':' '{'
+	//	elements+=EnableGlobalMethodSecurity
+	//	elements+=EnableAuthorizationServer
+	//	elements+=EnableResourceServer
+	//	elements+=EnableWebSecurity
+	//	'}';
 	public ConfigurationElements getConfigurationAccess() {
 		return pConfiguration;
 	}
@@ -7462,7 +8028,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringComponent:
-	//	'SpringComponent' ':' '{' elements+=OrderSpring '}';
+	//	'SpringComponent' ':' '{'
+	//	elements+=OrderSpring
+	//	'}';
 	public SpringComponentElements getSpringComponentAccess() {
 		return pSpringComponent;
 	}
@@ -7482,7 +8050,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringRepository:
-	//	'SpringRepositories' ':' '{' elements+=SpringRepositories+ '}';
+	//	'SpringRepositories' ':' '{'
+	//	elements+=SpringRepositories+
+	//	'}';
 	public SpringRepositoryElements getSpringRepositoryAccess() {
 		return pSpringRepository;
 	}
@@ -7502,8 +8072,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//RestController:
-	//	'RestController' name=ID ':' '{' elements+=Specification elements+=Autowired+ elements+=RequestMapping+
-	//	elements+=ExceptionHandler '}';
+	//	'RestController' name=ID ':' '{'
+	//	elements+=Specification
+	//	elements+=Autowired*
+	//	elements+=ResponseEntity*
+	//	elements+=ExceptionHandler
+	//	'}';
 	public RestControllerElements getRestControllerAccess() {
 		return pRestController;
 	}
@@ -7513,7 +8087,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Specification:
-	//	'Specification' elements+=Predicate+ elements+=SearchCriteria;
+	//	'Specification'
+	//	elements+=Predicate+
+	//	elements+=SearchCriteria;
 	public SpecificationElements getSpecificationAccess() {
 		return pSpecification;
 	}
@@ -7543,7 +8119,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Autowired:
-	//	'Autowired' elements+=AutowiredType;
+	//	'Autowired'
+	//	elements+=AutowiredType;
 	public AutowiredElements getAutowiredAccess() {
 		return pAutowired;
 	}
@@ -7562,8 +8139,33 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getAutowiredTypeAccess().getRule();
 	}
 	
+	//ResponseEntity:
+	//	'ResponseEntity' name=ID
+	//	type+=MappingType
+	//	parameters+=ResponseParameter*;
+	public ResponseEntityElements getResponseEntityAccess() {
+		return pResponseEntity;
+	}
+	
+	public ParserRule getResponseEntityRule() {
+		return getResponseEntityAccess().getRule();
+	}
+	
+	//MappingType:
+	//	RequestMapping | PostMapping | GetMapping | PutMapping | DeleteMapping;
+	public MappingTypeElements getMappingTypeAccess() {
+		return pMappingType;
+	}
+	
+	public ParserRule getMappingTypeRule() {
+		return getMappingTypeAccess().getRule();
+	}
+	
 	//RequestMapping:
-	//	'RequestMapping' elements+=RequestPart* elements+=RequestMappingType;
+	//	'RequestMapping'
+	//	value+=RequestMappingValue
+	//	method+=RequestMappingMethod
+	//	produces+=RequestMappingProduces;
 	public RequestMappingElements getRequestMappingAccess() {
 		return pRequestMapping;
 	}
@@ -7572,38 +8174,122 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getRequestMappingAccess().getRule();
 	}
 	
-	//RequestPart:
-	//	'RequestPart' name=ID;
-	public RequestPartElements getRequestPartAccess() {
-		return pRequestPart;
+	//RequestMappingValue:
+	//	'Value' name=ID;
+	public RequestMappingValueElements getRequestMappingValueAccess() {
+		return pRequestMappingValue;
 	}
 	
-	public ParserRule getRequestPartRule() {
-		return getRequestPartAccess().getRule();
+	public ParserRule getRequestMappingValueRule() {
+		return getRequestMappingValueAccess().getRule();
 	}
 	
-	//RequestMappingType:
-	//	'RequestMappingType' name=ID RequestMappingTypeConf;
-	public RequestMappingTypeElements getRequestMappingTypeAccess() {
-		return pRequestMappingType;
+	//RequestMappingMethod:
+	//	'Method' name=ID;
+	public RequestMappingMethodElements getRequestMappingMethodAccess() {
+		return pRequestMappingMethod;
 	}
 	
-	public ParserRule getRequestMappingTypeRule() {
-		return getRequestMappingTypeAccess().getRule();
+	public ParserRule getRequestMappingMethodRule() {
+		return getRequestMappingMethodAccess().getRule();
 	}
 	
-	//RequestMappingTypeConf:
-	//	'PostMapping' | 'GetMapping' | 'PutMapping' | 'DeleteMapping';
-	public RequestMappingTypeConfElements getRequestMappingTypeConfAccess() {
-		return pRequestMappingTypeConf;
+	//RequestMappingProduces:
+	//	'Produces' name=ID;
+	public RequestMappingProducesElements getRequestMappingProducesAccess() {
+		return pRequestMappingProduces;
 	}
 	
-	public ParserRule getRequestMappingTypeConfRule() {
-		return getRequestMappingTypeConfAccess().getRule();
+	public ParserRule getRequestMappingProducesRule() {
+		return getRequestMappingProducesAccess().getRule();
+	}
+	
+	//PostMapping:
+	//	'PostMapping' name=ID;
+	public PostMappingElements getPostMappingAccess() {
+		return pPostMapping;
+	}
+	
+	public ParserRule getPostMappingRule() {
+		return getPostMappingAccess().getRule();
+	}
+	
+	//GetMapping:
+	//	'GetMapping' name=ID;
+	public GetMappingElements getGetMappingAccess() {
+		return pGetMapping;
+	}
+	
+	public ParserRule getGetMappingRule() {
+		return getGetMappingAccess().getRule();
+	}
+	
+	//PutMapping:
+	//	'PutMapping' name=ID;
+	public PutMappingElements getPutMappingAccess() {
+		return pPutMapping;
+	}
+	
+	public ParserRule getPutMappingRule() {
+		return getPutMappingAccess().getRule();
+	}
+	
+	//DeleteMapping:
+	//	'DeleteMapping' name=ID;
+	public DeleteMappingElements getDeleteMappingAccess() {
+		return pDeleteMapping;
+	}
+	
+	public ParserRule getDeleteMappingRule() {
+		return getDeleteMappingAccess().getRule();
+	}
+	
+	//ResponseParameter:
+	//	'Parameter'
+	//	parameterAnnotation+=ResponseParameterAnnotation
+	//	parameterType+=ResponseParameterType
+	//	parameterName+=ResponseParameterName;
+	public ResponseParameterElements getResponseParameterAccess() {
+		return pResponseParameter;
+	}
+	
+	public ParserRule getResponseParameterRule() {
+		return getResponseParameterAccess().getRule();
+	}
+	
+	//ResponseParameterAnnotation:
+	//	'Annotation' name=ID;
+	public ResponseParameterAnnotationElements getResponseParameterAnnotationAccess() {
+		return pResponseParameterAnnotation;
+	}
+	
+	public ParserRule getResponseParameterAnnotationRule() {
+		return getResponseParameterAnnotationAccess().getRule();
+	}
+	
+	//ResponseParameterType:
+	//	'Type' name=ID;
+	public ResponseParameterTypeElements getResponseParameterTypeAccess() {
+		return pResponseParameterType;
+	}
+	
+	public ParserRule getResponseParameterTypeRule() {
+		return getResponseParameterTypeAccess().getRule();
+	}
+	
+	//ResponseParameterName:
+	//	'Name' name=ID;
+	public ResponseParameterNameElements getResponseParameterNameAccess() {
+		return pResponseParameterName;
+	}
+	
+	public ParserRule getResponseParameterNameRule() {
+		return getResponseParameterNameAccess().getRule();
 	}
 	
 	//ExceptionHandler:
-	//	'ExceptionHandler' name=ID elements+=ExceptionProcess+;
+	//	'ExceptionHandler' name=ID
+	//	elements+=ExceptionProcess+;
 	public ExceptionHandlerElements getExceptionHandlerAccess() {
 		return pExceptionHandler;
 	}
@@ -7623,7 +8309,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringEntity:
-	//	'SpringEntity' name=ID ':' '{' elements+=SpringTable+ elements+=NameNativeQuery* '}';
+	//	'SpringEntity' name=ID ':' '{'
+	//	elements+=SpringTable+ elements+=NameNativeQuery*
+	//	'}';
 	public SpringEntityElements getSpringEntityAccess() {
 		return pSpringEntity;
 	}
@@ -7633,7 +8321,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringTable:
-	//	'SpringTable' name=ID elements+=SpringTableId elements+=Columns+;
+	//	'SpringTable' name=ID
+	//	elements+=SpringTableId
+	//	elements+=Columns+;
 	public SpringTableElements getSpringTableAccess() {
 		return pSpringTable;
 	}
@@ -7643,7 +8333,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringTableId:
-	//	{SpringTableId} 'SpringTableId' elements+=GeneratedValue*;
+	//	'SpringTableId' name=ID
+	//	elements+=GeneratedValue*;
 	public SpringTableIdElements getSpringTableIdAccess() {
 		return pSpringTableId;
 	}
@@ -7683,7 +8374,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//React:
-	//	'React' name=ID ':' '{' reacts+=ReactModules '}';
+	//	'React' name=ID ':' '{'
+	//	reacts+=ReactModules
+	//	'}';
 	public ReactElements getReactAccess() {
 		return pReact;
 	}
@@ -7693,7 +8386,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactModules:
-	//	'ReactModules' ':' '{' reactmodules+=ReactSubModules '}';
+	//	'ReactModules' ':' '{'
+	//	reactmodules+=ReactSubModules
+	//	'}';
 	public ReactModulesElements getReactModulesAccess() {
 		return pReactModules;
 	}
@@ -7703,8 +8398,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactSubModules:
-	//	reactmodulesconf+=ReactConfiguration reactmodulescomp+=ReactComponents reactmodulesact+=ReactActions
-	//	reactmoduleslib+=ReactLibraries reactmodulesinf+=ReactInfo;
+	//	reactmodulesconf+=ReactConfiguration
+	//	reactmodulescomp+=ReactComponents
+	//	reactmodulesact+=ReactActions
+	//	reactmoduleslib+=ReactLibraries
+	//	reactmodulesinf+=ReactInfo;
 	public ReactSubModulesElements getReactSubModulesAccess() {
 		return pReactSubModules;
 	}
@@ -7714,7 +8412,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactConfiguration:
-	//	'ReactConfiguration' ':' '{' dependencies+=ReactDependencies configurations+=ReactConfigurations '}';
+	//	'ReactConfiguration' ':' '{'
+	//	dependencies+=ReactDependencies
+	//	configurations+=ReactConfigurations
+	//	'}';
 	public ReactConfigurationElements getReactConfigurationAccess() {
 		return pReactConfiguration;
 	}
@@ -7724,7 +8425,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactDependencies:
-	//	'DependenciesStruct' dependencies+=ReactDependenciesRules+;
+	//	'DependenciesStruct'
+	//	dependencies+=ReactDependenciesRules+;
 	public ReactDependenciesElements getReactDependenciesAccess() {
 		return pReactDependencies;
 	}
@@ -7734,7 +8436,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactDependenciesRules:
-	//	'DependencyType' name=ID dependencies+=ReactDependenciesSubRules+;
+	//	'DependencyType' name=ID
+	//	dependencies+=ReactDependenciesSubRules+;
 	public ReactDependenciesRulesElements getReactDependenciesRulesAccess() {
 		return pReactDependenciesRules;
 	}
@@ -7784,7 +8487,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactConfigurations:
-	//	'ReactDOMConfigurations' name=ID configurations+=DOMConfigurations+;
+	//	'ReactDOMConfigurations' name=ID
+	//	configurations+=DOMConfigurations+;
 	public ReactConfigurationsElements getReactConfigurationsAccess() {
 		return pReactConfigurations;
 	}
@@ -7804,7 +8508,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DOMTypeConf:
-	//	'RoutingConf' | 'ServiceWorker' | 'HTMLStructure' | 'Manifest' | 'RepositoriesConf';
+	//	'RoutingConf' |
+	//	'ServiceWorker' |
+	//	'HTMLStructure' |
+	//	'Manifest' |
+	//	'RepositoriesConf';
 	public DOMTypeConfElements getDOMTypeConfAccess() {
 		return pDOMTypeConf;
 	}
@@ -7814,7 +8522,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactComponents:
-	//	'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles
+	//	'ReactComponents' ':' '{'
+	//	componentslogic+=ComponentsLogic
+	//	componentsui+=ComponentsUI
+	//	componentstyle+=ComponentsStyles
 	//	'}';
 	public ReactComponentsElements getReactComponentsAccess() {
 		return pReactComponents;
@@ -7825,7 +8536,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ComponentsLogic:
-	//	'LogicComponents' name=ID logiccomponents+=LogicContent;
+	//	'LogicComponents' name=ID
+	//	logiccomponents+=LogicContent;
 	public ComponentsLogicElements getComponentsLogicAccess() {
 		return pComponentsLogic;
 	}
@@ -7835,7 +8547,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LogicContent:
-	//	'RoutingComponents' name=ID logiccomponents+=LogicStructure;
+	//	'RoutingComponents' name=ID
+	//	logiccomponents+=LogicStructure;
 	public LogicContentElements getLogicContentAccess() {
 		return pLogicContent;
 	}
@@ -7845,7 +8558,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//LogicStructure:
-	//	'AppComponent' appComName=ID logiccomponents+=ComponentClass 'IndexComponent' indexCompName=ID;
+	//	'AppComponent' appComName=ID
+	//	logiccomponents+=ComponentClass
+	//	'IndexComponent' indexCompName=ID;
 	public LogicStructureElements getLogicStructureAccess() {
 		return pLogicStructure;
 	}
@@ -7855,7 +8570,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ComponentsUI:
-	//	'UIComponents' name=ID uicomponents+=UIContent;
+	//	'UIComponents' name=ID
+	//	uicomponents+=UIContent;
 	public ComponentsUIElements getComponentsUIAccess() {
 		return pComponentsUI;
 	}
@@ -7865,7 +8581,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//UIContent:
-	//	componentcontent+=ViewComponentCont+ subcomponentcontent+=SubcomponentCont+;
+	//	componentcontent+=ViewComponentCont+
+	//	subcomponentcontent+=SubcomponentCont+;
 	public UIContentElements getUIContentAccess() {
 		return pUIContent;
 	}
@@ -7875,7 +8592,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ViewComponentCont:
-	//	'ViewComponent' nameView=ID uicontent+=ComponentClass;
+	//	'ViewComponent' nameView=ID
+	//	uicontent+=ComponentClass;
 	public ViewComponentContElements getViewComponentContAccess() {
 		return pViewComponentCont;
 	}
@@ -7885,7 +8603,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SubcomponentCont:
-	//	'Subcomponents' nameSubComp=ID uicontent+=ComponentClass;
+	//	'Subcomponents' nameSubComp=ID
+	//	uicontent+=ComponentClass;
 	public SubcomponentContElements getSubcomponentContAccess() {
 		return pSubcomponentCont;
 	}
@@ -7895,7 +8614,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ComponentClass:
-	//	componentclassimp+=ReactImports componentclassfunc+=ReactFunctions componentclassprop+=Props;
+	//	componentclassimp+=ReactImports
+	//	componentclassfunc+=ReactFunctions
+	//	componentclassprop+=Props;
 	public ComponentClassElements getComponentClassAccess() {
 		return pComponentClass;
 	}
@@ -7925,7 +8646,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactFunctions:
-	//	reactconstructors+=ReactConstructor lifecycleclass+=ReactLifeCycle* reactcorefuncs+=ReactCoreFunctions*
+	//	reactconstructors+=ReactConstructor
+	//	lifecycleclass+=ReactLifeCycle*
+	//	reactcorefuncs+=ReactCoreFunctions*
 	//	renderclass+=ReactRender;
 	public ReactFunctionsElements getReactFunctionsAccess() {
 		return pReactFunctions;
@@ -7936,7 +8659,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactConstructor:
-	//	'Constructor' componentstateclass+=State componentfuncclass+=CoreFunctionsDeclaration*;
+	//	'Constructor'
+	//	componentstateclass+=State
+	//	componentfuncclass+=CoreFunctionsDeclaration*;
 	public ReactConstructorElements getReactConstructorAccess() {
 		return pReactConstructor;
 	}
@@ -7946,7 +8671,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//State:
-	//	{State} 'State' statecontents+=StateContent+;
+	//	{State} 'State'
+	//	statecontents+=StateContent+;
 	public StateElements getStateAccess() {
 		return pState;
 	}
@@ -7956,7 +8682,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//StateContent:
-	//	stateName=ID componentdatatyp+=DataType;
+	//	stateName=ID
+	//	componentdatatyp+=DataType;
 	public StateContentElements getStateContentAccess() {
 		return pStateContent;
 	}
@@ -7966,7 +8693,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DataType:
-	//	'String' | 'Array' | 'Object' | 'Number' | 'null' | 'Boolean';
+	//	'String' |
+	//	'Array' |
+	//	'Object' |
+	//	'Number' |
+	//	'null' |
+	//	'Boolean';
 	public DataTypeElements getDataTypeAccess() {
 		return pDataType;
 	}
@@ -8008,7 +8740,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Props:
-	//	{Props} 'Props' propsconts+=PropsType*;
+	//	{Props} 'Props'
+	//	propsconts+=PropsType*;
 	public PropsElements getPropsAccess() {
 		return pProps;
 	}
@@ -8018,7 +8751,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PropsType:
-	//	nameProps=ID propsdatas+=DataType;
+	//	nameProps=ID
+	//	propsdatas+=DataType;
 	public PropsTypeElements getPropsTypeAccess() {
 		return pPropsType;
 	}
@@ -8048,7 +8782,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ComponentsStylesContent:
-	//	'Style' nameStyle=ID stylecontent+=StyleProperties;
+	//	'Style' nameStyle=ID
+	//	stylecontent+=StyleProperties;
 	public ComponentsStylesContentElements getComponentsStylesContentAccess() {
 		return pComponentsStylesContent;
 	}
@@ -8068,7 +8803,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//StylePropertiesContent:
-	//	'prop_name' propName=ID "propsContent"+;
+	//	'prop_name' propName=ID
+	//	"propsContent"+;
 	public StylePropertiesContentElements getStylePropertiesContentAccess() {
 		return pStylePropertiesContent;
 	}
@@ -8078,7 +8814,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactActions:
-	//	'ReactActions' ':' '{' reactactcontent+=ReactActionsContent '}';
+	//	'ReactActions' ':' '{'
+	//	reactactcontent+=ReactActionsContent
+	//	'}';
 	public ReactActionsElements getReactActionsAccess() {
 		return pReactActions;
 	}
@@ -8098,7 +8836,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactServicesType:
-	//	'ServiceType' name=ID reactservcontent+=ReactServiceContent;
+	//	'ServiceType' name=ID
+	//	reactservcontent+=ReactServiceContent;
 	public ReactServicesTypeElements getReactServicesTypeAccess() {
 		return pReactServicesType;
 	}
@@ -8108,7 +8847,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactServiceContent:
-	//	('functions' functName=ID reactservrequest+=ReactServiceContRequest)*;
+	//	'functions' functName=ID
+	//	reactservrequest+=ReactServiceContRequest*;
 	public ReactServiceContentElements getReactServiceContentAccess() {
 		return pReactServiceContent;
 	}
@@ -8118,7 +8858,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactServiceContRequest:
-	//	'return' reactservrequestprops+=ReactServiceRequestProps+;
+	//	'return'
+	//	reactservrequestprops+=ReactServiceRequestProps+;
 	public ReactServiceContRequestElements getReactServiceContRequestAccess() {
 		return pReactServiceContRequest;
 	}
@@ -8138,7 +8879,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactServicesRelation:
-	//	'ServicesRelations' servicesrels+=ReactsRelationServ+;
+	//	'ServicesRelations'
+	//	servicesrels+=ReactsRelationServ+;
 	public ReactServicesRelationElements getReactServicesRelationAccess() {
 		return pReactServicesRelation;
 	}
@@ -8158,7 +8900,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactRequest:
-	//	'Wrapper' | 'AuxWrapper';
+	//	'Wrapper' |
+	//	'AuxWrapper';
 	public ReactRequestElements getReactRequestAccess() {
 		return pReactRequest;
 	}
@@ -8168,7 +8911,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactLibraries:
-	//	'ReactLibraries' ':' '{' reactlibraries+=ReactLibrary+ '}';
+	//	'ReactLibraries' ':' '{'
+	//	reactlibraries+=ReactLibrary+
+	//	'}';
 	public ReactLibrariesElements getReactLibrariesAccess() {
 		return pReactLibraries;
 	}
@@ -8188,8 +8933,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactLibraryType:
-	//	'ReactDesign' | 'ReactRouting' | 'ComponentManagement' |
-	//	'StoreManagement' | 'ReactDeployment' | 'ConfigurationLibrary';
+	//	'ReactDesign' |
+	//	'ReactRouting' |
+	//	'ComponentManagement' |
+	//	'StoreManagement' |
+	//	'ReactDeployment' |
+	//	'ConfigurationLibrary';
 	public ReactLibraryTypeElements getReactLibraryTypeAccess() {
 		return pReactLibraryType;
 	}
@@ -8199,7 +8948,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactInfo:
-	//	'ReactInformation' ':' '{' reactinformation+=ReactInformation+ '}';
+	//	'ReactInformation' ':' '{'
+	//	reactinformation+=ReactInformation+
+	//	'}';
 	public ReactInfoElements getReactInfoAccess() {
 		return pReactInfo;
 	}
@@ -8219,7 +8970,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ReactInformationType:
-	//	'ReactReadme' | 'ReactAditionalInfo';
+	//	'ReactReadme' |
+	//	'ReactAditionalInfo';
 	public ReactInformationTypeElements getReactInformationTypeAccess() {
 		return pReactInformationType;
 	}
@@ -8229,7 +8981,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PostgreSQL:
-	//	'PostgreSQL' name=ID ':' '{' elements+=Cluster '}';
+	//	'PostgreSQL' name=ID ':' '{'
+	//	elements+=Cluster
+	//	'}';
 	public PostgreSQLElements getPostgreSQLAccess() {
 		return pPostgreSQL;
 	}
@@ -8239,7 +8993,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Cluster:
-	//	'Database' elements+=Database elements+=PostgresUser+;
+	//	'Database'
+	//	elements+=Database
+	//	elements+=PostgresUser+;
 	public ClusterElements getClusterAccess() {
 		return pCluster;
 	}
@@ -8249,7 +9005,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Database:
-	//	'Schema' name=ID elements+=Schema;
+	//	'Schema' name=ID
+	//	elements+=Schema;
 	public DatabaseElements getDatabaseAccess() {
 		return pDatabase;
 	}
@@ -8259,7 +9016,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Schema:
-	//	elements+=Index_p* elements+=ViewSchema* elements+=Table_p+ elements+=Trigger* elements+=Function;
+	//	elements+=Index_p*
+	//	elements+=ViewSchema*
+	//	elements+=Table_p+
+	//	elements+=Trigger*
+	//	elements+=Function;
 	public SchemaElements getSchemaAccess() {
 		return pSchema;
 	}
@@ -8289,7 +9050,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Table_p:
-	//	'Table_p' name=ID ':' '{' elements+=ForeignKey+ elements+=Column+ elements+=Row+ '}';
+	//	'Table_p' name=ID ':' '{'
+	//	elements+=ForeignKey+
+	//	elements+=Column+
+	//	elements+=Row+
+	//	'}';
 	public Table_pElements getTable_pAccess() {
 		return pTable_p;
 	}
@@ -8299,7 +9064,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ForeignKey:
-	//	'ForeignKey' elements+=ForeignKey_n elements+=ForeignKeyRef;
+	//	'ForeignKey'
+	//	elements+=ForeignKey_n
+	//	elements+=ForeignKeyRef;
 	public ForeignKeyElements getForeignKeyAccess() {
 		return pForeignKey;
 	}
@@ -8319,7 +9086,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//ForeignKeyRef:
-	//	{ForeignKeyRef} 'ForeignKeyRef' elements+=RefTable_p*;
+	//	{ForeignKeyRef} 'ForeignKeyRef'
+	//	elements+=RefTable_p*;
 	public ForeignKeyRefElements getForeignKeyRefAccess() {
 		return pForeignKeyRef;
 	}
@@ -8339,7 +9107,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Column:
-	//	'Column' name=ID elements+=DatatypeDB elements+=Constraint*;
+	//	'Column' name=ID
+	//	elements+=DatatypeDB
+	//	elements+=Constraint*;
 	public ColumnElements getColumnAccess() {
 		return pColumn;
 	}
@@ -8369,7 +9139,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Row:
-	//	'Row' name=ID elements+=Policy*;
+	//	'Row' name=ID
+	//	elements+=Policy*;
 	public RowElements getRowAccess() {
 		return pRow;
 	}
@@ -8409,7 +9180,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PostgresUser:
-	//	'PostgresUser' name=ID ':' '{' elements+=Privilege elements+=Query* '}';
+	//	'PostgresUser' name=ID ':' '{'
+	//	elements+=Privilege
+	//	elements+=Query*
+	//	'}';
 	public PostgresUserElements getPostgresUserAccess() {
 		return pPostgresUser;
 	}
@@ -8429,7 +9203,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Query:
-	//	'Query' elements+=Clause;
+	//	'Query'
+	//	elements+=Clause;
 	public QueryElements getQueryAccess() {
 		return pQuery;
 	}
@@ -8449,7 +9224,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AmazonWebServices:
-	//	'AmazonWebServices' name=ID ':' '{' elements+=AmazonSimpleStorageService elements+=AmazonElasticComputeCloud '}';
+	//	'AmazonWebServices' name=ID ':' '{'
+	//	elements+=AmazonSimpleStorageService
+	//	elements+=AmazonElasticComputeCloud
+	//	'}';
 	public AmazonWebServicesElements getAmazonWebServicesAccess() {
 		return pAmazonWebServices;
 	}
@@ -8459,7 +9237,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AmazonSimpleStorageService:
-	//	'AmazonSimpleStorageService' ':' '{' elements+=BatchOperation* elements+=Bucket '}';
+	//	'AmazonSimpleStorageService' ':' '{'
+	//	elements+=BatchOperation*
+	//	elements+=Bucket
+	//	'}';
 	public AmazonSimpleStorageServiceElements getAmazonSimpleStorageServiceAccess() {
 		return pAmazonSimpleStorageService;
 	}
@@ -8479,7 +9260,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Bucket:
-	//	'Bucket' name=ID elements+=BucketAccess elements+=AmazonFolder* elements+=AmazonFile+;
+	//	'Bucket' name=ID
+	//	elements+=BucketAccess
+	//	elements+=AmazonFolder*
+	//	elements+=AmazonFile+;
 	public BucketElements getBucketAccess() {
 		return pBucket;
 	}
@@ -8489,8 +9273,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//BucketAccess:
-	//	'BucketAccess' elements+=PublicAccess | elements+=ObjectsPublic | elements+=BucketObjectsNotPublic |
-	//	elements+=OnlyAuthorized;
+	//	'BucketAccess'
+	//	elements+=PublicAccess | elements+=ObjectsPublic | elements+=BucketObjectsNotPublic | elements+=OnlyAuthorized;
 	public BucketAccessElements getBucketAccessAccess() {
 		return pBucketAccess;
 	}
@@ -8550,7 +9334,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AmazonFile:
-	//	'AmazonFile' elements+=Metadata+;
+	//	'AmazonFile'
+	//	elements+=Metadata+;
 	public AmazonFileElements getAmazonFileAccess() {
 		return pAmazonFile;
 	}

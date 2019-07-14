@@ -451,19 +451,74 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createAutowiredTypeAdapter();
       }
       @Override
+      public Adapter caseResponseEntity(ResponseEntity object)
+      {
+        return createResponseEntityAdapter();
+      }
+      @Override
+      public Adapter caseMappingType(MappingType object)
+      {
+        return createMappingTypeAdapter();
+      }
+      @Override
       public Adapter caseRequestMapping(RequestMapping object)
       {
         return createRequestMappingAdapter();
       }
       @Override
-      public Adapter caseRequestPart(RequestPart object)
+      public Adapter caseRequestMappingValue(RequestMappingValue object)
       {
-        return createRequestPartAdapter();
+        return createRequestMappingValueAdapter();
       }
       @Override
-      public Adapter caseRequestMappingType(RequestMappingType object)
+      public Adapter caseRequestMappingMethod(RequestMappingMethod object)
       {
-        return createRequestMappingTypeAdapter();
+        return createRequestMappingMethodAdapter();
+      }
+      @Override
+      public Adapter caseRequestMappingProduces(RequestMappingProduces object)
+      {
+        return createRequestMappingProducesAdapter();
+      }
+      @Override
+      public Adapter casePostMapping(PostMapping object)
+      {
+        return createPostMappingAdapter();
+      }
+      @Override
+      public Adapter caseGetMapping(GetMapping object)
+      {
+        return createGetMappingAdapter();
+      }
+      @Override
+      public Adapter casePutMapping(PutMapping object)
+      {
+        return createPutMappingAdapter();
+      }
+      @Override
+      public Adapter caseDeleteMapping(DeleteMapping object)
+      {
+        return createDeleteMappingAdapter();
+      }
+      @Override
+      public Adapter caseResponseParameter(ResponseParameter object)
+      {
+        return createResponseParameterAdapter();
+      }
+      @Override
+      public Adapter caseResponseParameterAnnotation(ResponseParameterAnnotation object)
+      {
+        return createResponseParameterAnnotationAdapter();
+      }
+      @Override
+      public Adapter caseResponseParameterType(ResponseParameterType object)
+      {
+        return createResponseParameterTypeAdapter();
+      }
+      @Override
+      public Adapter caseResponseParameterName(ResponseParameterName object)
+      {
+        return createResponseParameterNameAdapter();
       }
       @Override
       public Adapter caseExceptionHandler(ExceptionHandler object)
@@ -2063,6 +2118,36 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity <em>Response Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity
+   * @generated
+   */
+  public Adapter createResponseEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.MappingType <em>Mapping Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.MappingType
+   * @generated
+   */
+  public Adapter createMappingTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping <em>Request Mapping</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2078,31 +2163,166 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RequestPart <em>Request Part</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingValue <em>Request Mapping Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.RequestPart
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingValue
    * @generated
    */
-  public Adapter createRequestPartAdapter()
+  public Adapter createRequestMappingValueAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType <em>Request Mapping Type</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingMethod <em>Request Mapping Method</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingMethod
    * @generated
    */
-  public Adapter createRequestMappingTypeAdapter()
+  public Adapter createRequestMappingMethodAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingProduces <em>Request Mapping Produces</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingProduces
+   * @generated
+   */
+  public Adapter createRequestMappingProducesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.PostMapping <em>Post Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.PostMapping
+   * @generated
+   */
+  public Adapter createPostMappingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.GetMapping <em>Get Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.GetMapping
+   * @generated
+   */
+  public Adapter createGetMappingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.PutMapping <em>Put Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.PutMapping
+   * @generated
+   */
+  public Adapter createPutMappingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DeleteMapping <em>Delete Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.DeleteMapping
+   * @generated
+   */
+  public Adapter createDeleteMappingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter <em>Response Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter
+   * @generated
+   */
+  public Adapter createResponseParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterAnnotation <em>Response Parameter Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterAnnotation
+   * @generated
+   */
+  public Adapter createResponseParameterAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterType <em>Response Parameter Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterType
+   * @generated
+   */
+  public Adapter createResponseParameterTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterName <em>Response Parameter Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterName
+   * @generated
+   */
+  public Adapter createResponseParameterNameAdapter()
   {
     return null;
   }

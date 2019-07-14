@@ -28,27 +28,7 @@ public class AlbumController {
 	PhotoRepository photoRepository;
 	
 	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getAlbum(@PathVariable Long id) throws Exception {
-	
 
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getPhotosFromAlbum(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> createAlbum(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {

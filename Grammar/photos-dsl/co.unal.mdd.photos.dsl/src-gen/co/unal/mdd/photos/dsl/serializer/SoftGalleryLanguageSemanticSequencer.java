@@ -48,6 +48,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceLayer;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceSegments;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Database;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DatatypeDB;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.DeleteMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Directories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Domain;
@@ -69,6 +70,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Function;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionalities;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionality;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.GeneratedValue;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.GetMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Index_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LandingActions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LandingFunctions;
@@ -98,6 +100,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Policy;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PostMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PostgreSQL;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PostgresUser;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Predicate;
@@ -110,6 +113,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.ProfileManagementFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Props;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PropsType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PublicAccess;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PutMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Query;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.React;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactActions;
@@ -139,8 +143,14 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactSubModules;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactsRelationServ;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RefTable_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestPart;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingMethod;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingProduces;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingValue;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterAnnotation;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterName;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Row;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Schema;
@@ -331,6 +341,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.DATATYPE_DB:
 				sequence_DatatypeDB(context, (DatatypeDB) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.DELETE_MAPPING:
+				sequence_DeleteMapping(context, (DeleteMapping) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.DIRECTORIES:
 				sequence_Directories(context, (Directories) semanticObject); 
 				return; 
@@ -393,6 +406,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.GENERATED_VALUE:
 				sequence_GeneratedValue(context, (GeneratedValue) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.GET_MAPPING:
+				sequence_GetMapping(context, (GetMapping) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.INDEX_P:
 				sequence_Index_p(context, (Index_p) semanticObject); 
@@ -481,6 +497,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.POLICY:
 				sequence_Policy(context, (Policy) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.POST_MAPPING:
+				sequence_PostMapping(context, (PostMapping) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.POSTGRE_SQL:
 				sequence_PostgreSQL(context, (PostgreSQL) semanticObject); 
 				return; 
@@ -516,6 +535,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.PUBLIC_ACCESS:
 				sequence_PublicAccess(context, (PublicAccess) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.PUT_MAPPING:
+				sequence_PutMapping(context, (PutMapping) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.QUERY:
 				sequence_Query(context, (Query) semanticObject); 
@@ -604,11 +626,29 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.REQUEST_MAPPING:
 				sequence_RequestMapping(context, (RequestMapping) semanticObject); 
 				return; 
-			case SoftGalleryLanguagePackage.REQUEST_MAPPING_TYPE:
-				sequence_RequestMappingType(context, (RequestMappingType) semanticObject); 
+			case SoftGalleryLanguagePackage.REQUEST_MAPPING_METHOD:
+				sequence_RequestMappingMethod(context, (RequestMappingMethod) semanticObject); 
 				return; 
-			case SoftGalleryLanguagePackage.REQUEST_PART:
-				sequence_RequestPart(context, (RequestPart) semanticObject); 
+			case SoftGalleryLanguagePackage.REQUEST_MAPPING_PRODUCES:
+				sequence_RequestMappingProduces(context, (RequestMappingProduces) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.REQUEST_MAPPING_VALUE:
+				sequence_RequestMappingValue(context, (RequestMappingValue) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.RESPONSE_ENTITY:
+				sequence_ResponseEntity(context, (ResponseEntity) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.RESPONSE_PARAMETER:
+				sequence_ResponseParameter(context, (ResponseParameter) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_ANNOTATION:
+				sequence_ResponseParameterAnnotation(context, (ResponseParameterAnnotation) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_NAME:
+				sequence_ResponseParameterName(context, (ResponseParameterName) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_TYPE:
+				sequence_ResponseParameterType(context, (ResponseParameterType) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.REST_CONTROLLER:
 				sequence_RestController(context, (RestController) semanticObject); 
@@ -1352,6 +1392,25 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     MappingType returns DeleteMapping
+	 *     DeleteMapping returns DeleteMapping
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_DeleteMapping(ISerializationContext context, DeleteMapping semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.DELETE_MAPPING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.DELETE_MAPPING__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDeleteMappingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Directories returns Directories
 	 *
 	 * Constraint:
@@ -1652,6 +1711,25 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGeneratedValueAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MappingType returns GetMapping
+	 *     GetMapping returns GetMapping
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_GetMapping(ISerializationContext context, GetMapping semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.GET_MAPPING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.GET_MAPPING__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGetMappingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -2093,6 +2171,25 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     MappingType returns PostMapping
+	 *     PostMapping returns PostMapping
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_PostMapping(ISerializationContext context, PostMapping semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.POST_MAPPING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.POST_MAPPING__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPostMappingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     PostgreSQL returns PostgreSQL
 	 *
 	 * Constraint:
@@ -2270,6 +2367,25 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPublicAccessAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MappingType returns PutMapping
+	 *     PutMapping returns PutMapping
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_PutMapping(ISerializationContext context, PutMapping semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.PUT_MAPPING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.PUT_MAPPING__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPutMappingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -2543,7 +2659,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ReactServiceContent returns ReactServiceContent
 	 *
 	 * Constraint:
-	 *     (functName=ID reactservrequest+=ReactServiceContRequest)+
+	 *     (functName=ID reactservrequest+=ReactServiceContRequest*)
 	 */
 	protected void sequence_ReactServiceContent(ISerializationContext context, ReactServiceContent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2657,28 +2773,65 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
-	 *     RequestMappingType returns RequestMappingType
+	 *     RequestMappingMethod returns RequestMappingMethod
 	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_RequestMappingType(ISerializationContext context, RequestMappingType semanticObject) {
+	protected void sequence_RequestMappingMethod(ISerializationContext context, RequestMappingMethod semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_TYPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_METHOD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_METHOD__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRequestMappingTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRequestMappingMethodAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     RequestMappingProduces returns RequestMappingProduces
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_RequestMappingProduces(ISerializationContext context, RequestMappingProduces semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_PRODUCES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_PRODUCES__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRequestMappingProducesAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RequestMappingValue returns RequestMappingValue
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_RequestMappingValue(ISerializationContext context, RequestMappingValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_VALUE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_MAPPING_VALUE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRequestMappingValueAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MappingType returns RequestMapping
 	 *     RequestMapping returns RequestMapping
 	 *
 	 * Constraint:
-	 *     (elements+=RequestPart* elements+=RequestMappingType)
+	 *     (value+=RequestMappingValue method+=RequestMappingMethod produces+=RequestMappingProduces)
 	 */
 	protected void sequence_RequestMapping(ISerializationContext context, RequestMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2687,19 +2840,79 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
-	 *     RequestPart returns RequestPart
+	 *     ResponseEntity returns ResponseEntity
+	 *
+	 * Constraint:
+	 *     (name=ID type+=MappingType parameters+=ResponseParameter*)
+	 */
+	protected void sequence_ResponseEntity(ISerializationContext context, ResponseEntity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResponseParameterAnnotation returns ResponseParameterAnnotation
 	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_RequestPart(ISerializationContext context, RequestPart semanticObject) {
+	protected void sequence_ResponseParameterAnnotation(ISerializationContext context, ResponseParameterAnnotation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_PART__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.REQUEST_PART__NAME));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.RESPONSE_PARAMETER_ANNOTATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.RESPONSE_PARAMETER_ANNOTATION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRequestPartAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getResponseParameterAnnotationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResponseParameterName returns ResponseParameterName
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_ResponseParameterName(ISerializationContext context, ResponseParameterName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.RESPONSE_PARAMETER_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.RESPONSE_PARAMETER_NAME__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getResponseParameterNameAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResponseParameterType returns ResponseParameterType
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_ResponseParameterType(ISerializationContext context, ResponseParameterType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.RESPONSE_PARAMETER_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.RESPONSE_PARAMETER_TYPE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getResponseParameterTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResponseParameter returns ResponseParameter
+	 *
+	 * Constraint:
+	 *     (parameterAnnotation+=ResponseParameterAnnotation parameterType+=ResponseParameterType parameterName+=ResponseParameterName)
+	 */
+	protected void sequence_ResponseParameter(ISerializationContext context, ResponseParameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2708,7 +2921,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     RestController returns RestController
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=Specification elements+=Autowired+ elements+=RequestMapping+ elements+=ExceptionHandler)
+	 *     (name=ID elements+=Specification elements+=Autowired* elements+=ResponseEntity* elements+=ExceptionHandler)
 	 */
 	protected void sequence_RestController(ISerializationContext context, RestController semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2912,7 +3125,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     SpringTableId returns SpringTableId
 	 *
 	 * Constraint:
-	 *     elements+=GeneratedValue*
+	 *     (name=ID elements+=GeneratedValue*)
 	 */
 	protected void sequence_SpringTableId(ISerializationContext context, SpringTableId semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

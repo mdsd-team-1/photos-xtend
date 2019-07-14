@@ -47,6 +47,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceLayer;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceSegments;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Database;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DatatypeDB;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.DeleteMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Directories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Domain;
@@ -68,6 +69,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Function;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionalities;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionality;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.GeneratedValue;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.GetMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Index_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LandingActions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LandingFunctions;
@@ -77,6 +79,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.LayerSource;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LayerTarget;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LogicContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LogicStructure;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.MappingType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Metadata;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Model;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile;
@@ -97,6 +100,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoActionsFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Policy;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PostMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PostgreSQL;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PostgresUser;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Predicate;
@@ -109,6 +113,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.ProfileManagementFunctions;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Props;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PropsType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PublicAccess;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.PutMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Query;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.React;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactActions;
@@ -138,8 +143,14 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactSubModules;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ReactsRelationServ;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RefTable_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestPart;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingMethod;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingProduces;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingValue;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterAnnotation;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterName;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Row;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Schema;
@@ -719,6 +730,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass responseEntityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mappingTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass requestMappingEClass = null;
 
   /**
@@ -726,14 +751,77 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass requestPartEClass = null;
+  private EClass requestMappingValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass requestMappingTypeEClass = null;
+  private EClass requestMappingMethodEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass requestMappingProducesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass postMappingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass getMappingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass putMappingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass deleteMappingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass responseParameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass responseParameterAnnotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass responseParameterTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass responseParameterNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -3513,6 +3601,61 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EClass getResponseEntity()
+  {
+    return responseEntityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResponseEntity_Name()
+  {
+    return (EAttribute)responseEntityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResponseEntity_Type()
+  {
+    return (EReference)responseEntityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResponseEntity_Parameters()
+  {
+    return (EReference)responseEntityEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMappingType()
+  {
+    return mappingTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRequestMapping()
   {
     return requestMappingEClass;
@@ -3524,7 +3667,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getRequestMapping_Elements()
+  public EReference getRequestMapping_Value()
   {
     return (EReference)requestMappingEClass.getEStructuralFeatures().get(0);
   }
@@ -3535,9 +3678,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getRequestPart()
+  public EReference getRequestMapping_Method()
   {
-    return requestPartEClass;
+    return (EReference)requestMappingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3546,9 +3689,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getRequestPart_Name()
+  public EReference getRequestMapping_Produces()
   {
-    return (EAttribute)requestPartEClass.getEStructuralFeatures().get(0);
+    return (EReference)requestMappingEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3557,9 +3700,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getRequestMappingType()
+  public EClass getRequestMappingValue()
   {
-    return requestMappingTypeEClass;
+    return requestMappingValueEClass;
   }
 
   /**
@@ -3568,9 +3711,251 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getRequestMappingType_Name()
+  public EAttribute getRequestMappingValue_Name()
   {
-    return (EAttribute)requestMappingTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)requestMappingValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRequestMappingMethod()
+  {
+    return requestMappingMethodEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRequestMappingMethod_Name()
+  {
+    return (EAttribute)requestMappingMethodEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRequestMappingProduces()
+  {
+    return requestMappingProducesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRequestMappingProduces_Name()
+  {
+    return (EAttribute)requestMappingProducesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPostMapping()
+  {
+    return postMappingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPostMapping_Name()
+  {
+    return (EAttribute)postMappingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGetMapping()
+  {
+    return getMappingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGetMapping_Name()
+  {
+    return (EAttribute)getMappingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPutMapping()
+  {
+    return putMappingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPutMapping_Name()
+  {
+    return (EAttribute)putMappingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDeleteMapping()
+  {
+    return deleteMappingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDeleteMapping_Name()
+  {
+    return (EAttribute)deleteMappingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResponseParameter()
+  {
+    return responseParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResponseParameter_ParameterAnnotation()
+  {
+    return (EReference)responseParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResponseParameter_ParameterType()
+  {
+    return (EReference)responseParameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResponseParameter_ParameterName()
+  {
+    return (EReference)responseParameterEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResponseParameterAnnotation()
+  {
+    return responseParameterAnnotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResponseParameterAnnotation_Name()
+  {
+    return (EAttribute)responseParameterAnnotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResponseParameterType()
+  {
+    return responseParameterTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResponseParameterType_Name()
+  {
+    return (EAttribute)responseParameterTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResponseParameterName()
+  {
+    return responseParameterNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResponseParameterName_Name()
+  {
+    return (EAttribute)responseParameterNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3711,9 +4096,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EAttribute getSpringTableId_Name()
+  {
+    return (EAttribute)springTableIdEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getSpringTableId_Elements()
   {
-    return (EReference)springTableIdEClass.getEStructuralFeatures().get(0);
+    return (EReference)springTableIdEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -6321,14 +6717,52 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     autowiredTypeEClass = createEClass(AUTOWIRED_TYPE);
     createEAttribute(autowiredTypeEClass, AUTOWIRED_TYPE__NAME);
 
+    responseEntityEClass = createEClass(RESPONSE_ENTITY);
+    createEAttribute(responseEntityEClass, RESPONSE_ENTITY__NAME);
+    createEReference(responseEntityEClass, RESPONSE_ENTITY__TYPE);
+    createEReference(responseEntityEClass, RESPONSE_ENTITY__PARAMETERS);
+
+    mappingTypeEClass = createEClass(MAPPING_TYPE);
+
     requestMappingEClass = createEClass(REQUEST_MAPPING);
-    createEReference(requestMappingEClass, REQUEST_MAPPING__ELEMENTS);
+    createEReference(requestMappingEClass, REQUEST_MAPPING__VALUE);
+    createEReference(requestMappingEClass, REQUEST_MAPPING__METHOD);
+    createEReference(requestMappingEClass, REQUEST_MAPPING__PRODUCES);
 
-    requestPartEClass = createEClass(REQUEST_PART);
-    createEAttribute(requestPartEClass, REQUEST_PART__NAME);
+    requestMappingValueEClass = createEClass(REQUEST_MAPPING_VALUE);
+    createEAttribute(requestMappingValueEClass, REQUEST_MAPPING_VALUE__NAME);
 
-    requestMappingTypeEClass = createEClass(REQUEST_MAPPING_TYPE);
-    createEAttribute(requestMappingTypeEClass, REQUEST_MAPPING_TYPE__NAME);
+    requestMappingMethodEClass = createEClass(REQUEST_MAPPING_METHOD);
+    createEAttribute(requestMappingMethodEClass, REQUEST_MAPPING_METHOD__NAME);
+
+    requestMappingProducesEClass = createEClass(REQUEST_MAPPING_PRODUCES);
+    createEAttribute(requestMappingProducesEClass, REQUEST_MAPPING_PRODUCES__NAME);
+
+    postMappingEClass = createEClass(POST_MAPPING);
+    createEAttribute(postMappingEClass, POST_MAPPING__NAME);
+
+    getMappingEClass = createEClass(GET_MAPPING);
+    createEAttribute(getMappingEClass, GET_MAPPING__NAME);
+
+    putMappingEClass = createEClass(PUT_MAPPING);
+    createEAttribute(putMappingEClass, PUT_MAPPING__NAME);
+
+    deleteMappingEClass = createEClass(DELETE_MAPPING);
+    createEAttribute(deleteMappingEClass, DELETE_MAPPING__NAME);
+
+    responseParameterEClass = createEClass(RESPONSE_PARAMETER);
+    createEReference(responseParameterEClass, RESPONSE_PARAMETER__PARAMETER_ANNOTATION);
+    createEReference(responseParameterEClass, RESPONSE_PARAMETER__PARAMETER_TYPE);
+    createEReference(responseParameterEClass, RESPONSE_PARAMETER__PARAMETER_NAME);
+
+    responseParameterAnnotationEClass = createEClass(RESPONSE_PARAMETER_ANNOTATION);
+    createEAttribute(responseParameterAnnotationEClass, RESPONSE_PARAMETER_ANNOTATION__NAME);
+
+    responseParameterTypeEClass = createEClass(RESPONSE_PARAMETER_TYPE);
+    createEAttribute(responseParameterTypeEClass, RESPONSE_PARAMETER_TYPE__NAME);
+
+    responseParameterNameEClass = createEClass(RESPONSE_PARAMETER_NAME);
+    createEAttribute(responseParameterNameEClass, RESPONSE_PARAMETER_NAME__NAME);
 
     exceptionHandlerEClass = createEClass(EXCEPTION_HANDLER);
     createEAttribute(exceptionHandlerEClass, EXCEPTION_HANDLER__NAME);
@@ -6346,6 +6780,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEReference(springTableEClass, SPRING_TABLE__ELEMENTS);
 
     springTableIdEClass = createEClass(SPRING_TABLE_ID);
+    createEAttribute(springTableIdEClass, SPRING_TABLE_ID__NAME);
     createEReference(springTableIdEClass, SPRING_TABLE_ID__ELEMENTS);
 
     generatedValueEClass = createEClass(GENERATED_VALUE);
@@ -6673,6 +7108,11 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    requestMappingEClass.getESuperTypes().add(this.getMappingType());
+    postMappingEClass.getESuperTypes().add(this.getMappingType());
+    getMappingEClass.getESuperTypes().add(this.getMappingType());
+    putMappingEClass.getESuperTypes().add(this.getMappingType());
+    deleteMappingEClass.getESuperTypes().add(this.getMappingType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -6939,14 +7379,52 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEClass(autowiredTypeEClass, AutowiredType.class, "AutowiredType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAutowiredType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AutowiredType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(responseEntityEClass, ResponseEntity.class, "ResponseEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResponseEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponseEntity_Type(), this.getMappingType(), null, "type", null, 0, -1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponseEntity_Parameters(), this.getResponseParameter(), null, "parameters", null, 0, -1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mappingTypeEClass, MappingType.class, "MappingType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(requestMappingEClass, RequestMapping.class, "RequestMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequestMapping_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, RequestMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequestMapping_Value(), this.getRequestMappingValue(), null, "value", null, 0, -1, RequestMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequestMapping_Method(), this.getRequestMappingMethod(), null, "method", null, 0, -1, RequestMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequestMapping_Produces(), this.getRequestMappingProduces(), null, "produces", null, 0, -1, RequestMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(requestPartEClass, RequestPart.class, "RequestPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRequestPart_Name(), ecorePackage.getEString(), "name", null, 0, 1, RequestPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(requestMappingValueEClass, RequestMappingValue.class, "RequestMappingValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRequestMappingValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, RequestMappingValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(requestMappingTypeEClass, RequestMappingType.class, "RequestMappingType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRequestMappingType_Name(), ecorePackage.getEString(), "name", null, 0, 1, RequestMappingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(requestMappingMethodEClass, RequestMappingMethod.class, "RequestMappingMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRequestMappingMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, RequestMappingMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(requestMappingProducesEClass, RequestMappingProduces.class, "RequestMappingProduces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRequestMappingProduces_Name(), ecorePackage.getEString(), "name", null, 0, 1, RequestMappingProduces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(postMappingEClass, PostMapping.class, "PostMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPostMapping_Name(), ecorePackage.getEString(), "name", null, 0, 1, PostMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(getMappingEClass, GetMapping.class, "GetMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetMapping_Name(), ecorePackage.getEString(), "name", null, 0, 1, GetMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(putMappingEClass, PutMapping.class, "PutMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPutMapping_Name(), ecorePackage.getEString(), "name", null, 0, 1, PutMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(deleteMappingEClass, DeleteMapping.class, "DeleteMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDeleteMapping_Name(), ecorePackage.getEString(), "name", null, 0, 1, DeleteMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(responseParameterEClass, ResponseParameter.class, "ResponseParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getResponseParameter_ParameterAnnotation(), this.getResponseParameterAnnotation(), null, "parameterAnnotation", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponseParameter_ParameterType(), this.getResponseParameterType(), null, "parameterType", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponseParameter_ParameterName(), this.getResponseParameterName(), null, "parameterName", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(responseParameterAnnotationEClass, ResponseParameterAnnotation.class, "ResponseParameterAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResponseParameterAnnotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseParameterAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(responseParameterTypeEClass, ResponseParameterType.class, "ResponseParameterType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResponseParameterType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseParameterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(responseParameterNameEClass, ResponseParameterName.class, "ResponseParameterName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResponseParameterName_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseParameterName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exceptionHandlerEClass, ExceptionHandler.class, "ExceptionHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExceptionHandler_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExceptionHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6964,6 +7442,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEReference(getSpringTable_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, SpringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(springTableIdEClass, SpringTableId.class, "SpringTableId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpringTableId_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringTableId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSpringTableId_Elements(), this.getGeneratedValue(), null, "elements", null, 0, -1, SpringTableId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generatedValueEClass, GeneratedValue.class, "GeneratedValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

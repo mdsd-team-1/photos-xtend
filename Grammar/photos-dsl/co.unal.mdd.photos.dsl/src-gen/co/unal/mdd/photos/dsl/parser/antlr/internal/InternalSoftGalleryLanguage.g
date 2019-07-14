@@ -5397,13 +5397,13 @@ ruleRestController returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)+
+		)*
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRestControllerAccess().getElementsRequestMappingParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getRestControllerAccess().getElementsResponseEntityParserRuleCall_6_0());
 				}
-				lv_elements_6_0=ruleRequestMapping
+				lv_elements_6_0=ruleResponseEntity
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRestControllerRule());
@@ -5412,11 +5412,11 @@ ruleRestController returns [EObject current=null]
 						$current,
 						"elements",
 						lv_elements_6_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMapping");
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseEntity");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)+
+		)*
 		(
 			(
 				{
@@ -5669,6 +5669,148 @@ ruleAutowiredType returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleResponseEntity
+entryRuleResponseEntity returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResponseEntityRule()); }
+	iv_ruleResponseEntity=ruleResponseEntity
+	{ $current=$iv_ruleResponseEntity.current; }
+	EOF;
+
+// Rule ResponseEntity
+ruleResponseEntity returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ResponseEntity'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResponseEntityAccess().getResponseEntityKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getResponseEntityAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResponseEntityRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResponseEntityAccess().getTypeMappingTypeParserRuleCall_2_0());
+				}
+				lv_type_2_0=ruleMappingType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResponseEntityRule());
+					}
+					add(
+						$current,
+						"type",
+						lv_type_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.MappingType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResponseEntityAccess().getParametersResponseParameterParserRuleCall_3_0());
+				}
+				lv_parameters_3_0=ruleResponseParameter
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResponseEntityRule());
+					}
+					add(
+						$current,
+						"parameters",
+						lv_parameters_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameter");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleMappingType
+entryRuleMappingType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMappingTypeRule()); }
+	iv_ruleMappingType=ruleMappingType
+	{ $current=$iv_ruleMappingType.current; }
+	EOF;
+
+// Rule MappingType
+ruleMappingType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getMappingTypeAccess().getRequestMappingParserRuleCall_0());
+		}
+		this_RequestMapping_0=ruleRequestMapping
+		{
+			$current = $this_RequestMapping_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMappingTypeAccess().getPostMappingParserRuleCall_1());
+		}
+		this_PostMapping_1=rulePostMapping
+		{
+			$current = $this_PostMapping_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMappingTypeAccess().getGetMappingParserRuleCall_2());
+		}
+		this_GetMapping_2=ruleGetMapping
+		{
+			$current = $this_GetMapping_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMappingTypeAccess().getPutMappingParserRuleCall_3());
+		}
+		this_PutMapping_3=rulePutMapping
+		{
+			$current = $this_PutMapping_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMappingTypeAccess().getDeleteMappingParserRuleCall_4());
+		}
+		this_DeleteMapping_4=ruleDeleteMapping
+		{
+			$current = $this_DeleteMapping_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleRequestMapping
 entryRuleRequestMapping returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getRequestMappingRule()); }
@@ -5692,37 +5834,56 @@ ruleRequestMapping returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRequestMappingAccess().getElementsRequestPartParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRequestMappingAccess().getValueRequestMappingValueParserRuleCall_1_0());
 				}
-				lv_elements_1_0=ruleRequestPart
+				lv_value_1_0=ruleRequestMappingValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRequestMappingRule());
 					}
 					add(
 						$current,
-						"elements",
-						lv_elements_1_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestPart");
+						"value",
+						lv_value_1_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRequestMappingAccess().getElementsRequestMappingTypeParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getRequestMappingAccess().getMethodRequestMappingMethodParserRuleCall_2_0());
 				}
-				lv_elements_2_0=ruleRequestMappingType
+				lv_method_2_0=ruleRequestMappingMethod
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRequestMappingRule());
 					}
 					add(
 						$current,
-						"elements",
-						lv_elements_2_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingType");
+						"method",
+						lv_method_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingMethod");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRequestMappingAccess().getProducesRequestMappingProducesParserRuleCall_3_0());
+				}
+				lv_produces_3_0=ruleRequestMappingProduces
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRequestMappingRule());
+					}
+					add(
+						$current,
+						"produces",
+						lv_produces_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingProduces");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -5730,15 +5891,15 @@ ruleRequestMapping returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleRequestPart
-entryRuleRequestPart returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRequestPartRule()); }
-	iv_ruleRequestPart=ruleRequestPart
-	{ $current=$iv_ruleRequestPart.current; }
+// Entry rule entryRuleRequestMappingValue
+entryRuleRequestMappingValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRequestMappingValueRule()); }
+	iv_ruleRequestMappingValue=ruleRequestMappingValue
+	{ $current=$iv_ruleRequestMappingValue.current; }
 	EOF;
 
-// Rule RequestPart
-ruleRequestPart returns [EObject current=null]
+// Rule RequestMappingValue
+ruleRequestMappingValue returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -5746,19 +5907,19 @@ ruleRequestPart returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='RequestPart'
+		otherlv_0='Value'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRequestPartAccess().getRequestPartKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRequestMappingValueAccess().getValueKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getRequestPartAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingValueAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRequestPartRule());
+						$current = createModelElement(grammarAccess.getRequestMappingValueRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -5771,15 +5932,15 @@ ruleRequestPart returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleRequestMappingType
-entryRuleRequestMappingType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRequestMappingTypeRule()); }
-	iv_ruleRequestMappingType=ruleRequestMappingType
-	{ $current=$iv_ruleRequestMappingType.current; }
+// Entry rule entryRuleRequestMappingMethod
+entryRuleRequestMappingMethod returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRequestMappingMethodRule()); }
+	iv_ruleRequestMappingMethod=ruleRequestMappingMethod
+	{ $current=$iv_ruleRequestMappingMethod.current; }
 	EOF;
 
-// Rule RequestMappingType
-ruleRequestMappingType returns [EObject current=null]
+// Rule RequestMappingMethod
+ruleRequestMappingMethod returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -5787,19 +5948,19 @@ ruleRequestMappingType returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='RequestMappingType'
+		otherlv_0='Method'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRequestMappingTypeAccess().getRequestMappingTypeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRequestMappingMethodAccess().getMethodKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingMethodAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRequestMappingTypeRule());
+						$current = createModelElement(grammarAccess.getRequestMappingMethodRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -5809,25 +5970,18 @@ ruleRequestMappingType returns [EObject current=null]
 				}
 			)
 		)
-		{
-			newCompositeNode(grammarAccess.getRequestMappingTypeAccess().getRequestMappingTypeConfParserRuleCall_2());
-		}
-		ruleRequestMappingTypeConf
-		{
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
-// Entry rule entryRuleRequestMappingTypeConf
-entryRuleRequestMappingTypeConf returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getRequestMappingTypeConfRule()); }
-	iv_ruleRequestMappingTypeConf=ruleRequestMappingTypeConf
-	{ $current=$iv_ruleRequestMappingTypeConf.current.getText(); }
+// Entry rule entryRuleRequestMappingProduces
+entryRuleRequestMappingProduces returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRequestMappingProducesRule()); }
+	iv_ruleRequestMappingProduces=ruleRequestMappingProduces
+	{ $current=$iv_ruleRequestMappingProduces.current; }
 	EOF;
 
-// Rule RequestMappingTypeConf
-ruleRequestMappingTypeConf returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+// Rule RequestMappingProduces
+ruleRequestMappingProduces returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -5835,29 +5989,395 @@ ruleRequestMappingTypeConf returns [AntlrDatatypeRuleToken current=new AntlrData
 	leaveRule();
 }:
 	(
-		kw='PostMapping'
+		otherlv_0='Produces'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getPostMappingKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRequestMappingProducesAccess().getProducesKeyword_0());
 		}
-		    |
-		kw='GetMapping'
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingProducesAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRequestMappingProducesRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePostMapping
+entryRulePostMapping returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPostMappingRule()); }
+	iv_rulePostMapping=rulePostMapping
+	{ $current=$iv_rulePostMapping.current; }
+	EOF;
+
+// Rule PostMapping
+rulePostMapping returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='PostMapping'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getGetMappingKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getPostMappingAccess().getPostMappingKeyword_0());
 		}
-		    |
-		kw='PutMapping'
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getPostMappingAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPostMappingRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleGetMapping
+entryRuleGetMapping returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGetMappingRule()); }
+	iv_ruleGetMapping=ruleGetMapping
+	{ $current=$iv_ruleGetMapping.current; }
+	EOF;
+
+// Rule GetMapping
+ruleGetMapping returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='GetMapping'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getPutMappingKeyword_2());
+			newLeafNode(otherlv_0, grammarAccess.getGetMappingAccess().getGetMappingKeyword_0());
 		}
-		    |
-		kw='DeleteMapping'
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getGetMappingAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGetMappingRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePutMapping
+entryRulePutMapping returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPutMappingRule()); }
+	iv_rulePutMapping=rulePutMapping
+	{ $current=$iv_rulePutMapping.current; }
+	EOF;
+
+// Rule PutMapping
+rulePutMapping returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='PutMapping'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getDeleteMappingKeyword_3());
+			newLeafNode(otherlv_0, grammarAccess.getPutMappingAccess().getPutMappingKeyword_0());
 		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getPutMappingAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPutMappingRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDeleteMapping
+entryRuleDeleteMapping returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDeleteMappingRule()); }
+	iv_ruleDeleteMapping=ruleDeleteMapping
+	{ $current=$iv_ruleDeleteMapping.current; }
+	EOF;
+
+// Rule DeleteMapping
+ruleDeleteMapping returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='DeleteMapping'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDeleteMappingAccess().getDeleteMappingKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getDeleteMappingAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeleteMappingRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResponseParameter
+entryRuleResponseParameter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResponseParameterRule()); }
+	iv_ruleResponseParameter=ruleResponseParameter
+	{ $current=$iv_ruleResponseParameter.current; }
+	EOF;
+
+// Rule ResponseParameter
+ruleResponseParameter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Parameter'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResponseParameterAccess().getParameterKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0());
+				}
+				lv_parameterAnnotation_1_0=ruleResponseParameterAnnotation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResponseParameterRule());
+					}
+					add(
+						$current,
+						"parameterAnnotation",
+						lv_parameterAnnotation_1_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterAnnotation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterTypeResponseParameterTypeParserRuleCall_2_0());
+				}
+				lv_parameterType_2_0=ruleResponseParameterType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResponseParameterRule());
+					}
+					add(
+						$current,
+						"parameterType",
+						lv_parameterType_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterNameResponseParameterNameParserRuleCall_3_0());
+				}
+				lv_parameterName_3_0=ruleResponseParameterName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResponseParameterRule());
+					}
+					add(
+						$current,
+						"parameterName",
+						lv_parameterName_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResponseParameterAnnotation
+entryRuleResponseParameterAnnotation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResponseParameterAnnotationRule()); }
+	iv_ruleResponseParameterAnnotation=ruleResponseParameterAnnotation
+	{ $current=$iv_ruleResponseParameterAnnotation.current; }
+	EOF;
+
+// Rule ResponseParameterAnnotation
+ruleResponseParameterAnnotation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Annotation'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResponseParameterAnnotationAccess().getAnnotationKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getResponseParameterAnnotationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResponseParameterAnnotationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResponseParameterType
+entryRuleResponseParameterType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResponseParameterTypeRule()); }
+	iv_ruleResponseParameterType=ruleResponseParameterType
+	{ $current=$iv_ruleResponseParameterType.current; }
+	EOF;
+
+// Rule ResponseParameterType
+ruleResponseParameterType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Type'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResponseParameterTypeAccess().getTypeKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getResponseParameterTypeAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResponseParameterTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResponseParameterName
+entryRuleResponseParameterName returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResponseParameterNameRule()); }
+	iv_ruleResponseParameterName=ruleResponseParameterName
+	{ $current=$iv_ruleResponseParameterName.current; }
+	EOF;
+
+// Rule ResponseParameterName
+ruleResponseParameterName returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Name'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResponseParameterNameAccess().getNameKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getResponseParameterNameAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResponseParameterNameRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 	)
 ;
 
@@ -6148,17 +6668,28 @@ ruleSpringTableId returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getSpringTableIdAccess().getSpringTableIdAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='SpringTableId'
+		otherlv_0='SpringTableId'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSpringTableIdAccess().getSpringTableIdKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getSpringTableIdAccess().getSpringTableIdKeyword_0());
 		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getSpringTableIdAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpringTableIdRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 		(
 			(
 				{
@@ -8742,8 +9273,8 @@ ruleReactServiceContent returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-	)*
+		)*
+	)
 ;
 
 // Entry rule entryRuleReactServiceContRequest

@@ -4,6 +4,9 @@
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingMethod;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingProduces;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingValue;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 
 import java.util.Collection;
@@ -13,10 +16,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,22 +29,44 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.RequestMappingImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.RequestMappingImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.RequestMappingImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.RequestMappingImpl#getProduces <em>Produces</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RequestMappingImpl extends MinimalEObjectImpl.Container implements RequestMapping
+public class RequestMappingImpl extends MappingTypeImpl implements RequestMapping
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<RequestMappingValue> value;
+
+  /**
+   * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMethod()
+   * @generated
+   * @ordered
+   */
+  protected EList<RequestMappingMethod> method;
+
+  /**
+   * The cached value of the '{@link #getProduces() <em>Produces</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProduces()
+   * @generated
+   * @ordered
+   */
+  protected EList<RequestMappingProduces> produces;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +95,43 @@ public class RequestMappingImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<EObject> getElements()
+  public EList<RequestMappingValue> getValue()
   {
-    if (elements == null)
+    if (value == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.REQUEST_MAPPING__ELEMENTS);
+      value = new EObjectContainmentEList<RequestMappingValue>(RequestMappingValue.class, this, SoftGalleryLanguagePackage.REQUEST_MAPPING__VALUE);
     }
-    return elements;
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<RequestMappingMethod> getMethod()
+  {
+    if (method == null)
+    {
+      method = new EObjectContainmentEList<RequestMappingMethod>(RequestMappingMethod.class, this, SoftGalleryLanguagePackage.REQUEST_MAPPING__METHOD);
+    }
+    return method;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<RequestMappingProduces> getProduces()
+  {
+    if (produces == null)
+    {
+      produces = new EObjectContainmentEList<RequestMappingProduces>(RequestMappingProduces.class, this, SoftGalleryLanguagePackage.REQUEST_MAPPING__PRODUCES);
+    }
+    return produces;
   }
 
   /**
@@ -92,8 +144,12 @@ public class RequestMappingImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__VALUE:
+        return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__METHOD:
+        return ((InternalEList<?>)getMethod()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__PRODUCES:
+        return ((InternalEList<?>)getProduces()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +164,12 @@ public class RequestMappingImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__VALUE:
+        return getValue();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__METHOD:
+        return getMethod();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__PRODUCES:
+        return getProduces();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +185,17 @@ public class RequestMappingImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__VALUE:
+        getValue().clear();
+        getValue().addAll((Collection<? extends RequestMappingValue>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__METHOD:
+        getMethod().clear();
+        getMethod().addAll((Collection<? extends RequestMappingMethod>)newValue);
+        return;
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__PRODUCES:
+        getProduces().clear();
+        getProduces().addAll((Collection<? extends RequestMappingProduces>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +211,14 @@ public class RequestMappingImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__VALUE:
+        getValue().clear();
+        return;
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__METHOD:
+        getMethod().clear();
+        return;
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__PRODUCES:
+        getProduces().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +234,12 @@ public class RequestMappingImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__VALUE:
+        return value != null && !value.isEmpty();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__METHOD:
+        return method != null && !method.isEmpty();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING__PRODUCES:
+        return produces != null && !produces.isEmpty();
     }
     return super.eIsSet(featureID);
   }

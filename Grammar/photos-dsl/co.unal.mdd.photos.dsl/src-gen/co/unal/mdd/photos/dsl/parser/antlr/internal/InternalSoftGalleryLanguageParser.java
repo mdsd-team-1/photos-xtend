@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'System'", "':'", "'{'", "'}'", "'Domain'", "'Entities'", "'PhotoEntity'", "'AlbumEntity'", "'UserEntity'", "'idPhoto'", "'namePhoto'", "'urlPhoto'", "'albumIdPhoto'", "'idAlbum'", "'nameAlbum'", "'userIdAlbum'", "'idUser'", "'userNameUser'", "'firstNameUser'", "'lastNameUser'", "'profileDescriptionUser'", "'passwordUser'", "'emailUser'", "'Functionalities'", "'ProfileManagement'", "'ViewProfilePhoto'", "'EditProfileInfo'", "'AppAccess'", "'Login'", "'Register'", "'AlbumManagement'", "'CreateAlbum'", "'SelectAlbum'", "'PhotoActions'", "'ViewAllPhotos'", "'ViewExtendedPhoto'", "'LoadPhoto'", "'LandingActions'", "'ViewCarousel'", "'PassPhoto'", "'DomainExceptions'", "'PhotoException'", "'AlbumException'", "'UserException'", "'PhotoNotFound'", "'PhotoUploadError'", "'PhotoNotCreated'", "'PhotoNotDeleted'", "'AlbumNotFound'", "'PhotosFromAlbumNotFound'", "'AlbumHasNoPhotos'", "'MissingParametersForNewAlbum'", "'UserIdIsNotNumber'", "'AlbumNotCreated'", "'UserNotFound'", "'AlbumsFromUserNotFound'", "'UserHasNoAlbums'", "'UserHasNoPhotos'", "'MissingParametersForNewUser'", "'UserNotCreated'", "'AlbumNotCreatedForNewUser'", "'MissingParametersForEditUser'", "'WrongLoginInfo'", "'MissingParametersForLogin'", "'UserToEditDoesNotExist'", "'UserNotEdited'", "'Architecture:'", "'Layers'", "'LayersRelations'", "'ArchitectureComponents'", "'PresentationLayer'", "'PresentationSegments'", "'PresentationView'", "'PresentationComponent'", "'PresentationAction'", "'BusinessLogicLayer'", "'BusinessLogicSegments'", "'ControllerSegment'", "'ModelSegment'", "'RepositorySegment'", "'SecuritySegment'", "'SpecificationSegment'", "'AmazonSegment'", "'ExceptionSegment'", "'DefinedSearchCriteria'", "'DataPersistenceLayer'", "'DataPersistenceSegments'", "'PostgreSLQSegment'", "'AmazonS3Storage'", "'SegmentStructure'", "'Directories'", "'Directory'", "'SingleFile'", "'CommonFile'", "'AllowedToUse'", "'AllowToUseBelow'", "'source'", "'target'", "'PersistenceDataLayer'", "'SystemComponents'", "'FrontEndComponent'", "'BackEndComponent'", "'PersistenceDataComponent'", "'Connectors'", "'REST'", "'PostgreSQLConnection'", "'AmazonS3API'", "'AmazonService'", "'Technology'", "'Spring'", "'SpringBootApplication'", "'Configuration'", "'EnableGlobalMethodSecurity'", "'EnableAuthorizationServer'", "'EnableResourceServer'", "'EnableWebSecurity'", "'SpringComponent'", "'OrderSpring'", "'SpringRepositories'", "'SpringRepository'", "'RestController'", "'Specification'", "'Predicate'", "'SearchCriteria'", "'Autowired'", "'AutowiredType'", "'RequestMapping'", "'RequestPart'", "'RequestMappingType'", "'PostMapping'", "'GetMapping'", "'PutMapping'", "'DeleteMapping'", "'ExceptionHandler'", "'ExceptionProcess'", "'SpringEntity'", "'SpringTable'", "'SpringTableId'", "'GeneratedValue'", "'Column'", "'NameNativeQuery'", "'React'", "'ReactModules'", "'ReactConfiguration'", "'DependenciesStruct'", "'DependencyType'", "'PackageName'", "'PackageVersion'", "'ReactDOMConfigurations'", "'RoutingConf'", "'ServiceWorker'", "'HTMLStructure'", "'Manifest'", "'RepositoriesConf'", "'ReactComponents'", "'LogicComponents'", "'RoutingComponents'", "'AppComponent'", "'IndexComponent'", "'UIComponents'", "'ViewComponent'", "'Subcomponents'", "'import'", "'Constructor'", "'State'", "'String'", "'Array'", "'Object'", "'Number'", "'null'", "'Boolean'", "'FunctionBindingDeclaration'", "'ComponentDidMount'", "'FunctionStructure'", "'ComponentDidUpdate'", "'ComponentWillUnmount'", "'Render'", "'RenderContent'", "'Props'", "'Style'", "'prop_name'", "'propsContent'", "'ReactActions'", "'ServiceType'", "'functions'", "'return'", "'propName'", "'ServicesRelations'", "'Wrapper'", "'AuxWrapper'", "'ReactLibraries'", "'LibraryContent'", "'ReactDesign'", "'ReactRouting'", "'ComponentManagement'", "'StoreManagement'", "'ReactDeployment'", "'ConfigurationLibrary'", "'ReactInformation'", "'InformationContent'", "'ReactReadme'", "'ReactAditionalInfo'", "'PostgreSQL'", "'Database'", "'Schema'", "'Index_p'", "'ViewSchema'", "'Table_p'", "'ForeignKey'", "'ForeingKeyName'", "'ForeignKeyRef'", "'RefTable_p'", "'DatatypeDB'", "'Constraint'", "'Row'", "'Policy'", "'Trigger'", "'Function'", "'PostgresUser'", "'Privilege'", "'Query'", "'Clause'", "'AmazonWebServices'", "'AmazonSimpleStorageService'", "'BatchOperation'", "'Bucket'", "'BucketAccess'", "'PublicAccess'", "'ObjectsPublic'", "'BucketObjectsNotPublic'", "'OnlyAuthorized'", "'AmazonFolder'", "'AmazonFile'", "'Metadata'", "'AmazonElasticComputeCloud'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'System'", "':'", "'{'", "'}'", "'Domain'", "'Entities'", "'PhotoEntity'", "'AlbumEntity'", "'UserEntity'", "'idPhoto'", "'namePhoto'", "'urlPhoto'", "'albumIdPhoto'", "'idAlbum'", "'nameAlbum'", "'userIdAlbum'", "'idUser'", "'userNameUser'", "'firstNameUser'", "'lastNameUser'", "'profileDescriptionUser'", "'passwordUser'", "'emailUser'", "'Functionalities'", "'ProfileManagement'", "'ViewProfilePhoto'", "'EditProfileInfo'", "'AppAccess'", "'Login'", "'Register'", "'AlbumManagement'", "'CreateAlbum'", "'SelectAlbum'", "'PhotoActions'", "'ViewAllPhotos'", "'ViewExtendedPhoto'", "'LoadPhoto'", "'LandingActions'", "'ViewCarousel'", "'PassPhoto'", "'DomainExceptions'", "'PhotoException'", "'AlbumException'", "'UserException'", "'PhotoNotFound'", "'PhotoUploadError'", "'PhotoNotCreated'", "'PhotoNotDeleted'", "'AlbumNotFound'", "'PhotosFromAlbumNotFound'", "'AlbumHasNoPhotos'", "'MissingParametersForNewAlbum'", "'UserIdIsNotNumber'", "'AlbumNotCreated'", "'UserNotFound'", "'AlbumsFromUserNotFound'", "'UserHasNoAlbums'", "'UserHasNoPhotos'", "'MissingParametersForNewUser'", "'UserNotCreated'", "'AlbumNotCreatedForNewUser'", "'MissingParametersForEditUser'", "'WrongLoginInfo'", "'MissingParametersForLogin'", "'UserToEditDoesNotExist'", "'UserNotEdited'", "'Architecture:'", "'Layers'", "'LayersRelations'", "'ArchitectureComponents'", "'PresentationLayer'", "'PresentationSegments'", "'PresentationView'", "'PresentationComponent'", "'PresentationAction'", "'BusinessLogicLayer'", "'BusinessLogicSegments'", "'ControllerSegment'", "'ModelSegment'", "'RepositorySegment'", "'SecuritySegment'", "'SpecificationSegment'", "'AmazonSegment'", "'ExceptionSegment'", "'DefinedSearchCriteria'", "'DataPersistenceLayer'", "'DataPersistenceSegments'", "'PostgreSLQSegment'", "'AmazonS3Storage'", "'SegmentStructure'", "'Directories'", "'Directory'", "'SingleFile'", "'CommonFile'", "'AllowedToUse'", "'AllowToUseBelow'", "'source'", "'target'", "'PersistenceDataLayer'", "'SystemComponents'", "'FrontEndComponent'", "'BackEndComponent'", "'PersistenceDataComponent'", "'Connectors'", "'REST'", "'PostgreSQLConnection'", "'AmazonS3API'", "'AmazonService'", "'Technology'", "'Spring'", "'SpringBootApplication'", "'Configuration'", "'EnableGlobalMethodSecurity'", "'EnableAuthorizationServer'", "'EnableResourceServer'", "'EnableWebSecurity'", "'SpringComponent'", "'OrderSpring'", "'SpringRepositories'", "'SpringRepository'", "'RestController'", "'Specification'", "'Predicate'", "'SearchCriteria'", "'Autowired'", "'AutowiredType'", "'ResponseEntity'", "'RequestMapping'", "'Value'", "'Method'", "'Produces'", "'PostMapping'", "'GetMapping'", "'PutMapping'", "'DeleteMapping'", "'Parameter'", "'Annotation'", "'Type'", "'Name'", "'ExceptionHandler'", "'ExceptionProcess'", "'SpringEntity'", "'SpringTable'", "'SpringTableId'", "'GeneratedValue'", "'Column'", "'NameNativeQuery'", "'React'", "'ReactModules'", "'ReactConfiguration'", "'DependenciesStruct'", "'DependencyType'", "'PackageName'", "'PackageVersion'", "'ReactDOMConfigurations'", "'RoutingConf'", "'ServiceWorker'", "'HTMLStructure'", "'Manifest'", "'RepositoriesConf'", "'ReactComponents'", "'LogicComponents'", "'RoutingComponents'", "'AppComponent'", "'IndexComponent'", "'UIComponents'", "'ViewComponent'", "'Subcomponents'", "'import'", "'Constructor'", "'State'", "'String'", "'Array'", "'Object'", "'Number'", "'null'", "'Boolean'", "'FunctionBindingDeclaration'", "'ComponentDidMount'", "'FunctionStructure'", "'ComponentDidUpdate'", "'ComponentWillUnmount'", "'Render'", "'RenderContent'", "'Props'", "'Style'", "'prop_name'", "'propsContent'", "'ReactActions'", "'ServiceType'", "'functions'", "'return'", "'propName'", "'ServicesRelations'", "'Wrapper'", "'AuxWrapper'", "'ReactLibraries'", "'LibraryContent'", "'ReactDesign'", "'ReactRouting'", "'ComponentManagement'", "'StoreManagement'", "'ReactDeployment'", "'ConfigurationLibrary'", "'ReactInformation'", "'InformationContent'", "'ReactReadme'", "'ReactAditionalInfo'", "'PostgreSQL'", "'Database'", "'Schema'", "'Index_p'", "'ViewSchema'", "'Table_p'", "'ForeignKey'", "'ForeingKeyName'", "'ForeignKeyRef'", "'RefTable_p'", "'DatatypeDB'", "'Constraint'", "'Row'", "'Policy'", "'Trigger'", "'Function'", "'PostgresUser'", "'Privilege'", "'Query'", "'Clause'", "'AmazonWebServices'", "'AmazonSimpleStorageService'", "'BatchOperation'", "'Bucket'", "'BucketAccess'", "'PublicAccess'", "'ObjectsPublic'", "'BucketObjectsNotPublic'", "'OnlyAuthorized'", "'AmazonFolder'", "'AmazonFile'", "'Metadata'", "'AmazonElasticComputeCloud'"
     };
     public static final int T__144=144;
     public static final int T__143=143;
@@ -50,9 +50,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     public static final int T__135=135;
     public static final int T__61=61;
     public static final int T__134=134;
+    public static final int T__250=250;
     public static final int RULE_ID=4;
     public static final int T__131=131;
     public static final int T__130=130;
+    public static final int T__251=251;
     public static final int RULE_INT=5;
     public static final int T__66=66;
     public static final int T__67=67;
@@ -61,12 +63,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     public static final int T__69=69;
     public static final int T__62=62;
     public static final int T__126=126;
+    public static final int T__247=247;
     public static final int T__63=63;
     public static final int T__125=125;
+    public static final int T__246=246;
     public static final int T__64=64;
     public static final int T__128=128;
+    public static final int T__249=249;
     public static final int T__65=65;
     public static final int T__127=127;
+    public static final int T__248=248;
     public static final int T__166=166;
     public static final int T__165=165;
     public static final int T__168=168;
@@ -11863,7 +11869,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 int alt37=2;
                 int LA37_0 = input.LA(1);
 
-                if ( (LA37_0==146) ) {
+                if ( (LA37_0==152) ) {
                     alt37=1;
                 }
 
@@ -13108,7 +13114,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleRestController"
-    // InternalSoftGalleryLanguage.g:5325:1: ruleRestController returns [EObject current=null] : (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )+ ( (lv_elements_6_0= ruleRequestMapping ) )+ ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' ) ;
+    // InternalSoftGalleryLanguage.g:5325:1: ruleRestController returns [EObject current=null] : (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )* ( (lv_elements_6_0= ruleResponseEntity ) )* ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' ) ;
     public final EObject ruleRestController() throws RecognitionException {
         EObject current = null;
 
@@ -13130,11 +13136,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5331:2: ( (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )+ ( (lv_elements_6_0= ruleRequestMapping ) )+ ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' ) )
-            // InternalSoftGalleryLanguage.g:5332:2: (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )+ ( (lv_elements_6_0= ruleRequestMapping ) )+ ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' )
+            // InternalSoftGalleryLanguage.g:5331:2: ( (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )* ( (lv_elements_6_0= ruleResponseEntity ) )* ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' ) )
+            // InternalSoftGalleryLanguage.g:5332:2: (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )* ( (lv_elements_6_0= ruleResponseEntity ) )* ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' )
             {
-            // InternalSoftGalleryLanguage.g:5332:2: (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )+ ( (lv_elements_6_0= ruleRequestMapping ) )+ ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' )
-            // InternalSoftGalleryLanguage.g:5333:3: otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )+ ( (lv_elements_6_0= ruleRequestMapping ) )+ ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}'
+            // InternalSoftGalleryLanguage.g:5332:2: (otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )* ( (lv_elements_6_0= ruleResponseEntity ) )* ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}' )
+            // InternalSoftGalleryLanguage.g:5333:3: otherlv_0= 'RestController' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpecification ) ) ( (lv_elements_5_0= ruleAutowired ) )* ( (lv_elements_6_0= ruleResponseEntity ) )* ( (lv_elements_7_0= ruleExceptionHandler ) ) otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,131,FOLLOW_9); 
 
@@ -13205,8 +13211,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:5382:3: ( (lv_elements_5_0= ruleAutowired ) )+
-            int cnt39=0;
+            // InternalSoftGalleryLanguage.g:5382:3: ( (lv_elements_5_0= ruleAutowired ) )*
             loop39:
             do {
                 int alt39=2;
@@ -13227,7 +13232,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             	    					newCompositeNode(grammarAccess.getRestControllerAccess().getElementsAutowiredParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_104);
+            	    pushFollow(FOLLOW_103);
             	    lv_elements_5_0=ruleAutowired();
 
             	    state._fsp--;
@@ -13251,16 +13256,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             	    break;
 
             	default :
-            	    if ( cnt39 >= 1 ) break loop39;
-                        EarlyExitException eee =
-                            new EarlyExitException(39, input);
-                        throw eee;
+            	    break loop39;
                 }
-                cnt39++;
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:5401:3: ( (lv_elements_6_0= ruleRequestMapping ) )+
-            int cnt40=0;
+            // InternalSoftGalleryLanguage.g:5401:3: ( (lv_elements_6_0= ruleResponseEntity ) )*
             loop40:
             do {
                 int alt40=2;
@@ -13273,16 +13273,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt40) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:5402:4: (lv_elements_6_0= ruleRequestMapping )
+            	    // InternalSoftGalleryLanguage.g:5402:4: (lv_elements_6_0= ruleResponseEntity )
             	    {
-            	    // InternalSoftGalleryLanguage.g:5402:4: (lv_elements_6_0= ruleRequestMapping )
-            	    // InternalSoftGalleryLanguage.g:5403:5: lv_elements_6_0= ruleRequestMapping
+            	    // InternalSoftGalleryLanguage.g:5402:4: (lv_elements_6_0= ruleResponseEntity )
+            	    // InternalSoftGalleryLanguage.g:5403:5: lv_elements_6_0= ruleResponseEntity
             	    {
 
-            	    					newCompositeNode(grammarAccess.getRestControllerAccess().getElementsRequestMappingParserRuleCall_6_0());
+            	    					newCompositeNode(grammarAccess.getRestControllerAccess().getElementsResponseEntityParserRuleCall_6_0());
             	    				
-            	    pushFollow(FOLLOW_105);
-            	    lv_elements_6_0=ruleRequestMapping();
+            	    pushFollow(FOLLOW_103);
+            	    lv_elements_6_0=ruleResponseEntity();
 
             	    state._fsp--;
 
@@ -13294,7 +13294,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             	    						current,
             	    						"elements",
             	    						lv_elements_6_0,
-            	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMapping");
+            	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseEntity");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -13305,12 +13305,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             	    break;
 
             	default :
-            	    if ( cnt40 >= 1 ) break loop40;
-                        EarlyExitException eee =
-                            new EarlyExitException(40, input);
-                        throw eee;
+            	    break loop40;
                 }
-                cnt40++;
             } while (true);
 
             // InternalSoftGalleryLanguage.g:5420:3: ( (lv_elements_7_0= ruleExceptionHandler ) )
@@ -13427,7 +13423,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             // InternalSoftGalleryLanguage.g:5461:2: (otherlv_0= 'Specification' ( (lv_elements_1_0= rulePredicate ) )+ ( (lv_elements_2_0= ruleSearchCriteria ) ) )
             // InternalSoftGalleryLanguage.g:5462:3: otherlv_0= 'Specification' ( (lv_elements_1_0= rulePredicate ) )+ ( (lv_elements_2_0= ruleSearchCriteria ) )
             {
-            otherlv_0=(Token)match(input,132,FOLLOW_106); 
+            otherlv_0=(Token)match(input,132,FOLLOW_104); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSpecificationAccess().getSpecificationKeyword_0());
             		
@@ -13453,7 +13449,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             	    					newCompositeNode(grammarAccess.getSpecificationAccess().getElementsPredicateParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_107);
+            	    pushFollow(FOLLOW_105);
             	    lv_elements_1_0=rulePredicate();
 
             	    state._fsp--;
@@ -13805,7 +13801,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             // InternalSoftGalleryLanguage.g:5604:2: (otherlv_0= 'Autowired' ( (lv_elements_1_0= ruleAutowiredType ) ) )
             // InternalSoftGalleryLanguage.g:5605:3: otherlv_0= 'Autowired' ( (lv_elements_1_0= ruleAutowiredType ) )
             {
-            otherlv_0=(Token)match(input,135,FOLLOW_108); 
+            otherlv_0=(Token)match(input,135,FOLLOW_106); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAutowiredAccess().getAutowiredKeyword_0());
             		
@@ -13968,8 +13964,405 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     // $ANTLR end "ruleAutowiredType"
 
 
+    // $ANTLR start "entryRuleResponseEntity"
+    // InternalSoftGalleryLanguage.g:5673:1: entryRuleResponseEntity returns [EObject current=null] : iv_ruleResponseEntity= ruleResponseEntity EOF ;
+    public final EObject entryRuleResponseEntity() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResponseEntity = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:5673:55: (iv_ruleResponseEntity= ruleResponseEntity EOF )
+            // InternalSoftGalleryLanguage.g:5674:2: iv_ruleResponseEntity= ruleResponseEntity EOF
+            {
+             newCompositeNode(grammarAccess.getResponseEntityRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResponseEntity=ruleResponseEntity();
+
+            state._fsp--;
+
+             current =iv_ruleResponseEntity; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResponseEntity"
+
+
+    // $ANTLR start "ruleResponseEntity"
+    // InternalSoftGalleryLanguage.g:5680:1: ruleResponseEntity returns [EObject current=null] : (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* ) ;
+    public final EObject ruleResponseEntity() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        EObject lv_type_2_0 = null;
+
+        EObject lv_parameters_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:5686:2: ( (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* ) )
+            // InternalSoftGalleryLanguage.g:5687:2: (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* )
+            {
+            // InternalSoftGalleryLanguage.g:5687:2: (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* )
+            // InternalSoftGalleryLanguage.g:5688:3: otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )*
+            {
+            otherlv_0=(Token)match(input,137,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResponseEntityAccess().getResponseEntityKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:5692:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:5693:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:5693:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:5694:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_107); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getResponseEntityAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getResponseEntityRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:5710:3: ( (lv_type_2_0= ruleMappingType ) )
+            // InternalSoftGalleryLanguage.g:5711:4: (lv_type_2_0= ruleMappingType )
+            {
+            // InternalSoftGalleryLanguage.g:5711:4: (lv_type_2_0= ruleMappingType )
+            // InternalSoftGalleryLanguage.g:5712:5: lv_type_2_0= ruleMappingType
+            {
+
+            					newCompositeNode(grammarAccess.getResponseEntityAccess().getTypeMappingTypeParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_108);
+            lv_type_2_0=ruleMappingType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getResponseEntityRule());
+            					}
+            					add(
+            						current,
+            						"type",
+            						lv_type_2_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.MappingType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:5729:3: ( (lv_parameters_3_0= ruleResponseParameter ) )*
+            loop42:
+            do {
+                int alt42=2;
+                int LA42_0 = input.LA(1);
+
+                if ( (LA42_0==146) ) {
+                    alt42=1;
+                }
+
+
+                switch (alt42) {
+            	case 1 :
+            	    // InternalSoftGalleryLanguage.g:5730:4: (lv_parameters_3_0= ruleResponseParameter )
+            	    {
+            	    // InternalSoftGalleryLanguage.g:5730:4: (lv_parameters_3_0= ruleResponseParameter )
+            	    // InternalSoftGalleryLanguage.g:5731:5: lv_parameters_3_0= ruleResponseParameter
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getResponseEntityAccess().getParametersResponseParameterParserRuleCall_3_0());
+            	    				
+            	    pushFollow(FOLLOW_108);
+            	    lv_parameters_3_0=ruleResponseParameter();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getResponseEntityRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"parameters",
+            	    						lv_parameters_3_0,
+            	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameter");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop42;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResponseEntity"
+
+
+    // $ANTLR start "entryRuleMappingType"
+    // InternalSoftGalleryLanguage.g:5752:1: entryRuleMappingType returns [EObject current=null] : iv_ruleMappingType= ruleMappingType EOF ;
+    public final EObject entryRuleMappingType() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMappingType = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:5752:52: (iv_ruleMappingType= ruleMappingType EOF )
+            // InternalSoftGalleryLanguage.g:5753:2: iv_ruleMappingType= ruleMappingType EOF
+            {
+             newCompositeNode(grammarAccess.getMappingTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMappingType=ruleMappingType();
+
+            state._fsp--;
+
+             current =iv_ruleMappingType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMappingType"
+
+
+    // $ANTLR start "ruleMappingType"
+    // InternalSoftGalleryLanguage.g:5759:1: ruleMappingType returns [EObject current=null] : (this_RequestMapping_0= ruleRequestMapping | this_PostMapping_1= rulePostMapping | this_GetMapping_2= ruleGetMapping | this_PutMapping_3= rulePutMapping | this_DeleteMapping_4= ruleDeleteMapping ) ;
+    public final EObject ruleMappingType() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_RequestMapping_0 = null;
+
+        EObject this_PostMapping_1 = null;
+
+        EObject this_GetMapping_2 = null;
+
+        EObject this_PutMapping_3 = null;
+
+        EObject this_DeleteMapping_4 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:5765:2: ( (this_RequestMapping_0= ruleRequestMapping | this_PostMapping_1= rulePostMapping | this_GetMapping_2= ruleGetMapping | this_PutMapping_3= rulePutMapping | this_DeleteMapping_4= ruleDeleteMapping ) )
+            // InternalSoftGalleryLanguage.g:5766:2: (this_RequestMapping_0= ruleRequestMapping | this_PostMapping_1= rulePostMapping | this_GetMapping_2= ruleGetMapping | this_PutMapping_3= rulePutMapping | this_DeleteMapping_4= ruleDeleteMapping )
+            {
+            // InternalSoftGalleryLanguage.g:5766:2: (this_RequestMapping_0= ruleRequestMapping | this_PostMapping_1= rulePostMapping | this_GetMapping_2= ruleGetMapping | this_PutMapping_3= rulePutMapping | this_DeleteMapping_4= ruleDeleteMapping )
+            int alt43=5;
+            switch ( input.LA(1) ) {
+            case 138:
+                {
+                alt43=1;
+                }
+                break;
+            case 142:
+                {
+                alt43=2;
+                }
+                break;
+            case 143:
+                {
+                alt43=3;
+                }
+                break;
+            case 144:
+                {
+                alt43=4;
+                }
+                break;
+            case 145:
+                {
+                alt43=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 43, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt43) {
+                case 1 :
+                    // InternalSoftGalleryLanguage.g:5767:3: this_RequestMapping_0= ruleRequestMapping
+                    {
+
+                    			newCompositeNode(grammarAccess.getMappingTypeAccess().getRequestMappingParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_RequestMapping_0=ruleRequestMapping();
+
+                    state._fsp--;
+
+
+                    			current = this_RequestMapping_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSoftGalleryLanguage.g:5776:3: this_PostMapping_1= rulePostMapping
+                    {
+
+                    			newCompositeNode(grammarAccess.getMappingTypeAccess().getPostMappingParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_PostMapping_1=rulePostMapping();
+
+                    state._fsp--;
+
+
+                    			current = this_PostMapping_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSoftGalleryLanguage.g:5785:3: this_GetMapping_2= ruleGetMapping
+                    {
+
+                    			newCompositeNode(grammarAccess.getMappingTypeAccess().getGetMappingParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_GetMapping_2=ruleGetMapping();
+
+                    state._fsp--;
+
+
+                    			current = this_GetMapping_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSoftGalleryLanguage.g:5794:3: this_PutMapping_3= rulePutMapping
+                    {
+
+                    			newCompositeNode(grammarAccess.getMappingTypeAccess().getPutMappingParserRuleCall_3());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_PutMapping_3=rulePutMapping();
+
+                    state._fsp--;
+
+
+                    			current = this_PutMapping_3;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSoftGalleryLanguage.g:5803:3: this_DeleteMapping_4= ruleDeleteMapping
+                    {
+
+                    			newCompositeNode(grammarAccess.getMappingTypeAccess().getDeleteMappingParserRuleCall_4());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_DeleteMapping_4=ruleDeleteMapping();
+
+                    state._fsp--;
+
+
+                    			current = this_DeleteMapping_4;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMappingType"
+
+
     // $ANTLR start "entryRuleRequestMapping"
-    // InternalSoftGalleryLanguage.g:5673:1: entryRuleRequestMapping returns [EObject current=null] : iv_ruleRequestMapping= ruleRequestMapping EOF ;
+    // InternalSoftGalleryLanguage.g:5815:1: entryRuleRequestMapping returns [EObject current=null] : iv_ruleRequestMapping= ruleRequestMapping EOF ;
     public final EObject entryRuleRequestMapping() throws RecognitionException {
         EObject current = null;
 
@@ -13977,8 +14370,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:5673:55: (iv_ruleRequestMapping= ruleRequestMapping EOF )
-            // InternalSoftGalleryLanguage.g:5674:2: iv_ruleRequestMapping= ruleRequestMapping EOF
+            // InternalSoftGalleryLanguage.g:5815:55: (iv_ruleRequestMapping= ruleRequestMapping EOF )
+            // InternalSoftGalleryLanguage.g:5816:2: iv_ruleRequestMapping= ruleRequestMapping EOF
             {
              newCompositeNode(grammarAccess.getRequestMappingRule()); 
             pushFollow(FOLLOW_1);
@@ -14005,90 +14398,43 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleRequestMapping"
-    // InternalSoftGalleryLanguage.g:5680:1: ruleRequestMapping returns [EObject current=null] : (otherlv_0= 'RequestMapping' ( (lv_elements_1_0= ruleRequestPart ) )* ( (lv_elements_2_0= ruleRequestMappingType ) ) ) ;
+    // InternalSoftGalleryLanguage.g:5822:1: ruleRequestMapping returns [EObject current=null] : (otherlv_0= 'RequestMapping' ( (lv_value_1_0= ruleRequestMappingValue ) ) ( (lv_method_2_0= ruleRequestMappingMethod ) ) ( (lv_produces_3_0= ruleRequestMappingProduces ) ) ) ;
     public final EObject ruleRequestMapping() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject lv_elements_1_0 = null;
+        EObject lv_value_1_0 = null;
 
-        EObject lv_elements_2_0 = null;
+        EObject lv_method_2_0 = null;
+
+        EObject lv_produces_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5686:2: ( (otherlv_0= 'RequestMapping' ( (lv_elements_1_0= ruleRequestPart ) )* ( (lv_elements_2_0= ruleRequestMappingType ) ) ) )
-            // InternalSoftGalleryLanguage.g:5687:2: (otherlv_0= 'RequestMapping' ( (lv_elements_1_0= ruleRequestPart ) )* ( (lv_elements_2_0= ruleRequestMappingType ) ) )
+            // InternalSoftGalleryLanguage.g:5828:2: ( (otherlv_0= 'RequestMapping' ( (lv_value_1_0= ruleRequestMappingValue ) ) ( (lv_method_2_0= ruleRequestMappingMethod ) ) ( (lv_produces_3_0= ruleRequestMappingProduces ) ) ) )
+            // InternalSoftGalleryLanguage.g:5829:2: (otherlv_0= 'RequestMapping' ( (lv_value_1_0= ruleRequestMappingValue ) ) ( (lv_method_2_0= ruleRequestMappingMethod ) ) ( (lv_produces_3_0= ruleRequestMappingProduces ) ) )
             {
-            // InternalSoftGalleryLanguage.g:5687:2: (otherlv_0= 'RequestMapping' ( (lv_elements_1_0= ruleRequestPart ) )* ( (lv_elements_2_0= ruleRequestMappingType ) ) )
-            // InternalSoftGalleryLanguage.g:5688:3: otherlv_0= 'RequestMapping' ( (lv_elements_1_0= ruleRequestPart ) )* ( (lv_elements_2_0= ruleRequestMappingType ) )
+            // InternalSoftGalleryLanguage.g:5829:2: (otherlv_0= 'RequestMapping' ( (lv_value_1_0= ruleRequestMappingValue ) ) ( (lv_method_2_0= ruleRequestMappingMethod ) ) ( (lv_produces_3_0= ruleRequestMappingProduces ) ) )
+            // InternalSoftGalleryLanguage.g:5830:3: otherlv_0= 'RequestMapping' ( (lv_value_1_0= ruleRequestMappingValue ) ) ( (lv_method_2_0= ruleRequestMappingMethod ) ) ( (lv_produces_3_0= ruleRequestMappingProduces ) )
             {
-            otherlv_0=(Token)match(input,137,FOLLOW_109); 
+            otherlv_0=(Token)match(input,138,FOLLOW_109); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRequestMappingAccess().getRequestMappingKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:5692:3: ( (lv_elements_1_0= ruleRequestPart ) )*
-            loop42:
-            do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
-
-                if ( (LA42_0==138) ) {
-                    alt42=1;
-                }
-
-
-                switch (alt42) {
-            	case 1 :
-            	    // InternalSoftGalleryLanguage.g:5693:4: (lv_elements_1_0= ruleRequestPart )
-            	    {
-            	    // InternalSoftGalleryLanguage.g:5693:4: (lv_elements_1_0= ruleRequestPart )
-            	    // InternalSoftGalleryLanguage.g:5694:5: lv_elements_1_0= ruleRequestPart
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getRequestMappingAccess().getElementsRequestPartParserRuleCall_1_0());
-            	    				
-            	    pushFollow(FOLLOW_109);
-            	    lv_elements_1_0=ruleRequestPart();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getRequestMappingRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"elements",
-            	    						lv_elements_1_0,
-            	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestPart");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop42;
-                }
-            } while (true);
-
-            // InternalSoftGalleryLanguage.g:5711:3: ( (lv_elements_2_0= ruleRequestMappingType ) )
-            // InternalSoftGalleryLanguage.g:5712:4: (lv_elements_2_0= ruleRequestMappingType )
+            // InternalSoftGalleryLanguage.g:5834:3: ( (lv_value_1_0= ruleRequestMappingValue ) )
+            // InternalSoftGalleryLanguage.g:5835:4: (lv_value_1_0= ruleRequestMappingValue )
             {
-            // InternalSoftGalleryLanguage.g:5712:4: (lv_elements_2_0= ruleRequestMappingType )
-            // InternalSoftGalleryLanguage.g:5713:5: lv_elements_2_0= ruleRequestMappingType
+            // InternalSoftGalleryLanguage.g:5835:4: (lv_value_1_0= ruleRequestMappingValue )
+            // InternalSoftGalleryLanguage.g:5836:5: lv_value_1_0= ruleRequestMappingValue
             {
 
-            					newCompositeNode(grammarAccess.getRequestMappingAccess().getElementsRequestMappingTypeParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getRequestMappingAccess().getValueRequestMappingValueParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_2);
-            lv_elements_2_0=ruleRequestMappingType();
+            pushFollow(FOLLOW_110);
+            lv_value_1_0=ruleRequestMappingValue();
 
             state._fsp--;
 
@@ -14098,9 +14444,71 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					add(
             						current,
-            						"elements",
-            						lv_elements_2_0,
-            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingType");
+            						"value",
+            						lv_value_1_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingValue");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:5853:3: ( (lv_method_2_0= ruleRequestMappingMethod ) )
+            // InternalSoftGalleryLanguage.g:5854:4: (lv_method_2_0= ruleRequestMappingMethod )
+            {
+            // InternalSoftGalleryLanguage.g:5854:4: (lv_method_2_0= ruleRequestMappingMethod )
+            // InternalSoftGalleryLanguage.g:5855:5: lv_method_2_0= ruleRequestMappingMethod
+            {
+
+            					newCompositeNode(grammarAccess.getRequestMappingAccess().getMethodRequestMappingMethodParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_111);
+            lv_method_2_0=ruleRequestMappingMethod();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRequestMappingRule());
+            					}
+            					add(
+            						current,
+            						"method",
+            						lv_method_2_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingMethod");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:5872:3: ( (lv_produces_3_0= ruleRequestMappingProduces ) )
+            // InternalSoftGalleryLanguage.g:5873:4: (lv_produces_3_0= ruleRequestMappingProduces )
+            {
+            // InternalSoftGalleryLanguage.g:5873:4: (lv_produces_3_0= ruleRequestMappingProduces )
+            // InternalSoftGalleryLanguage.g:5874:5: lv_produces_3_0= ruleRequestMappingProduces
+            {
+
+            					newCompositeNode(grammarAccess.getRequestMappingAccess().getProducesRequestMappingProducesParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_produces_3_0=ruleRequestMappingProduces();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRequestMappingRule());
+            					}
+            					add(
+            						current,
+            						"produces",
+            						lv_produces_3_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.RequestMappingProduces");
             					afterParserOrEnumRuleCall();
             				
 
@@ -14131,25 +14539,25 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     // $ANTLR end "ruleRequestMapping"
 
 
-    // $ANTLR start "entryRuleRequestPart"
-    // InternalSoftGalleryLanguage.g:5734:1: entryRuleRequestPart returns [EObject current=null] : iv_ruleRequestPart= ruleRequestPart EOF ;
-    public final EObject entryRuleRequestPart() throws RecognitionException {
+    // $ANTLR start "entryRuleRequestMappingValue"
+    // InternalSoftGalleryLanguage.g:5895:1: entryRuleRequestMappingValue returns [EObject current=null] : iv_ruleRequestMappingValue= ruleRequestMappingValue EOF ;
+    public final EObject entryRuleRequestMappingValue() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleRequestPart = null;
+        EObject iv_ruleRequestMappingValue = null;
 
 
         try {
-            // InternalSoftGalleryLanguage.g:5734:52: (iv_ruleRequestPart= ruleRequestPart EOF )
-            // InternalSoftGalleryLanguage.g:5735:2: iv_ruleRequestPart= ruleRequestPart EOF
+            // InternalSoftGalleryLanguage.g:5895:60: (iv_ruleRequestMappingValue= ruleRequestMappingValue EOF )
+            // InternalSoftGalleryLanguage.g:5896:2: iv_ruleRequestMappingValue= ruleRequestMappingValue EOF
             {
-             newCompositeNode(grammarAccess.getRequestPartRule()); 
+             newCompositeNode(grammarAccess.getRequestMappingValueRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleRequestPart=ruleRequestPart();
+            iv_ruleRequestMappingValue=ruleRequestMappingValue();
 
             state._fsp--;
 
-             current =iv_ruleRequestPart; 
+             current =iv_ruleRequestMappingValue; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -14164,12 +14572,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         }
         return current;
     }
-    // $ANTLR end "entryRuleRequestPart"
+    // $ANTLR end "entryRuleRequestMappingValue"
 
 
-    // $ANTLR start "ruleRequestPart"
-    // InternalSoftGalleryLanguage.g:5741:1: ruleRequestPart returns [EObject current=null] : (otherlv_0= 'RequestPart' ( (lv_name_1_0= RULE_ID ) ) ) ;
-    public final EObject ruleRequestPart() throws RecognitionException {
+    // $ANTLR start "ruleRequestMappingValue"
+    // InternalSoftGalleryLanguage.g:5902:1: ruleRequestMappingValue returns [EObject current=null] : (otherlv_0= 'Value' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleRequestMappingValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -14179,135 +14587,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5747:2: ( (otherlv_0= 'RequestPart' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:5748:2: (otherlv_0= 'RequestPart' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:5908:2: ( (otherlv_0= 'Value' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:5909:2: (otherlv_0= 'Value' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:5748:2: (otherlv_0= 'RequestPart' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:5749:3: otherlv_0= 'RequestPart' ( (lv_name_1_0= RULE_ID ) )
-            {
-            otherlv_0=(Token)match(input,138,FOLLOW_9); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getRequestPartAccess().getRequestPartKeyword_0());
-            		
-            // InternalSoftGalleryLanguage.g:5753:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:5754:4: (lv_name_1_0= RULE_ID )
-            {
-            // InternalSoftGalleryLanguage.g:5754:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:5755:5: lv_name_1_0= RULE_ID
-            {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-            					newLeafNode(lv_name_1_0, grammarAccess.getRequestPartAccess().getNameIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getRequestPartRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleRequestPart"
-
-
-    // $ANTLR start "entryRuleRequestMappingType"
-    // InternalSoftGalleryLanguage.g:5775:1: entryRuleRequestMappingType returns [EObject current=null] : iv_ruleRequestMappingType= ruleRequestMappingType EOF ;
-    public final EObject entryRuleRequestMappingType() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleRequestMappingType = null;
-
-
-        try {
-            // InternalSoftGalleryLanguage.g:5775:59: (iv_ruleRequestMappingType= ruleRequestMappingType EOF )
-            // InternalSoftGalleryLanguage.g:5776:2: iv_ruleRequestMappingType= ruleRequestMappingType EOF
-            {
-             newCompositeNode(grammarAccess.getRequestMappingTypeRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleRequestMappingType=ruleRequestMappingType();
-
-            state._fsp--;
-
-             current =iv_ruleRequestMappingType; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleRequestMappingType"
-
-
-    // $ANTLR start "ruleRequestMappingType"
-    // InternalSoftGalleryLanguage.g:5782:1: ruleRequestMappingType returns [EObject current=null] : (otherlv_0= 'RequestMappingType' ( (lv_name_1_0= RULE_ID ) ) ruleRequestMappingTypeConf ) ;
-    public final EObject ruleRequestMappingType() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_name_1_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSoftGalleryLanguage.g:5788:2: ( (otherlv_0= 'RequestMappingType' ( (lv_name_1_0= RULE_ID ) ) ruleRequestMappingTypeConf ) )
-            // InternalSoftGalleryLanguage.g:5789:2: (otherlv_0= 'RequestMappingType' ( (lv_name_1_0= RULE_ID ) ) ruleRequestMappingTypeConf )
-            {
-            // InternalSoftGalleryLanguage.g:5789:2: (otherlv_0= 'RequestMappingType' ( (lv_name_1_0= RULE_ID ) ) ruleRequestMappingTypeConf )
-            // InternalSoftGalleryLanguage.g:5790:3: otherlv_0= 'RequestMappingType' ( (lv_name_1_0= RULE_ID ) ) ruleRequestMappingTypeConf
+            // InternalSoftGalleryLanguage.g:5909:2: (otherlv_0= 'Value' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:5910:3: otherlv_0= 'Value' ( (lv_name_1_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,139,FOLLOW_9); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getRequestMappingTypeAccess().getRequestMappingTypeKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getRequestMappingValueAccess().getValueKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:5794:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:5795:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:5914:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:5915:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:5795:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:5796:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:5915:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:5916:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_110); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingTypeAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingValueAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getRequestMappingTypeRule());
+            						current = createModelElement(grammarAccess.getRequestMappingValueRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -14322,17 +14624,6 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             }
 
 
-            			newCompositeNode(grammarAccess.getRequestMappingTypeAccess().getRequestMappingTypeConfParserRuleCall_2());
-            		
-            pushFollow(FOLLOW_2);
-            ruleRequestMappingTypeConf();
-
-            state._fsp--;
-
-
-            			afterParserOrEnumRuleCall();
-            		
-
             }
 
 
@@ -14351,28 +14642,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         }
         return current;
     }
-    // $ANTLR end "ruleRequestMappingType"
+    // $ANTLR end "ruleRequestMappingValue"
 
 
-    // $ANTLR start "entryRuleRequestMappingTypeConf"
-    // InternalSoftGalleryLanguage.g:5823:1: entryRuleRequestMappingTypeConf returns [String current=null] : iv_ruleRequestMappingTypeConf= ruleRequestMappingTypeConf EOF ;
-    public final String entryRuleRequestMappingTypeConf() throws RecognitionException {
-        String current = null;
+    // $ANTLR start "entryRuleRequestMappingMethod"
+    // InternalSoftGalleryLanguage.g:5936:1: entryRuleRequestMappingMethod returns [EObject current=null] : iv_ruleRequestMappingMethod= ruleRequestMappingMethod EOF ;
+    public final EObject entryRuleRequestMappingMethod() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleRequestMappingTypeConf = null;
+        EObject iv_ruleRequestMappingMethod = null;
 
 
         try {
-            // InternalSoftGalleryLanguage.g:5823:62: (iv_ruleRequestMappingTypeConf= ruleRequestMappingTypeConf EOF )
-            // InternalSoftGalleryLanguage.g:5824:2: iv_ruleRequestMappingTypeConf= ruleRequestMappingTypeConf EOF
+            // InternalSoftGalleryLanguage.g:5936:61: (iv_ruleRequestMappingMethod= ruleRequestMappingMethod EOF )
+            // InternalSoftGalleryLanguage.g:5937:2: iv_ruleRequestMappingMethod= ruleRequestMappingMethod EOF
             {
-             newCompositeNode(grammarAccess.getRequestMappingTypeConfRule()); 
+             newCompositeNode(grammarAccess.getRequestMappingMethodRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleRequestMappingTypeConf=ruleRequestMappingTypeConf();
+            iv_ruleRequestMappingMethod=ruleRequestMappingMethod();
 
             state._fsp--;
 
-             current =iv_ruleRequestMappingTypeConf.getText(); 
+             current =iv_ruleRequestMappingMethod; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -14387,98 +14678,57 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         }
         return current;
     }
-    // $ANTLR end "entryRuleRequestMappingTypeConf"
+    // $ANTLR end "entryRuleRequestMappingMethod"
 
 
-    // $ANTLR start "ruleRequestMappingTypeConf"
-    // InternalSoftGalleryLanguage.g:5830:1: ruleRequestMappingTypeConf returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'PostMapping' | kw= 'GetMapping' | kw= 'PutMapping' | kw= 'DeleteMapping' ) ;
-    public final AntlrDatatypeRuleToken ruleRequestMappingTypeConf() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // $ANTLR start "ruleRequestMappingMethod"
+    // InternalSoftGalleryLanguage.g:5943:1: ruleRequestMappingMethod returns [EObject current=null] : (otherlv_0= 'Method' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleRequestMappingMethod() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5836:2: ( (kw= 'PostMapping' | kw= 'GetMapping' | kw= 'PutMapping' | kw= 'DeleteMapping' ) )
-            // InternalSoftGalleryLanguage.g:5837:2: (kw= 'PostMapping' | kw= 'GetMapping' | kw= 'PutMapping' | kw= 'DeleteMapping' )
+            // InternalSoftGalleryLanguage.g:5949:2: ( (otherlv_0= 'Method' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:5950:2: (otherlv_0= 'Method' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:5837:2: (kw= 'PostMapping' | kw= 'GetMapping' | kw= 'PutMapping' | kw= 'DeleteMapping' )
-            int alt43=4;
-            switch ( input.LA(1) ) {
-            case 140:
-                {
-                alt43=1;
-                }
-                break;
-            case 141:
-                {
-                alt43=2;
-                }
-                break;
-            case 142:
-                {
-                alt43=3;
-                }
-                break;
-            case 143:
-                {
-                alt43=4;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+            // InternalSoftGalleryLanguage.g:5950:2: (otherlv_0= 'Method' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:5951:3: otherlv_0= 'Method' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,140,FOLLOW_9); 
 
-                throw nvae;
+            			newLeafNode(otherlv_0, grammarAccess.getRequestMappingMethodAccess().getMethodKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:5955:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:5956:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:5956:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:5957:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingMethodAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getRequestMappingMethodRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
             }
 
-            switch (alt43) {
-                case 1 :
-                    // InternalSoftGalleryLanguage.g:5838:3: kw= 'PostMapping'
-                    {
-                    kw=(Token)match(input,140,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getPostMappingKeyword_0());
-                    		
+            }
 
-                    }
-                    break;
-                case 2 :
-                    // InternalSoftGalleryLanguage.g:5844:3: kw= 'GetMapping'
-                    {
-                    kw=(Token)match(input,141,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getGetMappingKeyword_1());
-                    		
-
-                    }
-                    break;
-                case 3 :
-                    // InternalSoftGalleryLanguage.g:5850:3: kw= 'PutMapping'
-                    {
-                    kw=(Token)match(input,142,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getPutMappingKeyword_2());
-                    		
-
-                    }
-                    break;
-                case 4 :
-                    // InternalSoftGalleryLanguage.g:5856:3: kw= 'DeleteMapping'
-                    {
-                    kw=(Token)match(input,143,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getRequestMappingTypeConfAccess().getDeleteMappingKeyword_3());
-                    		
-
-                    }
-                    break;
 
             }
 
@@ -14498,11 +14748,1037 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         }
         return current;
     }
-    // $ANTLR end "ruleRequestMappingTypeConf"
+    // $ANTLR end "ruleRequestMappingMethod"
+
+
+    // $ANTLR start "entryRuleRequestMappingProduces"
+    // InternalSoftGalleryLanguage.g:5977:1: entryRuleRequestMappingProduces returns [EObject current=null] : iv_ruleRequestMappingProduces= ruleRequestMappingProduces EOF ;
+    public final EObject entryRuleRequestMappingProduces() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleRequestMappingProduces = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:5977:63: (iv_ruleRequestMappingProduces= ruleRequestMappingProduces EOF )
+            // InternalSoftGalleryLanguage.g:5978:2: iv_ruleRequestMappingProduces= ruleRequestMappingProduces EOF
+            {
+             newCompositeNode(grammarAccess.getRequestMappingProducesRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleRequestMappingProduces=ruleRequestMappingProduces();
+
+            state._fsp--;
+
+             current =iv_ruleRequestMappingProduces; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleRequestMappingProduces"
+
+
+    // $ANTLR start "ruleRequestMappingProduces"
+    // InternalSoftGalleryLanguage.g:5984:1: ruleRequestMappingProduces returns [EObject current=null] : (otherlv_0= 'Produces' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleRequestMappingProduces() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:5990:2: ( (otherlv_0= 'Produces' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:5991:2: (otherlv_0= 'Produces' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:5991:2: (otherlv_0= 'Produces' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:5992:3: otherlv_0= 'Produces' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,141,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getRequestMappingProducesAccess().getProducesKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:5996:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:5997:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:5997:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:5998:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getRequestMappingProducesAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getRequestMappingProducesRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleRequestMappingProduces"
+
+
+    // $ANTLR start "entryRulePostMapping"
+    // InternalSoftGalleryLanguage.g:6018:1: entryRulePostMapping returns [EObject current=null] : iv_rulePostMapping= rulePostMapping EOF ;
+    public final EObject entryRulePostMapping() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePostMapping = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6018:52: (iv_rulePostMapping= rulePostMapping EOF )
+            // InternalSoftGalleryLanguage.g:6019:2: iv_rulePostMapping= rulePostMapping EOF
+            {
+             newCompositeNode(grammarAccess.getPostMappingRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePostMapping=rulePostMapping();
+
+            state._fsp--;
+
+             current =iv_rulePostMapping; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePostMapping"
+
+
+    // $ANTLR start "rulePostMapping"
+    // InternalSoftGalleryLanguage.g:6025:1: rulePostMapping returns [EObject current=null] : (otherlv_0= 'PostMapping' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject rulePostMapping() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6031:2: ( (otherlv_0= 'PostMapping' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6032:2: (otherlv_0= 'PostMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6032:2: (otherlv_0= 'PostMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6033:3: otherlv_0= 'PostMapping' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,142,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getPostMappingAccess().getPostMappingKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6037:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6038:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6038:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6039:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getPostMappingAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPostMappingRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePostMapping"
+
+
+    // $ANTLR start "entryRuleGetMapping"
+    // InternalSoftGalleryLanguage.g:6059:1: entryRuleGetMapping returns [EObject current=null] : iv_ruleGetMapping= ruleGetMapping EOF ;
+    public final EObject entryRuleGetMapping() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleGetMapping = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6059:51: (iv_ruleGetMapping= ruleGetMapping EOF )
+            // InternalSoftGalleryLanguage.g:6060:2: iv_ruleGetMapping= ruleGetMapping EOF
+            {
+             newCompositeNode(grammarAccess.getGetMappingRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleGetMapping=ruleGetMapping();
+
+            state._fsp--;
+
+             current =iv_ruleGetMapping; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleGetMapping"
+
+
+    // $ANTLR start "ruleGetMapping"
+    // InternalSoftGalleryLanguage.g:6066:1: ruleGetMapping returns [EObject current=null] : (otherlv_0= 'GetMapping' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleGetMapping() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6072:2: ( (otherlv_0= 'GetMapping' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6073:2: (otherlv_0= 'GetMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6073:2: (otherlv_0= 'GetMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6074:3: otherlv_0= 'GetMapping' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,143,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getGetMappingAccess().getGetMappingKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6078:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6079:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6079:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6080:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getGetMappingAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGetMappingRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGetMapping"
+
+
+    // $ANTLR start "entryRulePutMapping"
+    // InternalSoftGalleryLanguage.g:6100:1: entryRulePutMapping returns [EObject current=null] : iv_rulePutMapping= rulePutMapping EOF ;
+    public final EObject entryRulePutMapping() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePutMapping = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6100:51: (iv_rulePutMapping= rulePutMapping EOF )
+            // InternalSoftGalleryLanguage.g:6101:2: iv_rulePutMapping= rulePutMapping EOF
+            {
+             newCompositeNode(grammarAccess.getPutMappingRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePutMapping=rulePutMapping();
+
+            state._fsp--;
+
+             current =iv_rulePutMapping; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePutMapping"
+
+
+    // $ANTLR start "rulePutMapping"
+    // InternalSoftGalleryLanguage.g:6107:1: rulePutMapping returns [EObject current=null] : (otherlv_0= 'PutMapping' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject rulePutMapping() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6113:2: ( (otherlv_0= 'PutMapping' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6114:2: (otherlv_0= 'PutMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6114:2: (otherlv_0= 'PutMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6115:3: otherlv_0= 'PutMapping' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,144,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getPutMappingAccess().getPutMappingKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6119:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6120:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6120:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6121:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getPutMappingAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPutMappingRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePutMapping"
+
+
+    // $ANTLR start "entryRuleDeleteMapping"
+    // InternalSoftGalleryLanguage.g:6141:1: entryRuleDeleteMapping returns [EObject current=null] : iv_ruleDeleteMapping= ruleDeleteMapping EOF ;
+    public final EObject entryRuleDeleteMapping() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDeleteMapping = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6141:54: (iv_ruleDeleteMapping= ruleDeleteMapping EOF )
+            // InternalSoftGalleryLanguage.g:6142:2: iv_ruleDeleteMapping= ruleDeleteMapping EOF
+            {
+             newCompositeNode(grammarAccess.getDeleteMappingRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDeleteMapping=ruleDeleteMapping();
+
+            state._fsp--;
+
+             current =iv_ruleDeleteMapping; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDeleteMapping"
+
+
+    // $ANTLR start "ruleDeleteMapping"
+    // InternalSoftGalleryLanguage.g:6148:1: ruleDeleteMapping returns [EObject current=null] : (otherlv_0= 'DeleteMapping' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleDeleteMapping() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6154:2: ( (otherlv_0= 'DeleteMapping' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6155:2: (otherlv_0= 'DeleteMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6155:2: (otherlv_0= 'DeleteMapping' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6156:3: otherlv_0= 'DeleteMapping' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,145,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getDeleteMappingAccess().getDeleteMappingKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6160:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6161:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6161:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6162:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getDeleteMappingAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDeleteMappingRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDeleteMapping"
+
+
+    // $ANTLR start "entryRuleResponseParameter"
+    // InternalSoftGalleryLanguage.g:6182:1: entryRuleResponseParameter returns [EObject current=null] : iv_ruleResponseParameter= ruleResponseParameter EOF ;
+    public final EObject entryRuleResponseParameter() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResponseParameter = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6182:58: (iv_ruleResponseParameter= ruleResponseParameter EOF )
+            // InternalSoftGalleryLanguage.g:6183:2: iv_ruleResponseParameter= ruleResponseParameter EOF
+            {
+             newCompositeNode(grammarAccess.getResponseParameterRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResponseParameter=ruleResponseParameter();
+
+            state._fsp--;
+
+             current =iv_ruleResponseParameter; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResponseParameter"
+
+
+    // $ANTLR start "ruleResponseParameter"
+    // InternalSoftGalleryLanguage.g:6189:1: ruleResponseParameter returns [EObject current=null] : (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) ) ;
+    public final EObject ruleResponseParameter() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        EObject lv_parameterAnnotation_1_0 = null;
+
+        EObject lv_parameterType_2_0 = null;
+
+        EObject lv_parameterName_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6195:2: ( (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) ) )
+            // InternalSoftGalleryLanguage.g:6196:2: (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6196:2: (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) )
+            // InternalSoftGalleryLanguage.g:6197:3: otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) )
+            {
+            otherlv_0=(Token)match(input,146,FOLLOW_112); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResponseParameterAccess().getParameterKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6201:3: ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) )
+            // InternalSoftGalleryLanguage.g:6202:4: (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation )
+            {
+            // InternalSoftGalleryLanguage.g:6202:4: (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation )
+            // InternalSoftGalleryLanguage.g:6203:5: lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation
+            {
+
+            					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_113);
+            lv_parameterAnnotation_1_0=ruleResponseParameterAnnotation();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getResponseParameterRule());
+            					}
+            					add(
+            						current,
+            						"parameterAnnotation",
+            						lv_parameterAnnotation_1_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterAnnotation");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:6220:3: ( (lv_parameterType_2_0= ruleResponseParameterType ) )
+            // InternalSoftGalleryLanguage.g:6221:4: (lv_parameterType_2_0= ruleResponseParameterType )
+            {
+            // InternalSoftGalleryLanguage.g:6221:4: (lv_parameterType_2_0= ruleResponseParameterType )
+            // InternalSoftGalleryLanguage.g:6222:5: lv_parameterType_2_0= ruleResponseParameterType
+            {
+
+            					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterTypeResponseParameterTypeParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_114);
+            lv_parameterType_2_0=ruleResponseParameterType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getResponseParameterRule());
+            					}
+            					add(
+            						current,
+            						"parameterType",
+            						lv_parameterType_2_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:6239:3: ( (lv_parameterName_3_0= ruleResponseParameterName ) )
+            // InternalSoftGalleryLanguage.g:6240:4: (lv_parameterName_3_0= ruleResponseParameterName )
+            {
+            // InternalSoftGalleryLanguage.g:6240:4: (lv_parameterName_3_0= ruleResponseParameterName )
+            // InternalSoftGalleryLanguage.g:6241:5: lv_parameterName_3_0= ruleResponseParameterName
+            {
+
+            					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterNameResponseParameterNameParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_parameterName_3_0=ruleResponseParameterName();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getResponseParameterRule());
+            					}
+            					add(
+            						current,
+            						"parameterName",
+            						lv_parameterName_3_0,
+            						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterName");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResponseParameter"
+
+
+    // $ANTLR start "entryRuleResponseParameterAnnotation"
+    // InternalSoftGalleryLanguage.g:6262:1: entryRuleResponseParameterAnnotation returns [EObject current=null] : iv_ruleResponseParameterAnnotation= ruleResponseParameterAnnotation EOF ;
+    public final EObject entryRuleResponseParameterAnnotation() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResponseParameterAnnotation = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6262:68: (iv_ruleResponseParameterAnnotation= ruleResponseParameterAnnotation EOF )
+            // InternalSoftGalleryLanguage.g:6263:2: iv_ruleResponseParameterAnnotation= ruleResponseParameterAnnotation EOF
+            {
+             newCompositeNode(grammarAccess.getResponseParameterAnnotationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResponseParameterAnnotation=ruleResponseParameterAnnotation();
+
+            state._fsp--;
+
+             current =iv_ruleResponseParameterAnnotation; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResponseParameterAnnotation"
+
+
+    // $ANTLR start "ruleResponseParameterAnnotation"
+    // InternalSoftGalleryLanguage.g:6269:1: ruleResponseParameterAnnotation returns [EObject current=null] : (otherlv_0= 'Annotation' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleResponseParameterAnnotation() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6275:2: ( (otherlv_0= 'Annotation' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6276:2: (otherlv_0= 'Annotation' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6276:2: (otherlv_0= 'Annotation' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6277:3: otherlv_0= 'Annotation' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,147,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResponseParameterAnnotationAccess().getAnnotationKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6281:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6282:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6282:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6283:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getResponseParameterAnnotationAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getResponseParameterAnnotationRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResponseParameterAnnotation"
+
+
+    // $ANTLR start "entryRuleResponseParameterType"
+    // InternalSoftGalleryLanguage.g:6303:1: entryRuleResponseParameterType returns [EObject current=null] : iv_ruleResponseParameterType= ruleResponseParameterType EOF ;
+    public final EObject entryRuleResponseParameterType() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResponseParameterType = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6303:62: (iv_ruleResponseParameterType= ruleResponseParameterType EOF )
+            // InternalSoftGalleryLanguage.g:6304:2: iv_ruleResponseParameterType= ruleResponseParameterType EOF
+            {
+             newCompositeNode(grammarAccess.getResponseParameterTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResponseParameterType=ruleResponseParameterType();
+
+            state._fsp--;
+
+             current =iv_ruleResponseParameterType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResponseParameterType"
+
+
+    // $ANTLR start "ruleResponseParameterType"
+    // InternalSoftGalleryLanguage.g:6310:1: ruleResponseParameterType returns [EObject current=null] : (otherlv_0= 'Type' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleResponseParameterType() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6316:2: ( (otherlv_0= 'Type' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6317:2: (otherlv_0= 'Type' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6317:2: (otherlv_0= 'Type' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6318:3: otherlv_0= 'Type' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,148,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResponseParameterTypeAccess().getTypeKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6322:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6323:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6323:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6324:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getResponseParameterTypeAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getResponseParameterTypeRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResponseParameterType"
+
+
+    // $ANTLR start "entryRuleResponseParameterName"
+    // InternalSoftGalleryLanguage.g:6344:1: entryRuleResponseParameterName returns [EObject current=null] : iv_ruleResponseParameterName= ruleResponseParameterName EOF ;
+    public final EObject entryRuleResponseParameterName() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResponseParameterName = null;
+
+
+        try {
+            // InternalSoftGalleryLanguage.g:6344:62: (iv_ruleResponseParameterName= ruleResponseParameterName EOF )
+            // InternalSoftGalleryLanguage.g:6345:2: iv_ruleResponseParameterName= ruleResponseParameterName EOF
+            {
+             newCompositeNode(grammarAccess.getResponseParameterNameRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResponseParameterName=ruleResponseParameterName();
+
+            state._fsp--;
+
+             current =iv_ruleResponseParameterName; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResponseParameterName"
+
+
+    // $ANTLR start "ruleResponseParameterName"
+    // InternalSoftGalleryLanguage.g:6351:1: ruleResponseParameterName returns [EObject current=null] : (otherlv_0= 'Name' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleResponseParameterName() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSoftGalleryLanguage.g:6357:2: ( (otherlv_0= 'Name' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6358:2: (otherlv_0= 'Name' ( (lv_name_1_0= RULE_ID ) ) )
+            {
+            // InternalSoftGalleryLanguage.g:6358:2: (otherlv_0= 'Name' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6359:3: otherlv_0= 'Name' ( (lv_name_1_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,149,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResponseParameterNameAccess().getNameKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6363:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6364:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6364:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6365:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getResponseParameterNameAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getResponseParameterNameRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResponseParameterName"
 
 
     // $ANTLR start "entryRuleExceptionHandler"
-    // InternalSoftGalleryLanguage.g:5865:1: entryRuleExceptionHandler returns [EObject current=null] : iv_ruleExceptionHandler= ruleExceptionHandler EOF ;
+    // InternalSoftGalleryLanguage.g:6385:1: entryRuleExceptionHandler returns [EObject current=null] : iv_ruleExceptionHandler= ruleExceptionHandler EOF ;
     public final EObject entryRuleExceptionHandler() throws RecognitionException {
         EObject current = null;
 
@@ -14510,8 +15786,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:5865:57: (iv_ruleExceptionHandler= ruleExceptionHandler EOF )
-            // InternalSoftGalleryLanguage.g:5866:2: iv_ruleExceptionHandler= ruleExceptionHandler EOF
+            // InternalSoftGalleryLanguage.g:6385:57: (iv_ruleExceptionHandler= ruleExceptionHandler EOF )
+            // InternalSoftGalleryLanguage.g:6386:2: iv_ruleExceptionHandler= ruleExceptionHandler EOF
             {
              newCompositeNode(grammarAccess.getExceptionHandlerRule()); 
             pushFollow(FOLLOW_1);
@@ -14538,7 +15814,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleExceptionHandler"
-    // InternalSoftGalleryLanguage.g:5872:1: ruleExceptionHandler returns [EObject current=null] : (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:6392:1: ruleExceptionHandler returns [EObject current=null] : (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ ) ;
     public final EObject ruleExceptionHandler() throws RecognitionException {
         EObject current = null;
 
@@ -14551,23 +15827,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5878:2: ( (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ ) )
-            // InternalSoftGalleryLanguage.g:5879:2: (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ )
+            // InternalSoftGalleryLanguage.g:6398:2: ( (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ ) )
+            // InternalSoftGalleryLanguage.g:6399:2: (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:5879:2: (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ )
-            // InternalSoftGalleryLanguage.g:5880:3: otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+
+            // InternalSoftGalleryLanguage.g:6399:2: (otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+ )
+            // InternalSoftGalleryLanguage.g:6400:3: otherlv_0= 'ExceptionHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleExceptionProcess ) )+
             {
-            otherlv_0=(Token)match(input,144,FOLLOW_9); 
+            otherlv_0=(Token)match(input,150,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExceptionHandlerAccess().getExceptionHandlerKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:5884:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:5885:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6404:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6405:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:5885:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:5886:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6405:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6406:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_111); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_115); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getExceptionHandlerAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -14587,29 +15863,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:5902:3: ( (lv_elements_2_0= ruleExceptionProcess ) )+
+            // InternalSoftGalleryLanguage.g:6422:3: ( (lv_elements_2_0= ruleExceptionProcess ) )+
             int cnt44=0;
             loop44:
             do {
                 int alt44=2;
                 int LA44_0 = input.LA(1);
 
-                if ( (LA44_0==145) ) {
+                if ( (LA44_0==151) ) {
                     alt44=1;
                 }
 
 
                 switch (alt44) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:5903:4: (lv_elements_2_0= ruleExceptionProcess )
+            	    // InternalSoftGalleryLanguage.g:6423:4: (lv_elements_2_0= ruleExceptionProcess )
             	    {
-            	    // InternalSoftGalleryLanguage.g:5903:4: (lv_elements_2_0= ruleExceptionProcess )
-            	    // InternalSoftGalleryLanguage.g:5904:5: lv_elements_2_0= ruleExceptionProcess
+            	    // InternalSoftGalleryLanguage.g:6423:4: (lv_elements_2_0= ruleExceptionProcess )
+            	    // InternalSoftGalleryLanguage.g:6424:5: lv_elements_2_0= ruleExceptionProcess
             	    {
 
             	    					newCompositeNode(grammarAccess.getExceptionHandlerAccess().getElementsExceptionProcessParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_112);
+            	    pushFollow(FOLLOW_116);
             	    lv_elements_2_0=ruleExceptionProcess();
 
             	    state._fsp--;
@@ -14664,7 +15940,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleExceptionProcess"
-    // InternalSoftGalleryLanguage.g:5925:1: entryRuleExceptionProcess returns [EObject current=null] : iv_ruleExceptionProcess= ruleExceptionProcess EOF ;
+    // InternalSoftGalleryLanguage.g:6445:1: entryRuleExceptionProcess returns [EObject current=null] : iv_ruleExceptionProcess= ruleExceptionProcess EOF ;
     public final EObject entryRuleExceptionProcess() throws RecognitionException {
         EObject current = null;
 
@@ -14672,8 +15948,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:5925:57: (iv_ruleExceptionProcess= ruleExceptionProcess EOF )
-            // InternalSoftGalleryLanguage.g:5926:2: iv_ruleExceptionProcess= ruleExceptionProcess EOF
+            // InternalSoftGalleryLanguage.g:6445:57: (iv_ruleExceptionProcess= ruleExceptionProcess EOF )
+            // InternalSoftGalleryLanguage.g:6446:2: iv_ruleExceptionProcess= ruleExceptionProcess EOF
             {
              newCompositeNode(grammarAccess.getExceptionProcessRule()); 
             pushFollow(FOLLOW_1);
@@ -14700,7 +15976,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleExceptionProcess"
-    // InternalSoftGalleryLanguage.g:5932:1: ruleExceptionProcess returns [EObject current=null] : (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:6452:1: ruleExceptionProcess returns [EObject current=null] : (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleExceptionProcess() throws RecognitionException {
         EObject current = null;
 
@@ -14711,21 +15987,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5938:2: ( (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:5939:2: (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6458:2: ( (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6459:2: (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:5939:2: (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:5940:3: otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6459:2: (otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6460:3: otherlv_0= 'ExceptionProcess' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,145,FOLLOW_9); 
+            otherlv_0=(Token)match(input,151,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExceptionProcessAccess().getExceptionProcessKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:5944:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:5945:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6464:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6465:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:5945:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:5946:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6465:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6466:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -14770,7 +16046,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleSpringEntity"
-    // InternalSoftGalleryLanguage.g:5966:1: entryRuleSpringEntity returns [EObject current=null] : iv_ruleSpringEntity= ruleSpringEntity EOF ;
+    // InternalSoftGalleryLanguage.g:6486:1: entryRuleSpringEntity returns [EObject current=null] : iv_ruleSpringEntity= ruleSpringEntity EOF ;
     public final EObject entryRuleSpringEntity() throws RecognitionException {
         EObject current = null;
 
@@ -14778,8 +16054,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:5966:53: (iv_ruleSpringEntity= ruleSpringEntity EOF )
-            // InternalSoftGalleryLanguage.g:5967:2: iv_ruleSpringEntity= ruleSpringEntity EOF
+            // InternalSoftGalleryLanguage.g:6486:53: (iv_ruleSpringEntity= ruleSpringEntity EOF )
+            // InternalSoftGalleryLanguage.g:6487:2: iv_ruleSpringEntity= ruleSpringEntity EOF
             {
              newCompositeNode(grammarAccess.getSpringEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -14806,7 +16082,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleSpringEntity"
-    // InternalSoftGalleryLanguage.g:5973:1: ruleSpringEntity returns [EObject current=null] : (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' ) ;
+    // InternalSoftGalleryLanguage.g:6493:1: ruleSpringEntity returns [EObject current=null] : (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' ) ;
     public final EObject ruleSpringEntity() throws RecognitionException {
         EObject current = null;
 
@@ -14824,21 +16100,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5979:2: ( (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' ) )
-            // InternalSoftGalleryLanguage.g:5980:2: (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:6499:2: ( (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' ) )
+            // InternalSoftGalleryLanguage.g:6500:2: (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' )
             {
-            // InternalSoftGalleryLanguage.g:5980:2: (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' )
-            // InternalSoftGalleryLanguage.g:5981:3: otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}'
+            // InternalSoftGalleryLanguage.g:6500:2: (otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:6501:3: otherlv_0= 'SpringEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleSpringTable ) )+ ( (lv_elements_5_0= ruleNameNativeQuery ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,146,FOLLOW_9); 
+            otherlv_0=(Token)match(input,152,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSpringEntityAccess().getSpringEntityKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:5985:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:5986:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6505:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6506:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:5986:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:5987:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6506:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6507:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -14864,33 +16140,33 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getSpringEntityAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_113); 
+            otherlv_3=(Token)match(input,13,FOLLOW_117); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSpringEntityAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:6011:3: ( (lv_elements_4_0= ruleSpringTable ) )+
+            // InternalSoftGalleryLanguage.g:6531:3: ( (lv_elements_4_0= ruleSpringTable ) )+
             int cnt45=0;
             loop45:
             do {
                 int alt45=2;
                 int LA45_0 = input.LA(1);
 
-                if ( (LA45_0==147) ) {
+                if ( (LA45_0==153) ) {
                     alt45=1;
                 }
 
 
                 switch (alt45) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6012:4: (lv_elements_4_0= ruleSpringTable )
+            	    // InternalSoftGalleryLanguage.g:6532:4: (lv_elements_4_0= ruleSpringTable )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6012:4: (lv_elements_4_0= ruleSpringTable )
-            	    // InternalSoftGalleryLanguage.g:6013:5: lv_elements_4_0= ruleSpringTable
+            	    // InternalSoftGalleryLanguage.g:6532:4: (lv_elements_4_0= ruleSpringTable )
+            	    // InternalSoftGalleryLanguage.g:6533:5: lv_elements_4_0= ruleSpringTable
             	    {
 
             	    					newCompositeNode(grammarAccess.getSpringEntityAccess().getElementsSpringTableParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_114);
+            	    pushFollow(FOLLOW_118);
             	    lv_elements_4_0=ruleSpringTable();
 
             	    state._fsp--;
@@ -14922,28 +16198,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 cnt45++;
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:6030:3: ( (lv_elements_5_0= ruleNameNativeQuery ) )*
+            // InternalSoftGalleryLanguage.g:6550:3: ( (lv_elements_5_0= ruleNameNativeQuery ) )*
             loop46:
             do {
                 int alt46=2;
                 int LA46_0 = input.LA(1);
 
-                if ( (LA46_0==151) ) {
+                if ( (LA46_0==157) ) {
                     alt46=1;
                 }
 
 
                 switch (alt46) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6031:4: (lv_elements_5_0= ruleNameNativeQuery )
+            	    // InternalSoftGalleryLanguage.g:6551:4: (lv_elements_5_0= ruleNameNativeQuery )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6031:4: (lv_elements_5_0= ruleNameNativeQuery )
-            	    // InternalSoftGalleryLanguage.g:6032:5: lv_elements_5_0= ruleNameNativeQuery
+            	    // InternalSoftGalleryLanguage.g:6551:4: (lv_elements_5_0= ruleNameNativeQuery )
+            	    // InternalSoftGalleryLanguage.g:6552:5: lv_elements_5_0= ruleNameNativeQuery
             	    {
 
             	    					newCompositeNode(grammarAccess.getSpringEntityAccess().getElementsNameNativeQueryParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_115);
+            	    pushFollow(FOLLOW_119);
             	    lv_elements_5_0=ruleNameNativeQuery();
 
             	    state._fsp--;
@@ -14998,7 +16274,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleSpringTable"
-    // InternalSoftGalleryLanguage.g:6057:1: entryRuleSpringTable returns [EObject current=null] : iv_ruleSpringTable= ruleSpringTable EOF ;
+    // InternalSoftGalleryLanguage.g:6577:1: entryRuleSpringTable returns [EObject current=null] : iv_ruleSpringTable= ruleSpringTable EOF ;
     public final EObject entryRuleSpringTable() throws RecognitionException {
         EObject current = null;
 
@@ -15006,8 +16282,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6057:52: (iv_ruleSpringTable= ruleSpringTable EOF )
-            // InternalSoftGalleryLanguage.g:6058:2: iv_ruleSpringTable= ruleSpringTable EOF
+            // InternalSoftGalleryLanguage.g:6577:52: (iv_ruleSpringTable= ruleSpringTable EOF )
+            // InternalSoftGalleryLanguage.g:6578:2: iv_ruleSpringTable= ruleSpringTable EOF
             {
              newCompositeNode(grammarAccess.getSpringTableRule()); 
             pushFollow(FOLLOW_1);
@@ -15034,7 +16310,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleSpringTable"
-    // InternalSoftGalleryLanguage.g:6064:1: ruleSpringTable returns [EObject current=null] : (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:6584:1: ruleSpringTable returns [EObject current=null] : (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ ) ;
     public final EObject ruleSpringTable() throws RecognitionException {
         EObject current = null;
 
@@ -15049,23 +16325,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6070:2: ( (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ ) )
-            // InternalSoftGalleryLanguage.g:6071:2: (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ )
+            // InternalSoftGalleryLanguage.g:6590:2: ( (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ ) )
+            // InternalSoftGalleryLanguage.g:6591:2: (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:6071:2: (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ )
-            // InternalSoftGalleryLanguage.g:6072:3: otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+
+            // InternalSoftGalleryLanguage.g:6591:2: (otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+ )
+            // InternalSoftGalleryLanguage.g:6592:3: otherlv_0= 'SpringTable' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSpringTableId ) ) ( (lv_elements_3_0= ruleColumns ) )+
             {
-            otherlv_0=(Token)match(input,147,FOLLOW_9); 
+            otherlv_0=(Token)match(input,153,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSpringTableAccess().getSpringTableKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6076:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6077:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6596:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6597:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6077:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6078:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6597:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6598:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_116); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_120); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getSpringTableAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -15085,16 +16361,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6094:3: ( (lv_elements_2_0= ruleSpringTableId ) )
-            // InternalSoftGalleryLanguage.g:6095:4: (lv_elements_2_0= ruleSpringTableId )
+            // InternalSoftGalleryLanguage.g:6614:3: ( (lv_elements_2_0= ruleSpringTableId ) )
+            // InternalSoftGalleryLanguage.g:6615:4: (lv_elements_2_0= ruleSpringTableId )
             {
-            // InternalSoftGalleryLanguage.g:6095:4: (lv_elements_2_0= ruleSpringTableId )
-            // InternalSoftGalleryLanguage.g:6096:5: lv_elements_2_0= ruleSpringTableId
+            // InternalSoftGalleryLanguage.g:6615:4: (lv_elements_2_0= ruleSpringTableId )
+            // InternalSoftGalleryLanguage.g:6616:5: lv_elements_2_0= ruleSpringTableId
             {
 
             					newCompositeNode(grammarAccess.getSpringTableAccess().getElementsSpringTableIdParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_117);
+            pushFollow(FOLLOW_121);
             lv_elements_2_0=ruleSpringTableId();
 
             state._fsp--;
@@ -15116,29 +16392,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6113:3: ( (lv_elements_3_0= ruleColumns ) )+
+            // InternalSoftGalleryLanguage.g:6633:3: ( (lv_elements_3_0= ruleColumns ) )+
             int cnt47=0;
             loop47:
             do {
                 int alt47=2;
                 int LA47_0 = input.LA(1);
 
-                if ( (LA47_0==150) ) {
+                if ( (LA47_0==156) ) {
                     alt47=1;
                 }
 
 
                 switch (alt47) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6114:4: (lv_elements_3_0= ruleColumns )
+            	    // InternalSoftGalleryLanguage.g:6634:4: (lv_elements_3_0= ruleColumns )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6114:4: (lv_elements_3_0= ruleColumns )
-            	    // InternalSoftGalleryLanguage.g:6115:5: lv_elements_3_0= ruleColumns
+            	    // InternalSoftGalleryLanguage.g:6634:4: (lv_elements_3_0= ruleColumns )
+            	    // InternalSoftGalleryLanguage.g:6635:5: lv_elements_3_0= ruleColumns
             	    {
 
             	    					newCompositeNode(grammarAccess.getSpringTableAccess().getElementsColumnsParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_118);
+            	    pushFollow(FOLLOW_122);
             	    lv_elements_3_0=ruleColumns();
 
             	    state._fsp--;
@@ -15193,7 +16469,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleSpringTableId"
-    // InternalSoftGalleryLanguage.g:6136:1: entryRuleSpringTableId returns [EObject current=null] : iv_ruleSpringTableId= ruleSpringTableId EOF ;
+    // InternalSoftGalleryLanguage.g:6656:1: entryRuleSpringTableId returns [EObject current=null] : iv_ruleSpringTableId= ruleSpringTableId EOF ;
     public final EObject entryRuleSpringTableId() throws RecognitionException {
         EObject current = null;
 
@@ -15201,8 +16477,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6136:54: (iv_ruleSpringTableId= ruleSpringTableId EOF )
-            // InternalSoftGalleryLanguage.g:6137:2: iv_ruleSpringTableId= ruleSpringTableId EOF
+            // InternalSoftGalleryLanguage.g:6656:54: (iv_ruleSpringTableId= ruleSpringTableId EOF )
+            // InternalSoftGalleryLanguage.g:6657:2: iv_ruleSpringTableId= ruleSpringTableId EOF
             {
              newCompositeNode(grammarAccess.getSpringTableIdRule()); 
             pushFollow(FOLLOW_1);
@@ -15229,11 +16505,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleSpringTableId"
-    // InternalSoftGalleryLanguage.g:6143:1: ruleSpringTableId returns [EObject current=null] : ( () otherlv_1= 'SpringTableId' ( (lv_elements_2_0= ruleGeneratedValue ) )* ) ;
+    // InternalSoftGalleryLanguage.g:6663:1: ruleSpringTableId returns [EObject current=null] : (otherlv_0= 'SpringTableId' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleGeneratedValue ) )* ) ;
     public final EObject ruleSpringTableId() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
         EObject lv_elements_2_0 = null;
 
 
@@ -15241,49 +16518,64 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6149:2: ( ( () otherlv_1= 'SpringTableId' ( (lv_elements_2_0= ruleGeneratedValue ) )* ) )
-            // InternalSoftGalleryLanguage.g:6150:2: ( () otherlv_1= 'SpringTableId' ( (lv_elements_2_0= ruleGeneratedValue ) )* )
+            // InternalSoftGalleryLanguage.g:6669:2: ( (otherlv_0= 'SpringTableId' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleGeneratedValue ) )* ) )
+            // InternalSoftGalleryLanguage.g:6670:2: (otherlv_0= 'SpringTableId' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleGeneratedValue ) )* )
             {
-            // InternalSoftGalleryLanguage.g:6150:2: ( () otherlv_1= 'SpringTableId' ( (lv_elements_2_0= ruleGeneratedValue ) )* )
-            // InternalSoftGalleryLanguage.g:6151:3: () otherlv_1= 'SpringTableId' ( (lv_elements_2_0= ruleGeneratedValue ) )*
+            // InternalSoftGalleryLanguage.g:6670:2: (otherlv_0= 'SpringTableId' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleGeneratedValue ) )* )
+            // InternalSoftGalleryLanguage.g:6671:3: otherlv_0= 'SpringTableId' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleGeneratedValue ) )*
             {
-            // InternalSoftGalleryLanguage.g:6151:3: ()
-            // InternalSoftGalleryLanguage.g:6152:4: 
-            {
+            otherlv_0=(Token)match(input,154,FOLLOW_9); 
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getSpringTableIdAccess().getSpringTableIdAction_0(),
-            					current);
-            			
+            			newLeafNode(otherlv_0, grammarAccess.getSpringTableIdAccess().getSpringTableIdKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:6675:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6676:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:6676:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6677:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_123); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getSpringTableIdAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSpringTableIdRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
 
             }
 
-            otherlv_1=(Token)match(input,148,FOLLOW_119); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getSpringTableIdAccess().getSpringTableIdKeyword_1());
-            		
-            // InternalSoftGalleryLanguage.g:6162:3: ( (lv_elements_2_0= ruleGeneratedValue ) )*
+            }
+
+            // InternalSoftGalleryLanguage.g:6693:3: ( (lv_elements_2_0= ruleGeneratedValue ) )*
             loop48:
             do {
                 int alt48=2;
                 int LA48_0 = input.LA(1);
 
-                if ( (LA48_0==149) ) {
+                if ( (LA48_0==155) ) {
                     alt48=1;
                 }
 
 
                 switch (alt48) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6163:4: (lv_elements_2_0= ruleGeneratedValue )
+            	    // InternalSoftGalleryLanguage.g:6694:4: (lv_elements_2_0= ruleGeneratedValue )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6163:4: (lv_elements_2_0= ruleGeneratedValue )
-            	    // InternalSoftGalleryLanguage.g:6164:5: lv_elements_2_0= ruleGeneratedValue
+            	    // InternalSoftGalleryLanguage.g:6694:4: (lv_elements_2_0= ruleGeneratedValue )
+            	    // InternalSoftGalleryLanguage.g:6695:5: lv_elements_2_0= ruleGeneratedValue
             	    {
 
             	    					newCompositeNode(grammarAccess.getSpringTableIdAccess().getElementsGeneratedValueParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_119);
+            	    pushFollow(FOLLOW_123);
             	    lv_elements_2_0=ruleGeneratedValue();
 
             	    state._fsp--;
@@ -15334,7 +16626,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleGeneratedValue"
-    // InternalSoftGalleryLanguage.g:6185:1: entryRuleGeneratedValue returns [EObject current=null] : iv_ruleGeneratedValue= ruleGeneratedValue EOF ;
+    // InternalSoftGalleryLanguage.g:6716:1: entryRuleGeneratedValue returns [EObject current=null] : iv_ruleGeneratedValue= ruleGeneratedValue EOF ;
     public final EObject entryRuleGeneratedValue() throws RecognitionException {
         EObject current = null;
 
@@ -15342,8 +16634,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6185:55: (iv_ruleGeneratedValue= ruleGeneratedValue EOF )
-            // InternalSoftGalleryLanguage.g:6186:2: iv_ruleGeneratedValue= ruleGeneratedValue EOF
+            // InternalSoftGalleryLanguage.g:6716:55: (iv_ruleGeneratedValue= ruleGeneratedValue EOF )
+            // InternalSoftGalleryLanguage.g:6717:2: iv_ruleGeneratedValue= ruleGeneratedValue EOF
             {
              newCompositeNode(grammarAccess.getGeneratedValueRule()); 
             pushFollow(FOLLOW_1);
@@ -15370,7 +16662,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleGeneratedValue"
-    // InternalSoftGalleryLanguage.g:6192:1: ruleGeneratedValue returns [EObject current=null] : (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:6723:1: ruleGeneratedValue returns [EObject current=null] : (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleGeneratedValue() throws RecognitionException {
         EObject current = null;
 
@@ -15381,21 +16673,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6198:2: ( (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:6199:2: (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6729:2: ( (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6730:2: (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6199:2: (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:6200:3: otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6730:2: (otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6731:3: otherlv_0= 'GeneratedValue' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,149,FOLLOW_9); 
+            otherlv_0=(Token)match(input,155,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGeneratedValueAccess().getGeneratedValueKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6204:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6205:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6735:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6736:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6205:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6206:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6736:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6737:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -15440,7 +16732,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleColumns"
-    // InternalSoftGalleryLanguage.g:6226:1: entryRuleColumns returns [EObject current=null] : iv_ruleColumns= ruleColumns EOF ;
+    // InternalSoftGalleryLanguage.g:6757:1: entryRuleColumns returns [EObject current=null] : iv_ruleColumns= ruleColumns EOF ;
     public final EObject entryRuleColumns() throws RecognitionException {
         EObject current = null;
 
@@ -15448,8 +16740,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6226:48: (iv_ruleColumns= ruleColumns EOF )
-            // InternalSoftGalleryLanguage.g:6227:2: iv_ruleColumns= ruleColumns EOF
+            // InternalSoftGalleryLanguage.g:6757:48: (iv_ruleColumns= ruleColumns EOF )
+            // InternalSoftGalleryLanguage.g:6758:2: iv_ruleColumns= ruleColumns EOF
             {
              newCompositeNode(grammarAccess.getColumnsRule()); 
             pushFollow(FOLLOW_1);
@@ -15476,7 +16768,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleColumns"
-    // InternalSoftGalleryLanguage.g:6233:1: ruleColumns returns [EObject current=null] : (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:6764:1: ruleColumns returns [EObject current=null] : (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleColumns() throws RecognitionException {
         EObject current = null;
 
@@ -15487,21 +16779,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6239:2: ( (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:6240:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6770:2: ( (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6771:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6240:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:6241:3: otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6771:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6772:3: otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,150,FOLLOW_9); 
+            otherlv_0=(Token)match(input,156,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getColumnsAccess().getColumnKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6245:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6246:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6776:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6777:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6246:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6247:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6777:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6778:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -15546,7 +16838,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleNameNativeQuery"
-    // InternalSoftGalleryLanguage.g:6267:1: entryRuleNameNativeQuery returns [EObject current=null] : iv_ruleNameNativeQuery= ruleNameNativeQuery EOF ;
+    // InternalSoftGalleryLanguage.g:6798:1: entryRuleNameNativeQuery returns [EObject current=null] : iv_ruleNameNativeQuery= ruleNameNativeQuery EOF ;
     public final EObject entryRuleNameNativeQuery() throws RecognitionException {
         EObject current = null;
 
@@ -15554,8 +16846,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6267:56: (iv_ruleNameNativeQuery= ruleNameNativeQuery EOF )
-            // InternalSoftGalleryLanguage.g:6268:2: iv_ruleNameNativeQuery= ruleNameNativeQuery EOF
+            // InternalSoftGalleryLanguage.g:6798:56: (iv_ruleNameNativeQuery= ruleNameNativeQuery EOF )
+            // InternalSoftGalleryLanguage.g:6799:2: iv_ruleNameNativeQuery= ruleNameNativeQuery EOF
             {
              newCompositeNode(grammarAccess.getNameNativeQueryRule()); 
             pushFollow(FOLLOW_1);
@@ -15582,7 +16874,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleNameNativeQuery"
-    // InternalSoftGalleryLanguage.g:6274:1: ruleNameNativeQuery returns [EObject current=null] : (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:6805:1: ruleNameNativeQuery returns [EObject current=null] : (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleNameNativeQuery() throws RecognitionException {
         EObject current = null;
 
@@ -15593,21 +16885,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6280:2: ( (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:6281:2: (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6811:2: ( (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:6812:2: (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6281:2: (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:6282:3: otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6812:2: (otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:6813:3: otherlv_0= 'NameNativeQuery' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,151,FOLLOW_9); 
+            otherlv_0=(Token)match(input,157,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNameNativeQueryAccess().getNameNativeQueryKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6286:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6287:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6817:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6818:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6287:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6288:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6818:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6819:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -15652,7 +16944,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReact"
-    // InternalSoftGalleryLanguage.g:6308:1: entryRuleReact returns [EObject current=null] : iv_ruleReact= ruleReact EOF ;
+    // InternalSoftGalleryLanguage.g:6839:1: entryRuleReact returns [EObject current=null] : iv_ruleReact= ruleReact EOF ;
     public final EObject entryRuleReact() throws RecognitionException {
         EObject current = null;
 
@@ -15660,8 +16952,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6308:46: (iv_ruleReact= ruleReact EOF )
-            // InternalSoftGalleryLanguage.g:6309:2: iv_ruleReact= ruleReact EOF
+            // InternalSoftGalleryLanguage.g:6839:46: (iv_ruleReact= ruleReact EOF )
+            // InternalSoftGalleryLanguage.g:6840:2: iv_ruleReact= ruleReact EOF
             {
              newCompositeNode(grammarAccess.getReactRule()); 
             pushFollow(FOLLOW_1);
@@ -15688,7 +16980,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReact"
-    // InternalSoftGalleryLanguage.g:6315:1: ruleReact returns [EObject current=null] : (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' ) ;
+    // InternalSoftGalleryLanguage.g:6846:1: ruleReact returns [EObject current=null] : (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' ) ;
     public final EObject ruleReact() throws RecognitionException {
         EObject current = null;
 
@@ -15704,21 +16996,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6321:2: ( (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' ) )
-            // InternalSoftGalleryLanguage.g:6322:2: (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:6852:2: ( (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' ) )
+            // InternalSoftGalleryLanguage.g:6853:2: (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' )
             {
-            // InternalSoftGalleryLanguage.g:6322:2: (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' )
-            // InternalSoftGalleryLanguage.g:6323:3: otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}'
+            // InternalSoftGalleryLanguage.g:6853:2: (otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:6854:3: otherlv_0= 'React' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_reacts_4_0= ruleReactModules ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,152,FOLLOW_9); 
+            otherlv_0=(Token)match(input,158,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactAccess().getReactKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6327:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6328:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6858:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:6859:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6328:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6329:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:6859:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:6860:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -15744,15 +17036,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getReactAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_120); 
+            otherlv_3=(Token)match(input,13,FOLLOW_124); 
 
             			newLeafNode(otherlv_3, grammarAccess.getReactAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:6353:3: ( (lv_reacts_4_0= ruleReactModules ) )
-            // InternalSoftGalleryLanguage.g:6354:4: (lv_reacts_4_0= ruleReactModules )
+            // InternalSoftGalleryLanguage.g:6884:3: ( (lv_reacts_4_0= ruleReactModules ) )
+            // InternalSoftGalleryLanguage.g:6885:4: (lv_reacts_4_0= ruleReactModules )
             {
-            // InternalSoftGalleryLanguage.g:6354:4: (lv_reacts_4_0= ruleReactModules )
-            // InternalSoftGalleryLanguage.g:6355:5: lv_reacts_4_0= ruleReactModules
+            // InternalSoftGalleryLanguage.g:6885:4: (lv_reacts_4_0= ruleReactModules )
+            // InternalSoftGalleryLanguage.g:6886:5: lv_reacts_4_0= ruleReactModules
             {
 
             					newCompositeNode(grammarAccess.getReactAccess().getReactsReactModulesParserRuleCall_4_0());
@@ -15806,7 +17098,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactModules"
-    // InternalSoftGalleryLanguage.g:6380:1: entryRuleReactModules returns [EObject current=null] : iv_ruleReactModules= ruleReactModules EOF ;
+    // InternalSoftGalleryLanguage.g:6911:1: entryRuleReactModules returns [EObject current=null] : iv_ruleReactModules= ruleReactModules EOF ;
     public final EObject entryRuleReactModules() throws RecognitionException {
         EObject current = null;
 
@@ -15814,8 +17106,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6380:53: (iv_ruleReactModules= ruleReactModules EOF )
-            // InternalSoftGalleryLanguage.g:6381:2: iv_ruleReactModules= ruleReactModules EOF
+            // InternalSoftGalleryLanguage.g:6911:53: (iv_ruleReactModules= ruleReactModules EOF )
+            // InternalSoftGalleryLanguage.g:6912:2: iv_ruleReactModules= ruleReactModules EOF
             {
              newCompositeNode(grammarAccess.getReactModulesRule()); 
             pushFollow(FOLLOW_1);
@@ -15842,7 +17134,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactModules"
-    // InternalSoftGalleryLanguage.g:6387:1: ruleReactModules returns [EObject current=null] : (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' ) ;
+    // InternalSoftGalleryLanguage.g:6918:1: ruleReactModules returns [EObject current=null] : (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' ) ;
     public final EObject ruleReactModules() throws RecognitionException {
         EObject current = null;
 
@@ -15857,13 +17149,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6393:2: ( (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' ) )
-            // InternalSoftGalleryLanguage.g:6394:2: (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:6924:2: ( (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' ) )
+            // InternalSoftGalleryLanguage.g:6925:2: (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' )
             {
-            // InternalSoftGalleryLanguage.g:6394:2: (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' )
-            // InternalSoftGalleryLanguage.g:6395:3: otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}'
+            // InternalSoftGalleryLanguage.g:6925:2: (otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:6926:3: otherlv_0= 'ReactModules' otherlv_1= ':' otherlv_2= '{' ( (lv_reactmodules_3_0= ruleReactSubModules ) ) otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,153,FOLLOW_3); 
+            otherlv_0=(Token)match(input,159,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactModulesAccess().getReactModulesKeyword_0());
             		
@@ -15871,15 +17163,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getReactModulesAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_121); 
+            otherlv_2=(Token)match(input,13,FOLLOW_125); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactModulesAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:6407:3: ( (lv_reactmodules_3_0= ruleReactSubModules ) )
-            // InternalSoftGalleryLanguage.g:6408:4: (lv_reactmodules_3_0= ruleReactSubModules )
+            // InternalSoftGalleryLanguage.g:6938:3: ( (lv_reactmodules_3_0= ruleReactSubModules ) )
+            // InternalSoftGalleryLanguage.g:6939:4: (lv_reactmodules_3_0= ruleReactSubModules )
             {
-            // InternalSoftGalleryLanguage.g:6408:4: (lv_reactmodules_3_0= ruleReactSubModules )
-            // InternalSoftGalleryLanguage.g:6409:5: lv_reactmodules_3_0= ruleReactSubModules
+            // InternalSoftGalleryLanguage.g:6939:4: (lv_reactmodules_3_0= ruleReactSubModules )
+            // InternalSoftGalleryLanguage.g:6940:5: lv_reactmodules_3_0= ruleReactSubModules
             {
 
             					newCompositeNode(grammarAccess.getReactModulesAccess().getReactmodulesReactSubModulesParserRuleCall_3_0());
@@ -15933,7 +17225,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactSubModules"
-    // InternalSoftGalleryLanguage.g:6434:1: entryRuleReactSubModules returns [EObject current=null] : iv_ruleReactSubModules= ruleReactSubModules EOF ;
+    // InternalSoftGalleryLanguage.g:6965:1: entryRuleReactSubModules returns [EObject current=null] : iv_ruleReactSubModules= ruleReactSubModules EOF ;
     public final EObject entryRuleReactSubModules() throws RecognitionException {
         EObject current = null;
 
@@ -15941,8 +17233,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6434:56: (iv_ruleReactSubModules= ruleReactSubModules EOF )
-            // InternalSoftGalleryLanguage.g:6435:2: iv_ruleReactSubModules= ruleReactSubModules EOF
+            // InternalSoftGalleryLanguage.g:6965:56: (iv_ruleReactSubModules= ruleReactSubModules EOF )
+            // InternalSoftGalleryLanguage.g:6966:2: iv_ruleReactSubModules= ruleReactSubModules EOF
             {
              newCompositeNode(grammarAccess.getReactSubModulesRule()); 
             pushFollow(FOLLOW_1);
@@ -15969,7 +17261,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactSubModules"
-    // InternalSoftGalleryLanguage.g:6441:1: ruleReactSubModules returns [EObject current=null] : ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) ) ;
+    // InternalSoftGalleryLanguage.g:6972:1: ruleReactSubModules returns [EObject current=null] : ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) ) ;
     public final EObject ruleReactSubModules() throws RecognitionException {
         EObject current = null;
 
@@ -15988,22 +17280,22 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6447:2: ( ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) ) )
-            // InternalSoftGalleryLanguage.g:6448:2: ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) )
+            // InternalSoftGalleryLanguage.g:6978:2: ( ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) ) )
+            // InternalSoftGalleryLanguage.g:6979:2: ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6448:2: ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) )
-            // InternalSoftGalleryLanguage.g:6449:3: ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) )
+            // InternalSoftGalleryLanguage.g:6979:2: ( ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) ) )
+            // InternalSoftGalleryLanguage.g:6980:3: ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) ) ( (lv_reactmodulescomp_1_0= ruleReactComponents ) ) ( (lv_reactmodulesact_2_0= ruleReactActions ) ) ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) ) ( (lv_reactmodulesinf_4_0= ruleReactInfo ) )
             {
-            // InternalSoftGalleryLanguage.g:6449:3: ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) )
-            // InternalSoftGalleryLanguage.g:6450:4: (lv_reactmodulesconf_0_0= ruleReactConfiguration )
+            // InternalSoftGalleryLanguage.g:6980:3: ( (lv_reactmodulesconf_0_0= ruleReactConfiguration ) )
+            // InternalSoftGalleryLanguage.g:6981:4: (lv_reactmodulesconf_0_0= ruleReactConfiguration )
             {
-            // InternalSoftGalleryLanguage.g:6450:4: (lv_reactmodulesconf_0_0= ruleReactConfiguration )
-            // InternalSoftGalleryLanguage.g:6451:5: lv_reactmodulesconf_0_0= ruleReactConfiguration
+            // InternalSoftGalleryLanguage.g:6981:4: (lv_reactmodulesconf_0_0= ruleReactConfiguration )
+            // InternalSoftGalleryLanguage.g:6982:5: lv_reactmodulesconf_0_0= ruleReactConfiguration
             {
 
             					newCompositeNode(grammarAccess.getReactSubModulesAccess().getReactmodulesconfReactConfigurationParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_122);
+            pushFollow(FOLLOW_126);
             lv_reactmodulesconf_0_0=ruleReactConfiguration();
 
             state._fsp--;
@@ -16025,16 +17317,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6468:3: ( (lv_reactmodulescomp_1_0= ruleReactComponents ) )
-            // InternalSoftGalleryLanguage.g:6469:4: (lv_reactmodulescomp_1_0= ruleReactComponents )
+            // InternalSoftGalleryLanguage.g:6999:3: ( (lv_reactmodulescomp_1_0= ruleReactComponents ) )
+            // InternalSoftGalleryLanguage.g:7000:4: (lv_reactmodulescomp_1_0= ruleReactComponents )
             {
-            // InternalSoftGalleryLanguage.g:6469:4: (lv_reactmodulescomp_1_0= ruleReactComponents )
-            // InternalSoftGalleryLanguage.g:6470:5: lv_reactmodulescomp_1_0= ruleReactComponents
+            // InternalSoftGalleryLanguage.g:7000:4: (lv_reactmodulescomp_1_0= ruleReactComponents )
+            // InternalSoftGalleryLanguage.g:7001:5: lv_reactmodulescomp_1_0= ruleReactComponents
             {
 
             					newCompositeNode(grammarAccess.getReactSubModulesAccess().getReactmodulescompReactComponentsParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_123);
+            pushFollow(FOLLOW_127);
             lv_reactmodulescomp_1_0=ruleReactComponents();
 
             state._fsp--;
@@ -16056,16 +17348,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6487:3: ( (lv_reactmodulesact_2_0= ruleReactActions ) )
-            // InternalSoftGalleryLanguage.g:6488:4: (lv_reactmodulesact_2_0= ruleReactActions )
+            // InternalSoftGalleryLanguage.g:7018:3: ( (lv_reactmodulesact_2_0= ruleReactActions ) )
+            // InternalSoftGalleryLanguage.g:7019:4: (lv_reactmodulesact_2_0= ruleReactActions )
             {
-            // InternalSoftGalleryLanguage.g:6488:4: (lv_reactmodulesact_2_0= ruleReactActions )
-            // InternalSoftGalleryLanguage.g:6489:5: lv_reactmodulesact_2_0= ruleReactActions
+            // InternalSoftGalleryLanguage.g:7019:4: (lv_reactmodulesact_2_0= ruleReactActions )
+            // InternalSoftGalleryLanguage.g:7020:5: lv_reactmodulesact_2_0= ruleReactActions
             {
 
             					newCompositeNode(grammarAccess.getReactSubModulesAccess().getReactmodulesactReactActionsParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_124);
+            pushFollow(FOLLOW_128);
             lv_reactmodulesact_2_0=ruleReactActions();
 
             state._fsp--;
@@ -16087,16 +17379,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6506:3: ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) )
-            // InternalSoftGalleryLanguage.g:6507:4: (lv_reactmoduleslib_3_0= ruleReactLibraries )
+            // InternalSoftGalleryLanguage.g:7037:3: ( (lv_reactmoduleslib_3_0= ruleReactLibraries ) )
+            // InternalSoftGalleryLanguage.g:7038:4: (lv_reactmoduleslib_3_0= ruleReactLibraries )
             {
-            // InternalSoftGalleryLanguage.g:6507:4: (lv_reactmoduleslib_3_0= ruleReactLibraries )
-            // InternalSoftGalleryLanguage.g:6508:5: lv_reactmoduleslib_3_0= ruleReactLibraries
+            // InternalSoftGalleryLanguage.g:7038:4: (lv_reactmoduleslib_3_0= ruleReactLibraries )
+            // InternalSoftGalleryLanguage.g:7039:5: lv_reactmoduleslib_3_0= ruleReactLibraries
             {
 
             					newCompositeNode(grammarAccess.getReactSubModulesAccess().getReactmoduleslibReactLibrariesParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_125);
+            pushFollow(FOLLOW_129);
             lv_reactmoduleslib_3_0=ruleReactLibraries();
 
             state._fsp--;
@@ -16118,11 +17410,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6525:3: ( (lv_reactmodulesinf_4_0= ruleReactInfo ) )
-            // InternalSoftGalleryLanguage.g:6526:4: (lv_reactmodulesinf_4_0= ruleReactInfo )
+            // InternalSoftGalleryLanguage.g:7056:3: ( (lv_reactmodulesinf_4_0= ruleReactInfo ) )
+            // InternalSoftGalleryLanguage.g:7057:4: (lv_reactmodulesinf_4_0= ruleReactInfo )
             {
-            // InternalSoftGalleryLanguage.g:6526:4: (lv_reactmodulesinf_4_0= ruleReactInfo )
-            // InternalSoftGalleryLanguage.g:6527:5: lv_reactmodulesinf_4_0= ruleReactInfo
+            // InternalSoftGalleryLanguage.g:7057:4: (lv_reactmodulesinf_4_0= ruleReactInfo )
+            // InternalSoftGalleryLanguage.g:7058:5: lv_reactmodulesinf_4_0= ruleReactInfo
             {
 
             					newCompositeNode(grammarAccess.getReactSubModulesAccess().getReactmodulesinfReactInfoParserRuleCall_4_0());
@@ -16172,7 +17464,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactConfiguration"
-    // InternalSoftGalleryLanguage.g:6548:1: entryRuleReactConfiguration returns [EObject current=null] : iv_ruleReactConfiguration= ruleReactConfiguration EOF ;
+    // InternalSoftGalleryLanguage.g:7079:1: entryRuleReactConfiguration returns [EObject current=null] : iv_ruleReactConfiguration= ruleReactConfiguration EOF ;
     public final EObject entryRuleReactConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -16180,8 +17472,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6548:59: (iv_ruleReactConfiguration= ruleReactConfiguration EOF )
-            // InternalSoftGalleryLanguage.g:6549:2: iv_ruleReactConfiguration= ruleReactConfiguration EOF
+            // InternalSoftGalleryLanguage.g:7079:59: (iv_ruleReactConfiguration= ruleReactConfiguration EOF )
+            // InternalSoftGalleryLanguage.g:7080:2: iv_ruleReactConfiguration= ruleReactConfiguration EOF
             {
              newCompositeNode(grammarAccess.getReactConfigurationRule()); 
             pushFollow(FOLLOW_1);
@@ -16208,7 +17500,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactConfiguration"
-    // InternalSoftGalleryLanguage.g:6555:1: ruleReactConfiguration returns [EObject current=null] : (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' ) ;
+    // InternalSoftGalleryLanguage.g:7086:1: ruleReactConfiguration returns [EObject current=null] : (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' ) ;
     public final EObject ruleReactConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -16225,13 +17517,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6561:2: ( (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' ) )
-            // InternalSoftGalleryLanguage.g:6562:2: (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:7092:2: ( (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' ) )
+            // InternalSoftGalleryLanguage.g:7093:2: (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' )
             {
-            // InternalSoftGalleryLanguage.g:6562:2: (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' )
-            // InternalSoftGalleryLanguage.g:6563:3: otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}'
+            // InternalSoftGalleryLanguage.g:7093:2: (otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:7094:3: otherlv_0= 'ReactConfiguration' otherlv_1= ':' otherlv_2= '{' ( (lv_dependencies_3_0= ruleReactDependencies ) ) ( (lv_configurations_4_0= ruleReactConfigurations ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,154,FOLLOW_3); 
+            otherlv_0=(Token)match(input,160,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactConfigurationAccess().getReactConfigurationKeyword_0());
             		
@@ -16239,20 +17531,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getReactConfigurationAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_126); 
+            otherlv_2=(Token)match(input,13,FOLLOW_130); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactConfigurationAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:6575:3: ( (lv_dependencies_3_0= ruleReactDependencies ) )
-            // InternalSoftGalleryLanguage.g:6576:4: (lv_dependencies_3_0= ruleReactDependencies )
+            // InternalSoftGalleryLanguage.g:7106:3: ( (lv_dependencies_3_0= ruleReactDependencies ) )
+            // InternalSoftGalleryLanguage.g:7107:4: (lv_dependencies_3_0= ruleReactDependencies )
             {
-            // InternalSoftGalleryLanguage.g:6576:4: (lv_dependencies_3_0= ruleReactDependencies )
-            // InternalSoftGalleryLanguage.g:6577:5: lv_dependencies_3_0= ruleReactDependencies
+            // InternalSoftGalleryLanguage.g:7107:4: (lv_dependencies_3_0= ruleReactDependencies )
+            // InternalSoftGalleryLanguage.g:7108:5: lv_dependencies_3_0= ruleReactDependencies
             {
 
             					newCompositeNode(grammarAccess.getReactConfigurationAccess().getDependenciesReactDependenciesParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_127);
+            pushFollow(FOLLOW_131);
             lv_dependencies_3_0=ruleReactDependencies();
 
             state._fsp--;
@@ -16274,11 +17566,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6594:3: ( (lv_configurations_4_0= ruleReactConfigurations ) )
-            // InternalSoftGalleryLanguage.g:6595:4: (lv_configurations_4_0= ruleReactConfigurations )
+            // InternalSoftGalleryLanguage.g:7125:3: ( (lv_configurations_4_0= ruleReactConfigurations ) )
+            // InternalSoftGalleryLanguage.g:7126:4: (lv_configurations_4_0= ruleReactConfigurations )
             {
-            // InternalSoftGalleryLanguage.g:6595:4: (lv_configurations_4_0= ruleReactConfigurations )
-            // InternalSoftGalleryLanguage.g:6596:5: lv_configurations_4_0= ruleReactConfigurations
+            // InternalSoftGalleryLanguage.g:7126:4: (lv_configurations_4_0= ruleReactConfigurations )
+            // InternalSoftGalleryLanguage.g:7127:5: lv_configurations_4_0= ruleReactConfigurations
             {
 
             					newCompositeNode(grammarAccess.getReactConfigurationAccess().getConfigurationsReactConfigurationsParserRuleCall_4_0());
@@ -16332,7 +17624,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactDependencies"
-    // InternalSoftGalleryLanguage.g:6621:1: entryRuleReactDependencies returns [EObject current=null] : iv_ruleReactDependencies= ruleReactDependencies EOF ;
+    // InternalSoftGalleryLanguage.g:7152:1: entryRuleReactDependencies returns [EObject current=null] : iv_ruleReactDependencies= ruleReactDependencies EOF ;
     public final EObject entryRuleReactDependencies() throws RecognitionException {
         EObject current = null;
 
@@ -16340,8 +17632,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6621:58: (iv_ruleReactDependencies= ruleReactDependencies EOF )
-            // InternalSoftGalleryLanguage.g:6622:2: iv_ruleReactDependencies= ruleReactDependencies EOF
+            // InternalSoftGalleryLanguage.g:7152:58: (iv_ruleReactDependencies= ruleReactDependencies EOF )
+            // InternalSoftGalleryLanguage.g:7153:2: iv_ruleReactDependencies= ruleReactDependencies EOF
             {
              newCompositeNode(grammarAccess.getReactDependenciesRule()); 
             pushFollow(FOLLOW_1);
@@ -16368,7 +17660,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactDependencies"
-    // InternalSoftGalleryLanguage.g:6628:1: ruleReactDependencies returns [EObject current=null] : (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:7159:1: ruleReactDependencies returns [EObject current=null] : (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ ) ;
     public final EObject ruleReactDependencies() throws RecognitionException {
         EObject current = null;
 
@@ -16380,39 +17672,39 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6634:2: ( (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ ) )
-            // InternalSoftGalleryLanguage.g:6635:2: (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ )
+            // InternalSoftGalleryLanguage.g:7165:2: ( (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ ) )
+            // InternalSoftGalleryLanguage.g:7166:2: (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:6635:2: (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ )
-            // InternalSoftGalleryLanguage.g:6636:3: otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+
+            // InternalSoftGalleryLanguage.g:7166:2: (otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+ )
+            // InternalSoftGalleryLanguage.g:7167:3: otherlv_0= 'DependenciesStruct' ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+
             {
-            otherlv_0=(Token)match(input,155,FOLLOW_128); 
+            otherlv_0=(Token)match(input,161,FOLLOW_132); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactDependenciesAccess().getDependenciesStructKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6640:3: ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+
+            // InternalSoftGalleryLanguage.g:7171:3: ( (lv_dependencies_1_0= ruleReactDependenciesRules ) )+
             int cnt49=0;
             loop49:
             do {
                 int alt49=2;
                 int LA49_0 = input.LA(1);
 
-                if ( (LA49_0==156) ) {
+                if ( (LA49_0==162) ) {
                     alt49=1;
                 }
 
 
                 switch (alt49) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6641:4: (lv_dependencies_1_0= ruleReactDependenciesRules )
+            	    // InternalSoftGalleryLanguage.g:7172:4: (lv_dependencies_1_0= ruleReactDependenciesRules )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6641:4: (lv_dependencies_1_0= ruleReactDependenciesRules )
-            	    // InternalSoftGalleryLanguage.g:6642:5: lv_dependencies_1_0= ruleReactDependenciesRules
+            	    // InternalSoftGalleryLanguage.g:7172:4: (lv_dependencies_1_0= ruleReactDependenciesRules )
+            	    // InternalSoftGalleryLanguage.g:7173:5: lv_dependencies_1_0= ruleReactDependenciesRules
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactDependenciesAccess().getDependenciesReactDependenciesRulesParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_129);
+            	    pushFollow(FOLLOW_133);
             	    lv_dependencies_1_0=ruleReactDependenciesRules();
 
             	    state._fsp--;
@@ -16467,7 +17759,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactDependenciesRules"
-    // InternalSoftGalleryLanguage.g:6663:1: entryRuleReactDependenciesRules returns [EObject current=null] : iv_ruleReactDependenciesRules= ruleReactDependenciesRules EOF ;
+    // InternalSoftGalleryLanguage.g:7194:1: entryRuleReactDependenciesRules returns [EObject current=null] : iv_ruleReactDependenciesRules= ruleReactDependenciesRules EOF ;
     public final EObject entryRuleReactDependenciesRules() throws RecognitionException {
         EObject current = null;
 
@@ -16475,8 +17767,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6663:63: (iv_ruleReactDependenciesRules= ruleReactDependenciesRules EOF )
-            // InternalSoftGalleryLanguage.g:6664:2: iv_ruleReactDependenciesRules= ruleReactDependenciesRules EOF
+            // InternalSoftGalleryLanguage.g:7194:63: (iv_ruleReactDependenciesRules= ruleReactDependenciesRules EOF )
+            // InternalSoftGalleryLanguage.g:7195:2: iv_ruleReactDependenciesRules= ruleReactDependenciesRules EOF
             {
              newCompositeNode(grammarAccess.getReactDependenciesRulesRule()); 
             pushFollow(FOLLOW_1);
@@ -16503,7 +17795,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactDependenciesRules"
-    // InternalSoftGalleryLanguage.g:6670:1: ruleReactDependenciesRules returns [EObject current=null] : (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:7201:1: ruleReactDependenciesRules returns [EObject current=null] : (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ ) ;
     public final EObject ruleReactDependenciesRules() throws RecognitionException {
         EObject current = null;
 
@@ -16516,23 +17808,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6676:2: ( (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ ) )
-            // InternalSoftGalleryLanguage.g:6677:2: (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ )
+            // InternalSoftGalleryLanguage.g:7207:2: ( (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ ) )
+            // InternalSoftGalleryLanguage.g:7208:2: (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:6677:2: (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ )
-            // InternalSoftGalleryLanguage.g:6678:3: otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+
+            // InternalSoftGalleryLanguage.g:7208:2: (otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+ )
+            // InternalSoftGalleryLanguage.g:7209:3: otherlv_0= 'DependencyType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+
             {
-            otherlv_0=(Token)match(input,156,FOLLOW_9); 
+            otherlv_0=(Token)match(input,162,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactDependenciesRulesAccess().getDependencyTypeKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6682:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6683:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7213:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7214:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6683:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6684:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7214:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7215:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_130); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_134); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getReactDependenciesRulesAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -16552,29 +17844,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6700:3: ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+
+            // InternalSoftGalleryLanguage.g:7231:3: ( (lv_dependencies_2_0= ruleReactDependenciesSubRules ) )+
             int cnt50=0;
             loop50:
             do {
                 int alt50=2;
                 int LA50_0 = input.LA(1);
 
-                if ( (LA50_0==157) ) {
+                if ( (LA50_0==163) ) {
                     alt50=1;
                 }
 
 
                 switch (alt50) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6701:4: (lv_dependencies_2_0= ruleReactDependenciesSubRules )
+            	    // InternalSoftGalleryLanguage.g:7232:4: (lv_dependencies_2_0= ruleReactDependenciesSubRules )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6701:4: (lv_dependencies_2_0= ruleReactDependenciesSubRules )
-            	    // InternalSoftGalleryLanguage.g:6702:5: lv_dependencies_2_0= ruleReactDependenciesSubRules
+            	    // InternalSoftGalleryLanguage.g:7232:4: (lv_dependencies_2_0= ruleReactDependenciesSubRules )
+            	    // InternalSoftGalleryLanguage.g:7233:5: lv_dependencies_2_0= ruleReactDependenciesSubRules
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactDependenciesRulesAccess().getDependenciesReactDependenciesSubRulesParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_131);
+            	    pushFollow(FOLLOW_135);
             	    lv_dependencies_2_0=ruleReactDependenciesSubRules();
 
             	    state._fsp--;
@@ -16629,7 +17921,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactDependenciesSubRules"
-    // InternalSoftGalleryLanguage.g:6723:1: entryRuleReactDependenciesSubRules returns [EObject current=null] : iv_ruleReactDependenciesSubRules= ruleReactDependenciesSubRules EOF ;
+    // InternalSoftGalleryLanguage.g:7254:1: entryRuleReactDependenciesSubRules returns [EObject current=null] : iv_ruleReactDependenciesSubRules= ruleReactDependenciesSubRules EOF ;
     public final EObject entryRuleReactDependenciesSubRules() throws RecognitionException {
         EObject current = null;
 
@@ -16637,8 +17929,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6723:66: (iv_ruleReactDependenciesSubRules= ruleReactDependenciesSubRules EOF )
-            // InternalSoftGalleryLanguage.g:6724:2: iv_ruleReactDependenciesSubRules= ruleReactDependenciesSubRules EOF
+            // InternalSoftGalleryLanguage.g:7254:66: (iv_ruleReactDependenciesSubRules= ruleReactDependenciesSubRules EOF )
+            // InternalSoftGalleryLanguage.g:7255:2: iv_ruleReactDependenciesSubRules= ruleReactDependenciesSubRules EOF
             {
              newCompositeNode(grammarAccess.getReactDependenciesSubRulesRule()); 
             pushFollow(FOLLOW_1);
@@ -16665,7 +17957,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactDependenciesSubRules"
-    // InternalSoftGalleryLanguage.g:6730:1: ruleReactDependenciesSubRules returns [EObject current=null] : ( (lv_dependencies_0_0= ruleSingleDependencies ) ) ;
+    // InternalSoftGalleryLanguage.g:7261:1: ruleReactDependenciesSubRules returns [EObject current=null] : ( (lv_dependencies_0_0= ruleSingleDependencies ) ) ;
     public final EObject ruleReactDependenciesSubRules() throws RecognitionException {
         EObject current = null;
 
@@ -16676,14 +17968,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6736:2: ( ( (lv_dependencies_0_0= ruleSingleDependencies ) ) )
-            // InternalSoftGalleryLanguage.g:6737:2: ( (lv_dependencies_0_0= ruleSingleDependencies ) )
+            // InternalSoftGalleryLanguage.g:7267:2: ( ( (lv_dependencies_0_0= ruleSingleDependencies ) ) )
+            // InternalSoftGalleryLanguage.g:7268:2: ( (lv_dependencies_0_0= ruleSingleDependencies ) )
             {
-            // InternalSoftGalleryLanguage.g:6737:2: ( (lv_dependencies_0_0= ruleSingleDependencies ) )
-            // InternalSoftGalleryLanguage.g:6738:3: (lv_dependencies_0_0= ruleSingleDependencies )
+            // InternalSoftGalleryLanguage.g:7268:2: ( (lv_dependencies_0_0= ruleSingleDependencies ) )
+            // InternalSoftGalleryLanguage.g:7269:3: (lv_dependencies_0_0= ruleSingleDependencies )
             {
-            // InternalSoftGalleryLanguage.g:6738:3: (lv_dependencies_0_0= ruleSingleDependencies )
-            // InternalSoftGalleryLanguage.g:6739:4: lv_dependencies_0_0= ruleSingleDependencies
+            // InternalSoftGalleryLanguage.g:7269:3: (lv_dependencies_0_0= ruleSingleDependencies )
+            // InternalSoftGalleryLanguage.g:7270:4: lv_dependencies_0_0= ruleSingleDependencies
             {
 
             				newCompositeNode(grammarAccess.getReactDependenciesSubRulesAccess().getDependenciesSingleDependenciesParserRuleCall_0());
@@ -16730,7 +18022,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleSingleDependencies"
-    // InternalSoftGalleryLanguage.g:6759:1: entryRuleSingleDependencies returns [EObject current=null] : iv_ruleSingleDependencies= ruleSingleDependencies EOF ;
+    // InternalSoftGalleryLanguage.g:7290:1: entryRuleSingleDependencies returns [EObject current=null] : iv_ruleSingleDependencies= ruleSingleDependencies EOF ;
     public final EObject entryRuleSingleDependencies() throws RecognitionException {
         EObject current = null;
 
@@ -16738,8 +18030,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6759:59: (iv_ruleSingleDependencies= ruleSingleDependencies EOF )
-            // InternalSoftGalleryLanguage.g:6760:2: iv_ruleSingleDependencies= ruleSingleDependencies EOF
+            // InternalSoftGalleryLanguage.g:7290:59: (iv_ruleSingleDependencies= ruleSingleDependencies EOF )
+            // InternalSoftGalleryLanguage.g:7291:2: iv_ruleSingleDependencies= ruleSingleDependencies EOF
             {
              newCompositeNode(grammarAccess.getSingleDependenciesRule()); 
             pushFollow(FOLLOW_1);
@@ -16766,7 +18058,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleSingleDependencies"
-    // InternalSoftGalleryLanguage.g:6766:1: ruleSingleDependencies returns [EObject current=null] : ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7297:1: ruleSingleDependencies returns [EObject current=null] : ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) ) ;
     public final EObject ruleSingleDependencies() throws RecognitionException {
         EObject current = null;
 
@@ -16779,22 +18071,22 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6772:2: ( ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) ) )
-            // InternalSoftGalleryLanguage.g:6773:2: ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) )
+            // InternalSoftGalleryLanguage.g:7303:2: ( ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) ) )
+            // InternalSoftGalleryLanguage.g:7304:2: ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6773:2: ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) )
-            // InternalSoftGalleryLanguage.g:6774:3: ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) )
+            // InternalSoftGalleryLanguage.g:7304:2: ( ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) ) )
+            // InternalSoftGalleryLanguage.g:7305:3: ( (lv_dependencies_0_0= rulePackageName ) ) ( (lv_dependencies_1_0= rulePackageVersion ) )
             {
-            // InternalSoftGalleryLanguage.g:6774:3: ( (lv_dependencies_0_0= rulePackageName ) )
-            // InternalSoftGalleryLanguage.g:6775:4: (lv_dependencies_0_0= rulePackageName )
+            // InternalSoftGalleryLanguage.g:7305:3: ( (lv_dependencies_0_0= rulePackageName ) )
+            // InternalSoftGalleryLanguage.g:7306:4: (lv_dependencies_0_0= rulePackageName )
             {
-            // InternalSoftGalleryLanguage.g:6775:4: (lv_dependencies_0_0= rulePackageName )
-            // InternalSoftGalleryLanguage.g:6776:5: lv_dependencies_0_0= rulePackageName
+            // InternalSoftGalleryLanguage.g:7306:4: (lv_dependencies_0_0= rulePackageName )
+            // InternalSoftGalleryLanguage.g:7307:5: lv_dependencies_0_0= rulePackageName
             {
 
             					newCompositeNode(grammarAccess.getSingleDependenciesAccess().getDependenciesPackageNameParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_132);
+            pushFollow(FOLLOW_136);
             lv_dependencies_0_0=rulePackageName();
 
             state._fsp--;
@@ -16816,11 +18108,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6793:3: ( (lv_dependencies_1_0= rulePackageVersion ) )
-            // InternalSoftGalleryLanguage.g:6794:4: (lv_dependencies_1_0= rulePackageVersion )
+            // InternalSoftGalleryLanguage.g:7324:3: ( (lv_dependencies_1_0= rulePackageVersion ) )
+            // InternalSoftGalleryLanguage.g:7325:4: (lv_dependencies_1_0= rulePackageVersion )
             {
-            // InternalSoftGalleryLanguage.g:6794:4: (lv_dependencies_1_0= rulePackageVersion )
-            // InternalSoftGalleryLanguage.g:6795:5: lv_dependencies_1_0= rulePackageVersion
+            // InternalSoftGalleryLanguage.g:7325:4: (lv_dependencies_1_0= rulePackageVersion )
+            // InternalSoftGalleryLanguage.g:7326:5: lv_dependencies_1_0= rulePackageVersion
             {
 
             					newCompositeNode(grammarAccess.getSingleDependenciesAccess().getDependenciesPackageVersionParserRuleCall_1_0());
@@ -16870,7 +18162,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePackageName"
-    // InternalSoftGalleryLanguage.g:6816:1: entryRulePackageName returns [EObject current=null] : iv_rulePackageName= rulePackageName EOF ;
+    // InternalSoftGalleryLanguage.g:7347:1: entryRulePackageName returns [EObject current=null] : iv_rulePackageName= rulePackageName EOF ;
     public final EObject entryRulePackageName() throws RecognitionException {
         EObject current = null;
 
@@ -16878,8 +18170,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6816:52: (iv_rulePackageName= rulePackageName EOF )
-            // InternalSoftGalleryLanguage.g:6817:2: iv_rulePackageName= rulePackageName EOF
+            // InternalSoftGalleryLanguage.g:7347:52: (iv_rulePackageName= rulePackageName EOF )
+            // InternalSoftGalleryLanguage.g:7348:2: iv_rulePackageName= rulePackageName EOF
             {
              newCompositeNode(grammarAccess.getPackageNameRule()); 
             pushFollow(FOLLOW_1);
@@ -16906,7 +18198,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePackageName"
-    // InternalSoftGalleryLanguage.g:6823:1: rulePackageName returns [EObject current=null] : (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7354:1: rulePackageName returns [EObject current=null] : (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject rulePackageName() throws RecognitionException {
         EObject current = null;
 
@@ -16917,21 +18209,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6829:2: ( (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:6830:2: (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7360:2: ( (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:7361:2: (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6830:2: (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:6831:3: otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7361:2: (otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7362:3: otherlv_0= 'PackageName' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,157,FOLLOW_9); 
+            otherlv_0=(Token)match(input,163,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPackageNameAccess().getPackageNameKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6835:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6836:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7366:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7367:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6836:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6837:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7367:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7368:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -16976,7 +18268,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePackageVersion"
-    // InternalSoftGalleryLanguage.g:6857:1: entryRulePackageVersion returns [EObject current=null] : iv_rulePackageVersion= rulePackageVersion EOF ;
+    // InternalSoftGalleryLanguage.g:7388:1: entryRulePackageVersion returns [EObject current=null] : iv_rulePackageVersion= rulePackageVersion EOF ;
     public final EObject entryRulePackageVersion() throws RecognitionException {
         EObject current = null;
 
@@ -16984,8 +18276,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6857:55: (iv_rulePackageVersion= rulePackageVersion EOF )
-            // InternalSoftGalleryLanguage.g:6858:2: iv_rulePackageVersion= rulePackageVersion EOF
+            // InternalSoftGalleryLanguage.g:7388:55: (iv_rulePackageVersion= rulePackageVersion EOF )
+            // InternalSoftGalleryLanguage.g:7389:2: iv_rulePackageVersion= rulePackageVersion EOF
             {
              newCompositeNode(grammarAccess.getPackageVersionRule()); 
             pushFollow(FOLLOW_1);
@@ -17012,7 +18304,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePackageVersion"
-    // InternalSoftGalleryLanguage.g:6864:1: rulePackageVersion returns [EObject current=null] : (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7395:1: rulePackageVersion returns [EObject current=null] : (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject rulePackageVersion() throws RecognitionException {
         EObject current = null;
 
@@ -17023,21 +18315,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6870:2: ( (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:6871:2: (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7401:2: ( (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:7402:2: (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6871:2: (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:6872:3: otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7402:2: (otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7403:3: otherlv_0= 'PackageVersion' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,158,FOLLOW_9); 
+            otherlv_0=(Token)match(input,164,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPackageVersionAccess().getPackageVersionKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6876:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6877:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7407:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7408:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6877:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6878:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7408:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7409:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -17082,7 +18374,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactConfigurations"
-    // InternalSoftGalleryLanguage.g:6898:1: entryRuleReactConfigurations returns [EObject current=null] : iv_ruleReactConfigurations= ruleReactConfigurations EOF ;
+    // InternalSoftGalleryLanguage.g:7429:1: entryRuleReactConfigurations returns [EObject current=null] : iv_ruleReactConfigurations= ruleReactConfigurations EOF ;
     public final EObject entryRuleReactConfigurations() throws RecognitionException {
         EObject current = null;
 
@@ -17090,8 +18382,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6898:60: (iv_ruleReactConfigurations= ruleReactConfigurations EOF )
-            // InternalSoftGalleryLanguage.g:6899:2: iv_ruleReactConfigurations= ruleReactConfigurations EOF
+            // InternalSoftGalleryLanguage.g:7429:60: (iv_ruleReactConfigurations= ruleReactConfigurations EOF )
+            // InternalSoftGalleryLanguage.g:7430:2: iv_ruleReactConfigurations= ruleReactConfigurations EOF
             {
              newCompositeNode(grammarAccess.getReactConfigurationsRule()); 
             pushFollow(FOLLOW_1);
@@ -17118,7 +18410,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactConfigurations"
-    // InternalSoftGalleryLanguage.g:6905:1: ruleReactConfigurations returns [EObject current=null] : (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:7436:1: ruleReactConfigurations returns [EObject current=null] : (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ ) ;
     public final EObject ruleReactConfigurations() throws RecognitionException {
         EObject current = null;
 
@@ -17131,23 +18423,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6911:2: ( (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ ) )
-            // InternalSoftGalleryLanguage.g:6912:2: (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ )
+            // InternalSoftGalleryLanguage.g:7442:2: ( (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ ) )
+            // InternalSoftGalleryLanguage.g:7443:2: (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:6912:2: (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ )
-            // InternalSoftGalleryLanguage.g:6913:3: otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+
+            // InternalSoftGalleryLanguage.g:7443:2: (otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+ )
+            // InternalSoftGalleryLanguage.g:7444:3: otherlv_0= 'ReactDOMConfigurations' ( (lv_name_1_0= RULE_ID ) ) ( (lv_configurations_2_0= ruleDOMConfigurations ) )+
             {
-            otherlv_0=(Token)match(input,159,FOLLOW_9); 
+            otherlv_0=(Token)match(input,165,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactConfigurationsAccess().getReactDOMConfigurationsKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6917:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6918:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7448:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7449:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6918:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6919:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7449:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7450:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_133); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_137); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getReactConfigurationsAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -17167,29 +18459,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6935:3: ( (lv_configurations_2_0= ruleDOMConfigurations ) )+
+            // InternalSoftGalleryLanguage.g:7466:3: ( (lv_configurations_2_0= ruleDOMConfigurations ) )+
             int cnt51=0;
             loop51:
             do {
                 int alt51=2;
                 int LA51_0 = input.LA(1);
 
-                if ( ((LA51_0>=160 && LA51_0<=164)) ) {
+                if ( ((LA51_0>=166 && LA51_0<=170)) ) {
                     alt51=1;
                 }
 
 
                 switch (alt51) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:6936:4: (lv_configurations_2_0= ruleDOMConfigurations )
+            	    // InternalSoftGalleryLanguage.g:7467:4: (lv_configurations_2_0= ruleDOMConfigurations )
             	    {
-            	    // InternalSoftGalleryLanguage.g:6936:4: (lv_configurations_2_0= ruleDOMConfigurations )
-            	    // InternalSoftGalleryLanguage.g:6937:5: lv_configurations_2_0= ruleDOMConfigurations
+            	    // InternalSoftGalleryLanguage.g:7467:4: (lv_configurations_2_0= ruleDOMConfigurations )
+            	    // InternalSoftGalleryLanguage.g:7468:5: lv_configurations_2_0= ruleDOMConfigurations
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactConfigurationsAccess().getConfigurationsDOMConfigurationsParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_134);
+            	    pushFollow(FOLLOW_138);
             	    lv_configurations_2_0=ruleDOMConfigurations();
 
             	    state._fsp--;
@@ -17244,7 +18536,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleDOMConfigurations"
-    // InternalSoftGalleryLanguage.g:6958:1: entryRuleDOMConfigurations returns [EObject current=null] : iv_ruleDOMConfigurations= ruleDOMConfigurations EOF ;
+    // InternalSoftGalleryLanguage.g:7489:1: entryRuleDOMConfigurations returns [EObject current=null] : iv_ruleDOMConfigurations= ruleDOMConfigurations EOF ;
     public final EObject entryRuleDOMConfigurations() throws RecognitionException {
         EObject current = null;
 
@@ -17252,8 +18544,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:6958:58: (iv_ruleDOMConfigurations= ruleDOMConfigurations EOF )
-            // InternalSoftGalleryLanguage.g:6959:2: iv_ruleDOMConfigurations= ruleDOMConfigurations EOF
+            // InternalSoftGalleryLanguage.g:7489:58: (iv_ruleDOMConfigurations= ruleDOMConfigurations EOF )
+            // InternalSoftGalleryLanguage.g:7490:2: iv_ruleDOMConfigurations= ruleDOMConfigurations EOF
             {
              newCompositeNode(grammarAccess.getDOMConfigurationsRule()); 
             pushFollow(FOLLOW_1);
@@ -17280,7 +18572,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleDOMConfigurations"
-    // InternalSoftGalleryLanguage.g:6965:1: ruleDOMConfigurations returns [EObject current=null] : ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7496:1: ruleDOMConfigurations returns [EObject current=null] : ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleDOMConfigurations() throws RecognitionException {
         EObject current = null;
 
@@ -17292,17 +18584,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6971:2: ( ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:6972:2: ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7502:2: ( ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:7503:2: ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6972:2: ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:6973:3: ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7503:2: ( ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7504:3: ( (lv_elements_0_0= ruleDOMTypeConf ) ) ( (lv_name_1_0= RULE_ID ) )
             {
-            // InternalSoftGalleryLanguage.g:6973:3: ( (lv_elements_0_0= ruleDOMTypeConf ) )
-            // InternalSoftGalleryLanguage.g:6974:4: (lv_elements_0_0= ruleDOMTypeConf )
+            // InternalSoftGalleryLanguage.g:7504:3: ( (lv_elements_0_0= ruleDOMTypeConf ) )
+            // InternalSoftGalleryLanguage.g:7505:4: (lv_elements_0_0= ruleDOMTypeConf )
             {
-            // InternalSoftGalleryLanguage.g:6974:4: (lv_elements_0_0= ruleDOMTypeConf )
-            // InternalSoftGalleryLanguage.g:6975:5: lv_elements_0_0= ruleDOMTypeConf
+            // InternalSoftGalleryLanguage.g:7505:4: (lv_elements_0_0= ruleDOMTypeConf )
+            // InternalSoftGalleryLanguage.g:7506:5: lv_elements_0_0= ruleDOMTypeConf
             {
 
             					newCompositeNode(grammarAccess.getDOMConfigurationsAccess().getElementsDOMTypeConfParserRuleCall_0_0());
@@ -17329,11 +18621,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6992:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:6993:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7523:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7524:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:6993:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:6994:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7524:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7525:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -17378,7 +18670,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleDOMTypeConf"
-    // InternalSoftGalleryLanguage.g:7014:1: entryRuleDOMTypeConf returns [String current=null] : iv_ruleDOMTypeConf= ruleDOMTypeConf EOF ;
+    // InternalSoftGalleryLanguage.g:7545:1: entryRuleDOMTypeConf returns [String current=null] : iv_ruleDOMTypeConf= ruleDOMTypeConf EOF ;
     public final String entryRuleDOMTypeConf() throws RecognitionException {
         String current = null;
 
@@ -17386,8 +18678,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7014:51: (iv_ruleDOMTypeConf= ruleDOMTypeConf EOF )
-            // InternalSoftGalleryLanguage.g:7015:2: iv_ruleDOMTypeConf= ruleDOMTypeConf EOF
+            // InternalSoftGalleryLanguage.g:7545:51: (iv_ruleDOMTypeConf= ruleDOMTypeConf EOF )
+            // InternalSoftGalleryLanguage.g:7546:2: iv_ruleDOMTypeConf= ruleDOMTypeConf EOF
             {
              newCompositeNode(grammarAccess.getDOMTypeConfRule()); 
             pushFollow(FOLLOW_1);
@@ -17414,7 +18706,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleDOMTypeConf"
-    // InternalSoftGalleryLanguage.g:7021:1: ruleDOMTypeConf returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' ) ;
+    // InternalSoftGalleryLanguage.g:7552:1: ruleDOMTypeConf returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' ) ;
     public final AntlrDatatypeRuleToken ruleDOMTypeConf() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -17424,33 +18716,33 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7027:2: ( (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' ) )
-            // InternalSoftGalleryLanguage.g:7028:2: (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' )
+            // InternalSoftGalleryLanguage.g:7558:2: ( (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' ) )
+            // InternalSoftGalleryLanguage.g:7559:2: (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' )
             {
-            // InternalSoftGalleryLanguage.g:7028:2: (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' )
+            // InternalSoftGalleryLanguage.g:7559:2: (kw= 'RoutingConf' | kw= 'ServiceWorker' | kw= 'HTMLStructure' | kw= 'Manifest' | kw= 'RepositoriesConf' )
             int alt52=5;
             switch ( input.LA(1) ) {
-            case 160:
+            case 166:
                 {
                 alt52=1;
                 }
                 break;
-            case 161:
+            case 167:
                 {
                 alt52=2;
                 }
                 break;
-            case 162:
+            case 168:
                 {
                 alt52=3;
                 }
                 break;
-            case 163:
+            case 169:
                 {
                 alt52=4;
                 }
                 break;
-            case 164:
+            case 170:
                 {
                 alt52=5;
                 }
@@ -17464,9 +18756,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             switch (alt52) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:7029:3: kw= 'RoutingConf'
+                    // InternalSoftGalleryLanguage.g:7560:3: kw= 'RoutingConf'
                     {
-                    kw=(Token)match(input,160,FOLLOW_2); 
+                    kw=(Token)match(input,166,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDOMTypeConfAccess().getRoutingConfKeyword_0());
@@ -17475,9 +18767,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:7035:3: kw= 'ServiceWorker'
+                    // InternalSoftGalleryLanguage.g:7566:3: kw= 'ServiceWorker'
                     {
-                    kw=(Token)match(input,161,FOLLOW_2); 
+                    kw=(Token)match(input,167,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDOMTypeConfAccess().getServiceWorkerKeyword_1());
@@ -17486,9 +18778,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 3 :
-                    // InternalSoftGalleryLanguage.g:7041:3: kw= 'HTMLStructure'
+                    // InternalSoftGalleryLanguage.g:7572:3: kw= 'HTMLStructure'
                     {
-                    kw=(Token)match(input,162,FOLLOW_2); 
+                    kw=(Token)match(input,168,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDOMTypeConfAccess().getHTMLStructureKeyword_2());
@@ -17497,9 +18789,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 4 :
-                    // InternalSoftGalleryLanguage.g:7047:3: kw= 'Manifest'
+                    // InternalSoftGalleryLanguage.g:7578:3: kw= 'Manifest'
                     {
-                    kw=(Token)match(input,163,FOLLOW_2); 
+                    kw=(Token)match(input,169,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDOMTypeConfAccess().getManifestKeyword_3());
@@ -17508,9 +18800,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 5 :
-                    // InternalSoftGalleryLanguage.g:7053:3: kw= 'RepositoriesConf'
+                    // InternalSoftGalleryLanguage.g:7584:3: kw= 'RepositoriesConf'
                     {
-                    kw=(Token)match(input,164,FOLLOW_2); 
+                    kw=(Token)match(input,170,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDOMTypeConfAccess().getRepositoriesConfKeyword_4());
@@ -17541,7 +18833,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactComponents"
-    // InternalSoftGalleryLanguage.g:7062:1: entryRuleReactComponents returns [EObject current=null] : iv_ruleReactComponents= ruleReactComponents EOF ;
+    // InternalSoftGalleryLanguage.g:7593:1: entryRuleReactComponents returns [EObject current=null] : iv_ruleReactComponents= ruleReactComponents EOF ;
     public final EObject entryRuleReactComponents() throws RecognitionException {
         EObject current = null;
 
@@ -17549,8 +18841,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7062:56: (iv_ruleReactComponents= ruleReactComponents EOF )
-            // InternalSoftGalleryLanguage.g:7063:2: iv_ruleReactComponents= ruleReactComponents EOF
+            // InternalSoftGalleryLanguage.g:7593:56: (iv_ruleReactComponents= ruleReactComponents EOF )
+            // InternalSoftGalleryLanguage.g:7594:2: iv_ruleReactComponents= ruleReactComponents EOF
             {
              newCompositeNode(grammarAccess.getReactComponentsRule()); 
             pushFollow(FOLLOW_1);
@@ -17577,7 +18869,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactComponents"
-    // InternalSoftGalleryLanguage.g:7069:1: ruleReactComponents returns [EObject current=null] : (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' ) ;
+    // InternalSoftGalleryLanguage.g:7600:1: ruleReactComponents returns [EObject current=null] : (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' ) ;
     public final EObject ruleReactComponents() throws RecognitionException {
         EObject current = null;
 
@@ -17596,13 +18888,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7075:2: ( (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' ) )
-            // InternalSoftGalleryLanguage.g:7076:2: (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:7606:2: ( (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' ) )
+            // InternalSoftGalleryLanguage.g:7607:2: (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' )
             {
-            // InternalSoftGalleryLanguage.g:7076:2: (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' )
-            // InternalSoftGalleryLanguage.g:7077:3: otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}'
+            // InternalSoftGalleryLanguage.g:7607:2: (otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:7608:3: otherlv_0= 'ReactComponents' otherlv_1= ':' otherlv_2= '{' ( (lv_componentslogic_3_0= ruleComponentsLogic ) ) ( (lv_componentsui_4_0= ruleComponentsUI ) ) ( (lv_componentstyle_5_0= ruleComponentsStyles ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,165,FOLLOW_3); 
+            otherlv_0=(Token)match(input,171,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactComponentsAccess().getReactComponentsKeyword_0());
             		
@@ -17610,20 +18902,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getReactComponentsAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_135); 
+            otherlv_2=(Token)match(input,13,FOLLOW_139); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactComponentsAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:7089:3: ( (lv_componentslogic_3_0= ruleComponentsLogic ) )
-            // InternalSoftGalleryLanguage.g:7090:4: (lv_componentslogic_3_0= ruleComponentsLogic )
+            // InternalSoftGalleryLanguage.g:7620:3: ( (lv_componentslogic_3_0= ruleComponentsLogic ) )
+            // InternalSoftGalleryLanguage.g:7621:4: (lv_componentslogic_3_0= ruleComponentsLogic )
             {
-            // InternalSoftGalleryLanguage.g:7090:4: (lv_componentslogic_3_0= ruleComponentsLogic )
-            // InternalSoftGalleryLanguage.g:7091:5: lv_componentslogic_3_0= ruleComponentsLogic
+            // InternalSoftGalleryLanguage.g:7621:4: (lv_componentslogic_3_0= ruleComponentsLogic )
+            // InternalSoftGalleryLanguage.g:7622:5: lv_componentslogic_3_0= ruleComponentsLogic
             {
 
             					newCompositeNode(grammarAccess.getReactComponentsAccess().getComponentslogicComponentsLogicParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_136);
+            pushFollow(FOLLOW_140);
             lv_componentslogic_3_0=ruleComponentsLogic();
 
             state._fsp--;
@@ -17645,16 +18937,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7108:3: ( (lv_componentsui_4_0= ruleComponentsUI ) )
-            // InternalSoftGalleryLanguage.g:7109:4: (lv_componentsui_4_0= ruleComponentsUI )
+            // InternalSoftGalleryLanguage.g:7639:3: ( (lv_componentsui_4_0= ruleComponentsUI ) )
+            // InternalSoftGalleryLanguage.g:7640:4: (lv_componentsui_4_0= ruleComponentsUI )
             {
-            // InternalSoftGalleryLanguage.g:7109:4: (lv_componentsui_4_0= ruleComponentsUI )
-            // InternalSoftGalleryLanguage.g:7110:5: lv_componentsui_4_0= ruleComponentsUI
+            // InternalSoftGalleryLanguage.g:7640:4: (lv_componentsui_4_0= ruleComponentsUI )
+            // InternalSoftGalleryLanguage.g:7641:5: lv_componentsui_4_0= ruleComponentsUI
             {
 
             					newCompositeNode(grammarAccess.getReactComponentsAccess().getComponentsuiComponentsUIParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_137);
+            pushFollow(FOLLOW_141);
             lv_componentsui_4_0=ruleComponentsUI();
 
             state._fsp--;
@@ -17676,11 +18968,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7127:3: ( (lv_componentstyle_5_0= ruleComponentsStyles ) )
-            // InternalSoftGalleryLanguage.g:7128:4: (lv_componentstyle_5_0= ruleComponentsStyles )
+            // InternalSoftGalleryLanguage.g:7658:3: ( (lv_componentstyle_5_0= ruleComponentsStyles ) )
+            // InternalSoftGalleryLanguage.g:7659:4: (lv_componentstyle_5_0= ruleComponentsStyles )
             {
-            // InternalSoftGalleryLanguage.g:7128:4: (lv_componentstyle_5_0= ruleComponentsStyles )
-            // InternalSoftGalleryLanguage.g:7129:5: lv_componentstyle_5_0= ruleComponentsStyles
+            // InternalSoftGalleryLanguage.g:7659:4: (lv_componentstyle_5_0= ruleComponentsStyles )
+            // InternalSoftGalleryLanguage.g:7660:5: lv_componentstyle_5_0= ruleComponentsStyles
             {
 
             					newCompositeNode(grammarAccess.getReactComponentsAccess().getComponentstyleComponentsStylesParserRuleCall_5_0());
@@ -17734,7 +19026,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleComponentsLogic"
-    // InternalSoftGalleryLanguage.g:7154:1: entryRuleComponentsLogic returns [EObject current=null] : iv_ruleComponentsLogic= ruleComponentsLogic EOF ;
+    // InternalSoftGalleryLanguage.g:7685:1: entryRuleComponentsLogic returns [EObject current=null] : iv_ruleComponentsLogic= ruleComponentsLogic EOF ;
     public final EObject entryRuleComponentsLogic() throws RecognitionException {
         EObject current = null;
 
@@ -17742,8 +19034,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7154:56: (iv_ruleComponentsLogic= ruleComponentsLogic EOF )
-            // InternalSoftGalleryLanguage.g:7155:2: iv_ruleComponentsLogic= ruleComponentsLogic EOF
+            // InternalSoftGalleryLanguage.g:7685:56: (iv_ruleComponentsLogic= ruleComponentsLogic EOF )
+            // InternalSoftGalleryLanguage.g:7686:2: iv_ruleComponentsLogic= ruleComponentsLogic EOF
             {
              newCompositeNode(grammarAccess.getComponentsLogicRule()); 
             pushFollow(FOLLOW_1);
@@ -17770,7 +19062,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleComponentsLogic"
-    // InternalSoftGalleryLanguage.g:7161:1: ruleComponentsLogic returns [EObject current=null] : (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7692:1: ruleComponentsLogic returns [EObject current=null] : (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) ) ;
     public final EObject ruleComponentsLogic() throws RecognitionException {
         EObject current = null;
 
@@ -17783,23 +19075,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7167:2: ( (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) ) )
-            // InternalSoftGalleryLanguage.g:7168:2: (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) )
+            // InternalSoftGalleryLanguage.g:7698:2: ( (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) ) )
+            // InternalSoftGalleryLanguage.g:7699:2: (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7168:2: (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) )
-            // InternalSoftGalleryLanguage.g:7169:3: otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) )
+            // InternalSoftGalleryLanguage.g:7699:2: (otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) ) )
+            // InternalSoftGalleryLanguage.g:7700:3: otherlv_0= 'LogicComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicContent ) )
             {
-            otherlv_0=(Token)match(input,166,FOLLOW_9); 
+            otherlv_0=(Token)match(input,172,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getComponentsLogicAccess().getLogicComponentsKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7173:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7174:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7704:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7705:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7174:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7175:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7705:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7706:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_138); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_142); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getComponentsLogicAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -17819,11 +19111,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7191:3: ( (lv_logiccomponents_2_0= ruleLogicContent ) )
-            // InternalSoftGalleryLanguage.g:7192:4: (lv_logiccomponents_2_0= ruleLogicContent )
+            // InternalSoftGalleryLanguage.g:7722:3: ( (lv_logiccomponents_2_0= ruleLogicContent ) )
+            // InternalSoftGalleryLanguage.g:7723:4: (lv_logiccomponents_2_0= ruleLogicContent )
             {
-            // InternalSoftGalleryLanguage.g:7192:4: (lv_logiccomponents_2_0= ruleLogicContent )
-            // InternalSoftGalleryLanguage.g:7193:5: lv_logiccomponents_2_0= ruleLogicContent
+            // InternalSoftGalleryLanguage.g:7723:4: (lv_logiccomponents_2_0= ruleLogicContent )
+            // InternalSoftGalleryLanguage.g:7724:5: lv_logiccomponents_2_0= ruleLogicContent
             {
 
             					newCompositeNode(grammarAccess.getComponentsLogicAccess().getLogiccomponentsLogicContentParserRuleCall_2_0());
@@ -17873,7 +19165,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleLogicContent"
-    // InternalSoftGalleryLanguage.g:7214:1: entryRuleLogicContent returns [EObject current=null] : iv_ruleLogicContent= ruleLogicContent EOF ;
+    // InternalSoftGalleryLanguage.g:7745:1: entryRuleLogicContent returns [EObject current=null] : iv_ruleLogicContent= ruleLogicContent EOF ;
     public final EObject entryRuleLogicContent() throws RecognitionException {
         EObject current = null;
 
@@ -17881,8 +19173,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7214:53: (iv_ruleLogicContent= ruleLogicContent EOF )
-            // InternalSoftGalleryLanguage.g:7215:2: iv_ruleLogicContent= ruleLogicContent EOF
+            // InternalSoftGalleryLanguage.g:7745:53: (iv_ruleLogicContent= ruleLogicContent EOF )
+            // InternalSoftGalleryLanguage.g:7746:2: iv_ruleLogicContent= ruleLogicContent EOF
             {
              newCompositeNode(grammarAccess.getLogicContentRule()); 
             pushFollow(FOLLOW_1);
@@ -17909,7 +19201,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleLogicContent"
-    // InternalSoftGalleryLanguage.g:7221:1: ruleLogicContent returns [EObject current=null] : (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7752:1: ruleLogicContent returns [EObject current=null] : (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) ) ;
     public final EObject ruleLogicContent() throws RecognitionException {
         EObject current = null;
 
@@ -17922,23 +19214,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7227:2: ( (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) ) )
-            // InternalSoftGalleryLanguage.g:7228:2: (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) )
+            // InternalSoftGalleryLanguage.g:7758:2: ( (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) ) )
+            // InternalSoftGalleryLanguage.g:7759:2: (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7228:2: (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) )
-            // InternalSoftGalleryLanguage.g:7229:3: otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) )
+            // InternalSoftGalleryLanguage.g:7759:2: (otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) ) )
+            // InternalSoftGalleryLanguage.g:7760:3: otherlv_0= 'RoutingComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleLogicStructure ) )
             {
-            otherlv_0=(Token)match(input,167,FOLLOW_9); 
+            otherlv_0=(Token)match(input,173,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLogicContentAccess().getRoutingComponentsKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7233:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7234:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7764:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7765:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7234:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7235:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7765:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7766:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_139); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_143); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getLogicContentAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -17958,11 +19250,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7251:3: ( (lv_logiccomponents_2_0= ruleLogicStructure ) )
-            // InternalSoftGalleryLanguage.g:7252:4: (lv_logiccomponents_2_0= ruleLogicStructure )
+            // InternalSoftGalleryLanguage.g:7782:3: ( (lv_logiccomponents_2_0= ruleLogicStructure ) )
+            // InternalSoftGalleryLanguage.g:7783:4: (lv_logiccomponents_2_0= ruleLogicStructure )
             {
-            // InternalSoftGalleryLanguage.g:7252:4: (lv_logiccomponents_2_0= ruleLogicStructure )
-            // InternalSoftGalleryLanguage.g:7253:5: lv_logiccomponents_2_0= ruleLogicStructure
+            // InternalSoftGalleryLanguage.g:7783:4: (lv_logiccomponents_2_0= ruleLogicStructure )
+            // InternalSoftGalleryLanguage.g:7784:5: lv_logiccomponents_2_0= ruleLogicStructure
             {
 
             					newCompositeNode(grammarAccess.getLogicContentAccess().getLogiccomponentsLogicStructureParserRuleCall_2_0());
@@ -18012,7 +19304,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleLogicStructure"
-    // InternalSoftGalleryLanguage.g:7274:1: entryRuleLogicStructure returns [EObject current=null] : iv_ruleLogicStructure= ruleLogicStructure EOF ;
+    // InternalSoftGalleryLanguage.g:7805:1: entryRuleLogicStructure returns [EObject current=null] : iv_ruleLogicStructure= ruleLogicStructure EOF ;
     public final EObject entryRuleLogicStructure() throws RecognitionException {
         EObject current = null;
 
@@ -18020,8 +19312,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7274:55: (iv_ruleLogicStructure= ruleLogicStructure EOF )
-            // InternalSoftGalleryLanguage.g:7275:2: iv_ruleLogicStructure= ruleLogicStructure EOF
+            // InternalSoftGalleryLanguage.g:7805:55: (iv_ruleLogicStructure= ruleLogicStructure EOF )
+            // InternalSoftGalleryLanguage.g:7806:2: iv_ruleLogicStructure= ruleLogicStructure EOF
             {
              newCompositeNode(grammarAccess.getLogicStructureRule()); 
             pushFollow(FOLLOW_1);
@@ -18048,7 +19340,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleLogicStructure"
-    // InternalSoftGalleryLanguage.g:7281:1: ruleLogicStructure returns [EObject current=null] : (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7812:1: ruleLogicStructure returns [EObject current=null] : (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) ) ;
     public final EObject ruleLogicStructure() throws RecognitionException {
         EObject current = null;
 
@@ -18063,23 +19355,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7287:2: ( (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:7288:2: (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7818:2: ( (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:7819:2: (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7288:2: (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:7289:3: otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7819:2: (otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:7820:3: otherlv_0= 'AppComponent' ( (lv_appComName_1_0= RULE_ID ) ) ( (lv_logiccomponents_2_0= ruleComponentClass ) ) otherlv_3= 'IndexComponent' ( (lv_indexCompName_4_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,168,FOLLOW_9); 
+            otherlv_0=(Token)match(input,174,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLogicStructureAccess().getAppComponentKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7293:3: ( (lv_appComName_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7294:4: (lv_appComName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7824:3: ( (lv_appComName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7825:4: (lv_appComName_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7294:4: (lv_appComName_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7295:5: lv_appComName_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7825:4: (lv_appComName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7826:5: lv_appComName_1_0= RULE_ID
             {
-            lv_appComName_1_0=(Token)match(input,RULE_ID,FOLLOW_140); 
+            lv_appComName_1_0=(Token)match(input,RULE_ID,FOLLOW_144); 
 
             					newLeafNode(lv_appComName_1_0, grammarAccess.getLogicStructureAccess().getAppComNameIDTerminalRuleCall_1_0());
             				
@@ -18099,16 +19391,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7311:3: ( (lv_logiccomponents_2_0= ruleComponentClass ) )
-            // InternalSoftGalleryLanguage.g:7312:4: (lv_logiccomponents_2_0= ruleComponentClass )
+            // InternalSoftGalleryLanguage.g:7842:3: ( (lv_logiccomponents_2_0= ruleComponentClass ) )
+            // InternalSoftGalleryLanguage.g:7843:4: (lv_logiccomponents_2_0= ruleComponentClass )
             {
-            // InternalSoftGalleryLanguage.g:7312:4: (lv_logiccomponents_2_0= ruleComponentClass )
-            // InternalSoftGalleryLanguage.g:7313:5: lv_logiccomponents_2_0= ruleComponentClass
+            // InternalSoftGalleryLanguage.g:7843:4: (lv_logiccomponents_2_0= ruleComponentClass )
+            // InternalSoftGalleryLanguage.g:7844:5: lv_logiccomponents_2_0= ruleComponentClass
             {
 
             					newCompositeNode(grammarAccess.getLogicStructureAccess().getLogiccomponentsComponentClassParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_141);
+            pushFollow(FOLLOW_145);
             lv_logiccomponents_2_0=ruleComponentClass();
 
             state._fsp--;
@@ -18130,15 +19422,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_3=(Token)match(input,169,FOLLOW_9); 
+            otherlv_3=(Token)match(input,175,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getLogicStructureAccess().getIndexComponentKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:7334:3: ( (lv_indexCompName_4_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7335:4: (lv_indexCompName_4_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7865:3: ( (lv_indexCompName_4_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7866:4: (lv_indexCompName_4_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7335:4: (lv_indexCompName_4_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7336:5: lv_indexCompName_4_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7866:4: (lv_indexCompName_4_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7867:5: lv_indexCompName_4_0= RULE_ID
             {
             lv_indexCompName_4_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -18183,7 +19475,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleComponentsUI"
-    // InternalSoftGalleryLanguage.g:7356:1: entryRuleComponentsUI returns [EObject current=null] : iv_ruleComponentsUI= ruleComponentsUI EOF ;
+    // InternalSoftGalleryLanguage.g:7887:1: entryRuleComponentsUI returns [EObject current=null] : iv_ruleComponentsUI= ruleComponentsUI EOF ;
     public final EObject entryRuleComponentsUI() throws RecognitionException {
         EObject current = null;
 
@@ -18191,8 +19483,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7356:53: (iv_ruleComponentsUI= ruleComponentsUI EOF )
-            // InternalSoftGalleryLanguage.g:7357:2: iv_ruleComponentsUI= ruleComponentsUI EOF
+            // InternalSoftGalleryLanguage.g:7887:53: (iv_ruleComponentsUI= ruleComponentsUI EOF )
+            // InternalSoftGalleryLanguage.g:7888:2: iv_ruleComponentsUI= ruleComponentsUI EOF
             {
              newCompositeNode(grammarAccess.getComponentsUIRule()); 
             pushFollow(FOLLOW_1);
@@ -18219,7 +19511,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleComponentsUI"
-    // InternalSoftGalleryLanguage.g:7363:1: ruleComponentsUI returns [EObject current=null] : (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) ) ;
+    // InternalSoftGalleryLanguage.g:7894:1: ruleComponentsUI returns [EObject current=null] : (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) ) ;
     public final EObject ruleComponentsUI() throws RecognitionException {
         EObject current = null;
 
@@ -18232,23 +19524,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7369:2: ( (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) ) )
-            // InternalSoftGalleryLanguage.g:7370:2: (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) )
+            // InternalSoftGalleryLanguage.g:7900:2: ( (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) ) )
+            // InternalSoftGalleryLanguage.g:7901:2: (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7370:2: (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) )
-            // InternalSoftGalleryLanguage.g:7371:3: otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) )
+            // InternalSoftGalleryLanguage.g:7901:2: (otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) ) )
+            // InternalSoftGalleryLanguage.g:7902:3: otherlv_0= 'UIComponents' ( (lv_name_1_0= RULE_ID ) ) ( (lv_uicomponents_2_0= ruleUIContent ) )
             {
-            otherlv_0=(Token)match(input,170,FOLLOW_9); 
+            otherlv_0=(Token)match(input,176,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getComponentsUIAccess().getUIComponentsKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7375:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7376:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7906:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:7907:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7376:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7377:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:7907:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:7908:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_142); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_146); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getComponentsUIAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -18268,11 +19560,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7393:3: ( (lv_uicomponents_2_0= ruleUIContent ) )
-            // InternalSoftGalleryLanguage.g:7394:4: (lv_uicomponents_2_0= ruleUIContent )
+            // InternalSoftGalleryLanguage.g:7924:3: ( (lv_uicomponents_2_0= ruleUIContent ) )
+            // InternalSoftGalleryLanguage.g:7925:4: (lv_uicomponents_2_0= ruleUIContent )
             {
-            // InternalSoftGalleryLanguage.g:7394:4: (lv_uicomponents_2_0= ruleUIContent )
-            // InternalSoftGalleryLanguage.g:7395:5: lv_uicomponents_2_0= ruleUIContent
+            // InternalSoftGalleryLanguage.g:7925:4: (lv_uicomponents_2_0= ruleUIContent )
+            // InternalSoftGalleryLanguage.g:7926:5: lv_uicomponents_2_0= ruleUIContent
             {
 
             					newCompositeNode(grammarAccess.getComponentsUIAccess().getUicomponentsUIContentParserRuleCall_2_0());
@@ -18322,7 +19614,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleUIContent"
-    // InternalSoftGalleryLanguage.g:7416:1: entryRuleUIContent returns [EObject current=null] : iv_ruleUIContent= ruleUIContent EOF ;
+    // InternalSoftGalleryLanguage.g:7947:1: entryRuleUIContent returns [EObject current=null] : iv_ruleUIContent= ruleUIContent EOF ;
     public final EObject entryRuleUIContent() throws RecognitionException {
         EObject current = null;
 
@@ -18330,8 +19622,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7416:50: (iv_ruleUIContent= ruleUIContent EOF )
-            // InternalSoftGalleryLanguage.g:7417:2: iv_ruleUIContent= ruleUIContent EOF
+            // InternalSoftGalleryLanguage.g:7947:50: (iv_ruleUIContent= ruleUIContent EOF )
+            // InternalSoftGalleryLanguage.g:7948:2: iv_ruleUIContent= ruleUIContent EOF
             {
              newCompositeNode(grammarAccess.getUIContentRule()); 
             pushFollow(FOLLOW_1);
@@ -18358,7 +19650,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleUIContent"
-    // InternalSoftGalleryLanguage.g:7423:1: ruleUIContent returns [EObject current=null] : ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:7954:1: ruleUIContent returns [EObject current=null] : ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ ) ;
     public final EObject ruleUIContent() throws RecognitionException {
         EObject current = null;
 
@@ -18371,35 +19663,35 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7429:2: ( ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ ) )
-            // InternalSoftGalleryLanguage.g:7430:2: ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ )
+            // InternalSoftGalleryLanguage.g:7960:2: ( ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ ) )
+            // InternalSoftGalleryLanguage.g:7961:2: ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:7430:2: ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ )
-            // InternalSoftGalleryLanguage.g:7431:3: ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+
+            // InternalSoftGalleryLanguage.g:7961:2: ( ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+ )
+            // InternalSoftGalleryLanguage.g:7962:3: ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+ ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+
             {
-            // InternalSoftGalleryLanguage.g:7431:3: ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+
+            // InternalSoftGalleryLanguage.g:7962:3: ( (lv_componentcontent_0_0= ruleViewComponentCont ) )+
             int cnt53=0;
             loop53:
             do {
                 int alt53=2;
                 int LA53_0 = input.LA(1);
 
-                if ( (LA53_0==171) ) {
+                if ( (LA53_0==177) ) {
                     alt53=1;
                 }
 
 
                 switch (alt53) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7432:4: (lv_componentcontent_0_0= ruleViewComponentCont )
+            	    // InternalSoftGalleryLanguage.g:7963:4: (lv_componentcontent_0_0= ruleViewComponentCont )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7432:4: (lv_componentcontent_0_0= ruleViewComponentCont )
-            	    // InternalSoftGalleryLanguage.g:7433:5: lv_componentcontent_0_0= ruleViewComponentCont
+            	    // InternalSoftGalleryLanguage.g:7963:4: (lv_componentcontent_0_0= ruleViewComponentCont )
+            	    // InternalSoftGalleryLanguage.g:7964:5: lv_componentcontent_0_0= ruleViewComponentCont
             	    {
 
             	    					newCompositeNode(grammarAccess.getUIContentAccess().getComponentcontentViewComponentContParserRuleCall_0_0());
             	    				
-            	    pushFollow(FOLLOW_143);
+            	    pushFollow(FOLLOW_147);
             	    lv_componentcontent_0_0=ruleViewComponentCont();
 
             	    state._fsp--;
@@ -18431,29 +19723,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 cnt53++;
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:7450:3: ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+
+            // InternalSoftGalleryLanguage.g:7981:3: ( (lv_subcomponentcontent_1_0= ruleSubcomponentCont ) )+
             int cnt54=0;
             loop54:
             do {
                 int alt54=2;
                 int LA54_0 = input.LA(1);
 
-                if ( (LA54_0==172) ) {
+                if ( (LA54_0==178) ) {
                     alt54=1;
                 }
 
 
                 switch (alt54) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7451:4: (lv_subcomponentcontent_1_0= ruleSubcomponentCont )
+            	    // InternalSoftGalleryLanguage.g:7982:4: (lv_subcomponentcontent_1_0= ruleSubcomponentCont )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7451:4: (lv_subcomponentcontent_1_0= ruleSubcomponentCont )
-            	    // InternalSoftGalleryLanguage.g:7452:5: lv_subcomponentcontent_1_0= ruleSubcomponentCont
+            	    // InternalSoftGalleryLanguage.g:7982:4: (lv_subcomponentcontent_1_0= ruleSubcomponentCont )
+            	    // InternalSoftGalleryLanguage.g:7983:5: lv_subcomponentcontent_1_0= ruleSubcomponentCont
             	    {
 
             	    					newCompositeNode(grammarAccess.getUIContentAccess().getSubcomponentcontentSubcomponentContParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_144);
+            	    pushFollow(FOLLOW_148);
             	    lv_subcomponentcontent_1_0=ruleSubcomponentCont();
 
             	    state._fsp--;
@@ -18508,7 +19800,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleViewComponentCont"
-    // InternalSoftGalleryLanguage.g:7473:1: entryRuleViewComponentCont returns [EObject current=null] : iv_ruleViewComponentCont= ruleViewComponentCont EOF ;
+    // InternalSoftGalleryLanguage.g:8004:1: entryRuleViewComponentCont returns [EObject current=null] : iv_ruleViewComponentCont= ruleViewComponentCont EOF ;
     public final EObject entryRuleViewComponentCont() throws RecognitionException {
         EObject current = null;
 
@@ -18516,8 +19808,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7473:58: (iv_ruleViewComponentCont= ruleViewComponentCont EOF )
-            // InternalSoftGalleryLanguage.g:7474:2: iv_ruleViewComponentCont= ruleViewComponentCont EOF
+            // InternalSoftGalleryLanguage.g:8004:58: (iv_ruleViewComponentCont= ruleViewComponentCont EOF )
+            // InternalSoftGalleryLanguage.g:8005:2: iv_ruleViewComponentCont= ruleViewComponentCont EOF
             {
              newCompositeNode(grammarAccess.getViewComponentContRule()); 
             pushFollow(FOLLOW_1);
@@ -18544,7 +19836,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleViewComponentCont"
-    // InternalSoftGalleryLanguage.g:7480:1: ruleViewComponentCont returns [EObject current=null] : (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8011:1: ruleViewComponentCont returns [EObject current=null] : (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) ;
     public final EObject ruleViewComponentCont() throws RecognitionException {
         EObject current = null;
 
@@ -18557,23 +19849,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7486:2: ( (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) )
-            // InternalSoftGalleryLanguage.g:7487:2: (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
+            // InternalSoftGalleryLanguage.g:8017:2: ( (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) )
+            // InternalSoftGalleryLanguage.g:8018:2: (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7487:2: (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
-            // InternalSoftGalleryLanguage.g:7488:3: otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) )
+            // InternalSoftGalleryLanguage.g:8018:2: (otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
+            // InternalSoftGalleryLanguage.g:8019:3: otherlv_0= 'ViewComponent' ( (lv_nameView_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) )
             {
-            otherlv_0=(Token)match(input,171,FOLLOW_9); 
+            otherlv_0=(Token)match(input,177,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getViewComponentContAccess().getViewComponentKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7492:3: ( (lv_nameView_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7493:4: (lv_nameView_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8023:3: ( (lv_nameView_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8024:4: (lv_nameView_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7493:4: (lv_nameView_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7494:5: lv_nameView_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8024:4: (lv_nameView_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8025:5: lv_nameView_1_0= RULE_ID
             {
-            lv_nameView_1_0=(Token)match(input,RULE_ID,FOLLOW_140); 
+            lv_nameView_1_0=(Token)match(input,RULE_ID,FOLLOW_144); 
 
             					newLeafNode(lv_nameView_1_0, grammarAccess.getViewComponentContAccess().getNameViewIDTerminalRuleCall_1_0());
             				
@@ -18593,11 +19885,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7510:3: ( (lv_uicontent_2_0= ruleComponentClass ) )
-            // InternalSoftGalleryLanguage.g:7511:4: (lv_uicontent_2_0= ruleComponentClass )
+            // InternalSoftGalleryLanguage.g:8041:3: ( (lv_uicontent_2_0= ruleComponentClass ) )
+            // InternalSoftGalleryLanguage.g:8042:4: (lv_uicontent_2_0= ruleComponentClass )
             {
-            // InternalSoftGalleryLanguage.g:7511:4: (lv_uicontent_2_0= ruleComponentClass )
-            // InternalSoftGalleryLanguage.g:7512:5: lv_uicontent_2_0= ruleComponentClass
+            // InternalSoftGalleryLanguage.g:8042:4: (lv_uicontent_2_0= ruleComponentClass )
+            // InternalSoftGalleryLanguage.g:8043:5: lv_uicontent_2_0= ruleComponentClass
             {
 
             					newCompositeNode(grammarAccess.getViewComponentContAccess().getUicontentComponentClassParserRuleCall_2_0());
@@ -18647,7 +19939,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleSubcomponentCont"
-    // InternalSoftGalleryLanguage.g:7533:1: entryRuleSubcomponentCont returns [EObject current=null] : iv_ruleSubcomponentCont= ruleSubcomponentCont EOF ;
+    // InternalSoftGalleryLanguage.g:8064:1: entryRuleSubcomponentCont returns [EObject current=null] : iv_ruleSubcomponentCont= ruleSubcomponentCont EOF ;
     public final EObject entryRuleSubcomponentCont() throws RecognitionException {
         EObject current = null;
 
@@ -18655,8 +19947,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7533:57: (iv_ruleSubcomponentCont= ruleSubcomponentCont EOF )
-            // InternalSoftGalleryLanguage.g:7534:2: iv_ruleSubcomponentCont= ruleSubcomponentCont EOF
+            // InternalSoftGalleryLanguage.g:8064:57: (iv_ruleSubcomponentCont= ruleSubcomponentCont EOF )
+            // InternalSoftGalleryLanguage.g:8065:2: iv_ruleSubcomponentCont= ruleSubcomponentCont EOF
             {
              newCompositeNode(grammarAccess.getSubcomponentContRule()); 
             pushFollow(FOLLOW_1);
@@ -18683,7 +19975,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleSubcomponentCont"
-    // InternalSoftGalleryLanguage.g:7540:1: ruleSubcomponentCont returns [EObject current=null] : (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8071:1: ruleSubcomponentCont returns [EObject current=null] : (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) ;
     public final EObject ruleSubcomponentCont() throws RecognitionException {
         EObject current = null;
 
@@ -18696,23 +19988,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7546:2: ( (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) )
-            // InternalSoftGalleryLanguage.g:7547:2: (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
+            // InternalSoftGalleryLanguage.g:8077:2: ( (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) ) )
+            // InternalSoftGalleryLanguage.g:8078:2: (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7547:2: (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
-            // InternalSoftGalleryLanguage.g:7548:3: otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) )
+            // InternalSoftGalleryLanguage.g:8078:2: (otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) ) )
+            // InternalSoftGalleryLanguage.g:8079:3: otherlv_0= 'Subcomponents' ( (lv_nameSubComp_1_0= RULE_ID ) ) ( (lv_uicontent_2_0= ruleComponentClass ) )
             {
-            otherlv_0=(Token)match(input,172,FOLLOW_9); 
+            otherlv_0=(Token)match(input,178,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSubcomponentContAccess().getSubcomponentsKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7552:3: ( (lv_nameSubComp_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7553:4: (lv_nameSubComp_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8083:3: ( (lv_nameSubComp_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8084:4: (lv_nameSubComp_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7553:4: (lv_nameSubComp_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7554:5: lv_nameSubComp_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8084:4: (lv_nameSubComp_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8085:5: lv_nameSubComp_1_0= RULE_ID
             {
-            lv_nameSubComp_1_0=(Token)match(input,RULE_ID,FOLLOW_140); 
+            lv_nameSubComp_1_0=(Token)match(input,RULE_ID,FOLLOW_144); 
 
             					newLeafNode(lv_nameSubComp_1_0, grammarAccess.getSubcomponentContAccess().getNameSubCompIDTerminalRuleCall_1_0());
             				
@@ -18732,11 +20024,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7570:3: ( (lv_uicontent_2_0= ruleComponentClass ) )
-            // InternalSoftGalleryLanguage.g:7571:4: (lv_uicontent_2_0= ruleComponentClass )
+            // InternalSoftGalleryLanguage.g:8101:3: ( (lv_uicontent_2_0= ruleComponentClass ) )
+            // InternalSoftGalleryLanguage.g:8102:4: (lv_uicontent_2_0= ruleComponentClass )
             {
-            // InternalSoftGalleryLanguage.g:7571:4: (lv_uicontent_2_0= ruleComponentClass )
-            // InternalSoftGalleryLanguage.g:7572:5: lv_uicontent_2_0= ruleComponentClass
+            // InternalSoftGalleryLanguage.g:8102:4: (lv_uicontent_2_0= ruleComponentClass )
+            // InternalSoftGalleryLanguage.g:8103:5: lv_uicontent_2_0= ruleComponentClass
             {
 
             					newCompositeNode(grammarAccess.getSubcomponentContAccess().getUicontentComponentClassParserRuleCall_2_0());
@@ -18786,7 +20078,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleComponentClass"
-    // InternalSoftGalleryLanguage.g:7593:1: entryRuleComponentClass returns [EObject current=null] : iv_ruleComponentClass= ruleComponentClass EOF ;
+    // InternalSoftGalleryLanguage.g:8124:1: entryRuleComponentClass returns [EObject current=null] : iv_ruleComponentClass= ruleComponentClass EOF ;
     public final EObject entryRuleComponentClass() throws RecognitionException {
         EObject current = null;
 
@@ -18794,8 +20086,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7593:55: (iv_ruleComponentClass= ruleComponentClass EOF )
-            // InternalSoftGalleryLanguage.g:7594:2: iv_ruleComponentClass= ruleComponentClass EOF
+            // InternalSoftGalleryLanguage.g:8124:55: (iv_ruleComponentClass= ruleComponentClass EOF )
+            // InternalSoftGalleryLanguage.g:8125:2: iv_ruleComponentClass= ruleComponentClass EOF
             {
              newCompositeNode(grammarAccess.getComponentClassRule()); 
             pushFollow(FOLLOW_1);
@@ -18822,7 +20114,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleComponentClass"
-    // InternalSoftGalleryLanguage.g:7600:1: ruleComponentClass returns [EObject current=null] : ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8131:1: ruleComponentClass returns [EObject current=null] : ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) ) ;
     public final EObject ruleComponentClass() throws RecognitionException {
         EObject current = null;
 
@@ -18837,22 +20129,22 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7606:2: ( ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) ) )
-            // InternalSoftGalleryLanguage.g:7607:2: ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) )
+            // InternalSoftGalleryLanguage.g:8137:2: ( ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) ) )
+            // InternalSoftGalleryLanguage.g:8138:2: ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7607:2: ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) )
-            // InternalSoftGalleryLanguage.g:7608:3: ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) )
+            // InternalSoftGalleryLanguage.g:8138:2: ( ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) ) )
+            // InternalSoftGalleryLanguage.g:8139:3: ( (lv_componentclassimp_0_0= ruleReactImports ) ) ( (lv_componentclassfunc_1_0= ruleReactFunctions ) ) ( (lv_componentclassprop_2_0= ruleProps ) )
             {
-            // InternalSoftGalleryLanguage.g:7608:3: ( (lv_componentclassimp_0_0= ruleReactImports ) )
-            // InternalSoftGalleryLanguage.g:7609:4: (lv_componentclassimp_0_0= ruleReactImports )
+            // InternalSoftGalleryLanguage.g:8139:3: ( (lv_componentclassimp_0_0= ruleReactImports ) )
+            // InternalSoftGalleryLanguage.g:8140:4: (lv_componentclassimp_0_0= ruleReactImports )
             {
-            // InternalSoftGalleryLanguage.g:7609:4: (lv_componentclassimp_0_0= ruleReactImports )
-            // InternalSoftGalleryLanguage.g:7610:5: lv_componentclassimp_0_0= ruleReactImports
+            // InternalSoftGalleryLanguage.g:8140:4: (lv_componentclassimp_0_0= ruleReactImports )
+            // InternalSoftGalleryLanguage.g:8141:5: lv_componentclassimp_0_0= ruleReactImports
             {
 
             					newCompositeNode(grammarAccess.getComponentClassAccess().getComponentclassimpReactImportsParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_140);
+            pushFollow(FOLLOW_144);
             lv_componentclassimp_0_0=ruleReactImports();
 
             state._fsp--;
@@ -18874,16 +20166,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7627:3: ( (lv_componentclassfunc_1_0= ruleReactFunctions ) )
-            // InternalSoftGalleryLanguage.g:7628:4: (lv_componentclassfunc_1_0= ruleReactFunctions )
+            // InternalSoftGalleryLanguage.g:8158:3: ( (lv_componentclassfunc_1_0= ruleReactFunctions ) )
+            // InternalSoftGalleryLanguage.g:8159:4: (lv_componentclassfunc_1_0= ruleReactFunctions )
             {
-            // InternalSoftGalleryLanguage.g:7628:4: (lv_componentclassfunc_1_0= ruleReactFunctions )
-            // InternalSoftGalleryLanguage.g:7629:5: lv_componentclassfunc_1_0= ruleReactFunctions
+            // InternalSoftGalleryLanguage.g:8159:4: (lv_componentclassfunc_1_0= ruleReactFunctions )
+            // InternalSoftGalleryLanguage.g:8160:5: lv_componentclassfunc_1_0= ruleReactFunctions
             {
 
             					newCompositeNode(grammarAccess.getComponentClassAccess().getComponentclassfuncReactFunctionsParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_145);
+            pushFollow(FOLLOW_149);
             lv_componentclassfunc_1_0=ruleReactFunctions();
 
             state._fsp--;
@@ -18905,11 +20197,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7646:3: ( (lv_componentclassprop_2_0= ruleProps ) )
-            // InternalSoftGalleryLanguage.g:7647:4: (lv_componentclassprop_2_0= ruleProps )
+            // InternalSoftGalleryLanguage.g:8177:3: ( (lv_componentclassprop_2_0= ruleProps ) )
+            // InternalSoftGalleryLanguage.g:8178:4: (lv_componentclassprop_2_0= ruleProps )
             {
-            // InternalSoftGalleryLanguage.g:7647:4: (lv_componentclassprop_2_0= ruleProps )
-            // InternalSoftGalleryLanguage.g:7648:5: lv_componentclassprop_2_0= ruleProps
+            // InternalSoftGalleryLanguage.g:8178:4: (lv_componentclassprop_2_0= ruleProps )
+            // InternalSoftGalleryLanguage.g:8179:5: lv_componentclassprop_2_0= ruleProps
             {
 
             					newCompositeNode(grammarAccess.getComponentClassAccess().getComponentclasspropPropsParserRuleCall_2_0());
@@ -18959,7 +20251,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactImports"
-    // InternalSoftGalleryLanguage.g:7669:1: entryRuleReactImports returns [EObject current=null] : iv_ruleReactImports= ruleReactImports EOF ;
+    // InternalSoftGalleryLanguage.g:8200:1: entryRuleReactImports returns [EObject current=null] : iv_ruleReactImports= ruleReactImports EOF ;
     public final EObject entryRuleReactImports() throws RecognitionException {
         EObject current = null;
 
@@ -18967,8 +20259,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7669:53: (iv_ruleReactImports= ruleReactImports EOF )
-            // InternalSoftGalleryLanguage.g:7670:2: iv_ruleReactImports= ruleReactImports EOF
+            // InternalSoftGalleryLanguage.g:8200:53: (iv_ruleReactImports= ruleReactImports EOF )
+            // InternalSoftGalleryLanguage.g:8201:2: iv_ruleReactImports= ruleReactImports EOF
             {
              newCompositeNode(grammarAccess.getReactImportsRule()); 
             pushFollow(FOLLOW_1);
@@ -18995,7 +20287,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactImports"
-    // InternalSoftGalleryLanguage.g:7676:1: ruleReactImports returns [EObject current=null] : ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* ) ;
+    // InternalSoftGalleryLanguage.g:8207:1: ruleReactImports returns [EObject current=null] : ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* ) ;
     public final EObject ruleReactImports() throws RecognitionException {
         EObject current = null;
 
@@ -19006,14 +20298,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7682:2: ( ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* ) )
-            // InternalSoftGalleryLanguage.g:7683:2: ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* )
+            // InternalSoftGalleryLanguage.g:8213:2: ( ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* ) )
+            // InternalSoftGalleryLanguage.g:8214:2: ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* )
             {
-            // InternalSoftGalleryLanguage.g:7683:2: ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* )
-            // InternalSoftGalleryLanguage.g:7684:3: () ( (lv_reactsimports_1_0= ruleReactImportContent ) )*
+            // InternalSoftGalleryLanguage.g:8214:2: ( () ( (lv_reactsimports_1_0= ruleReactImportContent ) )* )
+            // InternalSoftGalleryLanguage.g:8215:3: () ( (lv_reactsimports_1_0= ruleReactImportContent ) )*
             {
-            // InternalSoftGalleryLanguage.g:7684:3: ()
-            // InternalSoftGalleryLanguage.g:7685:4: 
+            // InternalSoftGalleryLanguage.g:8215:3: ()
+            // InternalSoftGalleryLanguage.g:8216:4: 
             {
 
             				current = forceCreateModelElement(
@@ -19023,28 +20315,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7691:3: ( (lv_reactsimports_1_0= ruleReactImportContent ) )*
+            // InternalSoftGalleryLanguage.g:8222:3: ( (lv_reactsimports_1_0= ruleReactImportContent ) )*
             loop55:
             do {
                 int alt55=2;
                 int LA55_0 = input.LA(1);
 
-                if ( (LA55_0==173) ) {
+                if ( (LA55_0==179) ) {
                     alt55=1;
                 }
 
 
                 switch (alt55) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7692:4: (lv_reactsimports_1_0= ruleReactImportContent )
+            	    // InternalSoftGalleryLanguage.g:8223:4: (lv_reactsimports_1_0= ruleReactImportContent )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7692:4: (lv_reactsimports_1_0= ruleReactImportContent )
-            	    // InternalSoftGalleryLanguage.g:7693:5: lv_reactsimports_1_0= ruleReactImportContent
+            	    // InternalSoftGalleryLanguage.g:8223:4: (lv_reactsimports_1_0= ruleReactImportContent )
+            	    // InternalSoftGalleryLanguage.g:8224:5: lv_reactsimports_1_0= ruleReactImportContent
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactImportsAccess().getReactsimportsReactImportContentParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_146);
+            	    pushFollow(FOLLOW_150);
             	    lv_reactsimports_1_0=ruleReactImportContent();
 
             	    state._fsp--;
@@ -19095,7 +20387,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactImportContent"
-    // InternalSoftGalleryLanguage.g:7714:1: entryRuleReactImportContent returns [EObject current=null] : iv_ruleReactImportContent= ruleReactImportContent EOF ;
+    // InternalSoftGalleryLanguage.g:8245:1: entryRuleReactImportContent returns [EObject current=null] : iv_ruleReactImportContent= ruleReactImportContent EOF ;
     public final EObject entryRuleReactImportContent() throws RecognitionException {
         EObject current = null;
 
@@ -19103,8 +20395,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7714:59: (iv_ruleReactImportContent= ruleReactImportContent EOF )
-            // InternalSoftGalleryLanguage.g:7715:2: iv_ruleReactImportContent= ruleReactImportContent EOF
+            // InternalSoftGalleryLanguage.g:8245:59: (iv_ruleReactImportContent= ruleReactImportContent EOF )
+            // InternalSoftGalleryLanguage.g:8246:2: iv_ruleReactImportContent= ruleReactImportContent EOF
             {
              newCompositeNode(grammarAccess.getReactImportContentRule()); 
             pushFollow(FOLLOW_1);
@@ -19131,7 +20423,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactImportContent"
-    // InternalSoftGalleryLanguage.g:7721:1: ruleReactImportContent returns [EObject current=null] : (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8252:1: ruleReactImportContent returns [EObject current=null] : (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) ) ;
     public final EObject ruleReactImportContent() throws RecognitionException {
         EObject current = null;
 
@@ -19142,21 +20434,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7727:2: ( (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:7728:2: (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:8258:2: ( (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:8259:2: (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7728:2: (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:7729:3: otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8259:2: (otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:8260:3: otherlv_0= 'import' ( (lv_impName_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,173,FOLLOW_9); 
+            otherlv_0=(Token)match(input,179,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactImportContentAccess().getImportKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7733:3: ( (lv_impName_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7734:4: (lv_impName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8264:3: ( (lv_impName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8265:4: (lv_impName_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7734:4: (lv_impName_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7735:5: lv_impName_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8265:4: (lv_impName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8266:5: lv_impName_1_0= RULE_ID
             {
             lv_impName_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -19201,7 +20493,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactFunctions"
-    // InternalSoftGalleryLanguage.g:7755:1: entryRuleReactFunctions returns [EObject current=null] : iv_ruleReactFunctions= ruleReactFunctions EOF ;
+    // InternalSoftGalleryLanguage.g:8286:1: entryRuleReactFunctions returns [EObject current=null] : iv_ruleReactFunctions= ruleReactFunctions EOF ;
     public final EObject entryRuleReactFunctions() throws RecognitionException {
         EObject current = null;
 
@@ -19209,8 +20501,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7755:55: (iv_ruleReactFunctions= ruleReactFunctions EOF )
-            // InternalSoftGalleryLanguage.g:7756:2: iv_ruleReactFunctions= ruleReactFunctions EOF
+            // InternalSoftGalleryLanguage.g:8286:55: (iv_ruleReactFunctions= ruleReactFunctions EOF )
+            // InternalSoftGalleryLanguage.g:8287:2: iv_ruleReactFunctions= ruleReactFunctions EOF
             {
              newCompositeNode(grammarAccess.getReactFunctionsRule()); 
             pushFollow(FOLLOW_1);
@@ -19237,7 +20529,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactFunctions"
-    // InternalSoftGalleryLanguage.g:7762:1: ruleReactFunctions returns [EObject current=null] : ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8293:1: ruleReactFunctions returns [EObject current=null] : ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) ) ;
     public final EObject ruleReactFunctions() throws RecognitionException {
         EObject current = null;
 
@@ -19254,22 +20546,22 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7768:2: ( ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) ) )
-            // InternalSoftGalleryLanguage.g:7769:2: ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) )
+            // InternalSoftGalleryLanguage.g:8299:2: ( ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) ) )
+            // InternalSoftGalleryLanguage.g:8300:2: ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7769:2: ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) )
-            // InternalSoftGalleryLanguage.g:7770:3: ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) )
+            // InternalSoftGalleryLanguage.g:8300:2: ( ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) ) )
+            // InternalSoftGalleryLanguage.g:8301:3: ( (lv_reactconstructors_0_0= ruleReactConstructor ) ) ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )* ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )* ( (lv_renderclass_3_0= ruleReactRender ) )
             {
-            // InternalSoftGalleryLanguage.g:7770:3: ( (lv_reactconstructors_0_0= ruleReactConstructor ) )
-            // InternalSoftGalleryLanguage.g:7771:4: (lv_reactconstructors_0_0= ruleReactConstructor )
+            // InternalSoftGalleryLanguage.g:8301:3: ( (lv_reactconstructors_0_0= ruleReactConstructor ) )
+            // InternalSoftGalleryLanguage.g:8302:4: (lv_reactconstructors_0_0= ruleReactConstructor )
             {
-            // InternalSoftGalleryLanguage.g:7771:4: (lv_reactconstructors_0_0= ruleReactConstructor )
-            // InternalSoftGalleryLanguage.g:7772:5: lv_reactconstructors_0_0= ruleReactConstructor
+            // InternalSoftGalleryLanguage.g:8302:4: (lv_reactconstructors_0_0= ruleReactConstructor )
+            // InternalSoftGalleryLanguage.g:8303:5: lv_reactconstructors_0_0= ruleReactConstructor
             {
 
             					newCompositeNode(grammarAccess.getReactFunctionsAccess().getReactconstructorsReactConstructorParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_147);
+            pushFollow(FOLLOW_151);
             lv_reactconstructors_0_0=ruleReactConstructor();
 
             state._fsp--;
@@ -19291,28 +20583,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7789:3: ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )*
+            // InternalSoftGalleryLanguage.g:8320:3: ( (lv_lifecycleclass_1_0= ruleReactLifeCycle ) )*
             loop56:
             do {
                 int alt56=2;
                 int LA56_0 = input.LA(1);
 
-                if ( (LA56_0==183||(LA56_0>=185 && LA56_0<=186)) ) {
+                if ( (LA56_0==189||(LA56_0>=191 && LA56_0<=192)) ) {
                     alt56=1;
                 }
 
 
                 switch (alt56) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7790:4: (lv_lifecycleclass_1_0= ruleReactLifeCycle )
+            	    // InternalSoftGalleryLanguage.g:8321:4: (lv_lifecycleclass_1_0= ruleReactLifeCycle )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7790:4: (lv_lifecycleclass_1_0= ruleReactLifeCycle )
-            	    // InternalSoftGalleryLanguage.g:7791:5: lv_lifecycleclass_1_0= ruleReactLifeCycle
+            	    // InternalSoftGalleryLanguage.g:8321:4: (lv_lifecycleclass_1_0= ruleReactLifeCycle )
+            	    // InternalSoftGalleryLanguage.g:8322:5: lv_lifecycleclass_1_0= ruleReactLifeCycle
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactFunctionsAccess().getLifecycleclassReactLifeCycleParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_147);
+            	    pushFollow(FOLLOW_151);
             	    lv_lifecycleclass_1_0=ruleReactLifeCycle();
 
             	    state._fsp--;
@@ -19340,7 +20632,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:7808:3: ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )*
+            // InternalSoftGalleryLanguage.g:8339:3: ( (lv_reactcorefuncs_2_0= ruleReactCoreFunctions ) )*
             loop57:
             do {
                 int alt57=2;
@@ -19353,15 +20645,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt57) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7809:4: (lv_reactcorefuncs_2_0= ruleReactCoreFunctions )
+            	    // InternalSoftGalleryLanguage.g:8340:4: (lv_reactcorefuncs_2_0= ruleReactCoreFunctions )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7809:4: (lv_reactcorefuncs_2_0= ruleReactCoreFunctions )
-            	    // InternalSoftGalleryLanguage.g:7810:5: lv_reactcorefuncs_2_0= ruleReactCoreFunctions
+            	    // InternalSoftGalleryLanguage.g:8340:4: (lv_reactcorefuncs_2_0= ruleReactCoreFunctions )
+            	    // InternalSoftGalleryLanguage.g:8341:5: lv_reactcorefuncs_2_0= ruleReactCoreFunctions
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactFunctionsAccess().getReactcorefuncsReactCoreFunctionsParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_147);
+            	    pushFollow(FOLLOW_151);
             	    lv_reactcorefuncs_2_0=ruleReactCoreFunctions();
 
             	    state._fsp--;
@@ -19389,11 +20681,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:7827:3: ( (lv_renderclass_3_0= ruleReactRender ) )
-            // InternalSoftGalleryLanguage.g:7828:4: (lv_renderclass_3_0= ruleReactRender )
+            // InternalSoftGalleryLanguage.g:8358:3: ( (lv_renderclass_3_0= ruleReactRender ) )
+            // InternalSoftGalleryLanguage.g:8359:4: (lv_renderclass_3_0= ruleReactRender )
             {
-            // InternalSoftGalleryLanguage.g:7828:4: (lv_renderclass_3_0= ruleReactRender )
-            // InternalSoftGalleryLanguage.g:7829:5: lv_renderclass_3_0= ruleReactRender
+            // InternalSoftGalleryLanguage.g:8359:4: (lv_renderclass_3_0= ruleReactRender )
+            // InternalSoftGalleryLanguage.g:8360:5: lv_renderclass_3_0= ruleReactRender
             {
 
             					newCompositeNode(grammarAccess.getReactFunctionsAccess().getRenderclassReactRenderParserRuleCall_3_0());
@@ -19443,7 +20735,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactConstructor"
-    // InternalSoftGalleryLanguage.g:7850:1: entryRuleReactConstructor returns [EObject current=null] : iv_ruleReactConstructor= ruleReactConstructor EOF ;
+    // InternalSoftGalleryLanguage.g:8381:1: entryRuleReactConstructor returns [EObject current=null] : iv_ruleReactConstructor= ruleReactConstructor EOF ;
     public final EObject entryRuleReactConstructor() throws RecognitionException {
         EObject current = null;
 
@@ -19451,8 +20743,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7850:57: (iv_ruleReactConstructor= ruleReactConstructor EOF )
-            // InternalSoftGalleryLanguage.g:7851:2: iv_ruleReactConstructor= ruleReactConstructor EOF
+            // InternalSoftGalleryLanguage.g:8381:57: (iv_ruleReactConstructor= ruleReactConstructor EOF )
+            // InternalSoftGalleryLanguage.g:8382:2: iv_ruleReactConstructor= ruleReactConstructor EOF
             {
              newCompositeNode(grammarAccess.getReactConstructorRule()); 
             pushFollow(FOLLOW_1);
@@ -19479,7 +20771,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactConstructor"
-    // InternalSoftGalleryLanguage.g:7857:1: ruleReactConstructor returns [EObject current=null] : (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* ) ;
+    // InternalSoftGalleryLanguage.g:8388:1: ruleReactConstructor returns [EObject current=null] : (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* ) ;
     public final EObject ruleReactConstructor() throws RecognitionException {
         EObject current = null;
 
@@ -19493,26 +20785,26 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7863:2: ( (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* ) )
-            // InternalSoftGalleryLanguage.g:7864:2: (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* )
+            // InternalSoftGalleryLanguage.g:8394:2: ( (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* ) )
+            // InternalSoftGalleryLanguage.g:8395:2: (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* )
             {
-            // InternalSoftGalleryLanguage.g:7864:2: (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* )
-            // InternalSoftGalleryLanguage.g:7865:3: otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )*
+            // InternalSoftGalleryLanguage.g:8395:2: (otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )* )
+            // InternalSoftGalleryLanguage.g:8396:3: otherlv_0= 'Constructor' ( (lv_componentstateclass_1_0= ruleState ) ) ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )*
             {
-            otherlv_0=(Token)match(input,174,FOLLOW_148); 
+            otherlv_0=(Token)match(input,180,FOLLOW_152); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactConstructorAccess().getConstructorKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:7869:3: ( (lv_componentstateclass_1_0= ruleState ) )
-            // InternalSoftGalleryLanguage.g:7870:4: (lv_componentstateclass_1_0= ruleState )
+            // InternalSoftGalleryLanguage.g:8400:3: ( (lv_componentstateclass_1_0= ruleState ) )
+            // InternalSoftGalleryLanguage.g:8401:4: (lv_componentstateclass_1_0= ruleState )
             {
-            // InternalSoftGalleryLanguage.g:7870:4: (lv_componentstateclass_1_0= ruleState )
-            // InternalSoftGalleryLanguage.g:7871:5: lv_componentstateclass_1_0= ruleState
+            // InternalSoftGalleryLanguage.g:8401:4: (lv_componentstateclass_1_0= ruleState )
+            // InternalSoftGalleryLanguage.g:8402:5: lv_componentstateclass_1_0= ruleState
             {
 
             					newCompositeNode(grammarAccess.getReactConstructorAccess().getComponentstateclassStateParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_149);
+            pushFollow(FOLLOW_153);
             lv_componentstateclass_1_0=ruleState();
 
             state._fsp--;
@@ -19534,7 +20826,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7888:3: ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )*
+            // InternalSoftGalleryLanguage.g:8419:3: ( (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration ) )*
             loop58:
             do {
                 int alt58=2;
@@ -19543,7 +20835,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 if ( (LA58_0==RULE_ID) ) {
                     int LA58_2 = input.LA(2);
 
-                    if ( (LA58_2==182) ) {
+                    if ( (LA58_2==188) ) {
                         alt58=1;
                     }
 
@@ -19553,15 +20845,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt58) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7889:4: (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration )
+            	    // InternalSoftGalleryLanguage.g:8420:4: (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7889:4: (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration )
-            	    // InternalSoftGalleryLanguage.g:7890:5: lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration
+            	    // InternalSoftGalleryLanguage.g:8420:4: (lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration )
+            	    // InternalSoftGalleryLanguage.g:8421:5: lv_componentfuncclass_2_0= ruleCoreFunctionsDeclaration
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactConstructorAccess().getComponentfuncclassCoreFunctionsDeclarationParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_149);
+            	    pushFollow(FOLLOW_153);
             	    lv_componentfuncclass_2_0=ruleCoreFunctionsDeclaration();
 
             	    state._fsp--;
@@ -19612,7 +20904,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleState"
-    // InternalSoftGalleryLanguage.g:7911:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // InternalSoftGalleryLanguage.g:8442:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -19620,8 +20912,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7911:46: (iv_ruleState= ruleState EOF )
-            // InternalSoftGalleryLanguage.g:7912:2: iv_ruleState= ruleState EOF
+            // InternalSoftGalleryLanguage.g:8442:46: (iv_ruleState= ruleState EOF )
+            // InternalSoftGalleryLanguage.g:8443:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -19648,7 +20940,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleState"
-    // InternalSoftGalleryLanguage.g:7918:1: ruleState returns [EObject current=null] : ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:8449:1: ruleState returns [EObject current=null] : ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -19660,14 +20952,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7924:2: ( ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ ) )
-            // InternalSoftGalleryLanguage.g:7925:2: ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ )
+            // InternalSoftGalleryLanguage.g:8455:2: ( ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ ) )
+            // InternalSoftGalleryLanguage.g:8456:2: ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:7925:2: ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ )
-            // InternalSoftGalleryLanguage.g:7926:3: () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+
+            // InternalSoftGalleryLanguage.g:8456:2: ( () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+ )
+            // InternalSoftGalleryLanguage.g:8457:3: () otherlv_1= 'State' ( (lv_statecontents_2_0= ruleStateContent ) )+
             {
-            // InternalSoftGalleryLanguage.g:7926:3: ()
-            // InternalSoftGalleryLanguage.g:7927:4: 
+            // InternalSoftGalleryLanguage.g:8457:3: ()
+            // InternalSoftGalleryLanguage.g:8458:4: 
             {
 
             				current = forceCreateModelElement(
@@ -19677,11 +20969,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_1=(Token)match(input,175,FOLLOW_9); 
+            otherlv_1=(Token)match(input,181,FOLLOW_9); 
 
             			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getStateKeyword_1());
             		
-            // InternalSoftGalleryLanguage.g:7937:3: ( (lv_statecontents_2_0= ruleStateContent ) )+
+            // InternalSoftGalleryLanguage.g:8468:3: ( (lv_statecontents_2_0= ruleStateContent ) )+
             int cnt59=0;
             loop59:
             do {
@@ -19691,7 +20983,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 if ( (LA59_0==RULE_ID) ) {
                     int LA59_1 = input.LA(2);
 
-                    if ( ((LA59_1>=176 && LA59_1<=181)) ) {
+                    if ( ((LA59_1>=182 && LA59_1<=187)) ) {
                         alt59=1;
                     }
 
@@ -19701,15 +20993,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt59) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:7938:4: (lv_statecontents_2_0= ruleStateContent )
+            	    // InternalSoftGalleryLanguage.g:8469:4: (lv_statecontents_2_0= ruleStateContent )
             	    {
-            	    // InternalSoftGalleryLanguage.g:7938:4: (lv_statecontents_2_0= ruleStateContent )
-            	    // InternalSoftGalleryLanguage.g:7939:5: lv_statecontents_2_0= ruleStateContent
+            	    // InternalSoftGalleryLanguage.g:8469:4: (lv_statecontents_2_0= ruleStateContent )
+            	    // InternalSoftGalleryLanguage.g:8470:5: lv_statecontents_2_0= ruleStateContent
             	    {
 
             	    					newCompositeNode(grammarAccess.getStateAccess().getStatecontentsStateContentParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_149);
+            	    pushFollow(FOLLOW_153);
             	    lv_statecontents_2_0=ruleStateContent();
 
             	    state._fsp--;
@@ -19764,7 +21056,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleStateContent"
-    // InternalSoftGalleryLanguage.g:7960:1: entryRuleStateContent returns [EObject current=null] : iv_ruleStateContent= ruleStateContent EOF ;
+    // InternalSoftGalleryLanguage.g:8491:1: entryRuleStateContent returns [EObject current=null] : iv_ruleStateContent= ruleStateContent EOF ;
     public final EObject entryRuleStateContent() throws RecognitionException {
         EObject current = null;
 
@@ -19772,8 +21064,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:7960:53: (iv_ruleStateContent= ruleStateContent EOF )
-            // InternalSoftGalleryLanguage.g:7961:2: iv_ruleStateContent= ruleStateContent EOF
+            // InternalSoftGalleryLanguage.g:8491:53: (iv_ruleStateContent= ruleStateContent EOF )
+            // InternalSoftGalleryLanguage.g:8492:2: iv_ruleStateContent= ruleStateContent EOF
             {
              newCompositeNode(grammarAccess.getStateContentRule()); 
             pushFollow(FOLLOW_1);
@@ -19800,7 +21092,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleStateContent"
-    // InternalSoftGalleryLanguage.g:7967:1: ruleStateContent returns [EObject current=null] : ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8498:1: ruleStateContent returns [EObject current=null] : ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) ) ;
     public final EObject ruleStateContent() throws RecognitionException {
         EObject current = null;
 
@@ -19812,19 +21104,19 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:7973:2: ( ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) ) )
-            // InternalSoftGalleryLanguage.g:7974:2: ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) )
+            // InternalSoftGalleryLanguage.g:8504:2: ( ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) ) )
+            // InternalSoftGalleryLanguage.g:8505:2: ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) )
             {
-            // InternalSoftGalleryLanguage.g:7974:2: ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) )
-            // InternalSoftGalleryLanguage.g:7975:3: ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) )
+            // InternalSoftGalleryLanguage.g:8505:2: ( ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) ) )
+            // InternalSoftGalleryLanguage.g:8506:3: ( (lv_stateName_0_0= RULE_ID ) ) ( (lv_componentdatatyp_1_0= ruleDataType ) )
             {
-            // InternalSoftGalleryLanguage.g:7975:3: ( (lv_stateName_0_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:7976:4: (lv_stateName_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8506:3: ( (lv_stateName_0_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8507:4: (lv_stateName_0_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:7976:4: (lv_stateName_0_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:7977:5: lv_stateName_0_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8507:4: (lv_stateName_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8508:5: lv_stateName_0_0= RULE_ID
             {
-            lv_stateName_0_0=(Token)match(input,RULE_ID,FOLLOW_150); 
+            lv_stateName_0_0=(Token)match(input,RULE_ID,FOLLOW_154); 
 
             					newLeafNode(lv_stateName_0_0, grammarAccess.getStateContentAccess().getStateNameIDTerminalRuleCall_0_0());
             				
@@ -19844,11 +21136,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:7993:3: ( (lv_componentdatatyp_1_0= ruleDataType ) )
-            // InternalSoftGalleryLanguage.g:7994:4: (lv_componentdatatyp_1_0= ruleDataType )
+            // InternalSoftGalleryLanguage.g:8524:3: ( (lv_componentdatatyp_1_0= ruleDataType ) )
+            // InternalSoftGalleryLanguage.g:8525:4: (lv_componentdatatyp_1_0= ruleDataType )
             {
-            // InternalSoftGalleryLanguage.g:7994:4: (lv_componentdatatyp_1_0= ruleDataType )
-            // InternalSoftGalleryLanguage.g:7995:5: lv_componentdatatyp_1_0= ruleDataType
+            // InternalSoftGalleryLanguage.g:8525:4: (lv_componentdatatyp_1_0= ruleDataType )
+            // InternalSoftGalleryLanguage.g:8526:5: lv_componentdatatyp_1_0= ruleDataType
             {
 
             					newCompositeNode(grammarAccess.getStateContentAccess().getComponentdatatypDataTypeParserRuleCall_1_0());
@@ -19898,7 +21190,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleDataType"
-    // InternalSoftGalleryLanguage.g:8016:1: entryRuleDataType returns [String current=null] : iv_ruleDataType= ruleDataType EOF ;
+    // InternalSoftGalleryLanguage.g:8547:1: entryRuleDataType returns [String current=null] : iv_ruleDataType= ruleDataType EOF ;
     public final String entryRuleDataType() throws RecognitionException {
         String current = null;
 
@@ -19906,8 +21198,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8016:48: (iv_ruleDataType= ruleDataType EOF )
-            // InternalSoftGalleryLanguage.g:8017:2: iv_ruleDataType= ruleDataType EOF
+            // InternalSoftGalleryLanguage.g:8547:48: (iv_ruleDataType= ruleDataType EOF )
+            // InternalSoftGalleryLanguage.g:8548:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -19934,7 +21226,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleDataType"
-    // InternalSoftGalleryLanguage.g:8023:1: ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' ) ;
+    // InternalSoftGalleryLanguage.g:8554:1: ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' ) ;
     public final AntlrDatatypeRuleToken ruleDataType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -19944,38 +21236,38 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8029:2: ( (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' ) )
-            // InternalSoftGalleryLanguage.g:8030:2: (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' )
+            // InternalSoftGalleryLanguage.g:8560:2: ( (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' ) )
+            // InternalSoftGalleryLanguage.g:8561:2: (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' )
             {
-            // InternalSoftGalleryLanguage.g:8030:2: (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' )
+            // InternalSoftGalleryLanguage.g:8561:2: (kw= 'String' | kw= 'Array' | kw= 'Object' | kw= 'Number' | kw= 'null' | kw= 'Boolean' )
             int alt60=6;
             switch ( input.LA(1) ) {
-            case 176:
+            case 182:
                 {
                 alt60=1;
                 }
                 break;
-            case 177:
+            case 183:
                 {
                 alt60=2;
                 }
                 break;
-            case 178:
+            case 184:
                 {
                 alt60=3;
                 }
                 break;
-            case 179:
+            case 185:
                 {
                 alt60=4;
                 }
                 break;
-            case 180:
+            case 186:
                 {
                 alt60=5;
                 }
                 break;
-            case 181:
+            case 187:
                 {
                 alt60=6;
                 }
@@ -19989,9 +21281,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             switch (alt60) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:8031:3: kw= 'String'
+                    // InternalSoftGalleryLanguage.g:8562:3: kw= 'String'
                     {
-                    kw=(Token)match(input,176,FOLLOW_2); 
+                    kw=(Token)match(input,182,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDataTypeAccess().getStringKeyword_0());
@@ -20000,9 +21292,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:8037:3: kw= 'Array'
+                    // InternalSoftGalleryLanguage.g:8568:3: kw= 'Array'
                     {
-                    kw=(Token)match(input,177,FOLLOW_2); 
+                    kw=(Token)match(input,183,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDataTypeAccess().getArrayKeyword_1());
@@ -20011,9 +21303,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 3 :
-                    // InternalSoftGalleryLanguage.g:8043:3: kw= 'Object'
+                    // InternalSoftGalleryLanguage.g:8574:3: kw= 'Object'
                     {
-                    kw=(Token)match(input,178,FOLLOW_2); 
+                    kw=(Token)match(input,184,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDataTypeAccess().getObjectKeyword_2());
@@ -20022,9 +21314,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 4 :
-                    // InternalSoftGalleryLanguage.g:8049:3: kw= 'Number'
+                    // InternalSoftGalleryLanguage.g:8580:3: kw= 'Number'
                     {
-                    kw=(Token)match(input,179,FOLLOW_2); 
+                    kw=(Token)match(input,185,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDataTypeAccess().getNumberKeyword_3());
@@ -20033,9 +21325,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 5 :
-                    // InternalSoftGalleryLanguage.g:8055:3: kw= 'null'
+                    // InternalSoftGalleryLanguage.g:8586:3: kw= 'null'
                     {
-                    kw=(Token)match(input,180,FOLLOW_2); 
+                    kw=(Token)match(input,186,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDataTypeAccess().getNullKeyword_4());
@@ -20044,9 +21336,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 6 :
-                    // InternalSoftGalleryLanguage.g:8061:3: kw= 'Boolean'
+                    // InternalSoftGalleryLanguage.g:8592:3: kw= 'Boolean'
                     {
-                    kw=(Token)match(input,181,FOLLOW_2); 
+                    kw=(Token)match(input,187,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getDataTypeAccess().getBooleanKeyword_5());
@@ -20077,7 +21369,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleCoreFunctionsDeclaration"
-    // InternalSoftGalleryLanguage.g:8070:1: entryRuleCoreFunctionsDeclaration returns [EObject current=null] : iv_ruleCoreFunctionsDeclaration= ruleCoreFunctionsDeclaration EOF ;
+    // InternalSoftGalleryLanguage.g:8601:1: entryRuleCoreFunctionsDeclaration returns [EObject current=null] : iv_ruleCoreFunctionsDeclaration= ruleCoreFunctionsDeclaration EOF ;
     public final EObject entryRuleCoreFunctionsDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -20085,8 +21377,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8070:65: (iv_ruleCoreFunctionsDeclaration= ruleCoreFunctionsDeclaration EOF )
-            // InternalSoftGalleryLanguage.g:8071:2: iv_ruleCoreFunctionsDeclaration= ruleCoreFunctionsDeclaration EOF
+            // InternalSoftGalleryLanguage.g:8601:65: (iv_ruleCoreFunctionsDeclaration= ruleCoreFunctionsDeclaration EOF )
+            // InternalSoftGalleryLanguage.g:8602:2: iv_ruleCoreFunctionsDeclaration= ruleCoreFunctionsDeclaration EOF
             {
              newCompositeNode(grammarAccess.getCoreFunctionsDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -20113,7 +21405,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleCoreFunctionsDeclaration"
-    // InternalSoftGalleryLanguage.g:8077:1: ruleCoreFunctionsDeclaration returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' ) ;
+    // InternalSoftGalleryLanguage.g:8608:1: ruleCoreFunctionsDeclaration returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' ) ;
     public final EObject ruleCoreFunctionsDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -20124,19 +21416,19 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8083:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' ) )
-            // InternalSoftGalleryLanguage.g:8084:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' )
+            // InternalSoftGalleryLanguage.g:8614:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' ) )
+            // InternalSoftGalleryLanguage.g:8615:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' )
             {
-            // InternalSoftGalleryLanguage.g:8084:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' )
-            // InternalSoftGalleryLanguage.g:8085:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration'
+            // InternalSoftGalleryLanguage.g:8615:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration' )
+            // InternalSoftGalleryLanguage.g:8616:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionBindingDeclaration'
             {
-            // InternalSoftGalleryLanguage.g:8085:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8086:4: (lv_name_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8616:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8617:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8086:4: (lv_name_0_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8087:5: lv_name_0_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8617:4: (lv_name_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8618:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_151); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_155); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getCoreFunctionsDeclarationAccess().getNameIDTerminalRuleCall_0_0());
             				
@@ -20156,7 +21448,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_1=(Token)match(input,182,FOLLOW_2); 
+            otherlv_1=(Token)match(input,188,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCoreFunctionsDeclarationAccess().getFunctionBindingDeclarationKeyword_1());
             		
@@ -20183,7 +21475,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactLifeCycle"
-    // InternalSoftGalleryLanguage.g:8111:1: entryRuleReactLifeCycle returns [String current=null] : iv_ruleReactLifeCycle= ruleReactLifeCycle EOF ;
+    // InternalSoftGalleryLanguage.g:8642:1: entryRuleReactLifeCycle returns [String current=null] : iv_ruleReactLifeCycle= ruleReactLifeCycle EOF ;
     public final String entryRuleReactLifeCycle() throws RecognitionException {
         String current = null;
 
@@ -20191,8 +21483,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8111:54: (iv_ruleReactLifeCycle= ruleReactLifeCycle EOF )
-            // InternalSoftGalleryLanguage.g:8112:2: iv_ruleReactLifeCycle= ruleReactLifeCycle EOF
+            // InternalSoftGalleryLanguage.g:8642:54: (iv_ruleReactLifeCycle= ruleReactLifeCycle EOF )
+            // InternalSoftGalleryLanguage.g:8643:2: iv_ruleReactLifeCycle= ruleReactLifeCycle EOF
             {
              newCompositeNode(grammarAccess.getReactLifeCycleRule()); 
             pushFollow(FOLLOW_1);
@@ -20219,7 +21511,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactLifeCycle"
-    // InternalSoftGalleryLanguage.g:8118:1: ruleReactLifeCycle returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) ) ;
+    // InternalSoftGalleryLanguage.g:8649:1: ruleReactLifeCycle returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) ) ;
     public final AntlrDatatypeRuleToken ruleReactLifeCycle() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -20229,23 +21521,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8124:2: ( ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) ) )
-            // InternalSoftGalleryLanguage.g:8125:2: ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) )
+            // InternalSoftGalleryLanguage.g:8655:2: ( ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) ) )
+            // InternalSoftGalleryLanguage.g:8656:2: ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) )
             {
-            // InternalSoftGalleryLanguage.g:8125:2: ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) )
+            // InternalSoftGalleryLanguage.g:8656:2: ( (kw= 'ComponentDidMount' kw= 'FunctionStructure' ) | (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' ) | (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' ) )
             int alt61=3;
             switch ( input.LA(1) ) {
-            case 183:
+            case 189:
                 {
                 alt61=1;
                 }
                 break;
-            case 185:
+            case 191:
                 {
                 alt61=2;
                 }
                 break;
-            case 186:
+            case 192:
                 {
                 alt61=3;
                 }
@@ -20259,17 +21551,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             switch (alt61) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:8126:3: (kw= 'ComponentDidMount' kw= 'FunctionStructure' )
+                    // InternalSoftGalleryLanguage.g:8657:3: (kw= 'ComponentDidMount' kw= 'FunctionStructure' )
                     {
-                    // InternalSoftGalleryLanguage.g:8126:3: (kw= 'ComponentDidMount' kw= 'FunctionStructure' )
-                    // InternalSoftGalleryLanguage.g:8127:4: kw= 'ComponentDidMount' kw= 'FunctionStructure'
+                    // InternalSoftGalleryLanguage.g:8657:3: (kw= 'ComponentDidMount' kw= 'FunctionStructure' )
+                    // InternalSoftGalleryLanguage.g:8658:4: kw= 'ComponentDidMount' kw= 'FunctionStructure'
                     {
-                    kw=(Token)match(input,183,FOLLOW_152); 
+                    kw=(Token)match(input,189,FOLLOW_156); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getReactLifeCycleAccess().getComponentDidMountKeyword_0_0());
                     			
-                    kw=(Token)match(input,184,FOLLOW_2); 
+                    kw=(Token)match(input,190,FOLLOW_2); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getReactLifeCycleAccess().getFunctionStructureKeyword_0_1());
@@ -20281,17 +21573,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:8139:3: (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' )
+                    // InternalSoftGalleryLanguage.g:8670:3: (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' )
                     {
-                    // InternalSoftGalleryLanguage.g:8139:3: (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' )
-                    // InternalSoftGalleryLanguage.g:8140:4: kw= 'ComponentDidUpdate' kw= 'FunctionStructure'
+                    // InternalSoftGalleryLanguage.g:8670:3: (kw= 'ComponentDidUpdate' kw= 'FunctionStructure' )
+                    // InternalSoftGalleryLanguage.g:8671:4: kw= 'ComponentDidUpdate' kw= 'FunctionStructure'
                     {
-                    kw=(Token)match(input,185,FOLLOW_152); 
+                    kw=(Token)match(input,191,FOLLOW_156); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getReactLifeCycleAccess().getComponentDidUpdateKeyword_1_0());
                     			
-                    kw=(Token)match(input,184,FOLLOW_2); 
+                    kw=(Token)match(input,190,FOLLOW_2); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getReactLifeCycleAccess().getFunctionStructureKeyword_1_1());
@@ -20303,17 +21595,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 3 :
-                    // InternalSoftGalleryLanguage.g:8152:3: (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' )
+                    // InternalSoftGalleryLanguage.g:8683:3: (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' )
                     {
-                    // InternalSoftGalleryLanguage.g:8152:3: (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' )
-                    // InternalSoftGalleryLanguage.g:8153:4: kw= 'ComponentWillUnmount' kw= 'FunctionStructure'
+                    // InternalSoftGalleryLanguage.g:8683:3: (kw= 'ComponentWillUnmount' kw= 'FunctionStructure' )
+                    // InternalSoftGalleryLanguage.g:8684:4: kw= 'ComponentWillUnmount' kw= 'FunctionStructure'
                     {
-                    kw=(Token)match(input,186,FOLLOW_152); 
+                    kw=(Token)match(input,192,FOLLOW_156); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getReactLifeCycleAccess().getComponentWillUnmountKeyword_2_0());
                     			
-                    kw=(Token)match(input,184,FOLLOW_2); 
+                    kw=(Token)match(input,190,FOLLOW_2); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getReactLifeCycleAccess().getFunctionStructureKeyword_2_1());
@@ -20347,7 +21639,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactRender"
-    // InternalSoftGalleryLanguage.g:8168:1: entryRuleReactRender returns [String current=null] : iv_ruleReactRender= ruleReactRender EOF ;
+    // InternalSoftGalleryLanguage.g:8699:1: entryRuleReactRender returns [String current=null] : iv_ruleReactRender= ruleReactRender EOF ;
     public final String entryRuleReactRender() throws RecognitionException {
         String current = null;
 
@@ -20355,8 +21647,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8168:51: (iv_ruleReactRender= ruleReactRender EOF )
-            // InternalSoftGalleryLanguage.g:8169:2: iv_ruleReactRender= ruleReactRender EOF
+            // InternalSoftGalleryLanguage.g:8699:51: (iv_ruleReactRender= ruleReactRender EOF )
+            // InternalSoftGalleryLanguage.g:8700:2: iv_ruleReactRender= ruleReactRender EOF
             {
              newCompositeNode(grammarAccess.getReactRenderRule()); 
             pushFollow(FOLLOW_1);
@@ -20383,7 +21675,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactRender"
-    // InternalSoftGalleryLanguage.g:8175:1: ruleReactRender returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Render' kw= 'RenderContent' ) ;
+    // InternalSoftGalleryLanguage.g:8706:1: ruleReactRender returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Render' kw= 'RenderContent' ) ;
     public final AntlrDatatypeRuleToken ruleReactRender() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -20393,18 +21685,18 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8181:2: ( (kw= 'Render' kw= 'RenderContent' ) )
-            // InternalSoftGalleryLanguage.g:8182:2: (kw= 'Render' kw= 'RenderContent' )
+            // InternalSoftGalleryLanguage.g:8712:2: ( (kw= 'Render' kw= 'RenderContent' ) )
+            // InternalSoftGalleryLanguage.g:8713:2: (kw= 'Render' kw= 'RenderContent' )
             {
-            // InternalSoftGalleryLanguage.g:8182:2: (kw= 'Render' kw= 'RenderContent' )
-            // InternalSoftGalleryLanguage.g:8183:3: kw= 'Render' kw= 'RenderContent'
+            // InternalSoftGalleryLanguage.g:8713:2: (kw= 'Render' kw= 'RenderContent' )
+            // InternalSoftGalleryLanguage.g:8714:3: kw= 'Render' kw= 'RenderContent'
             {
-            kw=(Token)match(input,187,FOLLOW_153); 
+            kw=(Token)match(input,193,FOLLOW_157); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getReactRenderAccess().getRenderKeyword_0());
             		
-            kw=(Token)match(input,188,FOLLOW_2); 
+            kw=(Token)match(input,194,FOLLOW_2); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getReactRenderAccess().getRenderContentKeyword_1());
@@ -20432,7 +21724,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleProps"
-    // InternalSoftGalleryLanguage.g:8197:1: entryRuleProps returns [EObject current=null] : iv_ruleProps= ruleProps EOF ;
+    // InternalSoftGalleryLanguage.g:8728:1: entryRuleProps returns [EObject current=null] : iv_ruleProps= ruleProps EOF ;
     public final EObject entryRuleProps() throws RecognitionException {
         EObject current = null;
 
@@ -20440,8 +21732,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8197:46: (iv_ruleProps= ruleProps EOF )
-            // InternalSoftGalleryLanguage.g:8198:2: iv_ruleProps= ruleProps EOF
+            // InternalSoftGalleryLanguage.g:8728:46: (iv_ruleProps= ruleProps EOF )
+            // InternalSoftGalleryLanguage.g:8729:2: iv_ruleProps= ruleProps EOF
             {
              newCompositeNode(grammarAccess.getPropsRule()); 
             pushFollow(FOLLOW_1);
@@ -20468,7 +21760,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleProps"
-    // InternalSoftGalleryLanguage.g:8204:1: ruleProps returns [EObject current=null] : ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* ) ;
+    // InternalSoftGalleryLanguage.g:8735:1: ruleProps returns [EObject current=null] : ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* ) ;
     public final EObject ruleProps() throws RecognitionException {
         EObject current = null;
 
@@ -20480,14 +21772,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8210:2: ( ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* ) )
-            // InternalSoftGalleryLanguage.g:8211:2: ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* )
+            // InternalSoftGalleryLanguage.g:8741:2: ( ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* ) )
+            // InternalSoftGalleryLanguage.g:8742:2: ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* )
             {
-            // InternalSoftGalleryLanguage.g:8211:2: ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* )
-            // InternalSoftGalleryLanguage.g:8212:3: () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )*
+            // InternalSoftGalleryLanguage.g:8742:2: ( () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )* )
+            // InternalSoftGalleryLanguage.g:8743:3: () otherlv_1= 'Props' ( (lv_propsconts_2_0= rulePropsType ) )*
             {
-            // InternalSoftGalleryLanguage.g:8212:3: ()
-            // InternalSoftGalleryLanguage.g:8213:4: 
+            // InternalSoftGalleryLanguage.g:8743:3: ()
+            // InternalSoftGalleryLanguage.g:8744:4: 
             {
 
             				current = forceCreateModelElement(
@@ -20497,11 +21789,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_1=(Token)match(input,189,FOLLOW_149); 
+            otherlv_1=(Token)match(input,195,FOLLOW_153); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPropsAccess().getPropsKeyword_1());
             		
-            // InternalSoftGalleryLanguage.g:8223:3: ( (lv_propsconts_2_0= rulePropsType ) )*
+            // InternalSoftGalleryLanguage.g:8754:3: ( (lv_propsconts_2_0= rulePropsType ) )*
             loop62:
             do {
                 int alt62=2;
@@ -20514,15 +21806,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt62) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8224:4: (lv_propsconts_2_0= rulePropsType )
+            	    // InternalSoftGalleryLanguage.g:8755:4: (lv_propsconts_2_0= rulePropsType )
             	    {
-            	    // InternalSoftGalleryLanguage.g:8224:4: (lv_propsconts_2_0= rulePropsType )
-            	    // InternalSoftGalleryLanguage.g:8225:5: lv_propsconts_2_0= rulePropsType
+            	    // InternalSoftGalleryLanguage.g:8755:4: (lv_propsconts_2_0= rulePropsType )
+            	    // InternalSoftGalleryLanguage.g:8756:5: lv_propsconts_2_0= rulePropsType
             	    {
 
             	    					newCompositeNode(grammarAccess.getPropsAccess().getPropscontsPropsTypeParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_149);
+            	    pushFollow(FOLLOW_153);
             	    lv_propsconts_2_0=rulePropsType();
 
             	    state._fsp--;
@@ -20573,7 +21865,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePropsType"
-    // InternalSoftGalleryLanguage.g:8246:1: entryRulePropsType returns [EObject current=null] : iv_rulePropsType= rulePropsType EOF ;
+    // InternalSoftGalleryLanguage.g:8777:1: entryRulePropsType returns [EObject current=null] : iv_rulePropsType= rulePropsType EOF ;
     public final EObject entryRulePropsType() throws RecognitionException {
         EObject current = null;
 
@@ -20581,8 +21873,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8246:50: (iv_rulePropsType= rulePropsType EOF )
-            // InternalSoftGalleryLanguage.g:8247:2: iv_rulePropsType= rulePropsType EOF
+            // InternalSoftGalleryLanguage.g:8777:50: (iv_rulePropsType= rulePropsType EOF )
+            // InternalSoftGalleryLanguage.g:8778:2: iv_rulePropsType= rulePropsType EOF
             {
              newCompositeNode(grammarAccess.getPropsTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -20609,7 +21901,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePropsType"
-    // InternalSoftGalleryLanguage.g:8253:1: rulePropsType returns [EObject current=null] : ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8784:1: rulePropsType returns [EObject current=null] : ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) ) ;
     public final EObject rulePropsType() throws RecognitionException {
         EObject current = null;
 
@@ -20621,19 +21913,19 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8259:2: ( ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) ) )
-            // InternalSoftGalleryLanguage.g:8260:2: ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) )
+            // InternalSoftGalleryLanguage.g:8790:2: ( ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) ) )
+            // InternalSoftGalleryLanguage.g:8791:2: ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) )
             {
-            // InternalSoftGalleryLanguage.g:8260:2: ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) )
-            // InternalSoftGalleryLanguage.g:8261:3: ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) )
+            // InternalSoftGalleryLanguage.g:8791:2: ( ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) ) )
+            // InternalSoftGalleryLanguage.g:8792:3: ( (lv_nameProps_0_0= RULE_ID ) ) ( (lv_propsdatas_1_0= ruleDataType ) )
             {
-            // InternalSoftGalleryLanguage.g:8261:3: ( (lv_nameProps_0_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8262:4: (lv_nameProps_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8792:3: ( (lv_nameProps_0_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8793:4: (lv_nameProps_0_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8262:4: (lv_nameProps_0_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8263:5: lv_nameProps_0_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8793:4: (lv_nameProps_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8794:5: lv_nameProps_0_0= RULE_ID
             {
-            lv_nameProps_0_0=(Token)match(input,RULE_ID,FOLLOW_150); 
+            lv_nameProps_0_0=(Token)match(input,RULE_ID,FOLLOW_154); 
 
             					newLeafNode(lv_nameProps_0_0, grammarAccess.getPropsTypeAccess().getNamePropsIDTerminalRuleCall_0_0());
             				
@@ -20653,11 +21945,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8279:3: ( (lv_propsdatas_1_0= ruleDataType ) )
-            // InternalSoftGalleryLanguage.g:8280:4: (lv_propsdatas_1_0= ruleDataType )
+            // InternalSoftGalleryLanguage.g:8810:3: ( (lv_propsdatas_1_0= ruleDataType ) )
+            // InternalSoftGalleryLanguage.g:8811:4: (lv_propsdatas_1_0= ruleDataType )
             {
-            // InternalSoftGalleryLanguage.g:8280:4: (lv_propsdatas_1_0= ruleDataType )
-            // InternalSoftGalleryLanguage.g:8281:5: lv_propsdatas_1_0= ruleDataType
+            // InternalSoftGalleryLanguage.g:8811:4: (lv_propsdatas_1_0= ruleDataType )
+            // InternalSoftGalleryLanguage.g:8812:5: lv_propsdatas_1_0= ruleDataType
             {
 
             					newCompositeNode(grammarAccess.getPropsTypeAccess().getPropsdatasDataTypeParserRuleCall_1_0());
@@ -20707,7 +21999,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactCoreFunctions"
-    // InternalSoftGalleryLanguage.g:8302:1: entryRuleReactCoreFunctions returns [EObject current=null] : iv_ruleReactCoreFunctions= ruleReactCoreFunctions EOF ;
+    // InternalSoftGalleryLanguage.g:8833:1: entryRuleReactCoreFunctions returns [EObject current=null] : iv_ruleReactCoreFunctions= ruleReactCoreFunctions EOF ;
     public final EObject entryRuleReactCoreFunctions() throws RecognitionException {
         EObject current = null;
 
@@ -20715,8 +22007,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8302:59: (iv_ruleReactCoreFunctions= ruleReactCoreFunctions EOF )
-            // InternalSoftGalleryLanguage.g:8303:2: iv_ruleReactCoreFunctions= ruleReactCoreFunctions EOF
+            // InternalSoftGalleryLanguage.g:8833:59: (iv_ruleReactCoreFunctions= ruleReactCoreFunctions EOF )
+            // InternalSoftGalleryLanguage.g:8834:2: iv_ruleReactCoreFunctions= ruleReactCoreFunctions EOF
             {
              newCompositeNode(grammarAccess.getReactCoreFunctionsRule()); 
             pushFollow(FOLLOW_1);
@@ -20743,7 +22035,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactCoreFunctions"
-    // InternalSoftGalleryLanguage.g:8309:1: ruleReactCoreFunctions returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' ) ;
+    // InternalSoftGalleryLanguage.g:8840:1: ruleReactCoreFunctions returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' ) ;
     public final EObject ruleReactCoreFunctions() throws RecognitionException {
         EObject current = null;
 
@@ -20754,19 +22046,19 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8315:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' ) )
-            // InternalSoftGalleryLanguage.g:8316:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' )
+            // InternalSoftGalleryLanguage.g:8846:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' ) )
+            // InternalSoftGalleryLanguage.g:8847:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' )
             {
-            // InternalSoftGalleryLanguage.g:8316:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' )
-            // InternalSoftGalleryLanguage.g:8317:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure'
+            // InternalSoftGalleryLanguage.g:8847:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure' )
+            // InternalSoftGalleryLanguage.g:8848:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= 'FunctionStructure'
             {
-            // InternalSoftGalleryLanguage.g:8317:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8318:4: (lv_name_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8848:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8849:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8318:4: (lv_name_0_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8319:5: lv_name_0_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8849:4: (lv_name_0_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8850:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_152); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_156); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getReactCoreFunctionsAccess().getNameIDTerminalRuleCall_0_0());
             				
@@ -20786,7 +22078,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_1=(Token)match(input,184,FOLLOW_2); 
+            otherlv_1=(Token)match(input,190,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getReactCoreFunctionsAccess().getFunctionStructureKeyword_1());
             		
@@ -20813,7 +22105,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleComponentsStyles"
-    // InternalSoftGalleryLanguage.g:8343:1: entryRuleComponentsStyles returns [EObject current=null] : iv_ruleComponentsStyles= ruleComponentsStyles EOF ;
+    // InternalSoftGalleryLanguage.g:8874:1: entryRuleComponentsStyles returns [EObject current=null] : iv_ruleComponentsStyles= ruleComponentsStyles EOF ;
     public final EObject entryRuleComponentsStyles() throws RecognitionException {
         EObject current = null;
 
@@ -20821,8 +22113,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8343:57: (iv_ruleComponentsStyles= ruleComponentsStyles EOF )
-            // InternalSoftGalleryLanguage.g:8344:2: iv_ruleComponentsStyles= ruleComponentsStyles EOF
+            // InternalSoftGalleryLanguage.g:8874:57: (iv_ruleComponentsStyles= ruleComponentsStyles EOF )
+            // InternalSoftGalleryLanguage.g:8875:2: iv_ruleComponentsStyles= ruleComponentsStyles EOF
             {
              newCompositeNode(grammarAccess.getComponentsStylesRule()); 
             pushFollow(FOLLOW_1);
@@ -20849,7 +22141,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleComponentsStyles"
-    // InternalSoftGalleryLanguage.g:8350:1: ruleComponentsStyles returns [EObject current=null] : ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* ) ;
+    // InternalSoftGalleryLanguage.g:8881:1: ruleComponentsStyles returns [EObject current=null] : ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* ) ;
     public final EObject ruleComponentsStyles() throws RecognitionException {
         EObject current = null;
 
@@ -20860,14 +22152,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8356:2: ( ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* ) )
-            // InternalSoftGalleryLanguage.g:8357:2: ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* )
+            // InternalSoftGalleryLanguage.g:8887:2: ( ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* ) )
+            // InternalSoftGalleryLanguage.g:8888:2: ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* )
             {
-            // InternalSoftGalleryLanguage.g:8357:2: ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* )
-            // InternalSoftGalleryLanguage.g:8358:3: () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )*
+            // InternalSoftGalleryLanguage.g:8888:2: ( () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )* )
+            // InternalSoftGalleryLanguage.g:8889:3: () ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )*
             {
-            // InternalSoftGalleryLanguage.g:8358:3: ()
-            // InternalSoftGalleryLanguage.g:8359:4: 
+            // InternalSoftGalleryLanguage.g:8889:3: ()
+            // InternalSoftGalleryLanguage.g:8890:4: 
             {
 
             				current = forceCreateModelElement(
@@ -20877,28 +22169,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8365:3: ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )*
+            // InternalSoftGalleryLanguage.g:8896:3: ( (lv_stylescontents_1_0= ruleComponentsStylesContent ) )*
             loop63:
             do {
                 int alt63=2;
                 int LA63_0 = input.LA(1);
 
-                if ( (LA63_0==190) ) {
+                if ( (LA63_0==196) ) {
                     alt63=1;
                 }
 
 
                 switch (alt63) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8366:4: (lv_stylescontents_1_0= ruleComponentsStylesContent )
+            	    // InternalSoftGalleryLanguage.g:8897:4: (lv_stylescontents_1_0= ruleComponentsStylesContent )
             	    {
-            	    // InternalSoftGalleryLanguage.g:8366:4: (lv_stylescontents_1_0= ruleComponentsStylesContent )
-            	    // InternalSoftGalleryLanguage.g:8367:5: lv_stylescontents_1_0= ruleComponentsStylesContent
+            	    // InternalSoftGalleryLanguage.g:8897:4: (lv_stylescontents_1_0= ruleComponentsStylesContent )
+            	    // InternalSoftGalleryLanguage.g:8898:5: lv_stylescontents_1_0= ruleComponentsStylesContent
             	    {
 
             	    					newCompositeNode(grammarAccess.getComponentsStylesAccess().getStylescontentsComponentsStylesContentParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_154);
+            	    pushFollow(FOLLOW_158);
             	    lv_stylescontents_1_0=ruleComponentsStylesContent();
 
             	    state._fsp--;
@@ -20949,7 +22241,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleComponentsStylesContent"
-    // InternalSoftGalleryLanguage.g:8388:1: entryRuleComponentsStylesContent returns [EObject current=null] : iv_ruleComponentsStylesContent= ruleComponentsStylesContent EOF ;
+    // InternalSoftGalleryLanguage.g:8919:1: entryRuleComponentsStylesContent returns [EObject current=null] : iv_ruleComponentsStylesContent= ruleComponentsStylesContent EOF ;
     public final EObject entryRuleComponentsStylesContent() throws RecognitionException {
         EObject current = null;
 
@@ -20957,8 +22249,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8388:64: (iv_ruleComponentsStylesContent= ruleComponentsStylesContent EOF )
-            // InternalSoftGalleryLanguage.g:8389:2: iv_ruleComponentsStylesContent= ruleComponentsStylesContent EOF
+            // InternalSoftGalleryLanguage.g:8919:64: (iv_ruleComponentsStylesContent= ruleComponentsStylesContent EOF )
+            // InternalSoftGalleryLanguage.g:8920:2: iv_ruleComponentsStylesContent= ruleComponentsStylesContent EOF
             {
              newCompositeNode(grammarAccess.getComponentsStylesContentRule()); 
             pushFollow(FOLLOW_1);
@@ -20985,7 +22277,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleComponentsStylesContent"
-    // InternalSoftGalleryLanguage.g:8395:1: ruleComponentsStylesContent returns [EObject current=null] : (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) ) ;
+    // InternalSoftGalleryLanguage.g:8926:1: ruleComponentsStylesContent returns [EObject current=null] : (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) ) ;
     public final EObject ruleComponentsStylesContent() throws RecognitionException {
         EObject current = null;
 
@@ -20998,23 +22290,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8401:2: ( (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) ) )
-            // InternalSoftGalleryLanguage.g:8402:2: (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) )
+            // InternalSoftGalleryLanguage.g:8932:2: ( (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) ) )
+            // InternalSoftGalleryLanguage.g:8933:2: (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) )
             {
-            // InternalSoftGalleryLanguage.g:8402:2: (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) )
-            // InternalSoftGalleryLanguage.g:8403:3: otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) )
+            // InternalSoftGalleryLanguage.g:8933:2: (otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) ) )
+            // InternalSoftGalleryLanguage.g:8934:3: otherlv_0= 'Style' ( (lv_nameStyle_1_0= RULE_ID ) ) ( (lv_stylecontent_2_0= ruleStyleProperties ) )
             {
-            otherlv_0=(Token)match(input,190,FOLLOW_9); 
+            otherlv_0=(Token)match(input,196,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getComponentsStylesContentAccess().getStyleKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:8407:3: ( (lv_nameStyle_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8408:4: (lv_nameStyle_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8938:3: ( (lv_nameStyle_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:8939:4: (lv_nameStyle_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8408:4: (lv_nameStyle_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8409:5: lv_nameStyle_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:8939:4: (lv_nameStyle_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:8940:5: lv_nameStyle_1_0= RULE_ID
             {
-            lv_nameStyle_1_0=(Token)match(input,RULE_ID,FOLLOW_155); 
+            lv_nameStyle_1_0=(Token)match(input,RULE_ID,FOLLOW_159); 
 
             					newLeafNode(lv_nameStyle_1_0, grammarAccess.getComponentsStylesContentAccess().getNameStyleIDTerminalRuleCall_1_0());
             				
@@ -21034,11 +22326,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8425:3: ( (lv_stylecontent_2_0= ruleStyleProperties ) )
-            // InternalSoftGalleryLanguage.g:8426:4: (lv_stylecontent_2_0= ruleStyleProperties )
+            // InternalSoftGalleryLanguage.g:8956:3: ( (lv_stylecontent_2_0= ruleStyleProperties ) )
+            // InternalSoftGalleryLanguage.g:8957:4: (lv_stylecontent_2_0= ruleStyleProperties )
             {
-            // InternalSoftGalleryLanguage.g:8426:4: (lv_stylecontent_2_0= ruleStyleProperties )
-            // InternalSoftGalleryLanguage.g:8427:5: lv_stylecontent_2_0= ruleStyleProperties
+            // InternalSoftGalleryLanguage.g:8957:4: (lv_stylecontent_2_0= ruleStyleProperties )
+            // InternalSoftGalleryLanguage.g:8958:5: lv_stylecontent_2_0= ruleStyleProperties
             {
 
             					newCompositeNode(grammarAccess.getComponentsStylesContentAccess().getStylecontentStylePropertiesParserRuleCall_2_0());
@@ -21088,7 +22380,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleStyleProperties"
-    // InternalSoftGalleryLanguage.g:8448:1: entryRuleStyleProperties returns [EObject current=null] : iv_ruleStyleProperties= ruleStyleProperties EOF ;
+    // InternalSoftGalleryLanguage.g:8979:1: entryRuleStyleProperties returns [EObject current=null] : iv_ruleStyleProperties= ruleStyleProperties EOF ;
     public final EObject entryRuleStyleProperties() throws RecognitionException {
         EObject current = null;
 
@@ -21096,8 +22388,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8448:56: (iv_ruleStyleProperties= ruleStyleProperties EOF )
-            // InternalSoftGalleryLanguage.g:8449:2: iv_ruleStyleProperties= ruleStyleProperties EOF
+            // InternalSoftGalleryLanguage.g:8979:56: (iv_ruleStyleProperties= ruleStyleProperties EOF )
+            // InternalSoftGalleryLanguage.g:8980:2: iv_ruleStyleProperties= ruleStyleProperties EOF
             {
              newCompositeNode(grammarAccess.getStylePropertiesRule()); 
             pushFollow(FOLLOW_1);
@@ -21124,7 +22416,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleStyleProperties"
-    // InternalSoftGalleryLanguage.g:8455:1: ruleStyleProperties returns [EObject current=null] : ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* ) ;
+    // InternalSoftGalleryLanguage.g:8986:1: ruleStyleProperties returns [EObject current=null] : ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* ) ;
     public final EObject ruleStyleProperties() throws RecognitionException {
         EObject current = null;
 
@@ -21135,14 +22427,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8461:2: ( ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* ) )
-            // InternalSoftGalleryLanguage.g:8462:2: ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* )
+            // InternalSoftGalleryLanguage.g:8992:2: ( ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* ) )
+            // InternalSoftGalleryLanguage.g:8993:2: ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* )
             {
-            // InternalSoftGalleryLanguage.g:8462:2: ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* )
-            // InternalSoftGalleryLanguage.g:8463:3: () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )*
+            // InternalSoftGalleryLanguage.g:8993:2: ( () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )* )
+            // InternalSoftGalleryLanguage.g:8994:3: () ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )*
             {
-            // InternalSoftGalleryLanguage.g:8463:3: ()
-            // InternalSoftGalleryLanguage.g:8464:4: 
+            // InternalSoftGalleryLanguage.g:8994:3: ()
+            // InternalSoftGalleryLanguage.g:8995:4: 
             {
 
             				current = forceCreateModelElement(
@@ -21152,28 +22444,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8470:3: ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )*
+            // InternalSoftGalleryLanguage.g:9001:3: ( (lv_stylespropscontents_1_0= ruleStylePropertiesContent ) )*
             loop64:
             do {
                 int alt64=2;
                 int LA64_0 = input.LA(1);
 
-                if ( (LA64_0==191) ) {
+                if ( (LA64_0==197) ) {
                     alt64=1;
                 }
 
 
                 switch (alt64) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8471:4: (lv_stylespropscontents_1_0= ruleStylePropertiesContent )
+            	    // InternalSoftGalleryLanguage.g:9002:4: (lv_stylespropscontents_1_0= ruleStylePropertiesContent )
             	    {
-            	    // InternalSoftGalleryLanguage.g:8471:4: (lv_stylespropscontents_1_0= ruleStylePropertiesContent )
-            	    // InternalSoftGalleryLanguage.g:8472:5: lv_stylespropscontents_1_0= ruleStylePropertiesContent
+            	    // InternalSoftGalleryLanguage.g:9002:4: (lv_stylespropscontents_1_0= ruleStylePropertiesContent )
+            	    // InternalSoftGalleryLanguage.g:9003:5: lv_stylespropscontents_1_0= ruleStylePropertiesContent
             	    {
 
             	    					newCompositeNode(grammarAccess.getStylePropertiesAccess().getStylespropscontentsStylePropertiesContentParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_156);
+            	    pushFollow(FOLLOW_160);
             	    lv_stylespropscontents_1_0=ruleStylePropertiesContent();
 
             	    state._fsp--;
@@ -21224,7 +22516,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleStylePropertiesContent"
-    // InternalSoftGalleryLanguage.g:8493:1: entryRuleStylePropertiesContent returns [EObject current=null] : iv_ruleStylePropertiesContent= ruleStylePropertiesContent EOF ;
+    // InternalSoftGalleryLanguage.g:9024:1: entryRuleStylePropertiesContent returns [EObject current=null] : iv_ruleStylePropertiesContent= ruleStylePropertiesContent EOF ;
     public final EObject entryRuleStylePropertiesContent() throws RecognitionException {
         EObject current = null;
 
@@ -21232,8 +22524,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8493:63: (iv_ruleStylePropertiesContent= ruleStylePropertiesContent EOF )
-            // InternalSoftGalleryLanguage.g:8494:2: iv_ruleStylePropertiesContent= ruleStylePropertiesContent EOF
+            // InternalSoftGalleryLanguage.g:9024:63: (iv_ruleStylePropertiesContent= ruleStylePropertiesContent EOF )
+            // InternalSoftGalleryLanguage.g:9025:2: iv_ruleStylePropertiesContent= ruleStylePropertiesContent EOF
             {
              newCompositeNode(grammarAccess.getStylePropertiesContentRule()); 
             pushFollow(FOLLOW_1);
@@ -21260,7 +22552,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleStylePropertiesContent"
-    // InternalSoftGalleryLanguage.g:8500:1: ruleStylePropertiesContent returns [EObject current=null] : (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ ) ;
+    // InternalSoftGalleryLanguage.g:9031:1: ruleStylePropertiesContent returns [EObject current=null] : (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ ) ;
     public final EObject ruleStylePropertiesContent() throws RecognitionException {
         EObject current = null;
 
@@ -21272,23 +22564,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8506:2: ( (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ ) )
-            // InternalSoftGalleryLanguage.g:8507:2: (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ )
+            // InternalSoftGalleryLanguage.g:9037:2: ( (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ ) )
+            // InternalSoftGalleryLanguage.g:9038:2: (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ )
             {
-            // InternalSoftGalleryLanguage.g:8507:2: (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ )
-            // InternalSoftGalleryLanguage.g:8508:3: otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+
+            // InternalSoftGalleryLanguage.g:9038:2: (otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+ )
+            // InternalSoftGalleryLanguage.g:9039:3: otherlv_0= 'prop_name' ( (lv_propName_1_0= RULE_ID ) ) (otherlv_2= 'propsContent' )+
             {
-            otherlv_0=(Token)match(input,191,FOLLOW_9); 
+            otherlv_0=(Token)match(input,197,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStylePropertiesContentAccess().getProp_nameKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:8512:3: ( (lv_propName_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8513:4: (lv_propName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9043:3: ( (lv_propName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9044:4: (lv_propName_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8513:4: (lv_propName_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8514:5: lv_propName_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9044:4: (lv_propName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9045:5: lv_propName_1_0= RULE_ID
             {
-            lv_propName_1_0=(Token)match(input,RULE_ID,FOLLOW_157); 
+            lv_propName_1_0=(Token)match(input,RULE_ID,FOLLOW_161); 
 
             					newLeafNode(lv_propName_1_0, grammarAccess.getStylePropertiesContentAccess().getPropNameIDTerminalRuleCall_1_0());
             				
@@ -21308,23 +22600,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8530:3: (otherlv_2= 'propsContent' )+
+            // InternalSoftGalleryLanguage.g:9061:3: (otherlv_2= 'propsContent' )+
             int cnt65=0;
             loop65:
             do {
                 int alt65=2;
                 int LA65_0 = input.LA(1);
 
-                if ( (LA65_0==192) ) {
+                if ( (LA65_0==198) ) {
                     alt65=1;
                 }
 
 
                 switch (alt65) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8531:4: otherlv_2= 'propsContent'
+            	    // InternalSoftGalleryLanguage.g:9062:4: otherlv_2= 'propsContent'
             	    {
-            	    otherlv_2=(Token)match(input,192,FOLLOW_158); 
+            	    otherlv_2=(Token)match(input,198,FOLLOW_162); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getStylePropertiesContentAccess().getPropsContentKeyword_2());
             	    			
@@ -21364,7 +22656,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactActions"
-    // InternalSoftGalleryLanguage.g:8540:1: entryRuleReactActions returns [EObject current=null] : iv_ruleReactActions= ruleReactActions EOF ;
+    // InternalSoftGalleryLanguage.g:9071:1: entryRuleReactActions returns [EObject current=null] : iv_ruleReactActions= ruleReactActions EOF ;
     public final EObject entryRuleReactActions() throws RecognitionException {
         EObject current = null;
 
@@ -21372,8 +22664,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8540:53: (iv_ruleReactActions= ruleReactActions EOF )
-            // InternalSoftGalleryLanguage.g:8541:2: iv_ruleReactActions= ruleReactActions EOF
+            // InternalSoftGalleryLanguage.g:9071:53: (iv_ruleReactActions= ruleReactActions EOF )
+            // InternalSoftGalleryLanguage.g:9072:2: iv_ruleReactActions= ruleReactActions EOF
             {
              newCompositeNode(grammarAccess.getReactActionsRule()); 
             pushFollow(FOLLOW_1);
@@ -21400,7 +22692,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactActions"
-    // InternalSoftGalleryLanguage.g:8547:1: ruleReactActions returns [EObject current=null] : (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' ) ;
+    // InternalSoftGalleryLanguage.g:9078:1: ruleReactActions returns [EObject current=null] : (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' ) ;
     public final EObject ruleReactActions() throws RecognitionException {
         EObject current = null;
 
@@ -21415,13 +22707,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8553:2: ( (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' ) )
-            // InternalSoftGalleryLanguage.g:8554:2: (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:9084:2: ( (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' ) )
+            // InternalSoftGalleryLanguage.g:9085:2: (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' )
             {
-            // InternalSoftGalleryLanguage.g:8554:2: (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' )
-            // InternalSoftGalleryLanguage.g:8555:3: otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}'
+            // InternalSoftGalleryLanguage.g:9085:2: (otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:9086:3: otherlv_0= 'ReactActions' otherlv_1= ':' otherlv_2= '{' ( (lv_reactactcontent_3_0= ruleReactActionsContent ) ) otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,193,FOLLOW_3); 
+            otherlv_0=(Token)match(input,199,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactActionsAccess().getReactActionsKeyword_0());
             		
@@ -21429,15 +22721,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getReactActionsAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_159); 
+            otherlv_2=(Token)match(input,13,FOLLOW_163); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactActionsAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:8567:3: ( (lv_reactactcontent_3_0= ruleReactActionsContent ) )
-            // InternalSoftGalleryLanguage.g:8568:4: (lv_reactactcontent_3_0= ruleReactActionsContent )
+            // InternalSoftGalleryLanguage.g:9098:3: ( (lv_reactactcontent_3_0= ruleReactActionsContent ) )
+            // InternalSoftGalleryLanguage.g:9099:4: (lv_reactactcontent_3_0= ruleReactActionsContent )
             {
-            // InternalSoftGalleryLanguage.g:8568:4: (lv_reactactcontent_3_0= ruleReactActionsContent )
-            // InternalSoftGalleryLanguage.g:8569:5: lv_reactactcontent_3_0= ruleReactActionsContent
+            // InternalSoftGalleryLanguage.g:9099:4: (lv_reactactcontent_3_0= ruleReactActionsContent )
+            // InternalSoftGalleryLanguage.g:9100:5: lv_reactactcontent_3_0= ruleReactActionsContent
             {
 
             					newCompositeNode(grammarAccess.getReactActionsAccess().getReactactcontentReactActionsContentParserRuleCall_3_0());
@@ -21491,7 +22783,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactActionsContent"
-    // InternalSoftGalleryLanguage.g:8594:1: entryRuleReactActionsContent returns [EObject current=null] : iv_ruleReactActionsContent= ruleReactActionsContent EOF ;
+    // InternalSoftGalleryLanguage.g:9125:1: entryRuleReactActionsContent returns [EObject current=null] : iv_ruleReactActionsContent= ruleReactActionsContent EOF ;
     public final EObject entryRuleReactActionsContent() throws RecognitionException {
         EObject current = null;
 
@@ -21499,8 +22791,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8594:60: (iv_ruleReactActionsContent= ruleReactActionsContent EOF )
-            // InternalSoftGalleryLanguage.g:8595:2: iv_ruleReactActionsContent= ruleReactActionsContent EOF
+            // InternalSoftGalleryLanguage.g:9125:60: (iv_ruleReactActionsContent= ruleReactActionsContent EOF )
+            // InternalSoftGalleryLanguage.g:9126:2: iv_ruleReactActionsContent= ruleReactActionsContent EOF
             {
              newCompositeNode(grammarAccess.getReactActionsContentRule()); 
             pushFollow(FOLLOW_1);
@@ -21527,7 +22819,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactActionsContent"
-    // InternalSoftGalleryLanguage.g:8601:1: ruleReactActionsContent returns [EObject current=null] : ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+ ;
+    // InternalSoftGalleryLanguage.g:9132:1: ruleReactActionsContent returns [EObject current=null] : ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+ ;
     public final EObject ruleReactActionsContent() throws RecognitionException {
         EObject current = null;
 
@@ -21538,32 +22830,32 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8607:2: ( ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+ )
-            // InternalSoftGalleryLanguage.g:8608:2: ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+
+            // InternalSoftGalleryLanguage.g:9138:2: ( ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+ )
+            // InternalSoftGalleryLanguage.g:9139:2: ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+
             {
-            // InternalSoftGalleryLanguage.g:8608:2: ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+
+            // InternalSoftGalleryLanguage.g:9139:2: ( (lv_reactrelcontent_0_0= ruleReactServicesRelation ) )+
             int cnt66=0;
             loop66:
             do {
                 int alt66=2;
                 int LA66_0 = input.LA(1);
 
-                if ( (LA66_0==198) ) {
+                if ( (LA66_0==204) ) {
                     alt66=1;
                 }
 
 
                 switch (alt66) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8609:3: (lv_reactrelcontent_0_0= ruleReactServicesRelation )
+            	    // InternalSoftGalleryLanguage.g:9140:3: (lv_reactrelcontent_0_0= ruleReactServicesRelation )
             	    {
-            	    // InternalSoftGalleryLanguage.g:8609:3: (lv_reactrelcontent_0_0= ruleReactServicesRelation )
-            	    // InternalSoftGalleryLanguage.g:8610:4: lv_reactrelcontent_0_0= ruleReactServicesRelation
+            	    // InternalSoftGalleryLanguage.g:9140:3: (lv_reactrelcontent_0_0= ruleReactServicesRelation )
+            	    // InternalSoftGalleryLanguage.g:9141:4: lv_reactrelcontent_0_0= ruleReactServicesRelation
             	    {
 
             	    				newCompositeNode(grammarAccess.getReactActionsContentAccess().getReactrelcontentReactServicesRelationParserRuleCall_0());
             	    			
-            	    pushFollow(FOLLOW_160);
+            	    pushFollow(FOLLOW_164);
             	    lv_reactrelcontent_0_0=ruleReactServicesRelation();
 
             	    state._fsp--;
@@ -21615,7 +22907,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactServicesType"
-    // InternalSoftGalleryLanguage.g:8630:1: entryRuleReactServicesType returns [EObject current=null] : iv_ruleReactServicesType= ruleReactServicesType EOF ;
+    // InternalSoftGalleryLanguage.g:9161:1: entryRuleReactServicesType returns [EObject current=null] : iv_ruleReactServicesType= ruleReactServicesType EOF ;
     public final EObject entryRuleReactServicesType() throws RecognitionException {
         EObject current = null;
 
@@ -21623,8 +22915,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8630:58: (iv_ruleReactServicesType= ruleReactServicesType EOF )
-            // InternalSoftGalleryLanguage.g:8631:2: iv_ruleReactServicesType= ruleReactServicesType EOF
+            // InternalSoftGalleryLanguage.g:9161:58: (iv_ruleReactServicesType= ruleReactServicesType EOF )
+            // InternalSoftGalleryLanguage.g:9162:2: iv_ruleReactServicesType= ruleReactServicesType EOF
             {
              newCompositeNode(grammarAccess.getReactServicesTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -21651,7 +22943,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactServicesType"
-    // InternalSoftGalleryLanguage.g:8637:1: ruleReactServicesType returns [EObject current=null] : (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) ) ;
+    // InternalSoftGalleryLanguage.g:9168:1: ruleReactServicesType returns [EObject current=null] : (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) ) ;
     public final EObject ruleReactServicesType() throws RecognitionException {
         EObject current = null;
 
@@ -21664,23 +22956,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8643:2: ( (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) ) )
-            // InternalSoftGalleryLanguage.g:8644:2: (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) )
+            // InternalSoftGalleryLanguage.g:9174:2: ( (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) ) )
+            // InternalSoftGalleryLanguage.g:9175:2: (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) )
             {
-            // InternalSoftGalleryLanguage.g:8644:2: (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) )
-            // InternalSoftGalleryLanguage.g:8645:3: otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) )
+            // InternalSoftGalleryLanguage.g:9175:2: (otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) ) )
+            // InternalSoftGalleryLanguage.g:9176:3: otherlv_0= 'ServiceType' ( (lv_name_1_0= RULE_ID ) ) ( (lv_reactservcontent_2_0= ruleReactServiceContent ) )
             {
-            otherlv_0=(Token)match(input,194,FOLLOW_9); 
+            otherlv_0=(Token)match(input,200,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactServicesTypeAccess().getServiceTypeKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:8649:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8650:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9180:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9181:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8650:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8651:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9181:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9182:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_161); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_165); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getReactServicesTypeAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -21700,11 +22992,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8667:3: ( (lv_reactservcontent_2_0= ruleReactServiceContent ) )
-            // InternalSoftGalleryLanguage.g:8668:4: (lv_reactservcontent_2_0= ruleReactServiceContent )
+            // InternalSoftGalleryLanguage.g:9198:3: ( (lv_reactservcontent_2_0= ruleReactServiceContent ) )
+            // InternalSoftGalleryLanguage.g:9199:4: (lv_reactservcontent_2_0= ruleReactServiceContent )
             {
-            // InternalSoftGalleryLanguage.g:8668:4: (lv_reactservcontent_2_0= ruleReactServiceContent )
-            // InternalSoftGalleryLanguage.g:8669:5: lv_reactservcontent_2_0= ruleReactServiceContent
+            // InternalSoftGalleryLanguage.g:9199:4: (lv_reactservcontent_2_0= ruleReactServiceContent )
+            // InternalSoftGalleryLanguage.g:9200:5: lv_reactservcontent_2_0= ruleReactServiceContent
             {
 
             					newCompositeNode(grammarAccess.getReactServicesTypeAccess().getReactservcontentReactServiceContentParserRuleCall_2_0());
@@ -21754,7 +23046,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactServiceContent"
-    // InternalSoftGalleryLanguage.g:8690:1: entryRuleReactServiceContent returns [EObject current=null] : iv_ruleReactServiceContent= ruleReactServiceContent EOF ;
+    // InternalSoftGalleryLanguage.g:9221:1: entryRuleReactServiceContent returns [EObject current=null] : iv_ruleReactServiceContent= ruleReactServiceContent EOF ;
     public final EObject entryRuleReactServiceContent() throws RecognitionException {
         EObject current = null;
 
@@ -21762,8 +23054,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8690:60: (iv_ruleReactServiceContent= ruleReactServiceContent EOF )
-            // InternalSoftGalleryLanguage.g:8691:2: iv_ruleReactServiceContent= ruleReactServiceContent EOF
+            // InternalSoftGalleryLanguage.g:9221:60: (iv_ruleReactServiceContent= ruleReactServiceContent EOF )
+            // InternalSoftGalleryLanguage.g:9222:2: iv_ruleReactServiceContent= ruleReactServiceContent EOF
             {
              newCompositeNode(grammarAccess.getReactServiceContentRule()); 
             pushFollow(FOLLOW_1);
@@ -21790,7 +23082,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactServiceContent"
-    // InternalSoftGalleryLanguage.g:8697:1: ruleReactServiceContent returns [EObject current=null] : (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) ) )* ;
+    // InternalSoftGalleryLanguage.g:9228:1: ruleReactServiceContent returns [EObject current=null] : (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )* ) ;
     public final EObject ruleReactServiceContent() throws RecognitionException {
         EObject current = null;
 
@@ -21803,64 +23095,64 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8703:2: ( (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) ) )* )
-            // InternalSoftGalleryLanguage.g:8704:2: (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) ) )*
+            // InternalSoftGalleryLanguage.g:9234:2: ( (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )* ) )
+            // InternalSoftGalleryLanguage.g:9235:2: (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )* )
             {
-            // InternalSoftGalleryLanguage.g:8704:2: (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) ) )*
+            // InternalSoftGalleryLanguage.g:9235:2: (otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )* )
+            // InternalSoftGalleryLanguage.g:9236:3: otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )*
+            {
+            otherlv_0=(Token)match(input,201,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getReactServiceContentAccess().getFunctionsKeyword_0());
+            		
+            // InternalSoftGalleryLanguage.g:9240:3: ( (lv_functName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9241:4: (lv_functName_1_0= RULE_ID )
+            {
+            // InternalSoftGalleryLanguage.g:9241:4: (lv_functName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9242:5: lv_functName_1_0= RULE_ID
+            {
+            lv_functName_1_0=(Token)match(input,RULE_ID,FOLLOW_166); 
+
+            					newLeafNode(lv_functName_1_0, grammarAccess.getReactServiceContentAccess().getFunctNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getReactServiceContentRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"functName",
+            						lv_functName_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalSoftGalleryLanguage.g:9258:3: ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )*
             loop67:
             do {
                 int alt67=2;
                 int LA67_0 = input.LA(1);
 
-                if ( (LA67_0==195) ) {
+                if ( (LA67_0==202) ) {
                     alt67=1;
                 }
 
 
                 switch (alt67) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8705:3: otherlv_0= 'functions' ( (lv_functName_1_0= RULE_ID ) ) ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )
+            	    // InternalSoftGalleryLanguage.g:9259:4: (lv_reactservrequest_2_0= ruleReactServiceContRequest )
             	    {
-            	    otherlv_0=(Token)match(input,195,FOLLOW_9); 
-
-            	    			newLeafNode(otherlv_0, grammarAccess.getReactServiceContentAccess().getFunctionsKeyword_0());
-            	    		
-            	    // InternalSoftGalleryLanguage.g:8709:3: ( (lv_functName_1_0= RULE_ID ) )
-            	    // InternalSoftGalleryLanguage.g:8710:4: (lv_functName_1_0= RULE_ID )
-            	    {
-            	    // InternalSoftGalleryLanguage.g:8710:4: (lv_functName_1_0= RULE_ID )
-            	    // InternalSoftGalleryLanguage.g:8711:5: lv_functName_1_0= RULE_ID
-            	    {
-            	    lv_functName_1_0=(Token)match(input,RULE_ID,FOLLOW_162); 
-
-            	    					newLeafNode(lv_functName_1_0, grammarAccess.getReactServiceContentAccess().getFunctNameIDTerminalRuleCall_1_0());
-            	    				
-
-            	    					if (current==null) {
-            	    						current = createModelElement(grammarAccess.getReactServiceContentRule());
-            	    					}
-            	    					setWithLastConsumed(
-            	    						current,
-            	    						"functName",
-            	    						lv_functName_1_0,
-            	    						"org.eclipse.xtext.common.Terminals.ID");
-            	    				
-
-            	    }
-
-
-            	    }
-
-            	    // InternalSoftGalleryLanguage.g:8727:3: ( (lv_reactservrequest_2_0= ruleReactServiceContRequest ) )
-            	    // InternalSoftGalleryLanguage.g:8728:4: (lv_reactservrequest_2_0= ruleReactServiceContRequest )
-            	    {
-            	    // InternalSoftGalleryLanguage.g:8728:4: (lv_reactservrequest_2_0= ruleReactServiceContRequest )
-            	    // InternalSoftGalleryLanguage.g:8729:5: lv_reactservrequest_2_0= ruleReactServiceContRequest
+            	    // InternalSoftGalleryLanguage.g:9259:4: (lv_reactservrequest_2_0= ruleReactServiceContRequest )
+            	    // InternalSoftGalleryLanguage.g:9260:5: lv_reactservrequest_2_0= ruleReactServiceContRequest
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactServiceContentAccess().getReactservrequestReactServiceContRequestParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_163);
+            	    pushFollow(FOLLOW_166);
             	    lv_reactservrequest_2_0=ruleReactServiceContRequest();
 
             	    state._fsp--;
@@ -21881,15 +23173,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
             	    }
-
-
-            	    }
             	    break;
 
             	default :
             	    break loop67;
                 }
             } while (true);
+
+
+            }
 
 
             }
@@ -21911,7 +23203,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactServiceContRequest"
-    // InternalSoftGalleryLanguage.g:8750:1: entryRuleReactServiceContRequest returns [EObject current=null] : iv_ruleReactServiceContRequest= ruleReactServiceContRequest EOF ;
+    // InternalSoftGalleryLanguage.g:9281:1: entryRuleReactServiceContRequest returns [EObject current=null] : iv_ruleReactServiceContRequest= ruleReactServiceContRequest EOF ;
     public final EObject entryRuleReactServiceContRequest() throws RecognitionException {
         EObject current = null;
 
@@ -21919,8 +23211,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8750:64: (iv_ruleReactServiceContRequest= ruleReactServiceContRequest EOF )
-            // InternalSoftGalleryLanguage.g:8751:2: iv_ruleReactServiceContRequest= ruleReactServiceContRequest EOF
+            // InternalSoftGalleryLanguage.g:9281:64: (iv_ruleReactServiceContRequest= ruleReactServiceContRequest EOF )
+            // InternalSoftGalleryLanguage.g:9282:2: iv_ruleReactServiceContRequest= ruleReactServiceContRequest EOF
             {
              newCompositeNode(grammarAccess.getReactServiceContRequestRule()); 
             pushFollow(FOLLOW_1);
@@ -21947,7 +23239,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactServiceContRequest"
-    // InternalSoftGalleryLanguage.g:8757:1: ruleReactServiceContRequest returns [EObject current=null] : (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:9288:1: ruleReactServiceContRequest returns [EObject current=null] : (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ ) ;
     public final EObject ruleReactServiceContRequest() throws RecognitionException {
         EObject current = null;
 
@@ -21959,39 +23251,39 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8763:2: ( (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ ) )
-            // InternalSoftGalleryLanguage.g:8764:2: (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ )
+            // InternalSoftGalleryLanguage.g:9294:2: ( (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ ) )
+            // InternalSoftGalleryLanguage.g:9295:2: (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:8764:2: (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ )
-            // InternalSoftGalleryLanguage.g:8765:3: otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+
+            // InternalSoftGalleryLanguage.g:9295:2: (otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+ )
+            // InternalSoftGalleryLanguage.g:9296:3: otherlv_0= 'return' ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+
             {
-            otherlv_0=(Token)match(input,196,FOLLOW_164); 
+            otherlv_0=(Token)match(input,202,FOLLOW_167); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactServiceContRequestAccess().getReturnKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:8769:3: ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+
+            // InternalSoftGalleryLanguage.g:9300:3: ( (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps ) )+
             int cnt68=0;
             loop68:
             do {
                 int alt68=2;
                 int LA68_0 = input.LA(1);
 
-                if ( (LA68_0==197) ) {
+                if ( (LA68_0==203) ) {
                     alt68=1;
                 }
 
 
                 switch (alt68) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8770:4: (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps )
+            	    // InternalSoftGalleryLanguage.g:9301:4: (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps )
             	    {
-            	    // InternalSoftGalleryLanguage.g:8770:4: (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps )
-            	    // InternalSoftGalleryLanguage.g:8771:5: lv_reactservrequestprops_1_0= ruleReactServiceRequestProps
+            	    // InternalSoftGalleryLanguage.g:9301:4: (lv_reactservrequestprops_1_0= ruleReactServiceRequestProps )
+            	    // InternalSoftGalleryLanguage.g:9302:5: lv_reactservrequestprops_1_0= ruleReactServiceRequestProps
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactServiceContRequestAccess().getReactservrequestpropsReactServiceRequestPropsParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_165);
+            	    pushFollow(FOLLOW_168);
             	    lv_reactservrequestprops_1_0=ruleReactServiceRequestProps();
 
             	    state._fsp--;
@@ -22046,7 +23338,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactServiceRequestProps"
-    // InternalSoftGalleryLanguage.g:8792:1: entryRuleReactServiceRequestProps returns [EObject current=null] : iv_ruleReactServiceRequestProps= ruleReactServiceRequestProps EOF ;
+    // InternalSoftGalleryLanguage.g:9323:1: entryRuleReactServiceRequestProps returns [EObject current=null] : iv_ruleReactServiceRequestProps= ruleReactServiceRequestProps EOF ;
     public final EObject entryRuleReactServiceRequestProps() throws RecognitionException {
         EObject current = null;
 
@@ -22054,8 +23346,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8792:65: (iv_ruleReactServiceRequestProps= ruleReactServiceRequestProps EOF )
-            // InternalSoftGalleryLanguage.g:8793:2: iv_ruleReactServiceRequestProps= ruleReactServiceRequestProps EOF
+            // InternalSoftGalleryLanguage.g:9323:65: (iv_ruleReactServiceRequestProps= ruleReactServiceRequestProps EOF )
+            // InternalSoftGalleryLanguage.g:9324:2: iv_ruleReactServiceRequestProps= ruleReactServiceRequestProps EOF
             {
              newCompositeNode(grammarAccess.getReactServiceRequestPropsRule()); 
             pushFollow(FOLLOW_1);
@@ -22082,7 +23374,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactServiceRequestProps"
-    // InternalSoftGalleryLanguage.g:8799:1: ruleReactServiceRequestProps returns [EObject current=null] : (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:9330:1: ruleReactServiceRequestProps returns [EObject current=null] : (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) ) ;
     public final EObject ruleReactServiceRequestProps() throws RecognitionException {
         EObject current = null;
 
@@ -22094,21 +23386,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8805:2: ( (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:8806:2: (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:9336:2: ( (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:9337:2: (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:8806:2: (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:8807:3: otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9337:2: (otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:9338:3: otherlv_0= 'propName' ( (lv_reqPropName_1_0= RULE_ID ) ) ( (lv_reqPropDescription_2_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,197,FOLLOW_9); 
+            otherlv_0=(Token)match(input,203,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactServiceRequestPropsAccess().getPropNameKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:8811:3: ( (lv_reqPropName_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8812:4: (lv_reqPropName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9342:3: ( (lv_reqPropName_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9343:4: (lv_reqPropName_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8812:4: (lv_reqPropName_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8813:5: lv_reqPropName_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9343:4: (lv_reqPropName_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9344:5: lv_reqPropName_1_0= RULE_ID
             {
             lv_reqPropName_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -22130,11 +23422,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8829:3: ( (lv_reqPropDescription_2_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8830:4: (lv_reqPropDescription_2_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9360:3: ( (lv_reqPropDescription_2_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9361:4: (lv_reqPropDescription_2_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8830:4: (lv_reqPropDescription_2_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8831:5: lv_reqPropDescription_2_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9361:4: (lv_reqPropDescription_2_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9362:5: lv_reqPropDescription_2_0= RULE_ID
             {
             lv_reqPropDescription_2_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -22179,7 +23471,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactServicesRelation"
-    // InternalSoftGalleryLanguage.g:8851:1: entryRuleReactServicesRelation returns [EObject current=null] : iv_ruleReactServicesRelation= ruleReactServicesRelation EOF ;
+    // InternalSoftGalleryLanguage.g:9382:1: entryRuleReactServicesRelation returns [EObject current=null] : iv_ruleReactServicesRelation= ruleReactServicesRelation EOF ;
     public final EObject entryRuleReactServicesRelation() throws RecognitionException {
         EObject current = null;
 
@@ -22187,8 +23479,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8851:62: (iv_ruleReactServicesRelation= ruleReactServicesRelation EOF )
-            // InternalSoftGalleryLanguage.g:8852:2: iv_ruleReactServicesRelation= ruleReactServicesRelation EOF
+            // InternalSoftGalleryLanguage.g:9382:62: (iv_ruleReactServicesRelation= ruleReactServicesRelation EOF )
+            // InternalSoftGalleryLanguage.g:9383:2: iv_ruleReactServicesRelation= ruleReactServicesRelation EOF
             {
              newCompositeNode(grammarAccess.getReactServicesRelationRule()); 
             pushFollow(FOLLOW_1);
@@ -22215,7 +23507,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactServicesRelation"
-    // InternalSoftGalleryLanguage.g:8858:1: ruleReactServicesRelation returns [EObject current=null] : (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:9389:1: ruleReactServicesRelation returns [EObject current=null] : (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ ) ;
     public final EObject ruleReactServicesRelation() throws RecognitionException {
         EObject current = null;
 
@@ -22227,39 +23519,39 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8864:2: ( (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ ) )
-            // InternalSoftGalleryLanguage.g:8865:2: (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ )
+            // InternalSoftGalleryLanguage.g:9395:2: ( (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ ) )
+            // InternalSoftGalleryLanguage.g:9396:2: (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:8865:2: (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ )
-            // InternalSoftGalleryLanguage.g:8866:3: otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+
+            // InternalSoftGalleryLanguage.g:9396:2: (otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+ )
+            // InternalSoftGalleryLanguage.g:9397:3: otherlv_0= 'ServicesRelations' ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+
             {
-            otherlv_0=(Token)match(input,198,FOLLOW_166); 
+            otherlv_0=(Token)match(input,204,FOLLOW_169); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactServicesRelationAccess().getServicesRelationsKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:8870:3: ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+
+            // InternalSoftGalleryLanguage.g:9401:3: ( (lv_servicesrels_1_0= ruleReactsRelationServ ) )+
             int cnt69=0;
             loop69:
             do {
                 int alt69=2;
                 int LA69_0 = input.LA(1);
 
-                if ( (LA69_0==194) ) {
+                if ( (LA69_0==200) ) {
                     alt69=1;
                 }
 
 
                 switch (alt69) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:8871:4: (lv_servicesrels_1_0= ruleReactsRelationServ )
+            	    // InternalSoftGalleryLanguage.g:9402:4: (lv_servicesrels_1_0= ruleReactsRelationServ )
             	    {
-            	    // InternalSoftGalleryLanguage.g:8871:4: (lv_servicesrels_1_0= ruleReactsRelationServ )
-            	    // InternalSoftGalleryLanguage.g:8872:5: lv_servicesrels_1_0= ruleReactsRelationServ
+            	    // InternalSoftGalleryLanguage.g:9402:4: (lv_servicesrels_1_0= ruleReactsRelationServ )
+            	    // InternalSoftGalleryLanguage.g:9403:5: lv_servicesrels_1_0= ruleReactsRelationServ
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactServicesRelationAccess().getServicesrelsReactsRelationServParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_167);
+            	    pushFollow(FOLLOW_170);
             	    lv_servicesrels_1_0=ruleReactsRelationServ();
 
             	    state._fsp--;
@@ -22314,7 +23606,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactsRelationServ"
-    // InternalSoftGalleryLanguage.g:8893:1: entryRuleReactsRelationServ returns [EObject current=null] : iv_ruleReactsRelationServ= ruleReactsRelationServ EOF ;
+    // InternalSoftGalleryLanguage.g:9424:1: entryRuleReactsRelationServ returns [EObject current=null] : iv_ruleReactsRelationServ= ruleReactsRelationServ EOF ;
     public final EObject entryRuleReactsRelationServ() throws RecognitionException {
         EObject current = null;
 
@@ -22322,8 +23614,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8893:59: (iv_ruleReactsRelationServ= ruleReactsRelationServ EOF )
-            // InternalSoftGalleryLanguage.g:8894:2: iv_ruleReactsRelationServ= ruleReactsRelationServ EOF
+            // InternalSoftGalleryLanguage.g:9424:59: (iv_ruleReactsRelationServ= ruleReactsRelationServ EOF )
+            // InternalSoftGalleryLanguage.g:9425:2: iv_ruleReactsRelationServ= ruleReactsRelationServ EOF
             {
              newCompositeNode(grammarAccess.getReactsRelationServRule()); 
             pushFollow(FOLLOW_1);
@@ -22350,7 +23642,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactsRelationServ"
-    // InternalSoftGalleryLanguage.g:8900:1: ruleReactsRelationServ returns [EObject current=null] : ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest ) ;
+    // InternalSoftGalleryLanguage.g:9431:1: ruleReactsRelationServ returns [EObject current=null] : ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest ) ;
     public final EObject ruleReactsRelationServ() throws RecognitionException {
         EObject current = null;
 
@@ -22362,17 +23654,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8906:2: ( ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest ) )
-            // InternalSoftGalleryLanguage.g:8907:2: ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest )
+            // InternalSoftGalleryLanguage.g:9437:2: ( ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest ) )
+            // InternalSoftGalleryLanguage.g:9438:2: ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest )
             {
-            // InternalSoftGalleryLanguage.g:8907:2: ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest )
-            // InternalSoftGalleryLanguage.g:8908:3: ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest
+            // InternalSoftGalleryLanguage.g:9438:2: ( ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest )
+            // InternalSoftGalleryLanguage.g:9439:3: ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) ) ( (lv_name_1_0= RULE_ID ) ) ruleReactRequest
             {
-            // InternalSoftGalleryLanguage.g:8908:3: ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) )
-            // InternalSoftGalleryLanguage.g:8909:4: (lv_reactrelationcontent_0_0= ruleReactServicesType )
+            // InternalSoftGalleryLanguage.g:9439:3: ( (lv_reactrelationcontent_0_0= ruleReactServicesType ) )
+            // InternalSoftGalleryLanguage.g:9440:4: (lv_reactrelationcontent_0_0= ruleReactServicesType )
             {
-            // InternalSoftGalleryLanguage.g:8909:4: (lv_reactrelationcontent_0_0= ruleReactServicesType )
-            // InternalSoftGalleryLanguage.g:8910:5: lv_reactrelationcontent_0_0= ruleReactServicesType
+            // InternalSoftGalleryLanguage.g:9440:4: (lv_reactrelationcontent_0_0= ruleReactServicesType )
+            // InternalSoftGalleryLanguage.g:9441:5: lv_reactrelationcontent_0_0= ruleReactServicesType
             {
 
             					newCompositeNode(grammarAccess.getReactsRelationServAccess().getReactrelationcontentReactServicesTypeParserRuleCall_0_0());
@@ -22399,13 +23691,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:8927:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:8928:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9458:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9459:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:8928:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:8929:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9459:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9460:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_168); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_171); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getReactsRelationServAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -22459,7 +23751,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactRequest"
-    // InternalSoftGalleryLanguage.g:8956:1: entryRuleReactRequest returns [String current=null] : iv_ruleReactRequest= ruleReactRequest EOF ;
+    // InternalSoftGalleryLanguage.g:9487:1: entryRuleReactRequest returns [String current=null] : iv_ruleReactRequest= ruleReactRequest EOF ;
     public final String entryRuleReactRequest() throws RecognitionException {
         String current = null;
 
@@ -22467,8 +23759,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8956:52: (iv_ruleReactRequest= ruleReactRequest EOF )
-            // InternalSoftGalleryLanguage.g:8957:2: iv_ruleReactRequest= ruleReactRequest EOF
+            // InternalSoftGalleryLanguage.g:9487:52: (iv_ruleReactRequest= ruleReactRequest EOF )
+            // InternalSoftGalleryLanguage.g:9488:2: iv_ruleReactRequest= ruleReactRequest EOF
             {
              newCompositeNode(grammarAccess.getReactRequestRule()); 
             pushFollow(FOLLOW_1);
@@ -22495,7 +23787,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactRequest"
-    // InternalSoftGalleryLanguage.g:8963:1: ruleReactRequest returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Wrapper' | kw= 'AuxWrapper' ) ;
+    // InternalSoftGalleryLanguage.g:9494:1: ruleReactRequest returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Wrapper' | kw= 'AuxWrapper' ) ;
     public final AntlrDatatypeRuleToken ruleReactRequest() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -22505,17 +23797,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8969:2: ( (kw= 'Wrapper' | kw= 'AuxWrapper' ) )
-            // InternalSoftGalleryLanguage.g:8970:2: (kw= 'Wrapper' | kw= 'AuxWrapper' )
+            // InternalSoftGalleryLanguage.g:9500:2: ( (kw= 'Wrapper' | kw= 'AuxWrapper' ) )
+            // InternalSoftGalleryLanguage.g:9501:2: (kw= 'Wrapper' | kw= 'AuxWrapper' )
             {
-            // InternalSoftGalleryLanguage.g:8970:2: (kw= 'Wrapper' | kw= 'AuxWrapper' )
+            // InternalSoftGalleryLanguage.g:9501:2: (kw= 'Wrapper' | kw= 'AuxWrapper' )
             int alt70=2;
             int LA70_0 = input.LA(1);
 
-            if ( (LA70_0==199) ) {
+            if ( (LA70_0==205) ) {
                 alt70=1;
             }
-            else if ( (LA70_0==200) ) {
+            else if ( (LA70_0==206) ) {
                 alt70=2;
             }
             else {
@@ -22526,9 +23818,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             }
             switch (alt70) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:8971:3: kw= 'Wrapper'
+                    // InternalSoftGalleryLanguage.g:9502:3: kw= 'Wrapper'
                     {
-                    kw=(Token)match(input,199,FOLLOW_2); 
+                    kw=(Token)match(input,205,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactRequestAccess().getWrapperKeyword_0());
@@ -22537,9 +23829,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:8977:3: kw= 'AuxWrapper'
+                    // InternalSoftGalleryLanguage.g:9508:3: kw= 'AuxWrapper'
                     {
-                    kw=(Token)match(input,200,FOLLOW_2); 
+                    kw=(Token)match(input,206,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactRequestAccess().getAuxWrapperKeyword_1());
@@ -22570,7 +23862,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactLibraries"
-    // InternalSoftGalleryLanguage.g:8986:1: entryRuleReactLibraries returns [EObject current=null] : iv_ruleReactLibraries= ruleReactLibraries EOF ;
+    // InternalSoftGalleryLanguage.g:9517:1: entryRuleReactLibraries returns [EObject current=null] : iv_ruleReactLibraries= ruleReactLibraries EOF ;
     public final EObject entryRuleReactLibraries() throws RecognitionException {
         EObject current = null;
 
@@ -22578,8 +23870,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:8986:55: (iv_ruleReactLibraries= ruleReactLibraries EOF )
-            // InternalSoftGalleryLanguage.g:8987:2: iv_ruleReactLibraries= ruleReactLibraries EOF
+            // InternalSoftGalleryLanguage.g:9517:55: (iv_ruleReactLibraries= ruleReactLibraries EOF )
+            // InternalSoftGalleryLanguage.g:9518:2: iv_ruleReactLibraries= ruleReactLibraries EOF
             {
              newCompositeNode(grammarAccess.getReactLibrariesRule()); 
             pushFollow(FOLLOW_1);
@@ -22606,7 +23898,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactLibraries"
-    // InternalSoftGalleryLanguage.g:8993:1: ruleReactLibraries returns [EObject current=null] : (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' ) ;
+    // InternalSoftGalleryLanguage.g:9524:1: ruleReactLibraries returns [EObject current=null] : (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' ) ;
     public final EObject ruleReactLibraries() throws RecognitionException {
         EObject current = null;
 
@@ -22621,13 +23913,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:8999:2: ( (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' ) )
-            // InternalSoftGalleryLanguage.g:9000:2: (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:9530:2: ( (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' ) )
+            // InternalSoftGalleryLanguage.g:9531:2: (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' )
             {
-            // InternalSoftGalleryLanguage.g:9000:2: (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' )
-            // InternalSoftGalleryLanguage.g:9001:3: otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}'
+            // InternalSoftGalleryLanguage.g:9531:2: (otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:9532:3: otherlv_0= 'ReactLibraries' otherlv_1= ':' otherlv_2= '{' ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,201,FOLLOW_3); 
+            otherlv_0=(Token)match(input,207,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactLibrariesAccess().getReactLibrariesKeyword_0());
             		
@@ -22635,33 +23927,33 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getReactLibrariesAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_169); 
+            otherlv_2=(Token)match(input,13,FOLLOW_172); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactLibrariesAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:9013:3: ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+
+            // InternalSoftGalleryLanguage.g:9544:3: ( (lv_reactlibraries_3_0= ruleReactLibrary ) )+
             int cnt71=0;
             loop71:
             do {
                 int alt71=2;
                 int LA71_0 = input.LA(1);
 
-                if ( ((LA71_0>=203 && LA71_0<=208)) ) {
+                if ( ((LA71_0>=209 && LA71_0<=214)) ) {
                     alt71=1;
                 }
 
 
                 switch (alt71) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9014:4: (lv_reactlibraries_3_0= ruleReactLibrary )
+            	    // InternalSoftGalleryLanguage.g:9545:4: (lv_reactlibraries_3_0= ruleReactLibrary )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9014:4: (lv_reactlibraries_3_0= ruleReactLibrary )
-            	    // InternalSoftGalleryLanguage.g:9015:5: lv_reactlibraries_3_0= ruleReactLibrary
+            	    // InternalSoftGalleryLanguage.g:9545:4: (lv_reactlibraries_3_0= ruleReactLibrary )
+            	    // InternalSoftGalleryLanguage.g:9546:5: lv_reactlibraries_3_0= ruleReactLibrary
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactLibrariesAccess().getReactlibrariesReactLibraryParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_170);
+            	    pushFollow(FOLLOW_173);
             	    lv_reactlibraries_3_0=ruleReactLibrary();
 
             	    state._fsp--;
@@ -22720,7 +24012,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactLibrary"
-    // InternalSoftGalleryLanguage.g:9040:1: entryRuleReactLibrary returns [EObject current=null] : iv_ruleReactLibrary= ruleReactLibrary EOF ;
+    // InternalSoftGalleryLanguage.g:9571:1: entryRuleReactLibrary returns [EObject current=null] : iv_ruleReactLibrary= ruleReactLibrary EOF ;
     public final EObject entryRuleReactLibrary() throws RecognitionException {
         EObject current = null;
 
@@ -22728,8 +24020,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9040:53: (iv_ruleReactLibrary= ruleReactLibrary EOF )
-            // InternalSoftGalleryLanguage.g:9041:2: iv_ruleReactLibrary= ruleReactLibrary EOF
+            // InternalSoftGalleryLanguage.g:9571:53: (iv_ruleReactLibrary= ruleReactLibrary EOF )
+            // InternalSoftGalleryLanguage.g:9572:2: iv_ruleReactLibrary= ruleReactLibrary EOF
             {
              newCompositeNode(grammarAccess.getReactLibraryRule()); 
             pushFollow(FOLLOW_1);
@@ -22756,7 +24048,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactLibrary"
-    // InternalSoftGalleryLanguage.g:9047:1: ruleReactLibrary returns [EObject current=null] : ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' ) ;
+    // InternalSoftGalleryLanguage.g:9578:1: ruleReactLibrary returns [EObject current=null] : ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' ) ;
     public final EObject ruleReactLibrary() throws RecognitionException {
         EObject current = null;
 
@@ -22767,11 +24059,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9053:2: ( ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' ) )
-            // InternalSoftGalleryLanguage.g:9054:2: ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' )
+            // InternalSoftGalleryLanguage.g:9584:2: ( ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' ) )
+            // InternalSoftGalleryLanguage.g:9585:2: ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' )
             {
-            // InternalSoftGalleryLanguage.g:9054:2: ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' )
-            // InternalSoftGalleryLanguage.g:9055:3: ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent'
+            // InternalSoftGalleryLanguage.g:9585:2: ( ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent' )
+            // InternalSoftGalleryLanguage.g:9586:3: ruleReactLibraryType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'LibraryContent'
             {
 
             			newCompositeNode(grammarAccess.getReactLibraryAccess().getReactLibraryTypeParserRuleCall_0());
@@ -22784,13 +24076,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			afterParserOrEnumRuleCall();
             		
-            // InternalSoftGalleryLanguage.g:9062:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9063:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9593:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9594:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9063:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9064:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9594:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9595:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_171); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_174); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getReactLibraryAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -22810,7 +24102,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_2=(Token)match(input,202,FOLLOW_2); 
+            otherlv_2=(Token)match(input,208,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactLibraryAccess().getLibraryContentKeyword_2());
             		
@@ -22837,7 +24129,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactLibraryType"
-    // InternalSoftGalleryLanguage.g:9088:1: entryRuleReactLibraryType returns [String current=null] : iv_ruleReactLibraryType= ruleReactLibraryType EOF ;
+    // InternalSoftGalleryLanguage.g:9619:1: entryRuleReactLibraryType returns [String current=null] : iv_ruleReactLibraryType= ruleReactLibraryType EOF ;
     public final String entryRuleReactLibraryType() throws RecognitionException {
         String current = null;
 
@@ -22845,8 +24137,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9088:56: (iv_ruleReactLibraryType= ruleReactLibraryType EOF )
-            // InternalSoftGalleryLanguage.g:9089:2: iv_ruleReactLibraryType= ruleReactLibraryType EOF
+            // InternalSoftGalleryLanguage.g:9619:56: (iv_ruleReactLibraryType= ruleReactLibraryType EOF )
+            // InternalSoftGalleryLanguage.g:9620:2: iv_ruleReactLibraryType= ruleReactLibraryType EOF
             {
              newCompositeNode(grammarAccess.getReactLibraryTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -22873,7 +24165,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactLibraryType"
-    // InternalSoftGalleryLanguage.g:9095:1: ruleReactLibraryType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' ) ;
+    // InternalSoftGalleryLanguage.g:9626:1: ruleReactLibraryType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' ) ;
     public final AntlrDatatypeRuleToken ruleReactLibraryType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -22883,38 +24175,38 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9101:2: ( (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' ) )
-            // InternalSoftGalleryLanguage.g:9102:2: (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' )
+            // InternalSoftGalleryLanguage.g:9632:2: ( (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' ) )
+            // InternalSoftGalleryLanguage.g:9633:2: (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' )
             {
-            // InternalSoftGalleryLanguage.g:9102:2: (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' )
+            // InternalSoftGalleryLanguage.g:9633:2: (kw= 'ReactDesign' | kw= 'ReactRouting' | kw= 'ComponentManagement' | kw= 'StoreManagement' | kw= 'ReactDeployment' | kw= 'ConfigurationLibrary' )
             int alt72=6;
             switch ( input.LA(1) ) {
-            case 203:
+            case 209:
                 {
                 alt72=1;
                 }
                 break;
-            case 204:
+            case 210:
                 {
                 alt72=2;
                 }
                 break;
-            case 205:
+            case 211:
                 {
                 alt72=3;
                 }
                 break;
-            case 206:
+            case 212:
                 {
                 alt72=4;
                 }
                 break;
-            case 207:
+            case 213:
                 {
                 alt72=5;
                 }
                 break;
-            case 208:
+            case 214:
                 {
                 alt72=6;
                 }
@@ -22928,9 +24220,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             switch (alt72) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:9103:3: kw= 'ReactDesign'
+                    // InternalSoftGalleryLanguage.g:9634:3: kw= 'ReactDesign'
                     {
-                    kw=(Token)match(input,203,FOLLOW_2); 
+                    kw=(Token)match(input,209,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactLibraryTypeAccess().getReactDesignKeyword_0());
@@ -22939,9 +24231,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:9109:3: kw= 'ReactRouting'
+                    // InternalSoftGalleryLanguage.g:9640:3: kw= 'ReactRouting'
                     {
-                    kw=(Token)match(input,204,FOLLOW_2); 
+                    kw=(Token)match(input,210,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactLibraryTypeAccess().getReactRoutingKeyword_1());
@@ -22950,9 +24242,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 3 :
-                    // InternalSoftGalleryLanguage.g:9115:3: kw= 'ComponentManagement'
+                    // InternalSoftGalleryLanguage.g:9646:3: kw= 'ComponentManagement'
                     {
-                    kw=(Token)match(input,205,FOLLOW_2); 
+                    kw=(Token)match(input,211,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactLibraryTypeAccess().getComponentManagementKeyword_2());
@@ -22961,9 +24253,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 4 :
-                    // InternalSoftGalleryLanguage.g:9121:3: kw= 'StoreManagement'
+                    // InternalSoftGalleryLanguage.g:9652:3: kw= 'StoreManagement'
                     {
-                    kw=(Token)match(input,206,FOLLOW_2); 
+                    kw=(Token)match(input,212,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactLibraryTypeAccess().getStoreManagementKeyword_3());
@@ -22972,9 +24264,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 5 :
-                    // InternalSoftGalleryLanguage.g:9127:3: kw= 'ReactDeployment'
+                    // InternalSoftGalleryLanguage.g:9658:3: kw= 'ReactDeployment'
                     {
-                    kw=(Token)match(input,207,FOLLOW_2); 
+                    kw=(Token)match(input,213,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactLibraryTypeAccess().getReactDeploymentKeyword_4());
@@ -22983,9 +24275,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 6 :
-                    // InternalSoftGalleryLanguage.g:9133:3: kw= 'ConfigurationLibrary'
+                    // InternalSoftGalleryLanguage.g:9664:3: kw= 'ConfigurationLibrary'
                     {
-                    kw=(Token)match(input,208,FOLLOW_2); 
+                    kw=(Token)match(input,214,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactLibraryTypeAccess().getConfigurationLibraryKeyword_5());
@@ -23016,7 +24308,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactInfo"
-    // InternalSoftGalleryLanguage.g:9142:1: entryRuleReactInfo returns [EObject current=null] : iv_ruleReactInfo= ruleReactInfo EOF ;
+    // InternalSoftGalleryLanguage.g:9673:1: entryRuleReactInfo returns [EObject current=null] : iv_ruleReactInfo= ruleReactInfo EOF ;
     public final EObject entryRuleReactInfo() throws RecognitionException {
         EObject current = null;
 
@@ -23024,8 +24316,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9142:50: (iv_ruleReactInfo= ruleReactInfo EOF )
-            // InternalSoftGalleryLanguage.g:9143:2: iv_ruleReactInfo= ruleReactInfo EOF
+            // InternalSoftGalleryLanguage.g:9673:50: (iv_ruleReactInfo= ruleReactInfo EOF )
+            // InternalSoftGalleryLanguage.g:9674:2: iv_ruleReactInfo= ruleReactInfo EOF
             {
              newCompositeNode(grammarAccess.getReactInfoRule()); 
             pushFollow(FOLLOW_1);
@@ -23052,7 +24344,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactInfo"
-    // InternalSoftGalleryLanguage.g:9149:1: ruleReactInfo returns [EObject current=null] : (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' ) ;
+    // InternalSoftGalleryLanguage.g:9680:1: ruleReactInfo returns [EObject current=null] : (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' ) ;
     public final EObject ruleReactInfo() throws RecognitionException {
         EObject current = null;
 
@@ -23067,13 +24359,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9155:2: ( (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' ) )
-            // InternalSoftGalleryLanguage.g:9156:2: (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:9686:2: ( (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' ) )
+            // InternalSoftGalleryLanguage.g:9687:2: (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' )
             {
-            // InternalSoftGalleryLanguage.g:9156:2: (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' )
-            // InternalSoftGalleryLanguage.g:9157:3: otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}'
+            // InternalSoftGalleryLanguage.g:9687:2: (otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}' )
+            // InternalSoftGalleryLanguage.g:9688:3: otherlv_0= 'ReactInformation' otherlv_1= ':' otherlv_2= '{' ( (lv_reactinformation_3_0= ruleReactInformation ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,209,FOLLOW_3); 
+            otherlv_0=(Token)match(input,215,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactInfoAccess().getReactInformationKeyword_0());
             		
@@ -23081,33 +24373,33 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getReactInfoAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_172); 
+            otherlv_2=(Token)match(input,13,FOLLOW_175); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactInfoAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:9169:3: ( (lv_reactinformation_3_0= ruleReactInformation ) )+
+            // InternalSoftGalleryLanguage.g:9700:3: ( (lv_reactinformation_3_0= ruleReactInformation ) )+
             int cnt73=0;
             loop73:
             do {
                 int alt73=2;
                 int LA73_0 = input.LA(1);
 
-                if ( ((LA73_0>=211 && LA73_0<=212)) ) {
+                if ( ((LA73_0>=217 && LA73_0<=218)) ) {
                     alt73=1;
                 }
 
 
                 switch (alt73) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9170:4: (lv_reactinformation_3_0= ruleReactInformation )
+            	    // InternalSoftGalleryLanguage.g:9701:4: (lv_reactinformation_3_0= ruleReactInformation )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9170:4: (lv_reactinformation_3_0= ruleReactInformation )
-            	    // InternalSoftGalleryLanguage.g:9171:5: lv_reactinformation_3_0= ruleReactInformation
+            	    // InternalSoftGalleryLanguage.g:9701:4: (lv_reactinformation_3_0= ruleReactInformation )
+            	    // InternalSoftGalleryLanguage.g:9702:5: lv_reactinformation_3_0= ruleReactInformation
             	    {
 
             	    					newCompositeNode(grammarAccess.getReactInfoAccess().getReactinformationReactInformationParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_173);
+            	    pushFollow(FOLLOW_176);
             	    lv_reactinformation_3_0=ruleReactInformation();
 
             	    state._fsp--;
@@ -23166,7 +24458,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactInformation"
-    // InternalSoftGalleryLanguage.g:9196:1: entryRuleReactInformation returns [EObject current=null] : iv_ruleReactInformation= ruleReactInformation EOF ;
+    // InternalSoftGalleryLanguage.g:9727:1: entryRuleReactInformation returns [EObject current=null] : iv_ruleReactInformation= ruleReactInformation EOF ;
     public final EObject entryRuleReactInformation() throws RecognitionException {
         EObject current = null;
 
@@ -23174,8 +24466,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9196:57: (iv_ruleReactInformation= ruleReactInformation EOF )
-            // InternalSoftGalleryLanguage.g:9197:2: iv_ruleReactInformation= ruleReactInformation EOF
+            // InternalSoftGalleryLanguage.g:9727:57: (iv_ruleReactInformation= ruleReactInformation EOF )
+            // InternalSoftGalleryLanguage.g:9728:2: iv_ruleReactInformation= ruleReactInformation EOF
             {
              newCompositeNode(grammarAccess.getReactInformationRule()); 
             pushFollow(FOLLOW_1);
@@ -23202,7 +24494,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactInformation"
-    // InternalSoftGalleryLanguage.g:9203:1: ruleReactInformation returns [EObject current=null] : ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' ) ;
+    // InternalSoftGalleryLanguage.g:9734:1: ruleReactInformation returns [EObject current=null] : ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' ) ;
     public final EObject ruleReactInformation() throws RecognitionException {
         EObject current = null;
 
@@ -23213,11 +24505,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9209:2: ( ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' ) )
-            // InternalSoftGalleryLanguage.g:9210:2: ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' )
+            // InternalSoftGalleryLanguage.g:9740:2: ( ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' ) )
+            // InternalSoftGalleryLanguage.g:9741:2: ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' )
             {
-            // InternalSoftGalleryLanguage.g:9210:2: ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' )
-            // InternalSoftGalleryLanguage.g:9211:3: ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent'
+            // InternalSoftGalleryLanguage.g:9741:2: ( ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent' )
+            // InternalSoftGalleryLanguage.g:9742:3: ruleReactInformationType ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'InformationContent'
             {
 
             			newCompositeNode(grammarAccess.getReactInformationAccess().getReactInformationTypeParserRuleCall_0());
@@ -23230,13 +24522,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			afterParserOrEnumRuleCall();
             		
-            // InternalSoftGalleryLanguage.g:9218:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9219:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9749:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9750:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9219:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9220:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9750:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9751:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_174); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_177); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getReactInformationAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -23256,7 +24548,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_2=(Token)match(input,210,FOLLOW_2); 
+            otherlv_2=(Token)match(input,216,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReactInformationAccess().getInformationContentKeyword_2());
             		
@@ -23283,7 +24575,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleReactInformationType"
-    // InternalSoftGalleryLanguage.g:9244:1: entryRuleReactInformationType returns [String current=null] : iv_ruleReactInformationType= ruleReactInformationType EOF ;
+    // InternalSoftGalleryLanguage.g:9775:1: entryRuleReactInformationType returns [String current=null] : iv_ruleReactInformationType= ruleReactInformationType EOF ;
     public final String entryRuleReactInformationType() throws RecognitionException {
         String current = null;
 
@@ -23291,8 +24583,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9244:60: (iv_ruleReactInformationType= ruleReactInformationType EOF )
-            // InternalSoftGalleryLanguage.g:9245:2: iv_ruleReactInformationType= ruleReactInformationType EOF
+            // InternalSoftGalleryLanguage.g:9775:60: (iv_ruleReactInformationType= ruleReactInformationType EOF )
+            // InternalSoftGalleryLanguage.g:9776:2: iv_ruleReactInformationType= ruleReactInformationType EOF
             {
              newCompositeNode(grammarAccess.getReactInformationTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -23319,7 +24611,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleReactInformationType"
-    // InternalSoftGalleryLanguage.g:9251:1: ruleReactInformationType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' ) ;
+    // InternalSoftGalleryLanguage.g:9782:1: ruleReactInformationType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' ) ;
     public final AntlrDatatypeRuleToken ruleReactInformationType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -23329,17 +24621,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9257:2: ( (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' ) )
-            // InternalSoftGalleryLanguage.g:9258:2: (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' )
+            // InternalSoftGalleryLanguage.g:9788:2: ( (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' ) )
+            // InternalSoftGalleryLanguage.g:9789:2: (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' )
             {
-            // InternalSoftGalleryLanguage.g:9258:2: (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' )
+            // InternalSoftGalleryLanguage.g:9789:2: (kw= 'ReactReadme' | kw= 'ReactAditionalInfo' )
             int alt74=2;
             int LA74_0 = input.LA(1);
 
-            if ( (LA74_0==211) ) {
+            if ( (LA74_0==217) ) {
                 alt74=1;
             }
-            else if ( (LA74_0==212) ) {
+            else if ( (LA74_0==218) ) {
                 alt74=2;
             }
             else {
@@ -23350,9 +24642,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             }
             switch (alt74) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:9259:3: kw= 'ReactReadme'
+                    // InternalSoftGalleryLanguage.g:9790:3: kw= 'ReactReadme'
                     {
-                    kw=(Token)match(input,211,FOLLOW_2); 
+                    kw=(Token)match(input,217,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactInformationTypeAccess().getReactReadmeKeyword_0());
@@ -23361,9 +24653,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:9265:3: kw= 'ReactAditionalInfo'
+                    // InternalSoftGalleryLanguage.g:9796:3: kw= 'ReactAditionalInfo'
                     {
-                    kw=(Token)match(input,212,FOLLOW_2); 
+                    kw=(Token)match(input,218,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getReactInformationTypeAccess().getReactAditionalInfoKeyword_1());
@@ -23394,7 +24686,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePostgreSQL"
-    // InternalSoftGalleryLanguage.g:9274:1: entryRulePostgreSQL returns [EObject current=null] : iv_rulePostgreSQL= rulePostgreSQL EOF ;
+    // InternalSoftGalleryLanguage.g:9805:1: entryRulePostgreSQL returns [EObject current=null] : iv_rulePostgreSQL= rulePostgreSQL EOF ;
     public final EObject entryRulePostgreSQL() throws RecognitionException {
         EObject current = null;
 
@@ -23402,8 +24694,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9274:51: (iv_rulePostgreSQL= rulePostgreSQL EOF )
-            // InternalSoftGalleryLanguage.g:9275:2: iv_rulePostgreSQL= rulePostgreSQL EOF
+            // InternalSoftGalleryLanguage.g:9805:51: (iv_rulePostgreSQL= rulePostgreSQL EOF )
+            // InternalSoftGalleryLanguage.g:9806:2: iv_rulePostgreSQL= rulePostgreSQL EOF
             {
              newCompositeNode(grammarAccess.getPostgreSQLRule()); 
             pushFollow(FOLLOW_1);
@@ -23430,7 +24722,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePostgreSQL"
-    // InternalSoftGalleryLanguage.g:9281:1: rulePostgreSQL returns [EObject current=null] : (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' ) ;
+    // InternalSoftGalleryLanguage.g:9812:1: rulePostgreSQL returns [EObject current=null] : (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' ) ;
     public final EObject rulePostgreSQL() throws RecognitionException {
         EObject current = null;
 
@@ -23446,21 +24738,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9287:2: ( (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' ) )
-            // InternalSoftGalleryLanguage.g:9288:2: (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:9818:2: ( (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' ) )
+            // InternalSoftGalleryLanguage.g:9819:2: (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' )
             {
-            // InternalSoftGalleryLanguage.g:9288:2: (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' )
-            // InternalSoftGalleryLanguage.g:9289:3: otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}'
+            // InternalSoftGalleryLanguage.g:9819:2: (otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:9820:3: otherlv_0= 'PostgreSQL' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleCluster ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,213,FOLLOW_9); 
+            otherlv_0=(Token)match(input,219,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPostgreSQLAccess().getPostgreSQLKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9293:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9294:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9824:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9825:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9294:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9295:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9825:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9826:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -23486,15 +24778,15 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getPostgreSQLAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_175); 
+            otherlv_3=(Token)match(input,13,FOLLOW_178); 
 
             			newLeafNode(otherlv_3, grammarAccess.getPostgreSQLAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:9319:3: ( (lv_elements_4_0= ruleCluster ) )
-            // InternalSoftGalleryLanguage.g:9320:4: (lv_elements_4_0= ruleCluster )
+            // InternalSoftGalleryLanguage.g:9850:3: ( (lv_elements_4_0= ruleCluster ) )
+            // InternalSoftGalleryLanguage.g:9851:4: (lv_elements_4_0= ruleCluster )
             {
-            // InternalSoftGalleryLanguage.g:9320:4: (lv_elements_4_0= ruleCluster )
-            // InternalSoftGalleryLanguage.g:9321:5: lv_elements_4_0= ruleCluster
+            // InternalSoftGalleryLanguage.g:9851:4: (lv_elements_4_0= ruleCluster )
+            // InternalSoftGalleryLanguage.g:9852:5: lv_elements_4_0= ruleCluster
             {
 
             					newCompositeNode(grammarAccess.getPostgreSQLAccess().getElementsClusterParserRuleCall_4_0());
@@ -23548,7 +24840,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleCluster"
-    // InternalSoftGalleryLanguage.g:9346:1: entryRuleCluster returns [EObject current=null] : iv_ruleCluster= ruleCluster EOF ;
+    // InternalSoftGalleryLanguage.g:9877:1: entryRuleCluster returns [EObject current=null] : iv_ruleCluster= ruleCluster EOF ;
     public final EObject entryRuleCluster() throws RecognitionException {
         EObject current = null;
 
@@ -23556,8 +24848,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9346:48: (iv_ruleCluster= ruleCluster EOF )
-            // InternalSoftGalleryLanguage.g:9347:2: iv_ruleCluster= ruleCluster EOF
+            // InternalSoftGalleryLanguage.g:9877:48: (iv_ruleCluster= ruleCluster EOF )
+            // InternalSoftGalleryLanguage.g:9878:2: iv_ruleCluster= ruleCluster EOF
             {
              newCompositeNode(grammarAccess.getClusterRule()); 
             pushFollow(FOLLOW_1);
@@ -23584,7 +24876,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleCluster"
-    // InternalSoftGalleryLanguage.g:9353:1: ruleCluster returns [EObject current=null] : (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:9884:1: ruleCluster returns [EObject current=null] : (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ ) ;
     public final EObject ruleCluster() throws RecognitionException {
         EObject current = null;
 
@@ -23598,26 +24890,26 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9359:2: ( (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ ) )
-            // InternalSoftGalleryLanguage.g:9360:2: (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ )
+            // InternalSoftGalleryLanguage.g:9890:2: ( (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ ) )
+            // InternalSoftGalleryLanguage.g:9891:2: (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:9360:2: (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ )
-            // InternalSoftGalleryLanguage.g:9361:3: otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+
+            // InternalSoftGalleryLanguage.g:9891:2: (otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+ )
+            // InternalSoftGalleryLanguage.g:9892:3: otherlv_0= 'Database' ( (lv_elements_1_0= ruleDatabase ) ) ( (lv_elements_2_0= rulePostgresUser ) )+
             {
-            otherlv_0=(Token)match(input,214,FOLLOW_176); 
+            otherlv_0=(Token)match(input,220,FOLLOW_179); 
 
             			newLeafNode(otherlv_0, grammarAccess.getClusterAccess().getDatabaseKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9365:3: ( (lv_elements_1_0= ruleDatabase ) )
-            // InternalSoftGalleryLanguage.g:9366:4: (lv_elements_1_0= ruleDatabase )
+            // InternalSoftGalleryLanguage.g:9896:3: ( (lv_elements_1_0= ruleDatabase ) )
+            // InternalSoftGalleryLanguage.g:9897:4: (lv_elements_1_0= ruleDatabase )
             {
-            // InternalSoftGalleryLanguage.g:9366:4: (lv_elements_1_0= ruleDatabase )
-            // InternalSoftGalleryLanguage.g:9367:5: lv_elements_1_0= ruleDatabase
+            // InternalSoftGalleryLanguage.g:9897:4: (lv_elements_1_0= ruleDatabase )
+            // InternalSoftGalleryLanguage.g:9898:5: lv_elements_1_0= ruleDatabase
             {
 
             					newCompositeNode(grammarAccess.getClusterAccess().getElementsDatabaseParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_177);
+            pushFollow(FOLLOW_180);
             lv_elements_1_0=ruleDatabase();
 
             state._fsp--;
@@ -23639,29 +24931,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:9384:3: ( (lv_elements_2_0= rulePostgresUser ) )+
+            // InternalSoftGalleryLanguage.g:9915:3: ( (lv_elements_2_0= rulePostgresUser ) )+
             int cnt75=0;
             loop75:
             do {
                 int alt75=2;
                 int LA75_0 = input.LA(1);
 
-                if ( (LA75_0==229) ) {
+                if ( (LA75_0==235) ) {
                     alt75=1;
                 }
 
 
                 switch (alt75) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9385:4: (lv_elements_2_0= rulePostgresUser )
+            	    // InternalSoftGalleryLanguage.g:9916:4: (lv_elements_2_0= rulePostgresUser )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9385:4: (lv_elements_2_0= rulePostgresUser )
-            	    // InternalSoftGalleryLanguage.g:9386:5: lv_elements_2_0= rulePostgresUser
+            	    // InternalSoftGalleryLanguage.g:9916:4: (lv_elements_2_0= rulePostgresUser )
+            	    // InternalSoftGalleryLanguage.g:9917:5: lv_elements_2_0= rulePostgresUser
             	    {
 
             	    					newCompositeNode(grammarAccess.getClusterAccess().getElementsPostgresUserParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_178);
+            	    pushFollow(FOLLOW_181);
             	    lv_elements_2_0=rulePostgresUser();
 
             	    state._fsp--;
@@ -23716,7 +25008,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleDatabase"
-    // InternalSoftGalleryLanguage.g:9407:1: entryRuleDatabase returns [EObject current=null] : iv_ruleDatabase= ruleDatabase EOF ;
+    // InternalSoftGalleryLanguage.g:9938:1: entryRuleDatabase returns [EObject current=null] : iv_ruleDatabase= ruleDatabase EOF ;
     public final EObject entryRuleDatabase() throws RecognitionException {
         EObject current = null;
 
@@ -23724,8 +25016,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9407:49: (iv_ruleDatabase= ruleDatabase EOF )
-            // InternalSoftGalleryLanguage.g:9408:2: iv_ruleDatabase= ruleDatabase EOF
+            // InternalSoftGalleryLanguage.g:9938:49: (iv_ruleDatabase= ruleDatabase EOF )
+            // InternalSoftGalleryLanguage.g:9939:2: iv_ruleDatabase= ruleDatabase EOF
             {
              newCompositeNode(grammarAccess.getDatabaseRule()); 
             pushFollow(FOLLOW_1);
@@ -23752,7 +25044,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleDatabase"
-    // InternalSoftGalleryLanguage.g:9414:1: ruleDatabase returns [EObject current=null] : (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) ) ;
+    // InternalSoftGalleryLanguage.g:9945:1: ruleDatabase returns [EObject current=null] : (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) ) ;
     public final EObject ruleDatabase() throws RecognitionException {
         EObject current = null;
 
@@ -23765,23 +25057,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9420:2: ( (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) ) )
-            // InternalSoftGalleryLanguage.g:9421:2: (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) )
+            // InternalSoftGalleryLanguage.g:9951:2: ( (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) ) )
+            // InternalSoftGalleryLanguage.g:9952:2: (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9421:2: (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) )
-            // InternalSoftGalleryLanguage.g:9422:3: otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) )
+            // InternalSoftGalleryLanguage.g:9952:2: (otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) ) )
+            // InternalSoftGalleryLanguage.g:9953:3: otherlv_0= 'Schema' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleSchema ) )
             {
-            otherlv_0=(Token)match(input,215,FOLLOW_9); 
+            otherlv_0=(Token)match(input,221,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDatabaseAccess().getSchemaKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9426:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9427:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9957:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:9958:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9427:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9428:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:9958:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:9959:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_179); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_182); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getDatabaseAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -23801,11 +25093,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:9444:3: ( (lv_elements_2_0= ruleSchema ) )
-            // InternalSoftGalleryLanguage.g:9445:4: (lv_elements_2_0= ruleSchema )
+            // InternalSoftGalleryLanguage.g:9975:3: ( (lv_elements_2_0= ruleSchema ) )
+            // InternalSoftGalleryLanguage.g:9976:4: (lv_elements_2_0= ruleSchema )
             {
-            // InternalSoftGalleryLanguage.g:9445:4: (lv_elements_2_0= ruleSchema )
-            // InternalSoftGalleryLanguage.g:9446:5: lv_elements_2_0= ruleSchema
+            // InternalSoftGalleryLanguage.g:9976:4: (lv_elements_2_0= ruleSchema )
+            // InternalSoftGalleryLanguage.g:9977:5: lv_elements_2_0= ruleSchema
             {
 
             					newCompositeNode(grammarAccess.getDatabaseAccess().getElementsSchemaParserRuleCall_2_0());
@@ -23855,7 +25147,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleSchema"
-    // InternalSoftGalleryLanguage.g:9467:1: entryRuleSchema returns [EObject current=null] : iv_ruleSchema= ruleSchema EOF ;
+    // InternalSoftGalleryLanguage.g:9998:1: entryRuleSchema returns [EObject current=null] : iv_ruleSchema= ruleSchema EOF ;
     public final EObject entryRuleSchema() throws RecognitionException {
         EObject current = null;
 
@@ -23863,8 +25155,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9467:47: (iv_ruleSchema= ruleSchema EOF )
-            // InternalSoftGalleryLanguage.g:9468:2: iv_ruleSchema= ruleSchema EOF
+            // InternalSoftGalleryLanguage.g:9998:47: (iv_ruleSchema= ruleSchema EOF )
+            // InternalSoftGalleryLanguage.g:9999:2: iv_ruleSchema= ruleSchema EOF
             {
              newCompositeNode(grammarAccess.getSchemaRule()); 
             pushFollow(FOLLOW_1);
@@ -23891,7 +25183,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleSchema"
-    // InternalSoftGalleryLanguage.g:9474:1: ruleSchema returns [EObject current=null] : ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10005:1: ruleSchema returns [EObject current=null] : ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) ) ;
     public final EObject ruleSchema() throws RecognitionException {
         EObject current = null;
 
@@ -23910,34 +25202,34 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9480:2: ( ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) ) )
-            // InternalSoftGalleryLanguage.g:9481:2: ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) )
+            // InternalSoftGalleryLanguage.g:10011:2: ( ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) ) )
+            // InternalSoftGalleryLanguage.g:10012:2: ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9481:2: ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) )
-            // InternalSoftGalleryLanguage.g:9482:3: ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) )
+            // InternalSoftGalleryLanguage.g:10012:2: ( ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) ) )
+            // InternalSoftGalleryLanguage.g:10013:3: ( (lv_elements_0_0= ruleIndex_p ) )* ( (lv_elements_1_0= ruleViewSchema ) )* ( (lv_elements_2_0= ruleTable_p ) )+ ( (lv_elements_3_0= ruleTrigger ) )* ( (lv_elements_4_0= ruleFunction ) )
             {
-            // InternalSoftGalleryLanguage.g:9482:3: ( (lv_elements_0_0= ruleIndex_p ) )*
+            // InternalSoftGalleryLanguage.g:10013:3: ( (lv_elements_0_0= ruleIndex_p ) )*
             loop76:
             do {
                 int alt76=2;
                 int LA76_0 = input.LA(1);
 
-                if ( (LA76_0==216) ) {
+                if ( (LA76_0==222) ) {
                     alt76=1;
                 }
 
 
                 switch (alt76) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9483:4: (lv_elements_0_0= ruleIndex_p )
+            	    // InternalSoftGalleryLanguage.g:10014:4: (lv_elements_0_0= ruleIndex_p )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9483:4: (lv_elements_0_0= ruleIndex_p )
-            	    // InternalSoftGalleryLanguage.g:9484:5: lv_elements_0_0= ruleIndex_p
+            	    // InternalSoftGalleryLanguage.g:10014:4: (lv_elements_0_0= ruleIndex_p )
+            	    // InternalSoftGalleryLanguage.g:10015:5: lv_elements_0_0= ruleIndex_p
             	    {
 
             	    					newCompositeNode(grammarAccess.getSchemaAccess().getElementsIndex_pParserRuleCall_0_0());
             	    				
-            	    pushFollow(FOLLOW_179);
+            	    pushFollow(FOLLOW_182);
             	    lv_elements_0_0=ruleIndex_p();
 
             	    state._fsp--;
@@ -23965,28 +25257,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:9501:3: ( (lv_elements_1_0= ruleViewSchema ) )*
+            // InternalSoftGalleryLanguage.g:10032:3: ( (lv_elements_1_0= ruleViewSchema ) )*
             loop77:
             do {
                 int alt77=2;
                 int LA77_0 = input.LA(1);
 
-                if ( (LA77_0==217) ) {
+                if ( (LA77_0==223) ) {
                     alt77=1;
                 }
 
 
                 switch (alt77) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9502:4: (lv_elements_1_0= ruleViewSchema )
+            	    // InternalSoftGalleryLanguage.g:10033:4: (lv_elements_1_0= ruleViewSchema )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9502:4: (lv_elements_1_0= ruleViewSchema )
-            	    // InternalSoftGalleryLanguage.g:9503:5: lv_elements_1_0= ruleViewSchema
+            	    // InternalSoftGalleryLanguage.g:10033:4: (lv_elements_1_0= ruleViewSchema )
+            	    // InternalSoftGalleryLanguage.g:10034:5: lv_elements_1_0= ruleViewSchema
             	    {
 
             	    					newCompositeNode(grammarAccess.getSchemaAccess().getElementsViewSchemaParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_179);
+            	    pushFollow(FOLLOW_182);
             	    lv_elements_1_0=ruleViewSchema();
 
             	    state._fsp--;
@@ -24014,29 +25306,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:9520:3: ( (lv_elements_2_0= ruleTable_p ) )+
+            // InternalSoftGalleryLanguage.g:10051:3: ( (lv_elements_2_0= ruleTable_p ) )+
             int cnt78=0;
             loop78:
             do {
                 int alt78=2;
                 int LA78_0 = input.LA(1);
 
-                if ( (LA78_0==218) ) {
+                if ( (LA78_0==224) ) {
                     alt78=1;
                 }
 
 
                 switch (alt78) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9521:4: (lv_elements_2_0= ruleTable_p )
+            	    // InternalSoftGalleryLanguage.g:10052:4: (lv_elements_2_0= ruleTable_p )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9521:4: (lv_elements_2_0= ruleTable_p )
-            	    // InternalSoftGalleryLanguage.g:9522:5: lv_elements_2_0= ruleTable_p
+            	    // InternalSoftGalleryLanguage.g:10052:4: (lv_elements_2_0= ruleTable_p )
+            	    // InternalSoftGalleryLanguage.g:10053:5: lv_elements_2_0= ruleTable_p
             	    {
 
             	    					newCompositeNode(grammarAccess.getSchemaAccess().getElementsTable_pParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_180);
+            	    pushFollow(FOLLOW_183);
             	    lv_elements_2_0=ruleTable_p();
 
             	    state._fsp--;
@@ -24068,28 +25360,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 cnt78++;
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:9539:3: ( (lv_elements_3_0= ruleTrigger ) )*
+            // InternalSoftGalleryLanguage.g:10070:3: ( (lv_elements_3_0= ruleTrigger ) )*
             loop79:
             do {
                 int alt79=2;
                 int LA79_0 = input.LA(1);
 
-                if ( (LA79_0==227) ) {
+                if ( (LA79_0==233) ) {
                     alt79=1;
                 }
 
 
                 switch (alt79) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9540:4: (lv_elements_3_0= ruleTrigger )
+            	    // InternalSoftGalleryLanguage.g:10071:4: (lv_elements_3_0= ruleTrigger )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9540:4: (lv_elements_3_0= ruleTrigger )
-            	    // InternalSoftGalleryLanguage.g:9541:5: lv_elements_3_0= ruleTrigger
+            	    // InternalSoftGalleryLanguage.g:10071:4: (lv_elements_3_0= ruleTrigger )
+            	    // InternalSoftGalleryLanguage.g:10072:5: lv_elements_3_0= ruleTrigger
             	    {
 
             	    					newCompositeNode(grammarAccess.getSchemaAccess().getElementsTriggerParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_181);
+            	    pushFollow(FOLLOW_184);
             	    lv_elements_3_0=ruleTrigger();
 
             	    state._fsp--;
@@ -24117,11 +25409,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:9558:3: ( (lv_elements_4_0= ruleFunction ) )
-            // InternalSoftGalleryLanguage.g:9559:4: (lv_elements_4_0= ruleFunction )
+            // InternalSoftGalleryLanguage.g:10089:3: ( (lv_elements_4_0= ruleFunction ) )
+            // InternalSoftGalleryLanguage.g:10090:4: (lv_elements_4_0= ruleFunction )
             {
-            // InternalSoftGalleryLanguage.g:9559:4: (lv_elements_4_0= ruleFunction )
-            // InternalSoftGalleryLanguage.g:9560:5: lv_elements_4_0= ruleFunction
+            // InternalSoftGalleryLanguage.g:10090:4: (lv_elements_4_0= ruleFunction )
+            // InternalSoftGalleryLanguage.g:10091:5: lv_elements_4_0= ruleFunction
             {
 
             					newCompositeNode(grammarAccess.getSchemaAccess().getElementsFunctionParserRuleCall_4_0());
@@ -24171,7 +25463,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleIndex_p"
-    // InternalSoftGalleryLanguage.g:9581:1: entryRuleIndex_p returns [EObject current=null] : iv_ruleIndex_p= ruleIndex_p EOF ;
+    // InternalSoftGalleryLanguage.g:10112:1: entryRuleIndex_p returns [EObject current=null] : iv_ruleIndex_p= ruleIndex_p EOF ;
     public final EObject entryRuleIndex_p() throws RecognitionException {
         EObject current = null;
 
@@ -24179,8 +25471,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9581:48: (iv_ruleIndex_p= ruleIndex_p EOF )
-            // InternalSoftGalleryLanguage.g:9582:2: iv_ruleIndex_p= ruleIndex_p EOF
+            // InternalSoftGalleryLanguage.g:10112:48: (iv_ruleIndex_p= ruleIndex_p EOF )
+            // InternalSoftGalleryLanguage.g:10113:2: iv_ruleIndex_p= ruleIndex_p EOF
             {
              newCompositeNode(grammarAccess.getIndex_pRule()); 
             pushFollow(FOLLOW_1);
@@ -24207,7 +25499,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleIndex_p"
-    // InternalSoftGalleryLanguage.g:9588:1: ruleIndex_p returns [EObject current=null] : (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10119:1: ruleIndex_p returns [EObject current=null] : (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleIndex_p() throws RecognitionException {
         EObject current = null;
 
@@ -24218,21 +25510,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9594:2: ( (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:9595:2: (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10125:2: ( (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10126:2: (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9595:2: (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:9596:3: otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10126:2: (otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10127:3: otherlv_0= 'Index_p' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,216,FOLLOW_9); 
+            otherlv_0=(Token)match(input,222,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIndex_pAccess().getIndex_pKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9600:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9601:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10131:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10132:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9601:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9602:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10132:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10133:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -24277,7 +25569,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleViewSchema"
-    // InternalSoftGalleryLanguage.g:9622:1: entryRuleViewSchema returns [EObject current=null] : iv_ruleViewSchema= ruleViewSchema EOF ;
+    // InternalSoftGalleryLanguage.g:10153:1: entryRuleViewSchema returns [EObject current=null] : iv_ruleViewSchema= ruleViewSchema EOF ;
     public final EObject entryRuleViewSchema() throws RecognitionException {
         EObject current = null;
 
@@ -24285,8 +25577,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9622:51: (iv_ruleViewSchema= ruleViewSchema EOF )
-            // InternalSoftGalleryLanguage.g:9623:2: iv_ruleViewSchema= ruleViewSchema EOF
+            // InternalSoftGalleryLanguage.g:10153:51: (iv_ruleViewSchema= ruleViewSchema EOF )
+            // InternalSoftGalleryLanguage.g:10154:2: iv_ruleViewSchema= ruleViewSchema EOF
             {
              newCompositeNode(grammarAccess.getViewSchemaRule()); 
             pushFollow(FOLLOW_1);
@@ -24313,7 +25605,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleViewSchema"
-    // InternalSoftGalleryLanguage.g:9629:1: ruleViewSchema returns [EObject current=null] : (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10160:1: ruleViewSchema returns [EObject current=null] : (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleViewSchema() throws RecognitionException {
         EObject current = null;
 
@@ -24324,21 +25616,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9635:2: ( (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:9636:2: (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10166:2: ( (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10167:2: (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9636:2: (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:9637:3: otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10167:2: (otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10168:3: otherlv_0= 'ViewSchema' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,217,FOLLOW_9); 
+            otherlv_0=(Token)match(input,223,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getViewSchemaAccess().getViewSchemaKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9641:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9642:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10172:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10173:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9642:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9643:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10173:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10174:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -24383,7 +25675,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleTable_p"
-    // InternalSoftGalleryLanguage.g:9663:1: entryRuleTable_p returns [EObject current=null] : iv_ruleTable_p= ruleTable_p EOF ;
+    // InternalSoftGalleryLanguage.g:10194:1: entryRuleTable_p returns [EObject current=null] : iv_ruleTable_p= ruleTable_p EOF ;
     public final EObject entryRuleTable_p() throws RecognitionException {
         EObject current = null;
 
@@ -24391,8 +25683,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9663:48: (iv_ruleTable_p= ruleTable_p EOF )
-            // InternalSoftGalleryLanguage.g:9664:2: iv_ruleTable_p= ruleTable_p EOF
+            // InternalSoftGalleryLanguage.g:10194:48: (iv_ruleTable_p= ruleTable_p EOF )
+            // InternalSoftGalleryLanguage.g:10195:2: iv_ruleTable_p= ruleTable_p EOF
             {
              newCompositeNode(grammarAccess.getTable_pRule()); 
             pushFollow(FOLLOW_1);
@@ -24419,7 +25711,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleTable_p"
-    // InternalSoftGalleryLanguage.g:9670:1: ruleTable_p returns [EObject current=null] : (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' ) ;
+    // InternalSoftGalleryLanguage.g:10201:1: ruleTable_p returns [EObject current=null] : (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' ) ;
     public final EObject ruleTable_p() throws RecognitionException {
         EObject current = null;
 
@@ -24439,21 +25731,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9676:2: ( (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' ) )
-            // InternalSoftGalleryLanguage.g:9677:2: (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' )
+            // InternalSoftGalleryLanguage.g:10207:2: ( (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' ) )
+            // InternalSoftGalleryLanguage.g:10208:2: (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' )
             {
-            // InternalSoftGalleryLanguage.g:9677:2: (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' )
-            // InternalSoftGalleryLanguage.g:9678:3: otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}'
+            // InternalSoftGalleryLanguage.g:10208:2: (otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}' )
+            // InternalSoftGalleryLanguage.g:10209:3: otherlv_0= 'Table_p' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleForeignKey ) )+ ( (lv_elements_5_0= ruleColumn ) )+ ( (lv_elements_6_0= ruleRow ) )+ otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,218,FOLLOW_9); 
+            otherlv_0=(Token)match(input,224,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTable_pAccess().getTable_pKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9682:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9683:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10213:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10214:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9683:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9684:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10214:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10215:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -24479,33 +25771,33 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getTable_pAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_182); 
+            otherlv_3=(Token)match(input,13,FOLLOW_185); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTable_pAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:9708:3: ( (lv_elements_4_0= ruleForeignKey ) )+
+            // InternalSoftGalleryLanguage.g:10239:3: ( (lv_elements_4_0= ruleForeignKey ) )+
             int cnt80=0;
             loop80:
             do {
                 int alt80=2;
                 int LA80_0 = input.LA(1);
 
-                if ( (LA80_0==219) ) {
+                if ( (LA80_0==225) ) {
                     alt80=1;
                 }
 
 
                 switch (alt80) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9709:4: (lv_elements_4_0= ruleForeignKey )
+            	    // InternalSoftGalleryLanguage.g:10240:4: (lv_elements_4_0= ruleForeignKey )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9709:4: (lv_elements_4_0= ruleForeignKey )
-            	    // InternalSoftGalleryLanguage.g:9710:5: lv_elements_4_0= ruleForeignKey
+            	    // InternalSoftGalleryLanguage.g:10240:4: (lv_elements_4_0= ruleForeignKey )
+            	    // InternalSoftGalleryLanguage.g:10241:5: lv_elements_4_0= ruleForeignKey
             	    {
 
             	    					newCompositeNode(grammarAccess.getTable_pAccess().getElementsForeignKeyParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_183);
+            	    pushFollow(FOLLOW_186);
             	    lv_elements_4_0=ruleForeignKey();
 
             	    state._fsp--;
@@ -24537,29 +25829,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 cnt80++;
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:9727:3: ( (lv_elements_5_0= ruleColumn ) )+
+            // InternalSoftGalleryLanguage.g:10258:3: ( (lv_elements_5_0= ruleColumn ) )+
             int cnt81=0;
             loop81:
             do {
                 int alt81=2;
                 int LA81_0 = input.LA(1);
 
-                if ( (LA81_0==150) ) {
+                if ( (LA81_0==156) ) {
                     alt81=1;
                 }
 
 
                 switch (alt81) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9728:4: (lv_elements_5_0= ruleColumn )
+            	    // InternalSoftGalleryLanguage.g:10259:4: (lv_elements_5_0= ruleColumn )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9728:4: (lv_elements_5_0= ruleColumn )
-            	    // InternalSoftGalleryLanguage.g:9729:5: lv_elements_5_0= ruleColumn
+            	    // InternalSoftGalleryLanguage.g:10259:4: (lv_elements_5_0= ruleColumn )
+            	    // InternalSoftGalleryLanguage.g:10260:5: lv_elements_5_0= ruleColumn
             	    {
 
             	    					newCompositeNode(grammarAccess.getTable_pAccess().getElementsColumnParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_184);
+            	    pushFollow(FOLLOW_187);
             	    lv_elements_5_0=ruleColumn();
 
             	    state._fsp--;
@@ -24591,29 +25883,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 cnt81++;
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:9746:3: ( (lv_elements_6_0= ruleRow ) )+
+            // InternalSoftGalleryLanguage.g:10277:3: ( (lv_elements_6_0= ruleRow ) )+
             int cnt82=0;
             loop82:
             do {
                 int alt82=2;
                 int LA82_0 = input.LA(1);
 
-                if ( (LA82_0==225) ) {
+                if ( (LA82_0==231) ) {
                     alt82=1;
                 }
 
 
                 switch (alt82) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9747:4: (lv_elements_6_0= ruleRow )
+            	    // InternalSoftGalleryLanguage.g:10278:4: (lv_elements_6_0= ruleRow )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9747:4: (lv_elements_6_0= ruleRow )
-            	    // InternalSoftGalleryLanguage.g:9748:5: lv_elements_6_0= ruleRow
+            	    // InternalSoftGalleryLanguage.g:10278:4: (lv_elements_6_0= ruleRow )
+            	    // InternalSoftGalleryLanguage.g:10279:5: lv_elements_6_0= ruleRow
             	    {
 
             	    					newCompositeNode(grammarAccess.getTable_pAccess().getElementsRowParserRuleCall_6_0());
             	    				
-            	    pushFollow(FOLLOW_185);
+            	    pushFollow(FOLLOW_188);
             	    lv_elements_6_0=ruleRow();
 
             	    state._fsp--;
@@ -24672,7 +25964,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleForeignKey"
-    // InternalSoftGalleryLanguage.g:9773:1: entryRuleForeignKey returns [EObject current=null] : iv_ruleForeignKey= ruleForeignKey EOF ;
+    // InternalSoftGalleryLanguage.g:10304:1: entryRuleForeignKey returns [EObject current=null] : iv_ruleForeignKey= ruleForeignKey EOF ;
     public final EObject entryRuleForeignKey() throws RecognitionException {
         EObject current = null;
 
@@ -24680,8 +25972,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9773:51: (iv_ruleForeignKey= ruleForeignKey EOF )
-            // InternalSoftGalleryLanguage.g:9774:2: iv_ruleForeignKey= ruleForeignKey EOF
+            // InternalSoftGalleryLanguage.g:10304:51: (iv_ruleForeignKey= ruleForeignKey EOF )
+            // InternalSoftGalleryLanguage.g:10305:2: iv_ruleForeignKey= ruleForeignKey EOF
             {
              newCompositeNode(grammarAccess.getForeignKeyRule()); 
             pushFollow(FOLLOW_1);
@@ -24708,7 +26000,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleForeignKey"
-    // InternalSoftGalleryLanguage.g:9780:1: ruleForeignKey returns [EObject current=null] : (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10311:1: ruleForeignKey returns [EObject current=null] : (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) ) ;
     public final EObject ruleForeignKey() throws RecognitionException {
         EObject current = null;
 
@@ -24722,26 +26014,26 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9786:2: ( (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) ) )
-            // InternalSoftGalleryLanguage.g:9787:2: (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) )
+            // InternalSoftGalleryLanguage.g:10317:2: ( (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) ) )
+            // InternalSoftGalleryLanguage.g:10318:2: (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9787:2: (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) )
-            // InternalSoftGalleryLanguage.g:9788:3: otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) )
+            // InternalSoftGalleryLanguage.g:10318:2: (otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) ) )
+            // InternalSoftGalleryLanguage.g:10319:3: otherlv_0= 'ForeignKey' ( (lv_elements_1_0= ruleForeignKey_n ) ) ( (lv_elements_2_0= ruleForeignKeyRef ) )
             {
-            otherlv_0=(Token)match(input,219,FOLLOW_186); 
+            otherlv_0=(Token)match(input,225,FOLLOW_189); 
 
             			newLeafNode(otherlv_0, grammarAccess.getForeignKeyAccess().getForeignKeyKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9792:3: ( (lv_elements_1_0= ruleForeignKey_n ) )
-            // InternalSoftGalleryLanguage.g:9793:4: (lv_elements_1_0= ruleForeignKey_n )
+            // InternalSoftGalleryLanguage.g:10323:3: ( (lv_elements_1_0= ruleForeignKey_n ) )
+            // InternalSoftGalleryLanguage.g:10324:4: (lv_elements_1_0= ruleForeignKey_n )
             {
-            // InternalSoftGalleryLanguage.g:9793:4: (lv_elements_1_0= ruleForeignKey_n )
-            // InternalSoftGalleryLanguage.g:9794:5: lv_elements_1_0= ruleForeignKey_n
+            // InternalSoftGalleryLanguage.g:10324:4: (lv_elements_1_0= ruleForeignKey_n )
+            // InternalSoftGalleryLanguage.g:10325:5: lv_elements_1_0= ruleForeignKey_n
             {
 
             					newCompositeNode(grammarAccess.getForeignKeyAccess().getElementsForeignKey_nParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_187);
+            pushFollow(FOLLOW_190);
             lv_elements_1_0=ruleForeignKey_n();
 
             state._fsp--;
@@ -24763,11 +26055,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:9811:3: ( (lv_elements_2_0= ruleForeignKeyRef ) )
-            // InternalSoftGalleryLanguage.g:9812:4: (lv_elements_2_0= ruleForeignKeyRef )
+            // InternalSoftGalleryLanguage.g:10342:3: ( (lv_elements_2_0= ruleForeignKeyRef ) )
+            // InternalSoftGalleryLanguage.g:10343:4: (lv_elements_2_0= ruleForeignKeyRef )
             {
-            // InternalSoftGalleryLanguage.g:9812:4: (lv_elements_2_0= ruleForeignKeyRef )
-            // InternalSoftGalleryLanguage.g:9813:5: lv_elements_2_0= ruleForeignKeyRef
+            // InternalSoftGalleryLanguage.g:10343:4: (lv_elements_2_0= ruleForeignKeyRef )
+            // InternalSoftGalleryLanguage.g:10344:5: lv_elements_2_0= ruleForeignKeyRef
             {
 
             					newCompositeNode(grammarAccess.getForeignKeyAccess().getElementsForeignKeyRefParserRuleCall_2_0());
@@ -24817,7 +26109,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleForeignKey_n"
-    // InternalSoftGalleryLanguage.g:9834:1: entryRuleForeignKey_n returns [EObject current=null] : iv_ruleForeignKey_n= ruleForeignKey_n EOF ;
+    // InternalSoftGalleryLanguage.g:10365:1: entryRuleForeignKey_n returns [EObject current=null] : iv_ruleForeignKey_n= ruleForeignKey_n EOF ;
     public final EObject entryRuleForeignKey_n() throws RecognitionException {
         EObject current = null;
 
@@ -24825,8 +26117,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9834:53: (iv_ruleForeignKey_n= ruleForeignKey_n EOF )
-            // InternalSoftGalleryLanguage.g:9835:2: iv_ruleForeignKey_n= ruleForeignKey_n EOF
+            // InternalSoftGalleryLanguage.g:10365:53: (iv_ruleForeignKey_n= ruleForeignKey_n EOF )
+            // InternalSoftGalleryLanguage.g:10366:2: iv_ruleForeignKey_n= ruleForeignKey_n EOF
             {
              newCompositeNode(grammarAccess.getForeignKey_nRule()); 
             pushFollow(FOLLOW_1);
@@ -24853,7 +26145,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleForeignKey_n"
-    // InternalSoftGalleryLanguage.g:9841:1: ruleForeignKey_n returns [EObject current=null] : (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10372:1: ruleForeignKey_n returns [EObject current=null] : (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleForeignKey_n() throws RecognitionException {
         EObject current = null;
 
@@ -24864,21 +26156,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9847:2: ( (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:9848:2: (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10378:2: ( (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10379:2: (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9848:2: (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:9849:3: otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10379:2: (otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10380:3: otherlv_0= 'ForeingKeyName' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,220,FOLLOW_9); 
+            otherlv_0=(Token)match(input,226,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getForeignKey_nAccess().getForeingKeyNameKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9853:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9854:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10384:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10385:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9854:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9855:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10385:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10386:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -24923,7 +26215,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleForeignKeyRef"
-    // InternalSoftGalleryLanguage.g:9875:1: entryRuleForeignKeyRef returns [EObject current=null] : iv_ruleForeignKeyRef= ruleForeignKeyRef EOF ;
+    // InternalSoftGalleryLanguage.g:10406:1: entryRuleForeignKeyRef returns [EObject current=null] : iv_ruleForeignKeyRef= ruleForeignKeyRef EOF ;
     public final EObject entryRuleForeignKeyRef() throws RecognitionException {
         EObject current = null;
 
@@ -24931,8 +26223,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9875:54: (iv_ruleForeignKeyRef= ruleForeignKeyRef EOF )
-            // InternalSoftGalleryLanguage.g:9876:2: iv_ruleForeignKeyRef= ruleForeignKeyRef EOF
+            // InternalSoftGalleryLanguage.g:10406:54: (iv_ruleForeignKeyRef= ruleForeignKeyRef EOF )
+            // InternalSoftGalleryLanguage.g:10407:2: iv_ruleForeignKeyRef= ruleForeignKeyRef EOF
             {
              newCompositeNode(grammarAccess.getForeignKeyRefRule()); 
             pushFollow(FOLLOW_1);
@@ -24959,7 +26251,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleForeignKeyRef"
-    // InternalSoftGalleryLanguage.g:9882:1: ruleForeignKeyRef returns [EObject current=null] : ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* ) ;
+    // InternalSoftGalleryLanguage.g:10413:1: ruleForeignKeyRef returns [EObject current=null] : ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* ) ;
     public final EObject ruleForeignKeyRef() throws RecognitionException {
         EObject current = null;
 
@@ -24971,14 +26263,14 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9888:2: ( ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* ) )
-            // InternalSoftGalleryLanguage.g:9889:2: ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* )
+            // InternalSoftGalleryLanguage.g:10419:2: ( ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* ) )
+            // InternalSoftGalleryLanguage.g:10420:2: ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* )
             {
-            // InternalSoftGalleryLanguage.g:9889:2: ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* )
-            // InternalSoftGalleryLanguage.g:9890:3: () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )*
+            // InternalSoftGalleryLanguage.g:10420:2: ( () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )* )
+            // InternalSoftGalleryLanguage.g:10421:3: () otherlv_1= 'ForeignKeyRef' ( (lv_elements_2_0= ruleRefTable_p ) )*
             {
-            // InternalSoftGalleryLanguage.g:9890:3: ()
-            // InternalSoftGalleryLanguage.g:9891:4: 
+            // InternalSoftGalleryLanguage.g:10421:3: ()
+            // InternalSoftGalleryLanguage.g:10422:4: 
             {
 
             				current = forceCreateModelElement(
@@ -24988,32 +26280,32 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_1=(Token)match(input,221,FOLLOW_188); 
+            otherlv_1=(Token)match(input,227,FOLLOW_191); 
 
             			newLeafNode(otherlv_1, grammarAccess.getForeignKeyRefAccess().getForeignKeyRefKeyword_1());
             		
-            // InternalSoftGalleryLanguage.g:9901:3: ( (lv_elements_2_0= ruleRefTable_p ) )*
+            // InternalSoftGalleryLanguage.g:10432:3: ( (lv_elements_2_0= ruleRefTable_p ) )*
             loop83:
             do {
                 int alt83=2;
                 int LA83_0 = input.LA(1);
 
-                if ( (LA83_0==222) ) {
+                if ( (LA83_0==228) ) {
                     alt83=1;
                 }
 
 
                 switch (alt83) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:9902:4: (lv_elements_2_0= ruleRefTable_p )
+            	    // InternalSoftGalleryLanguage.g:10433:4: (lv_elements_2_0= ruleRefTable_p )
             	    {
-            	    // InternalSoftGalleryLanguage.g:9902:4: (lv_elements_2_0= ruleRefTable_p )
-            	    // InternalSoftGalleryLanguage.g:9903:5: lv_elements_2_0= ruleRefTable_p
+            	    // InternalSoftGalleryLanguage.g:10433:4: (lv_elements_2_0= ruleRefTable_p )
+            	    // InternalSoftGalleryLanguage.g:10434:5: lv_elements_2_0= ruleRefTable_p
             	    {
 
             	    					newCompositeNode(grammarAccess.getForeignKeyRefAccess().getElementsRefTable_pParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_188);
+            	    pushFollow(FOLLOW_191);
             	    lv_elements_2_0=ruleRefTable_p();
 
             	    state._fsp--;
@@ -25064,7 +26356,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleRefTable_p"
-    // InternalSoftGalleryLanguage.g:9924:1: entryRuleRefTable_p returns [EObject current=null] : iv_ruleRefTable_p= ruleRefTable_p EOF ;
+    // InternalSoftGalleryLanguage.g:10455:1: entryRuleRefTable_p returns [EObject current=null] : iv_ruleRefTable_p= ruleRefTable_p EOF ;
     public final EObject entryRuleRefTable_p() throws RecognitionException {
         EObject current = null;
 
@@ -25072,8 +26364,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9924:51: (iv_ruleRefTable_p= ruleRefTable_p EOF )
-            // InternalSoftGalleryLanguage.g:9925:2: iv_ruleRefTable_p= ruleRefTable_p EOF
+            // InternalSoftGalleryLanguage.g:10455:51: (iv_ruleRefTable_p= ruleRefTable_p EOF )
+            // InternalSoftGalleryLanguage.g:10456:2: iv_ruleRefTable_p= ruleRefTable_p EOF
             {
              newCompositeNode(grammarAccess.getRefTable_pRule()); 
             pushFollow(FOLLOW_1);
@@ -25100,7 +26392,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleRefTable_p"
-    // InternalSoftGalleryLanguage.g:9931:1: ruleRefTable_p returns [EObject current=null] : (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10462:1: ruleRefTable_p returns [EObject current=null] : (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleRefTable_p() throws RecognitionException {
         EObject current = null;
 
@@ -25111,21 +26403,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9937:2: ( (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:9938:2: (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10468:2: ( (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10469:2: (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:9938:2: (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:9939:3: otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10469:2: (otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10470:3: otherlv_0= 'RefTable_p' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,222,FOLLOW_9); 
+            otherlv_0=(Token)match(input,228,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRefTable_pAccess().getRefTable_pKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9943:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9944:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10474:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10475:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9944:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9945:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10475:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10476:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -25170,7 +26462,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleColumn"
-    // InternalSoftGalleryLanguage.g:9965:1: entryRuleColumn returns [EObject current=null] : iv_ruleColumn= ruleColumn EOF ;
+    // InternalSoftGalleryLanguage.g:10496:1: entryRuleColumn returns [EObject current=null] : iv_ruleColumn= ruleColumn EOF ;
     public final EObject entryRuleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -25178,8 +26470,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:9965:47: (iv_ruleColumn= ruleColumn EOF )
-            // InternalSoftGalleryLanguage.g:9966:2: iv_ruleColumn= ruleColumn EOF
+            // InternalSoftGalleryLanguage.g:10496:47: (iv_ruleColumn= ruleColumn EOF )
+            // InternalSoftGalleryLanguage.g:10497:2: iv_ruleColumn= ruleColumn EOF
             {
              newCompositeNode(grammarAccess.getColumnRule()); 
             pushFollow(FOLLOW_1);
@@ -25206,7 +26498,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleColumn"
-    // InternalSoftGalleryLanguage.g:9972:1: ruleColumn returns [EObject current=null] : (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* ) ;
+    // InternalSoftGalleryLanguage.g:10503:1: ruleColumn returns [EObject current=null] : (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* ) ;
     public final EObject ruleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -25221,23 +26513,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:9978:2: ( (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* ) )
-            // InternalSoftGalleryLanguage.g:9979:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* )
+            // InternalSoftGalleryLanguage.g:10509:2: ( (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* ) )
+            // InternalSoftGalleryLanguage.g:10510:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* )
             {
-            // InternalSoftGalleryLanguage.g:9979:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* )
-            // InternalSoftGalleryLanguage.g:9980:3: otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )*
+            // InternalSoftGalleryLanguage.g:10510:2: (otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )* )
+            // InternalSoftGalleryLanguage.g:10511:3: otherlv_0= 'Column' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleDatatypeDB ) ) ( (lv_elements_3_0= ruleConstraint ) )*
             {
-            otherlv_0=(Token)match(input,150,FOLLOW_9); 
+            otherlv_0=(Token)match(input,156,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getColumnAccess().getColumnKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:9984:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:9985:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10515:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10516:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:9985:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:9986:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10516:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10517:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_189); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_192); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getColumnAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -25257,16 +26549,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10002:3: ( (lv_elements_2_0= ruleDatatypeDB ) )
-            // InternalSoftGalleryLanguage.g:10003:4: (lv_elements_2_0= ruleDatatypeDB )
+            // InternalSoftGalleryLanguage.g:10533:3: ( (lv_elements_2_0= ruleDatatypeDB ) )
+            // InternalSoftGalleryLanguage.g:10534:4: (lv_elements_2_0= ruleDatatypeDB )
             {
-            // InternalSoftGalleryLanguage.g:10003:4: (lv_elements_2_0= ruleDatatypeDB )
-            // InternalSoftGalleryLanguage.g:10004:5: lv_elements_2_0= ruleDatatypeDB
+            // InternalSoftGalleryLanguage.g:10534:4: (lv_elements_2_0= ruleDatatypeDB )
+            // InternalSoftGalleryLanguage.g:10535:5: lv_elements_2_0= ruleDatatypeDB
             {
 
             					newCompositeNode(grammarAccess.getColumnAccess().getElementsDatatypeDBParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_190);
+            pushFollow(FOLLOW_193);
             lv_elements_2_0=ruleDatatypeDB();
 
             state._fsp--;
@@ -25288,28 +26580,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10021:3: ( (lv_elements_3_0= ruleConstraint ) )*
+            // InternalSoftGalleryLanguage.g:10552:3: ( (lv_elements_3_0= ruleConstraint ) )*
             loop84:
             do {
                 int alt84=2;
                 int LA84_0 = input.LA(1);
 
-                if ( (LA84_0==224) ) {
+                if ( (LA84_0==230) ) {
                     alt84=1;
                 }
 
 
                 switch (alt84) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:10022:4: (lv_elements_3_0= ruleConstraint )
+            	    // InternalSoftGalleryLanguage.g:10553:4: (lv_elements_3_0= ruleConstraint )
             	    {
-            	    // InternalSoftGalleryLanguage.g:10022:4: (lv_elements_3_0= ruleConstraint )
-            	    // InternalSoftGalleryLanguage.g:10023:5: lv_elements_3_0= ruleConstraint
+            	    // InternalSoftGalleryLanguage.g:10553:4: (lv_elements_3_0= ruleConstraint )
+            	    // InternalSoftGalleryLanguage.g:10554:5: lv_elements_3_0= ruleConstraint
             	    {
 
             	    					newCompositeNode(grammarAccess.getColumnAccess().getElementsConstraintParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_190);
+            	    pushFollow(FOLLOW_193);
             	    lv_elements_3_0=ruleConstraint();
 
             	    state._fsp--;
@@ -25360,7 +26652,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleDatatypeDB"
-    // InternalSoftGalleryLanguage.g:10044:1: entryRuleDatatypeDB returns [EObject current=null] : iv_ruleDatatypeDB= ruleDatatypeDB EOF ;
+    // InternalSoftGalleryLanguage.g:10575:1: entryRuleDatatypeDB returns [EObject current=null] : iv_ruleDatatypeDB= ruleDatatypeDB EOF ;
     public final EObject entryRuleDatatypeDB() throws RecognitionException {
         EObject current = null;
 
@@ -25368,8 +26660,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10044:51: (iv_ruleDatatypeDB= ruleDatatypeDB EOF )
-            // InternalSoftGalleryLanguage.g:10045:2: iv_ruleDatatypeDB= ruleDatatypeDB EOF
+            // InternalSoftGalleryLanguage.g:10575:51: (iv_ruleDatatypeDB= ruleDatatypeDB EOF )
+            // InternalSoftGalleryLanguage.g:10576:2: iv_ruleDatatypeDB= ruleDatatypeDB EOF
             {
              newCompositeNode(grammarAccess.getDatatypeDBRule()); 
             pushFollow(FOLLOW_1);
@@ -25396,7 +26688,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleDatatypeDB"
-    // InternalSoftGalleryLanguage.g:10051:1: ruleDatatypeDB returns [EObject current=null] : (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10582:1: ruleDatatypeDB returns [EObject current=null] : (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleDatatypeDB() throws RecognitionException {
         EObject current = null;
 
@@ -25407,21 +26699,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10057:2: ( (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10058:2: (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10588:2: ( (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10589:2: (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10058:2: (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10059:3: otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10589:2: (otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10590:3: otherlv_0= 'DatatypeDB' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,223,FOLLOW_9); 
+            otherlv_0=(Token)match(input,229,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDatatypeDBAccess().getDatatypeDBKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10063:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10064:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10594:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10595:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10064:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10065:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10595:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10596:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -25466,7 +26758,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleConstraint"
-    // InternalSoftGalleryLanguage.g:10085:1: entryRuleConstraint returns [EObject current=null] : iv_ruleConstraint= ruleConstraint EOF ;
+    // InternalSoftGalleryLanguage.g:10616:1: entryRuleConstraint returns [EObject current=null] : iv_ruleConstraint= ruleConstraint EOF ;
     public final EObject entryRuleConstraint() throws RecognitionException {
         EObject current = null;
 
@@ -25474,8 +26766,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10085:51: (iv_ruleConstraint= ruleConstraint EOF )
-            // InternalSoftGalleryLanguage.g:10086:2: iv_ruleConstraint= ruleConstraint EOF
+            // InternalSoftGalleryLanguage.g:10616:51: (iv_ruleConstraint= ruleConstraint EOF )
+            // InternalSoftGalleryLanguage.g:10617:2: iv_ruleConstraint= ruleConstraint EOF
             {
              newCompositeNode(grammarAccess.getConstraintRule()); 
             pushFollow(FOLLOW_1);
@@ -25502,7 +26794,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleConstraint"
-    // InternalSoftGalleryLanguage.g:10092:1: ruleConstraint returns [EObject current=null] : (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10623:1: ruleConstraint returns [EObject current=null] : (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleConstraint() throws RecognitionException {
         EObject current = null;
 
@@ -25513,21 +26805,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10098:2: ( (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10099:2: (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10629:2: ( (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10630:2: (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10099:2: (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10100:3: otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10630:2: (otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10631:3: otherlv_0= 'Constraint' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,224,FOLLOW_9); 
+            otherlv_0=(Token)match(input,230,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConstraintAccess().getConstraintKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10104:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10105:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10635:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10636:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10105:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10106:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10636:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10637:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -25572,7 +26864,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleRow"
-    // InternalSoftGalleryLanguage.g:10126:1: entryRuleRow returns [EObject current=null] : iv_ruleRow= ruleRow EOF ;
+    // InternalSoftGalleryLanguage.g:10657:1: entryRuleRow returns [EObject current=null] : iv_ruleRow= ruleRow EOF ;
     public final EObject entryRuleRow() throws RecognitionException {
         EObject current = null;
 
@@ -25580,8 +26872,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10126:44: (iv_ruleRow= ruleRow EOF )
-            // InternalSoftGalleryLanguage.g:10127:2: iv_ruleRow= ruleRow EOF
+            // InternalSoftGalleryLanguage.g:10657:44: (iv_ruleRow= ruleRow EOF )
+            // InternalSoftGalleryLanguage.g:10658:2: iv_ruleRow= ruleRow EOF
             {
              newCompositeNode(grammarAccess.getRowRule()); 
             pushFollow(FOLLOW_1);
@@ -25608,7 +26900,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleRow"
-    // InternalSoftGalleryLanguage.g:10133:1: ruleRow returns [EObject current=null] : (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* ) ;
+    // InternalSoftGalleryLanguage.g:10664:1: ruleRow returns [EObject current=null] : (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* ) ;
     public final EObject ruleRow() throws RecognitionException {
         EObject current = null;
 
@@ -25621,23 +26913,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10139:2: ( (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* ) )
-            // InternalSoftGalleryLanguage.g:10140:2: (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* )
+            // InternalSoftGalleryLanguage.g:10670:2: ( (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* ) )
+            // InternalSoftGalleryLanguage.g:10671:2: (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* )
             {
-            // InternalSoftGalleryLanguage.g:10140:2: (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* )
-            // InternalSoftGalleryLanguage.g:10141:3: otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )*
+            // InternalSoftGalleryLanguage.g:10671:2: (otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )* )
+            // InternalSoftGalleryLanguage.g:10672:3: otherlv_0= 'Row' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= rulePolicy ) )*
             {
-            otherlv_0=(Token)match(input,225,FOLLOW_9); 
+            otherlv_0=(Token)match(input,231,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRowAccess().getRowKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10145:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10146:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10676:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10677:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10146:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10147:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10677:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10678:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_191); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_194); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getRowAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -25657,28 +26949,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10163:3: ( (lv_elements_2_0= rulePolicy ) )*
+            // InternalSoftGalleryLanguage.g:10694:3: ( (lv_elements_2_0= rulePolicy ) )*
             loop85:
             do {
                 int alt85=2;
                 int LA85_0 = input.LA(1);
 
-                if ( (LA85_0==226) ) {
+                if ( (LA85_0==232) ) {
                     alt85=1;
                 }
 
 
                 switch (alt85) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:10164:4: (lv_elements_2_0= rulePolicy )
+            	    // InternalSoftGalleryLanguage.g:10695:4: (lv_elements_2_0= rulePolicy )
             	    {
-            	    // InternalSoftGalleryLanguage.g:10164:4: (lv_elements_2_0= rulePolicy )
-            	    // InternalSoftGalleryLanguage.g:10165:5: lv_elements_2_0= rulePolicy
+            	    // InternalSoftGalleryLanguage.g:10695:4: (lv_elements_2_0= rulePolicy )
+            	    // InternalSoftGalleryLanguage.g:10696:5: lv_elements_2_0= rulePolicy
             	    {
 
             	    					newCompositeNode(grammarAccess.getRowAccess().getElementsPolicyParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_191);
+            	    pushFollow(FOLLOW_194);
             	    lv_elements_2_0=rulePolicy();
 
             	    state._fsp--;
@@ -25729,7 +27021,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePolicy"
-    // InternalSoftGalleryLanguage.g:10186:1: entryRulePolicy returns [EObject current=null] : iv_rulePolicy= rulePolicy EOF ;
+    // InternalSoftGalleryLanguage.g:10717:1: entryRulePolicy returns [EObject current=null] : iv_rulePolicy= rulePolicy EOF ;
     public final EObject entryRulePolicy() throws RecognitionException {
         EObject current = null;
 
@@ -25737,8 +27029,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10186:47: (iv_rulePolicy= rulePolicy EOF )
-            // InternalSoftGalleryLanguage.g:10187:2: iv_rulePolicy= rulePolicy EOF
+            // InternalSoftGalleryLanguage.g:10717:47: (iv_rulePolicy= rulePolicy EOF )
+            // InternalSoftGalleryLanguage.g:10718:2: iv_rulePolicy= rulePolicy EOF
             {
              newCompositeNode(grammarAccess.getPolicyRule()); 
             pushFollow(FOLLOW_1);
@@ -25765,7 +27057,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePolicy"
-    // InternalSoftGalleryLanguage.g:10193:1: rulePolicy returns [EObject current=null] : (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10724:1: rulePolicy returns [EObject current=null] : (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject rulePolicy() throws RecognitionException {
         EObject current = null;
 
@@ -25776,21 +27068,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10199:2: ( (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10200:2: (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10730:2: ( (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10731:2: (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10200:2: (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10201:3: otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10731:2: (otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10732:3: otherlv_0= 'Policy' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,226,FOLLOW_9); 
+            otherlv_0=(Token)match(input,232,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPolicyAccess().getPolicyKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10205:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10206:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10736:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10737:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10206:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10207:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10737:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10738:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -25835,7 +27127,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleTrigger"
-    // InternalSoftGalleryLanguage.g:10227:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
+    // InternalSoftGalleryLanguage.g:10758:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
     public final EObject entryRuleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -25843,8 +27135,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10227:48: (iv_ruleTrigger= ruleTrigger EOF )
-            // InternalSoftGalleryLanguage.g:10228:2: iv_ruleTrigger= ruleTrigger EOF
+            // InternalSoftGalleryLanguage.g:10758:48: (iv_ruleTrigger= ruleTrigger EOF )
+            // InternalSoftGalleryLanguage.g:10759:2: iv_ruleTrigger= ruleTrigger EOF
             {
              newCompositeNode(grammarAccess.getTriggerRule()); 
             pushFollow(FOLLOW_1);
@@ -25871,7 +27163,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleTrigger"
-    // InternalSoftGalleryLanguage.g:10234:1: ruleTrigger returns [EObject current=null] : (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10765:1: ruleTrigger returns [EObject current=null] : (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -25882,21 +27174,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10240:2: ( (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10241:2: (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10771:2: ( (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10772:2: (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10241:2: (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10242:3: otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10772:2: (otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10773:3: otherlv_0= 'Trigger' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,227,FOLLOW_9); 
+            otherlv_0=(Token)match(input,233,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTriggerAccess().getTriggerKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10246:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10247:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10777:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10778:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10247:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10248:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10778:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10779:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -25941,7 +27233,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleFunction"
-    // InternalSoftGalleryLanguage.g:10268:1: entryRuleFunction returns [EObject current=null] : iv_ruleFunction= ruleFunction EOF ;
+    // InternalSoftGalleryLanguage.g:10799:1: entryRuleFunction returns [EObject current=null] : iv_ruleFunction= ruleFunction EOF ;
     public final EObject entryRuleFunction() throws RecognitionException {
         EObject current = null;
 
@@ -25949,8 +27241,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10268:49: (iv_ruleFunction= ruleFunction EOF )
-            // InternalSoftGalleryLanguage.g:10269:2: iv_ruleFunction= ruleFunction EOF
+            // InternalSoftGalleryLanguage.g:10799:49: (iv_ruleFunction= ruleFunction EOF )
+            // InternalSoftGalleryLanguage.g:10800:2: iv_ruleFunction= ruleFunction EOF
             {
              newCompositeNode(grammarAccess.getFunctionRule()); 
             pushFollow(FOLLOW_1);
@@ -25977,7 +27269,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleFunction"
-    // InternalSoftGalleryLanguage.g:10275:1: ruleFunction returns [EObject current=null] : (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10806:1: ruleFunction returns [EObject current=null] : (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleFunction() throws RecognitionException {
         EObject current = null;
 
@@ -25988,21 +27280,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10281:2: ( (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10282:2: (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10812:2: ( (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10813:2: (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10282:2: (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10283:3: otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10813:2: (otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10814:3: otherlv_0= 'Function' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,228,FOLLOW_9); 
+            otherlv_0=(Token)match(input,234,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFunctionAccess().getFunctionKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10287:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10288:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10818:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10819:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10288:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10289:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10819:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10820:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -26047,7 +27339,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePostgresUser"
-    // InternalSoftGalleryLanguage.g:10309:1: entryRulePostgresUser returns [EObject current=null] : iv_rulePostgresUser= rulePostgresUser EOF ;
+    // InternalSoftGalleryLanguage.g:10840:1: entryRulePostgresUser returns [EObject current=null] : iv_rulePostgresUser= rulePostgresUser EOF ;
     public final EObject entryRulePostgresUser() throws RecognitionException {
         EObject current = null;
 
@@ -26055,8 +27347,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10309:53: (iv_rulePostgresUser= rulePostgresUser EOF )
-            // InternalSoftGalleryLanguage.g:10310:2: iv_rulePostgresUser= rulePostgresUser EOF
+            // InternalSoftGalleryLanguage.g:10840:53: (iv_rulePostgresUser= rulePostgresUser EOF )
+            // InternalSoftGalleryLanguage.g:10841:2: iv_rulePostgresUser= rulePostgresUser EOF
             {
              newCompositeNode(grammarAccess.getPostgresUserRule()); 
             pushFollow(FOLLOW_1);
@@ -26083,7 +27375,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePostgresUser"
-    // InternalSoftGalleryLanguage.g:10316:1: rulePostgresUser returns [EObject current=null] : (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' ) ;
+    // InternalSoftGalleryLanguage.g:10847:1: rulePostgresUser returns [EObject current=null] : (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' ) ;
     public final EObject rulePostgresUser() throws RecognitionException {
         EObject current = null;
 
@@ -26101,21 +27393,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10322:2: ( (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' ) )
-            // InternalSoftGalleryLanguage.g:10323:2: (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:10853:2: ( (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' ) )
+            // InternalSoftGalleryLanguage.g:10854:2: (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' )
             {
-            // InternalSoftGalleryLanguage.g:10323:2: (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' )
-            // InternalSoftGalleryLanguage.g:10324:3: otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}'
+            // InternalSoftGalleryLanguage.g:10854:2: (otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:10855:3: otherlv_0= 'PostgresUser' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= rulePrivilege ) ) ( (lv_elements_5_0= ruleQuery ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,229,FOLLOW_9); 
+            otherlv_0=(Token)match(input,235,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPostgresUserAccess().getPostgresUserKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10328:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10329:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10859:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10860:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10329:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10330:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10860:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10861:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -26141,20 +27433,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getPostgresUserAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_192); 
+            otherlv_3=(Token)match(input,13,FOLLOW_195); 
 
             			newLeafNode(otherlv_3, grammarAccess.getPostgresUserAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:10354:3: ( (lv_elements_4_0= rulePrivilege ) )
-            // InternalSoftGalleryLanguage.g:10355:4: (lv_elements_4_0= rulePrivilege )
+            // InternalSoftGalleryLanguage.g:10885:3: ( (lv_elements_4_0= rulePrivilege ) )
+            // InternalSoftGalleryLanguage.g:10886:4: (lv_elements_4_0= rulePrivilege )
             {
-            // InternalSoftGalleryLanguage.g:10355:4: (lv_elements_4_0= rulePrivilege )
-            // InternalSoftGalleryLanguage.g:10356:5: lv_elements_4_0= rulePrivilege
+            // InternalSoftGalleryLanguage.g:10886:4: (lv_elements_4_0= rulePrivilege )
+            // InternalSoftGalleryLanguage.g:10887:5: lv_elements_4_0= rulePrivilege
             {
 
             					newCompositeNode(grammarAccess.getPostgresUserAccess().getElementsPrivilegeParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_193);
+            pushFollow(FOLLOW_196);
             lv_elements_4_0=rulePrivilege();
 
             state._fsp--;
@@ -26176,28 +27468,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10373:3: ( (lv_elements_5_0= ruleQuery ) )*
+            // InternalSoftGalleryLanguage.g:10904:3: ( (lv_elements_5_0= ruleQuery ) )*
             loop86:
             do {
                 int alt86=2;
                 int LA86_0 = input.LA(1);
 
-                if ( (LA86_0==231) ) {
+                if ( (LA86_0==237) ) {
                     alt86=1;
                 }
 
 
                 switch (alt86) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:10374:4: (lv_elements_5_0= ruleQuery )
+            	    // InternalSoftGalleryLanguage.g:10905:4: (lv_elements_5_0= ruleQuery )
             	    {
-            	    // InternalSoftGalleryLanguage.g:10374:4: (lv_elements_5_0= ruleQuery )
-            	    // InternalSoftGalleryLanguage.g:10375:5: lv_elements_5_0= ruleQuery
+            	    // InternalSoftGalleryLanguage.g:10905:4: (lv_elements_5_0= ruleQuery )
+            	    // InternalSoftGalleryLanguage.g:10906:5: lv_elements_5_0= ruleQuery
             	    {
 
             	    					newCompositeNode(grammarAccess.getPostgresUserAccess().getElementsQueryParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_193);
+            	    pushFollow(FOLLOW_196);
             	    lv_elements_5_0=ruleQuery();
 
             	    state._fsp--;
@@ -26252,7 +27544,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePrivilege"
-    // InternalSoftGalleryLanguage.g:10400:1: entryRulePrivilege returns [EObject current=null] : iv_rulePrivilege= rulePrivilege EOF ;
+    // InternalSoftGalleryLanguage.g:10931:1: entryRulePrivilege returns [EObject current=null] : iv_rulePrivilege= rulePrivilege EOF ;
     public final EObject entryRulePrivilege() throws RecognitionException {
         EObject current = null;
 
@@ -26260,8 +27552,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10400:50: (iv_rulePrivilege= rulePrivilege EOF )
-            // InternalSoftGalleryLanguage.g:10401:2: iv_rulePrivilege= rulePrivilege EOF
+            // InternalSoftGalleryLanguage.g:10931:50: (iv_rulePrivilege= rulePrivilege EOF )
+            // InternalSoftGalleryLanguage.g:10932:2: iv_rulePrivilege= rulePrivilege EOF
             {
              newCompositeNode(grammarAccess.getPrivilegeRule()); 
             pushFollow(FOLLOW_1);
@@ -26288,7 +27580,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePrivilege"
-    // InternalSoftGalleryLanguage.g:10407:1: rulePrivilege returns [EObject current=null] : (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10938:1: rulePrivilege returns [EObject current=null] : (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject rulePrivilege() throws RecognitionException {
         EObject current = null;
 
@@ -26299,21 +27591,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10413:2: ( (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10414:2: (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10944:2: ( (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:10945:2: (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10414:2: (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10415:3: otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10945:2: (otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:10946:3: otherlv_0= 'Privilege' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,230,FOLLOW_9); 
+            otherlv_0=(Token)match(input,236,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPrivilegeAccess().getPrivilegeKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10419:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10420:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10950:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:10951:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10420:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10421:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:10951:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:10952:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -26358,7 +27650,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleQuery"
-    // InternalSoftGalleryLanguage.g:10441:1: entryRuleQuery returns [EObject current=null] : iv_ruleQuery= ruleQuery EOF ;
+    // InternalSoftGalleryLanguage.g:10972:1: entryRuleQuery returns [EObject current=null] : iv_ruleQuery= ruleQuery EOF ;
     public final EObject entryRuleQuery() throws RecognitionException {
         EObject current = null;
 
@@ -26366,8 +27658,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10441:46: (iv_ruleQuery= ruleQuery EOF )
-            // InternalSoftGalleryLanguage.g:10442:2: iv_ruleQuery= ruleQuery EOF
+            // InternalSoftGalleryLanguage.g:10972:46: (iv_ruleQuery= ruleQuery EOF )
+            // InternalSoftGalleryLanguage.g:10973:2: iv_ruleQuery= ruleQuery EOF
             {
              newCompositeNode(grammarAccess.getQueryRule()); 
             pushFollow(FOLLOW_1);
@@ -26394,7 +27686,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleQuery"
-    // InternalSoftGalleryLanguage.g:10448:1: ruleQuery returns [EObject current=null] : (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) ) ;
+    // InternalSoftGalleryLanguage.g:10979:1: ruleQuery returns [EObject current=null] : (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) ) ;
     public final EObject ruleQuery() throws RecognitionException {
         EObject current = null;
 
@@ -26406,21 +27698,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10454:2: ( (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) ) )
-            // InternalSoftGalleryLanguage.g:10455:2: (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) )
+            // InternalSoftGalleryLanguage.g:10985:2: ( (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) ) )
+            // InternalSoftGalleryLanguage.g:10986:2: (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10455:2: (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) )
-            // InternalSoftGalleryLanguage.g:10456:3: otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) )
+            // InternalSoftGalleryLanguage.g:10986:2: (otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) ) )
+            // InternalSoftGalleryLanguage.g:10987:3: otherlv_0= 'Query' ( (lv_elements_1_0= ruleClause ) )
             {
-            otherlv_0=(Token)match(input,231,FOLLOW_194); 
+            otherlv_0=(Token)match(input,237,FOLLOW_197); 
 
             			newLeafNode(otherlv_0, grammarAccess.getQueryAccess().getQueryKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10460:3: ( (lv_elements_1_0= ruleClause ) )
-            // InternalSoftGalleryLanguage.g:10461:4: (lv_elements_1_0= ruleClause )
+            // InternalSoftGalleryLanguage.g:10991:3: ( (lv_elements_1_0= ruleClause ) )
+            // InternalSoftGalleryLanguage.g:10992:4: (lv_elements_1_0= ruleClause )
             {
-            // InternalSoftGalleryLanguage.g:10461:4: (lv_elements_1_0= ruleClause )
-            // InternalSoftGalleryLanguage.g:10462:5: lv_elements_1_0= ruleClause
+            // InternalSoftGalleryLanguage.g:10992:4: (lv_elements_1_0= ruleClause )
+            // InternalSoftGalleryLanguage.g:10993:5: lv_elements_1_0= ruleClause
             {
 
             					newCompositeNode(grammarAccess.getQueryAccess().getElementsClauseParserRuleCall_1_0());
@@ -26470,7 +27762,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleClause"
-    // InternalSoftGalleryLanguage.g:10483:1: entryRuleClause returns [EObject current=null] : iv_ruleClause= ruleClause EOF ;
+    // InternalSoftGalleryLanguage.g:11014:1: entryRuleClause returns [EObject current=null] : iv_ruleClause= ruleClause EOF ;
     public final EObject entryRuleClause() throws RecognitionException {
         EObject current = null;
 
@@ -26478,8 +27770,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10483:47: (iv_ruleClause= ruleClause EOF )
-            // InternalSoftGalleryLanguage.g:10484:2: iv_ruleClause= ruleClause EOF
+            // InternalSoftGalleryLanguage.g:11014:47: (iv_ruleClause= ruleClause EOF )
+            // InternalSoftGalleryLanguage.g:11015:2: iv_ruleClause= ruleClause EOF
             {
              newCompositeNode(grammarAccess.getClauseRule()); 
             pushFollow(FOLLOW_1);
@@ -26506,7 +27798,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleClause"
-    // InternalSoftGalleryLanguage.g:10490:1: ruleClause returns [EObject current=null] : (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11021:1: ruleClause returns [EObject current=null] : (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleClause() throws RecognitionException {
         EObject current = null;
 
@@ -26517,21 +27809,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10496:2: ( (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10497:2: (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11027:2: ( (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11028:2: (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10497:2: (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10498:3: otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11028:2: (otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11029:3: otherlv_0= 'Clause' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,232,FOLLOW_9); 
+            otherlv_0=(Token)match(input,238,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getClauseAccess().getClauseKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10502:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10503:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11033:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11034:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10503:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10504:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11034:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11035:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -26576,7 +27868,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleAmazonWebServices"
-    // InternalSoftGalleryLanguage.g:10524:1: entryRuleAmazonWebServices returns [EObject current=null] : iv_ruleAmazonWebServices= ruleAmazonWebServices EOF ;
+    // InternalSoftGalleryLanguage.g:11055:1: entryRuleAmazonWebServices returns [EObject current=null] : iv_ruleAmazonWebServices= ruleAmazonWebServices EOF ;
     public final EObject entryRuleAmazonWebServices() throws RecognitionException {
         EObject current = null;
 
@@ -26584,8 +27876,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10524:58: (iv_ruleAmazonWebServices= ruleAmazonWebServices EOF )
-            // InternalSoftGalleryLanguage.g:10525:2: iv_ruleAmazonWebServices= ruleAmazonWebServices EOF
+            // InternalSoftGalleryLanguage.g:11055:58: (iv_ruleAmazonWebServices= ruleAmazonWebServices EOF )
+            // InternalSoftGalleryLanguage.g:11056:2: iv_ruleAmazonWebServices= ruleAmazonWebServices EOF
             {
              newCompositeNode(grammarAccess.getAmazonWebServicesRule()); 
             pushFollow(FOLLOW_1);
@@ -26612,7 +27904,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleAmazonWebServices"
-    // InternalSoftGalleryLanguage.g:10531:1: ruleAmazonWebServices returns [EObject current=null] : (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' ) ;
+    // InternalSoftGalleryLanguage.g:11062:1: ruleAmazonWebServices returns [EObject current=null] : (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' ) ;
     public final EObject ruleAmazonWebServices() throws RecognitionException {
         EObject current = null;
 
@@ -26630,21 +27922,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10537:2: ( (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' ) )
-            // InternalSoftGalleryLanguage.g:10538:2: (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:11068:2: ( (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' ) )
+            // InternalSoftGalleryLanguage.g:11069:2: (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' )
             {
-            // InternalSoftGalleryLanguage.g:10538:2: (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' )
-            // InternalSoftGalleryLanguage.g:10539:3: otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}'
+            // InternalSoftGalleryLanguage.g:11069:2: (otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}' )
+            // InternalSoftGalleryLanguage.g:11070:3: otherlv_0= 'AmazonWebServices' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) ) ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,233,FOLLOW_9); 
+            otherlv_0=(Token)match(input,239,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAmazonWebServicesAccess().getAmazonWebServicesKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10543:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10544:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11074:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11075:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10544:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10545:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11075:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11076:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -26670,20 +27962,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_2, grammarAccess.getAmazonWebServicesAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_195); 
+            otherlv_3=(Token)match(input,13,FOLLOW_198); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAmazonWebServicesAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalSoftGalleryLanguage.g:10569:3: ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) )
-            // InternalSoftGalleryLanguage.g:10570:4: (lv_elements_4_0= ruleAmazonSimpleStorageService )
+            // InternalSoftGalleryLanguage.g:11100:3: ( (lv_elements_4_0= ruleAmazonSimpleStorageService ) )
+            // InternalSoftGalleryLanguage.g:11101:4: (lv_elements_4_0= ruleAmazonSimpleStorageService )
             {
-            // InternalSoftGalleryLanguage.g:10570:4: (lv_elements_4_0= ruleAmazonSimpleStorageService )
-            // InternalSoftGalleryLanguage.g:10571:5: lv_elements_4_0= ruleAmazonSimpleStorageService
+            // InternalSoftGalleryLanguage.g:11101:4: (lv_elements_4_0= ruleAmazonSimpleStorageService )
+            // InternalSoftGalleryLanguage.g:11102:5: lv_elements_4_0= ruleAmazonSimpleStorageService
             {
 
             					newCompositeNode(grammarAccess.getAmazonWebServicesAccess().getElementsAmazonSimpleStorageServiceParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_196);
+            pushFollow(FOLLOW_199);
             lv_elements_4_0=ruleAmazonSimpleStorageService();
 
             state._fsp--;
@@ -26705,11 +27997,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10588:3: ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) )
-            // InternalSoftGalleryLanguage.g:10589:4: (lv_elements_5_0= ruleAmazonElasticComputeCloud )
+            // InternalSoftGalleryLanguage.g:11119:3: ( (lv_elements_5_0= ruleAmazonElasticComputeCloud ) )
+            // InternalSoftGalleryLanguage.g:11120:4: (lv_elements_5_0= ruleAmazonElasticComputeCloud )
             {
-            // InternalSoftGalleryLanguage.g:10589:4: (lv_elements_5_0= ruleAmazonElasticComputeCloud )
-            // InternalSoftGalleryLanguage.g:10590:5: lv_elements_5_0= ruleAmazonElasticComputeCloud
+            // InternalSoftGalleryLanguage.g:11120:4: (lv_elements_5_0= ruleAmazonElasticComputeCloud )
+            // InternalSoftGalleryLanguage.g:11121:5: lv_elements_5_0= ruleAmazonElasticComputeCloud
             {
 
             					newCompositeNode(grammarAccess.getAmazonWebServicesAccess().getElementsAmazonElasticComputeCloudParserRuleCall_5_0());
@@ -26763,7 +28055,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleAmazonSimpleStorageService"
-    // InternalSoftGalleryLanguage.g:10615:1: entryRuleAmazonSimpleStorageService returns [EObject current=null] : iv_ruleAmazonSimpleStorageService= ruleAmazonSimpleStorageService EOF ;
+    // InternalSoftGalleryLanguage.g:11146:1: entryRuleAmazonSimpleStorageService returns [EObject current=null] : iv_ruleAmazonSimpleStorageService= ruleAmazonSimpleStorageService EOF ;
     public final EObject entryRuleAmazonSimpleStorageService() throws RecognitionException {
         EObject current = null;
 
@@ -26771,8 +28063,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10615:67: (iv_ruleAmazonSimpleStorageService= ruleAmazonSimpleStorageService EOF )
-            // InternalSoftGalleryLanguage.g:10616:2: iv_ruleAmazonSimpleStorageService= ruleAmazonSimpleStorageService EOF
+            // InternalSoftGalleryLanguage.g:11146:67: (iv_ruleAmazonSimpleStorageService= ruleAmazonSimpleStorageService EOF )
+            // InternalSoftGalleryLanguage.g:11147:2: iv_ruleAmazonSimpleStorageService= ruleAmazonSimpleStorageService EOF
             {
              newCompositeNode(grammarAccess.getAmazonSimpleStorageServiceRule()); 
             pushFollow(FOLLOW_1);
@@ -26799,7 +28091,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleAmazonSimpleStorageService"
-    // InternalSoftGalleryLanguage.g:10622:1: ruleAmazonSimpleStorageService returns [EObject current=null] : (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' ) ;
+    // InternalSoftGalleryLanguage.g:11153:1: ruleAmazonSimpleStorageService returns [EObject current=null] : (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' ) ;
     public final EObject ruleAmazonSimpleStorageService() throws RecognitionException {
         EObject current = null;
 
@@ -26816,13 +28108,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10628:2: ( (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' ) )
-            // InternalSoftGalleryLanguage.g:10629:2: (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:11159:2: ( (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' ) )
+            // InternalSoftGalleryLanguage.g:11160:2: (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' )
             {
-            // InternalSoftGalleryLanguage.g:10629:2: (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' )
-            // InternalSoftGalleryLanguage.g:10630:3: otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}'
+            // InternalSoftGalleryLanguage.g:11160:2: (otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}' )
+            // InternalSoftGalleryLanguage.g:11161:3: otherlv_0= 'AmazonSimpleStorageService' otherlv_1= ':' otherlv_2= '{' ( (lv_elements_3_0= ruleBatchOperation ) )* ( (lv_elements_4_0= ruleBucket ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,234,FOLLOW_3); 
+            otherlv_0=(Token)match(input,240,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAmazonSimpleStorageServiceAccess().getAmazonSimpleStorageServiceKeyword_0());
             		
@@ -26830,32 +28122,32 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             			newLeafNode(otherlv_1, grammarAccess.getAmazonSimpleStorageServiceAccess().getColonKeyword_1());
             		
-            otherlv_2=(Token)match(input,13,FOLLOW_197); 
+            otherlv_2=(Token)match(input,13,FOLLOW_200); 
 
             			newLeafNode(otherlv_2, grammarAccess.getAmazonSimpleStorageServiceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSoftGalleryLanguage.g:10642:3: ( (lv_elements_3_0= ruleBatchOperation ) )*
+            // InternalSoftGalleryLanguage.g:11173:3: ( (lv_elements_3_0= ruleBatchOperation ) )*
             loop87:
             do {
                 int alt87=2;
                 int LA87_0 = input.LA(1);
 
-                if ( (LA87_0==235) ) {
+                if ( (LA87_0==241) ) {
                     alt87=1;
                 }
 
 
                 switch (alt87) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:10643:4: (lv_elements_3_0= ruleBatchOperation )
+            	    // InternalSoftGalleryLanguage.g:11174:4: (lv_elements_3_0= ruleBatchOperation )
             	    {
-            	    // InternalSoftGalleryLanguage.g:10643:4: (lv_elements_3_0= ruleBatchOperation )
-            	    // InternalSoftGalleryLanguage.g:10644:5: lv_elements_3_0= ruleBatchOperation
+            	    // InternalSoftGalleryLanguage.g:11174:4: (lv_elements_3_0= ruleBatchOperation )
+            	    // InternalSoftGalleryLanguage.g:11175:5: lv_elements_3_0= ruleBatchOperation
             	    {
 
             	    					newCompositeNode(grammarAccess.getAmazonSimpleStorageServiceAccess().getElementsBatchOperationParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_197);
+            	    pushFollow(FOLLOW_200);
             	    lv_elements_3_0=ruleBatchOperation();
 
             	    state._fsp--;
@@ -26883,11 +28175,11 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:10661:3: ( (lv_elements_4_0= ruleBucket ) )
-            // InternalSoftGalleryLanguage.g:10662:4: (lv_elements_4_0= ruleBucket )
+            // InternalSoftGalleryLanguage.g:11192:3: ( (lv_elements_4_0= ruleBucket ) )
+            // InternalSoftGalleryLanguage.g:11193:4: (lv_elements_4_0= ruleBucket )
             {
-            // InternalSoftGalleryLanguage.g:10662:4: (lv_elements_4_0= ruleBucket )
-            // InternalSoftGalleryLanguage.g:10663:5: lv_elements_4_0= ruleBucket
+            // InternalSoftGalleryLanguage.g:11193:4: (lv_elements_4_0= ruleBucket )
+            // InternalSoftGalleryLanguage.g:11194:5: lv_elements_4_0= ruleBucket
             {
 
             					newCompositeNode(grammarAccess.getAmazonSimpleStorageServiceAccess().getElementsBucketParserRuleCall_4_0());
@@ -26941,7 +28233,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleBatchOperation"
-    // InternalSoftGalleryLanguage.g:10688:1: entryRuleBatchOperation returns [EObject current=null] : iv_ruleBatchOperation= ruleBatchOperation EOF ;
+    // InternalSoftGalleryLanguage.g:11219:1: entryRuleBatchOperation returns [EObject current=null] : iv_ruleBatchOperation= ruleBatchOperation EOF ;
     public final EObject entryRuleBatchOperation() throws RecognitionException {
         EObject current = null;
 
@@ -26949,8 +28241,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10688:55: (iv_ruleBatchOperation= ruleBatchOperation EOF )
-            // InternalSoftGalleryLanguage.g:10689:2: iv_ruleBatchOperation= ruleBatchOperation EOF
+            // InternalSoftGalleryLanguage.g:11219:55: (iv_ruleBatchOperation= ruleBatchOperation EOF )
+            // InternalSoftGalleryLanguage.g:11220:2: iv_ruleBatchOperation= ruleBatchOperation EOF
             {
              newCompositeNode(grammarAccess.getBatchOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -26977,7 +28269,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleBatchOperation"
-    // InternalSoftGalleryLanguage.g:10695:1: ruleBatchOperation returns [EObject current=null] : (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11226:1: ruleBatchOperation returns [EObject current=null] : (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleBatchOperation() throws RecognitionException {
         EObject current = null;
 
@@ -26988,21 +28280,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10701:2: ( (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10702:2: (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11232:2: ( (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11233:2: (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10702:2: (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10703:3: otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11233:2: (otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11234:3: otherlv_0= 'BatchOperation' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,235,FOLLOW_9); 
+            otherlv_0=(Token)match(input,241,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBatchOperationAccess().getBatchOperationKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10707:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10708:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11238:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11239:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10708:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10709:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11239:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11240:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -27047,7 +28339,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleBucket"
-    // InternalSoftGalleryLanguage.g:10729:1: entryRuleBucket returns [EObject current=null] : iv_ruleBucket= ruleBucket EOF ;
+    // InternalSoftGalleryLanguage.g:11260:1: entryRuleBucket returns [EObject current=null] : iv_ruleBucket= ruleBucket EOF ;
     public final EObject entryRuleBucket() throws RecognitionException {
         EObject current = null;
 
@@ -27055,8 +28347,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10729:47: (iv_ruleBucket= ruleBucket EOF )
-            // InternalSoftGalleryLanguage.g:10730:2: iv_ruleBucket= ruleBucket EOF
+            // InternalSoftGalleryLanguage.g:11260:47: (iv_ruleBucket= ruleBucket EOF )
+            // InternalSoftGalleryLanguage.g:11261:2: iv_ruleBucket= ruleBucket EOF
             {
              newCompositeNode(grammarAccess.getBucketRule()); 
             pushFollow(FOLLOW_1);
@@ -27083,7 +28375,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleBucket"
-    // InternalSoftGalleryLanguage.g:10736:1: ruleBucket returns [EObject current=null] : (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:11267:1: ruleBucket returns [EObject current=null] : (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ ) ;
     public final EObject ruleBucket() throws RecognitionException {
         EObject current = null;
 
@@ -27100,23 +28392,23 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10742:2: ( (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ ) )
-            // InternalSoftGalleryLanguage.g:10743:2: (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ )
+            // InternalSoftGalleryLanguage.g:11273:2: ( (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ ) )
+            // InternalSoftGalleryLanguage.g:11274:2: (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:10743:2: (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ )
-            // InternalSoftGalleryLanguage.g:10744:3: otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+
+            // InternalSoftGalleryLanguage.g:11274:2: (otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+ )
+            // InternalSoftGalleryLanguage.g:11275:3: otherlv_0= 'Bucket' ( (lv_name_1_0= RULE_ID ) ) ( (lv_elements_2_0= ruleBucketAccess ) ) ( (lv_elements_3_0= ruleAmazonFolder ) )* ( (lv_elements_4_0= ruleAmazonFile ) )+
             {
-            otherlv_0=(Token)match(input,236,FOLLOW_9); 
+            otherlv_0=(Token)match(input,242,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBucketAccess().getBucketKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10748:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10749:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11279:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11280:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10749:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10750:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11280:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11281:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_198); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_201); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getBucketAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -27136,16 +28428,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10766:3: ( (lv_elements_2_0= ruleBucketAccess ) )
-            // InternalSoftGalleryLanguage.g:10767:4: (lv_elements_2_0= ruleBucketAccess )
+            // InternalSoftGalleryLanguage.g:11297:3: ( (lv_elements_2_0= ruleBucketAccess ) )
+            // InternalSoftGalleryLanguage.g:11298:4: (lv_elements_2_0= ruleBucketAccess )
             {
-            // InternalSoftGalleryLanguage.g:10767:4: (lv_elements_2_0= ruleBucketAccess )
-            // InternalSoftGalleryLanguage.g:10768:5: lv_elements_2_0= ruleBucketAccess
+            // InternalSoftGalleryLanguage.g:11298:4: (lv_elements_2_0= ruleBucketAccess )
+            // InternalSoftGalleryLanguage.g:11299:5: lv_elements_2_0= ruleBucketAccess
             {
 
             					newCompositeNode(grammarAccess.getBucketAccess().getElementsBucketAccessParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_199);
+            pushFollow(FOLLOW_202);
             lv_elements_2_0=ruleBucketAccess();
 
             state._fsp--;
@@ -27167,28 +28459,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:10785:3: ( (lv_elements_3_0= ruleAmazonFolder ) )*
+            // InternalSoftGalleryLanguage.g:11316:3: ( (lv_elements_3_0= ruleAmazonFolder ) )*
             loop88:
             do {
                 int alt88=2;
                 int LA88_0 = input.LA(1);
 
-                if ( (LA88_0==242) ) {
+                if ( (LA88_0==248) ) {
                     alt88=1;
                 }
 
 
                 switch (alt88) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:10786:4: (lv_elements_3_0= ruleAmazonFolder )
+            	    // InternalSoftGalleryLanguage.g:11317:4: (lv_elements_3_0= ruleAmazonFolder )
             	    {
-            	    // InternalSoftGalleryLanguage.g:10786:4: (lv_elements_3_0= ruleAmazonFolder )
-            	    // InternalSoftGalleryLanguage.g:10787:5: lv_elements_3_0= ruleAmazonFolder
+            	    // InternalSoftGalleryLanguage.g:11317:4: (lv_elements_3_0= ruleAmazonFolder )
+            	    // InternalSoftGalleryLanguage.g:11318:5: lv_elements_3_0= ruleAmazonFolder
             	    {
 
             	    					newCompositeNode(grammarAccess.getBucketAccess().getElementsAmazonFolderParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_199);
+            	    pushFollow(FOLLOW_202);
             	    lv_elements_3_0=ruleAmazonFolder();
 
             	    state._fsp--;
@@ -27216,29 +28508,29 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                 }
             } while (true);
 
-            // InternalSoftGalleryLanguage.g:10804:3: ( (lv_elements_4_0= ruleAmazonFile ) )+
+            // InternalSoftGalleryLanguage.g:11335:3: ( (lv_elements_4_0= ruleAmazonFile ) )+
             int cnt89=0;
             loop89:
             do {
                 int alt89=2;
                 int LA89_0 = input.LA(1);
 
-                if ( (LA89_0==243) ) {
+                if ( (LA89_0==249) ) {
                     alt89=1;
                 }
 
 
                 switch (alt89) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:10805:4: (lv_elements_4_0= ruleAmazonFile )
+            	    // InternalSoftGalleryLanguage.g:11336:4: (lv_elements_4_0= ruleAmazonFile )
             	    {
-            	    // InternalSoftGalleryLanguage.g:10805:4: (lv_elements_4_0= ruleAmazonFile )
-            	    // InternalSoftGalleryLanguage.g:10806:5: lv_elements_4_0= ruleAmazonFile
+            	    // InternalSoftGalleryLanguage.g:11336:4: (lv_elements_4_0= ruleAmazonFile )
+            	    // InternalSoftGalleryLanguage.g:11337:5: lv_elements_4_0= ruleAmazonFile
             	    {
 
             	    					newCompositeNode(grammarAccess.getBucketAccess().getElementsAmazonFileParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_200);
+            	    pushFollow(FOLLOW_203);
             	    lv_elements_4_0=ruleAmazonFile();
 
             	    state._fsp--;
@@ -27293,7 +28585,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleBucketAccess"
-    // InternalSoftGalleryLanguage.g:10827:1: entryRuleBucketAccess returns [EObject current=null] : iv_ruleBucketAccess= ruleBucketAccess EOF ;
+    // InternalSoftGalleryLanguage.g:11358:1: entryRuleBucketAccess returns [EObject current=null] : iv_ruleBucketAccess= ruleBucketAccess EOF ;
     public final EObject entryRuleBucketAccess() throws RecognitionException {
         EObject current = null;
 
@@ -27301,8 +28593,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10827:53: (iv_ruleBucketAccess= ruleBucketAccess EOF )
-            // InternalSoftGalleryLanguage.g:10828:2: iv_ruleBucketAccess= ruleBucketAccess EOF
+            // InternalSoftGalleryLanguage.g:11358:53: (iv_ruleBucketAccess= ruleBucketAccess EOF )
+            // InternalSoftGalleryLanguage.g:11359:2: iv_ruleBucketAccess= ruleBucketAccess EOF
             {
              newCompositeNode(grammarAccess.getBucketAccessRule()); 
             pushFollow(FOLLOW_1);
@@ -27329,7 +28621,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleBucketAccess"
-    // InternalSoftGalleryLanguage.g:10834:1: ruleBucketAccess returns [EObject current=null] : ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11365:1: ruleBucketAccess returns [EObject current=null] : ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) ) ;
     public final EObject ruleBucketAccess() throws RecognitionException {
         EObject current = null;
 
@@ -27347,28 +28639,28 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10840:2: ( ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) ) )
-            // InternalSoftGalleryLanguage.g:10841:2: ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) )
+            // InternalSoftGalleryLanguage.g:11371:2: ( ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) ) )
+            // InternalSoftGalleryLanguage.g:11372:2: ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10841:2: ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) )
+            // InternalSoftGalleryLanguage.g:11372:2: ( (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) ) | ( (lv_elements_2_0= ruleObjectsPublic ) ) | ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) ) | ( (lv_elements_4_0= ruleOnlyAuthorized ) ) )
             int alt90=4;
             switch ( input.LA(1) ) {
-            case 237:
+            case 243:
                 {
                 alt90=1;
                 }
                 break;
-            case 239:
+            case 245:
                 {
                 alt90=2;
                 }
                 break;
-            case 240:
+            case 246:
                 {
                 alt90=3;
                 }
                 break;
-            case 241:
+            case 247:
                 {
                 alt90=4;
                 }
@@ -27382,20 +28674,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             switch (alt90) {
                 case 1 :
-                    // InternalSoftGalleryLanguage.g:10842:3: (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) )
+                    // InternalSoftGalleryLanguage.g:11373:3: (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) )
                     {
-                    // InternalSoftGalleryLanguage.g:10842:3: (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) )
-                    // InternalSoftGalleryLanguage.g:10843:4: otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) )
+                    // InternalSoftGalleryLanguage.g:11373:3: (otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) ) )
+                    // InternalSoftGalleryLanguage.g:11374:4: otherlv_0= 'BucketAccess' ( (lv_elements_1_0= rulePublicAccess ) )
                     {
-                    otherlv_0=(Token)match(input,237,FOLLOW_201); 
+                    otherlv_0=(Token)match(input,243,FOLLOW_204); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getBucketAccessAccess().getBucketAccessKeyword_0_0());
                     			
-                    // InternalSoftGalleryLanguage.g:10847:4: ( (lv_elements_1_0= rulePublicAccess ) )
-                    // InternalSoftGalleryLanguage.g:10848:5: (lv_elements_1_0= rulePublicAccess )
+                    // InternalSoftGalleryLanguage.g:11378:4: ( (lv_elements_1_0= rulePublicAccess ) )
+                    // InternalSoftGalleryLanguage.g:11379:5: (lv_elements_1_0= rulePublicAccess )
                     {
-                    // InternalSoftGalleryLanguage.g:10848:5: (lv_elements_1_0= rulePublicAccess )
-                    // InternalSoftGalleryLanguage.g:10849:6: lv_elements_1_0= rulePublicAccess
+                    // InternalSoftGalleryLanguage.g:11379:5: (lv_elements_1_0= rulePublicAccess )
+                    // InternalSoftGalleryLanguage.g:11380:6: lv_elements_1_0= rulePublicAccess
                     {
 
                     						newCompositeNode(grammarAccess.getBucketAccessAccess().getElementsPublicAccessParserRuleCall_0_1_0());
@@ -27429,13 +28721,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalSoftGalleryLanguage.g:10868:3: ( (lv_elements_2_0= ruleObjectsPublic ) )
+                    // InternalSoftGalleryLanguage.g:11399:3: ( (lv_elements_2_0= ruleObjectsPublic ) )
                     {
-                    // InternalSoftGalleryLanguage.g:10868:3: ( (lv_elements_2_0= ruleObjectsPublic ) )
-                    // InternalSoftGalleryLanguage.g:10869:4: (lv_elements_2_0= ruleObjectsPublic )
+                    // InternalSoftGalleryLanguage.g:11399:3: ( (lv_elements_2_0= ruleObjectsPublic ) )
+                    // InternalSoftGalleryLanguage.g:11400:4: (lv_elements_2_0= ruleObjectsPublic )
                     {
-                    // InternalSoftGalleryLanguage.g:10869:4: (lv_elements_2_0= ruleObjectsPublic )
-                    // InternalSoftGalleryLanguage.g:10870:5: lv_elements_2_0= ruleObjectsPublic
+                    // InternalSoftGalleryLanguage.g:11400:4: (lv_elements_2_0= ruleObjectsPublic )
+                    // InternalSoftGalleryLanguage.g:11401:5: lv_elements_2_0= ruleObjectsPublic
                     {
 
                     					newCompositeNode(grammarAccess.getBucketAccessAccess().getElementsObjectsPublicParserRuleCall_1_0());
@@ -27466,13 +28758,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 3 :
-                    // InternalSoftGalleryLanguage.g:10888:3: ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) )
+                    // InternalSoftGalleryLanguage.g:11419:3: ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) )
                     {
-                    // InternalSoftGalleryLanguage.g:10888:3: ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) )
-                    // InternalSoftGalleryLanguage.g:10889:4: (lv_elements_3_0= ruleBucketObjectsNotPublic )
+                    // InternalSoftGalleryLanguage.g:11419:3: ( (lv_elements_3_0= ruleBucketObjectsNotPublic ) )
+                    // InternalSoftGalleryLanguage.g:11420:4: (lv_elements_3_0= ruleBucketObjectsNotPublic )
                     {
-                    // InternalSoftGalleryLanguage.g:10889:4: (lv_elements_3_0= ruleBucketObjectsNotPublic )
-                    // InternalSoftGalleryLanguage.g:10890:5: lv_elements_3_0= ruleBucketObjectsNotPublic
+                    // InternalSoftGalleryLanguage.g:11420:4: (lv_elements_3_0= ruleBucketObjectsNotPublic )
+                    // InternalSoftGalleryLanguage.g:11421:5: lv_elements_3_0= ruleBucketObjectsNotPublic
                     {
 
                     					newCompositeNode(grammarAccess.getBucketAccessAccess().getElementsBucketObjectsNotPublicParserRuleCall_2_0());
@@ -27503,13 +28795,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 4 :
-                    // InternalSoftGalleryLanguage.g:10908:3: ( (lv_elements_4_0= ruleOnlyAuthorized ) )
+                    // InternalSoftGalleryLanguage.g:11439:3: ( (lv_elements_4_0= ruleOnlyAuthorized ) )
                     {
-                    // InternalSoftGalleryLanguage.g:10908:3: ( (lv_elements_4_0= ruleOnlyAuthorized ) )
-                    // InternalSoftGalleryLanguage.g:10909:4: (lv_elements_4_0= ruleOnlyAuthorized )
+                    // InternalSoftGalleryLanguage.g:11439:3: ( (lv_elements_4_0= ruleOnlyAuthorized ) )
+                    // InternalSoftGalleryLanguage.g:11440:4: (lv_elements_4_0= ruleOnlyAuthorized )
                     {
-                    // InternalSoftGalleryLanguage.g:10909:4: (lv_elements_4_0= ruleOnlyAuthorized )
-                    // InternalSoftGalleryLanguage.g:10910:5: lv_elements_4_0= ruleOnlyAuthorized
+                    // InternalSoftGalleryLanguage.g:11440:4: (lv_elements_4_0= ruleOnlyAuthorized )
+                    // InternalSoftGalleryLanguage.g:11441:5: lv_elements_4_0= ruleOnlyAuthorized
                     {
 
                     					newCompositeNode(grammarAccess.getBucketAccessAccess().getElementsOnlyAuthorizedParserRuleCall_3_0());
@@ -27562,7 +28854,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRulePublicAccess"
-    // InternalSoftGalleryLanguage.g:10931:1: entryRulePublicAccess returns [EObject current=null] : iv_rulePublicAccess= rulePublicAccess EOF ;
+    // InternalSoftGalleryLanguage.g:11462:1: entryRulePublicAccess returns [EObject current=null] : iv_rulePublicAccess= rulePublicAccess EOF ;
     public final EObject entryRulePublicAccess() throws RecognitionException {
         EObject current = null;
 
@@ -27570,8 +28862,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10931:53: (iv_rulePublicAccess= rulePublicAccess EOF )
-            // InternalSoftGalleryLanguage.g:10932:2: iv_rulePublicAccess= rulePublicAccess EOF
+            // InternalSoftGalleryLanguage.g:11462:53: (iv_rulePublicAccess= rulePublicAccess EOF )
+            // InternalSoftGalleryLanguage.g:11463:2: iv_rulePublicAccess= rulePublicAccess EOF
             {
              newCompositeNode(grammarAccess.getPublicAccessRule()); 
             pushFollow(FOLLOW_1);
@@ -27598,7 +28890,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "rulePublicAccess"
-    // InternalSoftGalleryLanguage.g:10938:1: rulePublicAccess returns [EObject current=null] : (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11469:1: rulePublicAccess returns [EObject current=null] : (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject rulePublicAccess() throws RecognitionException {
         EObject current = null;
 
@@ -27609,21 +28901,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10944:2: ( (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10945:2: (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11475:2: ( (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11476:2: (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10945:2: (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10946:3: otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11476:2: (otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11477:3: otherlv_0= 'PublicAccess' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,238,FOLLOW_9); 
+            otherlv_0=(Token)match(input,244,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPublicAccessAccess().getPublicAccessKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10950:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10951:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11481:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11482:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10951:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10952:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11482:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11483:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -27668,7 +28960,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleObjectsPublic"
-    // InternalSoftGalleryLanguage.g:10972:1: entryRuleObjectsPublic returns [EObject current=null] : iv_ruleObjectsPublic= ruleObjectsPublic EOF ;
+    // InternalSoftGalleryLanguage.g:11503:1: entryRuleObjectsPublic returns [EObject current=null] : iv_ruleObjectsPublic= ruleObjectsPublic EOF ;
     public final EObject entryRuleObjectsPublic() throws RecognitionException {
         EObject current = null;
 
@@ -27676,8 +28968,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:10972:54: (iv_ruleObjectsPublic= ruleObjectsPublic EOF )
-            // InternalSoftGalleryLanguage.g:10973:2: iv_ruleObjectsPublic= ruleObjectsPublic EOF
+            // InternalSoftGalleryLanguage.g:11503:54: (iv_ruleObjectsPublic= ruleObjectsPublic EOF )
+            // InternalSoftGalleryLanguage.g:11504:2: iv_ruleObjectsPublic= ruleObjectsPublic EOF
             {
              newCompositeNode(grammarAccess.getObjectsPublicRule()); 
             pushFollow(FOLLOW_1);
@@ -27704,7 +28996,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleObjectsPublic"
-    // InternalSoftGalleryLanguage.g:10979:1: ruleObjectsPublic returns [EObject current=null] : (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11510:1: ruleObjectsPublic returns [EObject current=null] : (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleObjectsPublic() throws RecognitionException {
         EObject current = null;
 
@@ -27715,21 +29007,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:10985:2: ( (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:10986:2: (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11516:2: ( (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11517:2: (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:10986:2: (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:10987:3: otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11517:2: (otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11518:3: otherlv_0= 'ObjectsPublic' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,239,FOLLOW_9); 
+            otherlv_0=(Token)match(input,245,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getObjectsPublicAccess().getObjectsPublicKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:10991:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:10992:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11522:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11523:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:10992:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:10993:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11523:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11524:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -27774,7 +29066,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleBucketObjectsNotPublic"
-    // InternalSoftGalleryLanguage.g:11013:1: entryRuleBucketObjectsNotPublic returns [EObject current=null] : iv_ruleBucketObjectsNotPublic= ruleBucketObjectsNotPublic EOF ;
+    // InternalSoftGalleryLanguage.g:11544:1: entryRuleBucketObjectsNotPublic returns [EObject current=null] : iv_ruleBucketObjectsNotPublic= ruleBucketObjectsNotPublic EOF ;
     public final EObject entryRuleBucketObjectsNotPublic() throws RecognitionException {
         EObject current = null;
 
@@ -27782,8 +29074,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:11013:63: (iv_ruleBucketObjectsNotPublic= ruleBucketObjectsNotPublic EOF )
-            // InternalSoftGalleryLanguage.g:11014:2: iv_ruleBucketObjectsNotPublic= ruleBucketObjectsNotPublic EOF
+            // InternalSoftGalleryLanguage.g:11544:63: (iv_ruleBucketObjectsNotPublic= ruleBucketObjectsNotPublic EOF )
+            // InternalSoftGalleryLanguage.g:11545:2: iv_ruleBucketObjectsNotPublic= ruleBucketObjectsNotPublic EOF
             {
              newCompositeNode(grammarAccess.getBucketObjectsNotPublicRule()); 
             pushFollow(FOLLOW_1);
@@ -27810,7 +29102,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleBucketObjectsNotPublic"
-    // InternalSoftGalleryLanguage.g:11020:1: ruleBucketObjectsNotPublic returns [EObject current=null] : (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11551:1: ruleBucketObjectsNotPublic returns [EObject current=null] : (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleBucketObjectsNotPublic() throws RecognitionException {
         EObject current = null;
 
@@ -27821,21 +29113,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:11026:2: ( (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:11027:2: (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11557:2: ( (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11558:2: (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:11027:2: (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:11028:3: otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11558:2: (otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11559:3: otherlv_0= 'BucketObjectsNotPublic' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,240,FOLLOW_9); 
+            otherlv_0=(Token)match(input,246,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBucketObjectsNotPublicAccess().getBucketObjectsNotPublicKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:11032:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:11033:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11563:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11564:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:11033:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:11034:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11564:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11565:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -27880,7 +29172,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleOnlyAuthorized"
-    // InternalSoftGalleryLanguage.g:11054:1: entryRuleOnlyAuthorized returns [EObject current=null] : iv_ruleOnlyAuthorized= ruleOnlyAuthorized EOF ;
+    // InternalSoftGalleryLanguage.g:11585:1: entryRuleOnlyAuthorized returns [EObject current=null] : iv_ruleOnlyAuthorized= ruleOnlyAuthorized EOF ;
     public final EObject entryRuleOnlyAuthorized() throws RecognitionException {
         EObject current = null;
 
@@ -27888,8 +29180,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:11054:55: (iv_ruleOnlyAuthorized= ruleOnlyAuthorized EOF )
-            // InternalSoftGalleryLanguage.g:11055:2: iv_ruleOnlyAuthorized= ruleOnlyAuthorized EOF
+            // InternalSoftGalleryLanguage.g:11585:55: (iv_ruleOnlyAuthorized= ruleOnlyAuthorized EOF )
+            // InternalSoftGalleryLanguage.g:11586:2: iv_ruleOnlyAuthorized= ruleOnlyAuthorized EOF
             {
              newCompositeNode(grammarAccess.getOnlyAuthorizedRule()); 
             pushFollow(FOLLOW_1);
@@ -27916,7 +29208,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleOnlyAuthorized"
-    // InternalSoftGalleryLanguage.g:11061:1: ruleOnlyAuthorized returns [EObject current=null] : (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11592:1: ruleOnlyAuthorized returns [EObject current=null] : (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleOnlyAuthorized() throws RecognitionException {
         EObject current = null;
 
@@ -27927,21 +29219,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:11067:2: ( (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:11068:2: (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11598:2: ( (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11599:2: (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:11068:2: (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:11069:3: otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11599:2: (otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11600:3: otherlv_0= 'OnlyAuthorized' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,241,FOLLOW_9); 
+            otherlv_0=(Token)match(input,247,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOnlyAuthorizedAccess().getOnlyAuthorizedKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:11073:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:11074:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11604:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11605:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:11074:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:11075:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11605:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11606:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -27986,7 +29278,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleAmazonFolder"
-    // InternalSoftGalleryLanguage.g:11095:1: entryRuleAmazonFolder returns [EObject current=null] : iv_ruleAmazonFolder= ruleAmazonFolder EOF ;
+    // InternalSoftGalleryLanguage.g:11626:1: entryRuleAmazonFolder returns [EObject current=null] : iv_ruleAmazonFolder= ruleAmazonFolder EOF ;
     public final EObject entryRuleAmazonFolder() throws RecognitionException {
         EObject current = null;
 
@@ -27994,8 +29286,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:11095:53: (iv_ruleAmazonFolder= ruleAmazonFolder EOF )
-            // InternalSoftGalleryLanguage.g:11096:2: iv_ruleAmazonFolder= ruleAmazonFolder EOF
+            // InternalSoftGalleryLanguage.g:11626:53: (iv_ruleAmazonFolder= ruleAmazonFolder EOF )
+            // InternalSoftGalleryLanguage.g:11627:2: iv_ruleAmazonFolder= ruleAmazonFolder EOF
             {
              newCompositeNode(grammarAccess.getAmazonFolderRule()); 
             pushFollow(FOLLOW_1);
@@ -28022,7 +29314,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleAmazonFolder"
-    // InternalSoftGalleryLanguage.g:11102:1: ruleAmazonFolder returns [EObject current=null] : (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11633:1: ruleAmazonFolder returns [EObject current=null] : (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleAmazonFolder() throws RecognitionException {
         EObject current = null;
 
@@ -28033,21 +29325,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:11108:2: ( (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:11109:2: (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11639:2: ( (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11640:2: (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:11109:2: (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:11110:3: otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11640:2: (otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11641:3: otherlv_0= 'AmazonFolder' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,242,FOLLOW_9); 
+            otherlv_0=(Token)match(input,248,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAmazonFolderAccess().getAmazonFolderKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:11114:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:11115:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11645:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11646:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:11115:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:11116:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11646:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11647:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -28092,7 +29384,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleAmazonFile"
-    // InternalSoftGalleryLanguage.g:11136:1: entryRuleAmazonFile returns [EObject current=null] : iv_ruleAmazonFile= ruleAmazonFile EOF ;
+    // InternalSoftGalleryLanguage.g:11667:1: entryRuleAmazonFile returns [EObject current=null] : iv_ruleAmazonFile= ruleAmazonFile EOF ;
     public final EObject entryRuleAmazonFile() throws RecognitionException {
         EObject current = null;
 
@@ -28100,8 +29392,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:11136:51: (iv_ruleAmazonFile= ruleAmazonFile EOF )
-            // InternalSoftGalleryLanguage.g:11137:2: iv_ruleAmazonFile= ruleAmazonFile EOF
+            // InternalSoftGalleryLanguage.g:11667:51: (iv_ruleAmazonFile= ruleAmazonFile EOF )
+            // InternalSoftGalleryLanguage.g:11668:2: iv_ruleAmazonFile= ruleAmazonFile EOF
             {
              newCompositeNode(grammarAccess.getAmazonFileRule()); 
             pushFollow(FOLLOW_1);
@@ -28128,7 +29420,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleAmazonFile"
-    // InternalSoftGalleryLanguage.g:11143:1: ruleAmazonFile returns [EObject current=null] : (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ ) ;
+    // InternalSoftGalleryLanguage.g:11674:1: ruleAmazonFile returns [EObject current=null] : (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ ) ;
     public final EObject ruleAmazonFile() throws RecognitionException {
         EObject current = null;
 
@@ -28140,39 +29432,39 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:11149:2: ( (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ ) )
-            // InternalSoftGalleryLanguage.g:11150:2: (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ )
+            // InternalSoftGalleryLanguage.g:11680:2: ( (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ ) )
+            // InternalSoftGalleryLanguage.g:11681:2: (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ )
             {
-            // InternalSoftGalleryLanguage.g:11150:2: (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ )
-            // InternalSoftGalleryLanguage.g:11151:3: otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+
+            // InternalSoftGalleryLanguage.g:11681:2: (otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+ )
+            // InternalSoftGalleryLanguage.g:11682:3: otherlv_0= 'AmazonFile' ( (lv_elements_1_0= ruleMetadata ) )+
             {
-            otherlv_0=(Token)match(input,243,FOLLOW_202); 
+            otherlv_0=(Token)match(input,249,FOLLOW_205); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAmazonFileAccess().getAmazonFileKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:11155:3: ( (lv_elements_1_0= ruleMetadata ) )+
+            // InternalSoftGalleryLanguage.g:11686:3: ( (lv_elements_1_0= ruleMetadata ) )+
             int cnt91=0;
             loop91:
             do {
                 int alt91=2;
                 int LA91_0 = input.LA(1);
 
-                if ( (LA91_0==244) ) {
+                if ( (LA91_0==250) ) {
                     alt91=1;
                 }
 
 
                 switch (alt91) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:11156:4: (lv_elements_1_0= ruleMetadata )
+            	    // InternalSoftGalleryLanguage.g:11687:4: (lv_elements_1_0= ruleMetadata )
             	    {
-            	    // InternalSoftGalleryLanguage.g:11156:4: (lv_elements_1_0= ruleMetadata )
-            	    // InternalSoftGalleryLanguage.g:11157:5: lv_elements_1_0= ruleMetadata
+            	    // InternalSoftGalleryLanguage.g:11687:4: (lv_elements_1_0= ruleMetadata )
+            	    // InternalSoftGalleryLanguage.g:11688:5: lv_elements_1_0= ruleMetadata
             	    {
 
             	    					newCompositeNode(grammarAccess.getAmazonFileAccess().getElementsMetadataParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_203);
+            	    pushFollow(FOLLOW_206);
             	    lv_elements_1_0=ruleMetadata();
 
             	    state._fsp--;
@@ -28227,7 +29519,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleMetadata"
-    // InternalSoftGalleryLanguage.g:11178:1: entryRuleMetadata returns [EObject current=null] : iv_ruleMetadata= ruleMetadata EOF ;
+    // InternalSoftGalleryLanguage.g:11709:1: entryRuleMetadata returns [EObject current=null] : iv_ruleMetadata= ruleMetadata EOF ;
     public final EObject entryRuleMetadata() throws RecognitionException {
         EObject current = null;
 
@@ -28235,8 +29527,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:11178:49: (iv_ruleMetadata= ruleMetadata EOF )
-            // InternalSoftGalleryLanguage.g:11179:2: iv_ruleMetadata= ruleMetadata EOF
+            // InternalSoftGalleryLanguage.g:11709:49: (iv_ruleMetadata= ruleMetadata EOF )
+            // InternalSoftGalleryLanguage.g:11710:2: iv_ruleMetadata= ruleMetadata EOF
             {
              newCompositeNode(grammarAccess.getMetadataRule()); 
             pushFollow(FOLLOW_1);
@@ -28263,7 +29555,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleMetadata"
-    // InternalSoftGalleryLanguage.g:11185:1: ruleMetadata returns [EObject current=null] : (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11716:1: ruleMetadata returns [EObject current=null] : (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleMetadata() throws RecognitionException {
         EObject current = null;
 
@@ -28274,21 +29566,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:11191:2: ( (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:11192:2: (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11722:2: ( (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11723:2: (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:11192:2: (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:11193:3: otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11723:2: (otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11724:3: otherlv_0= 'Metadata' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,244,FOLLOW_9); 
+            otherlv_0=(Token)match(input,250,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMetadataAccess().getMetadataKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:11197:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:11198:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11728:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11729:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:11198:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:11199:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11729:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11730:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -28333,7 +29625,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleAmazonElasticComputeCloud"
-    // InternalSoftGalleryLanguage.g:11219:1: entryRuleAmazonElasticComputeCloud returns [EObject current=null] : iv_ruleAmazonElasticComputeCloud= ruleAmazonElasticComputeCloud EOF ;
+    // InternalSoftGalleryLanguage.g:11750:1: entryRuleAmazonElasticComputeCloud returns [EObject current=null] : iv_ruleAmazonElasticComputeCloud= ruleAmazonElasticComputeCloud EOF ;
     public final EObject entryRuleAmazonElasticComputeCloud() throws RecognitionException {
         EObject current = null;
 
@@ -28341,8 +29633,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
         try {
-            // InternalSoftGalleryLanguage.g:11219:66: (iv_ruleAmazonElasticComputeCloud= ruleAmazonElasticComputeCloud EOF )
-            // InternalSoftGalleryLanguage.g:11220:2: iv_ruleAmazonElasticComputeCloud= ruleAmazonElasticComputeCloud EOF
+            // InternalSoftGalleryLanguage.g:11750:66: (iv_ruleAmazonElasticComputeCloud= ruleAmazonElasticComputeCloud EOF )
+            // InternalSoftGalleryLanguage.g:11751:2: iv_ruleAmazonElasticComputeCloud= ruleAmazonElasticComputeCloud EOF
             {
              newCompositeNode(grammarAccess.getAmazonElasticComputeCloudRule()); 
             pushFollow(FOLLOW_1);
@@ -28369,7 +29661,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleAmazonElasticComputeCloud"
-    // InternalSoftGalleryLanguage.g:11226:1: ruleAmazonElasticComputeCloud returns [EObject current=null] : (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSoftGalleryLanguage.g:11757:1: ruleAmazonElasticComputeCloud returns [EObject current=null] : (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleAmazonElasticComputeCloud() throws RecognitionException {
         EObject current = null;
 
@@ -28380,21 +29672,21 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:11232:2: ( (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSoftGalleryLanguage.g:11233:2: (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11763:2: ( (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSoftGalleryLanguage.g:11764:2: (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSoftGalleryLanguage.g:11233:2: (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSoftGalleryLanguage.g:11234:3: otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11764:2: (otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSoftGalleryLanguage.g:11765:3: otherlv_0= 'AmazonElasticComputeCloud' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,245,FOLLOW_9); 
+            otherlv_0=(Token)match(input,251,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAmazonElasticComputeCloudAccess().getAmazonElasticComputeCloudKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:11238:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSoftGalleryLanguage.g:11239:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11769:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSoftGalleryLanguage.g:11770:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSoftGalleryLanguage.g:11239:4: (lv_name_1_0= RULE_ID )
-            // InternalSoftGalleryLanguage.g:11240:5: lv_name_1_0= RULE_ID
+            // InternalSoftGalleryLanguage.g:11770:4: (lv_name_1_0= RULE_ID )
+            // InternalSoftGalleryLanguage.g:11771:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -28526,16 +29818,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000002L,0x0038000000000000L});
     public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0043800000000000L});
     public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
     public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
     public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
     public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
     public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000000AL});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000040008L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000001000008L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000001000000L});
     public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
     public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
     public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
@@ -28544,106 +29836,109 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
     public static final BitSet FOLLOW_100 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_101 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_102 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000280L});
-    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000010200L});
-    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000060L});
-    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000C00L});
-    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000F000L});
-    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000880000L});
-    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_116 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_117 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_118 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_119 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_120 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_121 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_122 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_123 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_124 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_125 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_126 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_127 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_128 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_129 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_130 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_131 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_132 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_133 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001F00000000L});
-    public static final BitSet FOLLOW_134 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000001F00000000L});
-    public static final BitSet FOLLOW_135 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_136 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000040000000000L});
-    public static final BitSet FOLLOW_137 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_138 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_139 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_140 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000600000000000L});
-    public static final BitSet FOLLOW_141 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_142 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_143 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000180000000000L});
-    public static final BitSet FOLLOW_144 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_145 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_146 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_147 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000000L,0x0E80000000000000L});
-    public static final BitSet FOLLOW_148 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
-    public static final BitSet FOLLOW_149 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_150 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x003F000000000000L});
-    public static final BitSet FOLLOW_151 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_152 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_153 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_154 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_155 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_156 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_157 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_158 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_159 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_160 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_161 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_162 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_163 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_164 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_165 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_166 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_167 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_168 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000180L});
-    public static final BitSet FOLLOW_169 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000000000001F800L});
-    public static final BitSet FOLLOW_170 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x000000000001F800L});
-    public static final BitSet FOLLOW_171 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_172 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_173 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_174 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_175 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_176 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_177 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_178 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_179 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000007000000L});
-    public static final BitSet FOLLOW_180 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001807000000L});
-    public static final BitSet FOLLOW_181 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001800000000L});
-    public static final BitSet FOLLOW_182 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_183 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_184 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_185 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_186 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_187 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_188 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_189 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_190 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_191 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_192 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_193 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_194 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_195 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000040000000000L});
-    public static final BitSet FOLLOW_196 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_197 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000180000000000L});
-    public static final BitSet FOLLOW_198 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0003A00000000000L});
-    public static final BitSet FOLLOW_199 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000C000000000000L});
-    public static final BitSet FOLLOW_200 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x000C000000000000L});
-    public static final BitSet FOLLOW_201 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_202 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
-    public static final BitSet FOLLOW_203 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
+    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400280L});
+    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000060L});
+    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000003C400L});
+    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_116 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_117 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_118 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000022000000L});
+    public static final BitSet FOLLOW_119 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_120 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_121 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_122 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_123 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_124 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_125 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_126 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_127 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_128 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_129 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_130 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_132 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_133 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_134 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_135 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_136 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_137 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000007C000000000L});
+    public static final BitSet FOLLOW_138 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x000007C000000000L});
+    public static final BitSet FOLLOW_139 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_140 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_141 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_142 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_143 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_144 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0018000000000000L});
+    public static final BitSet FOLLOW_145 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_146 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_147 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_148 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0004000000000000L});
+    public static final BitSet FOLLOW_149 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_150 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_151 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000000L,0xA000000000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_152 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
+    public static final BitSet FOLLOW_153 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_154 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0FC0000000000000L});
+    public static final BitSet FOLLOW_155 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_156 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L});
+    public static final BitSet FOLLOW_157 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_158 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_159 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_160 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_161 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_162 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_163 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_164 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_165 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_166 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_167 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_168 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_169 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_170 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_171 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_172 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000007E0000L});
+    public static final BitSet FOLLOW_173 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x00000000007E0000L});
+    public static final BitSet FOLLOW_174 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_175 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000006000000L});
+    public static final BitSet FOLLOW_176 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000000006000000L});
+    public static final BitSet FOLLOW_177 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_178 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_179 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_180 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_181 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_182 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000001C0000000L});
+    public static final BitSet FOLLOW_183 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000601C0000000L});
+    public static final BitSet FOLLOW_184 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000060000000000L});
+    public static final BitSet FOLLOW_185 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_186 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000010000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_187 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000010000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_188 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_189 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_190 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_191 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_192 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_193 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_194 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_195 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_196 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_197 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_198 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_199 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_200 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_201 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00E8000000000000L});
+    public static final BitSet FOLLOW_202 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0300000000000000L});
+    public static final BitSet FOLLOW_203 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0300000000000000L});
+    public static final BitSet FOLLOW_204 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
+    public static final BitSet FOLLOW_205 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_206 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
 
 }

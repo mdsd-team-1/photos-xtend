@@ -9,6 +9,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpringTableIdImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpringTableIdImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SpringTableIdImpl extends MinimalEObjectImpl.Container implements SpringTableId
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,31 @@ public class SpringTableIdImpl extends MinimalEObjectImpl.Container implements S
   protected EClass eStaticClass()
   {
     return SoftGalleryLanguagePackage.Literals.SPRING_TABLE_ID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.SPRING_TABLE_ID__NAME, oldName, name));
   }
 
   /**
@@ -108,6 +156,8 @@ public class SpringTableIdImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
+      case SoftGalleryLanguagePackage.SPRING_TABLE_ID__NAME:
+        return getName();
       case SoftGalleryLanguagePackage.SPRING_TABLE_ID__ELEMENTS:
         return getElements();
     }
@@ -125,6 +175,9 @@ public class SpringTableIdImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
+      case SoftGalleryLanguagePackage.SPRING_TABLE_ID__NAME:
+        setName((String)newValue);
+        return;
       case SoftGalleryLanguagePackage.SPRING_TABLE_ID__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends GeneratedValue>)newValue);
@@ -143,6 +196,9 @@ public class SpringTableIdImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
+      case SoftGalleryLanguagePackage.SPRING_TABLE_ID__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SoftGalleryLanguagePackage.SPRING_TABLE_ID__ELEMENTS:
         getElements().clear();
         return;
@@ -160,10 +216,29 @@ public class SpringTableIdImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
+      case SoftGalleryLanguagePackage.SPRING_TABLE_ID__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SoftGalleryLanguagePackage.SPRING_TABLE_ID__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //SpringTableIdImpl

@@ -154,6 +154,36 @@ System: {
 						AutowiredType AlbumRepository
 					Autowired
 						AutowiredType PhotoRepository
+						
+					ResponseEntity getAlbum
+						RequestMapping
+							Value id_id
+							Method GET
+							Produces application_json
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+							
+					ResponseEntity getPhotosFromAlbum
+						RequestMapping
+							Value id_photos
+							Method GET
+							Produces application_json
+						Parameter
+							Annotation PathVariable
+							Type Long
+							Name id
+							
+					ResponseEntity createAlbum
+						PostMapping create
+						Parameter
+							Annotation RequestBody
+							Type Map_String_String
+							Name body
+
+							
+				/*
 					RequestMapping
 						RequestMappingType getAlbum
 							GetMapping
@@ -162,7 +192,8 @@ System: {
 							GetMapping
 					RequestMapping
 						RequestMappingType createAlbum
-							PostMapping 
+							PostMapping
+				*/
 					ExceptionHandler handleException
 						ExceptionProcess AlbumNotFoundException
 						ExceptionProcess PhotosFromAlbumNotFoundException
@@ -179,6 +210,7 @@ System: {
 						AutowiredType PhotoRepository
 					Autowired
 						AutowiredType AmazonClient
+				/*
 					RequestMapping
 						RequestPart file
 						RequestMappingType uploadPhoto
@@ -192,7 +224,8 @@ System: {
 							GetMapping 
 					RequestMapping
 						RequestMappingType findAll
-							GetMapping 
+							GetMapping
+				*/
 					ExceptionHandler handleException
 						ExceptionProcess PhotoNotFoundException
 						ExceptionProcess PhotoUploadErrorException
@@ -209,6 +242,7 @@ System: {
 						AutowiredType AlbumRepository
 					Autowired
 						AutowiredType PhotoRepository
+				/*
 					RequestMapping
 						RequestMappingType getUserbyId
 							GetMapping 
@@ -224,6 +258,7 @@ System: {
 					RequestMapping
 						RequestMappingType editUser
 							PostMapping
+				*/
 					ExceptionHandler handleException
 						ExceptionProcess UserNotFoundException
 						ExceptionProcess AlbumsFromUserNotFoundException
@@ -241,14 +276,14 @@ System: {
 				}
 				SpringEntity Album : {
 					SpringTable album
-						SpringTableId
+						SpringTableId id
 							GeneratedValue Id_Album
 						Column name
 						Column user_id
 				}
 				SpringEntity Photo : {
 					SpringTable photo
-						SpringTableId 
+						SpringTableId id
 							GeneratedValue Id_Photo
 						Column name
 						Column url 
@@ -256,7 +291,7 @@ System: {
 				}
 				SpringEntity User : {
 					SpringTable user
-						SpringTableId
+						SpringTableId id
 							GeneratedValue Id_User
 						Column user_name
 						Column first_name

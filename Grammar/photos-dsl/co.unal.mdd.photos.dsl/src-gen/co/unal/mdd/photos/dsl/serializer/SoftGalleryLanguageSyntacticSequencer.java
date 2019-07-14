@@ -36,14 +36,14 @@ public class SoftGalleryLanguageSyntacticSequencer extends AbstractSyntacticSequ
 			return getReactLibraryTypeToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getReactRequestRule())
 			return getReactRequestToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getRequestMappingTypeConfRule())
-			return getRequestMappingTypeConfToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
 	 * ReactInformationType:
-	 * 'ReactReadme' | 'ReactAditionalInfo';
+	 * 	'ReactReadme' 		 |
+	 * 	'ReactAditionalInfo'
+	 * ;
 	 */
 	protected String getReactInformationTypeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -53,8 +53,13 @@ public class SoftGalleryLanguageSyntacticSequencer extends AbstractSyntacticSequ
 	
 	/**
 	 * ReactLibraryType:
-	 * 'ReactDesign' | 'ReactRouting' | 'ComponentManagement' |
-	 * 'StoreManagement' | 'ReactDeployment' | 'ConfigurationLibrary';
+	 * 	'ReactDesign' 			| 
+	 * 	'ReactRouting' 			| 
+	 * 	'ComponentManagement'	|
+	 * 	'StoreManagement' 		| 
+	 * 	'ReactDeployment' 		| 
+	 * 	'ConfigurationLibrary'
+	 * ;
 	 */
 	protected String getReactLibraryTypeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -64,22 +69,14 @@ public class SoftGalleryLanguageSyntacticSequencer extends AbstractSyntacticSequ
 	
 	/**
 	 * ReactRequest: 
-	 * 'Wrapper' | 'AuxWrapper';
+	 * 	'Wrapper'    | 
+	 * 	'AuxWrapper'
+	 * ;
 	 */
 	protected String getReactRequestToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "Wrapper";
-	}
-	
-	/**
-	 * RequestMappingTypeConf:
-	 * 'PostMapping' | 'GetMapping' | 'PutMapping' | 'DeleteMapping';
-	 */
-	protected String getRequestMappingTypeConfToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "PostMapping";
 	}
 	
 	@Override

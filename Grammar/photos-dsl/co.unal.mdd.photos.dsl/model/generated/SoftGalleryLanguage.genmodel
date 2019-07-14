@@ -270,14 +270,51 @@
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AutowiredType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AutowiredType/name"/>
     </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseEntity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseEntity/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseEntity/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//MappingType"/>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestMapping">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//RequestMapping/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//RequestMapping/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//RequestMapping/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//RequestMapping/produces"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestPart">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RequestPart/name"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestMappingValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RequestMappingValue/name"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestMappingType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RequestMappingType/name"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestMappingMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RequestMappingMethod/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestMappingProduces">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RequestMappingProduces/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//PostMapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PostMapping/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//GetMapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//GetMapping/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//PutMapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//PutMapping/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DeleteMapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DeleteMapping/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/parameterAnnotation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/parameterType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/parameterName"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseParameterAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseParameterAnnotation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseParameterType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseParameterName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseParameterName/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ExceptionHandler">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ExceptionHandler/name"/>
@@ -295,6 +332,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpringTable/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringTableId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringTableId/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpringTableId/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//GeneratedValue">

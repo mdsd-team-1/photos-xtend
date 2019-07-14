@@ -6,8 +6,8 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType
+//import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping
+//import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ExceptionHandler
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ExceptionProcess
 
@@ -44,15 +44,7 @@ class TemplateClassController {
 		
 		«ENDFOR»
 		
-		«FOR requestMappingItem: rsc.getElements().filter(RequestMapping)»
-		@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-		public ResponseEntity<?> «requestMappingItem.getElements().filter(RequestMappingType).get(0).name»(@PathVariable Long id) throws Exception {
-	
 
-
-		}
-		
-		«ENDFOR»
 
 		@ExceptionHandler(Exception.class)
 		public ResponseEntity<?> «rsc.getElements().filter(ExceptionHandler).get(0).name»(Exception exception) {

@@ -31,41 +31,7 @@ public class UserController {
 	PhotoRepository photoRepository;
 	
 	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getUserbyId(@PathVariable Long id) throws Exception {
-	
 
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getPhotoFromUser(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> loginUser(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> createUser(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> editUser(@PathVariable Long id) throws Exception {
-	
-
-
-	}
-	
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {

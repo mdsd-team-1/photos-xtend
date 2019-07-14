@@ -2,540 +2,922 @@ grammar co.unal.mdd.photos.dsl.SoftGalleryLanguage with org.eclipse.xtext.common
 
 generate softGalleryLanguage "http://www.unal.co/mdd/photos/dsl/SoftGalleryLanguage"
 
-//System
 Model:
-'System' ':' '{' elements+=Domain elements+=Architecture elements+=Technology '}';
+	'System' ':' '{' 
+		elements+=Domain 
+		elements+=Architecture 
+		elements+=Technology '}'
+;
 
-
-// Domain
 Domain:
-'Domain' name=ID ':' '{' entitydomain+=Entity entityfuncs+=Functionality exceptionsdomain+=ExceptionsDomain '}';
+	'Domain' name=ID ':' '{' 
+		entitydomain+=Entity 
+		entityfuncs+=Functionality 
+		exceptionsdomain+=ExceptionsDomain 
+	'}'
+;
 
-// Domain - Entities
 Entity:
-'Entities' ':' '{' (elements+=Entities)+ '}';
+	'Entities' ':' '{' 
+		(elements+=Entities)+ 
+	'}'
+;
 
-Entities
-//(entity+=Photo)+ (entity+=Album)+ (entity+=UserDomain)+;
-	:	'PhotoEntity' ':' name=ID (atributePhoto+=AtributePhoto)+
-	|	'AlbumEntity' ':' name=ID (atributeAlbum+=AtributeAlbum)+
-	|	'UserEntity' ':' name=ID (atributeUserDomain+=AtributeUserDomain)+
-	;
+Entities:
+	'PhotoEntity' ':' name=ID 
+		(atributePhoto+=AtributePhoto)+	|
+	'AlbumEntity' ':' name=ID 
+		(atributeAlbum+=AtributeAlbum)+	|
+	'UserEntity' ':' name=ID 
+		(atributeUserDomain+=AtributeUserDomain)+
+;
 
-AtributePhoto
-	:	'idPhoto' name=ID
-	|	'namePhoto' name=ID
-	|	'urlPhoto' name=ID
-	|	'albumIdPhoto' name=ID
-	;
+AtributePhoto:
+	'idPhoto' name=ID      |
+	'namePhoto' name=ID    |
+	'urlPhoto' name=ID     |
+	'albumIdPhoto' name=ID
+;
 	
-AtributeAlbum
-	:	'idAlbum' name=ID
-	|	'nameAlbum' name=ID
-	|	'userIdAlbum' name=ID
-	;
+AtributeAlbum:
+	'idAlbum' name=ID     |
+	'nameAlbum' name=ID   |
+	'userIdAlbum' name=ID
+;
 
-AtributeUserDomain
-	:	'idUser' name=ID
-	|	'userNameUser' name=ID
-	|	'firstNameUser' name=ID
-	|	'lastNameUser' name=ID
-	|	'profileDescriptionUser' name=ID
-	|	'passwordUser' name=ID
-	|	'emailUser' name=ID
-	;
+AtributeUserDomain:
+	'idUser' name=ID 				 |
+	'userNameUser' name=ID			 |
+	'firstNameUser' name=ID 		 |
+	'lastNameUser' name=ID 			 |
+	'profileDescriptionUser' name=ID |
+	'passwordUser' name=ID			 |
+	'emailUser' name=ID
+;
 
-// Domain - Functionalities
 Functionality:
-'Functionalities' ':' '{' (elements+=Functionalities) '}';
+	'Functionalities' ':' '{' 
+		(elements+=Functionalities) 
+	'}'
+;
 
 Functionalities:
-functions+=ProfileManagement 
-elements+=AppAccess
-items+=AlbumManagement
-resources+=PhotoActions
-aditionals+=LandingActions;
+	functions+=ProfileManagement 
+	elements+=AppAccess
+	items+=AlbumManagement
+	resources+=PhotoActions
+	aditionals+=LandingActions
+;
 
 ProfileManagement:
-'ProfileManagement' ':' items+=ProfileManagementFunctions;
+	'ProfileManagement' ':' 
+		items+=ProfileManagementFunctions
+;
 
 ProfileManagementFunctions:
-'ViewProfilePhoto' viewprofileName=ID 'EditProfileInfo' editProfileName=ID;
+	'ViewProfilePhoto' viewprofileName=ID 
+	'EditProfileInfo' editProfileName=ID
+;
 
 AppAccess:
-'AppAccess' ':' items+=AppAccessFunctions;
+	'AppAccess' ':' 
+		items+=AppAccessFunctions
+;
 
 AppAccessFunctions:
-'Login' loginName=ID 'Register' registerName=ID;
+	'Login' loginName=ID 
+	'Register' registerName=ID
+;
 
 AlbumManagement:
-'AlbumManagement' ':'items+=AlbumManagementFunctions;
+	'AlbumManagement' ':'
+		items+=AlbumManagementFunctions
+;
 
 AlbumManagementFunctions:
-'CreateAlbum' createdAlbName=ID 'SelectAlbum' selectAlbName=ID;
+	'CreateAlbum' createdAlbName=ID 
+	'SelectAlbum' selectAlbName=ID
+;
 
 PhotoActions:
-'PhotoActions' ':'items+=PhotoActionsFunctions;
+	'PhotoActions' ':'
+		items+=PhotoActionsFunctions
+;
 
 PhotoActionsFunctions:
-'ViewAllPhotos' nameGenerico=ID 'ViewExtendedPhoto' namePhoto=ID 'LoadPhoto' nameLoad=ID;
+	'ViewAllPhotos' nameGenerico=ID 
+	'ViewExtendedPhoto' namePhoto=ID 
+	'LoadPhoto' nameLoad=ID
+;
 
 LandingActions:
-'LandingActions' ':'items+=LandingFunctions;
+	'LandingActions' ':'
+		items+=LandingFunctions
+;
 
 LandingFunctions:
-'ViewCarousel' nameCarouselName=ID 'PassPhoto' passPhotoName=ID;
+	'ViewCarousel' nameCarouselName=ID 
+	'PassPhoto' passPhotoName=ID
+;
 
-//Domain - Exceptions
 ExceptionsDomain:
-'DomainExceptions' ':' '{' (exceptionsType+=ExceptionsType)+ '}';
+	'DomainExceptions' ':' '{' 
+		(exceptionsType+=ExceptionsType)+ 
+	'}'
+;
 
-ExceptionsType
-	:	'PhotoException' ':' (photoException+=PhotoException)+
-	|	'AlbumException' ':' (albumException+=AlbumException)+
-	|	'UserException' ':' (userException+=UserException)+
-	;
+ExceptionsType:
+	'PhotoException' ':' (photoException+=PhotoException)+ |
+	'AlbumException' ':' (albumException+=AlbumException)+ |
+	'UserException' ':' (userException+=UserException)+
+;
 
-PhotoException
-	:	'PhotoNotFound' name=ID
-	|	'PhotoUploadError' name=ID
-	|	'PhotoNotCreated' name=ID
-	|	'PhotoNotDeleted' name=ID
-	;
+PhotoException:
+	'PhotoNotFound' name=ID    |
+	'PhotoUploadError' name=ID |
+	'PhotoNotCreated' name=ID  |
+	'PhotoNotDeleted' name=ID
+;
 
-AlbumException
-	:	'AlbumNotFound' name=ID
-	|	'PhotosFromAlbumNotFound' name=ID
-	|	'AlbumHasNoPhotos' name=ID
-	|	'MissingParametersForNewAlbum' name=ID
-	|	'UserIdIsNotNumber' name=ID
-	|	'AlbumNotCreated' name=ID
-	;
+AlbumException:
+	'AlbumNotFound' name=ID					|
+	'PhotosFromAlbumNotFound' name=ID	 	|
+	'AlbumHasNoPhotos' name=ID				|
+	'MissingParametersForNewAlbum' name=ID 	|
+	'UserIdIsNotNumber' name=ID 			|
+	'AlbumNotCreated' name=ID
+;
 	
-UserException
-	:	'UserNotFound' name=ID
-	|	'AlbumsFromUserNotFound' name=ID
-	|	'UserHasNoAlbums' name=ID
-	|	'UserHasNoPhotos' name=ID
-	|	'MissingParametersForNewUser' name=ID
-	|	'UserNotCreated' name=ID
-	|	'AlbumNotCreatedForNewUser' name=ID
-	|	'MissingParametersForEditUser' name=ID
-	|	'WrongLoginInfo' name=ID
-	|	'MissingParametersForLogin' name=ID
-	|	'UserIdIsNotNumber' name=ID
-	|	'UserToEditDoesNotExist' name=ID
-	|	'UserNotEdited' name=ID
-	;		
+UserException:
+	'UserNotFound' name=ID 					|
+	'AlbumsFromUserNotFound' name=ID 		|
+	'UserHasNoAlbums' name=ID 				|
+	'UserHasNoPhotos' name=ID 				|
+	'MissingParametersForNewUser' name=ID 	|
+	'UserNotCreated' name=ID 				|
+	'AlbumNotCreatedForNewUser' name=ID 	|
+	'MissingParametersForEditUser' name=ID 	|
+	'WrongLoginInfo' name=ID 				|
+	'MissingParametersForLogin' name=ID 	|
+	'UserIdIsNotNumber' name=ID 			|
+	'UserToEditDoesNotExist' name=ID 		|
+	'UserNotEdited' name=ID
+;		
 	
-//Architecture
 Architecture:
-'Architecture:' '{' (elements+=NTiers)+  (elements+=NTiersConnections)+ '}';
+	'Architecture:' '{' 
+		(elements+=NTiers)+  
+		(elements+=NTiersConnections)+ 
+	'}'
+;
 
 NTiers:
-'Layers' (elements+=Layer)+ 'LayersRelations' (elements+=LayerRelations)+ 'ArchitectureComponents' (elements+=ArchitectureComponents)+;
+	'Layers' 
+		(elements+=Layer)+ 
+	'LayersRelations' 
+		(elements+=LayerRelations)+ 
+	'ArchitectureComponents' 
+		(elements+=ArchitectureComponents)+
+;
 
 Layer:
-layer+=PresentationLayer layer+=BusinessLogicLayer layer+=DataPersistenceLayer;
+	layer+=PresentationLayer 
+	layer+=BusinessLogicLayer 
+	layer+=DataPersistenceLayer
+;
 
 PresentationLayer:
-'PresentationLayer' presentationLayer+=PresentationContent presentationLayer+=SegmentStructure;
+	'PresentationLayer' 
+		presentationLayer+=PresentationContent 
+		presentationLayer+=SegmentStructure
+;
 
 PresentationContent:
-'PresentationSegments' elements+=PresentationSegments;
+	'PresentationSegments' 
+	elements+=PresentationSegments
+;
 
 PresentationSegments:
-'PresentationView' presentationSName=ID 'PresentationComponent' presentationCName=ID 'PresentationAction' presentationAName=ID;
+	'PresentationView' presentationSName=ID 
+	'PresentationComponent' presentationCName=ID 
+	'PresentationAction' presentationAName=ID
+;
 
 BusinessLogicLayer:
-'BusinessLogicLayer' businessLogicLayer+=BusinessLogicContent businessLogicLayer+=SegmentStructure;
+	'BusinessLogicLayer' 
+		businessLogicLayer+=BusinessLogicContent 
+		businessLogicLayer+=SegmentStructure
+;
 
 BusinessLogicContent:
-'BusinessLogicSegments' (businessLogicSegments+=BusinessLogicSegments)+;
+	'BusinessLogicSegments' 
+		(businessLogicSegments+=BusinessLogicSegments)+
+;
 	
-BusinessLogicSegments
-	:	'ControllerSegment' name=ID (controllerSegmentElement+=ControllerSegmentElement)+
-	|	'ModelSegment' name=ID 
-	|	'RepositorySegment' name=ID 
-	|	'SecuritySegment' name=ID
-	|	'SpecificationSegment' name=ID (specificationSegmentElement+=SpecificationSegmentElement)+;
+BusinessLogicSegments:
+		'ControllerSegment' name=ID 
+			(controllerSegmentElement+=ControllerSegmentElement)+ 	|
+		'ModelSegment' name=ID 										|
+		'RepositorySegment' name=ID									| 
+		'SecuritySegment' name=ID									|
+		'SpecificationSegment' name=ID 
+			(specificationSegmentElement+=SpecificationSegmentElement)+
+;
 	
-ControllerSegmentElement
-	:	'AmazonSegment' name=ID 
-	|	'ExceptionSegment' name=ID;
+ControllerSegmentElement:
+	'AmazonSegment' name=ID    | 
+	'ExceptionSegment' name=ID
+;
 
-SpecificationSegmentElement
-	:	'DefinedSearchCriteria' name=ID;
+SpecificationSegmentElement:
+	'DefinedSearchCriteria' name=ID
+;
 	
 DataPersistenceLayer:
-'DataPersistenceLayer' elements+=DataPersistenceContent;
+	'DataPersistenceLayer' 
+		elements+=DataPersistenceContent
+;
 
 DataPersistenceContent:
-'DataPersistenceSegments' elements+=DataPersistenceSegments;
+	'DataPersistenceSegments' 
+		elements+=DataPersistenceSegments
+;
 
 DataPersistenceSegments:
-'PostgreSLQSegment' postSName=ID 'AmazonS3Storage' amazonSName=ID;
+	'PostgreSLQSegment' postSName=ID 
+	'AmazonS3Storage' amazonSName=ID
+;
 
 SegmentStructure:
-'SegmentStructure' elements+=SegmentStructureContent;
+	'SegmentStructure' 
+		elements+=SegmentStructureContent
+;
 
 SegmentStructureContent:
-'Directories'	name=ID (elements+=DirectoryContent)+;
+	'Directories' name=ID
+		(elements+=DirectoryContent)+
+;
 
 DirectoryContent:
-'Directory' name=ID directories+=Directories | directories+=SingleFile;
+	'Directory' name=ID 
+		directories+=Directories | 
+		directories+=SingleFile
+;
 
 Directories:
-elements+=MultipleFile;
+	elements+=MultipleFile
+;
 
 SingleFile:
-'SingleFile' name=ID;
+	'SingleFile' name=ID
+;
 
 MultipleFile:
-'CommonFile' name=ID;
+	'CommonFile' name=ID
+;
 
 LayerRelations:
-layerelations+=RelationType name=ID layerorigin+=LayerSource layertarget+=LayerTarget;
+	layerelations+=RelationType name=ID 
+		layerorigin+=LayerSource 
+		layertarget+=LayerTarget
+;
 
 RelationType:
-'AllowedToUse' | 'AllowToUseBelow';
+	'AllowedToUse' | 
+	'AllowToUseBelow'
+;
 
 LayerSource:
-'source' layerelations+=LayerRelationName;
+	'source' 
+		layerelations+=LayerRelationName
+;
 
 LayerTarget:
-'target' layerelations+=LayerRelationName;
+	'target' 
+		layerelations+=LayerRelationName
+;
 
 LayerRelationName:
-'PresentationLayer' | 'BusinessLogicLayer' | 'PersistenceDataLayer';
+	'PresentationLayer'    | 
+	'BusinessLogicLayer'   | 
+	'PersistenceDataLayer'
+;
 
 ArchitectureComponents:
-'SystemComponents' archFeComponent+=FrontEnd archBeComponent+=BackEnd archPdComponent+=PersistenceDataComponent;
+	'SystemComponents' 
+		archFeComponent+=FrontEnd 
+		archBeComponent+=BackEnd 
+		archPdComponent+=PersistenceDataComponent
+;
 
 FrontEnd:
-'FrontEndComponent' name=ID;
+	'FrontEndComponent' name=ID
+;
 
 BackEnd: 
-'BackEndComponent' name=ID;
+	'BackEndComponent' name=ID
+;
 
 PersistenceDataComponent:
-'PersistenceDataComponent' name=ID;
+	'PersistenceDataComponent' name=ID
+;
 
 NTiersConnections:
-'Connectors' (ntierconnections+=NTierConnectionContent)+;
+	'Connectors' 
+		(ntierconnections+=NTierConnectionContent)+
+;
 
 NTierConnectionContent:
-ntierconnection+=ConnectionType nTierName=ID ntierorigin+=NTierSource ntiertarget+=NTierTarget;
+	ntierconnection+=ConnectionType nTierName=ID 
+		ntierorigin+=NTierSource 
+		ntiertarget+=NTierTarget
+;
 
 ConnectionType:
-'REST' | 'PostgreSQLConnection' | 'AmazonS3API';
+	'REST'					| 
+	'PostgreSQLConnection' 	| 
+	'AmazonS3API'
+;
 
 NTierSource:
-'source' ntierconnection+=NTiersRelations;
+	'source' 
+		ntierconnection+=NTiersRelations
+;
 
 NTierTarget:
-'target' ntierconnection+=NTiersRelations;
+	'target'
+		ntierconnection+=NTiersRelations
+;
 
 NTiersRelations:
-'FrontEndComponent' name=ID | 'BackEndComponent' name=ID | 'PersistenceDataComponent' name=ID | 'AmazonService' name=ID;
+	'FrontEndComponent' name=ID 		|
+	'BackEndComponent' name=ID 			| 
+	'PersistenceDataComponent' name=ID 	| 
+	'AmazonService' name=ID
+;
 
-
-// Technology
 Technology:
-'Technology' name=ID ':' '{' elements+=Technologies '}';
+	'Technology' name=ID ':' '{' 
+		elements+=Technologies 
+	'}'
+;
 
 Technologies:
-techspring+=Spring techreact+=React techpostgresql+=PostgreSQL techamazon+=AmazonWebServices;
+	techspring+=Spring 
+	techreact+=React 
+	techpostgresql+=PostgreSQL 
+	techamazon+=AmazonWebServices
+;
 
 Spring:
-'Spring' name=ID ':' '{' elements+=SpringBootApplication '}';
+	'Spring' name=ID ':' '{' 
+		elements+=SpringBootApplication 
+	'}'
+;
 
 SpringBootApplication:
-'SpringBootApplication'  elements+=Configuration (elements+=SpringComponent)+ (elements+=SpringRepository)+  (elements+=RestController)+ (elements+=SpringEntity)+  ;
+	'SpringBootApplication'  
+		elements+=Configuration 
+		(elements+=SpringComponent)+ 
+		(elements+=SpringRepository)+  
+		(elements+=RestController)+ 
+		(elements+=SpringEntity)+ 
+;
 
 Configuration:
-'Configuration' ':' '{' elements+=EnableGlobalMethodSecurity  elements+=EnableAuthorizationServer   elements+=EnableResourceServer  elements+=EnableWebSecurity '}';
+	'Configuration' ':' '{' 
+		elements+=EnableGlobalMethodSecurity  
+		elements+=EnableAuthorizationServer   
+		elements+=EnableResourceServer  
+		elements+=EnableWebSecurity 
+	'}'
+;
 
 EnableGlobalMethodSecurity:
-'EnableGlobalMethodSecurity' name=ID;
+	'EnableGlobalMethodSecurity' name=ID
+;
 
 EnableAuthorizationServer :
-'EnableAuthorizationServer' name=ID;
+	'EnableAuthorizationServer' name=ID
+;
 
 EnableResourceServer :
-'EnableResourceServer' name=ID;
+	'EnableResourceServer' name=ID
+;
 
 EnableWebSecurity:
-'EnableWebSecurity' name=ID;
+	'EnableWebSecurity' name=ID
+;
 
 SpringComponent:
-'SpringComponent' ':' '{' elements+=OrderSpring '}';
+	'SpringComponent' ':' '{' 
+		elements+=OrderSpring 
+	'}'
+;
 
 OrderSpring:
-'OrderSpring' name=ID;
+	'OrderSpring' name=ID
+;
 
 SpringRepository:
-'SpringRepositories' ':' '{' (elements+=SpringRepositories)+ '}';
+	'SpringRepositories' ':' '{' 
+		(elements+=SpringRepositories)+ 
+	'}'
+;
 
 SpringRepositories:
-'SpringRepository' name=ID;
+	'SpringRepository' name=ID
+;
 
 RestController:
-'RestController' name=ID ':' '{' elements+=Specification  (elements+=Autowired)+  (elements+=RequestMapping)+ elements+=ExceptionHandler '}';
+	'RestController' name=ID ':' '{' 
+		elements+=Specification 
+		(elements+=Autowired)* 
+		(elements+=ResponseEntity)* 
+		elements+=ExceptionHandler 
+	'}'
+;
 
 Specification:
-'Specification' (elements+=Predicate)+ elements+=SearchCriteria;
+	'Specification' 
+		(elements+=Predicate)+ 
+		elements+=SearchCriteria
+;
 
 Predicate:
-'Predicate' name=ID;
+	'Predicate' name=ID
+;
 
 SearchCriteria:
-'SearchCriteria' name=ID;
+	'SearchCriteria' name=ID
+;
 
 Autowired: 
-'Autowired'elements+=AutowiredType;
+	'Autowired' 
+		elements+=AutowiredType
+;
 
 AutowiredType:
-'AutowiredType' name=ID;
+	'AutowiredType' name=ID
+;
+
+ResponseEntity:
+	'ResponseEntity' name=ID 
+		type+=MappingType 
+		(parameters+=ResponseParameter)*
+;
+
+MappingType:
+	RequestMapping 	| 
+	PostMapping 	| 
+	GetMapping 		| 
+	PutMapping 		| 
+	DeleteMapping
+;
 
 RequestMapping:
-'RequestMapping' (elements+=RequestPart)* elements+=RequestMappingType;
+	'RequestMapping' 
+		value+=RequestMappingValue 
+		method+=RequestMappingMethod
+		produces+=RequestMappingProduces
+;
 
-RequestPart:
-'RequestPart' name=ID;
+RequestMappingValue:
+	'Value' name=ID
+;
 
-RequestMappingType:
-'RequestMappingType' name=ID RequestMappingTypeConf;
+RequestMappingMethod:
+	'Method' name=ID
+;
 
-RequestMappingTypeConf:
-'PostMapping' | 'GetMapping' | 'PutMapping' | 'DeleteMapping';
+RequestMappingProduces:
+	'Produces' name=ID
+;
+
+PostMapping:
+	'PostMapping' name=ID
+;
+
+GetMapping:
+	'GetMapping' name=ID	
+;
+
+PutMapping:
+	'PutMapping' name=ID
+;
+
+DeleteMapping:
+	'DeleteMapping' name=ID
+;
+
+ResponseParameter:
+	'Parameter'
+		parameterAnnotation+=ResponseParameterAnnotation 
+		parameterType+=ResponseParameterType
+		parameterName+=ResponseParameterName
+;
+
+ResponseParameterAnnotation:
+	'Annotation' name=ID
+;
+
+ResponseParameterType:
+	'Type' name=ID
+;
+
+ResponseParameterName:
+	'Name' name=ID
+;
 
 ExceptionHandler:
-'ExceptionHandler' name=ID (elements+=ExceptionProcess)+;
+	'ExceptionHandler' name=ID 
+		(elements+=ExceptionProcess)+
+;
 
 ExceptionProcess:
-'ExceptionProcess' name=ID;
+	'ExceptionProcess' name=ID
+;
 
 SpringEntity:
-'SpringEntity' name=ID ':' '{' (elements+=SpringTable)+ (elements+=NameNativeQuery)* '}';
+	'SpringEntity' name=ID ':' '{' 
+		(elements+=SpringTable)+ (elements+=NameNativeQuery)*
+	'}'
+;
 
 SpringTable:
-'SpringTable' name=ID elements+=SpringTableId (elements+=Columns)+;
+	'SpringTable' name=ID 
+		elements+=SpringTableId 
+		(elements+=Columns)+
+;
 
 SpringTableId:
-{SpringTableId} 'SpringTableId' (elements+=GeneratedValue)*;
+	'SpringTableId' name=ID 
+		(elements+=GeneratedValue)*
+;
 
 GeneratedValue:
-'GeneratedValue' name=ID;
+	'GeneratedValue' name=ID
+;
 
 Columns:
-'Column' name=ID;
+	'Column' name=ID
+;
 
 NameNativeQuery:
-'NameNativeQuery'  name=ID;
-
+	'NameNativeQuery' name=ID
+;
 
 React:
-'React' name=ID ':' '{' reacts+=ReactModules '}';
+	'React' name=ID ':' '{' 
+		reacts+=ReactModules 
+	'}'
+;
 
 ReactModules:
-'ReactModules' ':' '{' reactmodules+=ReactSubModules '}';
+	'ReactModules' ':' '{' 
+		reactmodules+=ReactSubModules 
+	'}'
+;
 
 ReactSubModules:
-reactmodulesconf+=ReactConfiguration reactmodulescomp+=ReactComponents reactmodulesact+=ReactActions 
-reactmoduleslib+=ReactLibraries reactmodulesinf+=ReactInfo;
+	reactmodulesconf+=ReactConfiguration 
+	reactmodulescomp+=ReactComponents 
+	reactmodulesact+=ReactActions 
+	reactmoduleslib+=ReactLibraries 
+	reactmodulesinf+=ReactInfo
+;
 
 ReactConfiguration:
-'ReactConfiguration' ':' '{' dependencies+=ReactDependencies configurations+=ReactConfigurations '}';
+	'ReactConfiguration' ':' '{' 
+		dependencies+=ReactDependencies 
+		configurations+=ReactConfigurations 
+	'}'
+;
 
 ReactDependencies:
-'DependenciesStruct' (dependencies+=ReactDependenciesRules)+;
+	'DependenciesStruct' 
+		(dependencies+=ReactDependenciesRules)+
+;
 
 ReactDependenciesRules:
-'DependencyType' name=ID (dependencies+=ReactDependenciesSubRules)+;
+	'DependencyType' name=ID 
+		(dependencies+=ReactDependenciesSubRules)+
+;
 
 ReactDependenciesSubRules:
-(dependencies+=SingleDependencies);
+	(dependencies+=SingleDependencies)
+;
 
 SingleDependencies:
-(dependencies+=PackageName) (dependencies+=PackageVersion);
+	(dependencies+=PackageName)
+	(dependencies+=PackageVersion)
+;
 
 PackageName:
-'PackageName' name=ID;
+	'PackageName' name=ID
+;
 
 PackageVersion:
-'PackageVersion' name=ID;	
+	'PackageVersion' name=ID
+;	
 
 ReactConfigurations:
-'ReactDOMConfigurations' name=ID (configurations+=DOMConfigurations)+;
+	'ReactDOMConfigurations' name=ID
+		(configurations+=DOMConfigurations)+
+;
 
 DOMConfigurations:
-(elements+=DOMTypeConf) name=ID;
+	(elements+=DOMTypeConf) name=ID
+;
 
 DOMTypeConf:
-'RoutingConf' | 'ServiceWorker' | 'HTMLStructure' | 'Manifest' | 'RepositoriesConf';
+	'RoutingConf' 	|
+	'ServiceWorker' | 
+	'HTMLStructure' | 
+	'Manifest' 		|
+	'RepositoriesConf'
+;
 
 ReactComponents:
-'ReactComponents' ':' '{' componentslogic+=ComponentsLogic componentsui+=ComponentsUI componentstyle+=ComponentsStyles'}';
+	'ReactComponents' ':' '{' 
+		componentslogic+=ComponentsLogic 
+		componentsui+=ComponentsUI 
+		componentstyle+=ComponentsStyles
+	'}'
+;
 
 ComponentsLogic:
-'LogicComponents' name=ID logiccomponents+=LogicContent;
+	'LogicComponents' name=ID 
+		logiccomponents+=LogicContent
+;
 
 LogicContent:
-'RoutingComponents' name=ID logiccomponents+=LogicStructure;
+	'RoutingComponents' name=ID 
+		logiccomponents+=LogicStructure
+;
 
 LogicStructure:
-'AppComponent' appComName=ID logiccomponents+=ComponentClass 'IndexComponent' indexCompName=ID;
+	'AppComponent' appComName=ID 
+		logiccomponents+=ComponentClass 
+		'IndexComponent' indexCompName=ID
+;
 
 ComponentsUI:
-'UIComponents' name=ID uicomponents+=UIContent;
+	'UIComponents' name=ID 
+		uicomponents+=UIContent
+;
 
 UIContent: 
-(componentcontent+=ViewComponentCont)+ (subcomponentcontent+=SubcomponentCont)+;
+	(componentcontent+=ViewComponentCont)+ 
+	(subcomponentcontent+=SubcomponentCont)+
+;
 
 ViewComponentCont:
-'ViewComponent' nameView=ID uicontent+=ComponentClass;
+	'ViewComponent' nameView=ID 
+		uicontent+=ComponentClass
+;
 
 SubcomponentCont:
-'Subcomponents' nameSubComp=ID uicontent+=ComponentClass;
+	'Subcomponents' nameSubComp=ID 
+		uicontent+=ComponentClass
+;
 
 ComponentClass:
-componentclassimp+=ReactImports componentclassfunc+=ReactFunctions componentclassprop+=Props;
+	componentclassimp+=ReactImports 
+	componentclassfunc+=ReactFunctions 
+	componentclassprop+=Props
+;
 
 ReactImports:
-{ReactImports} (reactsimports+=ReactImportContent)*;
+	{ReactImports} (reactsimports+=ReactImportContent)*
+;
 
 ReactImportContent:
-'import' impName=ID;
+	'import' impName=ID
+;
 
 ReactFunctions:
-reactconstructors+=ReactConstructor (lifecycleclass+=ReactLifeCycle)* (reactcorefuncs+=ReactCoreFunctions)* renderclass+=ReactRender;
+	reactconstructors+=ReactConstructor 
+	(lifecycleclass+=ReactLifeCycle)* 
+	(reactcorefuncs+=ReactCoreFunctions)* 
+	renderclass+=ReactRender
+;
 
 ReactConstructor:
-'Constructor' componentstateclass+=State (componentfuncclass+=CoreFunctionsDeclaration)*;
+	'Constructor' 
+		componentstateclass+=State 
+		(componentfuncclass+=CoreFunctionsDeclaration)*
+;
 
 State:
-{State} 'State' (statecontents+=StateContent)+;
+	{State} 'State' 
+		(statecontents+=StateContent)+
+;
 
 StateContent:
-stateName=ID componentdatatyp+=DataType;
+	stateName=ID 
+	componentdatatyp+=DataType
+;
 
 DataType:
-'String' | 'Array' | 'Object' | 'Number' | 'null' | 'Boolean';
+	'String' |
+	'Array'  | 
+	'Object' | 
+	'Number' | 
+	'null'   | 
+	'Boolean'
+;
 
 CoreFunctionsDeclaration:
-name=ID 'FunctionBindingDeclaration';
+	name=ID 'FunctionBindingDeclaration'
+;
 
 ReactLifeCycle:
-'ComponentDidMount' 'FunctionStructure' |
-'ComponentDidUpdate' 'FunctionStructure' |
-'ComponentWillUnmount' 'FunctionStructure';
+	'ComponentDidMount' 'FunctionStructure'    |
+	'ComponentDidUpdate' 'FunctionStructure'   |
+	'ComponentWillUnmount' 'FunctionStructure'
+;
 
 ReactRender:
-'Render' 'RenderContent';
+	'Render' 'RenderContent'
+;
 
 Props:
-{Props} 'Props' (propsconts+=PropsType)*;
+	{Props} 'Props' 
+		(propsconts+=PropsType)*
+;
 
 PropsType:
-nameProps=ID propsdatas+=DataType;
+	nameProps=ID 
+	propsdatas+=DataType
+;
 
 ReactCoreFunctions:
-name=ID 'FunctionStructure';
+	name=ID 'FunctionStructure'
+;
 
 ComponentsStyles:
-{ComponentsStyles} (stylescontents+=ComponentsStylesContent)*;
+	{ComponentsStyles} 
+		(stylescontents+=ComponentsStylesContent)*
+;
 
 ComponentsStylesContent:
-'Style' nameStyle=ID stylecontent+=StyleProperties;
+	'Style' nameStyle=ID 
+		stylecontent+=StyleProperties
+;
 
 StyleProperties:
-{StyleProperties} (stylespropscontents+=StylePropertiesContent)*;
+	{StyleProperties} 
+		(stylespropscontents+=StylePropertiesContent)*
+;
 
 StylePropertiesContent:
-'prop_name' propName=ID ("propsContent")+;
+	'prop_name' propName=ID 
+		("propsContent")+
+;
 
 ReactActions:
-'ReactActions' ':' '{' reactactcontent+=ReactActionsContent '}';
+	'ReactActions' ':' '{' 
+		reactactcontent+=ReactActionsContent 
+	'}'
+;
 
 ReactActionsContent:
-(reactrelcontent+=ReactServicesRelation)+ ;
+	(reactrelcontent+=ReactServicesRelation)+ 
+;
 	
 ReactServicesType:
-'ServiceType' name=ID reactservcontent+=ReactServiceContent;
+	'ServiceType' name=ID 
+		reactservcontent+=ReactServiceContent
+;
 
 ReactServiceContent:
-('functions' functName=ID reactservrequest+=ReactServiceContRequest)*;
+	'functions' functName=ID 
+		(reactservrequest+=ReactServiceContRequest)*
+;
 
 ReactServiceContRequest:
-'return' (reactservrequestprops+=ReactServiceRequestProps)+;
+	'return' 
+		(reactservrequestprops+=ReactServiceRequestProps)+
+;
 
 ReactServiceRequestProps:
-'propName' reqPropName=ID reqPropDescription=ID;
+	'propName' reqPropName=ID reqPropDescription=ID
+;
 
 ReactServicesRelation:
-'ServicesRelations' (servicesrels+=ReactsRelationServ)+;
+	'ServicesRelations' 
+		(servicesrels+=ReactsRelationServ)+
+;
 
 ReactsRelationServ:
-reactrelationcontent+=ReactServicesType name=ID ReactRequest;
+	reactrelationcontent+=ReactServicesType name=ID ReactRequest
+;
 
 ReactRequest: 
-'Wrapper' | 'AuxWrapper';
+	'Wrapper'    | 
+	'AuxWrapper'
+;
 
 ReactLibraries:
-'ReactLibraries' ':' '{' (reactlibraries+=ReactLibrary)+ '}';
+	'ReactLibraries' ':' '{' 
+		(reactlibraries+=ReactLibrary)+ 
+	'}'
+;
 
 ReactLibrary:
-ReactLibraryType name=ID 'LibraryContent';
+	ReactLibraryType name=ID 'LibraryContent'
+;
 
 ReactLibraryType:
-'ReactDesign' | 'ReactRouting' | 'ComponentManagement' |
-'StoreManagement' | 'ReactDeployment' | 'ConfigurationLibrary';
+	'ReactDesign' 			| 
+	'ReactRouting' 			| 
+	'ComponentManagement'	|
+	'StoreManagement' 		| 
+	'ReactDeployment' 		| 
+	'ConfigurationLibrary'
+;
 
 ReactInfo:
-'ReactInformation' ':' '{' (reactinformation+=ReactInformation)+ '}';
+	'ReactInformation' ':' '{' 
+		(reactinformation+=ReactInformation)+ 
+	'}'
+;
 
 ReactInformation:
-ReactInformationType name=ID 'InformationContent';
+	ReactInformationType name=ID 'InformationContent'
+;
 
 ReactInformationType:
-'ReactReadme' | 'ReactAditionalInfo';
+	'ReactReadme' 		 |
+	'ReactAditionalInfo'
+;
 
 PostgreSQL:
-'PostgreSQL' name=ID ':' '{' elements+=Cluster '}';
+	'PostgreSQL' name=ID ':' '{' 
+		elements+=Cluster 
+	'}'
+;
 
 Cluster:
-'Database' elements+=Database (elements+=PostgresUser)+;
+	'Database' 
+		elements+=Database 
+		(elements+=PostgresUser)+
+;
 
 Database:
-'Schema' name=ID elements+=Schema;
+	'Schema' name=ID 
+		elements+=Schema
+;
 
-Schema: 
-	(elements+=Index_p)* (elements+=ViewSchema)* (elements+=Table_p)+ (elements+=Trigger)* elements+=Function;
+Schema:
+	(elements+=Index_p)* 
+	(elements+=ViewSchema)* 
+	(elements+=Table_p)+ 
+	(elements+=Trigger)* 
+	elements+=Function
+;
 	
 Index_p:
-	'Index_p' name=ID;
+	'Index_p' name=ID
+;
 	
 ViewSchema:
-	'ViewSchema' name=ID;
+	'ViewSchema' name=ID
+;
 	
 Table_p:
-	'Table_p' name=ID ':' '{' (elements+=ForeignKey)+ (elements+=Column)+ (elements+=Row)+ '}';
+	'Table_p' name=ID ':' '{' 
+		(elements+=ForeignKey)+ 
+		(elements+=Column)+ 
+		(elements+=Row)+ 
+	'}'
+;
 		
 ForeignKey: 
-	'ForeignKey' elements+=ForeignKey_n elements+=ForeignKeyRef;
+	'ForeignKey' 
+		elements+=ForeignKey_n 
+		elements+=ForeignKeyRef
+;
 	
 ForeignKey_n: 
-	'ForeingKeyName' name=ID;
+	'ForeingKeyName' name=ID
+;
 	
 ForeignKeyRef:
-	{ForeignKeyRef} 'ForeignKeyRef' (elements+=RefTable_p)*;
+	{ForeignKeyRef} 'ForeignKeyRef' 
+		(elements+=RefTable_p)*
+;
 	
 RefTable_p:
-	'RefTable_p' name=ID;
+	'RefTable_p' name=ID
+;
 
 Column: 
-	'Column' name=ID elements+=DatatypeDB (elements+=Constraint)*;
+	'Column' name=ID 
+		elements+=DatatypeDB 
+		(elements+=Constraint)*
+;
 	
 DatatypeDB:
 	'DatatypeDB' name=ID;
@@ -544,67 +926,106 @@ Constraint:
 	'Constraint' name=ID;
 	
 Row :
-	'Row' name=ID (elements+=Policy)*;
+	'Row' name=ID 
+		(elements+=Policy)*
+;
 
 Policy:
-	'Policy' name=ID;
+	'Policy' name=ID
+;
 	
 Trigger: 
-	'Trigger' name=ID;
+	'Trigger' name=ID
+;
 	
 Function:
-	'Function' name=ID;
+	'Function' name=ID
+;
 	
 
 PostgresUser:
-	'PostgresUser' name=ID ':' '{' elements+=Privilege (elements+=Query)* '}';
+	'PostgresUser' name=ID ':' '{' 
+		elements+=Privilege 
+		(elements+=Query)* 
+	'}'
+;
 	
 Privilege:
-	'Privilege' name=ID;
+	'Privilege' name=ID
+;
 	
 Query: 
-	'Query' elements+=Clause;
+	'Query' 
+		elements+=Clause
+;
 	
 Clause: 
-	'Clause' name=ID;
+	'Clause' name=ID
+;
 	
 
 AmazonWebServices: 
-'AmazonWebServices'	name=ID ':' '{' elements+=AmazonSimpleStorageService elements+=AmazonElasticComputeCloud '}';
+	'AmazonWebServices'	name=ID ':' '{' 
+		elements+=AmazonSimpleStorageService 
+		elements+=AmazonElasticComputeCloud 
+	'}'
+;
 	
 AmazonSimpleStorageService:
-'AmazonSimpleStorageService' ':' '{' (elements+=BatchOperation)* elements+=Bucket '}';
+	'AmazonSimpleStorageService' ':' '{' 
+		(elements+=BatchOperation)* 
+		elements+=Bucket 
+	'}'
+;
 	
 BatchOperation:
-	'BatchOperation' name=ID;
+	'BatchOperation' name=ID
+;
 	
 Bucket:
-	'Bucket' name=ID elements+=BucketAccess  (elements+=AmazonFolder)*  (elements+=AmazonFile)+;
+	'Bucket' name=ID 
+		elements+=BucketAccess  
+		(elements+=AmazonFolder)*  
+		(elements+=AmazonFile)+
+;
 
 BucketAccess:
-	'BucketAccess'	elements+=PublicAccess | elements+=ObjectsPublic | elements+=BucketObjectsNotPublic | elements+=OnlyAuthorized;
+	'BucketAccess' 
+		elements+=PublicAccess 				| 
+		elements+=ObjectsPublic 			| 
+		elements+=BucketObjectsNotPublic 	| 
+		elements+=OnlyAuthorized
+;
 
 PublicAccess:
-	'PublicAccess' name=ID;
+	'PublicAccess' name=ID
+;
 
 ObjectsPublic:
-	'ObjectsPublic' name=ID;
+	'ObjectsPublic' name=ID
+;
 	
 BucketObjectsNotPublic:
-	'BucketObjectsNotPublic' name=ID;
+	'BucketObjectsNotPublic' name=ID
+;
 	
 OnlyAuthorized: 
-	'OnlyAuthorized' name=ID;
+	'OnlyAuthorized' name=ID
+;
 	
 AmazonFolder:
-	'AmazonFolder' name=ID;
+	'AmazonFolder' name=ID
+;
 	
 AmazonFile:
- 'AmazonFile' (elements+=Metadata)+;
+	'AmazonFile' 
+		(elements+=Metadata)+
+;
 	
 Metadata:
-	'Metadata' name=ID;
+	'Metadata' name=ID
+;
 	
 AmazonElasticComputeCloud:
-	'AmazonElasticComputeCloud' name=ID;
-
+	'AmazonElasticComputeCloud' name=ID
+;

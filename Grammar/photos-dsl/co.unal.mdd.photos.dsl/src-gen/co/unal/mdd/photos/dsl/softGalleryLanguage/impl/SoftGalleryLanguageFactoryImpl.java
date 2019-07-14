@@ -140,9 +140,20 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.SEARCH_CRITERIA: return createSearchCriteria();
       case SoftGalleryLanguagePackage.AUTOWIRED: return createAutowired();
       case SoftGalleryLanguagePackage.AUTOWIRED_TYPE: return createAutowiredType();
+      case SoftGalleryLanguagePackage.RESPONSE_ENTITY: return createResponseEntity();
+      case SoftGalleryLanguagePackage.MAPPING_TYPE: return createMappingType();
       case SoftGalleryLanguagePackage.REQUEST_MAPPING: return createRequestMapping();
-      case SoftGalleryLanguagePackage.REQUEST_PART: return createRequestPart();
-      case SoftGalleryLanguagePackage.REQUEST_MAPPING_TYPE: return createRequestMappingType();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING_VALUE: return createRequestMappingValue();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING_METHOD: return createRequestMappingMethod();
+      case SoftGalleryLanguagePackage.REQUEST_MAPPING_PRODUCES: return createRequestMappingProduces();
+      case SoftGalleryLanguagePackage.POST_MAPPING: return createPostMapping();
+      case SoftGalleryLanguagePackage.GET_MAPPING: return createGetMapping();
+      case SoftGalleryLanguagePackage.PUT_MAPPING: return createPutMapping();
+      case SoftGalleryLanguagePackage.DELETE_MAPPING: return createDeleteMapping();
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER: return createResponseParameter();
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_ANNOTATION: return createResponseParameterAnnotation();
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_TYPE: return createResponseParameterType();
+      case SoftGalleryLanguagePackage.RESPONSE_PARAMETER_NAME: return createResponseParameterName();
       case SoftGalleryLanguagePackage.EXCEPTION_HANDLER: return createExceptionHandler();
       case SoftGalleryLanguagePackage.EXCEPTION_PROCESS: return createExceptionProcess();
       case SoftGalleryLanguagePackage.SPRING_ENTITY: return createSpringEntity();
@@ -1144,6 +1155,30 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
+  public ResponseEntity createResponseEntity()
+  {
+    ResponseEntityImpl responseEntity = new ResponseEntityImpl();
+    return responseEntity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MappingType createMappingType()
+  {
+    MappingTypeImpl mappingType = new MappingTypeImpl();
+    return mappingType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public RequestMapping createRequestMapping()
   {
     RequestMappingImpl requestMapping = new RequestMappingImpl();
@@ -1156,10 +1191,10 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public RequestPart createRequestPart()
+  public RequestMappingValue createRequestMappingValue()
   {
-    RequestPartImpl requestPart = new RequestPartImpl();
-    return requestPart;
+    RequestMappingValueImpl requestMappingValue = new RequestMappingValueImpl();
+    return requestMappingValue;
   }
 
   /**
@@ -1168,10 +1203,118 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public RequestMappingType createRequestMappingType()
+  public RequestMappingMethod createRequestMappingMethod()
   {
-    RequestMappingTypeImpl requestMappingType = new RequestMappingTypeImpl();
-    return requestMappingType;
+    RequestMappingMethodImpl requestMappingMethod = new RequestMappingMethodImpl();
+    return requestMappingMethod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RequestMappingProduces createRequestMappingProduces()
+  {
+    RequestMappingProducesImpl requestMappingProduces = new RequestMappingProducesImpl();
+    return requestMappingProduces;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PostMapping createPostMapping()
+  {
+    PostMappingImpl postMapping = new PostMappingImpl();
+    return postMapping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GetMapping createGetMapping()
+  {
+    GetMappingImpl getMapping = new GetMappingImpl();
+    return getMapping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PutMapping createPutMapping()
+  {
+    PutMappingImpl putMapping = new PutMappingImpl();
+    return putMapping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DeleteMapping createDeleteMapping()
+  {
+    DeleteMappingImpl deleteMapping = new DeleteMappingImpl();
+    return deleteMapping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResponseParameter createResponseParameter()
+  {
+    ResponseParameterImpl responseParameter = new ResponseParameterImpl();
+    return responseParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResponseParameterAnnotation createResponseParameterAnnotation()
+  {
+    ResponseParameterAnnotationImpl responseParameterAnnotation = new ResponseParameterAnnotationImpl();
+    return responseParameterAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResponseParameterType createResponseParameterType()
+  {
+    ResponseParameterTypeImpl responseParameterType = new ResponseParameterTypeImpl();
+    return responseParameterType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResponseParameterName createResponseParameterName()
+  {
+    ResponseParameterNameImpl responseParameterName = new ResponseParameterNameImpl();
+    return responseParameterName;
   }
 
   /**
