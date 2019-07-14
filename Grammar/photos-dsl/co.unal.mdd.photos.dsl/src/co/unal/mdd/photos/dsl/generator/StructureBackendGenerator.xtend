@@ -71,11 +71,19 @@ class StructureBackendGenerator{
 	// Path: /
 	def generateMain(Entities ent, SegmentStructureContent ssc, DirectoryContent dir) {
 		
+		
+		// TODO: Falta PhotosAppBackApplication.java
+				
+		
 		// BusinessLogicSegments
 		for (bls : proyectTree.allContents.toIterable.filter(BusinessLogicSegments)) {
 			println("BusinessLogicSegments: " + bls.name)
 		
 			switch bls.name {
+				
+				case "config":{
+					generateConfig(ent, ssc, dir, bls)
+				}
 				
 				case "controller":{
 					generateController(ent, ssc, dir, bls)
@@ -85,16 +93,12 @@ class StructureBackendGenerator{
 					generateModel(ent, ssc, dir, bls)
 				}
 					
-				case "config":{
-					generateConfig(ent, ssc, dir, bls)
+				case "repository":{
+					generateRepository(ent, ssc, dir, bls)
 				}
 					
 				case "specification":{
 					generateSpecification(ent, ssc, dir, bls)
-				}
-					
-				case "repository":{
-					generateRepository(ent, ssc, dir, bls)
 				}
 			}
 		}
@@ -104,32 +108,46 @@ class StructureBackendGenerator{
 	// Path: /.config
 	def generateConfig(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
-		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-		className = ent.name
 		
-		createClassFile(className, packageName)
+		// TODO: Falta AuthorizationServerConfig.java
+		// TODO: Falta CORSFilter.java
+		// TODO: Falta ResourceServerConfig.java
+		// TODO: Falta SecurityConfig.java
+		
+		
+		//packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
+		//className = ent.name
+		
+		//createClassFile(className, packageName)
 	}
 
 
 	// Path: /.controller	
 	def generateController(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
+
+
+		// TODO: Falta HomeController
 		
-		// ControllerSegmentElement
-		for (cse : proyectTree.allContents.toIterable.filter(ControllerSegmentElement)) {
-			println("ControllerSegmentElement: " + bls.name)
-		
-			if(cse.name.equals("amazon")){
-				generateControllerAmazon(ent, ssc, dir, bls, cse)
-			
-			} else if(cse.name.equals("exception")){
-				generateControllerException(ent, ssc, dir, bls, cse)
-			}
-		}
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 		className = ent.name + bls.name.toFirstUpper
 		
 		createClassFile(className, packageName)
+
+
+		// ControllerSegmentElement
+		for (cse : proyectTree.allContents.toIterable.filter(ControllerSegmentElement)) {
+			println("ControllerSegmentElement: " + bls.name)
+			
+			// Path: /.controller.amazon
+			if(cse.name.equals("amazon")){
+				generateControllerAmazon(ent, ssc, dir, bls, cse)
+
+			// Path: /.controller.exception
+			} else if(cse.name.equals("exception")){
+				generateControllerException(ent, ssc, dir, bls, cse)
+			}
+		}
 	}
 	
 	
@@ -229,12 +247,14 @@ class StructureBackendGenerator{
 	// Path: /.specification
 	def generateSpecification(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 
-		generateSpecificationCriteria(ent, ssc, dir, bls)
-		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
 		className = ent.name  + bls.name.toFirstUpper
 		
 		createClassFile(className, packageName)
+		
+		
+		// Path: /.specification.criteria
+		generateSpecificationCriteria(ent, ssc, dir, bls)
 	}
 	
 	

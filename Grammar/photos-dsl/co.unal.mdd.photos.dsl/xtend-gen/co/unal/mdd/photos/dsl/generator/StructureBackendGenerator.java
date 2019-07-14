@@ -95,59 +95,32 @@ public class StructureBackendGenerator {
         String _name_1 = bls.getName();
         if (_name_1 != null) {
           switch (_name_1) {
+            case "config":
+              this.generateConfig(ent, ssc, dir, bls);
+              break;
             case "controller":
               this.generateController(ent, ssc, dir, bls);
               break;
             case "model":
               this.generateModel(ent, ssc, dir, bls);
               break;
-            case "config":
-              this.generateConfig(ent, ssc, dir, bls);
+            case "repository":
+              this.generateRepository(ent, ssc, dir, bls);
               break;
             case "specification":
               this.generateSpecification(ent, ssc, dir, bls);
               break;
-            case "repository":
-              this.generateRepository(ent, ssc, dir, bls);
-              break;
           }
         }
       }
     }
   }
   
-  public void generateConfig(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    String _name = ssc.getName();
-    String _plus = ((this.basePackageName + ".") + _name);
-    String _plus_1 = (_plus + ".");
-    String _name_1 = dir.getName();
-    String _plus_2 = (_plus_1 + _name_1);
-    String _plus_3 = (_plus_2 + ".");
-    String _name_2 = bls.getName();
-    String _plus_4 = (_plus_3 + _name_2);
-    this.packageName = _plus_4;
-    this.className = ent.getName();
-    this.createClassFile(this.className, this.packageName);
+  public Object generateConfig(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
+    return null;
   }
   
   public void generateController(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    Iterable<ControllerSegmentElement> _filter = Iterables.<ControllerSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), ControllerSegmentElement.class);
-    for (final ControllerSegmentElement cse : _filter) {
-      {
-        String _name = bls.getName();
-        String _plus = ("ControllerSegmentElement: " + _name);
-        InputOutput.<String>println(_plus);
-        boolean _equals = cse.getName().equals("amazon");
-        if (_equals) {
-          this.generateControllerAmazon(ent, ssc, dir, bls, cse);
-        } else {
-          boolean _equals_1 = cse.getName().equals("exception");
-          if (_equals_1) {
-            this.generateControllerException(ent, ssc, dir, bls, cse);
-          }
-        }
-      }
-    }
     String _name = ssc.getName();
     String _plus = ((this.basePackageName + ".") + _name);
     String _plus_1 = (_plus + ".");
@@ -162,6 +135,23 @@ public class StructureBackendGenerator {
     String _plus_5 = (_name_3 + _firstUpper);
     this.className = _plus_5;
     this.createClassFile(this.className, this.packageName);
+    Iterable<ControllerSegmentElement> _filter = Iterables.<ControllerSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), ControllerSegmentElement.class);
+    for (final ControllerSegmentElement cse : _filter) {
+      {
+        String _name_4 = bls.getName();
+        String _plus_6 = ("ControllerSegmentElement: " + _name_4);
+        InputOutput.<String>println(_plus_6);
+        boolean _equals = cse.getName().equals("amazon");
+        if (_equals) {
+          this.generateControllerAmazon(ent, ssc, dir, bls, cse);
+        } else {
+          boolean _equals_1 = cse.getName().equals("exception");
+          if (_equals_1) {
+            this.generateControllerException(ent, ssc, dir, bls, cse);
+          }
+        }
+      }
+    }
   }
   
   public void generateControllerAmazon(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls, final ControllerSegmentElement cse) {
@@ -316,7 +306,6 @@ public class StructureBackendGenerator {
   }
   
   public void generateSpecification(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    this.generateSpecificationCriteria(ent, ssc, dir, bls);
     String _name = ssc.getName();
     String _plus = ((this.basePackageName + ".") + _name);
     String _plus_1 = (_plus + ".");
@@ -331,6 +320,7 @@ public class StructureBackendGenerator {
     String _plus_5 = (_name_3 + _firstUpper);
     this.className = _plus_5;
     this.createClassFile(this.className, this.packageName);
+    this.generateSpecificationCriteria(ent, ssc, dir, bls);
   }
   
   public void generateSpecificationCriteria(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
