@@ -31,31 +31,37 @@ public class UserController {
 	PhotoRepository photoRepository;
 	
 	
-	@PostMapping("/create")
+	
+	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getUser(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@RequestMapping(value = "id_albums", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getAlbumsFromUser(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhotosFromUser(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@PostMapping("/login")
 	public ResponseEntity<?> loginUser(@RequestBody String body) throws Exception {
 		
 	}
+	
 	@PostMapping("/create")
 	public ResponseEntity<?> createUser(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@PutMapping("/id_edit")
 	public ResponseEntity<?> editUser(@RequestBody String body) throws Exception {
 		
 	}
-	
+			
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {
 	

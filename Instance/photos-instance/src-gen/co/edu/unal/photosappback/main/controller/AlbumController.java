@@ -28,19 +28,22 @@ public class AlbumController {
 	PhotoRepository photoRepository;
 	
 	
-	@PostMapping("/create")
+	
+	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getAlbum(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhotosFromAlbum(@RequestBody String body) throws Exception {
 		
 	}
+	
 	@PostMapping("/create")
 	public ResponseEntity<?> createAlbum(@RequestBody String body) throws Exception {
 		
 	}
-	
+			
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {
 	

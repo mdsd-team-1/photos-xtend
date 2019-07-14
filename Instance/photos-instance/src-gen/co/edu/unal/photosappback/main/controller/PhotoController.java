@@ -28,23 +28,27 @@ public class PhotoController {
 	AmazonClient amazonClient;
 	
 	
-	@PostMapping("/create")
+	
+	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhoto(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@PostMapping("/upload")
 	public ResponseEntity<?> uploadPhoto(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@DeleteMapping("/delete")
 	public ResponseEntity<?> deleteFile(@RequestBody String body) throws Exception {
 		
 	}
-	@PostMapping("/create")
+	
+	@GetMapping("/all")
 	public ResponseEntity<?> findAll(@RequestBody String body) throws Exception {
 		
 	}
-	
+			
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {
 	
