@@ -25,7 +25,7 @@ class SoftGalleryLanguageGenerator extends AbstractGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
-		println("*** Generator v6 ***")
+		println("*** Generator v7 ***")
 		println(">>> doGenerate() Started <<<")
 		println("")
 
