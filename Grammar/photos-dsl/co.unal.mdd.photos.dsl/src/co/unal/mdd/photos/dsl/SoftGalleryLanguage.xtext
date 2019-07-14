@@ -9,6 +9,10 @@ Model:
 		elements+=Technology '}'
 ;
 
+
+// ------------------------------
+// Domain
+// ------------------------------
 Domain:
 	'Domain' name=ID ':' '{' 
 		entitydomain+=Entity 
@@ -164,6 +168,10 @@ UserException:
 	'UserNotEdited' name=ID
 ;		
 	
+
+// ------------------------------
+// Architecture
+// ------------------------------
 Architecture:
 	'Architecture:' '{' 
 		(elements+=NTiers)+  
@@ -355,7 +363,11 @@ NTiersRelations:
 	'PersistenceDataComponent' name=ID 	| 
 	'AmazonService' name=ID
 ;
+	
 
+// ------------------------------
+// Technology
+// ------------------------------
 Technology:
 	'Technology' name=ID ':' '{' 
 		elements+=Technologies 
@@ -453,12 +465,7 @@ SearchCriteria:
 ;
 
 Autowired: 
-	'Autowired' 
-		elements+=AutowiredType
-;
-
-AutowiredType:
-	'AutowiredType' name=ID
+	'Autowired' name=ID
 ;
 
 ResponseEntity:

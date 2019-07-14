@@ -446,11 +446,6 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createAutowiredAdapter();
       }
       @Override
-      public Adapter caseAutowiredType(AutowiredType object)
-      {
-        return createAutowiredTypeAdapter();
-      }
-      @Override
       public Adapter caseResponseEntity(ResponseEntity object)
       {
         return createResponseEntityAdapter();
@@ -2098,21 +2093,6 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAutowiredAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType <em>Autowired Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType
-   * @generated
-   */
-  public Adapter createAutowiredTypeAdapter()
   {
     return null;
   }

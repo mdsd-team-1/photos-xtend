@@ -139,6 +139,10 @@ class StructureBackendGenerator{
 		for (rsc : proyectTree.allContents.toIterable.filter(RestController)) {
 			println("RestController: " + rsc.name)
 			
+			// Mappings
+			//var mappings = rsc.getContents().filter()  
+			
+			
 			var classVars = proyectTree.allContents.filter(SpringRepositories).toList
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 			className = ent.name + bls.name.toFirstUpper

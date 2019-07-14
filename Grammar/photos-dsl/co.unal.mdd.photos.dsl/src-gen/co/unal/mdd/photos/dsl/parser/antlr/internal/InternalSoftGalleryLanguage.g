@@ -5608,55 +5608,13 @@ ruleAutowired returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getAutowiredAccess().getElementsAutowiredTypeParserRuleCall_1_0());
-				}
-				lv_elements_1_0=ruleAutowiredType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAutowiredRule());
-					}
-					add(
-						$current,
-						"elements",
-						lv_elements_1_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.AutowiredType");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleAutowiredType
-entryRuleAutowiredType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAutowiredTypeRule()); }
-	iv_ruleAutowiredType=ruleAutowiredType
-	{ $current=$iv_ruleAutowiredType.current; }
-	EOF;
-
-// Rule AutowiredType
-ruleAutowiredType returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='AutowiredType'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAutowiredTypeAccess().getAutowiredTypeKeyword_0());
-		}
-		(
-			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getAutowiredTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getAutowiredAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAutowiredTypeRule());
+						$current = createModelElement(grammarAccess.getAutowiredRule());
 					}
 					setWithLastConsumed(
 						$current,

@@ -28,11 +28,26 @@ public class PhotoController {
 	AmazonClient amazonClient;
 	
 	
-
-
+	@PostMapping("/create")
+	public ResponseEntity<?> getPhoto(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> uploadPhoto(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> deleteFile(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> findAll(@RequestBody String body) throws Exception {
+		
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {
-		
+	
 		if(exception instanceof PhotoNotFoundException) {
 			return new ResponseEntity<>("PhotoNotFoundException", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -45,7 +60,7 @@ public class PhotoController {
 		if(exception instanceof PhotoNotDeletedException) {
 			return new ResponseEntity<>("PhotoNotDeletedException", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
+	
 		return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
 	}
 }

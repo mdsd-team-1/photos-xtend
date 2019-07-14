@@ -139,7 +139,6 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.PREDICATE: return createPredicate();
       case SoftGalleryLanguagePackage.SEARCH_CRITERIA: return createSearchCriteria();
       case SoftGalleryLanguagePackage.AUTOWIRED: return createAutowired();
-      case SoftGalleryLanguagePackage.AUTOWIRED_TYPE: return createAutowiredType();
       case SoftGalleryLanguagePackage.RESPONSE_ENTITY: return createResponseEntity();
       case SoftGalleryLanguagePackage.MAPPING_TYPE: return createMappingType();
       case SoftGalleryLanguagePackage.REQUEST_MAPPING: return createRequestMapping();
@@ -1135,18 +1134,6 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
   {
     AutowiredImpl autowired = new AutowiredImpl();
     return autowired;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AutowiredType createAutowiredType()
-  {
-    AutowiredTypeImpl autowiredType = new AutowiredTypeImpl();
-    return autowiredType;
   }
 
   /**

@@ -170,7 +170,6 @@ public class SoftGalleryLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPredicateAccess().getGroup(), "rule__Predicate__Group__0");
 			builder.put(grammarAccess.getSearchCriteriaAccess().getGroup(), "rule__SearchCriteria__Group__0");
 			builder.put(grammarAccess.getAutowiredAccess().getGroup(), "rule__Autowired__Group__0");
-			builder.put(grammarAccess.getAutowiredTypeAccess().getGroup(), "rule__AutowiredType__Group__0");
 			builder.put(grammarAccess.getResponseEntityAccess().getGroup(), "rule__ResponseEntity__Group__0");
 			builder.put(grammarAccess.getRequestMappingAccess().getGroup(), "rule__RequestMapping__Group__0");
 			builder.put(grammarAccess.getRequestMappingValueAccess().getGroup(), "rule__RequestMappingValue__Group__0");
@@ -450,8 +449,7 @@ public class SoftGalleryLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSpecificationAccess().getElementsAssignment_2(), "rule__Specification__ElementsAssignment_2");
 			builder.put(grammarAccess.getPredicateAccess().getNameAssignment_1(), "rule__Predicate__NameAssignment_1");
 			builder.put(grammarAccess.getSearchCriteriaAccess().getNameAssignment_1(), "rule__SearchCriteria__NameAssignment_1");
-			builder.put(grammarAccess.getAutowiredAccess().getElementsAssignment_1(), "rule__Autowired__ElementsAssignment_1");
-			builder.put(grammarAccess.getAutowiredTypeAccess().getNameAssignment_1(), "rule__AutowiredType__NameAssignment_1");
+			builder.put(grammarAccess.getAutowiredAccess().getNameAssignment_1(), "rule__Autowired__NameAssignment_1");
 			builder.put(grammarAccess.getResponseEntityAccess().getNameAssignment_1(), "rule__ResponseEntity__NameAssignment_1");
 			builder.put(grammarAccess.getResponseEntityAccess().getTypeAssignment_2(), "rule__ResponseEntity__TypeAssignment_2");
 			builder.put(grammarAccess.getResponseEntityAccess().getParametersAssignment_3(), "rule__ResponseEntity__ParametersAssignment_3");

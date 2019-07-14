@@ -265,10 +265,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SearchCriteria/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Autowired">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Autowired/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//AutowiredType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//AutowiredType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Autowired/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseEntity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseEntity/name"/>

@@ -591,13 +591,6 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.AUTOWIRED_TYPE:
-      {
-        AutowiredType autowiredType = (AutowiredType)theEObject;
-        T result = caseAutowiredType(autowiredType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SoftGalleryLanguagePackage.RESPONSE_ENTITY:
       {
         ResponseEntity responseEntity = (ResponseEntity)theEObject;
@@ -2515,22 +2508,6 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAutowired(Autowired object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Autowired Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Autowired Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAutowiredType(AutowiredType object)
   {
     return null;
   }

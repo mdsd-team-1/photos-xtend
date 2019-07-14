@@ -156,10 +156,8 @@ System: {
 						Predicate AlbumPredicate
 						SearchCriteria AlbumSpecification
 						
-					Autowired
-						AutowiredType AlbumRepository
-					Autowired
-						AutowiredType PhotoRepository
+					Autowired AlbumRepository
+					Autowired PhotoRepository
 						
 					ResponseEntity getAlbum
 						RequestMapping
@@ -203,10 +201,8 @@ System: {
 						Predicate PhotoPredicate
 						SearchCriteria PhotoSpecification
 						
-					Autowired
-						AutowiredType PhotoRepository
-					Autowired
-						AutowiredType AmazonClient
+					Autowired PhotoRepository
+					Autowired AmazonClient
 						
 					ResponseEntity getPhoto
 						RequestMapping
@@ -256,13 +252,10 @@ System: {
 						Predicate UserPredicate
 						SearchCriteria UserSpecification
 						
-					Autowired
-						AutowiredType UserRepository
-					Autowired
-						AutowiredType AlbumRepository
-					Autowired
-						AutowiredType PhotoRepository
-						
+					Autowired UserRepository
+					Autowired AlbumRepository
+					Autowired PhotoRepository
+					
 					ResponseEntity getUser
 						RequestMapping
 							Value id_id

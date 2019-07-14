@@ -2463,13 +2463,13 @@ public interface SoftGalleryLanguagePackage extends EPackage
   int AUTOWIRED = 73;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AUTOWIRED__ELEMENTS = 0;
+  int AUTOWIRED__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Autowired</em>' class.
@@ -2481,34 +2481,6 @@ public interface SoftGalleryLanguagePackage extends EPackage
   int AUTOWIRED_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AutowiredTypeImpl <em>Autowired Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AutowiredTypeImpl
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAutowiredType()
-   * @generated
-   */
-  int AUTOWIRED_TYPE = 74;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTOWIRED_TYPE__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Autowired Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTOWIRED_TYPE_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ResponseEntityImpl <em>Response Entity</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2516,7 +2488,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getResponseEntity()
    * @generated
    */
-  int RESPONSE_ENTITY = 75;
+  int RESPONSE_ENTITY = 74;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2562,7 +2534,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getMappingType()
    * @generated
    */
-  int MAPPING_TYPE = 76;
+  int MAPPING_TYPE = 75;
 
   /**
    * The number of structural features of the '<em>Mapping Type</em>' class.
@@ -2581,7 +2553,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getRequestMapping()
    * @generated
    */
-  int REQUEST_MAPPING = 77;
+  int REQUEST_MAPPING = 76;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -2627,7 +2599,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getRequestMappingValue()
    * @generated
    */
-  int REQUEST_MAPPING_VALUE = 78;
+  int REQUEST_MAPPING_VALUE = 77;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2655,7 +2627,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getRequestMappingMethod()
    * @generated
    */
-  int REQUEST_MAPPING_METHOD = 79;
+  int REQUEST_MAPPING_METHOD = 78;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2683,7 +2655,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getRequestMappingProduces()
    * @generated
    */
-  int REQUEST_MAPPING_PRODUCES = 80;
+  int REQUEST_MAPPING_PRODUCES = 79;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2711,7 +2683,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPostMapping()
    * @generated
    */
-  int POST_MAPPING = 81;
+  int POST_MAPPING = 80;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2739,7 +2711,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getGetMapping()
    * @generated
    */
-  int GET_MAPPING = 82;
+  int GET_MAPPING = 81;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2767,7 +2739,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPutMapping()
    * @generated
    */
-  int PUT_MAPPING = 83;
+  int PUT_MAPPING = 82;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2795,7 +2767,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getDeleteMapping()
    * @generated
    */
-  int DELETE_MAPPING = 84;
+  int DELETE_MAPPING = 83;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2823,7 +2795,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getResponseParameter()
    * @generated
    */
-  int RESPONSE_PARAMETER = 85;
+  int RESPONSE_PARAMETER = 84;
 
   /**
    * The feature id for the '<em><b>Parameter Annotation</b></em>' containment reference list.
@@ -2869,7 +2841,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getResponseParameterAnnotation()
    * @generated
    */
-  int RESPONSE_PARAMETER_ANNOTATION = 86;
+  int RESPONSE_PARAMETER_ANNOTATION = 85;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2897,7 +2869,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getResponseParameterType()
    * @generated
    */
-  int RESPONSE_PARAMETER_TYPE = 87;
+  int RESPONSE_PARAMETER_TYPE = 86;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2925,7 +2897,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getResponseParameterName()
    * @generated
    */
-  int RESPONSE_PARAMETER_NAME = 88;
+  int RESPONSE_PARAMETER_NAME = 87;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2953,7 +2925,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getExceptionHandler()
    * @generated
    */
-  int EXCEPTION_HANDLER = 89;
+  int EXCEPTION_HANDLER = 88;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2990,7 +2962,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getExceptionProcess()
    * @generated
    */
-  int EXCEPTION_PROCESS = 90;
+  int EXCEPTION_PROCESS = 89;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3018,7 +2990,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getSpringEntity()
    * @generated
    */
-  int SPRING_ENTITY = 91;
+  int SPRING_ENTITY = 90;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3055,7 +3027,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getSpringTable()
    * @generated
    */
-  int SPRING_TABLE = 92;
+  int SPRING_TABLE = 91;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3092,7 +3064,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getSpringTableId()
    * @generated
    */
-  int SPRING_TABLE_ID = 93;
+  int SPRING_TABLE_ID = 92;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3129,7 +3101,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getGeneratedValue()
    * @generated
    */
-  int GENERATED_VALUE = 94;
+  int GENERATED_VALUE = 93;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3157,7 +3129,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getColumns()
    * @generated
    */
-  int COLUMNS = 95;
+  int COLUMNS = 94;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3185,7 +3157,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getNameNativeQuery()
    * @generated
    */
-  int NAME_NATIVE_QUERY = 96;
+  int NAME_NATIVE_QUERY = 95;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3213,7 +3185,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReact()
    * @generated
    */
-  int REACT = 97;
+  int REACT = 96;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3250,7 +3222,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactModules()
    * @generated
    */
-  int REACT_MODULES = 98;
+  int REACT_MODULES = 97;
 
   /**
    * The feature id for the '<em><b>Reactmodules</b></em>' containment reference list.
@@ -3278,7 +3250,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactSubModules()
    * @generated
    */
-  int REACT_SUB_MODULES = 99;
+  int REACT_SUB_MODULES = 98;
 
   /**
    * The feature id for the '<em><b>Reactmodulesconf</b></em>' containment reference list.
@@ -3342,7 +3314,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactConfiguration()
    * @generated
    */
-  int REACT_CONFIGURATION = 100;
+  int REACT_CONFIGURATION = 99;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -3379,7 +3351,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactDependencies()
    * @generated
    */
-  int REACT_DEPENDENCIES = 101;
+  int REACT_DEPENDENCIES = 100;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -3407,7 +3379,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactDependenciesRules()
    * @generated
    */
-  int REACT_DEPENDENCIES_RULES = 102;
+  int REACT_DEPENDENCIES_RULES = 101;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3444,7 +3416,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactDependenciesSubRules()
    * @generated
    */
-  int REACT_DEPENDENCIES_SUB_RULES = 103;
+  int REACT_DEPENDENCIES_SUB_RULES = 102;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -3472,7 +3444,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getSingleDependencies()
    * @generated
    */
-  int SINGLE_DEPENDENCIES = 104;
+  int SINGLE_DEPENDENCIES = 103;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -3500,7 +3472,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPackageName()
    * @generated
    */
-  int PACKAGE_NAME = 105;
+  int PACKAGE_NAME = 104;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3528,7 +3500,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPackageVersion()
    * @generated
    */
-  int PACKAGE_VERSION = 106;
+  int PACKAGE_VERSION = 105;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3556,7 +3528,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactConfigurations()
    * @generated
    */
-  int REACT_CONFIGURATIONS = 107;
+  int REACT_CONFIGURATIONS = 106;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3593,7 +3565,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getDOMConfigurations()
    * @generated
    */
-  int DOM_CONFIGURATIONS = 108;
+  int DOM_CONFIGURATIONS = 107;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' attribute list.
@@ -3630,7 +3602,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactComponents()
    * @generated
    */
-  int REACT_COMPONENTS = 109;
+  int REACT_COMPONENTS = 108;
 
   /**
    * The feature id for the '<em><b>Componentslogic</b></em>' containment reference list.
@@ -3676,7 +3648,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getComponentsLogic()
    * @generated
    */
-  int COMPONENTS_LOGIC = 110;
+  int COMPONENTS_LOGIC = 109;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3713,7 +3685,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getLogicContent()
    * @generated
    */
-  int LOGIC_CONTENT = 111;
+  int LOGIC_CONTENT = 110;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3750,7 +3722,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getLogicStructure()
    * @generated
    */
-  int LOGIC_STRUCTURE = 112;
+  int LOGIC_STRUCTURE = 111;
 
   /**
    * The feature id for the '<em><b>App Com Name</b></em>' attribute.
@@ -3796,7 +3768,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getComponentsUI()
    * @generated
    */
-  int COMPONENTS_UI = 113;
+  int COMPONENTS_UI = 112;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3833,7 +3805,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getUIContent()
    * @generated
    */
-  int UI_CONTENT = 114;
+  int UI_CONTENT = 113;
 
   /**
    * The feature id for the '<em><b>Componentcontent</b></em>' containment reference list.
@@ -3870,7 +3842,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getViewComponentCont()
    * @generated
    */
-  int VIEW_COMPONENT_CONT = 115;
+  int VIEW_COMPONENT_CONT = 114;
 
   /**
    * The feature id for the '<em><b>Name View</b></em>' attribute.
@@ -3907,7 +3879,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getSubcomponentCont()
    * @generated
    */
-  int SUBCOMPONENT_CONT = 116;
+  int SUBCOMPONENT_CONT = 115;
 
   /**
    * The feature id for the '<em><b>Name Sub Comp</b></em>' attribute.
@@ -3944,7 +3916,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getComponentClass()
    * @generated
    */
-  int COMPONENT_CLASS = 117;
+  int COMPONENT_CLASS = 116;
 
   /**
    * The feature id for the '<em><b>Componentclassimp</b></em>' containment reference list.
@@ -3990,7 +3962,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactImports()
    * @generated
    */
-  int REACT_IMPORTS = 118;
+  int REACT_IMPORTS = 117;
 
   /**
    * The feature id for the '<em><b>Reactsimports</b></em>' containment reference list.
@@ -4018,7 +3990,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactImportContent()
    * @generated
    */
-  int REACT_IMPORT_CONTENT = 119;
+  int REACT_IMPORT_CONTENT = 118;
 
   /**
    * The feature id for the '<em><b>Imp Name</b></em>' attribute.
@@ -4046,7 +4018,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactFunctions()
    * @generated
    */
-  int REACT_FUNCTIONS = 120;
+  int REACT_FUNCTIONS = 119;
 
   /**
    * The feature id for the '<em><b>Reactconstructors</b></em>' containment reference list.
@@ -4101,7 +4073,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactConstructor()
    * @generated
    */
-  int REACT_CONSTRUCTOR = 121;
+  int REACT_CONSTRUCTOR = 120;
 
   /**
    * The feature id for the '<em><b>Componentstateclass</b></em>' containment reference list.
@@ -4138,7 +4110,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getState()
    * @generated
    */
-  int STATE = 122;
+  int STATE = 121;
 
   /**
    * The feature id for the '<em><b>Statecontents</b></em>' containment reference list.
@@ -4166,7 +4138,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getStateContent()
    * @generated
    */
-  int STATE_CONTENT = 123;
+  int STATE_CONTENT = 122;
 
   /**
    * The feature id for the '<em><b>State Name</b></em>' attribute.
@@ -4203,7 +4175,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getCoreFunctionsDeclaration()
    * @generated
    */
-  int CORE_FUNCTIONS_DECLARATION = 124;
+  int CORE_FUNCTIONS_DECLARATION = 123;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4231,7 +4203,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getProps()
    * @generated
    */
-  int PROPS = 125;
+  int PROPS = 124;
 
   /**
    * The feature id for the '<em><b>Propsconts</b></em>' containment reference list.
@@ -4259,7 +4231,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPropsType()
    * @generated
    */
-  int PROPS_TYPE = 126;
+  int PROPS_TYPE = 125;
 
   /**
    * The feature id for the '<em><b>Name Props</b></em>' attribute.
@@ -4296,7 +4268,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactCoreFunctions()
    * @generated
    */
-  int REACT_CORE_FUNCTIONS = 127;
+  int REACT_CORE_FUNCTIONS = 126;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4324,7 +4296,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getComponentsStyles()
    * @generated
    */
-  int COMPONENTS_STYLES = 128;
+  int COMPONENTS_STYLES = 127;
 
   /**
    * The feature id for the '<em><b>Stylescontents</b></em>' containment reference list.
@@ -4352,7 +4324,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getComponentsStylesContent()
    * @generated
    */
-  int COMPONENTS_STYLES_CONTENT = 129;
+  int COMPONENTS_STYLES_CONTENT = 128;
 
   /**
    * The feature id for the '<em><b>Name Style</b></em>' attribute.
@@ -4389,7 +4361,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getStyleProperties()
    * @generated
    */
-  int STYLE_PROPERTIES = 130;
+  int STYLE_PROPERTIES = 129;
 
   /**
    * The feature id for the '<em><b>Stylespropscontents</b></em>' containment reference list.
@@ -4417,7 +4389,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getStylePropertiesContent()
    * @generated
    */
-  int STYLE_PROPERTIES_CONTENT = 131;
+  int STYLE_PROPERTIES_CONTENT = 130;
 
   /**
    * The feature id for the '<em><b>Prop Name</b></em>' attribute.
@@ -4445,7 +4417,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactActions()
    * @generated
    */
-  int REACT_ACTIONS = 132;
+  int REACT_ACTIONS = 131;
 
   /**
    * The feature id for the '<em><b>Reactactcontent</b></em>' containment reference list.
@@ -4473,7 +4445,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactActionsContent()
    * @generated
    */
-  int REACT_ACTIONS_CONTENT = 133;
+  int REACT_ACTIONS_CONTENT = 132;
 
   /**
    * The feature id for the '<em><b>Reactrelcontent</b></em>' containment reference list.
@@ -4501,7 +4473,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactServicesType()
    * @generated
    */
-  int REACT_SERVICES_TYPE = 134;
+  int REACT_SERVICES_TYPE = 133;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4538,7 +4510,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactServiceContent()
    * @generated
    */
-  int REACT_SERVICE_CONTENT = 135;
+  int REACT_SERVICE_CONTENT = 134;
 
   /**
    * The feature id for the '<em><b>Funct Name</b></em>' attribute.
@@ -4575,7 +4547,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactServiceContRequest()
    * @generated
    */
-  int REACT_SERVICE_CONT_REQUEST = 136;
+  int REACT_SERVICE_CONT_REQUEST = 135;
 
   /**
    * The feature id for the '<em><b>Reactservrequestprops</b></em>' containment reference list.
@@ -4603,7 +4575,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactServiceRequestProps()
    * @generated
    */
-  int REACT_SERVICE_REQUEST_PROPS = 137;
+  int REACT_SERVICE_REQUEST_PROPS = 136;
 
   /**
    * The feature id for the '<em><b>Req Prop Name</b></em>' attribute.
@@ -4640,7 +4612,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactServicesRelation()
    * @generated
    */
-  int REACT_SERVICES_RELATION = 138;
+  int REACT_SERVICES_RELATION = 137;
 
   /**
    * The feature id for the '<em><b>Servicesrels</b></em>' containment reference list.
@@ -4668,7 +4640,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactsRelationServ()
    * @generated
    */
-  int REACTS_RELATION_SERV = 139;
+  int REACTS_RELATION_SERV = 138;
 
   /**
    * The feature id for the '<em><b>Reactrelationcontent</b></em>' containment reference list.
@@ -4705,7 +4677,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactLibraries()
    * @generated
    */
-  int REACT_LIBRARIES = 140;
+  int REACT_LIBRARIES = 139;
 
   /**
    * The feature id for the '<em><b>Reactlibraries</b></em>' containment reference list.
@@ -4733,7 +4705,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactLibrary()
    * @generated
    */
-  int REACT_LIBRARY = 141;
+  int REACT_LIBRARY = 140;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4761,7 +4733,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactInfo()
    * @generated
    */
-  int REACT_INFO = 142;
+  int REACT_INFO = 141;
 
   /**
    * The feature id for the '<em><b>Reactinformation</b></em>' containment reference list.
@@ -4789,7 +4761,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getReactInformation()
    * @generated
    */
-  int REACT_INFORMATION = 143;
+  int REACT_INFORMATION = 142;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4817,7 +4789,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPostgreSQL()
    * @generated
    */
-  int POSTGRE_SQL = 144;
+  int POSTGRE_SQL = 143;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4854,7 +4826,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getCluster()
    * @generated
    */
-  int CLUSTER = 145;
+  int CLUSTER = 144;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -4882,7 +4854,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getDatabase()
    * @generated
    */
-  int DATABASE = 146;
+  int DATABASE = 145;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4919,7 +4891,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getSchema()
    * @generated
    */
-  int SCHEMA = 147;
+  int SCHEMA = 146;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -4947,7 +4919,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getIndex_p()
    * @generated
    */
-  int INDEX_P = 148;
+  int INDEX_P = 147;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4975,7 +4947,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getViewSchema()
    * @generated
    */
-  int VIEW_SCHEMA = 149;
+  int VIEW_SCHEMA = 148;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5003,7 +4975,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getTable_p()
    * @generated
    */
-  int TABLE_P = 150;
+  int TABLE_P = 149;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5040,7 +5012,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getForeignKey()
    * @generated
    */
-  int FOREIGN_KEY = 151;
+  int FOREIGN_KEY = 150;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5068,7 +5040,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getForeignKey_n()
    * @generated
    */
-  int FOREIGN_KEY_N = 152;
+  int FOREIGN_KEY_N = 151;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5096,7 +5068,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getForeignKeyRef()
    * @generated
    */
-  int FOREIGN_KEY_REF = 153;
+  int FOREIGN_KEY_REF = 152;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5124,7 +5096,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getRefTable_p()
    * @generated
    */
-  int REF_TABLE_P = 154;
+  int REF_TABLE_P = 153;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5152,7 +5124,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getColumn()
    * @generated
    */
-  int COLUMN = 155;
+  int COLUMN = 154;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5189,7 +5161,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getDatatypeDB()
    * @generated
    */
-  int DATATYPE_DB = 156;
+  int DATATYPE_DB = 155;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5217,7 +5189,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getConstraint()
    * @generated
    */
-  int CONSTRAINT = 157;
+  int CONSTRAINT = 156;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5245,7 +5217,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getRow()
    * @generated
    */
-  int ROW = 158;
+  int ROW = 157;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5282,7 +5254,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPolicy()
    * @generated
    */
-  int POLICY = 159;
+  int POLICY = 158;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5310,7 +5282,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getTrigger()
    * @generated
    */
-  int TRIGGER = 160;
+  int TRIGGER = 159;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5338,7 +5310,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getFunction()
    * @generated
    */
-  int FUNCTION = 161;
+  int FUNCTION = 160;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5366,7 +5338,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPostgresUser()
    * @generated
    */
-  int POSTGRES_USER = 162;
+  int POSTGRES_USER = 161;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5403,7 +5375,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPrivilege()
    * @generated
    */
-  int PRIVILEGE = 163;
+  int PRIVILEGE = 162;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5431,7 +5403,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getQuery()
    * @generated
    */
-  int QUERY = 164;
+  int QUERY = 163;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5459,7 +5431,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getClause()
    * @generated
    */
-  int CLAUSE = 165;
+  int CLAUSE = 164;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5487,7 +5459,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAmazonWebServices()
    * @generated
    */
-  int AMAZON_WEB_SERVICES = 166;
+  int AMAZON_WEB_SERVICES = 165;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5524,7 +5496,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAmazonSimpleStorageService()
    * @generated
    */
-  int AMAZON_SIMPLE_STORAGE_SERVICE = 167;
+  int AMAZON_SIMPLE_STORAGE_SERVICE = 166;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5552,7 +5524,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getBatchOperation()
    * @generated
    */
-  int BATCH_OPERATION = 168;
+  int BATCH_OPERATION = 167;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5580,7 +5552,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getBucket()
    * @generated
    */
-  int BUCKET = 169;
+  int BUCKET = 168;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5617,7 +5589,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getBucketAccess()
    * @generated
    */
-  int BUCKET_ACCESS = 170;
+  int BUCKET_ACCESS = 169;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5645,7 +5617,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getPublicAccess()
    * @generated
    */
-  int PUBLIC_ACCESS = 171;
+  int PUBLIC_ACCESS = 170;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5673,7 +5645,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getObjectsPublic()
    * @generated
    */
-  int OBJECTS_PUBLIC = 172;
+  int OBJECTS_PUBLIC = 171;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5701,7 +5673,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getBucketObjectsNotPublic()
    * @generated
    */
-  int BUCKET_OBJECTS_NOT_PUBLIC = 173;
+  int BUCKET_OBJECTS_NOT_PUBLIC = 172;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5729,7 +5701,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getOnlyAuthorized()
    * @generated
    */
-  int ONLY_AUTHORIZED = 174;
+  int ONLY_AUTHORIZED = 173;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5757,7 +5729,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAmazonFolder()
    * @generated
    */
-  int AMAZON_FOLDER = 175;
+  int AMAZON_FOLDER = 174;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5785,7 +5757,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAmazonFile()
    * @generated
    */
-  int AMAZON_FILE = 176;
+  int AMAZON_FILE = 175;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5813,7 +5785,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getMetadata()
    * @generated
    */
-  int METADATA = 177;
+  int METADATA = 176;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5841,7 +5813,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAmazonElasticComputeCloud()
    * @generated
    */
-  int AMAZON_ELASTIC_COMPUTE_CLOUD = 178;
+  int AMAZON_ELASTIC_COMPUTE_CLOUD = 177;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7835,36 +7807,15 @@ public interface SoftGalleryLanguagePackage extends EPackage
   EClass getAutowired();
 
   /**
-   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired#getElements <em>Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired#getElements()
-   * @see #getAutowired()
-   * @generated
-   */
-  EReference getAutowired_Elements();
-
-  /**
-   * Returns the meta object for class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType <em>Autowired Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Autowired Type</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType
-   * @generated
-   */
-  EClass getAutowiredType();
-
-  /**
-   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType#getName()
-   * @see #getAutowiredType()
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired#getName()
+   * @see #getAutowired()
    * @generated
    */
-  EAttribute getAutowiredType_Name();
+  EAttribute getAutowired_Name();
 
   /**
    * Returns the meta object for class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity <em>Response Entity</em>}'.
@@ -12249,30 +12200,12 @@ public interface SoftGalleryLanguagePackage extends EPackage
     EClass AUTOWIRED = eINSTANCE.getAutowired();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AUTOWIRED__ELEMENTS = eINSTANCE.getAutowired_Elements();
-
-    /**
-     * The meta object literal for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AutowiredTypeImpl <em>Autowired Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.AutowiredTypeImpl
-     * @see co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SoftGalleryLanguagePackageImpl#getAutowiredType()
-     * @generated
-     */
-    EClass AUTOWIRED_TYPE = eINSTANCE.getAutowiredType();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute AUTOWIRED_TYPE__NAME = eINSTANCE.getAutowiredType_Name();
+    EAttribute AUTOWIRED__NAME = eINSTANCE.getAutowired_Name();
 
     /**
      * The meta object literal for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ResponseEntityImpl <em>Response Entity</em>}' class.

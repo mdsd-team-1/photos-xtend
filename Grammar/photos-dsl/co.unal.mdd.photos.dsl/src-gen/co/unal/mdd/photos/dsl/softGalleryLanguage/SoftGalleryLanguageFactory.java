@@ -690,15 +690,6 @@ public interface SoftGalleryLanguageFactory extends EFactory
   Autowired createAutowired();
 
   /**
-   * Returns a new object of class '<em>Autowired Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Autowired Type</em>'.
-   * @generated
-   */
-  AutowiredType createAutowiredType();
-
-  /**
    * Returns a new object of class '<em>Response Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

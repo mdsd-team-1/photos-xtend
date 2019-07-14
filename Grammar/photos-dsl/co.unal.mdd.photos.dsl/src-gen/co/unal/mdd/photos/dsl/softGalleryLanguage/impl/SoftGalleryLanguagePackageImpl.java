@@ -19,7 +19,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BackEnd;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BatchOperation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Bucket;
@@ -717,13 +716,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   private EClass autowiredEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass autowiredTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -3568,31 +3560,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getAutowired_Elements()
+  public EAttribute getAutowired_Name()
   {
-    return (EReference)autowiredEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAutowiredType()
-  {
-    return autowiredTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAutowiredType_Name()
-  {
-    return (EAttribute)autowiredTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)autowiredEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -6712,10 +6682,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(searchCriteriaEClass, SEARCH_CRITERIA__NAME);
 
     autowiredEClass = createEClass(AUTOWIRED);
-    createEReference(autowiredEClass, AUTOWIRED__ELEMENTS);
-
-    autowiredTypeEClass = createEClass(AUTOWIRED_TYPE);
-    createEAttribute(autowiredTypeEClass, AUTOWIRED_TYPE__NAME);
+    createEAttribute(autowiredEClass, AUTOWIRED__NAME);
 
     responseEntityEClass = createEClass(RESPONSE_ENTITY);
     createEAttribute(responseEntityEClass, RESPONSE_ENTITY__NAME);
@@ -7374,10 +7341,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getSearchCriteria_Name(), ecorePackage.getEString(), "name", null, 0, 1, SearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(autowiredEClass, Autowired.class, "Autowired", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAutowired_Elements(), this.getAutowiredType(), null, "elements", null, 0, -1, Autowired.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(autowiredTypeEClass, AutowiredType.class, "AutowiredType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAutowiredType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AutowiredType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAutowired_Name(), ecorePackage.getEString(), "name", null, 0, 1, Autowired.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(responseEntityEClass, ResponseEntity.class, "ResponseEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getResponseEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

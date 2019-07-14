@@ -20,7 +20,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BackEnd;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BatchOperation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Bucket;
@@ -256,9 +255,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.AUTOWIRED:
 				sequence_Autowired(context, (Autowired) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.AUTOWIRED_TYPE:
-				sequence_AutowiredType(context, (AutowiredType) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.BACK_END:
 				sequence_BackEnd(context, (BackEnd) semanticObject); 
@@ -975,31 +971,19 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
-	 *     AutowiredType returns AutowiredType
+	 *     Autowired returns Autowired
 	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_AutowiredType(ISerializationContext context, AutowiredType semanticObject) {
+	protected void sequence_Autowired(ISerializationContext context, Autowired semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.AUTOWIRED_TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.AUTOWIRED_TYPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.AUTOWIRED__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.AUTOWIRED__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAutowiredTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAutowiredAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Autowired returns Autowired
-	 *
-	 * Constraint:
-	 *     elements+=AutowiredType
-	 */
-	protected void sequence_Autowired(ISerializationContext context, Autowired semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

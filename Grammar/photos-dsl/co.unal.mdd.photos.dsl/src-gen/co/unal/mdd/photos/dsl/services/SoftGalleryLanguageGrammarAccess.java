@@ -93,6 +93,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cExceptionsdomainExceptionsDomainParserRuleCall_6_0 = (RuleCall)cExceptionsdomainAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
+		//// ------------------------------
+		//// Domain
+		//// ------------------------------
 		//Domain:
 		//	'Domain' name=ID ':' '{'
 		//	entitydomain+=Entity
@@ -1519,6 +1522,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsNTiersConnectionsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
+		//// ------------------------------
+		//// Architecture
+		//// ------------------------------
 		//Architecture:
 		//	'Architecture:' '{'
 		//	elements+=NTiers+
@@ -2712,6 +2718,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cElementsTechnologiesParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
+		//// ------------------------------
+		//// Technology
+		//// ------------------------------
 		//Technology:
 		//	'Technology' name=ID ':' '{'
 		//	elements+=Technologies
@@ -3330,42 +3339,18 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Autowired");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAutowiredKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsAutowiredTypeParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Autowired:
-		//	'Autowired'
-		//	elements+=AutowiredType;
+		//	'Autowired' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Autowired' elements+=AutowiredType
+		//'Autowired' name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'Autowired'
 		public Keyword getAutowiredKeyword_0() { return cAutowiredKeyword_0; }
-		
-		//elements+=AutowiredType
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
-		
-		//AutowiredType
-		public RuleCall getElementsAutowiredTypeParserRuleCall_1_0() { return cElementsAutowiredTypeParserRuleCall_1_0; }
-	}
-	public class AutowiredTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.AutowiredType");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAutowiredTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//AutowiredType:
-		//	'AutowiredType' name=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'AutowiredType' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'AutowiredType'
-		public Keyword getAutowiredTypeKeyword_0() { return cAutowiredTypeKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -6874,7 +6859,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final PredicateElements pPredicate;
 	private final SearchCriteriaElements pSearchCriteria;
 	private final AutowiredElements pAutowired;
-	private final AutowiredTypeElements pAutowiredType;
 	private final ResponseEntityElements pResponseEntity;
 	private final MappingTypeElements pMappingType;
 	private final RequestMappingElements pRequestMapping;
@@ -7073,7 +7057,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pPredicate = new PredicateElements();
 		this.pSearchCriteria = new SearchCriteriaElements();
 		this.pAutowired = new AutowiredElements();
-		this.pAutowiredType = new AutowiredTypeElements();
 		this.pResponseEntity = new ResponseEntityElements();
 		this.pMappingType = new MappingTypeElements();
 		this.pRequestMapping = new RequestMappingElements();
@@ -7227,6 +7210,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getModelAccess().getRule();
 	}
 	
+	//// ------------------------------
+	//// Domain
+	//// ------------------------------
 	//Domain:
 	//	'Domain' name=ID ':' '{'
 	//	entitydomain+=Entity
@@ -7519,6 +7505,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getUserExceptionAccess().getRule();
 	}
 	
+	//// ------------------------------
+	//// Architecture
+	//// ------------------------------
 	//Architecture:
 	//	'Architecture:' '{'
 	//	elements+=NTiers+
@@ -7920,6 +7909,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getNTiersRelationsAccess().getRule();
 	}
 	
+	//// ------------------------------
+	//// Technology
+	//// ------------------------------
 	//Technology:
 	//	'Technology' name=ID ':' '{'
 	//	elements+=Technologies
@@ -8119,24 +8111,13 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//Autowired:
-	//	'Autowired'
-	//	elements+=AutowiredType;
+	//	'Autowired' name=ID;
 	public AutowiredElements getAutowiredAccess() {
 		return pAutowired;
 	}
 	
 	public ParserRule getAutowiredRule() {
 		return getAutowiredAccess().getRule();
-	}
-	
-	//AutowiredType:
-	//	'AutowiredType' name=ID;
-	public AutowiredTypeElements getAutowiredTypeAccess() {
-		return pAutowiredType;
-	}
-	
-	public ParserRule getAutowiredTypeRule() {
-		return getAutowiredTypeAccess().getRule();
 	}
 	
 	//ResponseEntity:

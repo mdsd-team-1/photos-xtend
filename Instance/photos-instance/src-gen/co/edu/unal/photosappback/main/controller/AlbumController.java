@@ -28,11 +28,22 @@ public class AlbumController {
 	PhotoRepository photoRepository;
 	
 	
-
-
+	@PostMapping("/create")
+	public ResponseEntity<?> getAlbum(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> getPhotosFromAlbum(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> createAlbum(@RequestBody String body) throws Exception {
+		
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {
-		
+	
 		if(exception instanceof AlbumNotFoundException) {
 			return new ResponseEntity<>("AlbumNotFoundException", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -51,7 +62,7 @@ public class AlbumController {
 		if(exception instanceof AlbumNotCreatedException) {
 			return new ResponseEntity<>("AlbumNotCreatedException", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
+	
 		return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
 	}
 }

@@ -6,10 +6,11 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Autowired
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AutowiredType
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
-//import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMapping
-//import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingType
+es
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ExceptionHandler
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ExceptionProcess
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
 
 class TemplateClassController {
 	
@@ -40,23 +41,30 @@ class TemplateClassController {
 				
 		«FOR autowiredItem: rsc.getElements().filter(Autowired)»
 		@Autowired
-		«autowiredItem.getElements().filter(AutowiredType).get(0).name» «autowiredItem.getElements().filter(AutowiredType).get(0).name.toFirstLower»;
+		«autowiredItem.name» «autowiredItem.name.toFirstLower»;
 		
 		«ENDFOR»
 		
-
-
-		@ExceptionHandler(Exception.class)
-		public ResponseEntity<?> «rsc.getElements().filter(ExceptionHandler).get(0).name»(Exception exception) {
+		«FOR responseItem: rsc.getElements().filter(ResponseEntity)»
+		@PostMapping("/create")
+		public ResponseEntity<?> «responseItem.name»(@RequestBody String body) throws Exception {
 			
-			«FOR exceptionHandleItem: rsc.getElements().filter(ExceptionHandler).get(0).getElements().filter(ExceptionProcess).toList»
-			if(exception instanceof «exceptionHandleItem.name») {
-				return new ResponseEntity<>("«exceptionHandleItem.name»", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		«ENDFOR»
+		
+		«FOR handlerItem: rsc.getElements().filter(ExceptionHandler)»
+		@ExceptionHandler(Exception.class)
+		public ResponseEntity<?> «handlerItem.name»(Exception exception) {
+		
+			«FOR exceptionItem: handlerItem.getElements().filter(ExceptionProcess)»
+			if(exception instanceof «exceptionItem.name») {
+				return new ResponseEntity<>("«exceptionItem.name»", HttpStatus.INTERNAL_SERVER_ERROR);
 			}
 			«ENDFOR»
-	
+		
 			return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
 		}
+		«ENDFOR»
 	}
 	'''
 }

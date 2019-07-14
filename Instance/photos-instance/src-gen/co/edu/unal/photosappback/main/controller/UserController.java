@@ -31,11 +31,34 @@ public class UserController {
 	PhotoRepository photoRepository;
 	
 	
-
-
+	@PostMapping("/create")
+	public ResponseEntity<?> getUser(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> getAlbumsFromUser(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> getPhotosFromUser(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> loginUser(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> createUser(@RequestBody String body) throws Exception {
+		
+	}
+	@PostMapping("/create")
+	public ResponseEntity<?> editUser(@RequestBody String body) throws Exception {
+		
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception exception) {
-		
+	
 		if(exception instanceof UserNotFoundException) {
 			return new ResponseEntity<>("UserNotFoundException", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -75,7 +98,7 @@ public class UserController {
 		if(exception instanceof UserNotEditedException) {
 			return new ResponseEntity<>("UserNotEditedException", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
+	
 		return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
 	}
 }
