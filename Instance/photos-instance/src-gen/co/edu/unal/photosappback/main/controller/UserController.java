@@ -54,26 +54,164 @@ public class UserController {
 	@RequestMapping(value = "id_albums", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getAlbumsFromUser(@PathVariable Long id, ) throws Exception {
 		
+		AlbumSpecification albumsFromUserQuery = new AlbumSpecification(
+				new SearchCriteria("userId", ":", id));
+
+		List<Album> albums = albumRepository.findAll(albumsFromUserQuery);
+
+		if(albums == null){
+			throw new AlbumsFromUserNotFoundException();
+		}
+
+		if(albums.size() == 0){
+			throw new UserHasNoAlbumsException();
+		}
+
+		return new ResponseEntity<>(albums, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhotosFromUser(@PathVariable Long id, ) throws Exception {
 		
+		AlbumSpecification albumsFromUserQuery = new AlbumSpecification(
+				new SearchCriteria("userId", ":", id));
+
+		List<Album> albums = albumRepository.findAll(albumsFromUserQuery);
+
+		if(albums == null){
+			throw new AlbumsFromUserNotFoundException();
+		}
+
+		if(albums.size() == 0){
+			throw new UserHasNoAlbumsException();
+		}
+
+		ArrayList<Photo> allPhotos = new ArrayList<Photo>();
+
+		for (Album album : albums) {
+
+			PhotoSpecification photosFromAlbumQuery = new PhotoSpecification(
+					new SearchCriteria("albumId", ":", album.getId()));
+
+			List<Photo> photosFromAlbum = photoRepository.findAll(photosFromAlbumQuery);
+
+			if(photosFromAlbum != null && photosFromAlbum.size() > 0){
+				allPhotos.addAll(photosFromAlbum);
+			}
+		}
+
+		if(allPhotos.size() == 0){
+			throw new UserHasNoPhotosException();
+		}
+
+		return new ResponseEntity<>(allPhotos, HttpStatus.OK);
 	}
 	
 	@PostMapping("/login")
 	public ResponseEntity<?> loginUser(@RequestBody Map_String_String body, ) throws Exception {
 		
+		User existingUser = null;
+
+		String email = body.get("email");
+		String password = body.get("password");
+
+		if(password == null || email == null) {
+			throw new MissingParametersForLoginException();
+		}
+
+		try {
+			existingUser = userRepository.findByEmailAndPassword(email,password);
+
+		} catch(Exception e) {
+			throw new WrongLoginInfoException();
+		}
+
+		if(existingUser == null){
+			throw new WrongLoginInfoException();
+		}
+
+		Map<String,Object> response = new HashMap<String,Object>();
+		response.put("Login Status","Successfully logged in");
+		response.put("User Id",existingUser.getId());
+
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<?> createUser(@RequestBody Map_String_String body, ) throws Exception {
 		
+		String firstName = body.get("first_name");
+		String lastName = body.get("last_name");
+		String profileDescription = body.get("profile_description");
+		String userName = body.get("user_name");
+		String password = body.get("password");
+		String email = body.get("email");
+
+		if(firstName == null || lastName == null || profileDescription == null ||
+				userName == null || password == null || email == null) {
+
+			throw new MissingParametersForNewUserException();
+		}
+
+		User newUser = userRepository.save(
+				new User(userName, firstName, lastName, profileDescription, password, email));
+
+		if(newUser == null){
+			throw new UserNotCreatedException();
+		}
+
+		String defaultAlbumName = firstName + " " + lastName + " Album";
+
+		Album newAlbum = albumRepository.save(
+				new Album(defaultAlbumName, newUser.getId()));
+
+		if(newAlbum == null) {
+			throw new AlbumNotCreatedForNewUserException();
+		}
+
+		return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/id_edit")
 	public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody Map_String_String body, ) throws Exception {
 		
+		User existingUser = null;
+
+		try {
+			existingUser = userRepository.getOne(id.intValue());
+
+		} catch(Exception e) {
+			throw new UserToEditDoesNotExist();
+		}
+
+		if(existingUser == null){
+			throw new UserToEditDoesNotExist();
+		}
+
+		String firstName = body.get("first_name");
+		String lastName = body.get("last_name");
+		String profileDescription = body.get("profile_description");
+		String userName = body.get("user_name");
+
+		if(firstName == null || lastName == null || profileDescription == null ||
+				userName == null) {
+
+			throw new MissingParametersForEditUserException();
+		}
+
+		existingUser.setFirstName(firstName);
+		existingUser.setLastName(lastName);
+		existingUser.setProfileDescription(profileDescription);
+		existingUser.setUserName(userName);
+
+		try {
+			userRepository.save(existingUser);
+
+		} catch(Exception e) {
+			throw new UserNotEditedException();
+		}
+
+		return new ResponseEntity<>("User edited", HttpStatus.ACCEPTED);
 	}
 			
 	@ExceptionHandler(Exception.class)

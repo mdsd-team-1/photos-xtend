@@ -86,6 +86,155 @@ class TemplateClassController {
 			}
 
 			return new ResponseEntity<>(«entity.name.toFirstLower», HttpStatus.OK);
+			«ELSEIF responseItem.name.equals("getAlbumsFromUser")»
+			AlbumSpecification albumsFrom«entity.name»Query = new AlbumSpecification(
+					new SearchCriteria("«entity.name.toFirstLower»Id", ":", id));
+
+			List<Album> albums = albumRepository.findAll(albumsFrom«entity.name»Query);
+
+			if(albums == null){
+				throw new AlbumsFrom«entity.name»NotFoundException();
+			}
+
+			if(albums.size() == 0){
+				throw new «entity.name»HasNoAlbumsException();
+			}
+
+			return new ResponseEntity<>(albums, HttpStatus.OK);
+			«ELSEIF responseItem.name.equals("getPhotosFromUser")»
+			AlbumSpecification albumsFrom«entity.name»Query = new AlbumSpecification(
+					new SearchCriteria("«entity.name.toFirstLower»Id", ":", id));
+
+			List<Album> albums = albumRepository.findAll(albumsFrom«entity.name»Query);
+
+			if(albums == null){
+				throw new AlbumsFrom«entity.name»NotFoundException();
+			}
+
+			if(albums.size() == 0){
+				throw new «entity.name»HasNoAlbumsException();
+			}
+
+			ArrayList<Photo> allPhotos = new ArrayList<Photo>();
+
+			for (Album album : albums) {
+
+				PhotoSpecification photosFromAlbumQuery = new PhotoSpecification(
+						new SearchCriteria("albumId", ":", album.getId()));
+
+				List<Photo> photosFromAlbum = photoRepository.findAll(photosFromAlbumQuery);
+
+				if(photosFromAlbum != null && photosFromAlbum.size() > 0){
+					allPhotos.addAll(photosFromAlbum);
+				}
+			}
+
+			if(allPhotos.size() == 0){
+				throw new «entity.name»HasNoPhotosException();
+			}
+
+			return new ResponseEntity<>(allPhotos, HttpStatus.OK);
+			«ELSEIF responseItem.name.equals("loginUser")»
+			«entity.name» existing«entity.name» = null;
+
+			String email = body.get("email");
+			String password = body.get("password");
+
+			if(password == null || email == null) {
+				throw new MissingParametersForLoginException();
+			}
+
+			try {
+				existing«entity.name» = «entity.name.toFirstLower»Repository.findByEmailAndPassword(email,password);
+
+			} catch(Exception e) {
+				throw new WrongLoginInfoException();
+			}
+
+			if(existing«entity.name» == null){
+				throw new WrongLoginInfoException();
+			}
+
+			Map<String,Object> response = new HashMap<String,Object>();
+			response.put("Login Status","Successfully logged in");
+			response.put("«entity.name» Id",existing«entity.name».getId());
+
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+			«ELSEIF responseItem.name.equals("createUser")»
+			String firstName = body.get("first_name");
+			String lastName = body.get("last_name");
+			String profileDescription = body.get("profile_description");
+			String «entity.name.toFirstLower»Name = body.get("«entity.name.toFirstLower»_name");
+			String password = body.get("password");
+			String email = body.get("email");
+
+			if(firstName == null || lastName == null || profileDescription == null ||
+					«entity.name.toFirstLower»Name == null || password == null || email == null) {
+
+				throw new MissingParametersForNew«entity.name»Exception();
+			}
+
+			«entity.name» new«entity.name» = «entity.name.toFirstLower»Repository.save(
+					new «entity.name»(«entity.name.toFirstLower»Name, firstName, lastName, profileDescription, password, email));
+
+			if(new«entity.name» == null){
+				throw new «entity.name»NotCreatedException();
+			}
+
+			String defaultAlbumName = firstName + " " + lastName + " Album";
+
+			Album newAlbum = albumRepository.save(
+					new Album(defaultAlbumName, new«entity.name».getId()));
+
+			if(newAlbum == null) {
+				throw new AlbumNotCreatedForNew«entity.name»Exception();
+			}
+
+			return new ResponseEntity<>(new«entity.name», HttpStatus.CREATED);
+			«ELSEIF responseItem.name.equals("editUser")»
+			«entity.name» existing«entity.name» = null;
+
+			try {
+				existing«entity.name» = «entity.name.toFirstLower»Repository.getOne(id.intValue());
+
+			} catch(Exception e) {
+				throw new «entity.name»ToEditDoesNotExist();
+			}
+
+			if(existing«entity.name» == null){
+				throw new «entity.name»ToEditDoesNotExist();
+			}
+
+			String firstName = body.get("first_name");
+			String lastName = body.get("last_name");
+			String profileDescription = body.get("profile_description");
+			String «entity.name.toFirstLower»Name = body.get("«entity.name.toFirstLower»_name");
+
+			if(firstName == null || lastName == null || profileDescription == null ||
+					«entity.name.toFirstLower»Name == null) {
+
+				throw new MissingParametersForEdit«entity.name»Exception();
+			}
+
+			existing«entity.name».setFirstName(firstName);
+			existing«entity.name».setLastName(lastName);
+			existing«entity.name».setProfileDescription(profileDescription);
+			existing«entity.name».set«entity.name»Name(«entity.name.toFirstLower»Name);
+
+			try {
+				«entity.name.toFirstLower»Repository.save(existing«entity.name»);
+
+			} catch(Exception e) {
+				throw new «entity.name»NotEditedException();
+			}
+
+			return new ResponseEntity<>("«entity.name» edited", HttpStatus.ACCEPTED);
+			«ELSEIF responseItem.name.equals("END")»
+			
+			«ELSEIF responseItem.name.equals("ABC")»
+			
+			«ELSEIF responseItem.name.equals("ABC")»
+			
 			«ELSEIF responseItem.name.equals("ABC")»
 			
 			
