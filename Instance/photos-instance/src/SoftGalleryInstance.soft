@@ -358,27 +358,63 @@ System: {
 				
 					StorageMember endpointUrl
 						StorageMemberType StringClass
+						StorageMemberAnnotation endpointUrl
 						
 					StorageMember bucketName
 						StorageMemberType StringClass
+						StorageMemberAnnotation bucketName
 						
 					StorageMember accessKey
 						StorageMemberType StringClass
+						StorageMemberAnnotation accessKey
 						
 					StorageMember secretKey
 						StorageMemberType StringClass
+						StorageMemberAnnotation secretKey
 						
-					StorageActions initializeAmazon
+						
+					StorageAction initializeAmazon
+						StorageActionReturn void
+						StorageActionAnnotation PostConstruct
 					
-					StorageActions convertMultiPartToFile
+					StorageAction convertMultiPartToFile
+						StorageActionReturn File
+						
+						StorageActionMember
+							Type MultipartFile
+							Name file
 					
-					StorageActions generateFileName
+					StorageAction generateFileName
+						StorageActionReturn StringClass
+						
+						StorageActionMember
+							Type MultipartFile
+							Name multiPart
 					
-					StorageActions uploadFileTos3bucket
+					StorageAction uploadFileTos3bucket
+						StorageActionReturn void
+						
+						StorageActionMember
+							Type StringClass
+							Name fileName
+							
+						StorageActionMember
+							Type File
+							Name file
 					
-					StorageActions uploadFile
+					StorageAction uploadFile
+						StorageActionReturn StringClass
+						
+						StorageActionMember
+							Type MultipartFile
+							Name multiPart
 					
-					StorageActions deleteFileFromS3Bucket
+					StorageAction deleteFileFromS3Bucket
+						StorageActionReturn StringClass
+						
+						StorageActionMember
+							Type StringClass
+							Name fileUrl
 		}
 		
 		React ReactJS : {

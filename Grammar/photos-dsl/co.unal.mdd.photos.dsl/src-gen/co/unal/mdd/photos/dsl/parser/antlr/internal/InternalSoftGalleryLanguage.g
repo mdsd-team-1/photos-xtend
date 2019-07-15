@@ -6535,9 +6535,9 @@ ruleStorageClient returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStorageClientAccess().getElementsStorageActionsParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getStorageClientAccess().getElementsStorageActionParserRuleCall_3_0());
 				}
-				lv_elements_3_0=ruleStorageActions
+				lv_elements_3_0=ruleStorageAction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStorageClientRule());
@@ -6546,7 +6546,7 @@ ruleStorageClient returns [EObject current=null]
 						$current,
 						"elements",
 						lv_elements_3_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActions");
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageAction");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -6595,22 +6595,41 @@ ruleStorageMember returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStorageMemberAccess().getElementStorageMemberTypeParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getStorageMemberAccess().getElementsStorageMemberTypeParserRuleCall_2_0());
 				}
-				lv_element_2_0=ruleStorageMemberType
+				lv_elements_2_0=ruleStorageMemberType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStorageMemberRule());
 					}
 					add(
 						$current,
-						"element",
-						lv_element_2_0,
+						"elements",
+						lv_elements_2_0,
 						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageMemberType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageMemberAccess().getElementsStorageMemberAnnotationParserRuleCall_3_0());
+				}
+				lv_elements_3_0=ruleStorageMemberAnnotation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageMemberRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageMemberAnnotation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -6655,15 +6674,15 @@ ruleStorageMemberType returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleStorageActions
-entryRuleStorageActions returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getStorageActionsRule()); }
-	iv_ruleStorageActions=ruleStorageActions
-	{ $current=$iv_ruleStorageActions.current; }
+// Entry rule entryRuleStorageMemberAnnotation
+entryRuleStorageMemberAnnotation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageMemberAnnotationRule()); }
+	iv_ruleStorageMemberAnnotation=ruleStorageMemberAnnotation
+	{ $current=$iv_ruleStorageMemberAnnotation.current; }
 	EOF;
 
-// Rule StorageActions
-ruleStorageActions returns [EObject current=null]
+// Rule StorageMemberAnnotation
+ruleStorageMemberAnnotation returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -6671,19 +6690,342 @@ ruleStorageActions returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='StorageActions'
+		otherlv_0='StorageMemberAnnotation'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getStorageActionsAccess().getStorageActionsKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getStorageMemberAnnotationAccess().getStorageMemberAnnotationKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionsAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageMemberAnnotationAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getStorageActionsRule());
+						$current = createModelElement(grammarAccess.getStorageMemberAnnotationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageAction
+entryRuleStorageAction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionRule()); }
+	iv_ruleStorageAction=ruleStorageAction
+	{ $current=$iv_ruleStorageAction.current; }
+	EOF;
+
+// Rule StorageAction
+ruleStorageAction returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageAction'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionAccess().getStorageActionKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageActionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageActionAccess().getElementsStorageActionReturnParserRuleCall_2_0());
+				}
+				lv_elements_2_0=ruleStorageActionReturn
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageActionRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActionReturn");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageActionAccess().getElementsStorageActionAnnotationParserRuleCall_3_0());
+				}
+				lv_elements_3_0=ruleStorageActionAnnotation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageActionRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActionAnnotation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageActionAccess().getElementsStorageActionMemberParserRuleCall_4_0());
+				}
+				lv_elements_4_0=ruleStorageActionMember
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageActionRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_4_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActionMember");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleStorageActionAnnotation
+entryRuleStorageActionAnnotation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionAnnotationRule()); }
+	iv_ruleStorageActionAnnotation=ruleStorageActionAnnotation
+	{ $current=$iv_ruleStorageActionAnnotation.current; }
+	EOF;
+
+// Rule StorageActionAnnotation
+ruleStorageActionAnnotation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageActionAnnotation'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionAnnotationAccess().getStorageActionAnnotationKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionAnnotationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageActionAnnotationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageActionReturn
+entryRuleStorageActionReturn returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionReturnRule()); }
+	iv_ruleStorageActionReturn=ruleStorageActionReturn
+	{ $current=$iv_ruleStorageActionReturn.current; }
+	EOF;
+
+// Rule StorageActionReturn
+ruleStorageActionReturn returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageActionReturn'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionReturnAccess().getStorageActionReturnKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionReturnAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageActionReturnRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageActionMember
+entryRuleStorageActionMember returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionMemberRule()); }
+	iv_ruleStorageActionMember=ruleStorageActionMember
+	{ $current=$iv_ruleStorageActionMember.current; }
+	EOF;
+
+// Rule StorageActionMember
+ruleStorageActionMember returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageActionMember'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionMemberAccess().getStorageActionMemberKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageActionMemberAccess().getElementsStorageActionMemberTypeParserRuleCall_1_0());
+				}
+				lv_elements_1_0=ruleStorageActionMemberType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageActionMemberRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_1_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActionMemberType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageActionMemberAccess().getElementsStorageActionMemberNameParserRuleCall_2_0());
+				}
+				lv_elements_2_0=ruleStorageActionMemberName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageActionMemberRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActionMemberName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageActionMemberType
+entryRuleStorageActionMemberType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionMemberTypeRule()); }
+	iv_ruleStorageActionMemberType=ruleStorageActionMemberType
+	{ $current=$iv_ruleStorageActionMemberType.current; }
+	EOF;
+
+// Rule StorageActionMemberType
+ruleStorageActionMemberType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Type'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionMemberTypeAccess().getTypeKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionMemberTypeAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageActionMemberTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageActionMemberName
+entryRuleStorageActionMemberName returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionMemberNameRule()); }
+	iv_ruleStorageActionMemberName=ruleStorageActionMemberName
+	{ $current=$iv_ruleStorageActionMemberName.current; }
+	EOF;
+
+// Rule StorageActionMemberName
+ruleStorageActionMemberName returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Name'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionMemberNameAccess().getNameKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionMemberNameAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageActionMemberNameRule());
 					}
 					setWithLastConsumed(
 						$current,

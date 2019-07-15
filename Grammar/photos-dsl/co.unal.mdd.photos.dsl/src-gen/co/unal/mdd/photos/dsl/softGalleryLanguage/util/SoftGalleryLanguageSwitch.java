@@ -736,10 +736,52 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.STORAGE_ACTIONS:
+      case SoftGalleryLanguagePackage.STORAGE_MEMBER_ANNOTATION:
       {
-        StorageActions storageActions = (StorageActions)theEObject;
-        T result = caseStorageActions(storageActions);
+        StorageMemberAnnotation storageMemberAnnotation = (StorageMemberAnnotation)theEObject;
+        T result = caseStorageMemberAnnotation(storageMemberAnnotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTION:
+      {
+        StorageAction storageAction = (StorageAction)theEObject;
+        T result = caseStorageAction(storageAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_ANNOTATION:
+      {
+        StorageActionAnnotation storageActionAnnotation = (StorageActionAnnotation)theEObject;
+        T result = caseStorageActionAnnotation(storageActionAnnotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_RETURN:
+      {
+        StorageActionReturn storageActionReturn = (StorageActionReturn)theEObject;
+        T result = caseStorageActionReturn(storageActionReturn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER:
+      {
+        StorageActionMember storageActionMember = (StorageActionMember)theEObject;
+        T result = caseStorageActionMember(storageActionMember);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER_TYPE:
+      {
+        StorageActionMemberType storageActionMemberType = (StorageActionMemberType)theEObject;
+        T result = caseStorageActionMemberType(storageActionMemberType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER_NAME:
+      {
+        StorageActionMemberName storageActionMemberName = (StorageActionMemberName)theEObject;
+        T result = caseStorageActionMemberName(storageActionMemberName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2861,17 +2903,113 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Storage Actions</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Storage Member Annotation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Storage Actions</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Storage Member Annotation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStorageActions(StorageActions object)
+  public T caseStorageMemberAnnotation(StorageMemberAnnotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageAction(StorageAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Action Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Action Annotation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageActionAnnotation(StorageActionAnnotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Action Return</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Action Return</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageActionReturn(StorageActionReturn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Action Member</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Action Member</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageActionMember(StorageActionMember object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Action Member Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Action Member Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageActionMemberType(StorageActionMemberType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Action Member Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Action Member Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageActionMemberName(StorageActionMemberName object)
   {
     return null;
   }

@@ -159,7 +159,13 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.STORAGE_CLIENT: return createStorageClient();
       case SoftGalleryLanguagePackage.STORAGE_MEMBER: return createStorageMember();
       case SoftGalleryLanguagePackage.STORAGE_MEMBER_TYPE: return createStorageMemberType();
-      case SoftGalleryLanguagePackage.STORAGE_ACTIONS: return createStorageActions();
+      case SoftGalleryLanguagePackage.STORAGE_MEMBER_ANNOTATION: return createStorageMemberAnnotation();
+      case SoftGalleryLanguagePackage.STORAGE_ACTION: return createStorageAction();
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_ANNOTATION: return createStorageActionAnnotation();
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_RETURN: return createStorageActionReturn();
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER: return createStorageActionMember();
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER_TYPE: return createStorageActionMemberType();
+      case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER_NAME: return createStorageActionMemberName();
       case SoftGalleryLanguagePackage.SPRING_TABLE: return createSpringTable();
       case SoftGalleryLanguagePackage.SPRING_TABLE_ID: return createSpringTableId();
       case SoftGalleryLanguagePackage.GENERATED_VALUE: return createGeneratedValue();
@@ -1386,10 +1392,82 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public StorageActions createStorageActions()
+  public StorageMemberAnnotation createStorageMemberAnnotation()
   {
-    StorageActionsImpl storageActions = new StorageActionsImpl();
-    return storageActions;
+    StorageMemberAnnotationImpl storageMemberAnnotation = new StorageMemberAnnotationImpl();
+    return storageMemberAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageAction createStorageAction()
+  {
+    StorageActionImpl storageAction = new StorageActionImpl();
+    return storageAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageActionAnnotation createStorageActionAnnotation()
+  {
+    StorageActionAnnotationImpl storageActionAnnotation = new StorageActionAnnotationImpl();
+    return storageActionAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageActionReturn createStorageActionReturn()
+  {
+    StorageActionReturnImpl storageActionReturn = new StorageActionReturnImpl();
+    return storageActionReturn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageActionMember createStorageActionMember()
+  {
+    StorageActionMemberImpl storageActionMember = new StorageActionMemberImpl();
+    return storageActionMember;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageActionMemberType createStorageActionMemberType()
+  {
+    StorageActionMemberTypeImpl storageActionMemberType = new StorageActionMemberTypeImpl();
+    return storageActionMemberType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageActionMemberName createStorageActionMemberName()
+  {
+    StorageActionMemberNameImpl storageActionMemberName = new StorageActionMemberNameImpl();
+    return storageActionMemberName;
   }
 
   /**

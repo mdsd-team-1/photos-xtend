@@ -546,9 +546,39 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createStorageMemberTypeAdapter();
       }
       @Override
-      public Adapter caseStorageActions(StorageActions object)
+      public Adapter caseStorageMemberAnnotation(StorageMemberAnnotation object)
       {
-        return createStorageActionsAdapter();
+        return createStorageMemberAnnotationAdapter();
+      }
+      @Override
+      public Adapter caseStorageAction(StorageAction object)
+      {
+        return createStorageActionAdapter();
+      }
+      @Override
+      public Adapter caseStorageActionAnnotation(StorageActionAnnotation object)
+      {
+        return createStorageActionAnnotationAdapter();
+      }
+      @Override
+      public Adapter caseStorageActionReturn(StorageActionReturn object)
+      {
+        return createStorageActionReturnAdapter();
+      }
+      @Override
+      public Adapter caseStorageActionMember(StorageActionMember object)
+      {
+        return createStorageActionMemberAdapter();
+      }
+      @Override
+      public Adapter caseStorageActionMemberType(StorageActionMemberType object)
+      {
+        return createStorageActionMemberTypeAdapter();
+      }
+      @Override
+      public Adapter caseStorageActionMemberName(StorageActionMemberName object)
+      {
+        return createStorageActionMemberNameAdapter();
       }
       @Override
       public Adapter caseSpringTable(SpringTable object)
@@ -2418,16 +2448,106 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActions <em>Storage Actions</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMemberAnnotation <em>Storage Member Annotation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActions
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMemberAnnotation
    * @generated
    */
-  public Adapter createStorageActionsAdapter()
+  public Adapter createStorageMemberAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageAction <em>Storage Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageAction
+   * @generated
+   */
+  public Adapter createStorageActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionAnnotation <em>Storage Action Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionAnnotation
+   * @generated
+   */
+  public Adapter createStorageActionAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionReturn <em>Storage Action Return</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionReturn
+   * @generated
+   */
+  public Adapter createStorageActionReturnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMember <em>Storage Action Member</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMember
+   * @generated
+   */
+  public Adapter createStorageActionMemberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMemberType <em>Storage Action Member Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMemberType
+   * @generated
+   */
+  public Adapter createStorageActionMemberTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMemberName <em>Storage Action Member Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMemberName
+   * @generated
+   */
+  public Adapter createStorageActionMemberNameAdapter()
   {
     return null;
   }

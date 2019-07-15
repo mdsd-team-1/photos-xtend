@@ -330,13 +330,32 @@
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageMember">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageMember/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//StorageMember/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//StorageMember/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageMemberType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageMemberType/name"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActions">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageActions/name"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageMemberAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageMemberAnnotation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageAction/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//StorageAction/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActionAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageActionAnnotation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActionReturn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageActionReturn/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActionMember">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//StorageActionMember/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActionMemberType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageActionMemberType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActionMemberName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageActionMemberName/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringTable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringTable/name"/>

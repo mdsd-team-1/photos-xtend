@@ -553,20 +553,48 @@ SpringEntity:
 StorageClient:
 	'StorageClient' name=ID
 		(elements+=StorageMember)*
-		(elements+=StorageActions)*
+		(elements+=StorageAction)*
 ;
 
 StorageMember:
 	'StorageMember' name=ID 
-		element+=StorageMemberType
+		elements+=StorageMemberType
+		(elements+=StorageMemberAnnotation)*
 ;
 
 StorageMemberType:
 	'StorageMemberType' name=ID
 ;
 
-StorageActions:
-	'StorageActions' name=ID
+StorageMemberAnnotation:
+	'StorageMemberAnnotation' name=ID
+;
+
+StorageAction:
+	'StorageAction' name=ID
+		elements+=StorageActionReturn
+		(elements+=StorageActionAnnotation)*
+		(elements+=StorageActionMember)*
+;
+
+StorageActionAnnotation:
+	'StorageActionAnnotation' name=ID
+;
+
+StorageActionReturn:
+	'StorageActionReturn' name=ID
+;
+
+StorageActionMember:
+	'StorageActionMember' elements+=StorageActionMemberType elements+=StorageActionMemberName
+;
+
+StorageActionMemberType:
+	'Type' name=ID
+;
+
+StorageActionMemberName:
+	'Name' name=ID
 ;
 
 SpringTable:

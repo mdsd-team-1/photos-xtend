@@ -172,9 +172,15 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActions;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageAction;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionAnnotation;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMember;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMemberName;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionMemberType;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActionReturn;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMember;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMemberAnnotation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMemberType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent;
@@ -866,7 +872,49 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass storageActionsEClass = null;
+  private EClass storageMemberAnnotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionAnnotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionReturnEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionMemberEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionMemberTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionMemberNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -4109,7 +4157,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getStorageMember_Element()
+  public EReference getStorageMember_Elements()
   {
     return (EReference)storageMemberEClass.getEStructuralFeatures().get(1);
   }
@@ -4142,9 +4190,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getStorageActions()
+  public EClass getStorageMemberAnnotation()
   {
-    return storageActionsEClass;
+    return storageMemberAnnotationEClass;
   }
 
   /**
@@ -4153,9 +4201,152 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getStorageActions_Name()
+  public EAttribute getStorageMemberAnnotation_Name()
   {
-    return (EAttribute)storageActionsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)storageMemberAnnotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageAction()
+  {
+    return storageActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageAction_Name()
+  {
+    return (EAttribute)storageActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStorageAction_Elements()
+  {
+    return (EReference)storageActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageActionAnnotation()
+  {
+    return storageActionAnnotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageActionAnnotation_Name()
+  {
+    return (EAttribute)storageActionAnnotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageActionReturn()
+  {
+    return storageActionReturnEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageActionReturn_Name()
+  {
+    return (EAttribute)storageActionReturnEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageActionMember()
+  {
+    return storageActionMemberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStorageActionMember_Elements()
+  {
+    return (EReference)storageActionMemberEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageActionMemberType()
+  {
+    return storageActionMemberTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageActionMemberType_Name()
+  {
+    return (EAttribute)storageActionMemberTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageActionMemberName()
+  {
+    return storageActionMemberNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageActionMemberName_Name()
+  {
+    return (EAttribute)storageActionMemberNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -6890,13 +7081,32 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     storageMemberEClass = createEClass(STORAGE_MEMBER);
     createEAttribute(storageMemberEClass, STORAGE_MEMBER__NAME);
-    createEReference(storageMemberEClass, STORAGE_MEMBER__ELEMENT);
+    createEReference(storageMemberEClass, STORAGE_MEMBER__ELEMENTS);
 
     storageMemberTypeEClass = createEClass(STORAGE_MEMBER_TYPE);
     createEAttribute(storageMemberTypeEClass, STORAGE_MEMBER_TYPE__NAME);
 
-    storageActionsEClass = createEClass(STORAGE_ACTIONS);
-    createEAttribute(storageActionsEClass, STORAGE_ACTIONS__NAME);
+    storageMemberAnnotationEClass = createEClass(STORAGE_MEMBER_ANNOTATION);
+    createEAttribute(storageMemberAnnotationEClass, STORAGE_MEMBER_ANNOTATION__NAME);
+
+    storageActionEClass = createEClass(STORAGE_ACTION);
+    createEAttribute(storageActionEClass, STORAGE_ACTION__NAME);
+    createEReference(storageActionEClass, STORAGE_ACTION__ELEMENTS);
+
+    storageActionAnnotationEClass = createEClass(STORAGE_ACTION_ANNOTATION);
+    createEAttribute(storageActionAnnotationEClass, STORAGE_ACTION_ANNOTATION__NAME);
+
+    storageActionReturnEClass = createEClass(STORAGE_ACTION_RETURN);
+    createEAttribute(storageActionReturnEClass, STORAGE_ACTION_RETURN__NAME);
+
+    storageActionMemberEClass = createEClass(STORAGE_ACTION_MEMBER);
+    createEReference(storageActionMemberEClass, STORAGE_ACTION_MEMBER__ELEMENTS);
+
+    storageActionMemberTypeEClass = createEClass(STORAGE_ACTION_MEMBER_TYPE);
+    createEAttribute(storageActionMemberTypeEClass, STORAGE_ACTION_MEMBER_TYPE__NAME);
+
+    storageActionMemberNameEClass = createEClass(STORAGE_ACTION_MEMBER_NAME);
+    createEAttribute(storageActionMemberNameEClass, STORAGE_ACTION_MEMBER_NAME__NAME);
 
     springTableEClass = createEClass(SPRING_TABLE);
     createEAttribute(springTableEClass, SPRING_TABLE__NAME);
@@ -7563,13 +7773,32 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     initEClass(storageMemberEClass, StorageMember.class, "StorageMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStorageMember_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStorageMember_Element(), this.getStorageMemberType(), null, "element", null, 0, -1, StorageMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStorageMember_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, StorageMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storageMemberTypeEClass, StorageMemberType.class, "StorageMemberType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStorageMemberType_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageMemberType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(storageActionsEClass, StorageActions.class, "StorageActions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStorageActions_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(storageMemberAnnotationEClass, StorageMemberAnnotation.class, "StorageMemberAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageMemberAnnotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageMemberAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionEClass, StorageAction.class, "StorageAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStorageAction_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, StorageAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionAnnotationEClass, StorageActionAnnotation.class, "StorageActionAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageActionAnnotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActionAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionReturnEClass, StorageActionReturn.class, "StorageActionReturn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageActionReturn_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActionReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionMemberEClass, StorageActionMember.class, "StorageActionMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStorageActionMember_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, StorageActionMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionMemberTypeEClass, StorageActionMemberType.class, "StorageActionMemberType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageActionMemberType_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActionMemberType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionMemberNameEClass, StorageActionMemberName.class, "StorageActionMemberName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageActionMemberName_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActionMemberName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(springTableEClass, SpringTable.class, "SpringTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpringTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

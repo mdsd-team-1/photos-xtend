@@ -870,13 +870,67 @@ public interface SoftGalleryLanguageFactory extends EFactory
   StorageMemberType createStorageMemberType();
 
   /**
-   * Returns a new object of class '<em>Storage Actions</em>'.
+   * Returns a new object of class '<em>Storage Member Annotation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Storage Actions</em>'.
+   * @return a new object of class '<em>Storage Member Annotation</em>'.
    * @generated
    */
-  StorageActions createStorageActions();
+  StorageMemberAnnotation createStorageMemberAnnotation();
+
+  /**
+   * Returns a new object of class '<em>Storage Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Action</em>'.
+   * @generated
+   */
+  StorageAction createStorageAction();
+
+  /**
+   * Returns a new object of class '<em>Storage Action Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Action Annotation</em>'.
+   * @generated
+   */
+  StorageActionAnnotation createStorageActionAnnotation();
+
+  /**
+   * Returns a new object of class '<em>Storage Action Return</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Action Return</em>'.
+   * @generated
+   */
+  StorageActionReturn createStorageActionReturn();
+
+  /**
+   * Returns a new object of class '<em>Storage Action Member</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Action Member</em>'.
+   * @generated
+   */
+  StorageActionMember createStorageActionMember();
+
+  /**
+   * Returns a new object of class '<em>Storage Action Member Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Action Member Type</em>'.
+   * @generated
+   */
+  StorageActionMemberType createStorageActionMemberType();
+
+  /**
+   * Returns a new object of class '<em>Storage Action Member Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Action Member Name</em>'.
+   * @generated
+   */
+  StorageActionMemberName createStorageActionMemberName();
 
   /**
    * Returns a new object of class '<em>Spring Table</em>'.
