@@ -1,5 +1,9 @@
 package co.unal.mdd.photos.dsl.generator
 
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController
+import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass
+import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties
+import co.unal.mdd.photos.dsl.generator.templates.TemplateYml
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement
@@ -7,6 +11,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
 import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile
 import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException
+import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SegmentStructureContent
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
@@ -15,12 +20,12 @@ import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController
-import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass
-import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericInterface
-import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties
-import co.unal.mdd.photos.dsl.generator.templates.TemplateYml
-import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassModel
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributePhoto
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum
+import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain
+import co.unal.mdd.photos.dsl.generator.templates.TemplateRepositoryInterface
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassException
 
 /**
  * Generates code from your model files on save.
@@ -212,7 +217,7 @@ class StructureBackendGenerator{
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+ent.name
 			className = ae.name
 			
-			createClassFile(className, packageName)
+			createExceptionClassFile(className, packageName)
 		}
 	}
 
@@ -227,7 +232,7 @@ class StructureBackendGenerator{
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+ent.name
 			className = pe.name
 			
-			createClassFile(className, packageName)
+			createExceptionClassFile(className, packageName)
 		}
 	}
 	
@@ -242,7 +247,7 @@ class StructureBackendGenerator{
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name+"."+ent.name
 			className = ue.name
 			
-			createClassFile(className, packageName)
+			createExceptionClassFile(className, packageName)
 		}
 	}
 	
@@ -251,9 +256,9 @@ class StructureBackendGenerator{
 	def generateModel(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-		className = ent.name
+		className = ent.name	
 		
-		createClassFile(className, packageName)
+		createModelClassFile(className, packageName, ent)
 	}
 
 
@@ -263,7 +268,7 @@ class StructureBackendGenerator{
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = ent.name + bls.name.toFirstUpper
 		
-		createInterfaceFile(className, packageName)
+		createInterfaceFile(className, packageName, ent)
 	}
 	
 	
@@ -324,12 +329,20 @@ class StructureBackendGenerator{
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericClass.generate(className, packageName))
 	}
 	
+	def createExceptionClassFile(String className, String packageName) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassException.generate(className, packageName))
+	}
+	
 	def createControllerClassFile(String className, String packageName, RestController rsc, Entities ent, List<SpringRepositories> classVars) {
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, rsc, ent, classVars))
 	}
 	
-	def createInterfaceFile(String className, String packageName) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericInterface.generate(className, packageName))
+	def createModelClassFile(String className, String packageName, Entities ent) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassModel.generate(className, packageName, ent))
+	}
+	
+	def createInterfaceFile(String className, String packageName, Entities ent) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateRepositoryInterface.generate(className, packageName, ent))
 	}
 	
 	def createPropertiesFile(String className, String packageName) {

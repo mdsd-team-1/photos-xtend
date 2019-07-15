@@ -37,20 +37,17 @@ Entities:
 ;
 
 AtributePhoto:
-	'idPhoto' name=ID      |
 	'namePhoto' name=ID    |
 	'urlPhoto' name=ID     |
 	'albumIdPhoto' name=ID
 ;
 	
 AtributeAlbum:
-	'idAlbum' name=ID     |
 	'nameAlbum' name=ID   |
 	'userIdAlbum' name=ID
 ;
 
 AtributeUserDomain:
-	'idUser' name=ID 				 |
 	'userNameUser' name=ID			 |
 	'firstNameUser' name=ID 		 |
 	'lastNameUser' name=ID 			 |

@@ -2,16 +2,13 @@ System: {
 	Domain SoftGallery: { 
 		Entities: { 
 			PhotoEntity: Photo
-				idPhoto id
 				namePhoto name
 				urlPhoto url
 				albumIdPhoto albumId
 			AlbumEntity: Album
-				idAlbum id
 				nameAlbum name
 				userIdAlbum userId
 			UserEntity: User
-				idUser id
 				userNameUser userName
 				firstNameUser firstName
 				lastNameUser lastName
