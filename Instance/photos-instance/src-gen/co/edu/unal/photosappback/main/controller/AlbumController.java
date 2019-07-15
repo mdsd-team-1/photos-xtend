@@ -51,11 +51,49 @@ public class AlbumController {
 	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhotosFromAlbum(@PathVariable Long id, ) throws Exception {
 		
+		PhotoSpecification photosFromAlbumQuery = new PhotoSpecification(
+				new SearchCriteria("albumId", ":", id));
+
+		List<Photo> photos = photoRepository.findAll(photosFromAlbumQuery);
+
+		if(photos == null){
+			throw new PhotosFromAlbumNotFoundException();
+		}
+
+		if(photos.size() == 0){
+			throw new AlbumHasNoPhotosException();
+		}
+
+		return new ResponseEntity<>(photos, HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<?> createAlbum(@RequestBody Map_String_String body, ) throws Exception {
 		
+		String userIdString = body.get("user_id");
+		String name = body.get("name");
+
+		if(userIdString == null || name == null) {
+			throw new MissingParametersForNewAlbumException();
+		}
+
+		int userId = -1;
+
+		try {
+			userId = Integer.parseInt(userIdString);
+
+		} catch(NumberFormatException exception) {
+			throw new UserIdIsNotNumberException();
+		}
+
+		Album newAlbum = albumRepository.save(
+				new Album(name, userId));
+
+		if(newAlbum == null) {
+			throw new AlbumNotCreatedException();
+		}
+
+		return new ResponseEntity<>(newAlbum, HttpStatus.CREATED);
 	}
 			
 	@ExceptionHandler(Exception.class)

@@ -51,16 +51,78 @@ public class PhotoController {
 	@PostMapping("/upload")
 	public ResponseEntity<?> uploadPhoto(@RequestPart MultipartFile file, @RequestPart StringClass photoName, @RequestPart StringClass albumId, ) throws Exception {
 		
+		if(file == null || photoName == null || albumId == null) {
+			throw new MissingParametersForNewPhotoException();
+		}
+
+		int albumIdInt = -1;
+
+		try {
+			albumIdInt = Integer.parseInt(albumId);
+
+		} catch(Exception exception) {
+			throw new AlbumIdIsNotNumberException();
+		}
+
+		if(albumIdInt == -1) {
+			throw new AlbumIdIsNotNumberException();
+		}
+
+		String photoUrl = null;
+
+		try {
+			photoUrl = this.amazonClient.uploadFile(file);
+
+		} catch(Exception e) {
+			throw new PhotoUploadErrorException();
+		}
+
+		if(photoUrl == null) {
+			throw new PhotoUploadErrorException();
+		}
+
+		Photo addedPhoto = null;
+
+		try {
+			addedPhoto = photoRepository.save(
+					new Photo(photoName, photoUrl, albumIdInt));
+
+		} catch(Exception e) {
+			throw new PhotoNotCreatedException();
+		}
+
+		if(addedPhoto == null) {
+			throw new PhotoNotCreatedException();
+		}
+
+		return new ResponseEntity<>(addedPhoto, HttpStatus.CREATED);
 	}
 	
 	@DeleteMapping("/delete")
 	public ResponseEntity<?> deleteFile(@RequestPart StringClass fileUrl, ) throws Exception {
 		
+		try {
+			this.amazonClient.deleteFileFromS3Bucket(fileUrl);
+
+		} catch(Exception e) {
+			throw new PhotoNotDeletedException();
+		}
+
+		return new ResponseEntity<>("Photo deleted", HttpStatus.OK);
 	}
 	
 	@GetMapping("/all")
 	public ResponseEntity<?> findAll() throws Exception {
 		
+		List photo = new ArrayList();
+
+		try {
+			photo = photoRepository.findAll();
+
+		} catch(Exception e) {
+			throw new PhotoNotFoundException();
+		}
+		return new ResponseEntity<>(photo, HttpStatus.OK);
 	}
 			
 	@ExceptionHandler(Exception.class)

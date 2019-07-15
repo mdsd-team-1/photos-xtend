@@ -53,7 +53,6 @@ class TemplateClassController {
 		«ENDFOR»
 		
 		«FOR responseItem: rsc.getElements().filter(ResponseEntity)»
-		
 		«IF responseItem.getType().filter(RequestMapping).size() > 0»
 		@RequestMapping(value = "«responseItem.getType().filter(RequestMapping).get(0).getValue().filter(RequestMappingValue).get(0).name»", method = RequestMethod.GET, produces = "application/json")
 		«ENDIF»
@@ -229,15 +228,111 @@ class TemplateClassController {
 			}
 
 			return new ResponseEntity<>("«entity.name» edited", HttpStatus.ACCEPTED);
-			«ELSEIF responseItem.name.equals("END")»
-			
-			«ELSEIF responseItem.name.equals("ABC")»
-			
-			«ELSEIF responseItem.name.equals("ABC")»
-			
-			«ELSEIF responseItem.name.equals("ABC")»
-			
-			
+			«ELSEIF responseItem.name.equals("getPhotosFromAlbum")»
+			PhotoSpecification photosFrom«entity.name»Query = new PhotoSpecification(
+					new SearchCriteria("«entity.name.toFirstLower»Id", ":", id));
+
+			List<Photo> photos = photoRepository.findAll(photosFrom«entity.name»Query);
+
+			if(photos == null){
+				throw new PhotosFrom«entity.name»NotFoundException();
+			}
+
+			if(photos.size() == 0){
+				throw new «entity.name»HasNoPhotosException();
+			}
+
+			return new ResponseEntity<>(photos, HttpStatus.OK);
+			«ELSEIF responseItem.name.equals("createAlbum")»
+			String userIdString = body.get("user_id");
+			String name = body.get("name");
+
+			if(userIdString == null || name == null) {
+				throw new MissingParametersForNew«entity.name»Exception();
+			}
+
+			int userId = -1;
+
+			try {
+				userId = Integer.parseInt(userIdString);
+
+			} catch(NumberFormatException exception) {
+				throw new UserIdIsNotNumberException();
+			}
+
+			«entity.name» new«entity.name» = «entity.name.toFirstLower»Repository.save(
+					new «entity.name»(name, userId));
+
+			if(new«entity.name» == null) {
+				throw new «entity.name»NotCreatedException();
+			}
+
+			return new ResponseEntity<>(new«entity.name», HttpStatus.CREATED);
+			«ELSEIF responseItem.name.equals("uploadPhoto")»
+			if(file == null || «entity.name.toFirstLower»Name == null || albumId == null) {
+				throw new MissingParametersForNew«entity.name»Exception();
+			}
+
+			int albumIdInt = -1;
+
+			try {
+				albumIdInt = Integer.parseInt(albumId);
+
+			} catch(Exception exception) {
+				throw new AlbumIdIsNotNumberException();
+			}
+
+			if(albumIdInt == -1) {
+				throw new AlbumIdIsNotNumberException();
+			}
+
+			String «entity.name.toFirstLower»Url = null;
+
+			try {
+				«entity.name.toFirstLower»Url = this.amazonClient.uploadFile(file);
+
+			} catch(Exception e) {
+				throw new «entity.name»UploadErrorException();
+			}
+
+			if(«entity.name.toFirstLower»Url == null) {
+				throw new «entity.name»UploadErrorException();
+			}
+
+			«entity.name» added«entity.name» = null;
+
+			try {
+				added«entity.name» = «entity.name.toFirstLower»Repository.save(
+						new «entity.name»(«entity.name.toFirstLower»Name, «entity.name.toFirstLower»Url, albumIdInt));
+
+			} catch(Exception e) {
+				throw new «entity.name»NotCreatedException();
+			}
+
+			if(added«entity.name» == null) {
+				throw new «entity.name»NotCreatedException();
+			}
+
+			return new ResponseEntity<>(added«entity.name», HttpStatus.CREATED);
+			«ELSEIF responseItem.name.equals("deleteFile")»
+			try {
+				this.amazonClient.deleteFileFromS3Bucket(fileUrl);
+
+			} catch(Exception e) {
+				throw new «entity.name»NotDeletedException();
+			}
+
+			return new ResponseEntity<>("«entity.name» deleted", HttpStatus.OK);
+			«ELSEIF responseItem.name.equals("findAll")»
+			List «entity.name.toFirstLower» = new ArrayList();
+
+			try {
+				«entity.name.toFirstLower» = «entity.name.toFirstLower»Repository.findAll();
+
+			} catch(Exception e) {
+				throw new «entity.name»NotFoundException();
+			}
+			return new ResponseEntity<>(«entity.name.toFirstLower», HttpStatus.OK);
 			«ENDIF»
 		}
 		«ENDFOR»
