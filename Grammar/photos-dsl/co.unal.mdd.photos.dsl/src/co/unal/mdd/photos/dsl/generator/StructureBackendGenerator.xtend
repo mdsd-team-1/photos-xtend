@@ -26,6 +26,8 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeAlbum
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AtributeUserDomain
 import co.unal.mdd.photos.dsl.generator.templates.TemplateRepositoryInterface
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassException
+import co.unal.mdd.photos.dsl.generator.templates.TemplateStorageClient
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient
 
 /**
  * Generates code from your model files on save.
@@ -144,10 +146,6 @@ class StructureBackendGenerator{
 		for (rsc : proyectTree.allContents.toIterable.filter(RestController)) {
 			println("RestController: " + rsc.name)
 			
-			// Mappings
-			//var mappings = rsc.getContents().filter()  
-			
-			
 			var classVars = proyectTree.allContents.filter(SpringRepositories).toList
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name
 			className = ent.name + bls.name.toFirstUpper
@@ -182,10 +180,12 @@ class StructureBackendGenerator{
 	// Path: /.controller.amazon
 	def generateControllerAmazon(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls, ControllerSegmentElement cse) {
 		
+		var client = proyectTree.allContents.filter(StorageClient).toList.get(0)
+				
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name+"."+cse.name
 		className = cse.name.toFirstUpper + "Client"
 		
-		createClassFile(className, packageName)
+		createStorageClient(className, packageName, client)
 	}
 	
 	
@@ -335,6 +335,10 @@ class StructureBackendGenerator{
 	
 	def createControllerClassFile(String className, String packageName, RestController rsc, Entities ent, List<SpringRepositories> classVars) {
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassController.generate(className, packageName, rsc, ent, classVars))
+	}
+	
+	def createStorageClient(String className, String packageName, StorageClient stc) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateStorageClient.generate(className, packageName, stc))
 	}
 	
 	def createModelClassFile(String className, String packageName, Entities ent) {

@@ -1,9 +1,12 @@
 package co.unal.mdd.photos.dsl.generator;
 
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassException;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassModel;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass;
-import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericInterface;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateRepositoryInterface;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateStorageClient;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateYml;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments;
@@ -16,6 +19,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SegmentStructureContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
@@ -182,6 +186,7 @@ public class StructureBackendGenerator {
   }
   
   public void generateControllerAmazon(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls, final ControllerSegmentElement cse) {
+    StorageClient client = IteratorExtensions.<StorageClient>toList(Iterators.<StorageClient>filter(this.proyectTree.getAllContents(), StorageClient.class)).get(0);
     String _name = ssc.getName();
     String _plus = ((this.basePackageName + ".") + _name);
     String _plus_1 = (_plus + ".");
@@ -197,7 +202,7 @@ public class StructureBackendGenerator {
     String _firstUpper = StringExtensions.toFirstUpper(cse.getName());
     String _plus_7 = (_firstUpper + "Client");
     this.className = _plus_7;
-    this.createClassFile(this.className, this.packageName);
+    this.createStorageClient(this.className, this.packageName, client);
   }
   
   public void generateControllerException(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls, final ControllerSegmentElement cse) {
@@ -240,7 +245,7 @@ public class StructureBackendGenerator {
         String _plus_9 = (_plus_8 + _name_5);
         this.packageName = _plus_9;
         this.className = ae.getName();
-        this.createClassFile(this.className, this.packageName);
+        this.createExceptionClassFile(this.className, this.packageName);
       }
     }
   }
@@ -268,7 +273,7 @@ public class StructureBackendGenerator {
         String _plus_9 = (_plus_8 + _name_5);
         this.packageName = _plus_9;
         this.className = pe.getName();
-        this.createClassFile(this.className, this.packageName);
+        this.createExceptionClassFile(this.className, this.packageName);
       }
     }
   }
@@ -296,7 +301,7 @@ public class StructureBackendGenerator {
         String _plus_9 = (_plus_8 + _name_5);
         this.packageName = _plus_9;
         this.className = ue.getName();
-        this.createClassFile(this.className, this.packageName);
+        this.createExceptionClassFile(this.className, this.packageName);
       }
     }
   }
@@ -312,7 +317,7 @@ public class StructureBackendGenerator {
     String _plus_4 = (_plus_3 + _name_2);
     this.packageName = _plus_4;
     this.className = ent.getName();
-    this.createClassFile(this.className, this.packageName);
+    this.createModelClassFile(this.className, this.packageName, ent);
   }
   
   public void generateRepository(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
@@ -329,7 +334,7 @@ public class StructureBackendGenerator {
     String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
     String _plus_5 = (_name_3 + _firstUpper);
     this.className = _plus_5;
-    this.createInterfaceFile(this.className, this.packageName);
+    this.createInterfaceFile(this.className, this.packageName, ent);
   }
   
   public void generateSpecification(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
@@ -408,6 +413,14 @@ public class StructureBackendGenerator {
     this.fileWriter.generateFile(_plus_2, TemplateGenericClass.generate(className, packageName));
   }
   
+  public void createExceptionClassFile(final String className, final String packageName) {
+    String _replace = packageName.replace(".", "/");
+    String _plus = (_replace + "/");
+    String _plus_1 = (_plus + className);
+    String _plus_2 = (_plus_1 + ".java");
+    this.fileWriter.generateFile(_plus_2, TemplateClassException.generate(className, packageName));
+  }
+  
   public void createControllerClassFile(final String className, final String packageName, final RestController rsc, final Entities ent, final List<SpringRepositories> classVars) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
@@ -416,12 +429,28 @@ public class StructureBackendGenerator {
     this.fileWriter.generateFile(_plus_2, TemplateClassController.generate(className, packageName, rsc, ent, classVars));
   }
   
-  public void createInterfaceFile(final String className, final String packageName) {
+  public void createStorageClient(final String className, final String packageName, final StorageClient stc) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, TemplateGenericInterface.generate(className, packageName));
+    this.fileWriter.generateFile(_plus_2, TemplateStorageClient.generate(className, packageName, stc));
+  }
+  
+  public void createModelClassFile(final String className, final String packageName, final Entities ent) {
+    String _replace = packageName.replace(".", "/");
+    String _plus = (_replace + "/");
+    String _plus_1 = (_plus + className);
+    String _plus_2 = (_plus_1 + ".java");
+    this.fileWriter.generateFile(_plus_2, TemplateClassModel.generate(className, packageName, ent));
+  }
+  
+  public void createInterfaceFile(final String className, final String packageName, final Entities ent) {
+    String _replace = packageName.replace(".", "/");
+    String _plus = (_replace + "/");
+    String _plus_1 = (_plus + className);
+    String _plus_2 = (_plus_1 + ".java");
+    this.fileWriter.generateFile(_plus_2, TemplateRepositoryInterface.generate(className, packageName, ent));
   }
   
   public void createPropertiesFile(final String className, final String packageName) {

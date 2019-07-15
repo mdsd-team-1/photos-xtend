@@ -5,7 +5,7 @@ class TemplateGenericClass {
 	static def generate(String className, String packageName)
 	''' 
 	// ----------------------------------------
-	// Template for ControllerClass
+	// Template for GenericClass
 	// PackageName: «packageName»
 	// ClassName: «className»
 	// ----------------------------------------	

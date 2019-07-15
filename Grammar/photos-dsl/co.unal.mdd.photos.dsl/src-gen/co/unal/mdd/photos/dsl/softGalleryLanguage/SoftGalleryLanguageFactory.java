@@ -843,6 +843,42 @@ public interface SoftGalleryLanguageFactory extends EFactory
   SpringEntity createSpringEntity();
 
   /**
+   * Returns a new object of class '<em>Storage Client</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Client</em>'.
+   * @generated
+   */
+  StorageClient createStorageClient();
+
+  /**
+   * Returns a new object of class '<em>Storage Member</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Member</em>'.
+   * @generated
+   */
+  StorageMember createStorageMember();
+
+  /**
+   * Returns a new object of class '<em>Storage Member Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Member Type</em>'.
+   * @generated
+   */
+  StorageMemberType createStorageMemberType();
+
+  /**
+   * Returns a new object of class '<em>Storage Actions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Actions</em>'.
+   * @generated
+   */
+  StorageActions createStorageActions();
+
+  /**
    * Returns a new object of class '<em>Spring Table</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

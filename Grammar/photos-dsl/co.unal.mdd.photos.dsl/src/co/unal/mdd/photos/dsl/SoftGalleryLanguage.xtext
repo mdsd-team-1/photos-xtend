@@ -391,6 +391,7 @@ SpringBootApplication:
 		(elements+=SpringRepository)+  
 		(elements+=RestController)+ 
 		(elements+=SpringEntity)+ 
+		elements+=StorageClient
 ;
 
 Configuration:
@@ -544,8 +545,28 @@ ExceptionProcess:
 
 SpringEntity:
 	'SpringEntity' name=ID ':' '{' 
-		(elements+=SpringTable)+ (elements+=NameNativeQuery)*
+		(elements+=SpringTable)+ 
+		(elements+=NameNativeQuery)*
 	'}'
+;
+
+StorageClient:
+	'StorageClient' name=ID
+		(elements+=StorageMember)*
+		(elements+=StorageActions)*
+;
+
+StorageMember:
+	'StorageMember' name=ID 
+		element+=StorageMemberType
+;
+
+StorageMemberType:
+	'StorageMemberType' name=ID
+;
+
+StorageActions:
+	'StorageActions' name=ID
 ;
 
 SpringTable:

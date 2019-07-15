@@ -171,6 +171,10 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActions;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMember;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMemberType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SubcomponentCont;
@@ -706,6 +710,18 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.STATE_CONTENT:
 				sequence_StateContent(context, (StateContent) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.STORAGE_ACTIONS:
+				sequence_StorageActions(context, (StorageActions) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.STORAGE_CLIENT:
+				sequence_StorageClient(context, (StorageClient) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.STORAGE_MEMBER:
+				sequence_StorageMember(context, (StorageMember) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.STORAGE_MEMBER_TYPE:
+				sequence_StorageMemberType(context, (StorageMemberType) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.STYLE_PROPERTIES:
 				sequence_StyleProperties(context, (StyleProperties) semanticObject); 
 				return; 
@@ -930,7 +946,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     AtributeAlbum returns AtributeAlbum
 	 *
 	 * Constraint:
-	 *     (name=ID | name=ID | name=ID)
+	 *     (name=ID | name=ID)
 	 */
 	protected void sequence_AtributeAlbum(ISerializationContext context, AtributeAlbum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -942,7 +958,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     AtributePhoto returns AtributePhoto
 	 *
 	 * Constraint:
-	 *     (name=ID | name=ID | name=ID | name=ID)
+	 *     (name=ID | name=ID | name=ID)
 	 */
 	protected void sequence_AtributePhoto(ISerializationContext context, AtributePhoto semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -955,7 +971,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID | 
 	 *         name=ID | 
 	 *         name=ID | 
 	 *         name=ID | 
@@ -3043,7 +3058,14 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     SpringBootApplication returns SpringBootApplication
 	 *
 	 * Constraint:
-	 *     (elements+=Configuration elements+=SpringComponent+ elements+=SpringRepository+ elements+=RestController+ elements+=SpringEntity+)
+	 *     (
+	 *         elements+=Configuration 
+	 *         elements+=SpringComponent+ 
+	 *         elements+=SpringRepository+ 
+	 *         elements+=RestController+ 
+	 *         elements+=SpringEntity+ 
+	 *         elements+=StorageClient
+	 *     )
 	 */
 	protected void sequence_SpringBootApplication(ISerializationContext context, SpringBootApplication semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -3160,6 +3182,66 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     statecontents+=StateContent+
 	 */
 	protected void sequence_State(ISerializationContext context, State semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StorageActions returns StorageActions
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_StorageActions(ISerializationContext context, StorageActions semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.STORAGE_ACTIONS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.STORAGE_ACTIONS__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStorageActionsAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StorageClient returns StorageClient
+	 *
+	 * Constraint:
+	 *     (name=ID elements+=StorageMember* elements+=StorageActions*)
+	 */
+	protected void sequence_StorageClient(ISerializationContext context, StorageClient semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StorageMemberType returns StorageMemberType
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_StorageMemberType(ISerializationContext context, StorageMemberType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.STORAGE_MEMBER_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.STORAGE_MEMBER_TYPE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStorageMemberTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StorageMember returns StorageMember
+	 *
+	 * Constraint:
+	 *     (name=ID element+=StorageMemberType)
+	 */
+	protected void sequence_StorageMember(ISerializationContext context, StorageMember semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

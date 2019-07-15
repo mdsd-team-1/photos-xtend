@@ -1,13 +1,12 @@
-// ----------------------------------------
-// Template for Interface
-// PackageName: co.edu.unal.photosappback.main.repository
-// ClassName: PhotoRepository
-// ----------------------------------------	
-
 package co.edu.unal.photosappback.main.repository;
 
+import co.edu.unal.photosappback.model.Photo;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
 
-public interface PhotoRepository extends JpaRepository<Album, Integer>, JpaSpecificationExecutor<Album>{
+@Repository
+public interface PhotoRepository extends JpaRepository<Photo, Integer>, JpaSpecificationExecutor<Photo>{
 	
 	
 }

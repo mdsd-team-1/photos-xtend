@@ -172,6 +172,10 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageActions;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMember;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageMemberType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StyleProperties;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StylePropertiesContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SubcomponentCont;
@@ -835,6 +839,34 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   private EClass springEntityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageClientEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageMemberEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageMemberTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storageActionsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -4022,6 +4054,116 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EClass getStorageClient()
+  {
+    return storageClientEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageClient_Name()
+  {
+    return (EAttribute)storageClientEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStorageClient_Elements()
+  {
+    return (EReference)storageClientEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageMember()
+  {
+    return storageMemberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageMember_Name()
+  {
+    return (EAttribute)storageMemberEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStorageMember_Element()
+  {
+    return (EReference)storageMemberEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageMemberType()
+  {
+    return storageMemberTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageMemberType_Name()
+  {
+    return (EAttribute)storageMemberTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStorageActions()
+  {
+    return storageActionsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStorageActions_Name()
+  {
+    return (EAttribute)storageActionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSpringTable()
   {
     return springTableEClass;
@@ -6742,6 +6884,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(springEntityEClass, SPRING_ENTITY__NAME);
     createEReference(springEntityEClass, SPRING_ENTITY__ELEMENTS);
 
+    storageClientEClass = createEClass(STORAGE_CLIENT);
+    createEAttribute(storageClientEClass, STORAGE_CLIENT__NAME);
+    createEReference(storageClientEClass, STORAGE_CLIENT__ELEMENTS);
+
+    storageMemberEClass = createEClass(STORAGE_MEMBER);
+    createEAttribute(storageMemberEClass, STORAGE_MEMBER__NAME);
+    createEReference(storageMemberEClass, STORAGE_MEMBER__ELEMENT);
+
+    storageMemberTypeEClass = createEClass(STORAGE_MEMBER_TYPE);
+    createEAttribute(storageMemberTypeEClass, STORAGE_MEMBER_TYPE__NAME);
+
+    storageActionsEClass = createEClass(STORAGE_ACTIONS);
+    createEAttribute(storageActionsEClass, STORAGE_ACTIONS__NAME);
+
     springTableEClass = createEClass(SPRING_TABLE);
     createEAttribute(springTableEClass, SPRING_TABLE__NAME);
     createEReference(springTableEClass, SPRING_TABLE__ELEMENTS);
@@ -7400,6 +7556,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEClass(springEntityEClass, SpringEntity.class, "SpringEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpringEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSpringEntity_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, SpringEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageClientEClass, StorageClient.class, "StorageClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageClient_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStorageClient_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, StorageClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageMemberEClass, StorageMember.class, "StorageMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageMember_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStorageMember_Element(), this.getStorageMemberType(), null, "element", null, 0, -1, StorageMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageMemberTypeEClass, StorageMemberType.class, "StorageMemberType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageMemberType_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageMemberType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storageActionsEClass, StorageActions.class, "StorageActions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStorageActions_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(springTableEClass, SpringTable.class, "SpringTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpringTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

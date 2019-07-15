@@ -1,13 +1,6 @@
-// ----------------------------------------
-// Template for ControllerClass
-// PackageName: co.edu.unal.photosappback.main.controller.exception.User
-// ClassName: WrongLoginInfoException
-// ----------------------------------------	
-
 package co.edu.unal.photosappback.main.controller.exception.User;
 
 
-public class WrongLoginInfoException {
-	
-	
+public class WrongLoginInfoException extends Exception {
+
 }

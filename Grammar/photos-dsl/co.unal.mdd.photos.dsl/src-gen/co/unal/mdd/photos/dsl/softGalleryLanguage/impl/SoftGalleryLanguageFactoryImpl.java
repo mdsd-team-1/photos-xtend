@@ -156,6 +156,10 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.EXCEPTION_HANDLER: return createExceptionHandler();
       case SoftGalleryLanguagePackage.EXCEPTION_PROCESS: return createExceptionProcess();
       case SoftGalleryLanguagePackage.SPRING_ENTITY: return createSpringEntity();
+      case SoftGalleryLanguagePackage.STORAGE_CLIENT: return createStorageClient();
+      case SoftGalleryLanguagePackage.STORAGE_MEMBER: return createStorageMember();
+      case SoftGalleryLanguagePackage.STORAGE_MEMBER_TYPE: return createStorageMemberType();
+      case SoftGalleryLanguagePackage.STORAGE_ACTIONS: return createStorageActions();
       case SoftGalleryLanguagePackage.SPRING_TABLE: return createSpringTable();
       case SoftGalleryLanguagePackage.SPRING_TABLE_ID: return createSpringTableId();
       case SoftGalleryLanguagePackage.GENERATED_VALUE: return createGeneratedValue();
@@ -1338,6 +1342,54 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
   {
     SpringEntityImpl springEntity = new SpringEntityImpl();
     return springEntity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageClient createStorageClient()
+  {
+    StorageClientImpl storageClient = new StorageClientImpl();
+    return storageClient;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageMember createStorageMember()
+  {
+    StorageMemberImpl storageMember = new StorageMemberImpl();
+    return storageMember;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageMemberType createStorageMemberType()
+  {
+    StorageMemberTypeImpl storageMemberType = new StorageMemberTypeImpl();
+    return storageMemberType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageActions createStorageActions()
+  {
+    StorageActionsImpl storageActions = new StorageActionsImpl();
+    return storageActions;
   }
 
   /**

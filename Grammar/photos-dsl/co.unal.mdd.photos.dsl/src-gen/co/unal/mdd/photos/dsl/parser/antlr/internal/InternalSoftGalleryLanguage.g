@@ -495,9 +495,9 @@ ruleAtributePhoto returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='idPhoto'
+			otherlv_0='namePhoto'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getAtributePhotoAccess().getIdPhotoKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getAtributePhotoAccess().getNamePhotoKeyword_0_0());
 			}
 			(
 				(
@@ -520,9 +520,9 @@ ruleAtributePhoto returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_2='namePhoto'
+			otherlv_2='urlPhoto'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getAtributePhotoAccess().getNamePhotoKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getAtributePhotoAccess().getUrlPhotoKeyword_1_0());
 			}
 			(
 				(
@@ -545,9 +545,9 @@ ruleAtributePhoto returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_4='urlPhoto'
+			otherlv_4='albumIdPhoto'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getAtributePhotoAccess().getUrlPhotoKeyword_2_0());
+				newLeafNode(otherlv_4, grammarAccess.getAtributePhotoAccess().getAlbumIdPhotoKeyword_2_0());
 			}
 			(
 				(
@@ -563,31 +563,6 @@ ruleAtributePhoto returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_5_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_6='albumIdPhoto'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getAtributePhotoAccess().getAlbumIdPhotoKeyword_3_0());
-			}
-			(
-				(
-					lv_name_7_0=RULE_ID
-					{
-						newLeafNode(lv_name_7_0, grammarAccess.getAtributePhotoAccess().getNameIDTerminalRuleCall_3_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtributePhotoRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_7_0,
 							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
@@ -613,9 +588,9 @@ ruleAtributeAlbum returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='idAlbum'
+			otherlv_0='nameAlbum'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getAtributeAlbumAccess().getIdAlbumKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getAtributeAlbumAccess().getNameAlbumKeyword_0_0());
 			}
 			(
 				(
@@ -638,9 +613,9 @@ ruleAtributeAlbum returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_2='nameAlbum'
+			otherlv_2='userIdAlbum'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getAtributeAlbumAccess().getNameAlbumKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getAtributeAlbumAccess().getUserIdAlbumKeyword_1_0());
 			}
 			(
 				(
@@ -656,31 +631,6 @@ ruleAtributeAlbum returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_3_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_4='userIdAlbum'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getAtributeAlbumAccess().getUserIdAlbumKeyword_2_0());
-			}
-			(
-				(
-					lv_name_5_0=RULE_ID
-					{
-						newLeafNode(lv_name_5_0, grammarAccess.getAtributeAlbumAccess().getNameIDTerminalRuleCall_2_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtributeAlbumRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_5_0,
 							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
@@ -706,9 +656,9 @@ ruleAtributeUserDomain returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='idUser'
+			otherlv_0='userNameUser'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getAtributeUserDomainAccess().getIdUserKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getAtributeUserDomainAccess().getUserNameUserKeyword_0_0());
 			}
 			(
 				(
@@ -731,9 +681,9 @@ ruleAtributeUserDomain returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_2='userNameUser'
+			otherlv_2='firstNameUser'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getAtributeUserDomainAccess().getUserNameUserKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getAtributeUserDomainAccess().getFirstNameUserKeyword_1_0());
 			}
 			(
 				(
@@ -756,9 +706,9 @@ ruleAtributeUserDomain returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_4='firstNameUser'
+			otherlv_4='lastNameUser'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getAtributeUserDomainAccess().getFirstNameUserKeyword_2_0());
+				newLeafNode(otherlv_4, grammarAccess.getAtributeUserDomainAccess().getLastNameUserKeyword_2_0());
 			}
 			(
 				(
@@ -781,9 +731,9 @@ ruleAtributeUserDomain returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_6='lastNameUser'
+			otherlv_6='profileDescriptionUser'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getAtributeUserDomainAccess().getLastNameUserKeyword_3_0());
+				newLeafNode(otherlv_6, grammarAccess.getAtributeUserDomainAccess().getProfileDescriptionUserKeyword_3_0());
 			}
 			(
 				(
@@ -806,9 +756,9 @@ ruleAtributeUserDomain returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_8='profileDescriptionUser'
+			otherlv_8='passwordUser'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getAtributeUserDomainAccess().getProfileDescriptionUserKeyword_4_0());
+				newLeafNode(otherlv_8, grammarAccess.getAtributeUserDomainAccess().getPasswordUserKeyword_4_0());
 			}
 			(
 				(
@@ -831,9 +781,9 @@ ruleAtributeUserDomain returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_10='passwordUser'
+			otherlv_10='emailUser'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getAtributeUserDomainAccess().getPasswordUserKeyword_5_0());
+				newLeafNode(otherlv_10, grammarAccess.getAtributeUserDomainAccess().getEmailUserKeyword_5_0());
 			}
 			(
 				(
@@ -849,31 +799,6 @@ ruleAtributeUserDomain returns [EObject current=null]
 							$current,
 							"name",
 							lv_name_11_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_12='emailUser'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getAtributeUserDomainAccess().getEmailUserKeyword_6_0());
-			}
-			(
-				(
-					lv_name_13_0=RULE_ID
-					{
-						newLeafNode(lv_name_13_0, grammarAccess.getAtributeUserDomainAccess().getNameIDTerminalRuleCall_6_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtributeUserDomainRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_13_0,
 							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
@@ -4846,6 +4771,25 @@ ruleSpringBootApplication returns [EObject current=null]
 				}
 			)
 		)+
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSpringBootApplicationAccess().getElementsStorageClientParserRuleCall_6_0());
+				}
+				lv_elements_6_0=ruleStorageClient
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSpringBootApplicationRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_6_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageClient");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -6528,6 +6472,227 @@ ruleSpringEntity returns [EObject current=null]
 		{
 			newLeafNode(otherlv_6, grammarAccess.getSpringEntityAccess().getRightCurlyBracketKeyword_6());
 		}
+	)
+;
+
+// Entry rule entryRuleStorageClient
+entryRuleStorageClient returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageClientRule()); }
+	iv_ruleStorageClient=ruleStorageClient
+	{ $current=$iv_ruleStorageClient.current; }
+	EOF;
+
+// Rule StorageClient
+ruleStorageClient returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageClient'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageClientAccess().getStorageClientKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageClientAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageClientRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageClientAccess().getElementsStorageMemberParserRuleCall_2_0());
+				}
+				lv_elements_2_0=ruleStorageMember
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageClientRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageMember");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageClientAccess().getElementsStorageActionsParserRuleCall_3_0());
+				}
+				lv_elements_3_0=ruleStorageActions
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageClientRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageActions");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleStorageMember
+entryRuleStorageMember returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageMemberRule()); }
+	iv_ruleStorageMember=ruleStorageMember
+	{ $current=$iv_ruleStorageMember.current; }
+	EOF;
+
+// Rule StorageMember
+ruleStorageMember returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageMember'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageMemberAccess().getStorageMemberKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageMemberAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageMemberRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStorageMemberAccess().getElementStorageMemberTypeParserRuleCall_2_0());
+				}
+				lv_element_2_0=ruleStorageMemberType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStorageMemberRule());
+					}
+					add(
+						$current,
+						"element",
+						lv_element_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageMemberType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageMemberType
+entryRuleStorageMemberType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageMemberTypeRule()); }
+	iv_ruleStorageMemberType=ruleStorageMemberType
+	{ $current=$iv_ruleStorageMemberType.current; }
+	EOF;
+
+// Rule StorageMemberType
+ruleStorageMemberType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageMemberType'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageMemberTypeAccess().getStorageMemberTypeKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageMemberTypeAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageMemberTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStorageActions
+entryRuleStorageActions returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStorageActionsRule()); }
+	iv_ruleStorageActions=ruleStorageActions
+	{ $current=$iv_ruleStorageActions.current; }
+	EOF;
+
+// Rule StorageActions
+ruleStorageActions returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StorageActions'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStorageActionsAccess().getStorageActionsKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStorageActionsAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStorageActionsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 	)
 ;
 

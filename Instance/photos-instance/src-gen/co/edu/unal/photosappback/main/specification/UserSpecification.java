@@ -1,5 +1,5 @@
 // ----------------------------------------
-// Template for ControllerClass
+// Template for GenericClass
 // PackageName: co.edu.unal.photosappback.main.specification
 // ClassName: UserSpecification
 // ----------------------------------------	

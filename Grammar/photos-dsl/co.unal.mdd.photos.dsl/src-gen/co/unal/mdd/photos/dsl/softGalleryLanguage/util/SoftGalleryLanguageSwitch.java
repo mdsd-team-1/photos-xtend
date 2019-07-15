@@ -715,6 +715,34 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SoftGalleryLanguagePackage.STORAGE_CLIENT:
+      {
+        StorageClient storageClient = (StorageClient)theEObject;
+        T result = caseStorageClient(storageClient);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_MEMBER:
+      {
+        StorageMember storageMember = (StorageMember)theEObject;
+        T result = caseStorageMember(storageMember);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_MEMBER_TYPE:
+      {
+        StorageMemberType storageMemberType = (StorageMemberType)theEObject;
+        T result = caseStorageMemberType(storageMemberType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SoftGalleryLanguagePackage.STORAGE_ACTIONS:
+      {
+        StorageActions storageActions = (StorageActions)theEObject;
+        T result = caseStorageActions(storageActions);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SoftGalleryLanguagePackage.SPRING_TABLE:
       {
         SpringTable springTable = (SpringTable)theEObject;
@@ -2780,6 +2808,70 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSpringEntity(SpringEntity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Client</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Client</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageClient(StorageClient object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Member</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Member</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageMember(StorageMember object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Member Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Member Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageMemberType(StorageMemberType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Actions</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Actions</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageActions(StorageActions object)
   {
     return null;
   }

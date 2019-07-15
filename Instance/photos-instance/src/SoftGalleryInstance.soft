@@ -351,7 +351,36 @@ System: {
 						Column email
 					NameNativeQuery	findLoginUser
 				}
+				
+				StorageClient AmazonClient
+					StorageMember s3client
+						StorageMemberType StringClass
+				
+					StorageMember endpointUrl
+						StorageMemberType StringClass
+						
+					StorageMember bucketName
+						StorageMemberType StringClass
+						
+					StorageMember accessKey
+						StorageMemberType StringClass
+						
+					StorageMember secretKey
+						StorageMemberType StringClass
+						
+					StorageActions initializeAmazon
+					
+					StorageActions convertMultiPartToFile
+					
+					StorageActions generateFileName
+					
+					StorageActions uploadFileTos3bucket
+					
+					StorageActions uploadFile
+					
+					StorageActions deleteFileFromS3Bucket
 		}
+		
 		React ReactJS : {
 			ReactModules: {
 				ReactConfiguration : {

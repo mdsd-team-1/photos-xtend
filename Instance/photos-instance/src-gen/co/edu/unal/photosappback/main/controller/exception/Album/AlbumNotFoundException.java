@@ -1,13 +1,6 @@
-// ----------------------------------------
-// Template for ControllerClass
-// PackageName: co.edu.unal.photosappback.main.controller.exception.Album
-// ClassName: AlbumNotFoundException
-// ----------------------------------------	
-
 package co.edu.unal.photosappback.main.controller.exception.Album;
 
 
-public class AlbumNotFoundException {
-	
-	
+public class AlbumNotFoundException extends Exception {
+
 }
