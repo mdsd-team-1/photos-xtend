@@ -30,17 +30,31 @@ public class AlbumController {
 	
 	
 	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getAlbum(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> getAlbum(@PathVariable Long id, ) throws Exception {
 		
+		Album album = null;
+
+		try {
+			album = albumRepository.getOne(id.intValue());
+
+		} catch(Exception e) {
+			throw new AlbumNotFoundException();
+		}
+
+		if(album == null){
+			throw new AlbumNotFoundException();
+		}
+
+		return new ResponseEntity<>(album, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getPhotosFromAlbum(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> getPhotosFromAlbum(@PathVariable Long id, ) throws Exception {
 		
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<?> createAlbum(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> createAlbum(@RequestBody Map_String_String body, ) throws Exception {
 		
 	}
 			

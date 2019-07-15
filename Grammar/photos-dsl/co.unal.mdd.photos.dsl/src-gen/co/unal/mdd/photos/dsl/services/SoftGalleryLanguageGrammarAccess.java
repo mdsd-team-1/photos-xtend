@@ -3324,16 +3324,16 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeMappingTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParametersResponseParameterParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsResponseParameterParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
 		//ResponseEntity:
 		//	'ResponseEntity' name=ID
 		//	type+=MappingType
-		//	parameters+=ResponseParameter*;
+		//	elements+=ResponseParameter*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ResponseEntity' name=ID type+=MappingType parameters+=ResponseParameter*
+		//'ResponseEntity' name=ID type+=MappingType elements+=ResponseParameter*
 		public Group getGroup() { return cGroup; }
 		
 		//'ResponseEntity'
@@ -3351,11 +3351,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//MappingType
 		public RuleCall getTypeMappingTypeParserRuleCall_2_0() { return cTypeMappingTypeParserRuleCall_2_0; }
 		
-		//parameters+=ResponseParameter*
-		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
+		//elements+=ResponseParameter*
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
 		//ResponseParameter
-		public RuleCall getParametersResponseParameterParserRuleCall_3_0() { return cParametersResponseParameterParserRuleCall_3_0; }
+		public RuleCall getElementsResponseParameterParserRuleCall_3_0() { return cElementsResponseParameterParserRuleCall_3_0; }
 	}
 	public class MappingTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.MappingType");
@@ -3595,44 +3595,43 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cParameterAnnotationAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0 = (RuleCall)cParameterAnnotationAssignment_1.eContents().get(0);
-		private final Assignment cParameterTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParameterTypeResponseParameterTypeParserRuleCall_2_0 = (RuleCall)cParameterTypeAssignment_2.eContents().get(0);
-		private final Assignment cParameterNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParameterNameResponseParameterNameParserRuleCall_3_0 = (RuleCall)cParameterNameAssignment_3.eContents().get(0);
+		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementsResponseParameterAnnotationParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cElementsResponseParameterTypeParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsResponseParameterNameParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
 		//ResponseParameter:
 		//	'Parameter'
-		//	parameterAnnotation+=ResponseParameterAnnotation
-		//	parameterType+=ResponseParameterType
-		//	parameterName+=ResponseParameterName;
+		//	elements+=ResponseParameterAnnotation
+		//	elements+=ResponseParameterType
+		//	elements+=ResponseParameterName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Parameter' parameterAnnotation+=ResponseParameterAnnotation parameterType+=ResponseParameterType
-		//parameterName+=ResponseParameterName
+		//'Parameter' elements+=ResponseParameterAnnotation elements+=ResponseParameterType elements+=ResponseParameterName
 		public Group getGroup() { return cGroup; }
 		
 		//'Parameter'
 		public Keyword getParameterKeyword_0() { return cParameterKeyword_0; }
 		
-		//parameterAnnotation+=ResponseParameterAnnotation
-		public Assignment getParameterAnnotationAssignment_1() { return cParameterAnnotationAssignment_1; }
+		//elements+=ResponseParameterAnnotation
+		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
 		
 		//ResponseParameterAnnotation
-		public RuleCall getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0() { return cParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0; }
+		public RuleCall getElementsResponseParameterAnnotationParserRuleCall_1_0() { return cElementsResponseParameterAnnotationParserRuleCall_1_0; }
 		
-		//parameterType+=ResponseParameterType
-		public Assignment getParameterTypeAssignment_2() { return cParameterTypeAssignment_2; }
+		//elements+=ResponseParameterType
+		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
 		
 		//ResponseParameterType
-		public RuleCall getParameterTypeResponseParameterTypeParserRuleCall_2_0() { return cParameterTypeResponseParameterTypeParserRuleCall_2_0; }
+		public RuleCall getElementsResponseParameterTypeParserRuleCall_2_0() { return cElementsResponseParameterTypeParserRuleCall_2_0; }
 		
-		//parameterName+=ResponseParameterName
-		public Assignment getParameterNameAssignment_3() { return cParameterNameAssignment_3; }
+		//elements+=ResponseParameterName
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
 		//ResponseParameterName
-		public RuleCall getParameterNameResponseParameterNameParserRuleCall_3_0() { return cParameterNameResponseParameterNameParserRuleCall_3_0; }
+		public RuleCall getElementsResponseParameterNameParserRuleCall_3_0() { return cElementsResponseParameterNameParserRuleCall_3_0; }
 	}
 	public class ResponseParameterAnnotationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterAnnotation");
@@ -8401,7 +8400,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	//ResponseEntity:
 	//	'ResponseEntity' name=ID
 	//	type+=MappingType
-	//	parameters+=ResponseParameter*;
+	//	elements+=ResponseParameter*;
 	public ResponseEntityElements getResponseEntityAccess() {
 		return pResponseEntity;
 	}
@@ -8505,9 +8504,9 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	
 	//ResponseParameter:
 	//	'Parameter'
-	//	parameterAnnotation+=ResponseParameterAnnotation
-	//	parameterType+=ResponseParameterType
-	//	parameterName+=ResponseParameterName;
+	//	elements+=ResponseParameterAnnotation
+	//	elements+=ResponseParameterType
+	//	elements+=ResponseParameterName;
 	public ResponseParameterElements getResponseParameterAccess() {
 		return pResponseParameter;
 	}

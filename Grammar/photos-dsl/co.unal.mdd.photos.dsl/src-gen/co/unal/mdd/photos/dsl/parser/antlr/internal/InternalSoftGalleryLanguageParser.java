@@ -13775,7 +13775,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleResponseEntity"
-    // InternalSoftGalleryLanguage.g:5582:1: ruleResponseEntity returns [EObject current=null] : (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* ) ;
+    // InternalSoftGalleryLanguage.g:5582:1: ruleResponseEntity returns [EObject current=null] : (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_elements_3_0= ruleResponseParameter ) )* ) ;
     public final EObject ruleResponseEntity() throws RecognitionException {
         EObject current = null;
 
@@ -13783,18 +13783,18 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
         Token lv_name_1_0=null;
         EObject lv_type_2_0 = null;
 
-        EObject lv_parameters_3_0 = null;
+        EObject lv_elements_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:5588:2: ( (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* ) )
-            // InternalSoftGalleryLanguage.g:5589:2: (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* )
+            // InternalSoftGalleryLanguage.g:5588:2: ( (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_elements_3_0= ruleResponseParameter ) )* ) )
+            // InternalSoftGalleryLanguage.g:5589:2: (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_elements_3_0= ruleResponseParameter ) )* )
             {
-            // InternalSoftGalleryLanguage.g:5589:2: (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )* )
-            // InternalSoftGalleryLanguage.g:5590:3: otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_parameters_3_0= ruleResponseParameter ) )*
+            // InternalSoftGalleryLanguage.g:5589:2: (otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_elements_3_0= ruleResponseParameter ) )* )
+            // InternalSoftGalleryLanguage.g:5590:3: otherlv_0= 'ResponseEntity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruleMappingType ) ) ( (lv_elements_3_0= ruleResponseParameter ) )*
             {
             otherlv_0=(Token)match(input,133,FOLLOW_9); 
 
@@ -13857,7 +13857,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:5631:3: ( (lv_parameters_3_0= ruleResponseParameter ) )*
+            // InternalSoftGalleryLanguage.g:5631:3: ( (lv_elements_3_0= ruleResponseParameter ) )*
             loop42:
             do {
                 int alt42=2;
@@ -13870,16 +13870,16 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
                 switch (alt42) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:5632:4: (lv_parameters_3_0= ruleResponseParameter )
+            	    // InternalSoftGalleryLanguage.g:5632:4: (lv_elements_3_0= ruleResponseParameter )
             	    {
-            	    // InternalSoftGalleryLanguage.g:5632:4: (lv_parameters_3_0= ruleResponseParameter )
-            	    // InternalSoftGalleryLanguage.g:5633:5: lv_parameters_3_0= ruleResponseParameter
+            	    // InternalSoftGalleryLanguage.g:5632:4: (lv_elements_3_0= ruleResponseParameter )
+            	    // InternalSoftGalleryLanguage.g:5633:5: lv_elements_3_0= ruleResponseParameter
             	    {
 
-            	    					newCompositeNode(grammarAccess.getResponseEntityAccess().getParametersResponseParameterParserRuleCall_3_0());
+            	    					newCompositeNode(grammarAccess.getResponseEntityAccess().getElementsResponseParameterParserRuleCall_3_0());
             	    				
             	    pushFollow(FOLLOW_107);
-            	    lv_parameters_3_0=ruleResponseParameter();
+            	    lv_elements_3_0=ruleResponseParameter();
 
             	    state._fsp--;
 
@@ -13889,8 +13889,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             	    					}
             	    					add(
             	    						current,
-            	    						"parameters",
-            	    						lv_parameters_3_0,
+            	    						"elements",
+            	    						lv_elements_3_0,
             	    						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameter");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -15092,43 +15092,43 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleResponseParameter"
-    // InternalSoftGalleryLanguage.g:6091:1: ruleResponseParameter returns [EObject current=null] : (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) ) ;
+    // InternalSoftGalleryLanguage.g:6091:1: ruleResponseParameter returns [EObject current=null] : (otherlv_0= 'Parameter' ( (lv_elements_1_0= ruleResponseParameterAnnotation ) ) ( (lv_elements_2_0= ruleResponseParameterType ) ) ( (lv_elements_3_0= ruleResponseParameterName ) ) ) ;
     public final EObject ruleResponseParameter() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject lv_parameterAnnotation_1_0 = null;
+        EObject lv_elements_1_0 = null;
 
-        EObject lv_parameterType_2_0 = null;
+        EObject lv_elements_2_0 = null;
 
-        EObject lv_parameterName_3_0 = null;
+        EObject lv_elements_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSoftGalleryLanguage.g:6097:2: ( (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) ) )
-            // InternalSoftGalleryLanguage.g:6098:2: (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) )
+            // InternalSoftGalleryLanguage.g:6097:2: ( (otherlv_0= 'Parameter' ( (lv_elements_1_0= ruleResponseParameterAnnotation ) ) ( (lv_elements_2_0= ruleResponseParameterType ) ) ( (lv_elements_3_0= ruleResponseParameterName ) ) ) )
+            // InternalSoftGalleryLanguage.g:6098:2: (otherlv_0= 'Parameter' ( (lv_elements_1_0= ruleResponseParameterAnnotation ) ) ( (lv_elements_2_0= ruleResponseParameterType ) ) ( (lv_elements_3_0= ruleResponseParameterName ) ) )
             {
-            // InternalSoftGalleryLanguage.g:6098:2: (otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) ) )
-            // InternalSoftGalleryLanguage.g:6099:3: otherlv_0= 'Parameter' ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) ) ( (lv_parameterType_2_0= ruleResponseParameterType ) ) ( (lv_parameterName_3_0= ruleResponseParameterName ) )
+            // InternalSoftGalleryLanguage.g:6098:2: (otherlv_0= 'Parameter' ( (lv_elements_1_0= ruleResponseParameterAnnotation ) ) ( (lv_elements_2_0= ruleResponseParameterType ) ) ( (lv_elements_3_0= ruleResponseParameterName ) ) )
+            // InternalSoftGalleryLanguage.g:6099:3: otherlv_0= 'Parameter' ( (lv_elements_1_0= ruleResponseParameterAnnotation ) ) ( (lv_elements_2_0= ruleResponseParameterType ) ) ( (lv_elements_3_0= ruleResponseParameterName ) )
             {
             otherlv_0=(Token)match(input,142,FOLLOW_111); 
 
             			newLeafNode(otherlv_0, grammarAccess.getResponseParameterAccess().getParameterKeyword_0());
             		
-            // InternalSoftGalleryLanguage.g:6103:3: ( (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation ) )
-            // InternalSoftGalleryLanguage.g:6104:4: (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation )
+            // InternalSoftGalleryLanguage.g:6103:3: ( (lv_elements_1_0= ruleResponseParameterAnnotation ) )
+            // InternalSoftGalleryLanguage.g:6104:4: (lv_elements_1_0= ruleResponseParameterAnnotation )
             {
-            // InternalSoftGalleryLanguage.g:6104:4: (lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation )
-            // InternalSoftGalleryLanguage.g:6105:5: lv_parameterAnnotation_1_0= ruleResponseParameterAnnotation
+            // InternalSoftGalleryLanguage.g:6104:4: (lv_elements_1_0= ruleResponseParameterAnnotation )
+            // InternalSoftGalleryLanguage.g:6105:5: lv_elements_1_0= ruleResponseParameterAnnotation
             {
 
-            					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getResponseParameterAccess().getElementsResponseParameterAnnotationParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_112);
-            lv_parameterAnnotation_1_0=ruleResponseParameterAnnotation();
+            lv_elements_1_0=ruleResponseParameterAnnotation();
 
             state._fsp--;
 
@@ -15138,8 +15138,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					add(
             						current,
-            						"parameterAnnotation",
-            						lv_parameterAnnotation_1_0,
+            						"elements",
+            						lv_elements_1_0,
             						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterAnnotation");
             					afterParserOrEnumRuleCall();
             				
@@ -15149,17 +15149,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6122:3: ( (lv_parameterType_2_0= ruleResponseParameterType ) )
-            // InternalSoftGalleryLanguage.g:6123:4: (lv_parameterType_2_0= ruleResponseParameterType )
+            // InternalSoftGalleryLanguage.g:6122:3: ( (lv_elements_2_0= ruleResponseParameterType ) )
+            // InternalSoftGalleryLanguage.g:6123:4: (lv_elements_2_0= ruleResponseParameterType )
             {
-            // InternalSoftGalleryLanguage.g:6123:4: (lv_parameterType_2_0= ruleResponseParameterType )
-            // InternalSoftGalleryLanguage.g:6124:5: lv_parameterType_2_0= ruleResponseParameterType
+            // InternalSoftGalleryLanguage.g:6123:4: (lv_elements_2_0= ruleResponseParameterType )
+            // InternalSoftGalleryLanguage.g:6124:5: lv_elements_2_0= ruleResponseParameterType
             {
 
-            					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterTypeResponseParameterTypeParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getResponseParameterAccess().getElementsResponseParameterTypeParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_113);
-            lv_parameterType_2_0=ruleResponseParameterType();
+            lv_elements_2_0=ruleResponseParameterType();
 
             state._fsp--;
 
@@ -15169,8 +15169,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					add(
             						current,
-            						"parameterType",
-            						lv_parameterType_2_0,
+            						"elements",
+            						lv_elements_2_0,
             						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterType");
             					afterParserOrEnumRuleCall();
             				
@@ -15180,17 +15180,17 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
 
             }
 
-            // InternalSoftGalleryLanguage.g:6141:3: ( (lv_parameterName_3_0= ruleResponseParameterName ) )
-            // InternalSoftGalleryLanguage.g:6142:4: (lv_parameterName_3_0= ruleResponseParameterName )
+            // InternalSoftGalleryLanguage.g:6141:3: ( (lv_elements_3_0= ruleResponseParameterName ) )
+            // InternalSoftGalleryLanguage.g:6142:4: (lv_elements_3_0= ruleResponseParameterName )
             {
-            // InternalSoftGalleryLanguage.g:6142:4: (lv_parameterName_3_0= ruleResponseParameterName )
-            // InternalSoftGalleryLanguage.g:6143:5: lv_parameterName_3_0= ruleResponseParameterName
+            // InternalSoftGalleryLanguage.g:6142:4: (lv_elements_3_0= ruleResponseParameterName )
+            // InternalSoftGalleryLanguage.g:6143:5: lv_elements_3_0= ruleResponseParameterName
             {
 
-            					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterNameResponseParameterNameParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getResponseParameterAccess().getElementsResponseParameterNameParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_parameterName_3_0=ruleResponseParameterName();
+            lv_elements_3_0=ruleResponseParameterName();
 
             state._fsp--;
 
@@ -15200,8 +15200,8 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalAntlrPars
             					}
             					add(
             						current,
-            						"parameterName",
-            						lv_parameterName_3_0,
+            						"elements",
+            						lv_elements_3_0,
             						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterName");
             					afterParserOrEnumRuleCall();
             				

@@ -469,7 +469,7 @@ Autowired:
 ResponseEntity:
 	'ResponseEntity' name=ID 
 		type+=MappingType 
-		(parameters+=ResponseParameter)*
+		(elements+=ResponseParameter)*
 ;
 
 MappingType:
@@ -517,9 +517,9 @@ DeleteMapping:
 
 ResponseParameter:
 	'Parameter'
-		parameterAnnotation+=ResponseParameterAnnotation 
-		parameterType+=ResponseParameterType
-		parameterName+=ResponseParameterName
+		elements+=ResponseParameterAnnotation 
+		elements+=ResponseParameterType
+		elements+=ResponseParameterName
 ;
 
 ResponseParameterAnnotation:

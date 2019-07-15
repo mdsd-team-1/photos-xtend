@@ -270,7 +270,7 @@
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseEntity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseEntity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseEntity/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseEntity/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseEntity/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//MappingType"/>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RequestMapping">
@@ -300,9 +300,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DeleteMapping/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/parameterAnnotation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/parameterType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/parameterName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ResponseParameter/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ResponseParameterAnnotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ResponseParameterAnnotation/name"/>

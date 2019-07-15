@@ -457,7 +457,7 @@ public class SoftGalleryLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAutowiredAccess().getNameAssignment_1(), "rule__Autowired__NameAssignment_1");
 			builder.put(grammarAccess.getResponseEntityAccess().getNameAssignment_1(), "rule__ResponseEntity__NameAssignment_1");
 			builder.put(grammarAccess.getResponseEntityAccess().getTypeAssignment_2(), "rule__ResponseEntity__TypeAssignment_2");
-			builder.put(grammarAccess.getResponseEntityAccess().getParametersAssignment_3(), "rule__ResponseEntity__ParametersAssignment_3");
+			builder.put(grammarAccess.getResponseEntityAccess().getElementsAssignment_3(), "rule__ResponseEntity__ElementsAssignment_3");
 			builder.put(grammarAccess.getRequestMappingAccess().getValueAssignment_1(), "rule__RequestMapping__ValueAssignment_1");
 			builder.put(grammarAccess.getRequestMappingAccess().getMethodAssignment_2(), "rule__RequestMapping__MethodAssignment_2");
 			builder.put(grammarAccess.getRequestMappingAccess().getProducesAssignment_3(), "rule__RequestMapping__ProducesAssignment_3");
@@ -468,9 +468,9 @@ public class SoftGalleryLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGetMappingAccess().getNameAssignment_1(), "rule__GetMapping__NameAssignment_1");
 			builder.put(grammarAccess.getPutMappingAccess().getNameAssignment_1(), "rule__PutMapping__NameAssignment_1");
 			builder.put(grammarAccess.getDeleteMappingAccess().getNameAssignment_1(), "rule__DeleteMapping__NameAssignment_1");
-			builder.put(grammarAccess.getResponseParameterAccess().getParameterAnnotationAssignment_1(), "rule__ResponseParameter__ParameterAnnotationAssignment_1");
-			builder.put(grammarAccess.getResponseParameterAccess().getParameterTypeAssignment_2(), "rule__ResponseParameter__ParameterTypeAssignment_2");
-			builder.put(grammarAccess.getResponseParameterAccess().getParameterNameAssignment_3(), "rule__ResponseParameter__ParameterNameAssignment_3");
+			builder.put(grammarAccess.getResponseParameterAccess().getElementsAssignment_1(), "rule__ResponseParameter__ElementsAssignment_1");
+			builder.put(grammarAccess.getResponseParameterAccess().getElementsAssignment_2(), "rule__ResponseParameter__ElementsAssignment_2");
+			builder.put(grammarAccess.getResponseParameterAccess().getElementsAssignment_3(), "rule__ResponseParameter__ElementsAssignment_3");
 			builder.put(grammarAccess.getResponseParameterAnnotationAccess().getNameAssignment_1(), "rule__ResponseParameterAnnotation__NameAssignment_1");
 			builder.put(grammarAccess.getResponseParameterTypeAccess().getNameAssignment_1(), "rule__ResponseParameterType__NameAssignment_1");
 			builder.put(grammarAccess.getResponseParameterNameAccess().getNameAssignment_1(), "rule__ResponseParameterName__NameAssignment_1");

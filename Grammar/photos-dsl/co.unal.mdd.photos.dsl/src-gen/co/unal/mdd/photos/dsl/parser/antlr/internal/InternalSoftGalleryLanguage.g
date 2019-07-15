@@ -5631,17 +5631,17 @@ ruleResponseEntity returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getResponseEntityAccess().getParametersResponseParameterParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getResponseEntityAccess().getElementsResponseParameterParserRuleCall_3_0());
 				}
-				lv_parameters_3_0=ruleResponseParameter
+				lv_elements_3_0=ruleResponseParameter
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getResponseEntityRule());
 					}
 					add(
 						$current,
-						"parameters",
-						lv_parameters_3_0,
+						"elements",
+						lv_elements_3_0,
 						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameter");
 					afterParserOrEnumRuleCall();
 				}
@@ -6103,17 +6103,17 @@ ruleResponseParameter returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getResponseParameterAccess().getElementsResponseParameterAnnotationParserRuleCall_1_0());
 				}
-				lv_parameterAnnotation_1_0=ruleResponseParameterAnnotation
+				lv_elements_1_0=ruleResponseParameterAnnotation
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getResponseParameterRule());
 					}
 					add(
 						$current,
-						"parameterAnnotation",
-						lv_parameterAnnotation_1_0,
+						"elements",
+						lv_elements_1_0,
 						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterAnnotation");
 					afterParserOrEnumRuleCall();
 				}
@@ -6122,17 +6122,17 @@ ruleResponseParameter returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterTypeResponseParameterTypeParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getResponseParameterAccess().getElementsResponseParameterTypeParserRuleCall_2_0());
 				}
-				lv_parameterType_2_0=ruleResponseParameterType
+				lv_elements_2_0=ruleResponseParameterType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getResponseParameterRule());
 					}
 					add(
 						$current,
-						"parameterType",
-						lv_parameterType_2_0,
+						"elements",
+						lv_elements_2_0,
 						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterType");
 					afterParserOrEnumRuleCall();
 				}
@@ -6141,17 +6141,17 @@ ruleResponseParameter returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getResponseParameterAccess().getParameterNameResponseParameterNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getResponseParameterAccess().getElementsResponseParameterNameParserRuleCall_3_0());
 				}
-				lv_parameterName_3_0=ruleResponseParameterName
+				lv_elements_3_0=ruleResponseParameterName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getResponseParameterRule());
 					}
 					add(
 						$current,
-						"parameterName",
-						lv_parameterName_3_0,
+						"elements",
+						lv_elements_3_0,
 						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ResponseParameterName");
 					afterParserOrEnumRuleCall();
 				}

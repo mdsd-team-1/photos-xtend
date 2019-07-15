@@ -30,22 +30,36 @@ public class PhotoController {
 	
 	
 	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getPhoto(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> getPhoto(@PathVariable Long id, ) throws Exception {
 		
+		Photo photo = null;
+
+		try {
+			photo = photoRepository.getOne(id.intValue());
+
+		} catch(Exception e) {
+			throw new PhotoNotFoundException();
+		}
+
+		if(photo == null){
+			throw new PhotoNotFoundException();
+		}
+
+		return new ResponseEntity<>(photo, HttpStatus.OK);
 	}
 	
 	@PostMapping("/upload")
-	public ResponseEntity<?> uploadPhoto(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> uploadPhoto(@RequestPart MultipartFile file, @RequestPart StringClass photoName, @RequestPart StringClass albumId, ) throws Exception {
 		
 	}
 	
 	@DeleteMapping("/delete")
-	public ResponseEntity<?> deleteFile(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> deleteFile(@RequestPart StringClass fileUrl, ) throws Exception {
 		
 	}
 	
 	@GetMapping("/all")
-	public ResponseEntity<?> findAll(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> findAll() throws Exception {
 		
 	}
 			

@@ -33,32 +33,46 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getUser(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> getUser(@PathVariable Long id, ) throws Exception {
 		
+		User user = null;
+
+		try {
+			user = userRepository.getOne(id.intValue());
+
+		} catch(Exception e) {
+			throw new UserNotFoundException();
+		}
+
+		if(user == null){
+			throw new UserNotFoundException();
+		}
+
+		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "id_albums", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getAlbumsFromUser(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> getAlbumsFromUser(@PathVariable Long id, ) throws Exception {
 		
 	}
 	
 	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getPhotosFromUser(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> getPhotosFromUser(@PathVariable Long id, ) throws Exception {
 		
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<?> loginUser(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> loginUser(@RequestBody Map_String_String body, ) throws Exception {
 		
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<?> createUser(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> createUser(@RequestBody Map_String_String body, ) throws Exception {
 		
 	}
 	
 	@PutMapping("/id_edit")
-	public ResponseEntity<?> editUser(@RequestBody String body) throws Exception {
+	public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody Map_String_String body, ) throws Exception {
 		
 	}
 			

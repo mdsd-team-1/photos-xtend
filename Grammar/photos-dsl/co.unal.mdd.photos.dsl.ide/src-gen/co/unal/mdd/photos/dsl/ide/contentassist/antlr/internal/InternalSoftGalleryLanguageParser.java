@@ -46575,20 +46575,20 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ResponseEntity__Group__3__Impl"
-    // InternalSoftGalleryLanguage.g:15112:1: rule__ResponseEntity__Group__3__Impl : ( ( rule__ResponseEntity__ParametersAssignment_3 )* ) ;
+    // InternalSoftGalleryLanguage.g:15112:1: rule__ResponseEntity__Group__3__Impl : ( ( rule__ResponseEntity__ElementsAssignment_3 )* ) ;
     public final void rule__ResponseEntity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:15116:1: ( ( ( rule__ResponseEntity__ParametersAssignment_3 )* ) )
-            // InternalSoftGalleryLanguage.g:15117:1: ( ( rule__ResponseEntity__ParametersAssignment_3 )* )
+            // InternalSoftGalleryLanguage.g:15116:1: ( ( ( rule__ResponseEntity__ElementsAssignment_3 )* ) )
+            // InternalSoftGalleryLanguage.g:15117:1: ( ( rule__ResponseEntity__ElementsAssignment_3 )* )
             {
-            // InternalSoftGalleryLanguage.g:15117:1: ( ( rule__ResponseEntity__ParametersAssignment_3 )* )
-            // InternalSoftGalleryLanguage.g:15118:2: ( rule__ResponseEntity__ParametersAssignment_3 )*
+            // InternalSoftGalleryLanguage.g:15117:1: ( ( rule__ResponseEntity__ElementsAssignment_3 )* )
+            // InternalSoftGalleryLanguage.g:15118:2: ( rule__ResponseEntity__ElementsAssignment_3 )*
             {
-             before(grammarAccess.getResponseEntityAccess().getParametersAssignment_3()); 
-            // InternalSoftGalleryLanguage.g:15119:2: ( rule__ResponseEntity__ParametersAssignment_3 )*
+             before(grammarAccess.getResponseEntityAccess().getElementsAssignment_3()); 
+            // InternalSoftGalleryLanguage.g:15119:2: ( rule__ResponseEntity__ElementsAssignment_3 )*
             loop51:
             do {
                 int alt51=2;
@@ -46601,10 +46601,10 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
                 switch (alt51) {
             	case 1 :
-            	    // InternalSoftGalleryLanguage.g:15119:3: rule__ResponseEntity__ParametersAssignment_3
+            	    // InternalSoftGalleryLanguage.g:15119:3: rule__ResponseEntity__ElementsAssignment_3
             	    {
             	    pushFollow(FOLLOW_119);
-            	    rule__ResponseEntity__ParametersAssignment_3();
+            	    rule__ResponseEntity__ElementsAssignment_3();
 
             	    state._fsp--;
 
@@ -46617,7 +46617,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
                 }
             } while (true);
 
-             after(grammarAccess.getResponseEntityAccess().getParametersAssignment_3()); 
+             after(grammarAccess.getResponseEntityAccess().getElementsAssignment_3()); 
 
             }
 
@@ -48163,31 +48163,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ResponseParameter__Group__1__Impl"
-    // InternalSoftGalleryLanguage.g:15653:1: rule__ResponseParameter__Group__1__Impl : ( ( rule__ResponseParameter__ParameterAnnotationAssignment_1 ) ) ;
+    // InternalSoftGalleryLanguage.g:15653:1: rule__ResponseParameter__Group__1__Impl : ( ( rule__ResponseParameter__ElementsAssignment_1 ) ) ;
     public final void rule__ResponseParameter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:15657:1: ( ( ( rule__ResponseParameter__ParameterAnnotationAssignment_1 ) ) )
-            // InternalSoftGalleryLanguage.g:15658:1: ( ( rule__ResponseParameter__ParameterAnnotationAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:15657:1: ( ( ( rule__ResponseParameter__ElementsAssignment_1 ) ) )
+            // InternalSoftGalleryLanguage.g:15658:1: ( ( rule__ResponseParameter__ElementsAssignment_1 ) )
             {
-            // InternalSoftGalleryLanguage.g:15658:1: ( ( rule__ResponseParameter__ParameterAnnotationAssignment_1 ) )
-            // InternalSoftGalleryLanguage.g:15659:2: ( rule__ResponseParameter__ParameterAnnotationAssignment_1 )
+            // InternalSoftGalleryLanguage.g:15658:1: ( ( rule__ResponseParameter__ElementsAssignment_1 ) )
+            // InternalSoftGalleryLanguage.g:15659:2: ( rule__ResponseParameter__ElementsAssignment_1 )
             {
-             before(grammarAccess.getResponseParameterAccess().getParameterAnnotationAssignment_1()); 
-            // InternalSoftGalleryLanguage.g:15660:2: ( rule__ResponseParameter__ParameterAnnotationAssignment_1 )
-            // InternalSoftGalleryLanguage.g:15660:3: rule__ResponseParameter__ParameterAnnotationAssignment_1
+             before(grammarAccess.getResponseParameterAccess().getElementsAssignment_1()); 
+            // InternalSoftGalleryLanguage.g:15660:2: ( rule__ResponseParameter__ElementsAssignment_1 )
+            // InternalSoftGalleryLanguage.g:15660:3: rule__ResponseParameter__ElementsAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__ResponseParameter__ParameterAnnotationAssignment_1();
+            rule__ResponseParameter__ElementsAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getResponseParameterAccess().getParameterAnnotationAssignment_1()); 
+             after(grammarAccess.getResponseParameterAccess().getElementsAssignment_1()); 
 
             }
 
@@ -48248,31 +48248,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ResponseParameter__Group__2__Impl"
-    // InternalSoftGalleryLanguage.g:15680:1: rule__ResponseParameter__Group__2__Impl : ( ( rule__ResponseParameter__ParameterTypeAssignment_2 ) ) ;
+    // InternalSoftGalleryLanguage.g:15680:1: rule__ResponseParameter__Group__2__Impl : ( ( rule__ResponseParameter__ElementsAssignment_2 ) ) ;
     public final void rule__ResponseParameter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:15684:1: ( ( ( rule__ResponseParameter__ParameterTypeAssignment_2 ) ) )
-            // InternalSoftGalleryLanguage.g:15685:1: ( ( rule__ResponseParameter__ParameterTypeAssignment_2 ) )
+            // InternalSoftGalleryLanguage.g:15684:1: ( ( ( rule__ResponseParameter__ElementsAssignment_2 ) ) )
+            // InternalSoftGalleryLanguage.g:15685:1: ( ( rule__ResponseParameter__ElementsAssignment_2 ) )
             {
-            // InternalSoftGalleryLanguage.g:15685:1: ( ( rule__ResponseParameter__ParameterTypeAssignment_2 ) )
-            // InternalSoftGalleryLanguage.g:15686:2: ( rule__ResponseParameter__ParameterTypeAssignment_2 )
+            // InternalSoftGalleryLanguage.g:15685:1: ( ( rule__ResponseParameter__ElementsAssignment_2 ) )
+            // InternalSoftGalleryLanguage.g:15686:2: ( rule__ResponseParameter__ElementsAssignment_2 )
             {
-             before(grammarAccess.getResponseParameterAccess().getParameterTypeAssignment_2()); 
-            // InternalSoftGalleryLanguage.g:15687:2: ( rule__ResponseParameter__ParameterTypeAssignment_2 )
-            // InternalSoftGalleryLanguage.g:15687:3: rule__ResponseParameter__ParameterTypeAssignment_2
+             before(grammarAccess.getResponseParameterAccess().getElementsAssignment_2()); 
+            // InternalSoftGalleryLanguage.g:15687:2: ( rule__ResponseParameter__ElementsAssignment_2 )
+            // InternalSoftGalleryLanguage.g:15687:3: rule__ResponseParameter__ElementsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__ResponseParameter__ParameterTypeAssignment_2();
+            rule__ResponseParameter__ElementsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getResponseParameterAccess().getParameterTypeAssignment_2()); 
+             after(grammarAccess.getResponseParameterAccess().getElementsAssignment_2()); 
 
             }
 
@@ -48328,31 +48328,31 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ResponseParameter__Group__3__Impl"
-    // InternalSoftGalleryLanguage.g:15706:1: rule__ResponseParameter__Group__3__Impl : ( ( rule__ResponseParameter__ParameterNameAssignment_3 ) ) ;
+    // InternalSoftGalleryLanguage.g:15706:1: rule__ResponseParameter__Group__3__Impl : ( ( rule__ResponseParameter__ElementsAssignment_3 ) ) ;
     public final void rule__ResponseParameter__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSoftGalleryLanguage.g:15710:1: ( ( ( rule__ResponseParameter__ParameterNameAssignment_3 ) ) )
-            // InternalSoftGalleryLanguage.g:15711:1: ( ( rule__ResponseParameter__ParameterNameAssignment_3 ) )
+            // InternalSoftGalleryLanguage.g:15710:1: ( ( ( rule__ResponseParameter__ElementsAssignment_3 ) ) )
+            // InternalSoftGalleryLanguage.g:15711:1: ( ( rule__ResponseParameter__ElementsAssignment_3 ) )
             {
-            // InternalSoftGalleryLanguage.g:15711:1: ( ( rule__ResponseParameter__ParameterNameAssignment_3 ) )
-            // InternalSoftGalleryLanguage.g:15712:2: ( rule__ResponseParameter__ParameterNameAssignment_3 )
+            // InternalSoftGalleryLanguage.g:15711:1: ( ( rule__ResponseParameter__ElementsAssignment_3 ) )
+            // InternalSoftGalleryLanguage.g:15712:2: ( rule__ResponseParameter__ElementsAssignment_3 )
             {
-             before(grammarAccess.getResponseParameterAccess().getParameterNameAssignment_3()); 
-            // InternalSoftGalleryLanguage.g:15713:2: ( rule__ResponseParameter__ParameterNameAssignment_3 )
-            // InternalSoftGalleryLanguage.g:15713:3: rule__ResponseParameter__ParameterNameAssignment_3
+             before(grammarAccess.getResponseParameterAccess().getElementsAssignment_3()); 
+            // InternalSoftGalleryLanguage.g:15713:2: ( rule__ResponseParameter__ElementsAssignment_3 )
+            // InternalSoftGalleryLanguage.g:15713:3: rule__ResponseParameter__ElementsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__ResponseParameter__ParameterNameAssignment_3();
+            rule__ResponseParameter__ElementsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getResponseParameterAccess().getParameterNameAssignment_3()); 
+             after(grammarAccess.getResponseParameterAccess().getElementsAssignment_3()); 
 
             }
 
@@ -81433,9 +81433,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
     // $ANTLR end "rule__ResponseEntity__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__ResponseEntity__ParametersAssignment_3"
-    // InternalSoftGalleryLanguage.g:27026:1: rule__ResponseEntity__ParametersAssignment_3 : ( ruleResponseParameter ) ;
-    public final void rule__ResponseEntity__ParametersAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__ResponseEntity__ElementsAssignment_3"
+    // InternalSoftGalleryLanguage.g:27026:1: rule__ResponseEntity__ElementsAssignment_3 : ( ruleResponseParameter ) ;
+    public final void rule__ResponseEntity__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -81446,13 +81446,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:27031:2: ( ruleResponseParameter )
             // InternalSoftGalleryLanguage.g:27032:3: ruleResponseParameter
             {
-             before(grammarAccess.getResponseEntityAccess().getParametersResponseParameterParserRuleCall_3_0()); 
+             before(grammarAccess.getResponseEntityAccess().getElementsResponseParameterParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleResponseParameter();
 
             state._fsp--;
 
-             after(grammarAccess.getResponseEntityAccess().getParametersResponseParameterParserRuleCall_3_0()); 
+             after(grammarAccess.getResponseEntityAccess().getElementsResponseParameterParserRuleCall_3_0()); 
 
             }
 
@@ -81471,7 +81471,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ResponseEntity__ParametersAssignment_3"
+    // $ANTLR end "rule__ResponseEntity__ElementsAssignment_3"
 
 
     // $ANTLR start "rule__RequestMapping__ValueAssignment_1"
@@ -81856,9 +81856,9 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
     // $ANTLR end "rule__DeleteMapping__NameAssignment_1"
 
 
-    // $ANTLR start "rule__ResponseParameter__ParameterAnnotationAssignment_1"
-    // InternalSoftGalleryLanguage.g:27191:1: rule__ResponseParameter__ParameterAnnotationAssignment_1 : ( ruleResponseParameterAnnotation ) ;
-    public final void rule__ResponseParameter__ParameterAnnotationAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ResponseParameter__ElementsAssignment_1"
+    // InternalSoftGalleryLanguage.g:27191:1: rule__ResponseParameter__ElementsAssignment_1 : ( ruleResponseParameterAnnotation ) ;
+    public final void rule__ResponseParameter__ElementsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -81869,13 +81869,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:27196:2: ( ruleResponseParameterAnnotation )
             // InternalSoftGalleryLanguage.g:27197:3: ruleResponseParameterAnnotation
             {
-             before(grammarAccess.getResponseParameterAccess().getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0()); 
+             before(grammarAccess.getResponseParameterAccess().getElementsResponseParameterAnnotationParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleResponseParameterAnnotation();
 
             state._fsp--;
 
-             after(grammarAccess.getResponseParameterAccess().getParameterAnnotationResponseParameterAnnotationParserRuleCall_1_0()); 
+             after(grammarAccess.getResponseParameterAccess().getElementsResponseParameterAnnotationParserRuleCall_1_0()); 
 
             }
 
@@ -81894,12 +81894,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ResponseParameter__ParameterAnnotationAssignment_1"
+    // $ANTLR end "rule__ResponseParameter__ElementsAssignment_1"
 
 
-    // $ANTLR start "rule__ResponseParameter__ParameterTypeAssignment_2"
-    // InternalSoftGalleryLanguage.g:27206:1: rule__ResponseParameter__ParameterTypeAssignment_2 : ( ruleResponseParameterType ) ;
-    public final void rule__ResponseParameter__ParameterTypeAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ResponseParameter__ElementsAssignment_2"
+    // InternalSoftGalleryLanguage.g:27206:1: rule__ResponseParameter__ElementsAssignment_2 : ( ruleResponseParameterType ) ;
+    public final void rule__ResponseParameter__ElementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -81910,13 +81910,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:27211:2: ( ruleResponseParameterType )
             // InternalSoftGalleryLanguage.g:27212:3: ruleResponseParameterType
             {
-             before(grammarAccess.getResponseParameterAccess().getParameterTypeResponseParameterTypeParserRuleCall_2_0()); 
+             before(grammarAccess.getResponseParameterAccess().getElementsResponseParameterTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleResponseParameterType();
 
             state._fsp--;
 
-             after(grammarAccess.getResponseParameterAccess().getParameterTypeResponseParameterTypeParserRuleCall_2_0()); 
+             after(grammarAccess.getResponseParameterAccess().getElementsResponseParameterTypeParserRuleCall_2_0()); 
 
             }
 
@@ -81935,12 +81935,12 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ResponseParameter__ParameterTypeAssignment_2"
+    // $ANTLR end "rule__ResponseParameter__ElementsAssignment_2"
 
 
-    // $ANTLR start "rule__ResponseParameter__ParameterNameAssignment_3"
-    // InternalSoftGalleryLanguage.g:27221:1: rule__ResponseParameter__ParameterNameAssignment_3 : ( ruleResponseParameterName ) ;
-    public final void rule__ResponseParameter__ParameterNameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__ResponseParameter__ElementsAssignment_3"
+    // InternalSoftGalleryLanguage.g:27221:1: rule__ResponseParameter__ElementsAssignment_3 : ( ruleResponseParameterName ) ;
+    public final void rule__ResponseParameter__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -81951,13 +81951,13 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
             // InternalSoftGalleryLanguage.g:27226:2: ( ruleResponseParameterName )
             // InternalSoftGalleryLanguage.g:27227:3: ruleResponseParameterName
             {
-             before(grammarAccess.getResponseParameterAccess().getParameterNameResponseParameterNameParserRuleCall_3_0()); 
+             before(grammarAccess.getResponseParameterAccess().getElementsResponseParameterNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleResponseParameterName();
 
             state._fsp--;
 
-             after(grammarAccess.getResponseParameterAccess().getParameterNameResponseParameterNameParserRuleCall_3_0()); 
+             after(grammarAccess.getResponseParameterAccess().getElementsResponseParameterNameParserRuleCall_3_0()); 
 
             }
 
@@ -81976,7 +81976,7 @@ public class InternalSoftGalleryLanguageParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ResponseParameter__ParameterNameAssignment_3"
+    // $ANTLR end "rule__ResponseParameter__ElementsAssignment_3"
 
 
     // $ANTLR start "rule__ResponseParameterAnnotation__NameAssignment_1"

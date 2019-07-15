@@ -45,7 +45,6 @@ public class AmazonClient {
 		AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
 		this.s3client = new AmazonS3Client(credentials);			
 	}
-	
 	private File convertMultiPartToFile(MultipartFile file, ) {
 		
 		File convFile = new File(file.getOriginalFilename());
@@ -54,18 +53,15 @@ public class AmazonClient {
 		fos.close();
 		return convFile;
 	}
-	
 	private StringClass generateFileName(MultipartFile multiPart, ) {
 		
 		return new Date().getTime() + "-" + multiPart.getOriginalFilename().replace(" ", "_");
 	}
-	
 	private void uploadFileTos3bucket(StringClass fileName, File file, ) {
 		
 		s3client.putObject(new PutObjectRequest(bucketName, fileName, file)
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 	}
-	
 	private StringClass uploadFile(MultipartFile multiPart, ) {
 		
 		String fileUrl = "";
@@ -80,11 +76,10 @@ public class AmazonClient {
 		}
 		return fileUrl;
 	}
-	
 	private StringClass deleteFileFromS3Bucket(StringClass fileUrl, ) {
 		
 		String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
 		s3client.deleteObject(new DeleteObjectRequest(bucketName + "/", fileName));
 		return "Successfully deleted";
 	}
-	
+}

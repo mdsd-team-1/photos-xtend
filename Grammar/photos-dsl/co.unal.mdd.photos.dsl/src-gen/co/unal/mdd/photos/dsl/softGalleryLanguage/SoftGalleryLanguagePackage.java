@@ -2509,13 +2509,13 @@ public interface SoftGalleryLanguagePackage extends EPackage
   int RESPONSE_ENTITY__TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESPONSE_ENTITY__PARAMETERS = 2;
+  int RESPONSE_ENTITY__ELEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Response Entity</em>' class.
@@ -2798,31 +2798,13 @@ public interface SoftGalleryLanguagePackage extends EPackage
   int RESPONSE_PARAMETER = 84;
 
   /**
-   * The feature id for the '<em><b>Parameter Annotation</b></em>' containment reference list.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESPONSE_PARAMETER__PARAMETER_ANNOTATION = 0;
-
-  /**
-   * The feature id for the '<em><b>Parameter Type</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RESPONSE_PARAMETER__PARAMETER_TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Parameter Name</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RESPONSE_PARAMETER__PARAMETER_NAME = 2;
+  int RESPONSE_PARAMETER__ELEMENTS = 0;
 
   /**
    * The number of structural features of the '<em>Response Parameter</em>' class.
@@ -2831,7 +2813,7 @@ public interface SoftGalleryLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESPONSE_PARAMETER_FEATURE_COUNT = 3;
+  int RESPONSE_PARAMETER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ResponseParameterAnnotationImpl <em>Response Parameter Annotation</em>}' class.
@@ -8157,15 +8139,15 @@ public interface SoftGalleryLanguagePackage extends EPackage
   EReference getResponseEntity_Type();
 
   /**
-   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity#getParameters()
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseEntity#getElements()
    * @see #getResponseEntity()
    * @generated
    */
-  EReference getResponseEntity_Parameters();
+  EReference getResponseEntity_Elements();
 
   /**
    * Returns the meta object for class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.MappingType <em>Mapping Type</em>}'.
@@ -8378,37 +8360,15 @@ public interface SoftGalleryLanguagePackage extends EPackage
   EClass getResponseParameter();
 
   /**
-   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getParameterAnnotation <em>Parameter Annotation</em>}'.
+   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameter Annotation</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getParameterAnnotation()
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getElements()
    * @see #getResponseParameter()
    * @generated
    */
-  EReference getResponseParameter_ParameterAnnotation();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getParameterType <em>Parameter Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameter Type</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getParameterType()
-   * @see #getResponseParameter()
-   * @generated
-   */
-  EReference getResponseParameter_ParameterType();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getParameterName <em>Parameter Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameter Name</em>'.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter#getParameterName()
-   * @see #getResponseParameter()
-   * @generated
-   */
-  EReference getResponseParameter_ParameterName();
+  EReference getResponseParameter_Elements();
 
   /**
    * Returns the meta object for class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterAnnotation <em>Response Parameter Annotation</em>}'.
@@ -12784,12 +12744,12 @@ public interface SoftGalleryLanguagePackage extends EPackage
     EReference RESPONSE_ENTITY__TYPE = eINSTANCE.getResponseEntity_Type();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESPONSE_ENTITY__PARAMETERS = eINSTANCE.getResponseEntity_Parameters();
+    EReference RESPONSE_ENTITY__ELEMENTS = eINSTANCE.getResponseEntity_Elements();
 
     /**
      * The meta object literal for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.MappingTypeImpl <em>Mapping Type</em>}' class.
@@ -12972,28 +12932,12 @@ public interface SoftGalleryLanguagePackage extends EPackage
     EClass RESPONSE_PARAMETER = eINSTANCE.getResponseParameter();
 
     /**
-     * The meta object literal for the '<em><b>Parameter Annotation</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESPONSE_PARAMETER__PARAMETER_ANNOTATION = eINSTANCE.getResponseParameter_ParameterAnnotation();
-
-    /**
-     * The meta object literal for the '<em><b>Parameter Type</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RESPONSE_PARAMETER__PARAMETER_TYPE = eINSTANCE.getResponseParameter_ParameterType();
-
-    /**
-     * The meta object literal for the '<em><b>Parameter Name</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RESPONSE_PARAMETER__PARAMETER_NAME = eINSTANCE.getResponseParameter_ParameterName();
+    EReference RESPONSE_PARAMETER__ELEMENTS = eINSTANCE.getResponseParameter_Elements();
 
     /**
      * The meta object literal for the '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.ResponseParameterAnnotationImpl <em>Response Parameter Annotation</em>}' class.

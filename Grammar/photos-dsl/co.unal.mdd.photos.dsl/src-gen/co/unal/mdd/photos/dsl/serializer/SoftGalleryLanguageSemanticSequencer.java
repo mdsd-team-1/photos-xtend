@@ -2866,7 +2866,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ResponseEntity returns ResponseEntity
 	 *
 	 * Constraint:
-	 *     (name=ID type+=MappingType parameters+=ResponseParameter*)
+	 *     (name=ID type+=MappingType elements+=ResponseParameter*)
 	 */
 	protected void sequence_ResponseEntity(ISerializationContext context, ResponseEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2932,7 +2932,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     ResponseParameter returns ResponseParameter
 	 *
 	 * Constraint:
-	 *     (parameterAnnotation+=ResponseParameterAnnotation parameterType+=ResponseParameterType parameterName+=ResponseParameterName)
+	 *     (elements+=ResponseParameterAnnotation elements+=ResponseParameterType elements+=ResponseParameterName)
 	 */
 	protected void sequence_ResponseParameter(ISerializationContext context, ResponseParameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -3684,7 +3684,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getResponseEntity_Parameters()
+  public EReference getResponseEntity_Elements()
   {
     return (EReference)responseEntityEClass.getEStructuralFeatures().get(2);
   }
@@ -3915,31 +3915,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getResponseParameter_ParameterAnnotation()
+  public EReference getResponseParameter_Elements()
   {
     return (EReference)responseParameterEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getResponseParameter_ParameterType()
-  {
-    return (EReference)responseParameterEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getResponseParameter_ParameterName()
-  {
-    return (EReference)responseParameterEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -7020,7 +6998,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     responseEntityEClass = createEClass(RESPONSE_ENTITY);
     createEAttribute(responseEntityEClass, RESPONSE_ENTITY__NAME);
     createEReference(responseEntityEClass, RESPONSE_ENTITY__TYPE);
-    createEReference(responseEntityEClass, RESPONSE_ENTITY__PARAMETERS);
+    createEReference(responseEntityEClass, RESPONSE_ENTITY__ELEMENTS);
 
     mappingTypeEClass = createEClass(MAPPING_TYPE);
 
@@ -7051,9 +7029,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(deleteMappingEClass, DELETE_MAPPING__NAME);
 
     responseParameterEClass = createEClass(RESPONSE_PARAMETER);
-    createEReference(responseParameterEClass, RESPONSE_PARAMETER__PARAMETER_ANNOTATION);
-    createEReference(responseParameterEClass, RESPONSE_PARAMETER__PARAMETER_TYPE);
-    createEReference(responseParameterEClass, RESPONSE_PARAMETER__PARAMETER_NAME);
+    createEReference(responseParameterEClass, RESPONSE_PARAMETER__ELEMENTS);
 
     responseParameterAnnotationEClass = createEClass(RESPONSE_PARAMETER_ANNOTATION);
     createEAttribute(responseParameterAnnotationEClass, RESPONSE_PARAMETER_ANNOTATION__NAME);
@@ -7712,7 +7688,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEClass(responseEntityEClass, ResponseEntity.class, "ResponseEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getResponseEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getResponseEntity_Type(), this.getMappingType(), null, "type", null, 0, -1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResponseEntity_Parameters(), this.getResponseParameter(), null, "parameters", null, 0, -1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponseEntity_Elements(), this.getResponseParameter(), null, "elements", null, 0, -1, ResponseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mappingTypeEClass, MappingType.class, "MappingType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -7743,9 +7719,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getDeleteMapping_Name(), ecorePackage.getEString(), "name", null, 0, 1, DeleteMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(responseParameterEClass, ResponseParameter.class, "ResponseParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getResponseParameter_ParameterAnnotation(), this.getResponseParameterAnnotation(), null, "parameterAnnotation", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResponseParameter_ParameterType(), this.getResponseParameterType(), null, "parameterType", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResponseParameter_ParameterName(), this.getResponseParameterName(), null, "parameterName", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponseParameter_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, ResponseParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(responseParameterAnnotationEClass, ResponseParameterAnnotation.class, "ResponseParameterAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getResponseParameterAnnotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResponseParameterAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

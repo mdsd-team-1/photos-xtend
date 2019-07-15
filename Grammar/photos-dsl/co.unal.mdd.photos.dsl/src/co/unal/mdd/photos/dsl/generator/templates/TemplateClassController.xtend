@@ -14,6 +14,10 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories
 import java.util.List
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RequestMappingValue
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameter
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterAnnotation
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterType
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ResponseParameterName
 
 class TemplateClassController {
 	
@@ -65,8 +69,27 @@ class TemplateClassController {
 		«IF responseItem.getType().filter(DeleteMapping).size() > 0»
 		@DeleteMapping("/«responseItem.getType().filter(DeleteMapping).get(0).name»")
 		«ENDIF»
-		public ResponseEntity<?> «responseItem.name»(@RequestBody String body) throws Exception {
+		public ResponseEntity<?> «responseItem.name»(«FOR parameterItem: responseItem.getElements().filter(ResponseParameter)»@«parameterItem.getElements().filter(ResponseParameterAnnotation).get(0).name» «parameterItem.getElements().filter(ResponseParameterType).get(0).name» «parameterItem.getElements().filter(ResponseParameterName).get(0).name», «ENDFOR») throws Exception {
 			
+			«IF responseItem.name.equals("getUser") || responseItem.name.equals("getPhoto") || responseItem.name.equals("getAlbum")»
+			«entity.name» «entity.name.toFirstLower» = null;
+
+			try {
+				«entity.name.toFirstLower» = «entity.name.toFirstLower»Repository.getOne(id.intValue());
+
+			} catch(Exception e) {
+				throw new «entity.name»NotFoundException();
+			}
+
+			if(«entity.name.toFirstLower» == null){
+				throw new «entity.name»NotFoundException();
+			}
+
+			return new ResponseEntity<>(«entity.name.toFirstLower», HttpStatus.OK);
+			«ELSEIF responseItem.name.equals("ABC")»
+			
+			
+			«ENDIF»
 		}
 		«ENDFOR»
 				
