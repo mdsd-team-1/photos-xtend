@@ -15,7 +15,7 @@ Model:
 // ------------------------------
 Domain:
 	'Domain' name=ID ':' '{' 
-		entitydomain+=Entity 
+		entitydomain+=Entity
 		entityfuncs+=Functionality 
 		exceptionsdomain+=ExceptionsDomain 
 	'}'
@@ -235,7 +235,11 @@ ControllerSegmentElement:
 ;
 
 SpecificationSegmentElement:
-	'DefinedSearchCriteria' name=ID
+	'DefinedSearchCriteria' name=ID (criteriaAttributeType+=CriteriaAttributeType)+
+;
+
+CriteriaAttributeType:
+	'CriteriaAttribute' name=ID
 ;
 	
 DataPersistenceLayer:
@@ -388,7 +392,7 @@ SpringBootApplication:
 	'SpringBootApplication'  
 		elements+=Configuration 
 		(elements+=SpringComponent)+ 
-		(elements+=SpringRepository)+  
+		(elements+=SpringRepository)+   
 		(elements+=RestController)+ 
 		(elements+=SpringEntity)+ 
 		elements+=StorageClient
@@ -432,6 +436,7 @@ OrderSpring:
 SpringRepository:
 	'SpringRepositories' ':' '{' 
 		(elements+=SpringRepositories)+ 
+		(elements+=SpringRepositoryAnnotation)+ 
 	'}'
 ;
 
@@ -439,6 +444,9 @@ SpringRepositories:
 	'SpringRepository' name=ID
 ;
 
+SpringRepositoryAnnotation:
+	'SpringRepositoryAnnotation' name=ID
+;
 RestController:
 	'RestController' name=ID ':' '{' 
 		elements+=Specification 
@@ -544,10 +552,17 @@ ExceptionProcess:
 ;
 
 SpringEntity:
-	'SpringEntity' name=ID ':' '{' 
-		(elements+=SpringTable)+ 
-		(elements+=NameNativeQuery)*
+	'SpringEntity' ':' '{' 
+		(springEntityAnnotationTypes+=SpringEntityAnnotationTypes)+ 
 	'}'
+;
+SpringEntityAnnotationTypes:
+	'EntityAnnotation' name=ID	        |
+	'TableAnnotation' name=ID	 	    |
+	'IdAnnotation' name=ID				|
+	'GeneratedValueAnnotation' name=ID 	|
+	'ColumnAnnotation' name=ID			|
+	'OverrideAnnotation' name=ID
 ;
 
 StorageClient:
@@ -595,29 +610,6 @@ StorageActionMemberType:
 
 StorageActionMemberName:
 	'Name' name=ID
-;
-
-SpringTable:
-	'SpringTable' name=ID 
-		elements+=SpringTableId 
-		(elements+=Columns)+
-;
-
-SpringTableId:
-	'SpringTableId' name=ID 
-		(elements+=GeneratedValue)*
-;
-
-GeneratedValue:
-	'GeneratedValue' name=ID
-;
-
-Columns:
-	'Column' name=ID
-;
-
-NameNativeQuery:
-	'NameNativeQuery' name=ID
 ;
 
 React:
@@ -942,7 +934,7 @@ ViewSchema:
 Table_p:
 	'Table_p' name=ID ':' '{' 
 		(elements+=ForeignKey)+ 
-		(elements+=Column)+ 
+		(elements+=ColumnP)+ 
 		(elements+=Row)+ 
 	'}'
 ;
@@ -966,8 +958,8 @@ RefTable_p:
 	'RefTable_p' name=ID
 ;
 
-Column: 
-	'Column' name=ID 
+ColumnP: 
+	'ColumnP' name=ID 
 		elements+=DatatypeDB 
 		(elements+=Constraint)*
 ;

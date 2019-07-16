@@ -1,7 +1,6 @@
 package co.unal.mdd.photos.dsl.generator
 
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController
-import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass
 import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties
 import co.unal.mdd.photos.dsl.generator.templates.TemplateYml
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException
@@ -28,6 +27,12 @@ import co.unal.mdd.photos.dsl.generator.templates.TemplateRepositoryInterface
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassException
 import co.unal.mdd.photos.dsl.generator.templates.TemplateStorageClient
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassSpecification
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassSearchCriteria
+import co.unal.mdd.photos.dsl.softGalleryLanguage.Entity
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes
+import co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositoryAnnotation
 
 /**
  * Generates code from your model files on save.
@@ -93,11 +98,7 @@ class StructureBackendGenerator{
 			println("BusinessLogicSegments: " + bls.name)
 		
 			switch bls.name {
-				
-				case "config":{
-					generateConfig(ent, ssc, dir, bls)
-				}
-				
+						
 				case "controller":{
 					generateController(ent, ssc, dir, bls)
 				}
@@ -117,22 +118,6 @@ class StructureBackendGenerator{
 		}
 	}
 	
-	
-	// Path: /.config
-	def generateConfig(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
-		
-		
-		// TODO: Falta AuthorizationServerConfig.java
-		// TODO: Falta CORSFilter.java
-		// TODO: Falta ResourceServerConfig.java
-		// TODO: Falta SecurityConfig.java
-		
-		
-		//packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
-		//className = ent.name
-		
-		//createClassFile(className, packageName)
-	}
 
 
 	// Path: /.controller	
@@ -255,31 +240,36 @@ class StructureBackendGenerator{
 	// Path: /.model
 	def generateModel(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 		
+		var StestSpring = ""
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = ent.name	
-		
-		createModelClassFile(className, packageName, ent)
+		var classVars = proyectTree.allContents.filter(SpringEntityAnnotationTypes).toList
+		createModelClassFile(className, packageName, ent, classVars)
 	}
 
 
 	// Path: /.repository
 	def generateRepository(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
-		
+		for (sra : proyectTree.allContents.toIterable.filter(SpringRepositoryAnnotation)) {
 		packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name	
 		className = ent.name + bls.name.toFirstUpper
 		
-		createInterfaceFile(className, packageName, ent)
+		createInterfaceFile(className, packageName, ent, sra)
+		}
 	}
 	
 	
 	// Path: /.specification
 	def generateSpecification(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 
-		packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
-		className = ent.name  + bls.name.toFirstUpper
-		
-		createClassFile(className, packageName)
-		
+		for (sse : proyectTree.allContents.toIterable.filter(SpecificationSegmentElement)) {
+			
+			packageName = basePackageName +"."+ ssc.name +"."+ dir.name+"."+ bls.name	
+			className = ent.name  + bls.name.toFirstUpper
+			
+			var classVars = proyectTree.allContents.filter(CriteriaAttributeType).toList
+			createSpecificationClassFile(className, packageName, ent, sse, classVars)
+		}
 		
 		// Path: /.specification.criteria
 		generateSpecificationCriteria(ent, ssc, dir, bls)
@@ -296,7 +286,9 @@ class StructureBackendGenerator{
 			packageName = basePackageName +"."+ ssc.name +"."+ dir.name +"."+ bls.name +"."+ sse.name	
 			className = "Search"+sse.name.toFirstUpper
 			
-			createClassFile(className, packageName)
+			var classVars = proyectTree.allContents.filter(CriteriaAttributeType).toList
+			
+			createSearchCriteriaClassFile(className, packageName, classVars)
 		}
 	}	
 	
@@ -325,8 +317,12 @@ class StructureBackendGenerator{
 	// File Writers
 	// ----------------
 	
-	def createClassFile(String className, String packageName) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateGenericClass.generate(className, packageName))
+	def createSpecificationClassFile(String className, String packageName, Entities ent, SpecificationSegmentElement sse, List<CriteriaAttributeType> classVars) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassSpecification.generate(className, packageName, ent, sse, classVars))
+	}
+	
+	def createSearchCriteriaClassFile(String className, String packageName, List<CriteriaAttributeType> classVars) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassSearchCriteria.generate(className, packageName, classVars))
 	}
 	
 	def createExceptionClassFile(String className, String packageName) {
@@ -341,12 +337,12 @@ class StructureBackendGenerator{
 		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateStorageClient.generate(className, packageName, stc))
 	}
 	
-	def createModelClassFile(String className, String packageName, Entities ent) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassModel.generate(className, packageName, ent))
+	def createModelClassFile(String className, String packageName, Entities ent, List<SpringEntityAnnotationTypes> classVars) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateClassModel.generate(className, packageName, ent, classVars))
 	}
 	
-	def createInterfaceFile(String className, String packageName, Entities ent) {
-		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateRepositoryInterface.generate(className, packageName, ent))
+	def createInterfaceFile(String className, String packageName, Entities ent, SpringRepositoryAnnotation sra) {
+		fileWriter.generateFile(packageName.replace('.', '/') +"/"+ className + ".java", TemplateRepositoryInterface.generate(className, packageName, ent, sra))
 	}
 	
 	def createPropertiesFile(String className, String packageName) {

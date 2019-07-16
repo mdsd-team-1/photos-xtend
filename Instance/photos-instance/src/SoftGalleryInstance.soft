@@ -90,6 +90,9 @@ System: {
 					SecuritySegment config
 					SpecificationSegment specification
 						DefinedSearchCriteria criteria
+							CriteriaAttribute key
+							CriteriaAttribute operation
+							CriteriaAttribute value
 				SegmentStructure
 					Directories photosappback
 						Directory main
@@ -145,6 +148,8 @@ System: {
 					SpringRepository AlbumRepository
 					SpringRepository PhotoRepository
 					SpringRepository UserRepository
+					
+					SpringRepositoryAnnotation Repository
 				}
 				
 				RestController AlbumController : {
@@ -324,34 +329,15 @@ System: {
 						ExceptionProcess UserNotEditedException
 				}
 				
-				SpringEntity Album : {
-					SpringTable album
-						SpringTableId id
-							GeneratedValue Id_Album
-						Column name
-						Column user_id
+				SpringEntity : {
+					EntityAnnotation Entity        
+					TableAnnotation Table	 	    
+					IdAnnotation Id			
+					GeneratedValueAnnotation GeneratedValue 	
+					ColumnAnnotation Column			
+					OverrideAnnotation Override
 				}
-				SpringEntity Photo : {
-					SpringTable photo
-						SpringTableId id
-							GeneratedValue Id_Photo
-						Column name
-						Column url 
-						Column album_id
-				}
-				SpringEntity User : {
-					SpringTable user
-						SpringTableId id
-							GeneratedValue Id_User
-						Column user_name
-						Column first_name
-						Column last_name
-					    Column profile_description
-						Column password
-						Column email
-					NameNativeQuery	findLoginUser
-				}
-				
+								
 				StorageClient AmazonClient
 					StorageMember s3client
 						StorageMemberType StringClass
@@ -635,12 +621,12 @@ System: {
 							ForeingKeyName keyAlbums
 							ForeignKeyRef  
 								RefTable_p albums
-						Column id
+						ColumnP id
 							DatatypeDB integer
 							Constraint primaryKey
-						Column name
+						ColumnP name
 							DatatypeDB characterVarying
-						Column user_id
+						ColumnP user_id
 							DatatypeDB integer
 							Constraint foreignKey
 						Row Cars
@@ -654,14 +640,14 @@ System: {
 							ForeingKeyName keyUsers
 							ForeignKeyRef  
 								RefTable_p users
-						Column id
+						ColumnP id
 							DatatypeDB integer
 							Constraint primaryKey
-						Column url
+						ColumnP url
 							DatatypeDB characterVarying
-						Column name
+						ColumnP name
 							DatatypeDB characterVarying
-						Column album_id
+						ColumnP album_id
 							DatatypeDB integer
 							Constraint foreignKey
 						Row Ferrari
@@ -671,20 +657,20 @@ System: {
 							ForeingKeyName keyUsers
 							ForeignKeyRef  
 								RefTable_p users
-						Column first_name
+						ColumnP first_name
 							DatatypeDB characterVarying
-						Column last_name
+						ColumnP last_name
 							DatatypeDB characterVarying
-						Column id
+						ColumnP id
 							DatatypeDB integer
 							Constraint primaKey
-						Column profile_description
+						ColumnP profile_description
 							DatatypeDB characterVarying
-						Column user_name
+						ColumnP user_name
 							DatatypeDB characterVarying
-						Column password
+						ColumnP password
 							DatatypeDB characterVarying
-						Column email
+						ColumnP email
 							DatatypeDB characterVarying
 						Row Pedro
 					}

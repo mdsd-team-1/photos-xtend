@@ -1,19 +1,23 @@
 package co.unal.mdd.photos.dsl.generator.templates
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes
+import java.util.List
 
 class TemplateClassModel {
-		
-	static def generate(String className, String packageName, Entities ent)
+	
+
+	static def generate(String className, String packageName, Entities ent, List<SpringEntityAnnotationTypes> classVars)
 	''' 
 		package «packageName»;	
 		
 		import javax.persistence.*;
-		
-		@Entity
-		@Table(name = "«ent.name.toFirstLower»")
+
+		@«FOR item: classVars»«IF item.name.equals("Entity")»«item.name»«ENDIF»«ENDFOR»
+		@«FOR item: classVars»«IF item.name.equals("Table")»«item.name»«ENDIF»«ENDFOR»(name = "«ent.name.toFirstLower»")
 		public class «className» {
 		
+			private int id;
 			«IF ent.name.equals("Photo")»
 			«FOR ap: ent.getAtributePhoto()»
 				private «ap.name»;	
@@ -30,7 +34,19 @@ class TemplateClassModel {
 							
 			public «className»() {}
 		
-			public «ent.name»() {
+			public «ent.name»(«IF ent.name.equals("Photo")»
+										«FOR ap: ent.getAtributePhoto() SEPARATOR ', '»
+											String «ap.name»
+										«ENDFOR»
+											«ELSEIF ent.name.equals("Album")»
+												«FOR aa: ent.getAtributeAlbum() SEPARATOR ', '»
+													String «aa.name»
+												«ENDFOR»
+													«ELSEIF ent.name.equals("User")»
+														«FOR au: ent.getAtributeUserDomain() SEPARATOR ', '»
+															String «au.name»
+														«ENDFOR»
+												«ENDIF»		) {
 				«IF ent.name.equals("Photo")»
 							«FOR ap: ent.getAtributePhoto()»
 								this.«ap.name» = «ap.name»;		
@@ -46,8 +62,8 @@ class TemplateClassModel {
 									«ENDIF»				
 			}
 			
-			@Id
-			@GeneratedValue(strategy = GenerationType.AUTO)
+			@«FOR item: classVars»«IF item.name.equals("Id")»«item.name»«ENDIF»«ENDFOR»
+			@«FOR item: classVars»«IF item.name.equals("GeneratedValue")»«item.name»«ENDIF»«ENDFOR»(strategy = GenerationType.AUTO)
 			public int getId() {
 				return id;
 			}
@@ -57,7 +73,7 @@ class TemplateClassModel {
 
 			«IF ent.name.equals("Photo")»
 						«FOR ap: ent.getAtributePhoto()»
-							@Column(name = "«ap.name»", nullable = false)
+							@«FOR item: classVars»«IF item.name.equals("Column")»«item.name»«ENDIF»«ENDFOR»(name = "«ap.name»", nullable = false)
 							public String get«ap.name.toFirstUpper»() {
 								return «ap.name»;
 							}
@@ -87,7 +103,7 @@ class TemplateClassModel {
 										«ENDFOR»
 								«ENDIF»		
 								
-			@Override
+			@«FOR item: classVars»«IF item.name.equals("Override")»«item.name»«ENDIF»«ENDFOR»
 			public String toString() {
 				return "«ent.name»{" +
 						"id=" + id +
