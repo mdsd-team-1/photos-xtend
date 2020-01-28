@@ -29,8 +29,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicLayer;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Clause;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Cluster;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Column;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Columns;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ColumnP;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentClass;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsLogic;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles;
@@ -40,6 +39,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Configuration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Constraint;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.CoreFunctionsDeclaration;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DOMConfigurations;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceLayer;
@@ -67,7 +67,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.FrontEnd;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Function;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionalities;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionality;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.GeneratedValue;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.GetMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Index_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LandingActions;
@@ -88,7 +87,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.NTierTarget;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.NTiers;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.NTiersConnections;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.NTiersRelations;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.NameNativeQuery;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ObjectsPublic;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.OnlyAuthorized;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring;
@@ -166,10 +164,10 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Spring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringBootApplication;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringComponent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepository;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositoryAnnotation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageAction;
@@ -459,6 +457,13 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass criteriaAttributeTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass dataPersistenceLayerEClass = null;
 
   /**
@@ -697,6 +702,13 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass springRepositoryAnnotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass restControllerEClass = null;
 
   /**
@@ -851,6 +863,13 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass springEntityAnnotationTypesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass storageClientEClass = null;
 
   /**
@@ -915,41 +934,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   private EClass storageActionMemberNameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass springTableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass springTableIdEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass generatedValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass columnsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass nameNativeQueryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1362,7 +1346,7 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass columnEClass = null;
+  private EClass columnPEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2606,6 +2590,39 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EReference getSpecificationSegmentElement_CriteriaAttributeType()
+  {
+    return (EReference)specificationSegmentElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCriteriaAttributeType()
+  {
+    return criteriaAttributeTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCriteriaAttributeType_Name()
+  {
+    return (EAttribute)criteriaAttributeTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDataPersistenceLayer()
   {
     return dataPersistenceLayerEClass;
@@ -3530,6 +3547,28 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
+  public EClass getSpringRepositoryAnnotation()
+  {
+    return springRepositoryAnnotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpringRepositoryAnnotation_Name()
+  {
+    return (EAttribute)springRepositoryAnnotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRestController()
   {
     return restControllerEClass;
@@ -4058,9 +4097,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getSpringEntity_Name()
+  public EReference getSpringEntity_SpringEntityAnnotationTypes()
   {
-    return (EAttribute)springEntityEClass.getEStructuralFeatures().get(0);
+    return (EReference)springEntityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -4069,9 +4108,20 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getSpringEntity_Elements()
+  public EClass getSpringEntityAnnotationTypes()
   {
-    return (EReference)springEntityEClass.getEStructuralFeatures().get(1);
+    return springEntityAnnotationTypesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpringEntityAnnotationTypes_Name()
+  {
+    return (EAttribute)springEntityAnnotationTypesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -4325,138 +4375,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
   public EAttribute getStorageActionMemberName_Name()
   {
     return (EAttribute)storageActionMemberNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSpringTable()
-  {
-    return springTableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSpringTable_Name()
-  {
-    return (EAttribute)springTableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSpringTable_Elements()
-  {
-    return (EReference)springTableEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSpringTableId()
-  {
-    return springTableIdEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSpringTableId_Name()
-  {
-    return (EAttribute)springTableIdEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSpringTableId_Elements()
-  {
-    return (EReference)springTableIdEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getGeneratedValue()
-  {
-    return generatedValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getGeneratedValue_Name()
-  {
-    return (EAttribute)generatedValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getColumns()
-  {
-    return columnsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getColumns_Name()
-  {
-    return (EAttribute)columnsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getNameNativeQuery()
-  {
-    return nameNativeQueryEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getNameNativeQuery_Name()
-  {
-    return (EAttribute)nameNativeQueryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -6126,9 +6044,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EClass getColumn()
+  public EClass getColumnP()
   {
-    return columnEClass;
+    return columnPEClass;
   }
 
   /**
@@ -6137,9 +6055,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EAttribute getColumn_Name()
+  public EAttribute getColumnP_Name()
   {
-    return (EAttribute)columnEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)columnPEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -6148,9 +6066,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
    * @generated
    */
   @Override
-  public EReference getColumn_Elements()
+  public EReference getColumnP_Elements()
   {
-    return (EReference)columnEClass.getEStructuralFeatures().get(1);
+    return (EReference)columnPEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -6860,6 +6778,10 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     specificationSegmentElementEClass = createEClass(SPECIFICATION_SEGMENT_ELEMENT);
     createEAttribute(specificationSegmentElementEClass, SPECIFICATION_SEGMENT_ELEMENT__NAME);
+    createEReference(specificationSegmentElementEClass, SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE);
+
+    criteriaAttributeTypeEClass = createEClass(CRITERIA_ATTRIBUTE_TYPE);
+    createEAttribute(criteriaAttributeTypeEClass, CRITERIA_ATTRIBUTE_TYPE__NAME);
 
     dataPersistenceLayerEClass = createEClass(DATA_PERSISTENCE_LAYER);
     createEReference(dataPersistenceLayerEClass, DATA_PERSISTENCE_LAYER__ELEMENTS);
@@ -6979,6 +6901,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     springRepositoriesEClass = createEClass(SPRING_REPOSITORIES);
     createEAttribute(springRepositoriesEClass, SPRING_REPOSITORIES__NAME);
 
+    springRepositoryAnnotationEClass = createEClass(SPRING_REPOSITORY_ANNOTATION);
+    createEAttribute(springRepositoryAnnotationEClass, SPRING_REPOSITORY_ANNOTATION__NAME);
+
     restControllerEClass = createEClass(REST_CONTROLLER);
     createEAttribute(restControllerEClass, REST_CONTROLLER__NAME);
     createEReference(restControllerEClass, REST_CONTROLLER__ELEMENTS);
@@ -7048,8 +6973,10 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     createEAttribute(exceptionProcessEClass, EXCEPTION_PROCESS__NAME);
 
     springEntityEClass = createEClass(SPRING_ENTITY);
-    createEAttribute(springEntityEClass, SPRING_ENTITY__NAME);
-    createEReference(springEntityEClass, SPRING_ENTITY__ELEMENTS);
+    createEReference(springEntityEClass, SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES);
+
+    springEntityAnnotationTypesEClass = createEClass(SPRING_ENTITY_ANNOTATION_TYPES);
+    createEAttribute(springEntityAnnotationTypesEClass, SPRING_ENTITY_ANNOTATION_TYPES__NAME);
 
     storageClientEClass = createEClass(STORAGE_CLIENT);
     createEAttribute(storageClientEClass, STORAGE_CLIENT__NAME);
@@ -7083,23 +7010,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     storageActionMemberNameEClass = createEClass(STORAGE_ACTION_MEMBER_NAME);
     createEAttribute(storageActionMemberNameEClass, STORAGE_ACTION_MEMBER_NAME__NAME);
-
-    springTableEClass = createEClass(SPRING_TABLE);
-    createEAttribute(springTableEClass, SPRING_TABLE__NAME);
-    createEReference(springTableEClass, SPRING_TABLE__ELEMENTS);
-
-    springTableIdEClass = createEClass(SPRING_TABLE_ID);
-    createEAttribute(springTableIdEClass, SPRING_TABLE_ID__NAME);
-    createEReference(springTableIdEClass, SPRING_TABLE_ID__ELEMENTS);
-
-    generatedValueEClass = createEClass(GENERATED_VALUE);
-    createEAttribute(generatedValueEClass, GENERATED_VALUE__NAME);
-
-    columnsEClass = createEClass(COLUMNS);
-    createEAttribute(columnsEClass, COLUMNS__NAME);
-
-    nameNativeQueryEClass = createEClass(NAME_NATIVE_QUERY);
-    createEAttribute(nameNativeQueryEClass, NAME_NATIVE_QUERY__NAME);
 
     reactEClass = createEClass(REACT);
     createEAttribute(reactEClass, REACT__NAME);
@@ -7310,9 +7220,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     refTable_pEClass = createEClass(REF_TABLE_P);
     createEAttribute(refTable_pEClass, REF_TABLE_P__NAME);
 
-    columnEClass = createEClass(COLUMN);
-    createEAttribute(columnEClass, COLUMN__NAME);
-    createEReference(columnEClass, COLUMN__ELEMENTS);
+    columnPEClass = createEClass(COLUMN_P);
+    createEAttribute(columnPEClass, COLUMN_P__NAME);
+    createEReference(columnPEClass, COLUMN_P__ELEMENTS);
 
     datatypeDBEClass = createEClass(DATATYPE_DB);
     createEAttribute(datatypeDBEClass, DATATYPE_DB__NAME);
@@ -7550,6 +7460,10 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     initEClass(specificationSegmentElementEClass, SpecificationSegmentElement.class, "SpecificationSegmentElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpecificationSegmentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpecificationSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpecificationSegmentElement_CriteriaAttributeType(), this.getCriteriaAttributeType(), null, "criteriaAttributeType", null, 0, -1, SpecificationSegmentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(criteriaAttributeTypeEClass, CriteriaAttributeType.class, "CriteriaAttributeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCriteriaAttributeType_Name(), ecorePackage.getEString(), "name", null, 0, 1, CriteriaAttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataPersistenceLayerEClass, DataPersistenceLayer.class, "DataPersistenceLayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDataPersistenceLayer_Elements(), this.getDataPersistenceContent(), null, "elements", null, 0, -1, DataPersistenceLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7664,10 +7578,13 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getOrderSpring_Name(), ecorePackage.getEString(), "name", null, 0, 1, OrderSpring.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(springRepositoryEClass, SpringRepository.class, "SpringRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSpringRepository_Elements(), this.getSpringRepositories(), null, "elements", null, 0, -1, SpringRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpringRepository_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, SpringRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(springRepositoriesEClass, SpringRepositories.class, "SpringRepositories", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpringRepositories_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringRepositories.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(springRepositoryAnnotationEClass, SpringRepositoryAnnotation.class, "SpringRepositoryAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpringRepositoryAnnotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringRepositoryAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(restControllerEClass, RestController.class, "RestController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRestController_Name(), ecorePackage.getEString(), "name", null, 0, 1, RestController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7738,8 +7655,10 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEAttribute(getExceptionProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExceptionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(springEntityEClass, SpringEntity.class, "SpringEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSpringEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSpringEntity_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, SpringEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpringEntity_SpringEntityAnnotationTypes(), this.getSpringEntityAnnotationTypes(), null, "springEntityAnnotationTypes", null, 0, -1, SpringEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(springEntityAnnotationTypesEClass, SpringEntityAnnotationTypes.class, "SpringEntityAnnotationTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpringEntityAnnotationTypes_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringEntityAnnotationTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storageClientEClass, StorageClient.class, "StorageClient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStorageClient_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7773,23 +7692,6 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
 
     initEClass(storageActionMemberNameEClass, StorageActionMemberName.class, "StorageActionMemberName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStorageActionMemberName_Name(), ecorePackage.getEString(), "name", null, 0, 1, StorageActionMemberName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(springTableEClass, SpringTable.class, "SpringTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSpringTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSpringTable_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, SpringTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(springTableIdEClass, SpringTableId.class, "SpringTableId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSpringTableId_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpringTableId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSpringTableId_Elements(), this.getGeneratedValue(), null, "elements", null, 0, -1, SpringTableId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(generatedValueEClass, GeneratedValue.class, "GeneratedValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGeneratedValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneratedValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(columnsEClass, Columns.class, "Columns", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColumns_Name(), ecorePackage.getEString(), "name", null, 0, 1, Columns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(nameNativeQueryEClass, NameNativeQuery.class, "NameNativeQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNameNativeQuery_Name(), ecorePackage.getEString(), "name", null, 0, 1, NameNativeQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reactEClass, React.class, "React", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReact_Name(), ecorePackage.getEString(), "name", null, 0, 1, React.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8000,9 +7902,9 @@ public class SoftGalleryLanguagePackageImpl extends EPackageImpl implements Soft
     initEClass(refTable_pEClass, RefTable_p.class, "RefTable_p", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRefTable_p_Name(), ecorePackage.getEString(), "name", null, 0, 1, RefTable_p.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColumn_Name(), ecorePackage.getEString(), "name", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getColumn_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(columnPEClass, ColumnP.class, "ColumnP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getColumnP_Name(), ecorePackage.getEString(), "name", null, 0, 1, ColumnP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getColumnP_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, ColumnP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(datatypeDBEClass, DatatypeDB.class, "DatatypeDB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDatatypeDB_Name(), ecorePackage.getEString(), "name", null, 0, 1, DatatypeDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

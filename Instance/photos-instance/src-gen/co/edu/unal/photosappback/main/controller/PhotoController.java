@@ -28,7 +28,6 @@ public class PhotoController {
 	AmazonClient amazonClient;
 	
 	
-	
 	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhoto(@PathVariable Long id, ) throws Exception {
 		
@@ -47,7 +46,6 @@ public class PhotoController {
 
 		return new ResponseEntity<>(photo, HttpStatus.OK);
 	}
-	
 	@PostMapping("/upload")
 	public ResponseEntity<?> uploadPhoto(@RequestPart MultipartFile file, @RequestPart StringClass photoName, @RequestPart StringClass albumId, ) throws Exception {
 		
@@ -97,7 +95,6 @@ public class PhotoController {
 
 		return new ResponseEntity<>(addedPhoto, HttpStatus.CREATED);
 	}
-	
 	@DeleteMapping("/delete")
 	public ResponseEntity<?> deleteFile(@RequestPart StringClass fileUrl, ) throws Exception {
 		
@@ -110,7 +107,6 @@ public class PhotoController {
 
 		return new ResponseEntity<>("Photo deleted", HttpStatus.OK);
 	}
-	
 	@GetMapping("/all")
 	public ResponseEntity<?> findAll() throws Exception {
 		

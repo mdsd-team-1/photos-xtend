@@ -339,6 +339,15 @@ public interface SoftGalleryLanguageFactory extends EFactory
   SpecificationSegmentElement createSpecificationSegmentElement();
 
   /**
+   * Returns a new object of class '<em>Criteria Attribute Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Criteria Attribute Type</em>'.
+   * @generated
+   */
+  CriteriaAttributeType createCriteriaAttributeType();
+
+  /**
    * Returns a new object of class '<em>Data Persistence Layer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -645,6 +654,15 @@ public interface SoftGalleryLanguageFactory extends EFactory
   SpringRepositories createSpringRepositories();
 
   /**
+   * Returns a new object of class '<em>Spring Repository Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spring Repository Annotation</em>'.
+   * @generated
+   */
+  SpringRepositoryAnnotation createSpringRepositoryAnnotation();
+
+  /**
    * Returns a new object of class '<em>Rest Controller</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -843,6 +861,15 @@ public interface SoftGalleryLanguageFactory extends EFactory
   SpringEntity createSpringEntity();
 
   /**
+   * Returns a new object of class '<em>Spring Entity Annotation Types</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spring Entity Annotation Types</em>'.
+   * @generated
+   */
+  SpringEntityAnnotationTypes createSpringEntityAnnotationTypes();
+
+  /**
    * Returns a new object of class '<em>Storage Client</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -931,51 +958,6 @@ public interface SoftGalleryLanguageFactory extends EFactory
    * @generated
    */
   StorageActionMemberName createStorageActionMemberName();
-
-  /**
-   * Returns a new object of class '<em>Spring Table</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Spring Table</em>'.
-   * @generated
-   */
-  SpringTable createSpringTable();
-
-  /**
-   * Returns a new object of class '<em>Spring Table Id</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Spring Table Id</em>'.
-   * @generated
-   */
-  SpringTableId createSpringTableId();
-
-  /**
-   * Returns a new object of class '<em>Generated Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Generated Value</em>'.
-   * @generated
-   */
-  GeneratedValue createGeneratedValue();
-
-  /**
-   * Returns a new object of class '<em>Columns</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Columns</em>'.
-   * @generated
-   */
-  Columns createColumns();
-
-  /**
-   * Returns a new object of class '<em>Name Native Query</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Name Native Query</em>'.
-   * @generated
-   */
-  NameNativeQuery createNameNativeQuery();
 
   /**
    * Returns a new object of class '<em>React</em>'.
@@ -1500,13 +1482,13 @@ public interface SoftGalleryLanguageFactory extends EFactory
   RefTable_p createRefTable_p();
 
   /**
-   * Returns a new object of class '<em>Column</em>'.
+   * Returns a new object of class '<em>Column P</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Column</em>'.
+   * @return a new object of class '<em>Column P</em>'.
    * @generated
    */
-  Column createColumn();
+  ColumnP createColumnP();
 
   /**
    * Returns a new object of class '<em>Datatype DB</em>'.

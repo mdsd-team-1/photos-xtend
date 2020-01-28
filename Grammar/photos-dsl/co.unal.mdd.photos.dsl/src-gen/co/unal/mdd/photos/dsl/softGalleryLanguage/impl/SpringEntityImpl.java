@@ -5,19 +5,17 @@ package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,8 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpringEntityImpl#getName <em>Name</em>}</li>
- *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpringEntityImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpringEntityImpl#getSpringEntityAnnotationTypes <em>Spring Entity Annotation Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,34 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SpringEntityImpl extends MinimalEObjectImpl.Container implements SpringEntity
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getSpringEntityAnnotationTypes() <em>Spring Entity Annotation Types</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSpringEntityAnnotationTypes()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getElements()
-   * @generated
-   * @ordered
-   */
-  protected EList<EObject> elements;
+  protected EList<SpringEntityAnnotationTypes> springEntityAnnotationTypes;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,38 +73,13 @@ public class SpringEntityImpl extends MinimalEObjectImpl.Container implements Sp
    * @generated
    */
   @Override
-  public String getName()
+  public EList<SpringEntityAnnotationTypes> getSpringEntityAnnotationTypes()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoftGalleryLanguagePackage.SPRING_ENTITY__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<EObject> getElements()
-  {
-    if (elements == null)
+    if (springEntityAnnotationTypes == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.SPRING_ENTITY__ELEMENTS);
+      springEntityAnnotationTypes = new EObjectContainmentEList<SpringEntityAnnotationTypes>(SpringEntityAnnotationTypes.class, this, SoftGalleryLanguagePackage.SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES);
     }
-    return elements;
+    return springEntityAnnotationTypes;
   }
 
   /**
@@ -140,8 +92,8 @@ public class SpringEntityImpl extends MinimalEObjectImpl.Container implements Sp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SoftGalleryLanguagePackage.SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES:
+        return ((InternalEList<?>)getSpringEntityAnnotationTypes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,10 +108,8 @@ public class SpringEntityImpl extends MinimalEObjectImpl.Container implements Sp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__NAME:
-        return getName();
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__ELEMENTS:
-        return getElements();
+      case SoftGalleryLanguagePackage.SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES:
+        return getSpringEntityAnnotationTypes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,12 +125,9 @@ public class SpringEntityImpl extends MinimalEObjectImpl.Container implements Sp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__NAME:
-        setName((String)newValue);
-        return;
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+      case SoftGalleryLanguagePackage.SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES:
+        getSpringEntityAnnotationTypes().clear();
+        getSpringEntityAnnotationTypes().addAll((Collection<? extends SpringEntityAnnotationTypes>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,11 +143,8 @@ public class SpringEntityImpl extends MinimalEObjectImpl.Container implements Sp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__ELEMENTS:
-        getElements().clear();
+      case SoftGalleryLanguagePackage.SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES:
+        getSpringEntityAnnotationTypes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -216,29 +160,10 @@ public class SpringEntityImpl extends MinimalEObjectImpl.Container implements Sp
   {
     switch (featureID)
     {
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SoftGalleryLanguagePackage.SPRING_ENTITY__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case SoftGalleryLanguagePackage.SPRING_ENTITY__SPRING_ENTITY_ANNOTATION_TYPES:
+        return springEntityAnnotationTypes != null && !springEntityAnnotationTypes.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //SpringEntityImpl

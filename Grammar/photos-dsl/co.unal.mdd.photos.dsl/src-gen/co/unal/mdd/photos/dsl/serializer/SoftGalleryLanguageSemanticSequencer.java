@@ -30,8 +30,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicLayer;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Clause;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Cluster;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Column;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.Columns;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.ColumnP;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentClass;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsLogic;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ComponentsStyles;
@@ -41,6 +40,7 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Configuration;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Constraint;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.CoreFunctionsDeclaration;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DOMConfigurations;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceLayer;
@@ -68,7 +68,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.FrontEnd;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Function;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionalities;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Functionality;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.GeneratedValue;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.GetMapping;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Index_p;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.LandingActions;
@@ -88,7 +87,6 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.NTierTarget;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.NTiers;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.NTiersConnections;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.NTiersRelations;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.NameNativeQuery;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ObjectsPublic;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.OnlyAuthorized;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.OrderSpring;
@@ -165,10 +163,10 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.Spring;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringBootApplication;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringComponent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntity;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepository;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositoryAnnotation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.State;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StateContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageAction;
@@ -296,11 +294,8 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.CLUSTER:
 				sequence_Cluster(context, (Cluster) semanticObject); 
 				return; 
-			case SoftGalleryLanguagePackage.COLUMN:
-				sequence_Column(context, (Column) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.COLUMNS:
-				sequence_Columns(context, (Columns) semanticObject); 
+			case SoftGalleryLanguagePackage.COLUMN_P:
+				sequence_ColumnP(context, (ColumnP) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.COMPONENT_CLASS:
 				sequence_ComponentClass(context, (ComponentClass) semanticObject); 
@@ -328,6 +323,9 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.CORE_FUNCTIONS_DECLARATION:
 				sequence_CoreFunctionsDeclaration(context, (CoreFunctionsDeclaration) semanticObject); 
+				return; 
+			case SoftGalleryLanguagePackage.CRITERIA_ATTRIBUTE_TYPE:
+				sequence_CriteriaAttributeType(context, (CriteriaAttributeType) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.DOM_CONFIGURATIONS:
 				sequence_DOMConfigurations(context, (DOMConfigurations) semanticObject); 
@@ -410,9 +408,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.FUNCTIONALITY:
 				sequence_Functionality(context, (Functionality) semanticObject); 
 				return; 
-			case SoftGalleryLanguagePackage.GENERATED_VALUE:
-				sequence_GeneratedValue(context, (GeneratedValue) semanticObject); 
-				return; 
 			case SoftGalleryLanguagePackage.GET_MAPPING:
 				sequence_GetMapping(context, (GetMapping) semanticObject); 
 				return; 
@@ -469,9 +464,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 				return; 
 			case SoftGalleryLanguagePackage.NTIERS_RELATIONS:
 				sequence_NTiersRelations(context, (NTiersRelations) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.NAME_NATIVE_QUERY:
-				sequence_NameNativeQuery(context, (NameNativeQuery) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.OBJECTS_PUBLIC:
 				sequence_ObjectsPublic(context, (ObjectsPublic) semanticObject); 
@@ -698,17 +690,17 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 			case SoftGalleryLanguagePackage.SPRING_ENTITY:
 				sequence_SpringEntity(context, (SpringEntity) semanticObject); 
 				return; 
+			case SoftGalleryLanguagePackage.SPRING_ENTITY_ANNOTATION_TYPES:
+				sequence_SpringEntityAnnotationTypes(context, (SpringEntityAnnotationTypes) semanticObject); 
+				return; 
 			case SoftGalleryLanguagePackage.SPRING_REPOSITORIES:
 				sequence_SpringRepositories(context, (SpringRepositories) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.SPRING_REPOSITORY:
 				sequence_SpringRepository(context, (SpringRepository) semanticObject); 
 				return; 
-			case SoftGalleryLanguagePackage.SPRING_TABLE:
-				sequence_SpringTable(context, (SpringTable) semanticObject); 
-				return; 
-			case SoftGalleryLanguagePackage.SPRING_TABLE_ID:
-				sequence_SpringTableId(context, (SpringTableId) semanticObject); 
+			case SoftGalleryLanguagePackage.SPRING_REPOSITORY_ANNOTATION:
+				sequence_SpringRepositoryAnnotation(context, (SpringRepositoryAnnotation) semanticObject); 
 				return; 
 			case SoftGalleryLanguagePackage.STATE:
 				sequence_State(context, (State) semanticObject); 
@@ -1178,31 +1170,13 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
-	 *     Column returns Column
+	 *     ColumnP returns ColumnP
 	 *
 	 * Constraint:
 	 *     (name=ID elements+=DatatypeDB elements+=Constraint*)
 	 */
-	protected void sequence_Column(ISerializationContext context, Column semanticObject) {
+	protected void sequence_ColumnP(ISerializationContext context, ColumnP semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Columns returns Columns
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_Columns(ISerializationContext context, Columns semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.COLUMNS__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.COLUMNS__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getColumnsAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	
@@ -1322,6 +1296,24 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCoreFunctionsDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CriteriaAttributeType returns CriteriaAttributeType
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_CriteriaAttributeType(ISerializationContext context, CriteriaAttributeType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.CRITERIA_ATTRIBUTE_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.CRITERIA_ATTRIBUTE_TYPE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCriteriaAttributeTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -1722,24 +1714,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
-	 *     GeneratedValue returns GeneratedValue
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_GeneratedValue(ISerializationContext context, GeneratedValue semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.GENERATED_VALUE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.GENERATED_VALUE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGeneratedValueAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     MappingType returns GetMapping
 	 *     GetMapping returns GetMapping
 	 *
@@ -1997,24 +1971,6 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 */
 	protected void sequence_NTiers(ISerializationContext context, NTiers semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     NameNativeQuery returns NameNativeQuery
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_NameNativeQuery(ISerializationContext context, NameNativeQuery semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.NAME_NATIVE_QUERY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.NAME_NATIVE_QUERY__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNameNativeQueryAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	
@@ -3052,16 +3008,10 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     SpecificationSegmentElement returns SpecificationSegmentElement
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID criteriaAttributeType+=CriteriaAttributeType+)
 	 */
 	protected void sequence_SpecificationSegmentElement(ISerializationContext context, SpecificationSegmentElement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.SPECIFICATION_SEGMENT_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.SPECIFICATION_SEGMENT_ELEMENT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSpecificationSegmentElementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -3110,10 +3060,29 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     SpringEntityAnnotationTypes returns SpringEntityAnnotationTypes
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID
+	 *     )
+	 */
+	protected void sequence_SpringEntityAnnotationTypes(ISerializationContext context, SpringEntityAnnotationTypes semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     SpringEntity returns SpringEntity
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=SpringTable+ elements+=NameNativeQuery*)
+	 *     springEntityAnnotationTypes+=SpringEntityAnnotationTypes+
 	 */
 	protected void sequence_SpringEntity(ISerializationContext context, SpringEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -3140,36 +3109,30 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Contexts:
+	 *     SpringRepositoryAnnotation returns SpringRepositoryAnnotation
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_SpringRepositoryAnnotation(ISerializationContext context, SpringRepositoryAnnotation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SoftGalleryLanguagePackage.Literals.SPRING_REPOSITORY_ANNOTATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SoftGalleryLanguagePackage.Literals.SPRING_REPOSITORY_ANNOTATION__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSpringRepositoryAnnotationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     SpringRepository returns SpringRepository
 	 *
 	 * Constraint:
-	 *     elements+=SpringRepositories+
+	 *     (elements+=SpringRepositories+ elements+=SpringRepositoryAnnotation+)
 	 */
 	protected void sequence_SpringRepository(ISerializationContext context, SpringRepository semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SpringTableId returns SpringTableId
-	 *
-	 * Constraint:
-	 *     (name=ID elements+=GeneratedValue*)
-	 */
-	protected void sequence_SpringTableId(ISerializationContext context, SpringTableId semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SpringTable returns SpringTable
-	 *
-	 * Constraint:
-	 *     (name=ID elements+=SpringTableId elements+=Columns+)
-	 */
-	protected void sequence_SpringTable(ISerializationContext context, SpringTable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -3413,7 +3376,7 @@ public class SoftGalleryLanguageSemanticSequencer extends AbstractDelegatingSema
 	 *     Table_p returns Table_p
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=ForeignKey+ elements+=Column+ elements+=Row+)
+	 *     (name=ID elements+=ForeignKey+ elements+=ColumnP+ elements+=Row+)
 	 */
 	protected void sequence_Table_p(ISerializationContext context, Table_p semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -1924,16 +1924,47 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cDefinedSearchCriteriaKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cCriteriaAttributeTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCriteriaAttributeTypeCriteriaAttributeTypeParserRuleCall_2_0 = (RuleCall)cCriteriaAttributeTypeAssignment_2.eContents().get(0);
 		
 		//SpecificationSegmentElement:
-		//	'DefinedSearchCriteria' name=ID;
+		//	'DefinedSearchCriteria' name=ID criteriaAttributeType+=CriteriaAttributeType+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'DefinedSearchCriteria' name=ID
+		//'DefinedSearchCriteria' name=ID criteriaAttributeType+=CriteriaAttributeType+
 		public Group getGroup() { return cGroup; }
 		
 		//'DefinedSearchCriteria'
 		public Keyword getDefinedSearchCriteriaKeyword_0() { return cDefinedSearchCriteriaKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//criteriaAttributeType+=CriteriaAttributeType+
+		public Assignment getCriteriaAttributeTypeAssignment_2() { return cCriteriaAttributeTypeAssignment_2; }
+		
+		//CriteriaAttributeType
+		public RuleCall getCriteriaAttributeTypeCriteriaAttributeTypeParserRuleCall_2_0() { return cCriteriaAttributeTypeCriteriaAttributeTypeParserRuleCall_2_0; }
+	}
+	public class CriteriaAttributeTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.CriteriaAttributeType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCriteriaAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//CriteriaAttributeType:
+		//	'CriteriaAttribute' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'CriteriaAttribute' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'CriteriaAttribute'
+		public Keyword getCriteriaAttributeKeyword_0() { return cCriteriaAttributeKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -3089,15 +3120,18 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cElementsSpringRepositoriesParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElementsSpringRepositoryAnnotationParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SpringRepository:
 		//	'SpringRepositories' ':' '{'
 		//	elements+=SpringRepositories+
+		//	elements+=SpringRepositoryAnnotation+
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SpringRepositories' ':' '{' elements+=SpringRepositories+ '}'
+		//'SpringRepositories' ':' '{' elements+=SpringRepositories+ elements+=SpringRepositoryAnnotation+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'SpringRepositories'
@@ -3115,8 +3149,14 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//SpringRepositories
 		public RuleCall getElementsSpringRepositoriesParserRuleCall_3_0() { return cElementsSpringRepositoriesParserRuleCall_3_0; }
 		
+		//elements+=SpringRepositoryAnnotation+
+		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
+		
+		//SpringRepositoryAnnotation
+		public RuleCall getElementsSpringRepositoryAnnotationParserRuleCall_4_0() { return cElementsSpringRepositoryAnnotationParserRuleCall_4_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class SpringRepositoriesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringRepositories");
@@ -3134,6 +3174,29 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		
 		//'SpringRepository'
 		public Keyword getSpringRepositoryKeyword_0() { return cSpringRepositoryKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class SpringRepositoryAnnotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringRepositoryAnnotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSpringRepositoryAnnotationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//SpringRepositoryAnnotation:
+		//	'SpringRepositoryAnnotation' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'SpringRepositoryAnnotation' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'SpringRepositoryAnnotation'
+		public Keyword getSpringRepositoryAnnotationKeyword_0() { return cSpringRepositoryAnnotationKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -3761,55 +3824,151 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringEntity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSpringEntityKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementsSpringTableParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
-		private final Assignment cElementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cElementsNameNativeQueryParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSpringEntityAnnotationTypesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSpringEntityAnnotationTypesSpringEntityAnnotationTypesParserRuleCall_3_0 = (RuleCall)cSpringEntityAnnotationTypesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SpringEntity:
-		//	'SpringEntity' name=ID ':' '{'
-		//	elements+=SpringTable+
-		//	elements+=NameNativeQuery*
+		//	'SpringEntity' ':' '{'
+		//	springEntityAnnotationTypes+=SpringEntityAnnotationTypes+
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SpringEntity' name=ID ':' '{' elements+=SpringTable+ elements+=NameNativeQuery* '}'
+		//'SpringEntity' ':' '{' springEntityAnnotationTypes+=SpringEntityAnnotationTypes+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'SpringEntity'
 		public Keyword getSpringEntityKeyword_0() { return cSpringEntityKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
 		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//elements+=SpringTable+
-		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
+		//springEntityAnnotationTypes+=SpringEntityAnnotationTypes+
+		public Assignment getSpringEntityAnnotationTypesAssignment_3() { return cSpringEntityAnnotationTypesAssignment_3; }
 		
-		//SpringTable
-		public RuleCall getElementsSpringTableParserRuleCall_4_0() { return cElementsSpringTableParserRuleCall_4_0; }
-		
-		//elements+=NameNativeQuery*
-		public Assignment getElementsAssignment_5() { return cElementsAssignment_5; }
-		
-		//NameNativeQuery
-		public RuleCall getElementsNameNativeQueryParserRuleCall_5_0() { return cElementsNameNativeQueryParserRuleCall_5_0; }
+		//SpringEntityAnnotationTypes
+		public RuleCall getSpringEntityAnnotationTypesSpringEntityAnnotationTypesParserRuleCall_3_0() { return cSpringEntityAnnotationTypesSpringEntityAnnotationTypesParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class SpringEntityAnnotationTypesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringEntityAnnotationTypes");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cEntityAnnotationKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cTableAnnotationKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cIdAnnotationKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cGeneratedValueAnnotationKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cColumnAnnotationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Keyword cOverrideAnnotationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cNameAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
+		
+		//SpringEntityAnnotationTypes:
+		//	'EntityAnnotation' name=ID |
+		//	'TableAnnotation' name=ID |
+		//	'IdAnnotation' name=ID |
+		//	'GeneratedValueAnnotation' name=ID |
+		//	'ColumnAnnotation' name=ID |
+		//	'OverrideAnnotation' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'EntityAnnotation' name=ID | 'TableAnnotation' name=ID | 'IdAnnotation' name=ID | 'GeneratedValueAnnotation' name=ID |
+		//'ColumnAnnotation' name=ID | 'OverrideAnnotation' name=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'EntityAnnotation' name=ID
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'EntityAnnotation'
+		public Keyword getEntityAnnotationKeyword_0_0() { return cEntityAnnotationKeyword_0_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		
+		//'TableAnnotation' name=ID
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'TableAnnotation'
+		public Keyword getTableAnnotationKeyword_1_0() { return cTableAnnotationKeyword_1_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		
+		//'IdAnnotation' name=ID
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'IdAnnotation'
+		public Keyword getIdAnnotationKeyword_2_0() { return cIdAnnotationKeyword_2_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+		
+		//'GeneratedValueAnnotation' name=ID
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'GeneratedValueAnnotation'
+		public Keyword getGeneratedValueAnnotationKeyword_3_0() { return cGeneratedValueAnnotationKeyword_3_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_1_0() { return cNameIDTerminalRuleCall_3_1_0; }
+		
+		//'ColumnAnnotation' name=ID
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'ColumnAnnotation'
+		public Keyword getColumnAnnotationKeyword_4_0() { return cColumnAnnotationKeyword_4_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_4_1() { return cNameAssignment_4_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
+		
+		//'OverrideAnnotation' name=ID
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'OverrideAnnotation'
+		public Keyword getOverrideAnnotationKeyword_5_0() { return cOverrideAnnotationKeyword_5_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_5_1() { return cNameAssignment_5_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_5_1_0() { return cNameIDTerminalRuleCall_5_1_0; }
 	}
 	public class StorageClientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.StorageClient");
@@ -4105,148 +4264,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		
 		//'Name'
 		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class SpringTableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringTable");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSpringTableKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsSpringTableIdParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
-		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cElementsColumnsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
-		
-		//SpringTable:
-		//	'SpringTable' name=ID
-		//	elements+=SpringTableId
-		//	elements+=Columns+;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'SpringTable' name=ID elements+=SpringTableId elements+=Columns+
-		public Group getGroup() { return cGroup; }
-		
-		//'SpringTable'
-		public Keyword getSpringTableKeyword_0() { return cSpringTableKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//elements+=SpringTableId
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
-		
-		//SpringTableId
-		public RuleCall getElementsSpringTableIdParserRuleCall_2_0() { return cElementsSpringTableIdParserRuleCall_2_0; }
-		
-		//elements+=Columns+
-		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
-		
-		//Columns
-		public RuleCall getElementsColumnsParserRuleCall_3_0() { return cElementsColumnsParserRuleCall_3_0; }
-	}
-	public class SpringTableIdElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringTableId");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSpringTableIdKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsGeneratedValueParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
-		
-		//SpringTableId:
-		//	'SpringTableId' name=ID
-		//	elements+=GeneratedValue*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'SpringTableId' name=ID elements+=GeneratedValue*
-		public Group getGroup() { return cGroup; }
-		
-		//'SpringTableId'
-		public Keyword getSpringTableIdKeyword_0() { return cSpringTableIdKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//elements+=GeneratedValue*
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
-		
-		//GeneratedValue
-		public RuleCall getElementsGeneratedValueParserRuleCall_2_0() { return cElementsGeneratedValueParserRuleCall_2_0; }
-	}
-	public class GeneratedValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.GeneratedValue");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGeneratedValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//GeneratedValue:
-		//	'GeneratedValue' name=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'GeneratedValue' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'GeneratedValue'
-		public Keyword getGeneratedValueKeyword_0() { return cGeneratedValueKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class ColumnsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Columns");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cColumnKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//Columns:
-		//	'Column' name=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Column' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'Column'
-		public Keyword getColumnKeyword_0() { return cColumnKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class NameNativeQueryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.NameNativeQuery");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNameNativeQueryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//NameNativeQuery:
-		//	'NameNativeQuery' name=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'NameNativeQuery' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'NameNativeQuery'
-		public Keyword getNameNativeQueryKeyword_0() { return cNameNativeQueryKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -6157,7 +6174,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cElementsForeignKeyParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		private final Assignment cElementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cElementsColumnParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
+		private final RuleCall cElementsColumnPParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
 		private final Assignment cElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cElementsRowParserRuleCall_6_0 = (RuleCall)cElementsAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
@@ -6165,12 +6182,12 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//Table_p:
 		//	'Table_p' name=ID ':' '{'
 		//	elements+=ForeignKey+
-		//	elements+=Column+
+		//	elements+=ColumnP+
 		//	elements+=Row+
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Table_p' name=ID ':' '{' elements+=ForeignKey+ elements+=Column+ elements+=Row+ '}'
+		//'Table_p' name=ID ':' '{' elements+=ForeignKey+ elements+=ColumnP+ elements+=Row+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Table_p'
@@ -6194,11 +6211,11 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ForeignKey
 		public RuleCall getElementsForeignKeyParserRuleCall_4_0() { return cElementsForeignKeyParserRuleCall_4_0; }
 		
-		//elements+=Column+
+		//elements+=ColumnP+
 		public Assignment getElementsAssignment_5() { return cElementsAssignment_5; }
 		
-		//Column
-		public RuleCall getElementsColumnParserRuleCall_5_0() { return cElementsColumnParserRuleCall_5_0; }
+		//ColumnP
+		public RuleCall getElementsColumnPParserRuleCall_5_0() { return cElementsColumnPParserRuleCall_5_0; }
 		
 		//elements+=Row+
 		public Assignment getElementsAssignment_6() { return cElementsAssignment_6; }
@@ -6316,10 +6333,10 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
-	public class ColumnElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.Column");
+	public class ColumnPElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.unal.mdd.photos.dsl.SoftGalleryLanguage.ColumnP");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cColumnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColumnPKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -6327,17 +6344,17 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cElementsConstraintParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
-		//Column:
-		//	'Column' name=ID
+		//ColumnP:
+		//	'ColumnP' name=ID
 		//	elements+=DatatypeDB
 		//	elements+=Constraint*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Column' name=ID elements+=DatatypeDB elements+=Constraint*
+		//'ColumnP' name=ID elements+=DatatypeDB elements+=Constraint*
 		public Group getGroup() { return cGroup; }
 		
-		//'Column'
-		public Keyword getColumnKeyword_0() { return cColumnKeyword_0; }
+		//'ColumnP'
+		public Keyword getColumnPKeyword_0() { return cColumnPKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -7076,6 +7093,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final BusinessLogicSegmentsElements pBusinessLogicSegments;
 	private final ControllerSegmentElementElements pControllerSegmentElement;
 	private final SpecificationSegmentElementElements pSpecificationSegmentElement;
+	private final CriteriaAttributeTypeElements pCriteriaAttributeType;
 	private final DataPersistenceLayerElements pDataPersistenceLayer;
 	private final DataPersistenceContentElements pDataPersistenceContent;
 	private final DataPersistenceSegmentsElements pDataPersistenceSegments;
@@ -7113,6 +7131,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final OrderSpringElements pOrderSpring;
 	private final SpringRepositoryElements pSpringRepository;
 	private final SpringRepositoriesElements pSpringRepositories;
+	private final SpringRepositoryAnnotationElements pSpringRepositoryAnnotation;
 	private final RestControllerElements pRestController;
 	private final SpecificationElements pSpecification;
 	private final PredicateElements pPredicate;
@@ -7135,6 +7154,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final ExceptionHandlerElements pExceptionHandler;
 	private final ExceptionProcessElements pExceptionProcess;
 	private final SpringEntityElements pSpringEntity;
+	private final SpringEntityAnnotationTypesElements pSpringEntityAnnotationTypes;
 	private final StorageClientElements pStorageClient;
 	private final StorageMemberElements pStorageMember;
 	private final StorageMemberTypeElements pStorageMemberType;
@@ -7145,11 +7165,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final StorageActionMemberElements pStorageActionMember;
 	private final StorageActionMemberTypeElements pStorageActionMemberType;
 	private final StorageActionMemberNameElements pStorageActionMemberName;
-	private final SpringTableElements pSpringTable;
-	private final SpringTableIdElements pSpringTableId;
-	private final GeneratedValueElements pGeneratedValue;
-	private final ColumnsElements pColumns;
-	private final NameNativeQueryElements pNameNativeQuery;
 	private final ReactElements pReact;
 	private final ReactModulesElements pReactModules;
 	private final ReactSubModulesElements pReactSubModules;
@@ -7215,7 +7230,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	private final ForeignKey_nElements pForeignKey_n;
 	private final ForeignKeyRefElements pForeignKeyRef;
 	private final RefTable_pElements pRefTable_p;
-	private final ColumnElements pColumn;
+	private final ColumnPElements pColumnP;
 	private final DatatypeDBElements pDatatypeDB;
 	private final ConstraintElements pConstraint;
 	private final RowElements pRow;
@@ -7284,6 +7299,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pBusinessLogicSegments = new BusinessLogicSegmentsElements();
 		this.pControllerSegmentElement = new ControllerSegmentElementElements();
 		this.pSpecificationSegmentElement = new SpecificationSegmentElementElements();
+		this.pCriteriaAttributeType = new CriteriaAttributeTypeElements();
 		this.pDataPersistenceLayer = new DataPersistenceLayerElements();
 		this.pDataPersistenceContent = new DataPersistenceContentElements();
 		this.pDataPersistenceSegments = new DataPersistenceSegmentsElements();
@@ -7321,6 +7337,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pOrderSpring = new OrderSpringElements();
 		this.pSpringRepository = new SpringRepositoryElements();
 		this.pSpringRepositories = new SpringRepositoriesElements();
+		this.pSpringRepositoryAnnotation = new SpringRepositoryAnnotationElements();
 		this.pRestController = new RestControllerElements();
 		this.pSpecification = new SpecificationElements();
 		this.pPredicate = new PredicateElements();
@@ -7343,6 +7360,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pExceptionHandler = new ExceptionHandlerElements();
 		this.pExceptionProcess = new ExceptionProcessElements();
 		this.pSpringEntity = new SpringEntityElements();
+		this.pSpringEntityAnnotationTypes = new SpringEntityAnnotationTypesElements();
 		this.pStorageClient = new StorageClientElements();
 		this.pStorageMember = new StorageMemberElements();
 		this.pStorageMemberType = new StorageMemberTypeElements();
@@ -7353,11 +7371,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pStorageActionMember = new StorageActionMemberElements();
 		this.pStorageActionMemberType = new StorageActionMemberTypeElements();
 		this.pStorageActionMemberName = new StorageActionMemberNameElements();
-		this.pSpringTable = new SpringTableElements();
-		this.pSpringTableId = new SpringTableIdElements();
-		this.pGeneratedValue = new GeneratedValueElements();
-		this.pColumns = new ColumnsElements();
-		this.pNameNativeQuery = new NameNativeQueryElements();
 		this.pReact = new ReactElements();
 		this.pReactModules = new ReactModulesElements();
 		this.pReactSubModules = new ReactSubModulesElements();
@@ -7423,7 +7436,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		this.pForeignKey_n = new ForeignKey_nElements();
 		this.pForeignKeyRef = new ForeignKeyRefElements();
 		this.pRefTable_p = new RefTable_pElements();
-		this.pColumn = new ColumnElements();
+		this.pColumnP = new ColumnPElements();
 		this.pDatatypeDB = new DatatypeDBElements();
 		this.pConstraint = new ConstraintElements();
 		this.pRow = new RowElements();
@@ -7910,13 +7923,23 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpecificationSegmentElement:
-	//	'DefinedSearchCriteria' name=ID;
+	//	'DefinedSearchCriteria' name=ID criteriaAttributeType+=CriteriaAttributeType+;
 	public SpecificationSegmentElementElements getSpecificationSegmentElementAccess() {
 		return pSpecificationSegmentElement;
 	}
 	
 	public ParserRule getSpecificationSegmentElementRule() {
 		return getSpecificationSegmentElementAccess().getRule();
+	}
+	
+	//CriteriaAttributeType:
+	//	'CriteriaAttribute' name=ID;
+	public CriteriaAttributeTypeElements getCriteriaAttributeTypeAccess() {
+		return pCriteriaAttributeType;
+	}
+	
+	public ParserRule getCriteriaAttributeTypeRule() {
+		return getCriteriaAttributeTypeAccess().getRule();
 	}
 	
 	//DataPersistenceLayer:
@@ -8321,6 +8344,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	//SpringRepository:
 	//	'SpringRepositories' ':' '{'
 	//	elements+=SpringRepositories+
+	//	elements+=SpringRepositoryAnnotation+
 	//	'}';
 	public SpringRepositoryElements getSpringRepositoryAccess() {
 		return pSpringRepository;
@@ -8338,6 +8362,16 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	
 	public ParserRule getSpringRepositoriesRule() {
 		return getSpringRepositoriesAccess().getRule();
+	}
+	
+	//SpringRepositoryAnnotation:
+	//	'SpringRepositoryAnnotation' name=ID;
+	public SpringRepositoryAnnotationElements getSpringRepositoryAnnotationAccess() {
+		return pSpringRepositoryAnnotation;
+	}
+	
+	public ParserRule getSpringRepositoryAnnotationRule() {
+		return getSpringRepositoryAnnotationAccess().getRule();
 	}
 	
 	//RestController:
@@ -8567,9 +8601,8 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SpringEntity:
-	//	'SpringEntity' name=ID ':' '{'
-	//	elements+=SpringTable+
-	//	elements+=NameNativeQuery*
+	//	'SpringEntity' ':' '{'
+	//	springEntityAnnotationTypes+=SpringEntityAnnotationTypes+
 	//	'}';
 	public SpringEntityElements getSpringEntityAccess() {
 		return pSpringEntity;
@@ -8577,6 +8610,21 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	
 	public ParserRule getSpringEntityRule() {
 		return getSpringEntityAccess().getRule();
+	}
+	
+	//SpringEntityAnnotationTypes:
+	//	'EntityAnnotation' name=ID |
+	//	'TableAnnotation' name=ID |
+	//	'IdAnnotation' name=ID |
+	//	'GeneratedValueAnnotation' name=ID |
+	//	'ColumnAnnotation' name=ID |
+	//	'OverrideAnnotation' name=ID;
+	public SpringEntityAnnotationTypesElements getSpringEntityAnnotationTypesAccess() {
+		return pSpringEntityAnnotationTypes;
+	}
+	
+	public ParserRule getSpringEntityAnnotationTypesRule() {
+		return getSpringEntityAnnotationTypesAccess().getRule();
 	}
 	
 	//StorageClient:
@@ -8684,59 +8732,6 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	
 	public ParserRule getStorageActionMemberNameRule() {
 		return getStorageActionMemberNameAccess().getRule();
-	}
-	
-	//SpringTable:
-	//	'SpringTable' name=ID
-	//	elements+=SpringTableId
-	//	elements+=Columns+;
-	public SpringTableElements getSpringTableAccess() {
-		return pSpringTable;
-	}
-	
-	public ParserRule getSpringTableRule() {
-		return getSpringTableAccess().getRule();
-	}
-	
-	//SpringTableId:
-	//	'SpringTableId' name=ID
-	//	elements+=GeneratedValue*;
-	public SpringTableIdElements getSpringTableIdAccess() {
-		return pSpringTableId;
-	}
-	
-	public ParserRule getSpringTableIdRule() {
-		return getSpringTableIdAccess().getRule();
-	}
-	
-	//GeneratedValue:
-	//	'GeneratedValue' name=ID;
-	public GeneratedValueElements getGeneratedValueAccess() {
-		return pGeneratedValue;
-	}
-	
-	public ParserRule getGeneratedValueRule() {
-		return getGeneratedValueAccess().getRule();
-	}
-	
-	//Columns:
-	//	'Column' name=ID;
-	public ColumnsElements getColumnsAccess() {
-		return pColumns;
-	}
-	
-	public ParserRule getColumnsRule() {
-		return getColumnsAccess().getRule();
-	}
-	
-	//NameNativeQuery:
-	//	'NameNativeQuery' name=ID;
-	public NameNativeQueryElements getNameNativeQueryAccess() {
-		return pNameNativeQuery;
-	}
-	
-	public ParserRule getNameNativeQueryRule() {
-		return getNameNativeQueryAccess().getRule();
 	}
 	
 	//React:
@@ -9418,7 +9413,7 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 	//Table_p:
 	//	'Table_p' name=ID ':' '{'
 	//	elements+=ForeignKey+
-	//	elements+=Column+
+	//	elements+=ColumnP+
 	//	elements+=Row+
 	//	'}';
 	public Table_pElements getTable_pAccess() {
@@ -9472,16 +9467,16 @@ public class SoftGalleryLanguageGrammarAccess extends AbstractGrammarElementFind
 		return getRefTable_pAccess().getRule();
 	}
 	
-	//Column:
-	//	'Column' name=ID
+	//ColumnP:
+	//	'ColumnP' name=ID
 	//	elements+=DatatypeDB
 	//	elements+=Constraint*;
-	public ColumnElements getColumnAccess() {
-		return pColumn;
+	public ColumnPElements getColumnPAccess() {
+		return pColumnP;
 	}
 	
-	public ParserRule getColumnRule() {
-		return getColumnAccess().getRule();
+	public ParserRule getColumnPRule() {
+		return getColumnPAccess().getRule();
 	}
 	
 	//DatatypeDB:

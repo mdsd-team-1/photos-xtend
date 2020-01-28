@@ -6,12 +6,15 @@ import javax.persistence.*;
 @Table(name = "album")
 public class Album {
 
+	private int id;
 	private name;	
 	private userId;	
 					
 	public Album() {}
 
-	public Album() {
+	public Album(	String name, 
+	String userId
+		) {
 		this.name = name;		
 		this.userId = userId;		
 	}

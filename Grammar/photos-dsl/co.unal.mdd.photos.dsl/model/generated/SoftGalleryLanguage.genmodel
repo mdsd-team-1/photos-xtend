@@ -132,6 +132,10 @@
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpecificationSegmentElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpecificationSegmentElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpecificationSegmentElement/criteriaAttributeType"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//CriteriaAttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//CriteriaAttributeType/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DataPersistenceLayer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//DataPersistenceLayer/elements"/>
@@ -251,6 +255,9 @@
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringRepositories">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringRepositories/name"/>
     </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringRepositoryAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringRepositoryAnnotation/name"/>
+    </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RestController">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RestController/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//RestController/elements"/>
@@ -319,8 +326,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ExceptionProcess/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringEntity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringEntity/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpringEntity/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpringEntity/springEntityAnnotationTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringEntityAnnotationTypes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringEntityAnnotationTypes/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageClient">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageClient/name"/>
@@ -354,23 +363,6 @@
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//StorageActionMemberName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//StorageActionMemberName/name"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringTable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringTable/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpringTable/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//SpringTableId">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//SpringTableId/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//SpringTableId/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//GeneratedValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//GeneratedValue/name"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Columns">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Columns/name"/>
-    </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//NameNativeQuery">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//NameNativeQuery/name"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//React">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//React/name"/>
@@ -581,9 +573,9 @@
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//RefTable_p">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//RefTable_p/name"/>
     </genClasses>
-    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//Column">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//Column/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//Column/elements"/>
+    <genClasses ecoreClass="SoftGalleryLanguage.ecore#//ColumnP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//ColumnP/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftGalleryLanguage.ecore#//ColumnP/elements"/>
     </genClasses>
     <genClasses ecoreClass="SoftGalleryLanguage.ecore#//DatatypeDB">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftGalleryLanguage.ecore#//DatatypeDB/name"/>

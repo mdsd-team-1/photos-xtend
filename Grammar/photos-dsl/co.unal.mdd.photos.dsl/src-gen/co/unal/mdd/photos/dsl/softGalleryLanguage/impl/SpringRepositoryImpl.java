@@ -4,7 +4,6 @@
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
-import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepository;
 
 import java.util.Collection;
@@ -14,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -44,7 +44,7 @@ public class SpringRepositoryImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected EList<SpringRepositories> elements;
+  protected EList<EObject> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,11 +73,11 @@ public class SpringRepositoryImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public EList<SpringRepositories> getElements()
+  public EList<EObject> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<SpringRepositories>(SpringRepositories.class, this, SoftGalleryLanguagePackage.SPRING_REPOSITORY__ELEMENTS);
+      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SoftGalleryLanguagePackage.SPRING_REPOSITORY__ELEMENTS);
     }
     return elements;
   }
@@ -127,7 +127,7 @@ public class SpringRepositoryImpl extends MinimalEObjectImpl.Container implement
     {
       case SoftGalleryLanguagePackage.SPRING_REPOSITORY__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends SpringRepositories>)newValue);
+        getElements().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

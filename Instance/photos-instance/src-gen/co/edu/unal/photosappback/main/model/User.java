@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
 
+	private int id;
 	private userName;	
 	private firstName;	
 	private lastName;	
@@ -15,7 +16,13 @@ public class User {
 					
 	public User() {}
 
-	public User() {
+	public User(	String userName, 
+	String firstName, 
+	String lastName, 
+	String profileDescription, 
+	String password, 
+	String email
+														) {
 		this.userName = userName;		
 		this.firstName = firstName;		
 		this.lastName = lastName;		

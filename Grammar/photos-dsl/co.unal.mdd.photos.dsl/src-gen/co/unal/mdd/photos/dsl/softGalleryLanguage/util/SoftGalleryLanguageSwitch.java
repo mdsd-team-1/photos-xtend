@@ -318,6 +318,13 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SoftGalleryLanguagePackage.CRITERIA_ATTRIBUTE_TYPE:
+      {
+        CriteriaAttributeType criteriaAttributeType = (CriteriaAttributeType)theEObject;
+        T result = caseCriteriaAttributeType(criteriaAttributeType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_LAYER:
       {
         DataPersistenceLayer dataPersistenceLayer = (DataPersistenceLayer)theEObject;
@@ -556,6 +563,13 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SoftGalleryLanguagePackage.SPRING_REPOSITORY_ANNOTATION:
+      {
+        SpringRepositoryAnnotation springRepositoryAnnotation = (SpringRepositoryAnnotation)theEObject;
+        T result = caseSpringRepositoryAnnotation(springRepositoryAnnotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SoftGalleryLanguagePackage.REST_CONTROLLER:
       {
         RestController restController = (RestController)theEObject;
@@ -715,6 +729,13 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SoftGalleryLanguagePackage.SPRING_ENTITY_ANNOTATION_TYPES:
+      {
+        SpringEntityAnnotationTypes springEntityAnnotationTypes = (SpringEntityAnnotationTypes)theEObject;
+        T result = caseSpringEntityAnnotationTypes(springEntityAnnotationTypes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SoftGalleryLanguagePackage.STORAGE_CLIENT:
       {
         StorageClient storageClient = (StorageClient)theEObject;
@@ -782,41 +803,6 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
       {
         StorageActionMemberName storageActionMemberName = (StorageActionMemberName)theEObject;
         T result = caseStorageActionMemberName(storageActionMemberName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SoftGalleryLanguagePackage.SPRING_TABLE:
-      {
-        SpringTable springTable = (SpringTable)theEObject;
-        T result = caseSpringTable(springTable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SoftGalleryLanguagePackage.SPRING_TABLE_ID:
-      {
-        SpringTableId springTableId = (SpringTableId)theEObject;
-        T result = caseSpringTableId(springTableId);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SoftGalleryLanguagePackage.GENERATED_VALUE:
-      {
-        GeneratedValue generatedValue = (GeneratedValue)theEObject;
-        T result = caseGeneratedValue(generatedValue);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SoftGalleryLanguagePackage.COLUMNS:
-      {
-        Columns columns = (Columns)theEObject;
-        T result = caseColumns(columns);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SoftGalleryLanguagePackage.NAME_NATIVE_QUERY:
-      {
-        NameNativeQuery nameNativeQuery = (NameNativeQuery)theEObject;
-        T result = caseNameNativeQuery(nameNativeQuery);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1226,10 +1212,10 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SoftGalleryLanguagePackage.COLUMN:
+      case SoftGalleryLanguagePackage.COLUMN_P:
       {
-        Column column = (Column)theEObject;
-        T result = caseColumn(column);
+        ColumnP columnP = (ColumnP)theEObject;
+        T result = caseColumnP(columnP);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1959,6 +1945,22 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Criteria Attribute Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Criteria Attribute Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCriteriaAttributeType(CriteriaAttributeType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Data Persistence Layer</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2503,6 +2505,22 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Spring Repository Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spring Repository Annotation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpringRepositoryAnnotation(SpringRepositoryAnnotation object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Rest Controller</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2855,6 +2873,22 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Spring Entity Annotation Types</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spring Entity Annotation Types</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpringEntityAnnotationTypes(SpringEntityAnnotationTypes object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Storage Client</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -3010,86 +3044,6 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStorageActionMemberName(StorageActionMemberName object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Spring Table</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Spring Table</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSpringTable(SpringTable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Spring Table Id</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Spring Table Id</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSpringTableId(SpringTableId object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Generated Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Generated Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGeneratedValue(GeneratedValue object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Columns</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Columns</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseColumns(Columns object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Name Native Query</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Name Native Query</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNameNativeQuery(NameNativeQuery object)
   {
     return null;
   }
@@ -4023,17 +3977,17 @@ public class SoftGalleryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Column</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Column P</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Column</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Column P</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseColumn(Column object)
+  public T caseColumnP(ColumnP object)
   {
     return null;
   }

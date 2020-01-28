@@ -123,9 +123,6 @@ class StructureBackendGenerator{
 	// Path: /.controller	
 	def generateController(Entities ent, SegmentStructureContent ssc, DirectoryContent dir, BusinessLogicSegments bls) {
 
-
-		// TODO: Falta HomeController
-		
 				
 		// RestController
 		for (rsc : proyectTree.allContents.toIterable.filter(RestController)) {

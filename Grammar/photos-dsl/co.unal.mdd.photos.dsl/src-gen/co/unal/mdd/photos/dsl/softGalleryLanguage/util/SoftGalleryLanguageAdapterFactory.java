@@ -251,6 +251,11 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createSpecificationSegmentElementAdapter();
       }
       @Override
+      public Adapter caseCriteriaAttributeType(CriteriaAttributeType object)
+      {
+        return createCriteriaAttributeTypeAdapter();
+      }
+      @Override
       public Adapter caseDataPersistenceLayer(DataPersistenceLayer object)
       {
         return createDataPersistenceLayerAdapter();
@@ -421,6 +426,11 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createSpringRepositoriesAdapter();
       }
       @Override
+      public Adapter caseSpringRepositoryAnnotation(SpringRepositoryAnnotation object)
+      {
+        return createSpringRepositoryAnnotationAdapter();
+      }
+      @Override
       public Adapter caseRestController(RestController object)
       {
         return createRestControllerAdapter();
@@ -531,6 +541,11 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createSpringEntityAdapter();
       }
       @Override
+      public Adapter caseSpringEntityAnnotationTypes(SpringEntityAnnotationTypes object)
+      {
+        return createSpringEntityAnnotationTypesAdapter();
+      }
+      @Override
       public Adapter caseStorageClient(StorageClient object)
       {
         return createStorageClientAdapter();
@@ -579,31 +594,6 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStorageActionMemberName(StorageActionMemberName object)
       {
         return createStorageActionMemberNameAdapter();
-      }
-      @Override
-      public Adapter caseSpringTable(SpringTable object)
-      {
-        return createSpringTableAdapter();
-      }
-      @Override
-      public Adapter caseSpringTableId(SpringTableId object)
-      {
-        return createSpringTableIdAdapter();
-      }
-      @Override
-      public Adapter caseGeneratedValue(GeneratedValue object)
-      {
-        return createGeneratedValueAdapter();
-      }
-      @Override
-      public Adapter caseColumns(Columns object)
-      {
-        return createColumnsAdapter();
-      }
-      @Override
-      public Adapter caseNameNativeQuery(NameNativeQuery object)
-      {
-        return createNameNativeQueryAdapter();
       }
       @Override
       public Adapter caseReact(React object)
@@ -896,9 +886,9 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
         return createRefTable_pAdapter();
       }
       @Override
-      public Adapter caseColumn(Column object)
+      public Adapter caseColumnP(ColumnP object)
       {
-        return createColumnAdapter();
+        return createColumnPAdapter();
       }
       @Override
       public Adapter caseDatatypeDB(DatatypeDB object)
@@ -1563,6 +1553,21 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType <em>Criteria Attribute Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType
+   * @generated
+   */
+  public Adapter createCriteriaAttributeTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.DataPersistenceLayer <em>Data Persistence Layer</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2073,6 +2078,21 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositoryAnnotation <em>Spring Repository Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositoryAnnotation
+   * @generated
+   */
+  public Adapter createSpringRepositoryAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.RestController <em>Rest Controller</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2403,6 +2423,21 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes <em>Spring Entity Annotation Types</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes
+   * @generated
+   */
+  public Adapter createSpringEntityAnnotationTypesAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient <em>Storage Client</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2548,81 +2583,6 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStorageActionMemberNameAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable <em>Spring Table</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTable
-   * @generated
-   */
-  public Adapter createSpringTableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId <em>Spring Table Id</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SpringTableId
-   * @generated
-   */
-  public Adapter createSpringTableIdAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.GeneratedValue <em>Generated Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.GeneratedValue
-   * @generated
-   */
-  public Adapter createGeneratedValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Columns <em>Columns</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.Columns
-   * @generated
-   */
-  public Adapter createColumnsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.NameNativeQuery <em>Name Native Query</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.NameNativeQuery
-   * @generated
-   */
-  public Adapter createNameNativeQueryAdapter()
   {
     return null;
   }
@@ -3498,16 +3458,16 @@ public class SoftGalleryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.Column <em>Column</em>}'.
+   * Creates a new adapter for an object of class '{@link co.unal.mdd.photos.dsl.softGalleryLanguage.ColumnP <em>Column P</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.Column
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.ColumnP
    * @generated
    */
-  public Adapter createColumnAdapter()
+  public Adapter createColumnPAdapter()
   {
     return null;
   }

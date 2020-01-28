@@ -3144,6 +3144,66 @@ ruleSpecificationSegmentElement returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSpecificationSegmentElementAccess().getCriteriaAttributeTypeCriteriaAttributeTypeParserRuleCall_2_0());
+				}
+				lv_criteriaAttributeType_2_0=ruleCriteriaAttributeType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSpecificationSegmentElementRule());
+					}
+					add(
+						$current,
+						"criteriaAttributeType",
+						lv_criteriaAttributeType_2_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.CriteriaAttributeType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+	)
+;
+
+// Entry rule entryRuleCriteriaAttributeType
+entryRuleCriteriaAttributeType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCriteriaAttributeTypeRule()); }
+	iv_ruleCriteriaAttributeType=ruleCriteriaAttributeType
+	{ $current=$iv_ruleCriteriaAttributeType.current; }
+	EOF;
+
+// Rule CriteriaAttributeType
+ruleCriteriaAttributeType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='CriteriaAttribute'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCriteriaAttributeTypeAccess().getCriteriaAttributeKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getCriteriaAttributeTypeAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCriteriaAttributeTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 	)
 ;
 
@@ -5210,9 +5270,28 @@ ruleSpringRepository returns [EObject current=null]
 				}
 			)
 		)+
-		otherlv_4='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSpringRepositoryAccess().getElementsSpringRepositoryAnnotationParserRuleCall_4_0());
+				}
+				lv_elements_4_0=ruleSpringRepositoryAnnotation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSpringRepositoryRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_4_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringRepositoryAnnotation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSpringRepositoryAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getSpringRepositoryAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -5246,6 +5325,47 @@ ruleSpringRepositories returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getSpringRepositoriesRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSpringRepositoryAnnotation
+entryRuleSpringRepositoryAnnotation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpringRepositoryAnnotationRule()); }
+	iv_ruleSpringRepositoryAnnotation=ruleSpringRepositoryAnnotation
+	{ $current=$iv_ruleSpringRepositoryAnnotation.current; }
+	EOF;
+
+// Rule SpringRepositoryAnnotation
+ruleSpringRepositoryAnnotation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='SpringRepositoryAnnotation'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSpringRepositoryAnnotationAccess().getSpringRepositoryAnnotationKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getSpringRepositoryAnnotationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpringRepositoryAnnotationRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -6404,74 +6524,205 @@ ruleSpringEntity returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSpringEntityAccess().getSpringEntityKeyword_0());
 		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSpringEntityAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSpringEntityRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_2=':'
+		otherlv_1=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSpringEntityAccess().getColonKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getSpringEntityAccess().getColonKeyword_1());
 		}
-		otherlv_3='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getSpringEntityAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getSpringEntityAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSpringEntityAccess().getElementsSpringTableParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getSpringEntityAccess().getSpringEntityAnnotationTypesSpringEntityAnnotationTypesParserRuleCall_3_0());
 				}
-				lv_elements_4_0=ruleSpringTable
+				lv_springEntityAnnotationTypes_3_0=ruleSpringEntityAnnotationTypes
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSpringEntityRule());
 					}
 					add(
 						$current,
-						"elements",
-						lv_elements_4_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringTable");
+						"springEntityAnnotationTypes",
+						lv_springEntityAnnotationTypes_3_0,
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringEntityAnnotationTypes");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSpringEntityAccess().getElementsNameNativeQueryParserRuleCall_5_0());
-				}
-				lv_elements_5_0=ruleNameNativeQuery
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSpringEntityRule());
-					}
-					add(
-						$current,
-						"elements",
-						lv_elements_5_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.NameNativeQuery");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_6='}'
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getSpringEntityAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getSpringEntityAccess().getRightCurlyBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleSpringEntityAnnotationTypes
+entryRuleSpringEntityAnnotationTypes returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpringEntityAnnotationTypesRule()); }
+	iv_ruleSpringEntityAnnotationTypes=ruleSpringEntityAnnotationTypes
+	{ $current=$iv_ruleSpringEntityAnnotationTypes.current; }
+	EOF;
+
+// Rule SpringEntityAnnotationTypes
+ruleSpringEntityAnnotationTypes returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='EntityAnnotation'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getEntityAnnotationKeyword_0_0());
+			}
+			(
+				(
+					lv_name_1_0=RULE_ID
+					{
+						newLeafNode(lv_name_1_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getNameIDTerminalRuleCall_0_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpringEntityAnnotationTypesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_2='TableAnnotation'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getSpringEntityAnnotationTypesAccess().getTableAnnotationKeyword_1_0());
+			}
+			(
+				(
+					lv_name_3_0=RULE_ID
+					{
+						newLeafNode(lv_name_3_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getNameIDTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpringEntityAnnotationTypesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_3_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_4='IdAnnotation'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getSpringEntityAnnotationTypesAccess().getIdAnnotationKeyword_2_0());
+			}
+			(
+				(
+					lv_name_5_0=RULE_ID
+					{
+						newLeafNode(lv_name_5_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getNameIDTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpringEntityAnnotationTypesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_5_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_6='GeneratedValueAnnotation'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getSpringEntityAnnotationTypesAccess().getGeneratedValueAnnotationKeyword_3_0());
+			}
+			(
+				(
+					lv_name_7_0=RULE_ID
+					{
+						newLeafNode(lv_name_7_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getNameIDTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpringEntityAnnotationTypesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_7_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_8='ColumnAnnotation'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getSpringEntityAnnotationTypesAccess().getColumnAnnotationKeyword_4_0());
+			}
+			(
+				(
+					lv_name_9_0=RULE_ID
+					{
+						newLeafNode(lv_name_9_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getNameIDTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpringEntityAnnotationTypesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_9_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_10='OverrideAnnotation'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getSpringEntityAnnotationTypesAccess().getOverrideAnnotationKeyword_5_0());
+			}
+			(
+				(
+					lv_name_11_0=RULE_ID
+					{
+						newLeafNode(lv_name_11_0, grammarAccess.getSpringEntityAnnotationTypesAccess().getNameIDTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSpringEntityAnnotationTypesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_11_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -7026,268 +7277,6 @@ ruleStorageActionMemberName returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getStorageActionMemberNameRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleSpringTable
-entryRuleSpringTable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSpringTableRule()); }
-	iv_ruleSpringTable=ruleSpringTable
-	{ $current=$iv_ruleSpringTable.current; }
-	EOF;
-
-// Rule SpringTable
-ruleSpringTable returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='SpringTable'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSpringTableAccess().getSpringTableKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSpringTableAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSpringTableRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSpringTableAccess().getElementsSpringTableIdParserRuleCall_2_0());
-				}
-				lv_elements_2_0=ruleSpringTableId
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSpringTableRule());
-					}
-					add(
-						$current,
-						"elements",
-						lv_elements_2_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.SpringTableId");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSpringTableAccess().getElementsColumnsParserRuleCall_3_0());
-				}
-				lv_elements_3_0=ruleColumns
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSpringTableRule());
-					}
-					add(
-						$current,
-						"elements",
-						lv_elements_3_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.Columns");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)+
-	)
-;
-
-// Entry rule entryRuleSpringTableId
-entryRuleSpringTableId returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSpringTableIdRule()); }
-	iv_ruleSpringTableId=ruleSpringTableId
-	{ $current=$iv_ruleSpringTableId.current; }
-	EOF;
-
-// Rule SpringTableId
-ruleSpringTableId returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='SpringTableId'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSpringTableIdAccess().getSpringTableIdKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSpringTableIdAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSpringTableIdRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSpringTableIdAccess().getElementsGeneratedValueParserRuleCall_2_0());
-				}
-				lv_elements_2_0=ruleGeneratedValue
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSpringTableIdRule());
-					}
-					add(
-						$current,
-						"elements",
-						lv_elements_2_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.GeneratedValue");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-	)
-;
-
-// Entry rule entryRuleGeneratedValue
-entryRuleGeneratedValue returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGeneratedValueRule()); }
-	iv_ruleGeneratedValue=ruleGeneratedValue
-	{ $current=$iv_ruleGeneratedValue.current; }
-	EOF;
-
-// Rule GeneratedValue
-ruleGeneratedValue returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='GeneratedValue'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getGeneratedValueAccess().getGeneratedValueKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGeneratedValueAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGeneratedValueRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleColumns
-entryRuleColumns returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColumnsRule()); }
-	iv_ruleColumns=ruleColumns
-	{ $current=$iv_ruleColumns.current; }
-	EOF;
-
-// Rule Columns
-ruleColumns returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Column'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getColumnsAccess().getColumnKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getColumnsAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColumnsRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleNameNativeQuery
-entryRuleNameNativeQuery returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNameNativeQueryRule()); }
-	iv_ruleNameNativeQuery=ruleNameNativeQuery
-	{ $current=$iv_ruleNameNativeQuery.current; }
-	EOF;
-
-// Rule NameNativeQuery
-ruleNameNativeQuery returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='NameNativeQuery'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getNameNativeQueryAccess().getNameNativeQueryKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getNameNativeQueryAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNameNativeQueryRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -10723,9 +10712,9 @@ ruleTable_p returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTable_pAccess().getElementsColumnParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getTable_pAccess().getElementsColumnPParserRuleCall_5_0());
 				}
-				lv_elements_5_0=ruleColumn
+				lv_elements_5_0=ruleColumnP
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTable_pRule());
@@ -10734,7 +10723,7 @@ ruleTable_p returns [EObject current=null]
 						$current,
 						"elements",
 						lv_elements_5_0,
-						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.Column");
+						"co.unal.mdd.photos.dsl.SoftGalleryLanguage.ColumnP");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -10957,15 +10946,15 @@ ruleRefTable_p returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleColumn
-entryRuleColumn returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColumnRule()); }
-	iv_ruleColumn=ruleColumn
-	{ $current=$iv_ruleColumn.current; }
+// Entry rule entryRuleColumnP
+entryRuleColumnP returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getColumnPRule()); }
+	iv_ruleColumnP=ruleColumnP
+	{ $current=$iv_ruleColumnP.current; }
 	EOF;
 
-// Rule Column
-ruleColumn returns [EObject current=null]
+// Rule ColumnP
+ruleColumnP returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -10973,19 +10962,19 @@ ruleColumn returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Column'
+		otherlv_0='ColumnP'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getColumnAccess().getColumnKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getColumnPAccess().getColumnPKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getColumnAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getColumnPAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColumnRule());
+						$current = createModelElement(grammarAccess.getColumnPRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -10998,12 +10987,12 @@ ruleColumn returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColumnAccess().getElementsDatatypeDBParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getColumnPAccess().getElementsDatatypeDBParserRuleCall_2_0());
 				}
 				lv_elements_2_0=ruleDatatypeDB
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getColumnRule());
+						$current = createModelElementForParent(grammarAccess.getColumnPRule());
 					}
 					add(
 						$current,
@@ -11017,12 +11006,12 @@ ruleColumn returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColumnAccess().getElementsConstraintParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getColumnPAccess().getElementsConstraintParserRuleCall_3_0());
 				}
 				lv_elements_3_0=ruleConstraint
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getColumnRule());
+						$current = createModelElementForParent(grammarAccess.getColumnPRule());
 					}
 					add(
 						$current,

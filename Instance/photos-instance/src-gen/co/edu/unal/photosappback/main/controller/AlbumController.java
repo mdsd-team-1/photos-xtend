@@ -28,7 +28,6 @@ public class AlbumController {
 	PhotoRepository photoRepository;
 	
 	
-	
 	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getAlbum(@PathVariable Long id, ) throws Exception {
 		
@@ -47,7 +46,6 @@ public class AlbumController {
 
 		return new ResponseEntity<>(album, HttpStatus.OK);
 	}
-	
 	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhotosFromAlbum(@PathVariable Long id, ) throws Exception {
 		
@@ -66,7 +64,6 @@ public class AlbumController {
 
 		return new ResponseEntity<>(photos, HttpStatus.OK);
 	}
-	
 	@PostMapping("/create")
 	public ResponseEntity<?> createAlbum(@RequestBody Map_String_String body, ) throws Exception {
 		

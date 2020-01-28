@@ -31,7 +31,6 @@ public class UserController {
 	PhotoRepository photoRepository;
 	
 	
-	
 	@RequestMapping(value = "id_id", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getUser(@PathVariable Long id, ) throws Exception {
 		
@@ -50,7 +49,6 @@ public class UserController {
 
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
-	
 	@RequestMapping(value = "id_albums", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getAlbumsFromUser(@PathVariable Long id, ) throws Exception {
 		
@@ -69,7 +67,6 @@ public class UserController {
 
 		return new ResponseEntity<>(albums, HttpStatus.OK);
 	}
-	
 	@RequestMapping(value = "id_photos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getPhotosFromUser(@PathVariable Long id, ) throws Exception {
 		
@@ -106,7 +103,6 @@ public class UserController {
 
 		return new ResponseEntity<>(allPhotos, HttpStatus.OK);
 	}
-	
 	@PostMapping("/login")
 	public ResponseEntity<?> loginUser(@RequestBody Map_String_String body, ) throws Exception {
 		
@@ -136,7 +132,6 @@ public class UserController {
 
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
-	
 	@PostMapping("/create")
 	public ResponseEntity<?> createUser(@RequestBody Map_String_String body, ) throws Exception {
 		
@@ -171,7 +166,6 @@ public class UserController {
 
 		return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 	}
-	
 	@PutMapping("/id_edit")
 	public ResponseEntity<?> editUser(@PathVariable Long id, @RequestBody Map_String_String body, ) throws Exception {
 		

@@ -27,7 +27,7 @@ public interface SpringRepository extends EObject
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -35,6 +35,6 @@ public interface SpringRepository extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<SpringRepositories> getElements();
+  EList<EObject> getElements();
 
 } // SpringRepository

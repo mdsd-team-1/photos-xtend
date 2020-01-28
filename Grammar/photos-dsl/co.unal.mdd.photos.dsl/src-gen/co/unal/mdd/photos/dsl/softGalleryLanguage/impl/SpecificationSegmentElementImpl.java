@@ -3,15 +3,25 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage.impl;
 
+import co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpecificationSegmentElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.impl.SpecificationSegmentElementImpl#getCriteriaAttributeType <em>Criteria Attribute Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +58,16 @@ public class SpecificationSegmentElementImpl extends MinimalEObjectImpl.Containe
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getCriteriaAttributeType() <em>Criteria Attribute Type</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCriteriaAttributeType()
+   * @generated
+   * @ordered
+   */
+  protected EList<CriteriaAttributeType> criteriaAttributeType;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,45 @@ public class SpecificationSegmentElementImpl extends MinimalEObjectImpl.Containe
    * @generated
    */
   @Override
+  public EList<CriteriaAttributeType> getCriteriaAttributeType()
+  {
+    if (criteriaAttributeType == null)
+    {
+      criteriaAttributeType = new EObjectContainmentEList<CriteriaAttributeType>(CriteriaAttributeType.class, this, SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE);
+    }
+    return criteriaAttributeType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE:
+        return ((InternalEList<?>)getCriteriaAttributeType()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__NAME:
         return getName();
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE:
+        return getCriteriaAttributeType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +169,7 @@ public class SpecificationSegmentElementImpl extends MinimalEObjectImpl.Containe
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +177,10 @@ public class SpecificationSegmentElementImpl extends MinimalEObjectImpl.Containe
     {
       case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__NAME:
         setName((String)newValue);
+        return;
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE:
+        getCriteriaAttributeType().clear();
+        getCriteriaAttributeType().addAll((Collection<? extends CriteriaAttributeType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +199,9 @@ public class SpecificationSegmentElementImpl extends MinimalEObjectImpl.Containe
       case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE:
+        getCriteriaAttributeType().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +218,8 @@ public class SpecificationSegmentElementImpl extends MinimalEObjectImpl.Containe
     {
       case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT__CRITERIA_ATTRIBUTE_TYPE:
+        return criteriaAttributeType != null && !criteriaAttributeType.isEmpty();
     }
     return super.eIsSet(featureID);
   }

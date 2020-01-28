@@ -3,7 +3,8 @@ package co.unal.mdd.photos.dsl.generator;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassController;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassException;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateClassModel;
-import co.unal.mdd.photos.dsl.generator.templates.TemplateGenericClass;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassSearchCriteria;
+import co.unal.mdd.photos.dsl.generator.templates.TemplateClassSpecification;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateProperties;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateRepositoryInterface;
 import co.unal.mdd.photos.dsl.generator.templates.TemplateStorageClient;
@@ -11,6 +12,7 @@ import co.unal.mdd.photos.dsl.generator.templates.TemplateYml;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.AlbumException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.BusinessLogicSegments;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.ControllerSegmentElement;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.DirectoryContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.Entities;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.MultipleFile;
@@ -18,7 +20,9 @@ import co.unal.mdd.photos.dsl.softGalleryLanguage.PhotoException;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.RestController;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SegmentStructureContent;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringEntityAnnotationTypes;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositories;
+import co.unal.mdd.photos.dsl.softGalleryLanguage.SpringRepositoryAnnotation;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.StorageClient;
 import co.unal.mdd.photos.dsl.softGalleryLanguage.UserException;
 import com.google.common.collect.Iterables;
@@ -107,9 +111,6 @@ public class StructureBackendGenerator {
         String _name_1 = bls.getName();
         if (_name_1 != null) {
           switch (_name_1) {
-            case "config":
-              this.generateConfig(ent, ssc, dir, bls);
-              break;
             case "controller":
               this.generateController(ent, ssc, dir, bls);
               break;
@@ -126,10 +127,6 @@ public class StructureBackendGenerator {
         }
       }
     }
-  }
-  
-  public Object generateConfig(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    return null;
   }
   
   public void generateController(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
@@ -307,6 +304,7 @@ public class StructureBackendGenerator {
   }
   
   public void generateModel(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
+    String StestSpring = "";
     String _name = ssc.getName();
     String _plus = ((this.basePackageName + ".") + _name);
     String _plus_1 = (_plus + ".");
@@ -317,41 +315,53 @@ public class StructureBackendGenerator {
     String _plus_4 = (_plus_3 + _name_2);
     this.packageName = _plus_4;
     this.className = ent.getName();
-    this.createModelClassFile(this.className, this.packageName, ent);
+    List<SpringEntityAnnotationTypes> classVars = IteratorExtensions.<SpringEntityAnnotationTypes>toList(Iterators.<SpringEntityAnnotationTypes>filter(this.proyectTree.getAllContents(), SpringEntityAnnotationTypes.class));
+    this.createModelClassFile(this.className, this.packageName, ent, classVars);
   }
   
   public void generateRepository(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    String _name = ssc.getName();
-    String _plus = ((this.basePackageName + ".") + _name);
-    String _plus_1 = (_plus + ".");
-    String _name_1 = dir.getName();
-    String _plus_2 = (_plus_1 + _name_1);
-    String _plus_3 = (_plus_2 + ".");
-    String _name_2 = bls.getName();
-    String _plus_4 = (_plus_3 + _name_2);
-    this.packageName = _plus_4;
-    String _name_3 = ent.getName();
-    String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
-    String _plus_5 = (_name_3 + _firstUpper);
-    this.className = _plus_5;
-    this.createInterfaceFile(this.className, this.packageName, ent);
+    Iterable<SpringRepositoryAnnotation> _filter = Iterables.<SpringRepositoryAnnotation>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), SpringRepositoryAnnotation.class);
+    for (final SpringRepositoryAnnotation sra : _filter) {
+      {
+        String _name = ssc.getName();
+        String _plus = ((this.basePackageName + ".") + _name);
+        String _plus_1 = (_plus + ".");
+        String _name_1 = dir.getName();
+        String _plus_2 = (_plus_1 + _name_1);
+        String _plus_3 = (_plus_2 + ".");
+        String _name_2 = bls.getName();
+        String _plus_4 = (_plus_3 + _name_2);
+        this.packageName = _plus_4;
+        String _name_3 = ent.getName();
+        String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
+        String _plus_5 = (_name_3 + _firstUpper);
+        this.className = _plus_5;
+        this.createInterfaceFile(this.className, this.packageName, ent, sra);
+      }
+    }
   }
   
   public void generateSpecification(final Entities ent, final SegmentStructureContent ssc, final DirectoryContent dir, final BusinessLogicSegments bls) {
-    String _name = ssc.getName();
-    String _plus = ((this.basePackageName + ".") + _name);
-    String _plus_1 = (_plus + ".");
-    String _name_1 = dir.getName();
-    String _plus_2 = (_plus_1 + _name_1);
-    String _plus_3 = (_plus_2 + ".");
-    String _name_2 = bls.getName();
-    String _plus_4 = (_plus_3 + _name_2);
-    this.packageName = _plus_4;
-    String _name_3 = ent.getName();
-    String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
-    String _plus_5 = (_name_3 + _firstUpper);
-    this.className = _plus_5;
-    this.createClassFile(this.className, this.packageName);
+    Iterable<SpecificationSegmentElement> _filter = Iterables.<SpecificationSegmentElement>filter(IteratorExtensions.<EObject>toIterable(this.proyectTree.getAllContents()), SpecificationSegmentElement.class);
+    for (final SpecificationSegmentElement sse : _filter) {
+      {
+        String _name = ssc.getName();
+        String _plus = ((this.basePackageName + ".") + _name);
+        String _plus_1 = (_plus + ".");
+        String _name_1 = dir.getName();
+        String _plus_2 = (_plus_1 + _name_1);
+        String _plus_3 = (_plus_2 + ".");
+        String _name_2 = bls.getName();
+        String _plus_4 = (_plus_3 + _name_2);
+        this.packageName = _plus_4;
+        String _name_3 = ent.getName();
+        String _firstUpper = StringExtensions.toFirstUpper(bls.getName());
+        String _plus_5 = (_name_3 + _firstUpper);
+        this.className = _plus_5;
+        List<CriteriaAttributeType> classVars = IteratorExtensions.<CriteriaAttributeType>toList(Iterators.<CriteriaAttributeType>filter(this.proyectTree.getAllContents(), CriteriaAttributeType.class));
+        this.createSpecificationClassFile(this.className, this.packageName, ent, sse, classVars);
+      }
+    }
     this.generateSpecificationCriteria(ent, ssc, dir, bls);
   }
   
@@ -377,7 +387,8 @@ public class StructureBackendGenerator {
         String _firstUpper = StringExtensions.toFirstUpper(sse.getName());
         String _plus_8 = ("Search" + _firstUpper);
         this.className = _plus_8;
-        this.createClassFile(this.className, this.packageName);
+        List<CriteriaAttributeType> classVars = IteratorExtensions.<CriteriaAttributeType>toList(Iterators.<CriteriaAttributeType>filter(this.proyectTree.getAllContents(), CriteriaAttributeType.class));
+        this.createSearchCriteriaClassFile(this.className, this.packageName, classVars);
       }
     }
   }
@@ -405,12 +416,20 @@ public class StructureBackendGenerator {
     }
   }
   
-  public void createClassFile(final String className, final String packageName) {
+  public void createSpecificationClassFile(final String className, final String packageName, final Entities ent, final SpecificationSegmentElement sse, final List<CriteriaAttributeType> classVars) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, TemplateGenericClass.generate(className, packageName));
+    this.fileWriter.generateFile(_plus_2, TemplateClassSpecification.generate(className, packageName, ent, sse, classVars));
+  }
+  
+  public void createSearchCriteriaClassFile(final String className, final String packageName, final List<CriteriaAttributeType> classVars) {
+    String _replace = packageName.replace(".", "/");
+    String _plus = (_replace + "/");
+    String _plus_1 = (_plus + className);
+    String _plus_2 = (_plus_1 + ".java");
+    this.fileWriter.generateFile(_plus_2, TemplateClassSearchCriteria.generate(className, packageName, classVars));
   }
   
   public void createExceptionClassFile(final String className, final String packageName) {
@@ -437,20 +456,20 @@ public class StructureBackendGenerator {
     this.fileWriter.generateFile(_plus_2, TemplateStorageClient.generate(className, packageName, stc));
   }
   
-  public void createModelClassFile(final String className, final String packageName, final Entities ent) {
+  public void createModelClassFile(final String className, final String packageName, final Entities ent, final List<SpringEntityAnnotationTypes> classVars) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, TemplateClassModel.generate(className, packageName, ent));
+    this.fileWriter.generateFile(_plus_2, TemplateClassModel.generate(className, packageName, ent, classVars));
   }
   
-  public void createInterfaceFile(final String className, final String packageName, final Entities ent) {
+  public void createInterfaceFile(final String className, final String packageName, final Entities ent, final SpringRepositoryAnnotation sra) {
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
     String _plus_2 = (_plus_1 + ".java");
-    this.fileWriter.generateFile(_plus_2, TemplateRepositoryInterface.generate(className, packageName, ent));
+    this.fileWriter.generateFile(_plus_2, TemplateRepositoryInterface.generate(className, packageName, ent, sra));
   }
   
   public void createPropertiesFile(final String className, final String packageName) {

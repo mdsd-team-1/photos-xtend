@@ -3,6 +3,8 @@
  */
 package co.unal.mdd.photos.dsl.softGalleryLanguage;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement#getName <em>Name</em>}</li>
+ *   <li>{@link co.unal.mdd.photos.dsl.softGalleryLanguage.SpecificationSegmentElement#getCriteriaAttributeType <em>Criteria Attribute Type</em>}</li>
  * </ul>
  *
  * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getSpecificationSegmentElement()
@@ -44,5 +47,17 @@ public interface SpecificationSegmentElement extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Criteria Attribute Type</b></em>' containment reference list.
+   * The list contents are of type {@link co.unal.mdd.photos.dsl.softGalleryLanguage.CriteriaAttributeType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Criteria Attribute Type</em>' containment reference list.
+   * @see co.unal.mdd.photos.dsl.softGalleryLanguage.SoftGalleryLanguagePackage#getSpecificationSegmentElement_CriteriaAttributeType()
+   * @model containment="true"
+   * @generated
+   */
+  EList<CriteriaAttributeType> getCriteriaAttributeType();
 
 } // SpecificationSegmentElement

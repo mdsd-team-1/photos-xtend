@@ -100,6 +100,7 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.BUSINESS_LOGIC_SEGMENTS: return createBusinessLogicSegments();
       case SoftGalleryLanguagePackage.CONTROLLER_SEGMENT_ELEMENT: return createControllerSegmentElement();
       case SoftGalleryLanguagePackage.SPECIFICATION_SEGMENT_ELEMENT: return createSpecificationSegmentElement();
+      case SoftGalleryLanguagePackage.CRITERIA_ATTRIBUTE_TYPE: return createCriteriaAttributeType();
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_LAYER: return createDataPersistenceLayer();
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_CONTENT: return createDataPersistenceContent();
       case SoftGalleryLanguagePackage.DATA_PERSISTENCE_SEGMENTS: return createDataPersistenceSegments();
@@ -134,6 +135,7 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.ORDER_SPRING: return createOrderSpring();
       case SoftGalleryLanguagePackage.SPRING_REPOSITORY: return createSpringRepository();
       case SoftGalleryLanguagePackage.SPRING_REPOSITORIES: return createSpringRepositories();
+      case SoftGalleryLanguagePackage.SPRING_REPOSITORY_ANNOTATION: return createSpringRepositoryAnnotation();
       case SoftGalleryLanguagePackage.REST_CONTROLLER: return createRestController();
       case SoftGalleryLanguagePackage.SPECIFICATION: return createSpecification();
       case SoftGalleryLanguagePackage.PREDICATE: return createPredicate();
@@ -156,6 +158,7 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.EXCEPTION_HANDLER: return createExceptionHandler();
       case SoftGalleryLanguagePackage.EXCEPTION_PROCESS: return createExceptionProcess();
       case SoftGalleryLanguagePackage.SPRING_ENTITY: return createSpringEntity();
+      case SoftGalleryLanguagePackage.SPRING_ENTITY_ANNOTATION_TYPES: return createSpringEntityAnnotationTypes();
       case SoftGalleryLanguagePackage.STORAGE_CLIENT: return createStorageClient();
       case SoftGalleryLanguagePackage.STORAGE_MEMBER: return createStorageMember();
       case SoftGalleryLanguagePackage.STORAGE_MEMBER_TYPE: return createStorageMemberType();
@@ -166,11 +169,6 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER: return createStorageActionMember();
       case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER_TYPE: return createStorageActionMemberType();
       case SoftGalleryLanguagePackage.STORAGE_ACTION_MEMBER_NAME: return createStorageActionMemberName();
-      case SoftGalleryLanguagePackage.SPRING_TABLE: return createSpringTable();
-      case SoftGalleryLanguagePackage.SPRING_TABLE_ID: return createSpringTableId();
-      case SoftGalleryLanguagePackage.GENERATED_VALUE: return createGeneratedValue();
-      case SoftGalleryLanguagePackage.COLUMNS: return createColumns();
-      case SoftGalleryLanguagePackage.NAME_NATIVE_QUERY: return createNameNativeQuery();
       case SoftGalleryLanguagePackage.REACT: return createReact();
       case SoftGalleryLanguagePackage.REACT_MODULES: return createReactModules();
       case SoftGalleryLanguagePackage.REACT_SUB_MODULES: return createReactSubModules();
@@ -229,7 +227,7 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
       case SoftGalleryLanguagePackage.FOREIGN_KEY_N: return createForeignKey_n();
       case SoftGalleryLanguagePackage.FOREIGN_KEY_REF: return createForeignKeyRef();
       case SoftGalleryLanguagePackage.REF_TABLE_P: return createRefTable_p();
-      case SoftGalleryLanguagePackage.COLUMN: return createColumn();
+      case SoftGalleryLanguagePackage.COLUMN_P: return createColumnP();
       case SoftGalleryLanguagePackage.DATATYPE_DB: return createDatatypeDB();
       case SoftGalleryLanguagePackage.CONSTRAINT: return createConstraint();
       case SoftGalleryLanguagePackage.ROW: return createRow();
@@ -684,6 +682,18 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
+  public CriteriaAttributeType createCriteriaAttributeType()
+  {
+    CriteriaAttributeTypeImpl criteriaAttributeType = new CriteriaAttributeTypeImpl();
+    return criteriaAttributeType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DataPersistenceLayer createDataPersistenceLayer()
   {
     DataPersistenceLayerImpl dataPersistenceLayer = new DataPersistenceLayerImpl();
@@ -1092,6 +1102,18 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
+  public SpringRepositoryAnnotation createSpringRepositoryAnnotation()
+  {
+    SpringRepositoryAnnotationImpl springRepositoryAnnotation = new SpringRepositoryAnnotationImpl();
+    return springRepositoryAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public RestController createRestController()
   {
     RestControllerImpl restController = new RestControllerImpl();
@@ -1356,6 +1378,18 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
+  public SpringEntityAnnotationTypes createSpringEntityAnnotationTypes()
+  {
+    SpringEntityAnnotationTypesImpl springEntityAnnotationTypes = new SpringEntityAnnotationTypesImpl();
+    return springEntityAnnotationTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public StorageClient createStorageClient()
   {
     StorageClientImpl storageClient = new StorageClientImpl();
@@ -1468,66 +1502,6 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
   {
     StorageActionMemberNameImpl storageActionMemberName = new StorageActionMemberNameImpl();
     return storageActionMemberName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SpringTable createSpringTable()
-  {
-    SpringTableImpl springTable = new SpringTableImpl();
-    return springTable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SpringTableId createSpringTableId()
-  {
-    SpringTableIdImpl springTableId = new SpringTableIdImpl();
-    return springTableId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public GeneratedValue createGeneratedValue()
-  {
-    GeneratedValueImpl generatedValue = new GeneratedValueImpl();
-    return generatedValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Columns createColumns()
-  {
-    ColumnsImpl columns = new ColumnsImpl();
-    return columns;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NameNativeQuery createNameNativeQuery()
-  {
-    NameNativeQueryImpl nameNativeQuery = new NameNativeQueryImpl();
-    return nameNativeQuery;
   }
 
   /**
@@ -2232,10 +2206,10 @@ public class SoftGalleryLanguageFactoryImpl extends EFactoryImpl implements Soft
    * @generated
    */
   @Override
-  public Column createColumn()
+  public ColumnP createColumnP()
   {
-    ColumnImpl column = new ColumnImpl();
-    return column;
+    ColumnPImpl columnP = new ColumnPImpl();
+    return columnP;
   }
 
   /**

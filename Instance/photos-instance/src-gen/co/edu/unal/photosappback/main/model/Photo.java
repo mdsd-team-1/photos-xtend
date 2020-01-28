@@ -6,13 +6,18 @@ import javax.persistence.*;
 @Table(name = "photo")
 public class Photo {
 
+	private int id;
 	private name;	
 	private url;	
 	private albumId;	
 					
 	public Photo() {}
 
-	public Photo() {
+	public Photo(
+	String name, 
+	String url, 
+	String albumId
+		) {
 		this.name = name;		
 		this.url = url;		
 		this.albumId = albumId;		
